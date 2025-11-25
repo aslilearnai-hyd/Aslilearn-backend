@@ -99,6 +99,9 @@ const allowedOrigins = [
   'http://localhost:5177',
   // New Vercel frontend URL
   'https://asli-frontend.vercel.app',
+  // Custom domain
+  'https://aslilearn.ai',
+  'https://www.aslilearn.ai',
   // Old Vercel URLs (keeping for backward compatibility)
   'https://alsi-stud-frontend-mf3r-ampkob5el-akhilesh2006s-projects.vercel.app',
   'https://alsi-stud-frontend-mf3r-es6c3f5aq-akhilesh2006s-projects.vercel.app',
@@ -150,8 +153,13 @@ app.use(cors({
       return callback(null, true);
     }
 
-  // Allow localhost during local dev
+    // Allow localhost during local dev
   if (origin && origin.match(/^http:\/\/localhost:(5173|4173|4174)$/)) {
+    return callback(null, true);
+  }
+  
+  // Allow custom domain aslilearn.ai and its subdomains
+  if (origin && origin.match(/^https:\/\/(www\.)?aslilearn\.ai$/)) {
     return callback(null, true);
   }
     
