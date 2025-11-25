@@ -21,9 +21,42 @@ dotenv.config({ path: join(__dirname, '.env') });
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
+// Middleware - Allow multiple origins including custom domain
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'https://aslilearn.ai',
+  'https://www.aslilearn.ai',
+  'https://asli-frontend.vercel.app',
+  'http://localhost:5173'
+].filter(Boolean);
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || (process.env.NODE_ENV === 'production' ? 'https://asli-frontend.vercel.app' : 'http://localhost:5173'),
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    // Check if origin is in allowed list
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    
+    // Allow custom domain
+    if (origin && origin.match(/^https:\/\/(www\.)?aslilearn\.ai$/)) {
+      return callback(null, true);
+    }
+    
+    // Allow Vercel domains
+    if (origin && origin.match(/^https:\/\/asli-frontend.*\.vercel\.app$/)) {
+      return callback(null, true);
+    }
+    
+    // Allow localhost during development
+    if (origin && origin.match(/^http:\/\/localhost:(5173|4173|4174)$/)) {
+      return callback(null, true);
+    }
+    
+    callback(null, true); // Allow all for now, can restrict later
+  },
   credentials: true
 }));
 
