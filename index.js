@@ -171,6 +171,9 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Serve uploaded files directly from disk
+app.use('/uploads', express.static(join(__dirname, 'uploads')));
+
 // Request logging middleware (after body parser)
 app.use((req, res, next) => {
   if (req.path.includes('/api/auth/login')) {
