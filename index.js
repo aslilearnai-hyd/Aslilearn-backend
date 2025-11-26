@@ -9,7 +9,8 @@ import dotenv from 'dotenv';
 import jwt from 'jsonwebtoken';
 import multer from 'multer';
 import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { dirname, join, extname } from 'path';
+import fs from 'fs';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -34,6 +35,7 @@ import teacherRoutes from './routes/teacher.js';
 import studentRoutes from './routes/student.js';
 import aiRoutes from './routes/ai.js';
 import streamRoutes from './routes/streams.js';
+import { verifyToken } from './middleware/auth.js';
 
 // Load environment variables - explicitly specify path
 const envPath = join(__dirname, '.env');
@@ -2722,6 +2724,90 @@ app.post('/api/admin/upload-question-image', (req, res, next) => {
     res.status(500).json({ 
       success: false,
       message: 'Failed to upload image',
+      error: error.message 
+    });
+  }
+});
+
+// Generic file upload endpoint for homework and other documents
+const fileStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    const uploadDir = join(__dirname, 'uploads', 'files');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    const ext = extname(file.originalname);
+    cb(null, 'file-' + uniqueSuffix + ext);
+  }
+});
+
+const fileUpload = multer({ 
+  storage: fileStorage,
+  limits: { fileSize: 50 * 1024 * 1024 }, // 50MB limit for documents
+  fileFilter: (req, file, cb) => {
+    // Allow common document types
+    const allowedMimes = [
+      'application/pdf',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document', // .docx
+      'application/vnd.ms-powerpoint',
+      'application/vnd.openxmlformats-officedocument.presentationml.presentation', // .pptx
+      'application/vnd.ms-excel',
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', // .xlsx
+      'text/plain',
+      'image/jpeg',
+      'image/png',
+      'image/gif'
+    ];
+    
+    if (allowedMimes.includes(file.mimetype)) {
+      cb(null, true);
+    } else {
+      cb(new Error('File type not allowed. Accepted: PDF, DOC, DOCX, PPT, PPTX, XLS, XLSX, TXT, Images'), false);
+    }
+  }
+});
+
+app.post('/api/upload', verifyToken, fileUpload.single('file'), (req, res) => {
+  try {
+    console.log('File upload request received:', {
+      file: req.file ? {
+        originalname: req.file.originalname,
+        mimetype: req.file.mimetype,
+        size: req.file.size,
+        filename: req.file.filename
+      } : 'No file',
+      body: req.body
+    });
+
+    if (!req.file) {
+      return res.status(400).json({ 
+        success: false,
+        message: 'No file provided' 
+      });
+    }
+
+    const fileUrl = `${req.protocol}://${req.get('host')}/uploads/files/${req.file.filename}`;
+    console.log('File uploaded successfully:', fileUrl);
+    
+    res.json({ 
+      success: true,
+      url: fileUrl,
+      fileUrl: fileUrl,
+      filename: req.file.filename,
+      originalName: req.file.originalname,
+      size: req.file.size,
+      mimetype: req.file.mimetype
+    });
+  } catch (error) {
+    console.error('Failed to upload file:', error);
+    res.status(500).json({ 
+      success: false,
+      message: 'Failed to upload file',
       error: error.message 
     });
   }
