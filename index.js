@@ -163,7 +163,8 @@ app.use(cors({
     return callback(null, true);
   }
     
-    callback(new Error('Not allowed by CORS'));
+    console.warn('[CORS] Unrecognized origin, defaulting to allow:', origin);
+    callback(null, true);
   },
   credentials: true
 }));
