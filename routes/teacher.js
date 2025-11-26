@@ -448,6 +448,90 @@ router.post('/assessments', async (req, res) => {
   }
 });
 
+// Teacher Homework Upload Route
+router.post('/homework', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    const { title, description, subject, classNumber, topic, date, fileUrl, deadline, board } = req.body;
+    
+    console.log('📝 Teacher uploading homework:', { title, subject, classNumber, date, deadline, teacherId });
+    
+    if (!title || !subject || !fileUrl || !date || !deadline) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Missing required fields: title, subject, fileUrl, date, and deadline are required' 
+      });
+    }
+    
+    // Get teacher to verify assigned subjects
+    const teacher = await Teacher.findById(teacherId).populate('subjects');
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+    
+    // Verify subject is assigned to teacher
+    const assignedSubjectIds = teacher.subjects?.map(s => s._id || s) || [];
+    const subjectId = new mongoose.Types.ObjectId(subject);
+    
+    if (!assignedSubjectIds.some(id => id.toString() === subjectId.toString())) {
+      return res.status(403).json({ 
+        success: false, 
+        message: 'You can only upload homework for your assigned subjects' 
+      });
+    }
+    
+    // Get subject to get board
+    const Subject = (await import('../models/Subject.js')).default;
+    const subjectDoc = await Subject.findById(subject);
+    if (!subjectDoc) {
+      return res.status(404).json({ success: false, message: 'Subject not found' });
+    }
+    
+    const homeworkData = {
+      title: title.trim(),
+      description: description?.trim() || undefined,
+      type: 'Homework',
+      board: board || subjectDoc.board || 'CBSE_AP',
+      subject: subjectId,
+      topic: topic?.trim() || undefined,
+      date: new Date(date),
+      deadline: new Date(deadline),
+      fileUrl: fileUrl.trim(),
+      isExclusive: false, // Teacher-created homework is not exclusive
+      createdBy: 'teacher',
+      teacherId: new mongoose.Types.ObjectId(teacherId)
+    };
+    
+    // Add classNumber if provided
+    if (classNumber && classNumber.trim()) {
+      homeworkData.classNumber = classNumber.trim();
+    }
+    
+    const homework = new Content(homeworkData);
+    await homework.save();
+    
+    console.log('✅ Homework uploaded successfully by teacher:', {
+      id: homework._id,
+      title: homework.title,
+      subject: homework.subject,
+      teacherId: teacherId
+    });
+    
+    res.json({ 
+      success: true, 
+      data: homework, 
+      message: 'Homework uploaded successfully' 
+    });
+  } catch (error) {
+    console.error('Teacher homework upload error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to upload homework', 
+      error: error.message 
+    });
+  }
+});
+
 // Teacher Student Management Routes
 router.get('/students', async (req, res) => {
   try {

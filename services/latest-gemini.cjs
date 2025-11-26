@@ -81,7 +81,7 @@ class LatestGeminiService {
   async generateGeminiResponse(message, context = {}, chatHistory = []) {
     try {
       // Build a comprehensive prompt for educational assistance
-      let systemPrompt = `You are a Vidya AI for Asli Learn Foundation, an educational platform. You help students with their studies across various subjects including Physics, Chemistry, Mathematics, and Biology.
+      let systemPrompt = `You are a Vidya AI for AsliLearn, an educational platform. You help students with their studies across various subjects including Physics, Chemistry, Mathematics, and Biology.
 
 Your role is to:
 1. Provide clear, direct answers to questions

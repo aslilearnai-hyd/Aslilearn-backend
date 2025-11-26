@@ -59,8 +59,15 @@ const contentSchema = new mongoose.Schema({
   },
   createdBy: {
     type: String,
-    enum: ['super-admin'],
+    enum: ['super-admin', 'teacher'],
     default: 'super-admin'
+  },
+  teacherId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Teacher',
+    required: function() {
+      return this.createdBy === 'teacher';
+    }
   },
   isActive: {
     type: Boolean,
@@ -91,6 +98,8 @@ contentSchema.index({ board: 1, subject: 1 });
 contentSchema.index({ board: 1, classNumber: 1 });
 contentSchema.index({ isActive: 1 });
 contentSchema.index({ isExclusive: 1 });
+contentSchema.index({ teacherId: 1 });
+contentSchema.index({ createdBy: 1 });
 
 export default mongoose.model('Content', contentSchema);
 

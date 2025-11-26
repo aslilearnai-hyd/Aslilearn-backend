@@ -485,13 +485,13 @@ export const uploadContent = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Invalid board code' });
     }
 
-    if (!['TextBook', 'Workbook', 'Material', 'Video', 'Audio', 'Homework'].includes(type)) {
-      return res.status(400).json({ success: false, message: 'Invalid content type' });
+    // Super admin cannot upload Homework - only teachers can
+    if (type === 'Homework') {
+      return res.status(403).json({ success: false, message: 'Homework can only be uploaded by teachers. Please use the teacher dashboard to upload homework.' });
     }
 
-    // Validate deadline for homework
-    if (type === 'Homework' && !deadline) {
-      return res.status(400).json({ success: false, message: 'Deadline is required for Homework content' });
+    if (!['TextBook', 'Workbook', 'Material', 'Video', 'Audio'].includes(type)) {
+      return res.status(400).json({ success: false, message: 'Invalid content type' });
     }
 
     // Verify subject exists and belongs to the board
@@ -524,10 +524,6 @@ export const uploadContent = async (req, res) => {
       contentData.classNumber = classNumber.trim();
     }
 
-    // Add deadline for homework
-    if (type === 'Homework' && deadline) {
-      contentData.deadline = new Date(deadline);
-    }
 
     const content = new Content(contentData);
 
