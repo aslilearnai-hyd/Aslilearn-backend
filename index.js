@@ -254,8 +254,6 @@ app.use('/api/student', studentRoutes);
 app.use('/api/ai', aiRoutes);
 
 // Serve static files
-app.use('/uploads', express.static('uploads'));
-
 // Session configuration
 app.use(session({
   secret: process.env.SESSION_SECRET || 'your-secret-key',
@@ -4682,7 +4680,7 @@ app.post('/api/lesson-plan/generate', async (req, res) => {
       });
     }
 
-    const prompt = `Hello there! I'm your Vidya AI from **Asli Learn**. I'm here to help you excel in your IIT JEE Mains preparation. Let's get this detailed lesson plan ready for "${topic}."
+    const prompt = `Hello there! I'm your Vidya AI from **Asli Learn Foundation**. I'm here to help you excel in your IIT JEE Mains preparation. Let's get this detailed lesson plan ready for "${topic}."
 
 Create a detailed lesson plan for IIT JEE Mains preparation in ${subject} on the topic "${topic}" for ${gradeLevel} students. The lesson should be ${duration} minutes long.
 
