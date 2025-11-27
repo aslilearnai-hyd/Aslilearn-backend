@@ -24,6 +24,8 @@ class GeminiService {
       
       const model = this.genAI.getGenerativeModel({ model: this.textModel });
       
+      const studentName = context?.studentName || 'Student';
+
       // Build system instruction
       let systemInstruction = `You are Vidya AI for AsliLearn, an educational platform. You help students with their studies across various subjects including Physics, Chemistry, Mathematics, and Biology.
 
@@ -37,7 +39,10 @@ Guidelines:
 - Always give direct answers first, then explanations
 - For math problems, show the calculation and result
 - Use clear, simple language
-- Be encouraging and supportive`;
+- Be encouraging and supportive
+- Always mention the student's name (${studentName}) in your greeting or first sentence
+- Start with a warm acknowledgement like "Great question, ${studentName}!" or "Hi ${studentName}! Let's explore this."
+- Keep the tone similar to friendly AI study assistants (Gemini, ChatGPT)`;
 
       // Add context if available
       if (context.currentSubject) {
@@ -88,44 +93,45 @@ Guidelines:
     
     let response = '';
     
+    const studentName = context?.studentName || 'Student';
+    const friendlyIntro = this.buildFriendlyIntro(message, studentName);
+
     // Math-related responses
     if (message.includes('+') || message.includes('-') || message.includes('*') || message.includes('/') || 
         message.includes('=') || message.includes('math') || message.includes('calculate')) {
       const mathResult = this.solveMathProblem(message);
       if (mathResult) {
-        response = mathResult;
+        response = `${friendlyIntro}\n\n${mathResult}`;
       } else {
-        response = "I can help you with that math problem! Let me solve it step by step:\n\n";
-        response += "Please provide the specific numbers and operation you'd like me to solve.";
+        response = `${friendlyIntro}\n\nPlease provide the specific numbers and operation you'd like me to solve, and I'll walk you through it step by step.`;
       }
     }
     // Subject-specific responses
     else if (message.toLowerCase().includes('physics') || message.toLowerCase().includes('motion') || 
              message.toLowerCase().includes('force') || message.toLowerCase().includes('energy')) {
-      response = "Great physics question! Let me explain this clearly:\n\n";
+      response = `${friendlyIntro}\n\nLet me explain this physics concept clearly:\n\n`;
       response += "In physics, we use scientific principles to understand natural phenomena. ";
       response += "I'll break this down into clear concepts and provide examples to help you understand.";
     }
     else if (message.toLowerCase().includes('chemistry') || message.toLowerCase().includes('molecule') || 
              message.toLowerCase().includes('atom') || message.toLowerCase().includes('reaction')) {
-      response = "Excellent chemistry question! Let me explain this:\n\n";
+      response = `${friendlyIntro}\n\nExcellent chemistry question! Here's the breakdown:\n\n`;
       response += "Chemistry is the study of matter and its transformations. ";
       response += "I'll explain the concepts using clear examples and show you how to apply them.";
     }
     else if (message.toLowerCase().includes('biology') || message.toLowerCase().includes('cell') || 
              message.toLowerCase().includes('organism') || message.toLowerCase().includes('life')) {
-      response = "Fascinating biology question! Let me explain this:\n\n";
+      response = `${friendlyIntro}\n\nFascinating biology question! Here's how it works:\n\n`;
       response += "Biology helps us understand living systems and their functions. ";
       response += "I'll break down the processes and show you how different components work together.";
     }
     // General educational responses
     else {
       const responses = [
-        "That's an excellent question! Let me help you understand this concept clearly.",
-        "I'm here to help you learn! This is an important topic to master.",
-        "Great question! Let me break this down into manageable parts.",
-        "I can definitely help you with this! Let me explain it step by step.",
-        "That's a thoughtful question! This concept is fundamental to your studies."
+        `${friendlyIntro} This concept is fundamental to your studies.`,
+        `${friendlyIntro} I'm excited to walk you through it.`,
+        `${friendlyIntro} Let's break it down together.`,
+        `${friendlyIntro} I'll guide you step by step.`
       ];
       response = responses[Math.floor(Math.random() * responses.length)] + "\n\n";
       response += "Here's how I'll help you understand this:\n";
@@ -199,6 +205,27 @@ Guidelines:
     } catch (error) {
       return null;
     }
+  }
+
+  buildFriendlyIntro(message, studentName) {
+    const trimmed = (message || '').trim().toLowerCase();
+    if (!trimmed) {
+      return `Hi ${studentName}!`;
+    }
+
+    const greetingRegex = /^(hi|hello|hey|good (morning|afternoon|evening))/;
+    if (greetingRegex.test(trimmed)) {
+      return `Hi ${studentName}! 👋`;
+    }
+
+    const appreciationPhrases = [
+      `Great question, ${studentName}!`,
+      `Excellent doubt, ${studentName}!`,
+      `Fantastic curiosity, ${studentName}!`,
+      `Love that you're exploring this, ${studentName}!`
+    ];
+
+    return appreciationPhrases[Math.floor(Math.random() * appreciationPhrases.length)];
   }
 
   async analyzeImage(imageBase64, context = '') {
