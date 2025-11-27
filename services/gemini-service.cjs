@@ -149,43 +149,53 @@ Guidelines:
 
   solveMathProblem(message) {
     try {
-      let expression = message.replace(/[^0-9+\-*/().=]/g, '').trim();
-      
-      if (expression.includes('+') && expression.includes('=')) {
-        const parts = expression.split('+');
-        if (parts.length === 2) {
-          const first = parseInt(parts[0].trim());
-          const second = parseInt(parts[1].split('=')[0].trim());
-          
-          if (!isNaN(first) && !isNaN(second)) {
-            const result = first + second;
-            return `**${first} + ${second} = ${result}**\n\n` +
-                   `Here's how to solve it:\n` +
-                   `1. Start with the first number: ${first}\n` +
-                   `2. Add the second number: ${first} + ${second}\n` +
-                   `3. Count forward: ${first}, ${first + 1}, ${first + 2}`;
-          }
-        }
+      const cleaned = message
+        .replace(/[^0-9+\-*/.=]/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+
+      const equationMatch = cleaned.match(/(-?\d+(?:\.\d+)?)\s*([+\-*/])\s*(-?\d+(?:\.\d+)?)(?:\s*=\s*(-?\d+(?:\.\d+)?))?/);
+      if (!equationMatch) {
+        return null;
       }
-      
-      if (expression.includes('-') && expression.includes('=')) {
-        const parts = expression.split('-');
-        if (parts.length === 2) {
-          const first = parseInt(parts[0].trim());
-          const second = parseInt(parts[1].split('=')[0].trim());
-          
-          if (!isNaN(first) && !isNaN(second)) {
-            const result = first - second;
-            return `**${first} - ${second} = ${result}**\n\n` +
-                   `Here's how to solve it:\n` +
-                   `1. Start with the first number: ${first}\n` +
-                   `2. Subtract the second number: ${first} - ${second}\n` +
-                   `3. Count backward: ${first}, ${first - 1}, ${result}`;
-          }
-        }
+
+      const [, firstStr, operator, secondStr] = equationMatch;
+      const first = parseFloat(firstStr);
+      const second = parseFloat(secondStr);
+
+      if (isNaN(first) || isNaN(second)) {
+        return null;
       }
-      
-      return null;
+
+      let result;
+      switch (operator) {
+        case '+':
+          result = first + second;
+          break;
+        case '-':
+          result = first - second;
+          break;
+        case '*':
+          result = first * second;
+          break;
+        case '/':
+          if (second === 0) {
+            return "Division by zero isn't defined. Try another problem!";
+          }
+          result = first / second;
+          break;
+        default:
+          return null;
+      }
+
+      const formatted = `${first} ${operator} ${second} = ${result}`;
+      const steps = [
+        `1. Identify the numbers: ${first} and ${second}`,
+        `2. Apply the operation (${operator})`,
+        `3. Calculate: ${formatted}`
+      ].join('\n');
+
+      return `**${formatted}**\n\nHere’s how to solve it:\n${steps}`;
     } catch (error) {
       return null;
     }
