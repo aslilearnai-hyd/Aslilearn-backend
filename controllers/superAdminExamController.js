@@ -83,7 +83,7 @@ export const createExam = async (req, res) => {
 
     // Add target schools if provided
     if (isSchoolSpecific && targetSchools && Array.isArray(targetSchools) && targetSchools.length > 0) {
-      examData.targetSchools = targetSchools.map((id: string) => {
+      examData.targetSchools = targetSchools.map((id) => {
         // Convert to ObjectId if valid
         if (mongoose.Types.ObjectId.isValid(id)) {
           return new mongoose.Types.ObjectId(id);
