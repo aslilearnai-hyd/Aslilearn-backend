@@ -83,6 +83,24 @@ const userSchema = new mongoose.Schema({
     trim: true,
     default: ''
   },
+  // Contact person for admins
+  contactPerson: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  // Place/City for admins
+  place: {
+    type: String,
+    trim: true,
+    default: ''
+  },
+  // PIN code for admins
+  pin: {
+    type: String,
+    trim: true,
+    default: ''
+  },
   // Overall progress for students (calculated from exam and learning path progress)
   overallProgress: {
     type: Number,

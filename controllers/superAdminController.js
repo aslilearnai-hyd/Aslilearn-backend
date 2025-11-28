@@ -210,6 +210,12 @@ export const getAllAdmins = async (req, res) => {
           id: admin._id,
           name: admin.fullName,
           email: admin.email,
+          board: admin.board,
+          schoolName: admin.schoolName,
+          contactPerson: admin.contactPerson,
+          phone: admin.phone,
+          place: admin.place,
+          pin: admin.pin,
           permissions: admin.permissions || [],
           status: admin.isActive ? 'Active' : 'Inactive',
           joinDate: admin.createdAt,
@@ -400,7 +406,7 @@ export const getAdminAnalytics = async (req, res) => {
 // Create New Admin
 export const createAdmin = async (req, res) => {
   try {
-    const { name, email, permissions, board, schoolName } = req.body;
+    const { name, email, permissions, board, schoolName, contactPerson, phone, place, pin } = req.body;
     
     // Validate required fields
     if (!name || !email) {
@@ -449,6 +455,10 @@ export const createAdmin = async (req, res) => {
       role: 'admin',
       board: board.toUpperCase(),
       schoolName: schoolName.trim(),
+      contactPerson: contactPerson?.trim() || '',
+      phone: phone?.trim() || '',
+      place: place?.trim() || '',
+      pin: pin?.trim() || '',
       permissions: permissions || [],
       isActive: true
     });
@@ -473,6 +483,10 @@ export const createAdmin = async (req, res) => {
         email: newAdmin.email,
         board: newAdmin.board,
         schoolName: newAdmin.schoolName,
+        contactPerson: newAdmin.contactPerson,
+        phone: newAdmin.phone,
+        place: newAdmin.place,
+        pin: newAdmin.pin,
         permissions: newAdmin.permissions,
         status: 'Active',
         joinDate: newAdmin.createdAt
@@ -505,7 +519,7 @@ export const createAdmin = async (req, res) => {
 // Update Admin
 export const updateAdmin = async (req, res) => {
   try {
-    const { name, email, permissions, isActive, board, schoolName } = req.body;
+    const { name, email, permissions, isActive, board, schoolName, contactPerson, phone, place, pin } = req.body;
     const adminId = req.params.id;
     
     console.log('📝 Updating admin:', adminId, { name, email, board, schoolName, isActive });
@@ -544,6 +558,18 @@ export const updateAdmin = async (req, res) => {
     }
     if (schoolName !== undefined && schoolName !== null) {
       updateData.schoolName = schoolName.trim();
+    }
+    if (contactPerson !== undefined && contactPerson !== null) {
+      updateData.contactPerson = contactPerson.trim();
+    }
+    if (phone !== undefined && phone !== null) {
+      updateData.phone = phone.trim();
+    }
+    if (place !== undefined && place !== null) {
+      updateData.place = place.trim();
+    }
+    if (pin !== undefined && pin !== null) {
+      updateData.pin = pin.trim();
     }
 
     console.log('Update data:', updateData);
