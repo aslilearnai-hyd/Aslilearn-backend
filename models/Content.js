@@ -40,7 +40,13 @@ const contentSchema = new mongoose.Schema({
   },
   fileUrl: {
     type: String,
-    required: true
+    required: function() {
+      return !this.fileUrls || this.fileUrls.length === 0;
+    }
+  },
+  fileUrls: {
+    type: [String],
+    default: undefined
   },
   thumbnailUrl: {
     type: String

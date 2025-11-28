@@ -824,11 +824,23 @@ router.get('/assessments', async (req, res) => {
   }
 });
 
-// Get student's exams (filtered by board - Super Admin created only)
+// Get student's exams (filtered by board and school - Super Admin created only)
 router.get('/exams', async (req, res) => {
   try {
-    const student = await User.findById(req.userId);
-    if (!student || !student.board) {
+    const student = await User.findById(req.userId)
+      .populate('assignedAdmin', 'board');
+    
+    if (!student) {
+      return res.json({
+        success: true,
+        data: []
+      });
+    }
+
+    const studentBoard = student.board || (student.assignedAdmin?.board);
+    const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
+    
+    if (!studentBoard) {
       return res.json({
         success: true,
         data: []
@@ -838,17 +850,28 @@ router.get('/exams', async (req, res) => {
     // Get current date/time for filtering
     const now = new Date();
 
-    // Get exams created by Super Admin for student's board
-    // Only show exams whose start date has been reached
-    const exams = await Exam.find({ 
-      board: student.board,
+    // Build query for exams
+    const query = {
+      board: studentBoard,
       createdByRole: 'super-admin',
       isActive: true,
-      startDate: { $lte: now } // Only exams where start date has been reached
-    })
-    .populate('createdBy', 'fullName email')
-    .populate('questions')
-    .sort({ createdAt: -1 });
+      startDate: { $lte: now }, // Only exams where start date has been reached
+      $or: [
+        { isSchoolSpecific: { $ne: true } }, // All non-school-specific exams
+        { 
+          isSchoolSpecific: true,
+          targetSchools: studentAdminId ? { $in: [studentAdminId] } : { $exists: false }
+        }
+      ]
+    };
+
+    // Get exams created by Super Admin for student's board
+    // Only show exams whose start date has been reached
+    const exams = await Exam.find(query)
+      .populate('createdBy', 'fullName email')
+      .populate('questions')
+      .populate('targetSchools', 'schoolName fullName email')
+      .sort({ createdAt: -1 });
     
     res.json({
       success: true,

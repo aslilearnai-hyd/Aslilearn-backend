@@ -68,6 +68,19 @@ const examSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Question'
   }],
+  // School-specific targeting
+  targetSchools: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }],
+  isSchoolSpecific: {
+    type: Boolean,
+    default: false
+  },
+  isBoardSpecific: {
+    type: Boolean,
+    default: false
+  },
   createdAt: {
     type: Date,
     default: Date.now

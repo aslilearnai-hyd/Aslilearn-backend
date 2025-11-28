@@ -473,12 +473,16 @@ export const getAllClasses = async (req, res) => {
 // Upload Content (Super Admin only - Asli Prep Exclusive)
 export const uploadContent = async (req, res) => {
   try {
-    const { title, description, type, board, subject, classNumber, topic, date, fileUrl, thumbnailUrl, duration, size, deadline } = req.body;
+    const { title, description, type, board, subject, classNumber, topic, date, fileUrl, fileUrls, thumbnailUrl, duration, size, deadline } = req.body;
 
     console.log('📦 Uploading content:', { title, type, board, subject, classNumber, date, deadline });
 
-    if (!title || !type || !board || !subject || !fileUrl || !date) {
-      return res.status(400).json({ success: false, message: 'Missing required fields: title, type, board, subject, date, and fileUrl are required' });
+    // Support both single fileUrl (backward compatibility) and multiple fileUrls
+    const hasFileUrl = fileUrl && fileUrl.trim();
+    const hasFileUrls = fileUrls && Array.isArray(fileUrls) && fileUrls.length > 0;
+    
+    if (!title || !type || !board || !subject || !date || (!hasFileUrl && !hasFileUrls)) {
+      return res.status(400).json({ success: false, message: 'Missing required fields: title, type, board, subject, date, and at least one fileUrl/fileUrls are required' });
     }
 
     if (!['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(board)) {
@@ -503,6 +507,10 @@ export const uploadContent = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Subject does not belong to the selected board' });
     }
 
+    // Use fileUrls if provided, otherwise use fileUrl for backward compatibility
+    const finalFileUrls = hasFileUrls ? fileUrls : (hasFileUrl ? [fileUrl] : []);
+    const primaryFileUrl = hasFileUrls ? fileUrls[0] : fileUrl;
+
     const contentData = {
       title: title.trim(),
       description: description?.trim() || undefined,
@@ -511,7 +519,8 @@ export const uploadContent = async (req, res) => {
       subject,
       topic: topic?.trim() || undefined,
       date: new Date(date),
-      fileUrl,
+      fileUrl: primaryFileUrl, // Keep for backward compatibility
+      fileUrls: finalFileUrls.length > 0 ? finalFileUrls : undefined, // Store multiple URLs
       thumbnailUrl: thumbnailUrl?.trim() || undefined,
       duration: duration || 0,
       size: size || 0,

@@ -19,7 +19,10 @@ export const createExam = async (req, res) => {
       instructions, 
       startDate, 
       endDate,
-      board 
+      board,
+      targetSchools,
+      isSchoolSpecific,
+      isBoardSpecific
     } = req.body;
 
     console.log('📝 Creating exam by Super Admin:', { title, examType, board });
@@ -60,7 +63,7 @@ export const createExam = async (req, res) => {
     }
 
     // Create exam
-    const newExam = new Exam({
+    const examData = {
       title: title.trim(),
       description: description?.trim() || '',
       examType,
@@ -73,9 +76,23 @@ export const createExam = async (req, res) => {
       board: board.toUpperCase(),
       createdByRole: 'super-admin',
       createdBy: createdById,
-      isActive: true
-      // adminId is not required for super-admin created exams
-    });
+      isActive: true,
+      isSchoolSpecific: isSchoolSpecific || false,
+      isBoardSpecific: isBoardSpecific || false
+    };
+
+    // Add target schools if provided
+    if (isSchoolSpecific && targetSchools && Array.isArray(targetSchools) && targetSchools.length > 0) {
+      examData.targetSchools = targetSchools.map((id: string) => {
+        // Convert to ObjectId if valid
+        if (mongoose.Types.ObjectId.isValid(id)) {
+          return new mongoose.Types.ObjectId(id);
+        }
+        return id;
+      });
+    }
+
+    const newExam = new Exam(examData);
 
     await newExam.save();
 
@@ -101,8 +118,30 @@ export const createExam = async (req, res) => {
 export const getAllExams = async (req, res) => {
   try {
     console.log('📋 getAllExams controller called');
-    const exams = await Exam.find({ createdByRole: 'super-admin' })
+    const { board, schoolIds } = req.query;
+    
+    let query = { createdByRole: 'super-admin' };
+    
+    // Filter by board if provided
+    if (board && ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(board)) {
+      query.board = board;
+    }
+    
+    // Filter by school IDs if provided
+    if (schoolIds) {
+      const schoolIdArray = Array.isArray(schoolIds) ? schoolIds : schoolIds.split(',');
+      query.$or = [
+        { isSchoolSpecific: false }, // Include exams available to all
+        { 
+          isSchoolSpecific: true,
+          targetSchools: { $in: schoolIdArray.map((id: string) => new mongoose.Types.ObjectId(id)) }
+        }
+      ];
+    }
+    
+    const exams = await Exam.find(query)
       .populate('questions')
+      .populate('targetSchools', 'schoolName fullName email')
       .sort({ createdAt: -1 });
 
     console.log(`✅ Found ${exams.length} exams`);
