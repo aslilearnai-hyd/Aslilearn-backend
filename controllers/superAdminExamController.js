@@ -134,7 +134,7 @@ export const getAllExams = async (req, res) => {
         { isSchoolSpecific: false }, // Include exams available to all
         { 
           isSchoolSpecific: true,
-          targetSchools: { $in: schoolIdArray.map((id: string) => new mongoose.Types.ObjectId(id)) }
+          targetSchools: { $in: schoolIdArray.map((id) => new mongoose.Types.ObjectId(id)) }
         }
       ];
     }
