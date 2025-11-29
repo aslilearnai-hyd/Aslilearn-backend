@@ -161,12 +161,12 @@ export const getBoardDashboard = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Invalid board code' });
     }
 
-    // First, get all admins with this board
-    const adminsWithBoard = await User.find({ role: 'admin', board: boardCode }).select('_id');
-    const adminIds = adminsWithBoard.map(admin => admin._id);
+    // Since everything is now ASLI_EXCLUSIVE_SCHOOLS, get all admins (regardless of board field)
+    const allAdmins = await User.find({ role: 'admin' }).select('_id');
+    const adminIds = allAdmins.map(admin => admin._id);
 
-    // Students inherit board from their assigned admin, so find students assigned to admins with this board
-    // Also include students who have board directly assigned
+    // Get all students (since all are now part of ASLI_EXCLUSIVE_SCHOOLS)
+    // Students can be assigned to admins or have board directly assigned
     const [
       board,
       students,
@@ -178,43 +178,42 @@ export const getBoardDashboard = async (req, res) => {
       examResults
     ] = await Promise.all([
       Board.findOne({ code: boardCode }),
-      User.countDocuments({ 
-        role: 'student',
-        $or: [
-          { board: boardCode },
-          { assignedAdmin: { $in: adminIds } }
-        ]
-      }),
-      // Get teachers assigned to admins with this board
-      adminIds.length > 0 
-        ? Teacher.countDocuments({ adminId: { $in: adminIds } })
-        : Promise.resolve(0),
-      User.countDocuments({ role: 'admin', board: boardCode }),
-      Subject.countDocuments({ board: boardCode, isActive: true }),
-      Content.countDocuments({ board: boardCode, isActive: true }),
-      Exam.countDocuments({ board: boardCode, isActive: true }),
-      ExamResult.countDocuments({ board: boardCode })
+      // Count all students (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
+      User.countDocuments({ role: 'student' }),
+      // Get all teachers (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
+      Teacher.countDocuments({}),
+      // Count all admins (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
+      User.countDocuments({ role: 'admin' }),
+      // Get all subjects (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
+      Subject.countDocuments({ isActive: true }),
+      // Get all content (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
+      Content.countDocuments({ isActive: true }),
+      // Get all exams (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
+      Exam.countDocuments({ isActive: true }),
+      // Get all exam results (they're all part of ASLI_EXCLUSIVE_SCHOOLS now)
+      ExamResult.countDocuments({})
     ]);
 
-    // Get top 10 performers
-    const topPerformers = await ExamResult.find({ board: boardCode })
+    // Get top 10 performers (all exam results are now part of ASLI_EXCLUSIVE_SCHOOLS)
+    const topPerformers = await ExamResult.find({})
       .populate('userId', 'fullName email')
       .sort({ percentage: -1 })
       .limit(10)
       .select('userId percentage obtainedMarks totalMarks examTitle completedAt');
 
-    // Calculate average score
-    const results = await ExamResult.find({ board: boardCode });
+    // Calculate average score (all exam results are now part of ASLI_EXCLUSIVE_SCHOOLS)
+    const results = await ExamResult.find({});
     const averageScore = results.length > 0
       ? results.reduce((sum, r) => sum + r.percentage, 0) / results.length
       : 0;
 
-    // Get detailed school information
-    const adminsList = await User.find({ role: 'admin', board: boardCode }).sort({ schoolName: 1 });
+    // Get detailed school information (all admins are now part of ASLI_EXCLUSIVE_SCHOOLS)
+    const adminsList = await User.find({ role: 'admin' }).sort({ schoolName: 1 });
     const schoolParticipation = await Promise.all(
       adminsList.map(async (admin) => {
-        const results = await ExamResult.countDocuments({ adminId: admin._id, board: boardCode });
-        // Students assigned to this admin (they inherit the board from admin)
+        // All exam results are now part of ASLI_EXCLUSIVE_SCHOOLS
+        const results = await ExamResult.countDocuments({ adminId: admin._id });
+        // Students assigned to this admin
         const students = await User.countDocuments({ assignedAdmin: admin._id, role: 'student' });
         // Teachers assigned to this admin
         const teachers = await Teacher.countDocuments({ adminId: admin._id });
@@ -224,8 +223,8 @@ export const getBoardDashboard = async (req, res) => {
           .sort({ fullName: 1 })
           .limit(50); // Limit to first 50 for display
         
-        // Calculate average score for this school
-        const schoolResults = await ExamResult.find({ adminId: admin._id, board: boardCode });
+        // Calculate average score for this school (all results are now part of ASLI_EXCLUSIVE_SCHOOLS)
+        const schoolResults = await ExamResult.find({ adminId: admin._id });
         const avgScore = schoolResults.length > 0
           ? (schoolResults.reduce((sum, r) => sum + r.percentage, 0) / schoolResults.length).toFixed(2)
           : '0.00';
