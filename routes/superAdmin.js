@@ -25,7 +25,8 @@ import {
   getAnalytics,
   getRealTimeAnalytics,
   getSubscriptions,
-  exportData
+  exportData,
+  migrateAllBoards
 } from '../controllers/superAdminController.js';
 import {
   getAllBoards,
@@ -185,6 +186,7 @@ router.get('/admins/:adminId/analytics', getAdminAnalytics);
 router.post('/admins', createAdmin);
 router.put('/admins/:id', updateAdmin);
 router.delete('/admins/:id', deleteAdmin);
+router.post('/migrate-boards', migrateAllBoards); // Migration endpoint
 
 // User Management (Global)
 router.get('/users', getAllUsers);

@@ -6,6 +6,9 @@ import Teacher from '../models/Teacher.js';
 import Assessment from '../models/Assessment.js';
 import Exam from '../models/Exam.js';
 import ExamResult from '../models/ExamResult.js';
+import Content from '../models/Content.js';
+import Subject from '../models/Subject.js';
+import Class from '../models/Class.js';
 
 // Super Admin Login
 export const superAdminLogin = async (req, res) => {
@@ -704,6 +707,107 @@ export const getAllUsers = async (req, res) => {
   } catch (error) {
     console.error('Get users error:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch users' });
+  }
+};
+
+// Migrate all boards to ASLI_EXCLUSIVE_SCHOOLS
+export const migrateAllBoards = async (req, res) => {
+  try {
+    console.log('🔄 Starting board migration to ASLI_EXCLUSIVE_SCHOOLS...');
+    
+    const oldBoards = ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'];
+    const newBoard = 'ASLI_EXCLUSIVE_SCHOOLS';
+    
+    let results = {
+      users: 0,
+      teachers: 0,
+      exams: 0,
+      examResults: 0,
+      content: 0,
+      subjects: 0,
+      classes: 0
+    };
+
+    // Update Users (admins and students)
+    const userUpdate = await User.updateMany(
+      { board: { $in: oldBoards } },
+      { $set: { board: newBoard } },
+      { runValidators: false }
+    );
+    results.users = userUpdate.modifiedCount;
+    console.log(`✅ Updated ${results.users} users`);
+
+    // Update Teachers
+    const teacherUpdate = await Teacher.updateMany(
+      { board: { $in: oldBoards } },
+      { $set: { board: newBoard } },
+      { runValidators: false }
+    );
+    results.teachers = teacherUpdate.modifiedCount;
+    console.log(`✅ Updated ${results.teachers} teachers`);
+
+    // Update Exams
+    const examUpdate = await Exam.updateMany(
+      { board: { $in: oldBoards } },
+      { $set: { board: newBoard } },
+      { runValidators: false }
+    );
+    results.exams = examUpdate.modifiedCount;
+    console.log(`✅ Updated ${results.exams} exams`);
+
+    // Update Exam Results
+    const examResultUpdate = await ExamResult.updateMany(
+      { board: { $in: oldBoards } },
+      { $set: { board: newBoard } },
+      { runValidators: false }
+    );
+    results.examResults = examResultUpdate.modifiedCount;
+    console.log(`✅ Updated ${results.examResults} exam results`);
+
+    // Update Content
+    const contentUpdate = await Content.updateMany(
+      { board: { $in: oldBoards } },
+      { $set: { board: newBoard } },
+      { runValidators: false }
+    );
+    results.content = contentUpdate.modifiedCount;
+    console.log(`✅ Updated ${results.content} content items`);
+
+    // Update Subjects
+    const subjectUpdate = await Subject.updateMany(
+      { board: { $in: oldBoards } },
+      { $set: { board: newBoard } },
+      { runValidators: false }
+    );
+    results.subjects = subjectUpdate.modifiedCount;
+    console.log(`✅ Updated ${results.subjects} subjects`);
+
+    // Update Classes
+    const classUpdate = await Class.updateMany(
+      { board: { $in: oldBoards } },
+      { $set: { board: newBoard } },
+      { runValidators: false }
+    );
+    results.classes = classUpdate.modifiedCount;
+    console.log(`✅ Updated ${results.classes} classes`);
+
+    const totalUpdated = Object.values(results).reduce((sum, count) => sum + count, 0);
+    
+    console.log(`✅ Migration completed! Total records updated: ${totalUpdated}`);
+    
+    res.json({
+      success: true,
+      message: 'All boards migrated to ASLI_EXCLUSIVE_SCHOOLS successfully',
+      results,
+      totalUpdated
+    });
+  } catch (error) {
+    console.error('❌ Migration error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to migrate boards', 
+      error: error.message 
+    });
   }
 };
 
