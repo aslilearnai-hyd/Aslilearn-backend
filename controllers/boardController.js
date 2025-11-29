@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import Board from '../models/Board.js';
 import Subject from '../models/Subject.js';
 import Content from '../models/Content.js';
@@ -597,6 +598,10 @@ export const deleteContent = async (req, res) => {
   try {
     const { contentId } = req.params;
 
+    if (!contentId || !mongoose.Types.ObjectId.isValid(contentId)) {
+      return res.status(400).json({ success: false, message: 'Invalid content ID' });
+    }
+
     const content = await Content.findById(contentId);
     if (!content) {
       return res.status(404).json({ success: false, message: 'Content not found' });
@@ -608,7 +613,33 @@ export const deleteContent = async (req, res) => {
     res.json({ success: true, message: 'Content deleted successfully' });
   } catch (error) {
     console.error('Delete content error:', error);
-    res.status(500).json({ success: false, message: 'Failed to delete content' });
+    res.status(500).json({ success: false, message: 'Failed to delete content', error: error.message });
+  }
+};
+
+// Delete All Content (Bulk delete - Super Admin only)
+export const deleteAllContent = async (req, res) => {
+  try {
+    const { board } = req.query; // Optional: filter by board
+    
+    const filter = { isActive: true };
+    if (board && board !== 'ALL_BOARDS') {
+      filter.board = board;
+    }
+
+    const result = await Content.updateMany(
+      filter,
+      { $set: { isActive: false } }
+    );
+
+    res.json({ 
+      success: true, 
+      message: `Deleted ${result.modifiedCount} content item${result.modifiedCount !== 1 ? 's' : ''} successfully`,
+      deletedCount: result.modifiedCount
+    });
+  } catch (error) {
+    console.error('Delete all content error:', error);
+    res.status(500).json({ success: false, message: 'Failed to delete all content', error: error.message });
   }
 };
 

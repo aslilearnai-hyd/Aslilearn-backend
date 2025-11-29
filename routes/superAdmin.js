@@ -39,6 +39,7 @@ import {
   uploadContent,
   getContentByBoard,
   deleteContent,
+  deleteAllContent,
   getBoardAnalytics,
   getBoardExportData,
   initializeBoards,
@@ -341,6 +342,7 @@ router.post('/content/upload-thumbnail', (req, res, next) => {
 router.post('/content', uploadContent);
 router.get('/boards/:board/content', getContentByBoard);
 router.delete('/content/:contentId', deleteContent);
+router.delete('/content', deleteAllContent); // Bulk delete all content
 
 // IQ/Rank Boost Activities Routes
 router.post('/iq-rank-activities/generate-questions', async (req, res) => {
