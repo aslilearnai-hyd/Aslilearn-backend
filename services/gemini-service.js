@@ -20,14 +20,14 @@ class GeminiService {
     try {
       const model = this.genAI.getGenerativeModel({ model: this.textModel });
       
-      const systemInstruction = format === 'json' 
-        ? 'You are a helpful assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.'
-        : 'You are a helpful assistant. Provide clear, structured responses.';
+      // Include instruction in the prompt since systemInstruction is not supported in v1 API
+      const instruction = format === 'json' 
+        ? 'You are a helpful assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.\n\n'
+        : 'You are a helpful assistant. Provide clear, structured responses.\n\n';
+      
+      const fullPrompt = instruction + prompt;
 
-      const result = await model.generateContent({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
-        systemInstruction: systemInstruction
-      });
+      const result = await model.generateContent(fullPrompt);
 
       const response = await result.response;
       let resultText = response.text();
@@ -71,9 +71,7 @@ export const generateLessonPlan = async (subject, topic, gradeLevel, duration) =
     Format the response in a clear, structured manner suitable for a teacher to follow.
     `;
 
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }]
-    });
+    const result = await model.generateContent(prompt);
     const response = await result.response;
     return response.text();
   } catch (error) {
@@ -117,10 +115,13 @@ Requirements:
 8. Return ONLY the JSON object, no additional text before or after`;
 
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }],
-      systemInstruction: 'You are a helpful educational assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.'
-    });
+    
+    // Include JSON instruction in the prompt since systemInstruction is not supported in v1 API
+    const fullPrompt = `You are a helpful educational assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.
+
+${prompt}`;
+    
+    const result = await model.generateContent(fullPrompt);
     const response = await result.response;
     let text = response.text();
     
@@ -158,9 +159,7 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
     Include both individual and group work elements if applicable.
     `;
 
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }]
-    });
+    const result = await model.generateContent(prompt);
     const response = await result.response;
     return response.text();
   } catch (error) {
@@ -193,9 +192,7 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
     Ensure the schedule is balanced and follows best practices for teaching.
     `;
 
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }]
-    });
+    const result = await model.generateContent(prompt);
     const response = await result.response;
     return response.text();
   } catch (error) {

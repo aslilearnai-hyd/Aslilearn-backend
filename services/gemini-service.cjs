@@ -54,26 +54,41 @@ Guidelines:
 
       // Build conversation history
       const conversationParts = [];
+      let isFirstUserMessage = true;
+      
       if (chatHistory.length > 0) {
         chatHistory.slice(-5).forEach(msg => {
-          conversationParts.push({
-            role: msg.role === 'user' ? 'user' : 'model',
-            parts: [{ text: msg.content }]
-          });
+          if (msg.role === 'user' && isFirstUserMessage) {
+            // Include system instruction in the first user message
+            conversationParts.push({
+              role: 'user',
+              parts: [{ text: `${systemInstruction}\n\n${msg.content}` }]
+            });
+            isFirstUserMessage = false;
+          } else {
+            conversationParts.push({
+              role: msg.role === 'user' ? 'user' : 'model',
+              parts: [{ text: msg.content }]
+            });
+          }
         });
       }
 
-      // Add current message
-      conversationParts.push({
-        role: 'user',
-        parts: [{ text: message }]
-      });
-
+      // Add current message with system instruction if it's the first message
+      if (isFirstUserMessage) {
+        conversationParts.push({
+          role: 'user',
+          parts: [{ text: `${systemInstruction}\n\n${message}` }]
+        });
+      } else {
+        conversationParts.push({
+          role: 'user',
+          parts: [{ text: message }]
+        });
+      }
+      
       // Generate content
-      const result = await model.generateContent({
-        contents: conversationParts,
-        systemInstruction: systemInstruction
-      });
+      const result = await model.generateContent(conversationParts);
 
       const response = await result.response;
       const responseText = response.text();
@@ -284,14 +299,14 @@ Guidelines:
     try {
       const model = this.genAI.getGenerativeModel({ model: this.textModel });
       
-      const systemInstruction = format === 'json' 
-        ? 'You are a helpful assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.'
-        : 'You are a helpful assistant. Provide clear, structured responses.';
+      // Include instruction in the prompt since systemInstruction is not supported in v1 API
+      const instruction = format === 'json' 
+        ? 'You are a helpful assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.\n\n'
+        : 'You are a helpful assistant. Provide clear, structured responses.\n\n';
+      
+      const fullPrompt = instruction + prompt;
 
-      const result = await model.generateContent({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
-        systemInstruction: systemInstruction
-      });
+      const result = await model.generateContent(fullPrompt);
 
       const response = await result.response;
       let resultText = response.text();

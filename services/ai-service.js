@@ -136,13 +136,12 @@ Provide comprehensive, actionable insights that can drive educational improvemen
 
   async callGeminiAPI(prompt) {
     try {
-      const systemInstruction = 'You are an advanced AI educational analyst. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.';
+      // Include instruction in the prompt since systemInstruction is not supported in v1 API
+      const instruction = 'You are an advanced AI educational analyst. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.\n\n';
       const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
 
-      const result = await model.generateContent({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
-        systemInstruction: systemInstruction
-      });
+      const fullPrompt = instruction + prompt;
+      const result = await model.generateContent(fullPrompt);
 
       const response = await result.response;
       return response.text();
