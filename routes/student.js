@@ -824,7 +824,7 @@ router.get('/assessments', async (req, res) => {
   }
 });
 
-// Get student's exams (filtered by board and school - Super Admin created only)
+// Get student's exams (all exams visible - board restrictions removed)
 router.get('/exams', async (req, res) => {
   try {
     const student = await User.findById(req.userId)
@@ -837,49 +837,36 @@ router.get('/exams', async (req, res) => {
       });
     }
 
-    const studentBoard = student.board || (student.assignedAdmin?.board);
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
-    
-    if (!studentBoard) {
-      return res.json({
-        success: true,
-        data: []
-      });
-    }
 
     // Get current date/time for filtering
     const now = new Date();
 
-    // Build query for exams
-    // Include exams that are for all boards OR match the student's board
+    // Build query for exams - ALL exams visible to ALL students
+    // Board restrictions removed - only filter by school-specific targeting if needed
     const query = {
       createdByRole: 'super-admin',
       isActive: true,
       startDate: { $lte: now }, // Only exams where start date has been reached
       $or: [
-        { isAllBoards: true }, // Exams available to all boards
-        { board: studentBoard } // Exams specific to student's board
-      ],
-      $and: [
-        {
-          $or: [
-            { isSchoolSpecific: { $ne: true } }, // All non-school-specific exams
-            { 
-              isSchoolSpecific: true,
-              targetSchools: studentAdminId ? { $in: [studentAdminId] } : { $exists: false }
-            }
-          ]
+        { isSchoolSpecific: { $ne: true } }, // All non-school-specific exams (visible to all)
+        { 
+          isSchoolSpecific: true,
+          targetSchools: studentAdminId ? { $in: [studentAdminId] } : { $exists: false }
         }
       ]
     };
 
-    // Get exams created by Super Admin for student's board
-    // Only show exams whose start date has been reached
+    console.log('📋 Student exams query (board restrictions removed):', JSON.stringify(query, null, 2));
+
+    // Get all exams created by Super Admin - no board restrictions
     const exams = await Exam.find(query)
       .populate('createdBy', 'fullName email')
       .populate('questions')
       .populate('targetSchools', 'schoolName fullName email')
       .sort({ createdAt: -1 });
+    
+    console.log(`✅ Found ${exams.length} exams for student (all boards visible)`);
     
     res.json({
       success: true,
@@ -909,25 +896,22 @@ router.get('/teachers', getStudentAdminId, async (req, res) => {
   }
 });
 
-// Get specific exam with questions (filtered by assigned admin)
+// Get specific exam with questions (all exams accessible - board restrictions removed)
 router.get('/exams/:examId', async (req, res) => {
   try {
     const { examId } = req.params;
     
     const student = await User.findById(req.userId);
-    if (!student || !student.board) {
+    if (!student) {
       return res.status(404).json({ 
         success: false, 
-        message: 'Student board not assigned' 
+        message: 'Student not found' 
       });
     }
     
+    // All exams accessible - no board restrictions
     const exam = await Exam.findOne({ 
       _id: examId,
-      $or: [
-        { isAllBoards: true }, // Exams available to all boards
-        { board: student.board } // Exams specific to student's board
-      ],
       createdByRole: 'super-admin',
       isActive: true 
     }).populate('questions');

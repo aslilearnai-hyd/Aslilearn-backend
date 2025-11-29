@@ -7,7 +7,7 @@ class GeminiService {
   constructor() {
     this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-2.5-flash'; // Latest model that works with v1 API
+    this.textModel = 'gemini-2.0-flash-exp';
     
     if (!this.apiKey) {
       console.warn('⚠️  GEMINI_API_KEY not set in environment variables');
@@ -20,14 +20,14 @@ class GeminiService {
     try {
       const model = this.genAI.getGenerativeModel({ model: this.textModel });
       
-      // Include instruction in the prompt since systemInstruction is not supported in v1 API
-      const instruction = format === 'json' 
-        ? 'You are a helpful assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.\n\n'
-        : 'You are a helpful assistant. Provide clear, structured responses.\n\n';
-      
-      const fullPrompt = instruction + prompt;
+      const systemInstruction = format === 'json' 
+        ? 'You are a helpful assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.'
+        : 'You are a helpful assistant. Provide clear, structured responses.';
 
-      const result = await model.generateContent(fullPrompt);
+      const result = await model.generateContent({
+        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        systemInstruction: systemInstruction
+      });
 
       const response = await result.response;
       let resultText = response.text();
@@ -50,7 +50,7 @@ export const generateLessonPlan = async (subject, topic, gradeLevel, duration) =
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" }); // Latest model that works with v1 API
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
     
     const prompt = `
     Create a comprehensive lesson plan for:
@@ -81,10 +81,11 @@ export const generateLessonPlan = async (subject, topic, gradeLevel, duration) =
 };
 
 export const generateTestQuestions = async (subject, topic, gradeLevel, questionCount, difficulty) => {
-  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-  const genAI = new GoogleGenerativeAI(apiKey);
-  
-  const prompt = `Generate exactly ${questionCount} multiple-choice test questions for:
+  try {
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const genAI = new GoogleGenerativeAI(apiKey);
+    
+    const prompt = `Generate exactly ${questionCount} multiple-choice test questions for:
 - Subject: ${subject}
 - Topic: ${topic}
 - Grade Level: ${gradeLevel}
@@ -113,42 +114,18 @@ Requirements:
 7. Include clear explanations for each correct answer
 8. Return ONLY the JSON object, no additional text before or after`;
 
-  // Include JSON instruction in the prompt since systemInstruction is not supported in v1 API
-  const fullPrompt = `You are a helpful educational assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.
-
-${prompt}`;
-
-  // Try multiple models in order of preference
-  const modelsToTry = [
-    'gemini-2.5-flash',    // Latest version
-    'gemini-2.0-flash',    // Version 2.0
-    'gemini-pro',          // Stable fallback
-    'gemini-1.5-flash'     // Older but might work
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(fullPrompt);
-      const response = await result.response;
-      let text = response.text();
-      
-      // Clean up markdown code blocks if present
-      text = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
-      
-      console.log(`✅ Successfully generated questions using ${modelName}`);
-      return text;
-    } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      // If this is the last model, throw the error
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
-        console.error('Error generating test questions:', error);
-        throw new Error(`Failed to generate test questions: ${error.message || 'Unknown error'}`);
-      }
-      // Otherwise, try the next model
-      continue;
-    }
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
+    let text = response.text();
+    
+    // Clean up markdown code blocks if present
+    text = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
+    
+    return text;
+  } catch (error) {
+    console.error('Error generating test questions:', error);
+    throw new Error(`Failed to generate test questions: ${error.message || 'Unknown error'}`);
   }
 };
 
@@ -156,7 +133,7 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" }); // Latest model that works with v1 API
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
     
     const prompt = `
     Create ${assignmentType} for:
@@ -189,7 +166,7 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" }); // Latest model that works with v1 API
+    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
     
     const prompt = `
     Create a teaching schedule for:
