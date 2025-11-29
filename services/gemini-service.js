@@ -7,7 +7,7 @@ class GeminiService {
   constructor() {
     this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-2.0-flash-exp';
+    this.textModel = 'gemini-1.5-flash';
     
     if (!this.apiKey) {
       console.warn('⚠️  GEMINI_API_KEY not set in environment variables');
@@ -50,7 +50,7 @@ export const generateLessonPlan = async (subject, topic, gradeLevel, duration) =
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     
     const prompt = `
     Create a comprehensive lesson plan for:
@@ -114,7 +114,7 @@ Requirements:
 7. Include clear explanations for each correct answer
 8. Return ONLY the JSON object, no additional text before or after`;
 
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     let text = response.text();
@@ -133,7 +133,7 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     
     const prompt = `
     Create ${assignmentType} for:
@@ -166,7 +166,7 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
     
     const prompt = `
     Create a teaching schedule for:
