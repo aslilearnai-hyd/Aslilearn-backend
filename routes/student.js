@@ -851,16 +851,24 @@ router.get('/exams', async (req, res) => {
     const now = new Date();
 
     // Build query for exams
+    // Include exams that are for all boards OR match the student's board
     const query = {
-      board: studentBoard,
       createdByRole: 'super-admin',
       isActive: true,
       startDate: { $lte: now }, // Only exams where start date has been reached
       $or: [
-        { isSchoolSpecific: { $ne: true } }, // All non-school-specific exams
-        { 
-          isSchoolSpecific: true,
-          targetSchools: studentAdminId ? { $in: [studentAdminId] } : { $exists: false }
+        { isAllBoards: true }, // Exams available to all boards
+        { board: studentBoard } // Exams specific to student's board
+      ],
+      $and: [
+        {
+          $or: [
+            { isSchoolSpecific: { $ne: true } }, // All non-school-specific exams
+            { 
+              isSchoolSpecific: true,
+              targetSchools: studentAdminId ? { $in: [studentAdminId] } : { $exists: false }
+            }
+          ]
         }
       ]
     };
@@ -916,7 +924,10 @@ router.get('/exams/:examId', async (req, res) => {
     
     const exam = await Exam.findOne({ 
       _id: examId,
-      board: student.board,
+      $or: [
+        { isAllBoards: true }, // Exams available to all boards
+        { board: student.board } // Exams specific to student's board
+      ],
       createdByRole: 'super-admin',
       isActive: true 
     }).populate('questions');

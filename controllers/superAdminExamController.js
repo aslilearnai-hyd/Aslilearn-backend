@@ -22,7 +22,8 @@ export const createExam = async (req, res) => {
       board,
       targetSchools,
       isSchoolSpecific,
-      isBoardSpecific
+      isBoardSpecific,
+      isAllBoards
     } = req.body;
 
     console.log('📝 Creating exam by Super Admin:', { title, examType, board });
@@ -78,7 +79,8 @@ export const createExam = async (req, res) => {
       createdBy: createdById,
       isActive: true,
       isSchoolSpecific: isSchoolSpecific || false,
-      isBoardSpecific: isBoardSpecific || false
+      isBoardSpecific: isBoardSpecific || false,
+      isAllBoards: isAllBoards || false
     };
 
     // Add target schools if provided
@@ -122,9 +124,12 @@ export const getAllExams = async (req, res) => {
     
     let query = { createdByRole: 'super-admin' };
     
-    // Filter by board if provided
+    // Filter by board if provided, but include all-boards exams too
     if (board && ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(board)) {
-      query.board = board;
+      query.$or = [
+        { isAllBoards: true }, // Include exams available to all boards
+        { board: board } // Include exams specific to the selected board
+      ];
     }
     
     // Filter by school IDs if provided

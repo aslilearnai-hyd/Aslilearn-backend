@@ -81,6 +81,10 @@ const examSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
+  isAllBoards: {
+    type: Boolean,
+    default: false
+  },
   createdAt: {
     type: Date,
     default: Date.now
