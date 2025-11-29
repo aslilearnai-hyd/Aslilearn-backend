@@ -7,7 +7,7 @@ class GeminiService {
   constructor() {
     this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-1.5-flash';
+    this.textModel = 'gemini-1.5-flash-latest';
     
     if (!this.apiKey) {
       console.warn('⚠️  GEMINI_API_KEY not set in environment variables');
@@ -50,7 +50,7 @@ export const generateLessonPlan = async (subject, topic, gradeLevel, duration) =
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
     
     const prompt = `
     Create a comprehensive lesson plan for:
@@ -71,7 +71,9 @@ export const generateLessonPlan = async (subject, topic, gradeLevel, duration) =
     Format the response in a clear, structured manner suitable for a teacher to follow.
     `;
 
-    const result = await model.generateContent(prompt);
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }]
+    });
     const response = await result.response;
     return response.text();
   } catch (error) {
@@ -114,8 +116,11 @@ Requirements:
 7. Include clear explanations for each correct answer
 8. Return ONLY the JSON object, no additional text before or after`;
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const result = await model.generateContent(prompt);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      systemInstruction: 'You are a helpful educational assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.'
+    });
     const response = await result.response;
     let text = response.text();
     
@@ -133,7 +138,7 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
     
     const prompt = `
     Create ${assignmentType} for:
@@ -153,7 +158,9 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
     Include both individual and group work elements if applicable.
     `;
 
-    const result = await model.generateContent(prompt);
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }]
+    });
     const response = await result.response;
     return response.text();
   } catch (error) {
@@ -166,7 +173,7 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
     
     const prompt = `
     Create a teaching schedule for:
@@ -186,7 +193,9 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
     Ensure the schedule is balanced and follows best practices for teaching.
     `;
 
-    const result = await model.generateContent(prompt);
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }]
+    });
     const response = await result.response;
     return response.text();
   } catch (error) {
