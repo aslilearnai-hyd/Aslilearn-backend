@@ -839,15 +839,12 @@ router.get('/exams', async (req, res) => {
 
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
 
-    // Get current date/time for filtering
-    const now = new Date();
-
     // Build query for exams - ALL exams visible to ALL students
-    // Board restrictions removed - only filter by school-specific targeting if needed
+    // Board restrictions removed - Date restrictions removed - Show ALL exams
     const query = {
       createdByRole: 'super-admin',
       isActive: true,
-      startDate: { $lte: now }, // Only exams where start date has been reached
+      // No startDate filter - show all exams regardless of dates
       $or: [
         { isSchoolSpecific: { $ne: true } }, // All non-school-specific exams (visible to all)
         { 
