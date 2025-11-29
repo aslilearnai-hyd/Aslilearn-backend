@@ -622,9 +622,10 @@ export const getBoardAnalytics = async (req, res) => {
 
     const analytics = await Promise.all(
       boards.map(async (boardCode) => {
-        const results = await ExamResult.find({ board: boardCode });
-        const students = await User.countDocuments({ role: 'student', board: boardCode });
-        const exams = await Exam.countDocuments({ board: boardCode, isActive: true });
+        // Since everything is now ASLI_EXCLUSIVE_SCHOOLS, get all data
+        const results = await ExamResult.find({});
+        const students = await User.countDocuments({ role: 'student' });
+        const exams = await Exam.countDocuments({ isActive: true });
 
         const averageScore = results.length > 0
           ? results.reduce((sum, r) => sum + r.percentage, 0) / results.length
@@ -650,6 +651,151 @@ export const getBoardAnalytics = async (req, res) => {
   } catch (error) {
     console.error('Get board analytics error:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch analytics' });
+  }
+};
+
+// Get detailed export data for board analytics
+export const getBoardExportData = async (req, res) => {
+  try {
+    const { dataType } = req.query; // 'students', 'attempts', 'scores', 'participation'
+    
+    // Since everything is now ASLI_EXCLUSIVE_SCHOOLS, get all data
+    let exportData = [];
+
+    if (dataType === 'students' || !dataType) {
+      // Export all students with their details
+      const students = await User.find({ role: 'student' })
+        .populate('assignedAdmin', 'fullName schoolName email')
+        .select('fullName email classNumber phoneNumber createdAt')
+        .sort({ fullName: 1 });
+
+      exportData = students.map(student => ({
+        'Student Name': student.fullName || 'N/A',
+        'Email': student.email || 'N/A',
+        'Class': student.classNumber || 'N/A',
+        'Phone': student.phoneNumber || 'N/A',
+        'School': student.assignedAdmin?.schoolName || student.assignedAdmin?.fullName || 'N/A',
+        'Admin Email': student.assignedAdmin?.email || 'N/A',
+        'Registered Date': student.createdAt ? new Date(student.createdAt).toLocaleDateString() : 'N/A'
+      }));
+    } else if (dataType === 'attempts') {
+      // Export all exam attempts with student and exam details
+      const attempts = await ExamResult.find({})
+        .populate('userId', 'fullName email classNumber')
+        .populate('examId', 'title examType duration totalMarks')
+        .populate('adminId', 'schoolName fullName')
+        .sort({ completedAt: -1 });
+
+      exportData = attempts.map(attempt => ({
+        'Student Name': attempt.userId?.fullName || 'N/A',
+        'Student Email': attempt.userId?.email || 'N/A',
+        'Class': attempt.userId?.classNumber || 'N/A',
+        'Exam Title': attempt.examTitle || attempt.examId?.title || 'N/A',
+        'Exam Type': attempt.examId?.examType || 'N/A',
+        'School': attempt.adminId?.schoolName || attempt.adminId?.fullName || 'N/A',
+        'Marks Obtained': attempt.obtainedMarks || 0,
+        'Total Marks': attempt.totalMarks || attempt.examId?.totalMarks || 0,
+        'Percentage': `${attempt.percentage?.toFixed(2) || '0.00'}%`,
+        'Attempt Date': attempt.completedAt ? new Date(attempt.completedAt).toLocaleString() : 'N/A',
+        'Time Taken (minutes)': attempt.timeTaken || 'N/A'
+      }));
+    } else if (dataType === 'scores') {
+      // Export score summary by student
+      const attempts = await ExamResult.find({})
+        .populate('userId', 'fullName email classNumber')
+        .populate('examId', 'title examType')
+        .populate('adminId', 'schoolName')
+        .sort({ 'userId.fullName': 1, completedAt: -1 });
+
+      // Group by student
+      const studentScores = {};
+      attempts.forEach(attempt => {
+        const studentId = attempt.userId?._id?.toString() || 'unknown';
+        if (!studentScores[studentId]) {
+          studentScores[studentId] = {
+            'Student Name': attempt.userId?.fullName || 'N/A',
+            'Email': attempt.userId?.email || 'N/A',
+            'Class': attempt.userId?.classNumber || 'N/A',
+            'School': attempt.adminId?.schoolName || 'N/A',
+            'Total Attempts': 0,
+            'Average Score': 0,
+            'Highest Score': 0,
+            'Lowest Score': 100,
+            'Total Exams': new Set()
+          };
+        }
+        studentScores[studentId]['Total Attempts']++;
+        studentScores[studentId]['Total Exams'].add(attempt.examId?._id?.toString() || '');
+        const score = attempt.percentage || 0;
+        studentScores[studentId]['Average Score'] += score;
+        if (score > studentScores[studentId]['Highest Score']) {
+          studentScores[studentId]['Highest Score'] = score;
+        }
+        if (score < studentScores[studentId]['Lowest Score']) {
+          studentScores[studentId]['Lowest Score'] = score;
+        }
+      });
+
+      exportData = Object.values(studentScores).map(score => ({
+        'Student Name': score['Student Name'],
+        'Email': score['Email'],
+        'Class': score['Class'],
+        'School': score['School'],
+        'Total Attempts': score['Total Attempts'],
+        'Unique Exams': score['Total Exams'].size,
+        'Average Score': `${(score['Average Score'] / score['Total Attempts']).toFixed(2)}%`,
+        'Highest Score': `${score['Highest Score'].toFixed(2)}%`,
+        'Lowest Score': `${score['Lowest Score'].toFixed(2)}%`
+      }));
+    } else if (dataType === 'participation') {
+      // Export participation rates by school/class
+      const students = await User.find({ role: 'student' })
+        .populate('assignedAdmin', 'schoolName fullName')
+        .select('fullName email classNumber assignedAdmin');
+      
+      const attempts = await ExamResult.find({})
+        .populate('userId', 'fullName classNumber')
+        .populate('adminId', 'schoolName');
+
+      // Group by school
+      const schoolParticipation = {};
+      students.forEach(student => {
+        const schoolName = student.assignedAdmin?.schoolName || student.assignedAdmin?.fullName || 'Unassigned';
+        if (!schoolParticipation[schoolName]) {
+          schoolParticipation[schoolName] = {
+            'School Name': schoolName,
+            'Total Students': 0,
+            'Students Attempted': new Set(),
+            'Total Attempts': 0
+          };
+        }
+        schoolParticipation[schoolName]['Total Students']++;
+      });
+
+      attempts.forEach(attempt => {
+        const schoolName = attempt.adminId?.schoolName || 'Unassigned';
+        if (schoolParticipation[schoolName]) {
+          schoolParticipation[schoolName]['Students Attempted'].add(attempt.userId?._id?.toString() || '');
+          schoolParticipation[schoolName]['Total Attempts']++;
+        }
+      });
+
+      exportData = Object.values(schoolParticipation).map(part => ({
+        'School Name': part['School Name'],
+        'Total Students': part['Total Students'],
+        'Students Who Attempted': part['Students Attempted'].size,
+        'Participation Rate': `${((part['Students Attempted'].size / part['Total Students']) * 100).toFixed(2)}%`,
+        'Total Exam Attempts': part['Total Attempts'],
+        'Average Attempts per Student': part['Total Students'] > 0 
+          ? (part['Total Attempts'] / part['Total Students']).toFixed(2)
+          : '0.00'
+      }));
+    }
+
+    res.json({ success: true, data: exportData });
+  } catch (error) {
+    console.error('Get board export data error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch export data', error: error.message });
   }
 };
 

@@ -40,6 +40,7 @@ import {
   getContentByBoard,
   deleteContent,
   getBoardAnalytics,
+  getBoardExportData,
   initializeBoards,
   getAllClasses
 } from '../controllers/boardController.js';
@@ -211,6 +212,7 @@ router.get('/export', exportData);
 // Board Management Routes
 router.get('/boards', getAllBoards);
 router.get('/boards/analytics/comparison', getBoardAnalytics); // Must come before parameterized routes
+router.get('/boards/export', getBoardExportData); // Export detailed data
 router.get('/boards/:boardCode/dashboard', getBoardDashboard);
 router.get('/boards/:boardCode/analytics', getBoardAnalytics);
 
