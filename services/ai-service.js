@@ -138,7 +138,7 @@ Provide comprehensive, actionable insights that can drive educational improvemen
     try {
       // Include instruction in the prompt since systemInstruction is not supported in v1 API
       const instruction = 'You are an advanced AI educational analyst. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.\n\n';
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' }); // Stable model that works with v1 API
+      const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' }); // Latest model that works with v1 API
 
       const fullPrompt = instruction + prompt;
       const result = await model.generateContent(fullPrompt);
