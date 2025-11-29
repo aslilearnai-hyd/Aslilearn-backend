@@ -622,15 +622,23 @@ export const deleteAllContent = async (req, res) => {
   try {
     const { board } = req.query; // Optional: filter by board
     
-    const filter = { isActive: true };
-    if (board && board !== 'ALL_BOARDS') {
+    // Match the same filter used in getContentByBoard to delete what's actually displayed
+    const filter = { isActive: true, isExclusive: true };
+    
+    // Board filtering is optional since we're showing all content now
+    // But keep it for backward compatibility if needed
+    if (board && board !== 'ALL_BOARDS' && board !== 'ASLI_EXCLUSIVE_SCHOOLS') {
       filter.board = board;
     }
+
+    console.log('🗑️ Deleting all content with filter:', JSON.stringify(filter, null, 2));
 
     const result = await Content.updateMany(
       filter,
       { $set: { isActive: false } }
     );
+
+    console.log(`✅ Deleted ${result.modifiedCount} content items`);
 
     res.json({ 
       success: true, 
