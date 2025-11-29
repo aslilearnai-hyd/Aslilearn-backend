@@ -4814,8 +4814,8 @@ app.post('/api/lesson-plan/generate', async (req, res) => {
     }
 
     // Use the dedicated generateLessonPlan function instead of chat service
-    const { generateLessonPlan } = await import('./services/gemini-service.js');
-    const lessonPlan = await generateLessonPlan(subject, topic, gradeLevel, duration || 90);
+    const geminiServiceModule = await import('./services/gemini-service.js');
+    const lessonPlan = await geminiServiceModule.generateLessonPlan(subject, topic, gradeLevel, duration || 90);
     
     res.json({
       success: true,
