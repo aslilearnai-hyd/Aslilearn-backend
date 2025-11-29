@@ -1951,7 +1951,7 @@ app.post('/api/debug/fix-user', async (req, res) => {
         fullName: fullName,
         role: role,
         isActive: true,
-        board: 'CBSE_AP',
+        board: 'ASLI_EXCLUSIVE_SCHOOLS',
         schoolName: 'Default School'
       });
       await user.save();

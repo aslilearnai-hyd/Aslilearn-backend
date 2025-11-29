@@ -43,10 +43,10 @@ export const createExam = async (req, res) => {
       });
     }
 
-    if (!['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(board.toUpperCase())) {
-      return res.status(400).json({ 
-        success: false, 
-        message: 'Invalid board. Must be one of: CBSE_AP, CBSE_TS, STATE_AP, STATE_TS' 
+    if (board.toUpperCase() !== 'ASLI_EXCLUSIVE_SCHOOLS') {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid board. Must be ASLI_EXCLUSIVE_SCHOOLS' 
       });
     }
 
@@ -126,7 +126,7 @@ export const getAllExams = async (req, res) => {
     const conditions = [];
     
     // Filter by board if provided, but include all-boards exams too
-    if (board && ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(board)) {
+    if (board && board === 'ASLI_EXCLUSIVE_SCHOOLS') {
       conditions.push({
         $or: [
           { isAllBoards: true }, // Include exams available to all boards
@@ -193,7 +193,7 @@ export const getExamsByBoard = async (req, res) => {
     console.log('Board code from params:', req.params.boardCode);
     const { boardCode } = req.params;
 
-    if (!['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(boardCode)) {
+    if (boardCode !== 'ASLI_EXCLUSIVE_SCHOOLS') {
       console.log('❌ Invalid board code:', boardCode);
       return res.status(400).json({ success: false, message: 'Invalid board code' });
     }

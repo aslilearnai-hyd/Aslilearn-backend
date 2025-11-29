@@ -31,9 +31,9 @@ const teacherSchema = new mongoose.Schema({
   },
   board: {
     type: String,
-    enum: ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'],
+    enum: ['ASLI_EXCLUSIVE_SCHOOLS'],
     uppercase: true,
-    default: null
+    default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },
   qualifications: {
     type: String,

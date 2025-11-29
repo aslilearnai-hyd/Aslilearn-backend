@@ -70,11 +70,11 @@ const userSchema = new mongoose.Schema({
   board: {
     type: String,
     enum: {
-      values: ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'],
+      values: ['ASLI_EXCLUSIVE_SCHOOLS'],
       message: '{VALUE} is not a valid board'
     },
     uppercase: true,
-    default: null,
+    default: 'ASLI_EXCLUSIVE_SCHOOLS',
     required: false
   },
   // School name for admins

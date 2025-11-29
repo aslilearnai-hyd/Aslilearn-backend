@@ -10,10 +10,7 @@ import Teacher from '../models/Teacher.js';
 export const initializeBoards = async () => {
   try {
     const boards = [
-      { code: 'CBSE_AP', name: 'CBSE Andhra Pradesh', description: 'CBSE Board - Andhra Pradesh' },
-      { code: 'CBSE_TS', name: 'CBSE Telangana State', description: 'CBSE Board - Telangana State' },
-      { code: 'STATE_AP', name: 'State Andhra Pradesh', description: 'State Board - Andhra Pradesh' },
-      { code: 'STATE_TS', name: 'State Telangana State', description: 'State Board - Telangana State' }
+      { code: 'ASLI_EXCLUSIVE_SCHOOLS', name: 'ASLI EXCLUSIVE SCHOOLS', description: 'ASLI Exclusive Schools - All Boards Content' }
     ];
 
     for (const boardData of boards) {
@@ -33,7 +30,7 @@ export const initializeBoards = async () => {
 // Seed Class 10 subjects for all boards
 export const seedClass10Subjects = async () => {
   try {
-    const boards = ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'];
+    const boards = ['ASLI_EXCLUSIVE_SCHOOLS'];
     const class10Subjects = [
       {
         name: 'Mathematics',
@@ -160,7 +157,7 @@ export const getBoardDashboard = async (req, res) => {
     
     console.log('📊 Fetching board dashboard for:', boardCode);
     
-    if (!['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(boardCode)) {
+    if (boardCode !== 'ASLI_EXCLUSIVE_SCHOOLS') {
       return res.status(400).json({ success: false, message: 'Invalid board code' });
     }
 
@@ -311,8 +308,8 @@ export const createSubject = async (req, res) => {
     }
 
     const boardUpper = board.toUpperCase();
-    if (!['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(boardUpper)) {
-      return res.status(400).json({ success: false, message: `Invalid board code: ${board}. Must be one of: CBSE_AP, CBSE_TS, STATE_AP, STATE_TS` });
+    if (boardUpper !== 'ASLI_EXCLUSIVE_SCHOOLS') {
+      return res.status(400).json({ success: false, message: `Invalid board code: ${board}. Must be ASLI_EXCLUSIVE_SCHOOLS` });
     }
 
     // Check if subject already exists for this board
@@ -405,8 +402,8 @@ export const getSubjectsByBoard = async (req, res) => {
     }
 
     const boardUpper = board.toUpperCase();
-    if (!['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(boardUpper)) {
-      return res.status(400).json({ success: false, message: `Invalid board code: ${board}. Must be one of: CBSE_AP, CBSE_TS, STATE_AP, STATE_TS` });
+    if (boardUpper !== 'ASLI_EXCLUSIVE_SCHOOLS') {
+      return res.status(400).json({ success: false, message: `Invalid board code: ${board}. Must be ASLI_EXCLUSIVE_SCHOOLS` });
     }
 
     const subjects = await Subject.find({ board: boardUpper, isActive: true }).sort({ name: 1 });
@@ -485,8 +482,8 @@ export const uploadContent = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Missing required fields: title, type, board, subject, date, and at least one fileUrl/fileUrls are required' });
     }
 
-    if (!['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(board)) {
-      return res.status(400).json({ success: false, message: 'Invalid board code' });
+    if (board !== 'ASLI_EXCLUSIVE_SCHOOLS') {
+      return res.status(400).json({ success: false, message: 'Invalid board code. Must be ASLI_EXCLUSIVE_SCHOOLS' });
     }
 
     // Super admin cannot upload Homework - only teachers can
@@ -622,7 +619,7 @@ export const deleteContent = async (req, res) => {
 // Get Board Analytics (for comparison charts) - All boards comparison
 export const getBoardAnalytics = async (req, res) => {
   try {
-    const boards = ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'];
+    const boards = ['ASLI_EXCLUSIVE_SCHOOLS'];
 
     const analytics = await Promise.all(
       boards.map(async (boardCode) => {
@@ -640,10 +637,7 @@ export const getBoardAnalytics = async (req, res) => {
 
         return {
           board: boardCode,
-          boardName: boardCode === 'CBSE_AP' ? 'CBSE AP' :
-                    boardCode === 'CBSE_TS' ? 'CBSE TS' :
-                    boardCode === 'STATE_AP' ? 'State AP' :
-                    'State TS',
+          boardName: 'ASLI EXCLUSIVE SCHOOLS',
           students,
           exams,
           totalAttempts: results.length,

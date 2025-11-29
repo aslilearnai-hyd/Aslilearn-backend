@@ -416,10 +416,10 @@ export const createAdmin = async (req, res) => {
       });
     }
     
-    if (!board || !['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(board)) {
+    if (!board || board !== 'ASLI_EXCLUSIVE_SCHOOLS') {
       return res.status(400).json({ 
         success: false, 
-        message: 'Valid board is required. Must be one of: CBSE_AP, CBSE_TS, STATE_AP, STATE_TS' 
+        message: 'Valid board is required. Must be ASLI_EXCLUSIVE_SCHOOLS' 
       });
     }
     
@@ -551,8 +551,8 @@ export const updateAdmin = async (req, res) => {
     if (isActive !== undefined) updateData.isActive = Boolean(isActive);
     if (board !== undefined && board !== null && board !== '') {
       const boardUpper = board.toUpperCase();
-      if (!['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(boardUpper)) {
-        return res.status(400).json({ success: false, message: `Invalid board code: ${board}. Must be one of: CBSE_AP, CBSE_TS, STATE_AP, STATE_TS` });
+      if (boardUpper !== 'ASLI_EXCLUSIVE_SCHOOLS') {
+        return res.status(400).json({ success: false, message: `Invalid board code: ${board}. Must be ASLI_EXCLUSIVE_SCHOOLS` });
       }
       updateData.board = boardUpper;
     }

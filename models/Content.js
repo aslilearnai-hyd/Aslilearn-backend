@@ -18,8 +18,9 @@ const contentSchema = new mongoose.Schema({
   board: {
     type: String,
     required: true,
-    enum: ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'],
-    uppercase: true
+    enum: ['ASLI_EXCLUSIVE_SCHOOLS'],
+    uppercase: true,
+    default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },
   subject: {
     type: mongoose.Schema.Types.ObjectId,

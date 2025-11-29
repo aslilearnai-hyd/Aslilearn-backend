@@ -491,7 +491,7 @@ router.post('/homework', async (req, res) => {
       title: title.trim(),
       description: description?.trim() || undefined,
       type: 'Homework',
-      board: board || subjectDoc.board || 'CBSE_AP',
+      board: board || subjectDoc.board || 'ASLI_EXCLUSIVE_SCHOOLS',
       subject: subjectId,
       topic: topic?.trim() || undefined,
       date: new Date(date),

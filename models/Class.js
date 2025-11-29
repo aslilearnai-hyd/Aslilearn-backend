@@ -37,8 +37,9 @@ const classSchema = new mongoose.Schema({
   // Board for this class
   board: {
     type: String,
-    enum: ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'],
-    uppercase: true
+    enum: ['ASLI_EXCLUSIVE_SCHOOLS'],
+    uppercase: true,
+    default: 'ASLI_EXCLUSIVE_SCHOOLS'
   },
   isActive: {
     type: Boolean,

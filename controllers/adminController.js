@@ -431,7 +431,7 @@ export const createTeacher = async (req, res) => {
     
     // Handle board enum validation
     let teacherBoard = null;
-    if (admin.board && ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(admin.board)) {
+    if (admin.board && admin.board === 'ASLI_EXCLUSIVE_SCHOOLS') {
       teacherBoard = admin.board.toUpperCase();
     }
     
