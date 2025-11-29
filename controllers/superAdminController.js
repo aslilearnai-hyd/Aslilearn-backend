@@ -811,6 +811,190 @@ export const migrateAllBoards = async (req, res) => {
   }
 };
 
+// Import subjects from existing content
+export const importSubjectsFromContent = async (req, res) => {
+  try {
+    console.log('🔄 Starting subject import from content...');
+    
+    let results = {
+      subjectsCreated: 0,
+      subjectsSkipped: 0,
+      contentUpdated: 0,
+      errors: []
+    };
+
+    // Get all content items
+    const allContent = await Content.find({ isActive: true })
+      .populate('subject', 'name code classNumber description')
+      .lean();
+
+    console.log(`📚 Found ${allContent.length} content items`);
+
+    // Map to store unique subjects by name + classNumber
+    const subjectMap = new Map(); // key: "name_classNumber" -> subject data
+
+    for (const content of allContent) {
+      try {
+        let subjectName = null;
+        let subjectCode = null;
+        let subjectClassNumber = null;
+        let subjectDescription = null;
+        let subjectId = null;
+
+        // Try to get subject info from populated subject
+        if (content.subject && content.subject._id) {
+          subjectId = content.subject._id;
+          subjectName = content.subject.name;
+          subjectCode = content.subject.code;
+          subjectClassNumber = content.subject.classNumber || content.classNumber;
+          subjectDescription = content.subject.description;
+        } else if (content.subject && typeof content.subject === 'object') {
+          // Subject might be populated but not have _id (broken reference)
+          subjectName = content.subject.name;
+          subjectCode = content.subject.code;
+          subjectClassNumber = content.subject.classNumber || content.classNumber;
+          subjectDescription = content.subject.description;
+        }
+
+        // If we still don't have a name, skip this content
+        if (!subjectName) {
+          console.log(`⚠️  Content "${content.title}" has no subject name, skipping`);
+          continue;
+        }
+
+        // Use classNumber from content if not from subject
+        if (!subjectClassNumber && content.classNumber) {
+          subjectClassNumber = content.classNumber;
+        }
+
+        // Create unique key
+        const key = `${subjectName.toLowerCase().trim()}_${subjectClassNumber || 'none'}`;
+
+        // Store subject info if not already stored
+        if (!subjectMap.has(key)) {
+          subjectMap.set(key, {
+            name: subjectName,
+            code: subjectCode,
+            classNumber: subjectClassNumber,
+            description: subjectDescription,
+            originalId: subjectId,
+            board: 'ASLI_EXCLUSIVE_SCHOOLS'
+          });
+        }
+      } catch (error) {
+        console.error(`❌ Error processing content "${content.title}":`, error.message);
+        results.errors.push({
+          content: content.title,
+          error: error.message
+        });
+      }
+    }
+
+    console.log(`📋 Found ${subjectMap.size} unique subjects to process`);
+
+    // For each unique subject, check if it exists, if not create it
+    for (const [key, subjectData] of subjectMap.entries()) {
+      try {
+        // Check if subject already exists
+        const existingSubject = await Subject.findOne({
+          name: subjectData.name,
+          classNumber: subjectData.classNumber || null,
+          board: 'ASLI_EXCLUSIVE_SCHOOLS'
+        });
+
+        if (existingSubject) {
+          console.log(`⏭️  Subject "${subjectData.name}" (Class ${subjectData.classNumber || 'N/A'}) already exists`);
+          results.subjectsSkipped++;
+          
+          // Update content to reference this subject if it was referencing a different one
+          if (subjectData.originalId && subjectData.originalId.toString() !== existingSubject._id.toString()) {
+            const updateResult = await Content.updateMany(
+              { subject: subjectData.originalId },
+              { $set: { subject: existingSubject._id } }
+            );
+            if (updateResult.modifiedCount > 0) {
+              results.contentUpdated += updateResult.modifiedCount;
+              console.log(`   ↳ Updated ${updateResult.modifiedCount} content items to reference existing subject`);
+            }
+          }
+          continue;
+        }
+
+        // Create new subject
+        const newSubject = await Subject.create({
+          name: subjectData.name,
+          code: subjectData.code || null,
+          classNumber: subjectData.classNumber || null,
+          description: subjectData.description || null,
+          board: 'ASLI_EXCLUSIVE_SCHOOLS',
+          isActive: true,
+          createdBy: 'super-admin'
+        });
+
+        console.log(`✅ Created subject: "${newSubject.name}" (Class ${newSubject.classNumber || 'N/A'})`);
+        results.subjectsCreated++;
+
+        // Update all content that was referencing the old subject ID (if any) to point to new subject
+        if (subjectData.originalId) {
+          const updateResult = await Content.updateMany(
+            { subject: subjectData.originalId },
+            { $set: { subject: newSubject._id } }
+          );
+          if (updateResult.modifiedCount > 0) {
+            results.contentUpdated += updateResult.modifiedCount;
+            console.log(`   ↳ Updated ${updateResult.modifiedCount} content items to reference new subject`);
+          }
+        } else {
+          // If no original ID, find content by subject name and update
+          // This handles cases where subject reference is broken
+          const updateResult = await Content.updateMany(
+            { 
+              $or: [
+                { 'subject.name': subjectData.name },
+                { subject: null }
+              ],
+              classNumber: subjectData.classNumber || null
+            },
+            { $set: { subject: newSubject._id } }
+          );
+          if (updateResult.modifiedCount > 0) {
+            results.contentUpdated += updateResult.modifiedCount;
+            console.log(`   ↳ Updated ${updateResult.modifiedCount} content items to reference new subject`);
+          }
+        }
+
+      } catch (error) {
+        console.error(`❌ Error processing subject "${subjectData.name}":`, error.message);
+        results.errors.push({
+          subject: subjectData.name,
+          error: error.message
+        });
+      }
+    }
+
+    console.log(`✅ Subject import completed!`);
+    console.log(`   Created: ${results.subjectsCreated}`);
+    console.log(`   Skipped: ${results.subjectsSkipped}`);
+    console.log(`   Content Updated: ${results.contentUpdated}`);
+    if (results.errors.length > 0) {
+      console.log(`   Errors: ${results.errors.length}`);
+    }
+    
+    res.json({
+      success: true,
+      message: 'Subjects imported from content successfully',
+      results
+    });
+  } catch (error) {
+    console.error('❌ Import subjects error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to import subjects from content', 
+      error: error.message 
+    });
+  }
+};
+
 // Remove duplicate content and subjects
 export const removeDuplicates = async (req, res) => {
   try {

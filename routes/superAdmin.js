@@ -27,7 +27,8 @@ import {
   getSubscriptions,
   exportData,
   migrateAllBoards,
-  removeDuplicates
+  removeDuplicates,
+  importSubjectsFromContent
 } from '../controllers/superAdminController.js';
 import {
   getAllBoards,
@@ -189,6 +190,7 @@ router.put('/admins/:id', updateAdmin);
 router.delete('/admins/:id', deleteAdmin);
 router.post('/migrate-boards', migrateAllBoards); // Migration endpoint
 router.post('/remove-duplicates', removeDuplicates); // Deduplication endpoint
+router.post('/import-subjects-from-content', importSubjectsFromContent); // Import subjects from content
 
 // User Management (Global)
 router.get('/users', getAllUsers);
