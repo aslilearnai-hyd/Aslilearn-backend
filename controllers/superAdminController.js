@@ -1126,10 +1126,83 @@ export const removeDuplicates = async (req, res) => {
     });
   } catch (error) {
     console.error('❌ Deduplication error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to remove duplicates', 
-      error: error.message 
+    res.status(500).json({
+      success: false,
+      message: 'Failed to remove duplicates',
+      error: error.message
+    });
+  }
+};
+
+// Delete all subjects that don't belong to ASLI_EXCLUSIVE_SCHOOLS or are inactive
+export const deleteRemainingSubjects = async (req, res) => {
+  try {
+    console.log('🔄 Starting cleanup of remaining subjects...');
+    
+    // Delete subjects that:
+    // 1. Don't have board = 'ASLI_EXCLUSIVE_SCHOOLS'
+    // 2. OR are inactive
+    const subjectsToDelete = await Subject.find({
+      $or: [
+        { board: { $ne: 'ASLI_EXCLUSIVE_SCHOOLS' } },
+        { isActive: false }
+      ]
+    });
+
+    console.log(`📋 Found ${subjectsToDelete.length} subjects to delete`);
+
+    let deletedCount = 0;
+    let contentUpdated = 0;
+
+    for (const subject of subjectsToDelete) {
+      try {
+        // Find a replacement subject with the same name and classNumber but correct board
+        const replacementSubject = await Subject.findOne({
+          name: subject.name,
+          classNumber: subject.classNumber || null,
+          board: 'ASLI_EXCLUSIVE_SCHOOLS',
+          isActive: true
+        });
+
+        // If replacement exists, update content to point to it
+        if (replacementSubject) {
+          const updateResult = await Content.updateMany(
+            { subject: subject._id },
+            { $set: { subject: replacementSubject._id } }
+          );
+          contentUpdated += updateResult.modifiedCount;
+          console.log(`   ↳ Updated ${updateResult.modifiedCount} content items to reference replacement subject: ${replacementSubject.name}`);
+        } else {
+          // If no replacement, set content subject to null or keep it (depending on your preference)
+          // For now, we'll just delete the subject and leave content without subject reference
+          console.log(`   ⚠️  No replacement found for subject "${subject.name}", content will lose subject reference`);
+        }
+
+        // Delete the subject
+        await Subject.findByIdAndDelete(subject._id);
+        deletedCount++;
+        console.log(`   ✅ Deleted subject: "${subject.name}" (Class ${subject.classNumber || 'N/A'}, Board: ${subject.board || 'N/A'})`);
+      } catch (error) {
+        console.error(`   ❌ Error deleting subject "${subject.name}":`, error.message);
+      }
+    }
+
+    console.log(`✅ Cleanup completed! Deleted ${deletedCount} subjects, updated ${contentUpdated} content items`);
+
+    res.json({
+      success: true,
+      message: `Deleted ${deletedCount} remaining subjects. Updated ${contentUpdated} content items.`,
+      results: {
+        deletedCount,
+        contentUpdated
+      }
+    });
+  } catch (error) {
+    console.error('❌ Delete remaining subjects error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to delete remaining subjects',
+      error: error.message
     });
   }
 };

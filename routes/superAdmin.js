@@ -28,7 +28,8 @@ import {
   exportData,
   migrateAllBoards,
   removeDuplicates,
-  importSubjectsFromContent
+  importSubjectsFromContent,
+  deleteRemainingSubjects
 } from '../controllers/superAdminController.js';
 import {
   getAllBoards,
@@ -193,6 +194,7 @@ router.delete('/admins/:id', deleteAdmin);
 router.post('/migrate-boards', migrateAllBoards); // Migration endpoint
 router.post('/remove-duplicates', removeDuplicates); // Deduplication endpoint
 router.post('/import-subjects-from-content', importSubjectsFromContent); // Import subjects from content
+router.post('/delete-remaining-subjects', deleteRemainingSubjects); // Delete subjects with wrong board or inactive
 
 // User Management (Global)
 router.get('/users', getAllUsers);
@@ -222,7 +224,11 @@ router.post('/subjects', createSubject);
 router.get('/subjects', async (req, res) => {
   try {
     const Subject = (await import('../models/Subject.js')).default;
-    const subjects = await Subject.find({ isActive: true })
+    // Since we only have one board now (ASLI_EXCLUSIVE_SCHOOLS), filter by it
+    const subjects = await Subject.find({ 
+      board: 'ASLI_EXCLUSIVE_SCHOOLS',
+      isActive: true 
+    })
       .sort({ name: 1 });
     res.json({
       success: true,
