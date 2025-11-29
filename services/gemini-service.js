@@ -7,7 +7,7 @@ class GeminiService {
   constructor() {
     this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-1.5-flash-latest';
+    this.textModel = 'gemini-1.5-pro'; // Stable model that works with v1 API
     
     if (!this.apiKey) {
       console.warn('⚠️  GEMINI_API_KEY not set in environment variables');
@@ -50,7 +50,7 @@ export const generateLessonPlan = async (subject, topic, gradeLevel, duration) =
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" }); // Stable model that works with v1 API
     
     const prompt = `
     Create a comprehensive lesson plan for:
@@ -114,7 +114,7 @@ Requirements:
 7. Include clear explanations for each correct answer
 8. Return ONLY the JSON object, no additional text before or after`;
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" }); // Stable model that works with v1 API
     
     // Include JSON instruction in the prompt since systemInstruction is not supported in v1 API
     const fullPrompt = `You are a helpful educational assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.
@@ -139,7 +139,7 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" }); // Stable model that works with v1 API
     
     const prompt = `
     Create ${assignmentType} for:
@@ -172,7 +172,7 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
   try {
     const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" }); // Stable model that works with v1 API
     
     const prompt = `
     Create a teaching schedule for:

@@ -5,40 +5,16 @@ import User from '../models/User.js';
 import Question from '../models/Question.js';
 
 // Get all exams for admin's board (Super Admin created + view only)
+// ALL exams are visible to ALL schools regardless of board or school restrictions
 export const getViewableExams = async (req, res) => {
   try {
     const adminId = req.adminId;
     
-    // Get admin's board
-    const admin = await User.findById(adminId);
-    if (!admin || !admin.board) {
-      return res.status(400).json({ success: false, message: 'Admin board not assigned' });
-    }
-
-    // Get exams created by Super Admin that are visible to this admin
-    // Include: all-boards exams, board-specific exams for admin's board, or school-specific exams targeting this admin
+    // Get all exams created by Super Admin - no restrictions
+    // All schools can see all exams regardless of board or school-specific targeting
     const exams = await Exam.find({
       createdByRole: 'super-admin',
-      isActive: true,
-      $or: [
-        { isAllBoards: true }, // Exams available to all boards
-        { 
-          $and: [
-            { board: admin.board },
-            { isAllBoards: { $ne: true } } // Board-specific exams (not all-boards)
-          ]
-        },
-        {
-          isSchoolSpecific: true,
-          targetSchools: { 
-            $in: [
-              mongoose.Types.ObjectId.isValid(adminId) 
-                ? new mongoose.Types.ObjectId(adminId) 
-                : adminId
-            ] 
-          } // School-specific exams targeting this admin
-        }
-      ]
+      isActive: true
     })
     .populate('questions')
     .populate('createdBy', 'fullName email')
@@ -57,39 +33,15 @@ export const getViewableExams = async (req, res) => {
 };
 
 // Get exam details (view only)
+// All exams are accessible to all schools - no restrictions
 export const getExamDetails = async (req, res) => {
   try {
     const { examId } = req.params;
-    const adminId = req.adminId;
 
-    // Get admin's board
-    const admin = await User.findById(adminId);
-    if (!admin || !admin.board) {
-      return res.status(400).json({ success: false, message: 'Admin board not assigned' });
-    }
-
+    // All exams are accessible to all schools - no restrictions
     const exam = await Exam.findOne({
       _id: examId,
-      createdByRole: 'super-admin',
-      $or: [
-        { isAllBoards: true }, // Exams available to all boards
-        { 
-          $and: [
-            { board: admin.board },
-            { isAllBoards: { $ne: true } } // Board-specific exams (not all-boards)
-          ]
-        },
-        {
-          isSchoolSpecific: true,
-          targetSchools: { 
-            $in: [
-              mongoose.Types.ObjectId.isValid(adminId) 
-                ? new mongoose.Types.ObjectId(adminId) 
-                : adminId
-            ] 
-          } // School-specific exams targeting this admin
-        }
-      ]
+      createdByRole: 'super-admin'
     })
     .populate('questions')
     .populate('createdBy', 'fullName email')
