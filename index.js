@@ -4813,29 +4813,9 @@ app.post('/api/lesson-plan/generate', async (req, res) => {
       });
     }
 
-    const prompt = `Hello there! I'm your Vidya AI from **AsliLearn**. I'm here to help you excel in your IIT JEE Mains preparation. Let's get this detailed lesson plan ready for "${topic}."
-
-Create a detailed lesson plan for IIT JEE Mains preparation in ${subject} on the topic "${topic}" for ${gradeLevel} students. The lesson should be ${duration} minutes long.
-
-This is for IIT JEE Mains coaching, so please include:
-1. Learning Objectives (JEE-specific)
-2. Prerequisites and Previous Knowledge Required
-3. Materials Needed (including JEE reference books)
-4. Introduction/Warm-up (5-10 minutes) - Connect to JEE pattern
-5. Main Content Delivery (with time breakdown):
-   - Theory explanation
-   - Important formulas and concepts
-   - Problem-solving techniques
-   - JEE-level examples
-6. Practice Problems (JEE Mains level)
-7. Assessment/Evaluation (JEE-style questions)
-8. Homework/Assignment (JEE practice problems)
-9. Common Mistakes and Tips
-10. Next Class Preview
-
-Make it practical, engaging, and focused on JEE Mains preparation. Include specific JEE-level problems and techniques that students need to master for the exam.`;
-
-    const lessonPlan = await geminiService.generateResponse(prompt, 'jee-lesson-plan-generation', []);
+    // Use the dedicated generateLessonPlan function instead of chat service
+    const { generateLessonPlan } = await import('./services/gemini-service.js');
+    const lessonPlan = await generateLessonPlan(subject, topic, gradeLevel, duration || 90);
     
     res.json({
       success: true,

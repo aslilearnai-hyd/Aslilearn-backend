@@ -47,36 +47,95 @@ class GeminiService {
 
 // Export functions for backward compatibility with existing code
 export const generateLessonPlan = async (subject, topic, gradeLevel, duration) => {
-  try {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
-    
-    const prompt = `
-    Create a comprehensive lesson plan for:
-    - Subject: ${subject}
-    - Topic: ${topic}
-    - Grade Level: ${gradeLevel}
-    - Duration: ${duration} minutes
-    
-    Please provide:
-    1. Learning Objectives (3-5 specific goals)
-    2. Materials Needed
-    3. Introduction (5-10 minutes)
-    4. Main Activities (with time allocations)
-    5. Assessment/Evaluation
-    6. Homework/Follow-up
-    7. Differentiation strategies
-    
-    Format the response in a clear, structured manner suitable for a teacher to follow.
-    `;
+  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+  const genAI = new GoogleGenerativeAI(apiKey);
+  
+  // Try multiple models in order of preference
+  const modelsToTry = [
+    'gemini-2.5-flash',    // Latest version
+    'gemini-2.0-flash',    // Version 2.0
+    'gemini-pro',          // Stable fallback
+    'gemini-1.5-flash'     // Older but might work
+  ];
 
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-    return response.text();
-  } catch (error) {
-    console.error('Error generating lesson plan:', error);
-    throw new Error('Failed to generate lesson plan');
+  const prompt = `Create a comprehensive, detailed lesson plan for IIT JEE Mains preparation:
+
+Subject: ${subject}
+Topic: ${topic}
+Grade Level: ${gradeLevel}
+Duration: ${duration} minutes
+
+This is for IIT JEE Mains coaching, so please provide a structured lesson plan with:
+
+1. **Learning Objectives** (3-5 JEE-specific goals)
+   - What students will be able to do after this lesson
+   - JEE Mains exam relevance
+
+2. **Prerequisites and Previous Knowledge Required**
+   - What students should know before this lesson
+   - Foundation concepts needed
+
+3. **Materials Needed**
+   - Textbooks and reference materials (mention specific JEE books)
+   - Teaching aids, demonstrations, or equipment
+   - Digital resources if applicable
+
+4. **Introduction/Warm-up (5-10 minutes)**
+   - Hook to engage students
+   - Connect to JEE pattern and previous topics
+   - Real-world applications
+
+5. **Main Content Delivery (with detailed time breakdown)**
+   - Theory explanation with key concepts
+   - Important formulas and derivations
+   - Problem-solving techniques and strategies
+   - JEE-level examples with step-by-step solutions
+   - Common patterns and shortcuts
+
+6. **Practice Problems (JEE Mains level)**
+   - 3-5 practice problems with varying difficulty
+   - Include solutions and explanations
+
+7. **Assessment/Evaluation (JEE-style questions)**
+   - Quick check questions
+   - JEE Mains pattern questions
+
+8. **Homework/Assignment**
+   - JEE practice problems
+   - Reference to specific problem sets
+   - Expected time for completion
+
+9. **Common Mistakes and Tips**
+   - What students typically get wrong
+   - Tips for avoiding errors
+   - Exam strategy
+
+10. **Next Class Preview**
+    - What will be covered next
+    - Preparation required
+
+Format the response in a clear, structured manner with proper headings and sections. Make it practical, engaging, and focused on JEE Mains preparation.`;
+
+  for (const modelName of modelsToTry) {
+    try {
+      console.log(`🔄 Trying model for lesson plan: ${modelName}`);
+      const model = genAI.getGenerativeModel({ model: modelName });
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      const lessonPlan = response.text();
+      
+      console.log(`✅ Successfully generated lesson plan using ${modelName}`);
+      return lessonPlan;
+    } catch (error) {
+      console.log(`❌ Model ${modelName} failed: ${error.message}`);
+      // If this is the last model, throw the error
+      if (modelName === modelsToTry[modelsToTry.length - 1]) {
+        console.error('Error generating lesson plan:', error);
+        throw new Error(`Failed to generate lesson plan: ${error.message || 'Unknown error'}`);
+      }
+      // Otherwise, try the next model
+      continue;
+    }
   }
 };
 

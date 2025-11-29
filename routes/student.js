@@ -840,18 +840,12 @@ router.get('/exams', async (req, res) => {
     const studentAdminId = student.assignedAdmin?._id || student.assignedAdmin;
 
     // Build query for exams - ALL exams visible to ALL students
-    // Board restrictions removed - Date restrictions removed - Show ALL exams
+    // Board restrictions removed - Date restrictions removed - School restrictions removed
+    // Show EVERYTHING that is created
     const query = {
       createdByRole: 'super-admin',
-      isActive: true,
-      // No startDate filter - show all exams regardless of dates
-      $or: [
-        { isSchoolSpecific: { $ne: true } }, // All non-school-specific exams (visible to all)
-        { 
-          isSchoolSpecific: true,
-          targetSchools: studentAdminId ? { $in: [studentAdminId] } : { $exists: false }
-        }
-      ]
+      isActive: true
+      // No filters - show ALL exams regardless of board, date, or school targeting
     };
 
     console.log('📋 Student exams query (board restrictions removed):', JSON.stringify(query, null, 2));
