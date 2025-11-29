@@ -969,33 +969,9 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
     
-    // Get student's board - either directly assigned or inherited from admin
-    let studentBoard = student.board;
-    
-    // If student doesn't have board, inherit from assigned admin
-    if (!studentBoard && student.assignedAdmin) {
-      const admin = await User.findById(student.assignedAdmin).select('board');
-      if (admin && admin.board) {
-        studentBoard = admin.board;
-        console.log(`📋 Student board inherited from admin: ${studentBoard}`);
-        
-        // Update student's board for future queries
-        await User.findByIdAndUpdate(student._id, { board: studentBoard }, { runValidators: false });
-        console.log(`✅ Updated student's board to ${studentBoard}`);
-      }
-    }
-    
-    if (!studentBoard) {
-      console.log('❌ Student does not have board assigned and no admin board found:', student.email);
-      return res.json({
-        success: true,
-        data: []
-      });
-    }
-
-    // Ensure board is uppercase to match Content model
-    studentBoard = studentBoard.toUpperCase();
-    console.log('🔍 Final student board:', studentBoard);
+    // Board restrictions removed - all content visible to all students
+    // Content is filtered only by class assigned subjects, not by board
+    console.log('📚 Fetching all content for student (board restrictions removed)');
 
     // Get subjects assigned to student's class
     const Subject = (await import('../models/Subject.js')).default;
@@ -1046,9 +1022,8 @@ router.get('/asli-prep-content', async (req, res) => {
       });
     }
 
-    // Build query - filter by board AND class assigned subjects
+    // Build query - filter only by class assigned subjects (no board restriction)
     const query = {
-      board: studentBoard,
       subject: { $in: classSubjectIds },
       isActive: true,
       isExclusive: true

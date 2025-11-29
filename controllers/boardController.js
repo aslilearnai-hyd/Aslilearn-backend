@@ -571,17 +571,15 @@ export const uploadContent = async (req, res) => {
   }
 };
 
-// Get Content by Board
+// Get Content by Board (or all boards - board filtering removed for visibility)
 export const getContentByBoard = async (req, res) => {
   try {
     const { board } = req.params;
     const { subject, type, topic } = req.query;
 
-    if (!['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(board)) {
-      return res.status(400).json({ success: false, message: 'Invalid board code' });
-    }
-
-    const query = { board, isActive: true, isExclusive: true };
+    // Remove board restriction - show all content regardless of board
+    // Board parameter is kept for backward compatibility but not used in filtering
+    const query = { isActive: true, isExclusive: true };
 
     if (subject) query.subject = subject;
     if (type) query.type = type;

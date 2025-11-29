@@ -373,34 +373,12 @@ router.get('/asli-prep-content', async (req, res) => {
     console.log('📚 Fetching Asli Prep content for admin:', adminId);
     console.log('Query params:', { subject, type, topic });
     
-    // Get admin to find their board
-    const admin = await User.findById(adminId).select('board');
+    // Remove board restrictions - show all content to all admins
+    // Content is filtered only by class/subject, not by board
+    console.log('📚 Fetching all content (board restrictions removed)');
     
-    if (!admin) {
-      console.log('❌ Admin not found');
-      return res.json({
-        success: true,
-        data: []
-      });
-    }
-    
-    const adminBoard = admin.board;
-    
-    if (!adminBoard) {
-      console.log('❌ Admin does not have board assigned');
-      return res.json({
-        success: true,
-        data: []
-      });
-    }
-    
-    // Ensure board is uppercase to match Content model
-    const boardUpper = adminBoard.toUpperCase();
-    console.log('🔍 Admin board:', boardUpper);
-    
-    // Build query - filter by admin's board
+    // Build query - no board filtering, show all content
     const query = {
-      board: boardUpper,
       isActive: true,
       isExclusive: true
     };
@@ -426,7 +404,7 @@ router.get('/asli-prep-content', async (req, res) => {
       .populate('subject', 'name')
       .sort({ createdAt: -1 });
     
-    console.log(`✅ Found ${contents.length} contents for admin's board ${boardUpper}`);
+    console.log(`✅ Found ${contents.length} contents (all boards visible)`);
     
     res.json({
       success: true,
