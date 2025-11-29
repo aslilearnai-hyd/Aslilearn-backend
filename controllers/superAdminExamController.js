@@ -123,26 +123,46 @@ export const getAllExams = async (req, res) => {
     const { board, schoolIds } = req.query;
     
     let query = { createdByRole: 'super-admin' };
+    const conditions = [];
     
     // Filter by board if provided, but include all-boards exams too
     if (board && ['CBSE_AP', 'CBSE_TS', 'STATE_AP', 'STATE_TS'].includes(board)) {
-      query.$or = [
-        { isAllBoards: true }, // Include exams available to all boards
-        { board: board } // Include exams specific to the selected board
-      ];
+      conditions.push({
+        $or: [
+          { isAllBoards: true }, // Include exams available to all boards
+          { board: board } // Include exams specific to the selected board
+        ]
+      });
     }
     
     // Filter by school IDs if provided
     if (schoolIds) {
       const schoolIdArray = Array.isArray(schoolIds) ? schoolIds : schoolIds.split(',');
-      query.$or = [
-        { isSchoolSpecific: false }, // Include exams available to all
-        { 
-          isSchoolSpecific: true,
-          targetSchools: { $in: schoolIdArray.map((id) => new mongoose.Types.ObjectId(id)) }
+      const schoolObjectIds = schoolIdArray.map((id) => {
+        // Handle both string IDs and ObjectIds
+        if (mongoose.Types.ObjectId.isValid(id)) {
+          return new mongoose.Types.ObjectId(id);
         }
-      ];
+        return id;
+      });
+      
+      conditions.push({
+        $or: [
+          { isSchoolSpecific: { $ne: true } }, // Include exams available to all schools
+          { 
+            isSchoolSpecific: true,
+            targetSchools: { $in: schoolObjectIds }
+          }
+        ]
+      });
     }
+    
+    // Combine all conditions with $and
+    if (conditions.length > 0) {
+      query.$and = conditions;
+    }
+    
+    console.log('🔍 Query:', JSON.stringify(query, null, 2));
     
     const exams = await Exam.find(query)
       .populate('questions')
@@ -150,6 +170,12 @@ export const getAllExams = async (req, res) => {
       .sort({ createdAt: -1 });
 
     console.log(`✅ Found ${exams.length} exams`);
+    if (schoolIds) {
+      console.log(`📚 Filtering by schools: ${schoolIds}`);
+      exams.forEach(exam => {
+        console.log(`  - Exam: ${exam.title}, isSchoolSpecific: ${exam.isSchoolSpecific}, targetSchools: ${exam.targetSchools?.map(s => s._id || s).join(', ')}`);
+      });
+    }
     res.json({
       success: true,
       data: exams

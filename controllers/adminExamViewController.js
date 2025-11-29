@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import Exam from '../models/Exam.js';
 import ExamResult from '../models/ExamResult.js';
 import User from '../models/User.js';
@@ -14,14 +15,34 @@ export const getViewableExams = async (req, res) => {
       return res.status(400).json({ success: false, message: 'Admin board not assigned' });
     }
 
-    // Get exams created by Super Admin for this board
+    // Get exams created by Super Admin that are visible to this admin
+    // Include: all-boards exams, board-specific exams for admin's board, or school-specific exams targeting this admin
     const exams = await Exam.find({
-      board: admin.board,
       createdByRole: 'super-admin',
-      isActive: true
+      isActive: true,
+      $or: [
+        { isAllBoards: true }, // Exams available to all boards
+        { 
+          $and: [
+            { board: admin.board },
+            { isAllBoards: { $ne: true } } // Board-specific exams (not all-boards)
+          ]
+        },
+        {
+          isSchoolSpecific: true,
+          targetSchools: { 
+            $in: [
+              mongoose.Types.ObjectId.isValid(adminId) 
+                ? new mongoose.Types.ObjectId(adminId) 
+                : adminId
+            ] 
+          } // School-specific exams targeting this admin
+        }
+      ]
     })
     .populate('questions')
     .populate('createdBy', 'fullName email')
+    .populate('targetSchools', 'schoolName fullName email')
     .sort({ createdAt: -1 });
 
     res.json({
@@ -49,11 +70,30 @@ export const getExamDetails = async (req, res) => {
 
     const exam = await Exam.findOne({
       _id: examId,
-      board: admin.board,
-      createdByRole: 'super-admin'
+      createdByRole: 'super-admin',
+      $or: [
+        { isAllBoards: true }, // Exams available to all boards
+        { 
+          $and: [
+            { board: admin.board },
+            { isAllBoards: { $ne: true } } // Board-specific exams (not all-boards)
+          ]
+        },
+        {
+          isSchoolSpecific: true,
+          targetSchools: { 
+            $in: [
+              mongoose.Types.ObjectId.isValid(adminId) 
+                ? new mongoose.Types.ObjectId(adminId) 
+                : adminId
+            ] 
+          } // School-specific exams targeting this admin
+        }
+      ]
     })
     .populate('questions')
-    .populate('createdBy', 'fullName email');
+    .populate('createdBy', 'fullName email')
+    .populate('targetSchools', 'schoolName fullName email');
 
     if (!exam) {
       return res.status(404).json({ success: false, message: 'Exam not found' });
