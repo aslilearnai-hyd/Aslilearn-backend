@@ -811,6 +811,145 @@ export const migrateAllBoards = async (req, res) => {
   }
 };
 
+// Remove duplicate content and subjects
+export const removeDuplicates = async (req, res) => {
+  try {
+    console.log('🔄 Starting duplicate removal for content and subjects...');
+    
+    let results = {
+      contentRemoved: 0,
+      subjectsRemoved: 0,
+      contentKept: 0,
+      subjectsKept: 0
+    };
+
+    // ===== DEDUPLICATE CONTENT =====
+    // Group content by: title, type, subject, classNumber, topic
+    // Keep the one with most views/downloads or most recent
+    const allContent = await Content.find({ isActive: true })
+      .populate('subject', 'name')
+      .sort({ createdAt: -1 });
+
+    const contentGroups = new Map();
+    
+    for (const content of allContent) {
+      // Create a unique key based on identifying fields
+      const key = `${content.title?.toLowerCase().trim()}_${content.type}_${content.subject?._id}_${content.classNumber || 'none'}_${content.topic || 'none'}`;
+      
+      if (!contentGroups.has(key)) {
+        contentGroups.set(key, []);
+      }
+      contentGroups.get(key).push(content);
+    }
+
+    // For each group with duplicates, keep one and delete the rest
+    for (const [key, contents] of contentGroups.entries()) {
+      if (contents.length > 1) {
+        // Sort by: views + downloadCount (desc), then createdAt (desc)
+        contents.sort((a, b) => {
+          const scoreA = (a.views || 0) + (a.downloadCount || 0);
+          const scoreB = (b.views || 0) + (b.downloadCount || 0);
+          if (scoreB !== scoreA) return scoreB - scoreA;
+          return new Date(b.createdAt) - new Date(a.createdAt);
+        });
+
+        // Keep the first one (best score/most recent)
+        const toKeep = contents[0];
+        const toDelete = contents.slice(1);
+
+        // Delete duplicates
+        const idsToDelete = toDelete.map(c => c._id);
+        await Content.deleteMany({ _id: { $in: idsToDelete } });
+        
+        results.contentRemoved += toDelete.length;
+        results.contentKept += 1;
+        
+        console.log(`✅ Content "${toKeep.title}": Kept 1, Removed ${toDelete.length} duplicates`);
+      } else {
+        results.contentKept += 1;
+      }
+    }
+
+    // ===== DEDUPLICATE SUBJECTS =====
+    // Group subjects by: name, classNumber
+    // Keep the one with most content or most recent
+    const allSubjects = await Subject.find({ isActive: true })
+      .sort({ createdAt: -1 });
+
+    const subjectGroups = new Map();
+    
+    for (const subject of allSubjects) {
+      // Create a unique key based on name and classNumber
+      const key = `${subject.name?.toLowerCase().trim()}_${subject.classNumber || 'none'}`;
+      
+      if (!subjectGroups.has(key)) {
+        subjectGroups.set(key, []);
+      }
+      subjectGroups.get(key).push(subject);
+    }
+
+    // For each group with duplicates, keep one and delete the rest
+    for (const [key, subjects] of subjectGroups.entries()) {
+      if (subjects.length > 1) {
+        // Count content for each subject
+        const subjectsWithCounts = await Promise.all(
+          subjects.map(async (subject) => {
+            const contentCount = await Content.countDocuments({ subject: subject._id });
+            return { subject, contentCount };
+          })
+        );
+
+        // Sort by: contentCount (desc), then createdAt (desc)
+        subjectsWithCounts.sort((a, b) => {
+          if (b.contentCount !== a.contentCount) return b.contentCount - a.contentCount;
+          return new Date(b.subject.createdAt) - new Date(a.subject.createdAt);
+        });
+
+        // Keep the first one (most content/most recent)
+        const toKeep = subjectsWithCounts[0].subject;
+        const toDelete = subjectsWithCounts.slice(1).map(s => s.subject);
+
+        // Before deleting, update all content referencing deleted subjects to point to the kept subject
+        const idsToDelete = toDelete.map(s => s._id);
+        await Content.updateMany(
+          { subject: { $in: idsToDelete } },
+          { $set: { subject: toKeep._id } }
+        );
+
+        // Now delete duplicate subjects
+        await Subject.deleteMany({ _id: { $in: idsToDelete } });
+        
+        results.subjectsRemoved += toDelete.length;
+        results.subjectsKept += 1;
+        
+        console.log(`✅ Subject "${toKeep.name}": Kept 1, Removed ${toDelete.length} duplicates, Migrated ${toDelete.length} content items`);
+      } else {
+        results.subjectsKept += 1;
+      }
+    }
+
+    const totalRemoved = results.contentRemoved + results.subjectsRemoved;
+    
+    console.log(`✅ Deduplication completed!`);
+    console.log(`   Content: Kept ${results.contentKept}, Removed ${results.contentRemoved} duplicates`);
+    console.log(`   Subjects: Kept ${results.subjectsKept}, Removed ${results.subjectsRemoved} duplicates`);
+    
+    res.json({
+      success: true,
+      message: 'Duplicates removed successfully',
+      results,
+      totalRemoved
+    });
+  } catch (error) {
+    console.error('❌ Deduplication error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to remove duplicates', 
+      error: error.message 
+    });
+  }
+};
+
 // Create New User (Global)
 export const createUser = async (req, res) => {
   try {
