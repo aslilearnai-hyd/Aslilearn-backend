@@ -1047,10 +1047,89 @@ router.get('/asli-prep-content', async (req, res) => {
   }
 });
 
-// Get IQ/Rank Boost questions for student (filtered by class)
+// Get IQ/Rank Boost quizzes for student (filtered by class)
+router.get('/iq-rank-quizzes', async (req, res) => {
+  try {
+    const { classNumber, subject } = req.query;
+    
+    const student = await User.findById(req.userId)
+      .populate('assignedClass', 'classNumber');
+    if (!student) {
+      return res.json({ success: true, data: [] });
+    }
+
+    // Get student's class number - check assignedClass first, then classNumber field
+    let studentClassNumber = classNumber;
+    if (!studentClassNumber) {
+      if (student.assignedClass && student.assignedClass.classNumber) {
+        studentClassNumber = student.assignedClass.classNumber;
+      } else if (student.classNumber) {
+        studentClassNumber = student.classNumber;
+      }
+    }
+    
+    if (!studentClassNumber || studentClassNumber === 'Unassigned') {
+      return res.json({
+        success: true,
+        data: [],
+        message: 'No class assigned. Please contact your administrator.'
+      });
+    }
+
+    const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
+    const IQRankQuizResult = (await import('../models/IQRankQuizResult.js')).default;
+
+    // Build query - filter by student's class
+    const query = {
+      classNumber: studentClassNumber.toString(),
+      isActive: true
+    };
+
+    // Optional filter by subject
+    if (subject && subject !== 'all') {
+      query.subject = subject;
+    }
+
+    const quizzes = await IQRankQuiz.find(query)
+      .populate('subject', 'name')
+      .populate('questions')
+      .sort({ createdAt: -1 });
+
+    // Get completed quiz IDs for this student
+    const completedResults = await IQRankQuizResult.find({
+      userId: req.userId
+    }).select('quizId');
+
+    const completedQuizIds = new Set(
+      completedResults.map(r => r.quizId?.toString()).filter(Boolean)
+    );
+
+    // Add completion status to each quiz
+    const quizzesWithStatus = quizzes.map(quiz => {
+      const quizObj = quiz.toObject();
+      quizObj.isCompleted = completedQuizIds.has(quiz._id.toString());
+      return quizObj;
+    });
+
+    res.json({
+      success: true,
+      data: quizzesWithStatus,
+      quizzes: quizzesWithStatus,
+      classNumber: studentClassNumber.toString()
+    });
+  } catch (error) {
+    console.error('Error fetching IQ/Rank quizzes:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to fetch quizzes'
+    });
+  }
+});
+
+// Get IQ/Rank Boost questions for a specific quiz
 router.get('/iq-rank-questions', async (req, res) => {
   try {
-    const { classNumber, subject, difficulty } = req.query;
+    const { quizId, classNumber, subject, difficulty } = req.query;
     
     const student = await User.findById(req.userId)
       .populate('assignedClass', 'classNumber');
@@ -1077,8 +1156,41 @@ router.get('/iq-rank-questions', async (req, res) => {
     }
 
     const IQRankQuestion = (await import('../models/IQRankQuestion.js')).default;
+    const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
 
-    // Build query - filter by student's class
+    // If quizId is provided, get questions from that quiz
+    if (quizId) {
+      const quiz = await IQRankQuiz.findById(quizId)
+        .populate({
+          path: 'questions',
+          populate: { path: 'subject', select: 'name' }
+        });
+
+      if (!quiz) {
+        return res.status(404).json({
+          success: false,
+          message: 'Quiz not found'
+        });
+      }
+
+      // Verify quiz is for student's class
+      if (quiz.classNumber !== studentClassNumber.toString()) {
+        return res.status(403).json({
+          success: false,
+          message: 'Quiz not available for your class'
+        });
+      }
+
+      return res.json({
+        success: true,
+        data: quiz.questions || [],
+        questions: quiz.questions || [],
+        quiz: quiz,
+        classNumber: studentClassNumber.toString()
+      });
+    }
+
+    // Otherwise, return all questions (backward compatibility)
     const query = {
       classNumber: studentClassNumber.toString(),
       isActive: true
@@ -1114,7 +1226,7 @@ router.get('/iq-rank-questions', async (req, res) => {
 // Save IQ/Rank Boost quiz result
 router.post('/iq-rank-quiz-result', async (req, res) => {
   try {
-    const { subjectId, totalQuestions, correctAnswers, incorrectAnswers, unattempted, score, answers } = req.body;
+    const { quizId, subjectId, totalQuestions, correctAnswers, incorrectAnswers, unattempted, score, answers } = req.body;
     
     if (!subjectId || totalQuestions === undefined || score === undefined) {
       return res.status(400).json({
@@ -1150,14 +1262,16 @@ router.post('/iq-rank-quiz-result', async (req, res) => {
 
     const IQRankQuizResult = (await import('../models/IQRankQuizResult.js')).default;
 
-    // Check if result already exists for this user and subject
-    const existingResult = await IQRankQuizResult.findOne({
-      userId: req.userId,
-      subject: subjectId
-    });
+    // Check if result already exists for this user and quiz (or subject if no quizId)
+    const existingResult = await IQRankQuizResult.findOne(
+      quizId 
+        ? { userId: req.userId, quizId: quizId }
+        : { userId: req.userId, subject: subjectId }
+    );
 
     const resultData = {
       userId: req.userId,
+      quizId: quizId || null, // Include quizId if provided
       subject: subjectId,
       classNumber: studentClassNumber.toString(),
       totalQuestions,

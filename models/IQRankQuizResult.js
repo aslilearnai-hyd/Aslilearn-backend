@@ -6,6 +6,11 @@ const iqRankQuizResultSchema = new mongoose.Schema({
     ref: 'User',
     required: true
   },
+  quizId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'IQRankQuiz',
+    required: false // Optional for backward compatibility
+  },
   subject: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Subject',

@@ -365,6 +365,7 @@ router.post('/iq-rank-activities/generate-questions', async (req, res) => {
     // Import required models
     const Subject = (await import('../models/Subject.js')).default;
     const IQRankQuestion = (await import('../models/IQRankQuestion.js')).default;
+    const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
     const { geminiService } = await import('../services/gemini-service.cjs');
 
     // Get subject details
@@ -443,7 +444,23 @@ Requirements:
       });
     }
 
-    // Save questions to database
+    // Create a new quiz first
+    const quizTitle = `${subject.name} - Class ${classNumber} - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} - ${new Date().toLocaleDateString()}`;
+    const newQuiz = new IQRankQuiz({
+      title: quizTitle,
+      description: `IQ/Rank Boost Quiz for ${subject.name} - Class ${classNumber} (${difficulty} difficulty)`,
+      subject: subjectId,
+      classNumber: classNumber.toString(),
+      board: subject.board || 'ASLI_EXCLUSIVE_SCHOOLS',
+      difficulty: difficulty,
+      questions: [],
+      totalQuestions: questionsData.questions.length,
+      isActive: true,
+      generatedBy: 'super-admin'
+    });
+    await newQuiz.save();
+
+    // Save questions to database and associate with quiz
     const savedQuestions = [];
     for (const q of questionsData.questions) {
       // Ensure options array has correct format
@@ -483,14 +500,23 @@ Requirements:
       await question.save();
       await question.populate('subject', 'name');
       savedQuestions.push(question);
+      
+      // Add question to quiz
+      newQuiz.questions.push(question._id);
     }
 
-    console.log(`✅ Successfully generated and saved ${savedQuestions.length} questions`);
+    // Update quiz with all question IDs
+    await newQuiz.save();
+    await newQuiz.populate('subject', 'name');
+    await newQuiz.populate('questions');
+
+    console.log(`✅ Successfully generated and saved ${savedQuestions.length} questions in quiz: ${newQuiz._id}`);
 
     res.json({
       success: true,
-      message: `Successfully generated ${savedQuestions.length} questions`,
+      message: `Successfully generated ${savedQuestions.length} questions and created a new quiz`,
       data: {
+        quiz: newQuiz,
         questions: savedQuestions,
         count: savedQuestions.length
       }
