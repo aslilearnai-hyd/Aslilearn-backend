@@ -140,10 +140,10 @@ Format the response in a clear, structured manner with proper headings and secti
 };
 
 export const generateTestQuestions = async (subject, topic, gradeLevel, questionCount, difficulty) => {
-  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-  const genAI = new GoogleGenerativeAI(apiKey);
-  
-  const prompt = `Generate exactly ${questionCount} multiple-choice test questions for:
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const genAI = new GoogleGenerativeAI(apiKey);
+    
+    const prompt = `Generate exactly ${questionCount} multiple-choice test questions for:
 - Subject: ${subject}
 - Topic: ${topic}
 - Grade Level: ${gradeLevel}
@@ -190,20 +190,20 @@ ${prompt}`;
       console.log(`🔄 Trying model for quiz generation: ${modelName}`);
       const model = genAI.getGenerativeModel({ model: modelName });
       const result = await model.generateContent(fullPrompt);
-      const response = await result.response;
-      let text = response.text();
-      
-      // Clean up markdown code blocks if present
-      text = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
-      
+    const response = await result.response;
+    let text = response.text();
+    
+    // Clean up markdown code blocks if present
+    text = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
+    
       console.log(`✅ Successfully generated questions using ${modelName}`);
-      return text;
-    } catch (error) {
+    return text;
+  } catch (error) {
       console.log(`❌ Model ${modelName} failed: ${error.message}`);
       // If this is the last model, throw the error
       if (modelName === modelsToTry[modelsToTry.length - 1]) {
-        console.error('Error generating test questions:', error);
-        throw new Error(`Failed to generate test questions: ${error.message || 'Unknown error'}`);
+    console.error('Error generating test questions:', error);
+    throw new Error(`Failed to generate test questions: ${error.message || 'Unknown error'}`);
       }
       // Otherwise, try the next model
       continue;
@@ -212,10 +212,10 @@ ${prompt}`;
 };
 
 export const generateClasswork = async (subject, topic, gradeLevel, assignmentType) => {
-  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-  const genAI = new GoogleGenerativeAI(apiKey);
-  
-  const prompt = `
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const genAI = new GoogleGenerativeAI(apiKey);
+    
+    const prompt = `
     Create ${assignmentType} for:
     - Subject: ${subject}
     - Topic: ${topic}
@@ -245,14 +245,14 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
     try {
       console.log(`🔄 Trying model for classwork: ${modelName}`);
       const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
       console.log(`✅ Successfully generated classwork using ${modelName}`);
-      return response.text();
-    } catch (error) {
+    return response.text();
+  } catch (error) {
       console.log(`❌ Model ${modelName} failed: ${error.message}`);
       if (modelName === modelsToTry[modelsToTry.length - 1]) {
-        console.error('Error generating classwork:', error);
+    console.error('Error generating classwork:', error);
         throw new Error(`Failed to generate classwork: ${error.message || 'Unknown error'}`);
       }
       continue;
@@ -261,10 +261,10 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
 };
 
 export const generateSchedule = async (subjects, gradeLevels, timeSlots, preferences) => {
-  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-  const genAI = new GoogleGenerativeAI(apiKey);
-  
-  const prompt = `
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const genAI = new GoogleGenerativeAI(apiKey);
+    
+    const prompt = `
     Create a teaching schedule for:
     - Subjects: ${subjects.join(', ')}
     - Grade Levels: ${gradeLevels.join(', ')}
@@ -294,14 +294,14 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
     try {
       console.log(`🔄 Trying model for schedule: ${modelName}`);
       const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
+    const result = await model.generateContent(prompt);
+    const response = await result.response;
       console.log(`✅ Successfully generated schedule using ${modelName}`);
-      return response.text();
-    } catch (error) {
+    return response.text();
+  } catch (error) {
       console.log(`❌ Model ${modelName} failed: ${error.message}`);
       if (modelName === modelsToTry[modelsToTry.length - 1]) {
-        console.error('Error generating schedule:', error);
+    console.error('Error generating schedule:', error);
         throw new Error(`Failed to generate schedule: ${error.message || 'Unknown error'}`);
       }
       continue;

@@ -780,11 +780,18 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       return res.status(404).json({ message: 'User not found' });
     }
     
+    // Populate assigned subjects and class for students
+    await user.populate('assignedSubjects', 'name');
+    await user.populate('assignedClass', 'classNumber section assignedSubjects');
+    
     let userData = { 
       id: user._id, 
       email: user.email, 
       fullName: user.fullName, 
-      role: user.role 
+      role: user.role,
+      classNumber: user.classNumber,
+      assignedSubjects: user.assignedSubjects || [],
+      assignedClass: user.assignedClass || null
     };
 
     // If user is a teacher, fetch their subjects

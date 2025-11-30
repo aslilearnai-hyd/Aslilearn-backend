@@ -73,3 +73,5 @@ iqRankQuizSchema.index({ classNumber: 1, subject: 1, isActive: 1 });
 
 export default mongoose.model('IQRankQuiz', iqRankQuizSchema);
 
+
+
