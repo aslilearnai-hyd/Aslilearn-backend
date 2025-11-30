@@ -2906,11 +2906,24 @@ app.patch('/api/admin/users/:id/toggle-status', async (req, res) => {
   }
 });
 
-// CSV upload endpoint
+// CSV upload endpoint - Add CORS preflight
+app.options('/api/admin/users/upload', (req, res) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+  res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.sendStatus(200);
+});
+
 app.post('/api/admin/users/upload', upload.single('file'), async (req, res) => {
   try {
     console.log('CSV upload request received');
     console.log('File:', req.file ? `${req.file.originalname} (${req.file.size} bytes)` : 'No file');
+    console.log('Request headers:', {
+      authorization: req.headers.authorization ? 'Present' : 'Missing',
+      'content-type': req.headers['content-type'],
+      origin: req.headers.origin
+    });
     
     if (!req.file) {
       console.log('No file uploaded');
@@ -3159,6 +3172,202 @@ app.post('/api/admin/users/upload', upload.single('file'), async (req, res) => {
 
   } catch (error) {
     console.error('Failed to upload CSV:', error);
+    console.error('Error stack:', error.stack);
+    res.status(500).json({ 
+      message: 'Failed to upload CSV',
+      error: error.message,
+      hint: error.message.includes('board') ? 'Make sure your admin account has a board assigned' : 'Please check the CSV format and try again'
+    });
+  }
+});
+
+// Teacher CSV Upload Endpoint
+app.options('/api/admin/teachers/upload', (req, res) => {
+  res.header('Access-Control-Allow-Origin', req.headers.origin || '*');
+  res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  res.sendStatus(200);
+});
+
+app.post('/api/admin/teachers/upload', requireAuth, requireAdmin, upload.single('file'), async (req, res) => {
+  try {
+    console.log('Teacher CSV upload request received');
+    console.log('File:', req.file ? `${req.file.originalname} (${req.file.size} bytes)` : 'No file');
+    console.log('Request headers:', {
+      authorization: req.headers.authorization ? 'Present' : 'Missing',
+      'content-type': req.headers['content-type'],
+      origin: req.headers.origin
+    });
+    
+    if (!req.file) {
+      console.log('No file uploaded');
+      return res.status(400).json({ message: 'No file uploaded' });
+    }
+
+    // Get admin ID from JWT token
+    const token = req.header('Authorization')?.replace('Bearer ', '');
+    if (!token) {
+      return res.status(401).json({ message: 'No token provided' });
+    }
+
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+    const adminId = decoded.userId;
+    console.log('Admin ID for teacher CSV upload:', adminId);
+
+    // Get admin to inherit board and school
+    const admin = await User.findById(adminId).select('board schoolName role');
+    if (!admin || admin.role !== 'admin') {
+      return res.status(404).json({ message: 'Admin not found' });
+    }
+
+    if (!admin.board) {
+      return res.status(400).json({ 
+        message: 'Admin must have a board assigned before uploading teachers. Please update your admin profile first.' 
+      });
+    }
+
+    console.log('Admin board:', admin.board, 'School:', admin.schoolName);
+
+    // Convert buffer to string
+    const csvData = req.file.buffer.toString('utf8');
+    
+    // Parse CSV data - handle both \n and \r\n line endings
+    const lines = csvData.split(/\r?\n/).filter(line => line.trim());
+    if (lines.length < 2) {
+      return res.status(400).json({ message: 'CSV file must have at least a header and one data row' });
+    }
+
+    // Helper function to parse CSV line (handles quoted values)
+    const parseCSVLine = (line) => {
+      const result = [];
+      let current = '';
+      let inQuotes = false;
+      
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        const nextChar = line[i + 1];
+        
+        if (char === '"') {
+          if (inQuotes && nextChar === '"') {
+            current += '"';
+            i++; // Skip next quote
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim());
+          current = '';
+        } else {
+          current += char;
+        }
+      }
+      result.push(current.trim()); // Add last field
+      return result;
+    };
+
+    // Get header row
+    const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/^"|"$/g, ''));
+    
+    // Validate headers
+    const requiredHeaders = ['name', 'email'];
+    const missingHeaders = requiredHeaders.filter(h => !headers.includes(h));
+    
+    if (missingHeaders.length > 0) {
+      return res.status(400).json({ 
+        message: `Missing required headers: ${missingHeaders.join(', ')}` 
+      });
+    }
+
+    const createdTeachers = [];
+    const errors = [];
+
+    // Process each data row
+    for (let i = 1; i < lines.length; i++) {
+      try {
+        const values = parseCSVLine(lines[i]).map(v => v.trim().replace(/^"|"$/g, ''));
+        
+        if (values.length !== headers.length) {
+          errors.push(`Row ${i + 1}: Column count mismatch`);
+          continue;
+        }
+
+        // Create teacher object
+        const teacherData = {};
+        headers.forEach((header, index) => {
+          teacherData[header] = values[index];
+        });
+
+        // Check if teacher already exists
+        const existingTeacher = await Teacher.findOne({ email: teacherData.email });
+        if (existingTeacher) {
+          errors.push(`Row ${i + 1}: Teacher with email ${teacherData.email} already exists`);
+          continue;
+        }
+
+        // Hash password (default password)
+        const hashedPassword = await bcrypt.hash('Password123', 12);
+
+        // Parse subjects (comma-separated)
+        let subjectIds = [];
+        if (teacherData.subjects) {
+          const subjectNames = teacherData.subjects.split(',').map(s => s.trim()).filter(s => s);
+          // Find subjects by name
+          for (const subjectName of subjectNames) {
+            const subject = await Subject.findOne({ 
+              name: { $regex: new RegExp(`^${subjectName}$`, 'i') },
+              assignedAdmin: adminId
+            });
+            if (subject) {
+              subjectIds.push(subject._id);
+            } else {
+              errors.push(`Row ${i + 1}: Subject "${subjectName}" not found. Please create the subject first.`);
+            }
+          }
+        }
+
+        // Create new teacher
+        const newTeacher = new Teacher({
+          fullName: teacherData.name,
+          email: teacherData.email,
+          phone: teacherData.phone || '',
+          department: teacherData.department || '',
+          qualifications: teacherData.qualifications || '',
+          subjects: subjectIds,
+          password: hashedPassword,
+          isActive: true,
+          assignedAdmin: adminId,
+          board: admin.board,
+          schoolName: admin.schoolName || ''
+        });
+
+        await newTeacher.save();
+        createdTeachers.push({
+          id: newTeacher._id,
+          name: newTeacher.fullName,
+          email: newTeacher.email,
+          department: newTeacher.department,
+          subjects: subjectIds.length
+        });
+
+      } catch (error) {
+        errors.push(`Row ${i + 1}: ${error.message}`);
+      }
+    }
+
+    let message = `CSV processed successfully. Created ${createdTeachers.length} teachers.`;
+    if (errors.length > 0) {
+      message += ` ${errors.length} error(s) occurred.`;
+    }
+
+    res.json({
+      message: message,
+      createdTeachers,
+      errors: errors.length > 0 ? errors : undefined
+    });
+
+  } catch (error) {
+    console.error('Failed to upload teacher CSV:', error);
     console.error('Error stack:', error.stack);
     res.status(500).json({ 
       message: 'Failed to upload CSV',
