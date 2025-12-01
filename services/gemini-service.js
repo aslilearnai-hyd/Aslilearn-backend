@@ -646,21 +646,74 @@ Generate:
 
 Make it comprehensive and exam-ready.`,
 
-    'mcq-generator': `Create multiple-choice questions with detailed explanations for:
+    'mcq-generator': `You are creating multiple-choice questions. DO NOT output JSON. Output ONLY Markdown format.
+
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
 Grade Level: ${params.gradeLevel || 'General'}
 Number of Questions: ${params.questionCount || 10}
 Difficulty: ${params.difficulty || 'medium'}
 
-Generate:
-1. Question Set Title
-2. Multiple Choice Questions (each with 4 options)
-3. Correct Answer for Each
-4. Detailed Explanation
-5. Distractor Analysis
+CRITICAL INSTRUCTIONS:
+1. Output format: Markdown ONLY (NOT JSON, NOT code blocks, just plain Markdown text)
+2. Mathematical notation: Use LaTeX with proper syntax
+   - Inline math: $\\int_0^1 x dx$
+   - Display math: $$\\int_0^{\\frac{\\pi}{2}} \\sin x dx$$
+   - Use single backslash: $\\int$, $\\frac{a}{b}$, $\\sqrt{x}$, $\\sin x$, $\\cos x$, $\\pi$, $e^x$
+3. Structure: Use Markdown headings, lists, and formatting
 
-Format as JSON with questions array.`
+Generate exactly ${params.questionCount || 10} questions in this Markdown format:
+
+## Question Set Title
+Class ${params.gradeLevel || 'General'} ${params.subject || 'General'}: ${params.topic || 'General Topic'} MCQs
+
+## Questions
+
+### Question 1
+Evaluate the definite integral: $$\\int_0^{\\frac{\\pi}{2}} \\frac{\\sin x}{\\sqrt{1 + \\cos^2 x}} dx$$
+
+**Options:**
+- A. $\\ln(1 + \\sqrt{2})$
+- B. $\\frac{\\pi}{4}$
+- C. $\\frac{\\pi}{2}$
+- D. $\\ln(2)$
+
+**Correct Answer:** A
+
+**Detailed Explanation:**
+
+Let's solve this step by step.
+
+**Step 1: Choose substitution**
+Let $u = \\cos x$. Then $du = -\\sin x dx$, so $\\sin x dx = -du$.
+
+**Step 2: Change limits**
+When $x = 0$, $u = \\cos(0) = 1$.
+When $x = \\frac{\\pi}{2}$, $u = \\cos(\\frac{\\pi}{2}) = 0$.
+
+**Step 3: Rewrite integral**
+$$\\int_0^{\\frac{\\pi}{2}} \\frac{\\sin x}{\\sqrt{1 + \\cos^2 x}} dx = \\int_1^0 \\frac{-du}{\\sqrt{1 + u^2}} = \\int_0^1 \\frac{du}{\\sqrt{1 + u^2}}$$
+
+**Step 4: Evaluate**
+This is a standard integral: $\\int \\frac{du}{\\sqrt{1 + u^2}} = \\ln|u + \\sqrt{1 + u^2}| + C$
+
+Applying limits:
+$$[\\ln|u + \\sqrt{1 + u^2}|]_0^1 = \\ln(1 + \\sqrt{2}) - \\ln(1) = \\ln(1 + \\sqrt{2})$$
+
+**Distractor Analysis:**
+- **A. $\\ln(1 + \\sqrt{2})$**: Correct answer from proper substitution and evaluation.
+- **B. $\\frac{\\pi}{4}$**: Students might confuse with $\\int_0^1 \\frac{dx}{1+x^2} = \\frac{\\pi}{4}$.
+- **C. $\\frac{\\pi}{2}$**: Common mistake from forgetting the substitution factor or incorrect limit evaluation.
+- **D. $\\ln(2)$**: Error in evaluating the logarithm expression or simplification mistake.
+
+[Continue with Question 2, 3, etc. following the same format]
+
+Remember:
+- NO JSON format
+- Use Markdown headings and lists
+- All math in LaTeX with proper syntax
+- Questions appropriate for ${params.gradeLevel || 'General'} level
+- Difficulty: ${params.difficulty || 'medium'}`
   };
 
   let prompt = toolPrompts[toolType] || `Generate content for ${toolType} with the following parameters: ${JSON.stringify(params)}`;
