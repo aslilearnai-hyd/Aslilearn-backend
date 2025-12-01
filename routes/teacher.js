@@ -14,7 +14,8 @@ import {
   createLessonPlan,
   createTestQuestions,
   createClasswork,
-  createSchedule
+  createSchedule,
+  createTeacherTool
 } from '../controllers/aiToolsController.js';
 import Video from '../models/Video.js';
 import Assessment from '../models/Assessment.js';
@@ -214,6 +215,7 @@ router.post('/ai/lesson-plan', createLessonPlan);
 router.post('/ai/test-questions', createTestQuestions);
 router.post('/ai/classwork', createClasswork);
 router.post('/ai/schedule', createSchedule);
+router.post('/ai/tool', createTeacherTool);
 
 // Grading endpoint
 router.post('/grade-work', upload.single('file'), async (req, res) => {

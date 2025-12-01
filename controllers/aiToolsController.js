@@ -2,7 +2,8 @@ import {
   generateLessonPlan,
   generateTestQuestions,
   generateClasswork,
-  generateSchedule
+  generateSchedule,
+  generateTeacherTool
 } from '../services/gemini-service.js';
 
 // Generate Lesson Plan
@@ -166,6 +167,43 @@ export const createSchedule = async (req, res) => {
     res.status(500).json({ 
       success: false, 
       message: 'Failed to generate schedule' 
+    });
+  }
+};
+
+// Generic Teacher Tool Generator
+export const createTeacherTool = async (req, res) => {
+  try {
+    const { toolType, ...params } = req.body;
+    const teacherId = req.teacherId;
+
+    if (!toolType) {
+      return res.status(400).json({
+        success: false,
+        message: 'Tool type is required'
+      });
+    }
+
+    const result = await generateTeacherTool(toolType, params);
+
+    res.json({
+      success: true,
+      data: {
+        content: result,
+        toolType,
+        metadata: {
+          ...params,
+          generatedAt: new Date(),
+          teacherId
+        }
+      }
+    });
+  } catch (error) {
+    console.error('Create teacher tool error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: `Failed to generate ${req.body.toolType || 'tool'}`,
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 };

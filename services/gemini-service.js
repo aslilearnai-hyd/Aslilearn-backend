@@ -309,6 +309,291 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
   }
 };
 
+// Generic teacher tool generator
+export const generateTeacherTool = async (toolType, params) => {
+  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+  const genAI = new GoogleGenerativeAI(apiKey);
+  
+  // Define prompts for each tool type
+  const toolPrompts = {
+    'activity-project-generator': `Create engaging activities and projects for:
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Grade Level: ${params.gradeLevel || 'General'}
+Class: ${params.className || ''}
+
+Generate:
+1. Activity Title and Description
+2. Learning Objectives
+3. Materials Needed
+4. Step-by-Step Instructions
+5. Expected Outcomes
+6. Assessment Criteria
+7. Extension Activities
+8. Safety Considerations (if applicable)
+
+Make it engaging, hands-on, and aligned with curriculum standards.`,
+
+    'worksheet-generator': `Design custom worksheets with exercises and problems for:
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Grade Level: ${params.gradeLevel || 'General'}
+Number of Questions: ${params.questionCount || 10}
+Difficulty: ${params.difficulty || 'medium'}
+
+Generate:
+1. Worksheet Title
+2. Instructions
+3. Multiple types of exercises (fill-in-the-blank, short answer, problem-solving)
+4. Answer Key
+5. Grading Rubric
+
+Make it comprehensive and appropriate for the grade level.`,
+
+    'concept-mastery-helper': `Break down complex concepts into digestible lessons for:
+Subject: ${params.subject || 'General'}
+Concept: ${params.concept || params.topic || 'General Concept'}
+Grade Level: ${params.gradeLevel || 'General'}
+
+Generate:
+1. Concept Overview
+2. Key Components Breakdown
+3. Step-by-Step Explanation
+4. Real-World Examples
+5. Common Misconceptions
+6. Practice Exercises
+7. Summary and Key Takeaways
+
+Make it clear, simple, and easy to understand.`,
+
+    'lesson-planner': `Create a comprehensive, detailed lesson plan for IIT JEE Mains preparation:
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Grade Level: ${params.gradeLevel || 'General'}
+Duration: ${params.duration || 90} minutes
+
+This is for IIT JEE Mains coaching, so please provide a structured lesson plan with:
+1. Learning Objectives (3-5 JEE-specific goals)
+2. Prerequisites and Previous Knowledge Required
+3. Materials Needed
+4. Introduction/Warm-up (5-10 minutes)
+5. Main Content Delivery (with detailed time breakdown)
+6. Practice Problems (JEE Mains level)
+7. Assessment/Evaluation (JEE-style questions)
+8. Homework/Assignment
+9. Common Mistakes and Tips
+10. Next Class Preview
+
+Format the response in a clear, structured manner with proper headings and sections.`,
+
+    'homework-creator': `Generate meaningful homework assignments for:
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Grade Level: ${params.gradeLevel || 'General'}
+Duration: ${params.duration || '30 minutes'}
+
+Generate:
+1. Assignment Title
+2. Learning Objectives
+3. Instructions
+4. Questions/Problems
+5. Expected Time to Complete
+6. Answer Key (for teacher)
+7. Grading Criteria
+
+Make it meaningful, relevant, and appropriate for the grade level.`,
+
+    'rubrics-evaluation-generator': `Create clear assessment criteria and rubrics for:
+Subject: ${params.subject || 'General'}
+Assignment Type: ${params.assignmentType || 'General Assignment'}
+Grade Level: ${params.gradeLevel || 'General'}
+
+Generate:
+1. Rubric Title
+2. Assessment Criteria (4-6 criteria)
+3. Performance Levels (Excellent, Good, Satisfactory, Needs Improvement)
+4. Point Distribution
+5. Detailed Descriptors for Each Level
+6. Total Points
+7. Grading Guidelines
+
+Make it clear, fair, and comprehensive.`,
+
+    'learning-outcomes-generator': `Define measurable learning outcomes for:
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Grade Level: ${params.gradeLevel || 'General'}
+
+Generate:
+1. Course/Unit Title
+2. Overall Learning Goals
+3. Specific Learning Outcomes (5-8 outcomes)
+4. Assessment Methods for Each Outcome
+5. Success Criteria
+6. Bloom's Taxonomy Level
+7. Alignment with Standards
+
+Make them specific, measurable, achievable, relevant, and time-bound (SMART).`,
+
+    'story-passage-creator': `Generate engaging stories and reading passages for:
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Grade Level: ${params.gradeLevel || 'General'}
+Length: ${params.length || 'medium'}
+
+Generate:
+1. Story/Passage Title
+2. The Story/Passage Content
+3. Reading Level Information
+4. Vocabulary Words
+5. Comprehension Questions
+6. Discussion Questions
+7. Extension Activities
+
+Make it engaging, age-appropriate, and educational.`,
+
+    'short-notes-summaries-maker': `Condense complex topics into concise notes for:
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Grade Level: ${params.gradeLevel || 'General'}
+
+Generate:
+1. Topic Title
+2. Key Points Summary
+3. Important Definitions
+4. Formulas/Equations (if applicable)
+5. Quick Reference Guide
+6. Mnemonics (if helpful)
+7. Related Topics
+
+Make it concise, clear, and easy to review.`,
+
+    'flashcard-generator': `Build study flashcards for quick revision for:
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Grade Level: ${params.gradeLevel || 'General'}
+Number of Cards: ${params.cardCount || 20}
+
+Generate:
+1. Flashcard Set Title
+2. List of Flashcards (Front: Question/Concept, Back: Answer/Explanation)
+3. Study Tips
+4. Review Schedule Suggestions
+
+Format each card clearly with front and back content.`,
+
+    'report-card-generator': `Generate comprehensive student progress reports with feedback for:
+Student Name: ${params.studentName || 'Student'}
+Subject: ${params.subject || 'General'}
+Grade Level: ${params.gradeLevel || 'General'}
+Term: ${params.term || 'Current Term'}
+
+Generate:
+1. Student Information
+2. Academic Performance Summary
+3. Subject-wise Breakdown
+4. Strengths and Achievements
+5. Areas for Improvement
+6. Teacher Comments
+7. Recommendations
+8. Next Steps
+
+Make it constructive, encouraging, and detailed.`,
+
+    'student-skill-tracker': `Monitor and track student skill development for:
+Student Name: ${params.studentName || 'Student'}
+Subject: ${params.subject || 'General'}
+Grade Level: ${params.gradeLevel || 'General'}
+
+Generate:
+1. Skill Assessment Framework
+2. Current Skill Levels
+3. Skill Categories (e.g., Problem Solving, Critical Thinking, Communication)
+4. Progress Tracking Template
+5. Development Goals
+6. Action Plan
+7. Monitoring Schedule
+
+Make it comprehensive and actionable.`,
+
+    'daily-class-plan-maker': `Organize daily teaching schedule efficiently for:
+Date: ${params.date || 'Today'}
+Subjects: ${params.subjects || 'General'}
+Grade Level: ${params.gradeLevel || 'General'}
+Time Slots: ${params.timeSlots || 'Standard'}
+
+Generate:
+1. Daily Schedule Overview
+2. Time-Blocked Plan
+3. Activities for Each Period
+4. Materials Needed
+5. Assessment Checkpoints
+6. Notes and Reminders
+
+Make it organized, efficient, and practical.`,
+
+    'exam-question-paper-generator': `Create comprehensive exam papers with varying difficulty for:
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Grade Level: ${params.gradeLevel || 'General'}
+Duration: ${params.duration || '90 minutes'}
+Difficulty Mix: ${params.difficulty || 'mixed'}
+
+Generate:
+1. Exam Paper Header
+2. Instructions
+3. Questions (mix of easy, medium, hard)
+4. Marking Scheme
+5. Answer Key
+6. Time Allocation Suggestions
+
+Make it comprehensive and exam-ready.`,
+
+    'mcq-generator': `Create multiple-choice questions with detailed explanations for:
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Grade Level: ${params.gradeLevel || 'General'}
+Number of Questions: ${params.questionCount || 10}
+Difficulty: ${params.difficulty || 'medium'}
+
+Generate:
+1. Question Set Title
+2. Multiple Choice Questions (each with 4 options)
+3. Correct Answer for Each
+4. Detailed Explanation
+5. Distractor Analysis
+
+Format as JSON with questions array.`
+  };
+
+  const prompt = toolPrompts[toolType] || `Generate content for ${toolType} with the following parameters: ${JSON.stringify(params)}`;
+
+  const modelsToTry = [
+    'gemini-2.5-flash',
+    'gemini-2.0-flash',
+    'gemini-pro',
+    'gemini-1.5-flash'
+  ];
+
+  for (const modelName of modelsToTry) {
+    try {
+      console.log(`🔄 Trying model for ${toolType}: ${modelName}`);
+      const model = genAI.getGenerativeModel({ model: modelName });
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      console.log(`✅ Successfully generated ${toolType} using ${modelName}`);
+      return response.text();
+    } catch (error) {
+      console.log(`❌ Model ${modelName} failed: ${error.message}`);
+      if (modelName === modelsToTry[modelsToTry.length - 1]) {
+        console.error(`Error generating ${toolType}:`, error);
+        throw new Error(`Failed to generate ${toolType}: ${error.message || 'Unknown error'}`);
+      }
+      continue;
+    }
+  }
+};
+
 const geminiService = new GeminiService();
 
 export default geminiService;
