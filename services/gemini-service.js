@@ -751,4 +751,473 @@ Remember:
 
 const geminiService = new GeminiService();
 
+// Student Tool Generator
+export const generateStudentTool = async (toolType, params) => {
+  const { GoogleGenerativeAI } = await import('@google/generative-ai');
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+
+  const toolPrompts = {
+    'smart-study-guide-generator': `Create a comprehensive, personalized study guide.
+
+Class: ${params.gradeLevel || 'General'}
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Focus Areas: ${params.focusAreas || 'All areas'}
+
+IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). For mathematical expressions, use LaTeX notation with $ for inline math and $$ for block/display math.
+
+Generate a detailed study guide with:
+
+## Study Guide: [Topic Name]
+
+### Overview
+Brief introduction to the topic and its importance.
+
+### Key Concepts
+List and explain the main concepts with examples.
+
+### Important Formulas & Theorems
+- Formula 1: [with explanation]
+- Formula 2: [with explanation]
+- Use LaTeX for math: $E = mc^2$, $\\int f(x)dx$
+
+### Study Tips
+- Practical tips for mastering this topic
+- Common mistakes to avoid
+- Memory techniques
+
+### Practice Recommendations
+- Suggested exercises
+- Practice problems with solutions
+- Additional resources
+
+### Revision Checklist
+- [ ] Concept 1
+- [ ] Concept 2
+- [ ] Practice problems
+
+Make it comprehensive, well-structured, and suitable for ${params.gradeLevel || 'General'} level.`,
+
+    'concept-breakdown-explainer': `Break down a complex concept into simple, easy-to-understand explanations.
+
+Class: ${params.gradeLevel || 'General'}
+Subject: ${params.subject || 'General'}
+Concept: ${params.concept || 'General Concept'}
+
+IMPORTANT: Format your response using Markdown. Use LaTeX for math expressions.
+
+Provide:
+
+## Concept Breakdown: [Concept Name]
+
+### What is [Concept]?
+Simple definition and explanation.
+
+### Why is it Important?
+Real-world applications and significance.
+
+### Step-by-Step Explanation
+Break down into digestible steps:
+1. Step 1: [Explanation]
+2. Step 2: [Explanation]
+3. Step 3: [Explanation]
+
+### Visual Analogy
+Use relatable analogies to explain the concept.
+
+### Examples
+- Example 1: [Detailed example]
+- Example 2: [Detailed example]
+
+### Common Misconceptions
+- Misconception 1: [Correct explanation]
+- Misconception 2: [Correct explanation]
+
+### Practice Questions
+A few questions to test understanding.
+
+Make it clear, simple, and appropriate for ${params.gradeLevel || 'General'} level.`,
+
+    'personalized-revision-planner': `Create a personalized revision schedule.
+
+Class: ${params.gradeLevel || 'General'}
+Subjects: ${params.subjects || 'All subjects'}
+Exam Date: ${params.examDate || 'Not specified'}
+Study Hours Per Day: ${params.studyHoursPerDay || 4} hours
+
+IMPORTANT: Format your response using Markdown.
+
+Generate:
+
+## Personalized Revision Plan
+
+### Overview
+Summary of the revision plan.
+
+### Daily Schedule
+Break down each day with:
+- Morning session (topics)
+- Afternoon session (topics)
+- Evening session (topics)
+
+### Weekly Breakdown
+- Week 1: [Subjects and topics]
+- Week 2: [Subjects and topics]
+- Continue for all weeks
+
+### Subject-wise Plan
+For each subject:
+- Topics to cover
+- Time allocation
+- Revision strategy
+
+### Tips for Success
+- Study techniques
+- Break schedules
+- Health and wellness tips
+
+### Progress Tracking
+Create a checklist for tracking progress.
+
+Make it realistic, achievable, and tailored to the student's needs.`,
+
+    'smart-qa-practice-generator': `Generate practice questions with detailed answers.
+
+Class: ${params.gradeLevel || 'General'}
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Number of Questions: ${params.questionCount || 10}
+Difficulty: ${params.difficulty || 'medium'}
+
+IMPORTANT: Format using Markdown. Use LaTeX for math.
+
+Generate:
+
+## Practice Questions: [Topic]
+
+### Question Set
+
+For each question, provide:
+
+**Question [Number]**
+[Question text with LaTeX math if needed]
+
+**Answer:**
+[Detailed step-by-step answer]
+
+**Key Points:**
+- Important concepts covered
+- Tips for solving similar problems
+
+**Practice Tip:**
+[Additional guidance]
+
+Make questions appropriate for ${params.gradeLevel || 'General'} level and ${params.difficulty || 'medium'} difficulty.`,
+
+    'chapter-summary-creator': `Create a concise chapter summary.
+
+Class: ${params.gradeLevel || 'General'}
+Subject: ${params.subject || 'General'}
+Chapter/Topic: ${params.chapter || 'General Chapter'}
+
+IMPORTANT: Format using Markdown. Use LaTeX for math.
+
+Provide:
+
+## Chapter Summary: [Chapter Name]
+
+### Overview
+Brief introduction to the chapter.
+
+### Main Topics Covered
+1. Topic 1: [Summary]
+2. Topic 2: [Summary]
+3. Topic 3: [Summary]
+
+### Key Concepts
+- Concept 1: [Explanation]
+- Concept 2: [Explanation]
+
+### Important Formulas/Definitions
+- Formula 1: [with context]
+- Definition 1: [with context]
+
+### Summary Points
+- Point 1
+- Point 2
+- Point 3
+
+### Quick Review
+A condensed version for last-minute revision.
+
+Make it concise yet comprehensive for ${params.gradeLevel || 'General'} level.`,
+
+    'key-points-formula-extractor': `Extract key points and formulas from a topic.
+
+Class: ${params.gradeLevel || 'General'}
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+
+IMPORTANT: Format using Markdown. Use LaTeX for math formulas.
+
+Generate:
+
+## Key Points & Formulas: [Topic]
+
+### Essential Formulas
+- **Formula 1**: $[LaTeX formula]$ - [Explanation and when to use]
+- **Formula 2**: $[LaTeX formula]$ - [Explanation and when to use]
+
+### Key Definitions
+- **Term 1**: [Definition]
+- **Term 2**: [Definition]
+
+### Important Theorems/Principles
+- Theorem 1: [Statement and significance]
+- Principle 1: [Statement and application]
+
+### Critical Points to Remember
+- Point 1
+- Point 2
+- Point 3
+
+### Quick Reference
+A condensed cheat sheet format.
+
+Make it focused on the most important information for ${params.gradeLevel || 'General'} level.`,
+
+    'quick-assignment-builder': `Build a structured assignment.
+
+Class: ${params.gradeLevel || 'General'}
+Subject: ${params.subject || 'General'}
+Topic: ${params.topic || 'General Topic'}
+Assignment Type: ${params.assignmentType || 'General'}
+
+IMPORTANT: Format using Markdown.
+
+Create:
+
+## Assignment: [Topic]
+
+### Assignment Overview
+- Title: [Assignment Title]
+- Subject: [Subject]
+- Topic: [Topic]
+- Type: [Assignment Type]
+
+### Objectives
+- Objective 1
+- Objective 2
+- Objective 3
+
+### Instructions
+Step-by-step instructions for completing the assignment.
+
+### Requirements
+- Requirement 1
+- Requirement 2
+- Requirement 3
+
+### Evaluation Criteria
+- Criterion 1: [Points/Percentage]
+- Criterion 2: [Points/Percentage]
+
+### Submission Guidelines
+- Format requirements
+- Deadline information
+- Submission method
+
+Make it clear, structured, and appropriate for ${params.gradeLevel || 'General'} level.`,
+
+    'exam-readiness-checker': `Assess exam readiness and provide recommendations.
+
+Class: ${params.gradeLevel || 'General'}
+Subject: ${params.subject || 'General'}
+Exam Type: ${params.examType || 'General Exam'}
+Exam Date: ${params.examDate || 'Not specified'}
+
+IMPORTANT: Format using Markdown.
+
+Provide:
+
+## Exam Readiness Assessment
+
+### Current Status
+Assessment of current preparation level.
+
+### Strengths
+- Strength 1
+- Strength 2
+- Strength 3
+
+### Areas Needing Improvement
+- Area 1: [Specific improvement needed]
+- Area 2: [Specific improvement needed]
+
+### Readiness Score
+Overall readiness percentage with breakdown.
+
+### Recommended Action Plan
+- Immediate actions (next 24 hours)
+- Short-term plan (next week)
+- Long-term plan (until exam)
+
+### Study Priorities
+Ranked list of topics to focus on.
+
+### Practice Recommendations
+- Types of practice needed
+- Resources to use
+- Mock tests to take
+
+### Exam Strategy
+- Time management tips
+- Question-solving approach
+- Stress management
+
+Make it actionable and encouraging for ${params.gradeLevel || 'General'} level.`,
+
+    'project-layout-designer': `Design a structured project layout.
+
+Class: ${params.gradeLevel || 'General'}
+Subject: ${params.subject || 'General'}
+Project Topic: ${params.projectTopic || 'General Topic'}
+Project Type: ${params.projectType || 'General'}
+
+IMPORTANT: Format using Markdown.
+
+Create:
+
+## Project Layout: [Project Topic]
+
+### Project Overview
+- Title: [Project Title]
+- Type: [Project Type]
+- Subject: [Subject]
+- Duration: [Estimated time]
+
+### Project Structure
+1. **Introduction**
+   - Purpose
+   - Objectives
+   - Scope
+
+2. **Main Content Sections**
+   - Section 1: [Description]
+   - Section 2: [Description]
+   - Section 3: [Description]
+
+3. **Methodology/Approach**
+   - Step-by-step approach
+   - Tools and materials needed
+
+4. **Results/Findings**
+   - Expected outcomes
+   - How to present results
+
+5. **Conclusion**
+   - Summary
+   - Key takeaways
+
+### Timeline
+- Week 1: [Tasks]
+- Week 2: [Tasks]
+- Continue as needed
+
+### Resources Needed
+- Materials
+- References
+- Tools
+
+### Presentation Guidelines
+- Format requirements
+- Visual elements
+- Presentation tips
+
+Make it comprehensive and suitable for ${params.gradeLevel || 'General'} level.`,
+
+    'goal-motivation-planner': `Create a goal-setting and motivation plan.
+
+Class: ${params.gradeLevel || 'General'}
+Goal Type: ${params.goalType || 'Academic'}
+Timeframe: ${params.timeframe || '1 month'}
+Goal Description: ${params.description || 'General goals'}
+
+IMPORTANT: Format using Markdown.
+
+Generate:
+
+## Goal & Motivation Plan
+
+### Goal Statement
+Clear, specific goal statement.
+
+### Why This Goal Matters
+Personal significance and benefits.
+
+### SMART Goals Breakdown
+- **Specific**: [Specific goal]
+- **Measurable**: [How to measure]
+- **Achievable**: [Feasibility]
+- **Relevant**: [Relevance]
+- **Time-bound**: [Timeline]
+
+### Action Plan
+- Week 1: [Actions]
+- Week 2: [Actions]
+- Continue for the timeframe
+
+### Milestones
+- Milestone 1: [Date and achievement]
+- Milestone 2: [Date and achievement]
+
+### Motivation Strategies
+- Strategy 1: [How to stay motivated]
+- Strategy 2: [Reward system]
+- Strategy 3: [Accountability]
+
+### Obstacles & Solutions
+- Potential obstacle 1: [Solution]
+- Potential obstacle 2: [Solution]
+
+### Progress Tracking
+Methods to track and measure progress.
+
+### Daily Affirmations
+Positive statements to reinforce motivation.
+
+Make it inspiring, actionable, and tailored to the student's goals.`
+  };
+
+  let prompt = toolPrompts[toolType] || `Generate content for ${toolType} with the following parameters: ${JSON.stringify(params)}`;
+  
+  if (!prompt.includes('IMPORTANT: Format your response using Markdown')) {
+    prompt = `IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.\n\n${prompt}`;
+  }
+
+  const modelsToTry = [
+    'gemini-2.5-flash',
+    'gemini-2.0-flash',
+    'gemini-pro',
+    'gemini-1.5-flash'
+  ];
+
+  for (const modelName of modelsToTry) {
+    try {
+      console.log(`🔄 Trying model for student tool ${toolType}: ${modelName}`);
+      const model = genAI.getGenerativeModel({ model: modelName });
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      console.log(`✅ Successfully generated student tool ${toolType} using ${modelName}`);
+      return response.text();
+    } catch (error) {
+      console.log(`❌ Model ${modelName} failed: ${error.message}`);
+      if (modelName === modelsToTry[modelsToTry.length - 1]) {
+        console.error(`Error generating student tool ${toolType}:`, error);
+        throw new Error(`Failed to generate content: ${error.message}`);
+      }
+    }
+  }
+};
+
 export default geminiService;

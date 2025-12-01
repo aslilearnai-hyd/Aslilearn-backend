@@ -14,6 +14,7 @@ import {
   getStudentExamRanking,
   getAllStudentRankings
 } from '../controllers/studentRankingController.js';
+import { generateStudentTool } from '../services/gemini-service.js';
 
 const router = express.Router();
 
@@ -2017,6 +2018,43 @@ router.post('/session-time', async (req, res) => {
   } catch (error) {
     console.error('Save session time error:', error);
     res.status(500).json({ success: false, message: 'Failed to save session time' });
+  }
+});
+
+// Student AI Tools Route
+router.post('/ai/tool', async (req, res) => {
+  try {
+    const { toolType, ...params } = req.body;
+    const userId = req.userId;
+
+    if (!toolType) {
+      return res.status(400).json({
+        success: false,
+        message: 'Tool type is required'
+      });
+    }
+
+    const content = await generateStudentTool(toolType, params);
+
+    res.json({
+      success: true,
+      data: {
+        content,
+        metadata: {
+          toolType,
+          params,
+          generatedAt: new Date(),
+          userId
+        }
+      }
+    });
+  } catch (error) {
+    console.error(`Create student tool (${req.body.toolType}) error:`, error);
+    res.status(500).json({
+      success: false,
+      message: error.message || `Failed to generate content for ${req.body.toolType}`,
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
   }
 });
 
