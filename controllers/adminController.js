@@ -2149,16 +2149,47 @@ export const promoteClasses = async (req, res) => {
       });
     }
     
+    // Convert classIds to ObjectIds if they are strings
+    const mongoose = (await import('mongoose')).default;
+    const objectIds = classIds.map(id => {
+      try {
+        // If it's already an ObjectId, return it
+        if (mongoose.Types.ObjectId.isValid(id)) {
+          return new mongoose.Types.ObjectId(id);
+        }
+        return id; // Return as-is if not valid ObjectId (shouldn't happen)
+      } catch (error) {
+        console.error(`Invalid class ID: ${id}`, error);
+        return null;
+      }
+    }).filter(id => id !== null);
+    
+    console.log('Promoting classes - Admin ID:', adminId);
+    console.log('Promoting classes - Class IDs received:', classIds);
+    console.log('Promoting classes - Converted ObjectIds:', objectIds);
+    
     // Find all classes belonging to this admin
     const classesToPromote = await Class.find({
-      _id: { $in: classIds },
+      _id: { $in: objectIds },
       assignedAdmin: adminId
     });
     
+    console.log('Promoting classes - Found classes to promote:', classesToPromote.length);
+    console.log('Promoting classes - Classes found:', classesToPromote.map(c => ({
+      id: c._id.toString(),
+      name: c.name,
+      classNumber: c.classNumber,
+      section: c.section
+    })));
+    
     if (classesToPromote.length === 0) {
+      console.error('No classes found to promote. Possible reasons:');
+      console.error('- Class IDs do not match any classes in database');
+      console.error('- Classes do not belong to this admin');
+      console.error('- Class IDs format is incorrect');
       return res.status(404).json({ 
         success: false, 
-        message: 'No classes found to promote' 
+        message: `No classes found to promote. Found ${objectIds.length} valid IDs but ${classesToPromote.length} matching classes.` 
       });
     }
     
@@ -2169,13 +2200,16 @@ export const promoteClasses = async (req, res) => {
     const User = (await import('../models/User.js')).default;
     
     for (const classDoc of classesToPromote) {
-      const currentClassNum = parseInt(classDoc.classNumber);
+      // Handle both positive and negative class numbers
+      const cleanClassNum = classDoc.classNumber.replace(/[^-\d]/g, '');
+      const currentClassNum = parseInt(cleanClassNum);
+      const absClassNum = Math.abs(currentClassNum);
       
-      if (isNaN(currentClassNum) || currentClassNum < 1 || currentClassNum > 12) {
+      if (isNaN(currentClassNum) || absClassNum < 1 || absClassNum > 12) {
         continue; // Skip invalid class numbers
       }
       
-      if (currentClassNum === 12) {
+      if (absClassNum === 12) {
         // Mark as finished academic career
         classDoc.isActive = false;
         classDoc.description = classDoc.description 
@@ -2184,9 +2218,10 @@ export const promoteClasses = async (req, res) => {
         // Note: status field may not exist in Class model, so we only set isActive
         await classDoc.save();
         finishedClasses.push({
-          id: classDoc._id,
+          id: classDoc._id.toString(),
           name: classDoc.name,
-          classNumber: classDoc.classNumber
+          classNumber: classDoc.classNumber,
+          section: classDoc.section
         });
         
         // Update all students in this class to mark as finished
@@ -2201,13 +2236,15 @@ export const promoteClasses = async (req, res) => {
         );
       } else {
         // Promote to next class
-        const nextClassNum = currentClassNum + 1;
+        // Preserve negative sign if original was negative
+        const nextClassNum = currentClassNum < 0 ? currentClassNum + 1 : currentClassNum + 1;
+        const nextClassNumStr = nextClassNum.toString();
         const oldClassNumber = classDoc.classNumber;
         const oldName = classDoc.name;
         
         // Check if a class with the new number already exists
         const existingClass = await Class.findOne({
-          classNumber: nextClassNum.toString(),
+          classNumber: nextClassNumStr,
           section: classDoc.section,
           assignedAdmin: adminId
         });
@@ -2232,15 +2269,18 @@ export const promoteClasses = async (req, res) => {
           await Class.findByIdAndDelete(classDoc._id);
           
           promotedClasses.push({
-            id: classDoc._id,
+            id: classDoc._id.toString(),
             oldName: oldName,
+            oldClassNumber: oldClassNumber,
             newName: existingClass.name,
+            newClassNumber: nextClassNumStr,
+            section: classDoc.section,
             merged: true
           });
         } else {
           // Update class to new number
-          classDoc.classNumber = nextClassNum.toString();
-          classDoc.name = `Class ${nextClassNum}${classDoc.section || ''}`;
+          classDoc.classNumber = nextClassNumStr;
+          classDoc.name = `Class ${nextClassNumStr}${classDoc.section || ''}`;
           classDoc.description = classDoc.description 
             ? `${classDoc.description} - Promoted from Class ${oldClassNumber}`
             : `Promoted from Class ${oldClassNumber}`;
@@ -2251,7 +2291,7 @@ export const promoteClasses = async (req, res) => {
             { assignedClass: classDoc._id },
             { 
               $set: { 
-                classNumber: nextClassNum.toString()
+                classNumber: nextClassNumStr
               }
             }
           );
