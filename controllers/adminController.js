@@ -2211,12 +2211,15 @@ export const promoteClasses = async (req, res) => {
       
       if (absClassNum === 12) {
         // Mark as finished academic career
+        console.log(`Marking class ${classDoc.name} (${classDoc.classNumber}${classDoc.section || ''}) as finished`);
         classDoc.isActive = false;
         classDoc.description = classDoc.description 
           ? `${classDoc.description} - Finished Academic Career`
           : 'Finished Academic Career';
         // Note: status field may not exist in Class model, so we only set isActive
         await classDoc.save();
+        console.log(`Class ${classDoc.name} marked as finished`);
+        
         finishedClasses.push({
           id: classDoc._id.toString(),
           name: classDoc.name,
@@ -2225,7 +2228,7 @@ export const promoteClasses = async (req, res) => {
         });
         
         // Update all students in this class to mark as finished
-        await User.updateMany(
+        const studentUpdateResult = await User.updateMany(
           { assignedClass: classDoc._id },
           { 
             $set: { 
@@ -2234,13 +2237,31 @@ export const promoteClasses = async (req, res) => {
             }
           }
         );
+        console.log(`Updated ${studentUpdateResult.modifiedCount} students to Finished status for class ${classDoc.name}`);
       } else {
         // Promote to next class
-        // Preserve negative sign if original was negative
-        const nextClassNum = currentClassNum < 0 ? currentClassNum + 1 : currentClassNum + 1;
+        // Logic: 
+        // - If abs value is 11, promote to 12 (regardless of sign)
+        // - If abs value < 11, promote to abs value + 1 (always positive)
+        // - Negative classes like -11, -10, -9 should become 12, 11, 10, etc.
+        let nextClassNum;
+        if (absClassNum === 11) {
+          // Class 11 or -11 → Class 12
+          nextClassNum = 12;
+        } else if (absClassNum < 11) {
+          // Class -10, -9, ..., -1, 1, 2, ..., 10 → Next positive class
+          // -10 → 11, -9 → 10, ..., -1 → 2, 1 → 2, 2 → 3, ..., 10 → 11
+          nextClassNum = absClassNum + 1;
+        } else {
+          // Should not reach here (absClassNum > 12 is filtered out)
+          nextClassNum = absClassNum + 1;
+        }
+        
         const nextClassNumStr = nextClassNum.toString();
         const oldClassNumber = classDoc.classNumber;
         const oldName = classDoc.name;
+        
+        console.log(`Promoting: ${oldClassNumber}${classDoc.section || ''} (numeric: ${currentClassNum}, abs: ${absClassNum}) → Class ${nextClassNumStr}${classDoc.section || ''}`);
         
         // Check if a class with the new number already exists
         const existingClass = await Class.findOne({
