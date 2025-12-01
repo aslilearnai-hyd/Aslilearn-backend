@@ -39,7 +39,8 @@ import {
   getAnalytics,
   getClasses,
   createClass,
-  deleteClass
+  deleteClass,
+  deleteAllClasses
 } from '../controllers/adminController.js';
 import {
   getViewableExams,
@@ -83,6 +84,7 @@ router.post('/students/:studentId/assign-class', assignClassToStudent);
 router.get('/classes', getClasses);
 router.post('/classes', createClass);
 router.delete('/classes/:id', deleteClass);
+router.delete('/classes/delete-all', deleteAllClasses);
 router.post('/classes/:classNumber/assign-subjects', assignSubjectsToClass);
 
 // Teacher Management Routes

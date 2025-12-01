@@ -2077,6 +2077,58 @@ export const deleteClass = async (req, res) => {
   }
 };
 
+// Delete All Classes
+export const deleteAllClasses = async (req, res) => {
+  try {
+    const adminId = req.adminId;
+    
+    if (!adminId) {
+      return res.status(401).json({ 
+        success: false, 
+        message: 'Admin ID not found' 
+      });
+    }
+    
+    // Find all classes belonging to this admin
+    const classesToDelete = await Class.find({
+      assignedAdmin: adminId
+    });
+    
+    if (classesToDelete.length === 0) {
+      return res.json({
+        success: true,
+        message: 'No classes found to delete',
+        deletedCount: 0
+      });
+    }
+    
+    // Delete all classes
+    const deleteResult = await Class.deleteMany({
+      assignedAdmin: adminId
+    });
+    
+    console.log('All classes deleted successfully:', {
+      deletedCount: deleteResult.deletedCount,
+      adminId: adminId
+    });
+    
+    res.json({
+      success: true,
+      message: `Successfully deleted ${deleteResult.deletedCount} class(es)`,
+      deletedCount: deleteResult.deletedCount
+    });
+  } catch (error) {
+    console.error('Delete all classes error:', error);
+    console.error('Delete all classes error stack:', error.stack);
+    
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to delete all classes',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
+
 // Create Class
 export const createClass = async (req, res) => {
   try {
