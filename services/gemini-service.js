@@ -316,75 +316,172 @@ export const generateTeacherTool = async (toolType, params) => {
   
   // Define prompts for each tool type
   const toolPrompts = {
-    'activity-project-generator': `Create engaging activities and projects for:
+    'activity-project-generator': `Create engaging activities and projects.
+
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
 Grade Level: ${params.gradeLevel || 'General'}
 Class: ${params.className || ''}
 
-Generate:
-1. Activity Title and Description
-2. Learning Objectives
-3. Materials Needed
-4. Step-by-Step Instructions
-5. Expected Outcomes
-6. Assessment Criteria
-7. Extension Activities
-8. Safety Considerations (if applicable)
+IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**).
+
+## Activity Title and Description
+Provide a catchy title and detailed description.
+
+## Learning Objectives
+List specific learning goals students will achieve.
+
+## Materials Needed
+- List all required materials
+- Equipment and resources
+- Digital tools (if applicable)
+
+## Step-by-Step Instructions
+Provide clear, numbered steps for implementation.
+
+## Expected Outcomes
+Describe what students will learn and produce.
+
+## Assessment Criteria
+- How to evaluate student work
+- Rubric or checklist
+
+## Extension Activities
+Optional activities for advanced students.
+
+## Safety Considerations
+Important safety notes (if applicable).
 
 Make it engaging, hands-on, and aligned with curriculum standards.`,
 
-    'worksheet-generator': `Design custom worksheets with exercises and problems for:
+    'worksheet-generator': `Design custom worksheets with exercises and problems.
+
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
 Grade Level: ${params.gradeLevel || 'General'}
 Number of Questions: ${params.questionCount || 10}
 Difficulty: ${params.difficulty || 'medium'}
 
-Generate:
-1. Worksheet Title
-2. Instructions
-3. Multiple types of exercises (fill-in-the-blank, short answer, problem-solving)
-4. Answer Key
-5. Grading Rubric
+IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**).
+
+## Worksheet Title
+Provide a clear, descriptive title.
+
+## Instructions
+Clear instructions for students on how to complete the worksheet.
+
+## Exercises
+Include ${params.questionCount || 10} questions with:
+- Fill-in-the-blank questions
+- Short answer questions
+- Problem-solving questions
+- Multiple choice questions (if applicable)
+
+Format each question clearly with proper numbering.
+
+## Answer Key
+Provide complete answers for all questions with explanations where needed.
+
+## Grading Rubric
+- Point distribution
+- Evaluation criteria
+- Partial credit guidelines
 
 Make it comprehensive and appropriate for the grade level.`,
 
-    'concept-mastery-helper': `Break down complex concepts into digestible lessons for:
+    'concept-mastery-helper': `Break down complex concepts into digestible lessons.
+
 Subject: ${params.subject || 'General'}
 Concept: ${params.concept || params.topic || 'General Concept'}
 Grade Level: ${params.gradeLevel || 'General'}
 
-Generate:
-1. Concept Overview
-2. Key Components Breakdown
-3. Step-by-Step Explanation
-4. Real-World Examples
-5. Common Misconceptions
-6. Practice Exercises
-7. Summary and Key Takeaways
+IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**).
+
+## Concept Overview
+Provide a clear introduction to the concept.
+
+## Key Components Breakdown
+Break down the concept into smaller, understandable parts:
+- Component 1
+- Component 2
+- Component 3
+
+## Step-by-Step Explanation
+Provide a detailed, step-by-step explanation of how the concept works.
+
+## Real-World Examples
+Include practical examples that students can relate to.
+
+## Common Misconceptions
+List common mistakes students make and how to avoid them.
+
+## Practice Exercises
+Provide exercises to reinforce understanding.
+
+## Summary and Key Takeaways
+Summarize the most important points students should remember.
 
 Make it clear, simple, and easy to understand.`,
 
-    'lesson-planner': `Create a comprehensive, detailed lesson plan for IIT JEE Mains preparation:
+    'lesson-planner': `Create a comprehensive, detailed lesson plan for IIT JEE Mains preparation.
+
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
 Grade Level: ${params.gradeLevel || 'General'}
 Duration: ${params.duration || 90} minutes
 
-This is for IIT JEE Mains coaching, so please provide a structured lesson plan with:
-1. Learning Objectives (3-5 JEE-specific goals)
-2. Prerequisites and Previous Knowledge Required
-3. Materials Needed
-4. Introduction/Warm-up (5-10 minutes)
-5. Main Content Delivery (with detailed time breakdown)
-6. Practice Problems (JEE Mains level)
-7. Assessment/Evaluation (JEE-style questions)
-8. Homework/Assignment
-9. Common Mistakes and Tips
-10. Next Class Preview
+IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.
 
-Format the response in a clear, structured manner with proper headings and sections.`,
+Provide a structured lesson plan with the following sections:
+
+## Learning Objectives
+List 3-5 specific JEE Mains learning goals that students will achieve.
+
+## Prerequisites
+- What students should know before this lesson
+- Foundation concepts required
+
+## Materials Needed
+- Textbooks and reference materials
+- Teaching aids and equipment
+- Digital resources
+
+## Introduction/Warm-up (5-10 minutes)
+- Hook to engage students
+- Connection to JEE pattern
+- Real-world applications
+
+## Main Content Delivery
+Break down the main content with time allocation:
+- Theory explanation (XX minutes)
+- Key concepts and formulas
+- Problem-solving techniques
+- JEE-level examples with step-by-step solutions
+
+## Practice Problems
+Provide 3-5 JEE Mains level practice problems with:
+- Problem statement
+- Step-by-step solution
+- Key concepts tested
+
+## Assessment/Evaluation
+Include JEE-style questions for quick assessment.
+
+## Homework/Assignment
+- Specific practice problems
+- Reference materials
+- Expected completion time
+
+## Common Mistakes and Tips
+- Typical errors students make
+- Tips to avoid mistakes
+- Exam strategy
+
+## Next Class Preview
+- What will be covered next
+- Preparation required
+
+Make the content detailed, practical, and focused on JEE Mains preparation.`,
 
     'homework-creator': `Generate meaningful homework assignments for:
 Subject: ${params.subject || 'General'}
@@ -566,7 +663,12 @@ Generate:
 Format as JSON with questions array.`
   };
 
-  const prompt = toolPrompts[toolType] || `Generate content for ${toolType} with the following parameters: ${JSON.stringify(params)}`;
+  let prompt = toolPrompts[toolType] || `Generate content for ${toolType} with the following parameters: ${JSON.stringify(params)}`;
+  
+  // Add markdown formatting instruction if not already present
+  if (!prompt.includes('IMPORTANT: Format your response using Markdown')) {
+    prompt = `IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.\n\n${prompt}`;
+  }
 
   const modelsToTry = [
     'gemini-2.5-flash',
