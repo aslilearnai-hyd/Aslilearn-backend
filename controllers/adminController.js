@@ -2129,6 +2129,168 @@ export const deleteAllClasses = async (req, res) => {
   }
 };
 
+// Promote Classes
+export const promoteClasses = async (req, res) => {
+  try {
+    const { classIds } = req.body;
+    const adminId = req.adminId;
+    
+    if (!adminId) {
+      return res.status(401).json({ 
+        success: false, 
+        message: 'Admin ID not found' 
+      });
+    }
+    
+    if (!classIds || !Array.isArray(classIds) || classIds.length === 0) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Class IDs are required' 
+      });
+    }
+    
+    // Find all classes belonging to this admin
+    const classesToPromote = await Class.find({
+      _id: { $in: classIds },
+      assignedAdmin: adminId
+    });
+    
+    if (classesToPromote.length === 0) {
+      return res.status(404).json({ 
+        success: false, 
+        message: 'No classes found to promote' 
+      });
+    }
+    
+    const promotedClasses = [];
+    const finishedClasses = [];
+    
+    // Import User model to update student class assignments
+    const User = (await import('../models/User.js')).default;
+    
+    for (const classDoc of classesToPromote) {
+      const currentClassNum = parseInt(classDoc.classNumber);
+      
+      if (isNaN(currentClassNum) || currentClassNum < 1 || currentClassNum > 12) {
+        continue; // Skip invalid class numbers
+      }
+      
+      if (currentClassNum === 12) {
+        // Mark as finished academic career
+        classDoc.isActive = false;
+        classDoc.description = classDoc.description 
+          ? `${classDoc.description} - Finished Academic Career`
+          : 'Finished Academic Career';
+        // Note: status field may not exist in Class model, so we only set isActive
+        await classDoc.save();
+        finishedClasses.push({
+          id: classDoc._id,
+          name: classDoc.name,
+          classNumber: classDoc.classNumber
+        });
+        
+        // Update all students in this class to mark as finished
+        await User.updateMany(
+          { assignedClass: classDoc._id },
+          { 
+            $set: { 
+              classNumber: 'Finished',
+              isActive: false
+            }
+          }
+        );
+      } else {
+        // Promote to next class
+        const nextClassNum = currentClassNum + 1;
+        const oldClassNumber = classDoc.classNumber;
+        const oldName = classDoc.name;
+        
+        // Check if a class with the new number already exists
+        const existingClass = await Class.findOne({
+          classNumber: nextClassNum.toString(),
+          section: classDoc.section,
+          assignedAdmin: adminId
+        });
+        
+        if (existingClass) {
+          // Merge students into existing class
+          await User.updateMany(
+            { assignedClass: classDoc._id },
+            { 
+              $set: { 
+                assignedClass: existingClass._id,
+                classNumber: nextClassNum.toString()
+              }
+            }
+          );
+          
+          // Update student count
+          existingClass.studentCount = (existingClass.studentCount || 0) + (classDoc.studentCount || 0);
+          await existingClass.save();
+          
+          // Delete the old class
+          await Class.findByIdAndDelete(classDoc._id);
+          
+          promotedClasses.push({
+            id: classDoc._id,
+            oldName: oldName,
+            newName: existingClass.name,
+            merged: true
+          });
+        } else {
+          // Update class to new number
+          classDoc.classNumber = nextClassNum.toString();
+          classDoc.name = `Class ${nextClassNum}${classDoc.section || ''}`;
+          classDoc.description = classDoc.description 
+            ? `${classDoc.description} - Promoted from Class ${oldClassNumber}`
+            : `Promoted from Class ${oldClassNumber}`;
+          await classDoc.save();
+          
+          // Update all students in this class
+          await User.updateMany(
+            { assignedClass: classDoc._id },
+            { 
+              $set: { 
+                classNumber: nextClassNum.toString()
+              }
+            }
+          );
+          
+          promotedClasses.push({
+            id: classDoc._id,
+            oldName: oldName,
+            newName: classDoc.name
+          });
+        }
+      }
+    }
+    
+    console.log('Classes promoted successfully:', {
+      promotedCount: promotedClasses.length,
+      finishedCount: finishedClasses.length,
+      adminId: adminId
+    });
+    
+    res.json({
+      success: true,
+      message: `Successfully promoted ${promotedClasses.length} class(es)${finishedClasses.length > 0 ? ` and marked ${finishedClasses.length} as finished` : ''}`,
+      promotedCount: promotedClasses.length,
+      finishedCount: finishedClasses.length,
+      promotedClasses,
+      finishedClasses
+    });
+  } catch (error) {
+    console.error('Promote classes error:', error);
+    console.error('Promote classes error stack:', error.stack);
+    
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to promote classes',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
+
 // Create Class
 export const createClass = async (req, res) => {
   try {

@@ -40,7 +40,8 @@ import {
   getClasses,
   createClass,
   deleteClass,
-  deleteAllClasses
+  deleteAllClasses,
+  promoteClasses
 } from '../controllers/adminController.js';
 import {
   getViewableExams,
@@ -85,6 +86,7 @@ router.get('/classes', getClasses);
 router.post('/classes', createClass);
 router.delete('/classes/delete-all', deleteAllClasses); // Must come before /classes/:id to avoid route conflict
 router.delete('/classes/:id', deleteClass);
+router.post('/classes/promote', promoteClasses);
 router.post('/classes/:classNumber/assign-subjects', assignSubjectsToClass);
 
 // Teacher Management Routes
