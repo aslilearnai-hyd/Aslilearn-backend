@@ -8,7 +8,6 @@ from llama_cpp import Llama
 
 app = FastAPI()
 
-# CORS middleware - allow all origins (adjust for production)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -17,28 +16,29 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Model path
-MODEL_PATH = os.path.expanduser("~/models/deepseek-v3-Q4_K_M.gguf")
+# Model is sharded into 9 files - llama-cpp-python will auto-detect all shards
+MODEL_PATH = os.path.expanduser("~/models/DeepSeek-V3-Q4_K_M/deepseek-v3-Q4_K_M-00001-of-00009.gguf")
 
-# Load model
 print("🔄 Loading DeepSeek-V3 model...")
 llm = None
 try:
+    # Check if first shard exists (all 9 shards should be in same directory)
     if os.path.exists(MODEL_PATH):
+        print(f"📁 Loading model from: {MODEL_PATH}")
+        print("💡 llama-cpp-python will automatically use all 9 sharded files")
         llm = Llama(
             model_path=MODEL_PATH,
-            n_ctx=4096,  # Context window
-            n_threads=2,  # CPU threads (adjust based on your droplet - 2 vCPUs)
-            n_gpu_layers=0,  # 0 for CPU only
+            n_ctx=4096,
+            n_threads=2,  # 2 vCPUs on your droplet
+            n_gpu_layers=0,
             verbose=False
         )
         print("✅ Model loaded successfully!")
     else:
         print(f"❌ Model file not found at: {MODEL_PATH}")
-        print("⚠️  Please download the model first")
+        print("💡 Make sure all 9 sharded files are in: ~/models/DeepSeek-V3-Q4_K_M/")
 except Exception as e:
     print(f"❌ Error loading model: {e}")
-    print(f"📁 Model path: {MODEL_PATH}")
     llm = None
 
 class Message(BaseModel):
@@ -56,23 +56,15 @@ async def health():
     return {
         "status": "ok" if llm else "error",
         "model": "deepseek-v3",
-        "model_loaded": llm is not None,
-        "model_path": MODEL_PATH
+        "model_loaded": llm is not None
     }
 
 @app.post("/v1/chat/completions")
 async def chat_completions(request: ChatRequest):
     if not llm:
-        return {
-            "error": {
-                "message": "Model not loaded. Please check if model file exists.",
-                "type": "server_error",
-                "model_path": MODEL_PATH
-            }
-        }, 500
+        return {"error": {"message": "Model not loaded"}}, 500
     
     try:
-        # Build prompt from messages
         prompt = ""
         for msg in request.messages:
             if msg.role == "system":
@@ -84,18 +76,15 @@ async def chat_completions(request: ChatRequest):
         
         prompt += "Assistant: "
         
-        # Generate response
         response = llm(
             prompt,
             max_tokens=request.max_tokens or 2000,
             temperature=request.temperature,
-            stop=["User:", "System:", "\n\nUser:", "\n\nSystem:"],
+            stop=["User:", "System:"],
             echo=False
         )
         
         generated_text = response["choices"][0]["text"].strip()
-        
-        # Calculate tokens (rough estimate)
         prompt_tokens = len(prompt.split())
         completion_tokens = len(generated_text.split())
         
@@ -119,16 +108,8 @@ async def chat_completions(request: ChatRequest):
             }
         }
     except Exception as e:
-        print(f"❌ Error generating response: {e}")
-        return {
-            "error": {
-                "message": str(e),
-                "type": "server_error"
-            }
-        }, 500
+        return {"error": {"message": str(e)}}, 500
 
 if __name__ == "__main__":
     print("🚀 Starting DeepSeek-V3 API server...")
-    print(f"📍 Server will run on: http://0.0.0.0:8000")
     uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
-
