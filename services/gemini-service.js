@@ -47,8 +47,9 @@ class GeminiService {
 
 // Export functions for backward compatibility with existing code
 export const generateLessonPlan = async (subject, topic, gradeLevel, duration) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-    const genAI = new GoogleGenerativeAI(apiKey);
+    // Use DeepSeek API instead of Gemini
+    const axios = (await import('axios')).default;
+    const deepseekUrl = process.env.DEEPSEEK_API_URL || 'http://localhost:8000/v1';
   
   // Try multiple models in order of preference
   const modelsToTry = [
@@ -116,26 +117,37 @@ This is for IIT JEE Mains coaching, so please provide a structured lesson plan w
 
 Format the response in a clear, structured manner with proper headings and sections. Make it practical, engaging, and focused on JEE Mains preparation.`;
 
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for lesson plan: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-    const result = await model.generateContent(prompt);
-    const response = await result.response;
-      const lessonPlan = response.text();
-      
-      console.log(`✅ Successfully generated lesson plan using ${modelName}`);
-      return lessonPlan;
-  } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      // If this is the last model, throw the error
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
-    console.error('Error generating lesson plan:', error);
-        throw new Error(`Failed to generate lesson plan: ${error.message || 'Unknown error'}`);
+  try {
+    console.log(`🔄 Generating lesson plan using DeepSeek-V3...`);
+    
+    const response = await axios.post(
+      `${deepseekUrl}/chat/completions`,
+      {
+        model: 'deepseek-v3',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content.'
+          },
+          {
+            role: 'user',
+            content: prompt
+          }
+        ],
+        temperature: 0.7,
+        max_tokens: 4000
+      },
+      {
+        timeout: 120000 // 2 minutes timeout
       }
-      // Otherwise, try the next model
-      continue;
-    }
+    );
+    
+    const lessonPlan = response.data.choices[0].message.content;
+    console.log(`✅ Successfully generated lesson plan using DeepSeek-V3`);
+    return lessonPlan;
+  } catch (error) {
+    console.error('❌ Error generating lesson plan:', error.message);
+    throw new Error(`Failed to generate lesson plan: ${error.message || 'Unknown error'}`);
   }
 };
 
@@ -311,8 +323,9 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
 
 // Generic teacher tool generator
 export const generateTeacherTool = async (toolType, params) => {
-  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
-  const genAI = new GoogleGenerativeAI(apiKey);
+  // Use DeepSeek API instead of Gemini
+  const axios = (await import('axios')).default;
+  const deepseekUrl = process.env.DEEPSEEK_API_URL || 'http://localhost:8000/v1';
   
   // Define prompts for each tool type
   const toolPrompts = {
@@ -723,29 +736,37 @@ Remember:
     prompt = `IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.\n\n${prompt}`;
   }
 
-  const modelsToTry = [
-    'gemini-2.5-flash',
-    'gemini-2.0-flash',
-    'gemini-pro',
-    'gemini-1.5-flash'
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for ${toolType}: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      console.log(`✅ Successfully generated ${toolType} using ${modelName}`);
-      return response.text();
-    } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
-        console.error(`Error generating ${toolType}:`, error);
-        throw new Error(`Failed to generate ${toolType}: ${error.message || 'Unknown error'}`);
+  try {
+    console.log(`🔄 Generating ${toolType} using DeepSeek-V3...`);
+    
+    const response = await axios.post(
+      `${deepseekUrl}/chat/completions`,
+      {
+        model: 'deepseek-v3',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content. Use LaTeX for mathematical expressions with $ for inline and $$ for display math.'
+          },
+          {
+            role: 'user',
+            content: prompt
+          }
+        ],
+        temperature: 0.7,
+        max_tokens: 4000
+      },
+      {
+        timeout: 120000 // 2 minutes timeout
       }
-      continue;
-    }
+    );
+    
+    const generatedText = response.data.choices[0].message.content;
+    console.log(`✅ Successfully generated ${toolType} using DeepSeek-V3`);
+    return generatedText;
+  } catch (error) {
+    console.error(`❌ Error generating ${toolType}:`, error.message);
+    throw new Error(`Failed to generate ${toolType}: ${error.message || 'Unknown error'}`);
   }
 };
 
@@ -753,8 +774,9 @@ const geminiService = new GeminiService();
 
 // Student Tool Generator
 export const generateStudentTool = async (toolType, params) => {
-  const { GoogleGenerativeAI } = await import('@google/generative-ai');
-  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  // Use DeepSeek API instead of Gemini
+  const axios = (await import('axios')).default;
+  const deepseekUrl = process.env.DEEPSEEK_API_URL || 'http://localhost:8000/v1';
 
   const toolPrompts = {
     'smart-study-guide-generator': `Create a comprehensive, personalized study guide.
@@ -1195,28 +1217,37 @@ Make it inspiring, actionable, and tailored to the student's goals.`
     prompt = `IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.\n\n${prompt}`;
   }
 
-  const modelsToTry = [
-    'gemini-2.5-flash',
-    'gemini-2.0-flash',
-    'gemini-pro',
-    'gemini-1.5-flash'
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for student tool ${toolType}: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(prompt);
-      const response = await result.response;
-      console.log(`✅ Successfully generated student tool ${toolType} using ${modelName}`);
-      return response.text();
-    } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
-        console.error(`Error generating student tool ${toolType}:`, error);
-        throw new Error(`Failed to generate content: ${error.message}`);
+  try {
+    console.log(`🔄 Generating student tool ${toolType} using DeepSeek-V3...`);
+    
+    const response = await axios.post(
+      `${deepseekUrl}/chat/completions`,
+      {
+        model: 'deepseek-v3',
+        messages: [
+          {
+            role: 'system',
+            content: 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content. Use LaTeX for mathematical expressions with $ for inline and $$ for display math.'
+          },
+          {
+            role: 'user',
+            content: prompt
+          }
+        ],
+        temperature: 0.7,
+        max_tokens: 4000
+      },
+      {
+        timeout: 120000 // 2 minutes timeout
       }
-    }
+    );
+    
+    const generatedText = response.data.choices[0].message.content;
+    console.log(`✅ Successfully generated student tool ${toolType} using DeepSeek-V3`);
+    return generatedText;
+  } catch (error) {
+    console.error(`❌ Error generating student tool ${toolType}:`, error.message);
+    throw new Error(`Failed to generate content: ${error.message}`);
   }
 };
 

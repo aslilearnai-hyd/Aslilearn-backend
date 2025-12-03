@@ -3859,8 +3859,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
-// AI Chat endpoints
-import { geminiService } from './services/gemini-service.cjs';
+// AI Chat endpoints - Using DeepSeek instead of Gemini
+import { deepseekService } from './services/deepseek-service.cjs';
 
 // Store chat sessions in memory (in production, use a database)
 const chatSessions = new Map();
@@ -3895,8 +3895,8 @@ app.post('/api/ai-chat', async (req, res) => {
     };
     session.messages.push(userMessage);
 
-    // Generate AI response
-    const aiResponse = await geminiService.generateResponse(
+    // Generate AI response using DeepSeek
+    const aiResponse = await deepseekService.generateResponse(
       message, 
       context || session.context, 
       session.messages.slice(-10) // Last 10 messages for context
@@ -3956,7 +3956,7 @@ app.post('/api/ai-chat/analyze-image', async (req, res) => {
     // Remove data URL prefix if present
     const base64Data = image.replace(/^data:image\/[a-z]+;base64,/, '');
     
-    const analysis = await geminiService.analyzeImage(base64Data, context);
+    const analysis = await deepseekService.analyzeImage(base64Data, context);
 
     res.json({
       success: true,
@@ -5029,7 +5029,7 @@ app.post('/api/lesson-plan/generate', async (req, res) => {
       });
     }
 
-    // Use the dedicated generateLessonPlan function instead of chat service
+    // Use the dedicated generateLessonPlan function (now uses DeepSeek)
     const geminiServiceModule = await import('./services/gemini-service.js');
     const lessonPlan = await geminiServiceModule.generateLessonPlan(subject, topic, gradeLevel, duration || 90);
     

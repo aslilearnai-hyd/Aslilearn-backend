@@ -366,7 +366,8 @@ router.post('/iq-rank-activities/generate-questions', async (req, res) => {
     const Subject = (await import('../models/Subject.js')).default;
     const IQRankQuestion = (await import('../models/IQRankQuestion.js')).default;
     const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
-    const { geminiService } = await import('../services/gemini-service.cjs');
+    // Using DeepSeek instead of Gemini
+    const { deepseekService } = await import('../services/deepseek-service.cjs');
 
     // Get subject details
     const subject = await Subject.findById(subjectId);
@@ -377,7 +378,7 @@ router.post('/iq-rank-activities/generate-questions', async (req, res) => {
       });
     }
 
-    // Generate prompt for Gemini
+    // Generate prompt for DeepSeek
     const prompt = `Generate exactly ${numberOfQuestions} multiple-choice questions (MCQ) for:
 - Class Level: Class ${classNumber}
 - Subject: ${subject.name}
@@ -410,10 +411,10 @@ Requirements:
 7. Include clear explanations for each correct answer
 8. Return ONLY the JSON object, no additional text before or after`;
 
-    console.log('🤖 Generating questions with Gemini API...');
-    const geminiResponse = await geminiService.generateStructuredContent(prompt, 'json');
+    console.log('🤖 Generating questions with DeepSeek-V3 API...');
+    const geminiResponse = await deepseekService.generateStructuredContent(prompt, 'json');
 
-    // Parse the JSON response from Gemini
+    // Parse the JSON response from DeepSeek
     let questionsData;
     try {
       // Try to extract JSON from the response (in case it's wrapped in markdown)
