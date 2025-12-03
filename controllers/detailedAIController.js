@@ -1,4 +1,3 @@
-import AIService from '../services/ai-service.js';
 import User from '../models/User.js';
 import Teacher from '../models/Teacher.js';
 import Video from '../models/Video.js';
@@ -25,60 +24,93 @@ export const getDetailedAIAnalytics = async (req, res) => {
     // Detailed exam analysis per admin
     const adminExamAnalysis = await Promise.all(
       admins.map(async (admin) => {
-        const adminExams = await Exam.find({ adminId: admin._id }).populate('questions');
-        const adminResults = await ExamResult.find({ adminId: admin._id })
-          .populate('userId', 'fullName email')
-          .populate('examId', 'title subject');
+        try {
+          const adminExams = await Exam.find({ adminId: admin._id }).populate('questions');
+          const adminResults = await ExamResult.find({ adminId: admin._id })
+            .populate('userId', 'fullName email')
+            .populate('examId', 'title subject');
 
-        // Calculate exam difficulty for this admin
-        const examDifficulty = calculateExamDifficulty(adminExams, adminResults);
-        
-        // Get top scorers for this admin
-        const topScorers = getTopScorers(adminResults, 10);
-        
-        // Performance distribution analysis
-        const performanceDistribution = getPerformanceDistribution(adminResults);
-        
-        // Question difficulty analysis
-        const questionAnalysis = await analyzeQuestionDifficulty(adminExams, adminResults);
-        
-        // Student performance trends
-        const performanceTrends = analyzePerformanceTrends(adminResults);
-        
-        // Subject-wise analysis
-        const subjectAnalysis = analyzeSubjectPerformance(adminResults);
+          // Calculate exam difficulty for this admin
+          const examDifficulty = calculateExamDifficulty(adminExams || [], adminResults || []);
+          
+          // Get top scorers for this admin
+          const topScorers = getTopScorers(adminResults || [], 10);
+          
+          // Performance distribution analysis
+          const performanceDistribution = getPerformanceDistribution(adminResults || []);
+          
+          // Question difficulty analysis
+          const questionAnalysis = await analyzeQuestionDifficulty(adminExams || [], adminResults || []);
+          
+          // Student performance trends
+          const performanceTrends = analyzePerformanceTrends(adminResults || []);
+          
+          // Subject-wise analysis
+          const subjectAnalysis = analyzeSubjectPerformance(adminResults || []);
 
-        return {
-          adminId: admin._id,
-          adminName: admin.fullName,
-          adminEmail: admin.email,
-          examDifficulty,
-          topScorers,
-          performanceDistribution,
-          questionAnalysis,
-          performanceTrends,
-          subjectAnalysis,
-          totalStudents: adminResults.length,
-          totalExams: adminExams.length,
-          averageScore: adminResults.length > 0 ? 
-            adminResults.reduce((sum, result) => sum + result.percentage, 0) / adminResults.length : 0
-        };
+          const validResults = (adminResults || []).filter(r => r && typeof r.percentage === 'number');
+          const averageScore = validResults.length > 0 
+            ? validResults.reduce((sum, result) => sum + (result.percentage || 0), 0) / validResults.length 
+            : 0;
+
+          return {
+            adminId: admin._id,
+            adminName: admin.fullName || 'Unknown',
+            adminEmail: admin.email || 'Unknown',
+            examDifficulty,
+            topScorers,
+            performanceDistribution,
+            questionAnalysis,
+            performanceTrends,
+            subjectAnalysis,
+            totalStudents: (adminResults || []).length,
+            totalExams: (adminExams || []).length,
+            averageScore
+          };
+        } catch (error) {
+          console.error(`Error processing admin ${admin._id}:`, error);
+          return {
+            adminId: admin._id,
+            adminName: admin.fullName || 'Unknown',
+            adminEmail: admin.email || 'Unknown',
+            examDifficulty: { exams: [], overallDifficulty: 0, hardestExam: {}, easiestExam: {} },
+            topScorers: [],
+            performanceDistribution: {
+              excellent: { range: '90-100%', count: 0, percentage: 0 },
+              good: { range: '80-89%', count: 0, percentage: 0 },
+              average: { range: '70-79%', count: 0, percentage: 0 },
+              belowAverage: { range: '60-69%', count: 0, percentage: 0 },
+              poor: { range: '50-59%', count: 0, percentage: 0 },
+              veryPoor: { range: '0-49%', count: 0, percentage: 0 }
+            },
+            questionAnalysis: [],
+            performanceTrends: [],
+            subjectAnalysis: [],
+            totalStudents: 0,
+            totalExams: 0,
+            averageScore: 0
+          };
+        }
       })
     );
 
     // Global analytics
+    const validExamResults = (examResults || []).filter(r => r && typeof r.percentage === 'number');
+    const overallAverageScore = validExamResults.length > 0 
+      ? validExamResults.reduce((sum, result) => sum + (result.percentage || 0), 0) / validExamResults.length 
+      : 0;
+
     const globalAnalytics = {
-      totalAdmins: admins.length,
-      totalStudents: students.length,
-      totalExams: exams.length,
-      totalExamResults: examResults.length,
-      overallAverageScore: examResults.length > 0 ? 
-        examResults.reduce((sum, result) => sum + result.percentage, 0) / examResults.length : 0,
-      topPerformers: getTopScorers(examResults, 20),
-      performanceDistribution: getPerformanceDistribution(examResults),
-      subjectWiseAnalysis: analyzeSubjectPerformance(examResults),
-      difficultyAnalysis: analyzeOverallDifficulty(exams, examResults),
-      trendsAnalysis: analyzeOverallTrends(examResults)
+      totalAdmins: (admins || []).length,
+      totalStudents: (students || []).length,
+      totalExams: (exams || []).length,
+      totalExamResults: (examResults || []).length,
+      overallAverageScore,
+      topPerformers: getTopScorers(examResults || [], 20),
+      performanceDistribution: getPerformanceDistribution(examResults || []),
+      subjectWiseAnalysis: analyzeSubjectPerformance(examResults || []),
+      difficultyAnalysis: analyzeOverallDifficulty(exams || [], examResults || []),
+      trendsAnalysis: analyzeOverallTrends(examResults || [])
     };
 
     // AI-powered insights
@@ -109,15 +141,20 @@ export const getDetailedAIAnalytics = async (req, res) => {
 
 // Calculate exam difficulty based on actual performance
 function calculateExamDifficulty(exams, results) {
+  if (!exams || !Array.isArray(exams)) {
+    return {
+      exams: [],
+      overallDifficulty: 0,
+      hardestExam: {},
+      easiestExam: {}
+    };
+  }
+
   const difficultyAnalysis = exams.map(exam => {
-    const examResults = results.filter(result => 
-      result.examId && result.examId._id.toString() === exam._id.toString()
-    );
-    
-    if (examResults.length === 0) {
+    if (!exam || !exam._id) {
       return {
-        examId: exam._id,
-        examTitle: exam.title,
+        examId: null,
+        examTitle: 'Unknown',
         difficulty: 'Unknown',
         difficultyScore: 0,
         totalAttempts: 0,
@@ -126,8 +163,38 @@ function calculateExamDifficulty(exams, results) {
       };
     }
 
-    const averageScore = examResults.reduce((sum, result) => sum + result.percentage, 0) / examResults.length;
-    const passRate = (examResults.filter(result => result.percentage >= 50).length / examResults.length) * 100;
+    const examResults = (results || []).filter(result => 
+      result && result.examId && result.examId._id && exam._id &&
+      result.examId._id.toString() === exam._id.toString()
+    );
+    
+    if (examResults.length === 0) {
+      return {
+        examId: exam._id,
+        examTitle: exam.title || 'Unknown',
+        difficulty: 'Unknown',
+        difficultyScore: 0,
+        totalAttempts: 0,
+        averageScore: 0,
+        passRate: 0
+      };
+    }
+
+    const validResults = examResults.filter(r => r && typeof r.percentage === 'number');
+    if (validResults.length === 0) {
+      return {
+        examId: exam._id,
+        examTitle: exam.title || 'Unknown',
+        difficulty: 'Unknown',
+        difficultyScore: 0,
+        totalAttempts: 0,
+        averageScore: 0,
+        passRate: 0
+      };
+    }
+
+    const averageScore = validResults.reduce((sum, result) => sum + (result.percentage || 0), 0) / validResults.length;
+    const passRate = (validResults.filter(result => (result.percentage || 0) >= 50).length / validResults.length) * 100;
     
     let difficulty = 'Easy';
     let difficultyScore = 0;
@@ -149,28 +216,35 @@ function calculateExamDifficulty(exams, results) {
       difficultyScore = 1;
     }
 
+    const percentages = validResults.map(r => r.percentage || 0);
     return {
       examId: exam._id,
-      examTitle: exam.title,
+      examTitle: exam.title || 'Unknown',
       difficulty,
       difficultyScore,
-      totalAttempts: examResults.length,
+      totalAttempts: validResults.length,
       averageScore: Math.round(averageScore * 100) / 100,
       passRate: Math.round(passRate * 100) / 100,
-      highestScore: Math.max(...examResults.map(r => r.percentage)),
-      lowestScore: Math.min(...examResults.map(r => r.percentage)),
-      questionCount: exam.questions ? exam.questions.length : 0
+      highestScore: percentages.length > 0 ? Math.max(...percentages) : 0,
+      lowestScore: percentages.length > 0 ? Math.min(...percentages) : 0,
+      questionCount: (exam.questions && Array.isArray(exam.questions)) ? exam.questions.length : 0
     };
   });
 
+  const validExams = difficultyAnalysis.filter(e => e.difficultyScore > 0);
+  const overallDifficulty = validExams.length > 0 
+    ? validExams.reduce((sum, exam) => sum + exam.difficultyScore, 0) / validExams.length 
+    : 0;
+
   return {
     exams: difficultyAnalysis,
-    overallDifficulty: difficultyAnalysis.length > 0 ? 
-      difficultyAnalysis.reduce((sum, exam) => sum + exam.difficultyScore, 0) / difficultyAnalysis.length : 0,
-    hardestExam: difficultyAnalysis.reduce((max, exam) => 
-      exam.difficultyScore > max.difficultyScore ? exam : max, difficultyAnalysis[0] || {}),
-    easiestExam: difficultyAnalysis.reduce((min, exam) => 
-      exam.difficultyScore < min.difficultyScore ? exam : min, difficultyAnalysis[0] || {})
+    overallDifficulty,
+    hardestExam: validExams.length > 0 
+      ? validExams.reduce((max, exam) => exam.difficultyScore > max.difficultyScore ? exam : max, validExams[0])
+      : {},
+    easiestExam: validExams.length > 0
+      ? validExams.reduce((min, exam) => exam.difficultyScore < min.difficultyScore ? exam : min, validExams[0])
+      : {}
   };
 }
 
@@ -179,12 +253,15 @@ function getTopScorers(results, limit = 10) {
   const studentPerformance = {};
   
   results.forEach(result => {
+    // Skip if userId is not populated or missing
+    if (!result.userId || !result.userId._id) return;
+    
     const studentId = result.userId._id.toString();
     if (!studentPerformance[studentId]) {
       studentPerformance[studentId] = {
         studentId: studentId,
-        studentName: result.userId.fullName,
-        studentEmail: result.userId.email,
+        studentName: result.userId.fullName || 'Unknown',
+        studentEmail: result.userId.email || 'Unknown',
         totalExams: 0,
         totalScore: 0,
         highestScore: 0,
@@ -194,21 +271,23 @@ function getTopScorers(results, limit = 10) {
     }
     
     studentPerformance[studentId].totalExams += 1;
-    studentPerformance[studentId].totalScore += result.percentage;
+    studentPerformance[studentId].totalScore += (result.percentage || 0);
     studentPerformance[studentId].highestScore = Math.max(
       studentPerformance[studentId].highestScore, 
-      result.percentage
+      result.percentage || 0
     );
     studentPerformance[studentId].examHistory.push({
-      examTitle: result.examTitle,
-      score: result.percentage,
-      completedAt: result.completedAt
+      examTitle: result.examTitle || 'Unknown Exam',
+      score: result.percentage || 0,
+      completedAt: result.completedAt || new Date()
     });
   });
 
   // Calculate average scores
   Object.values(studentPerformance).forEach(student => {
-    student.averageScore = Math.round((student.totalScore / student.totalExams) * 100) / 100;
+    student.averageScore = student.totalExams > 0 
+      ? Math.round((student.totalScore / student.totalExams) * 100) / 100 
+      : 0;
   });
 
   return Object.values(studentPerformance)
@@ -250,26 +329,44 @@ async function analyzeQuestionDifficulty(exams, results) {
   const questionAnalysis = [];
   
   for (const exam of exams) {
-    if (!exam.questions || exam.questions.length === 0) continue;
+    if (!exam || !exam.questions || exam.questions.length === 0) continue;
     
     const examResults = results.filter(result => 
-      result.examId && result.examId._id.toString() === exam._id.toString()
+      result && result.examId && result.examId._id && exam._id &&
+      result.examId._id.toString() === exam._id.toString()
     );
     
     for (const questionId of exam.questions) {
+      if (!questionId) continue;
+      
       const question = await Question.findById(questionId);
-      if (!question) continue;
+      if (!question || !question.questionText) continue;
       
       let correctAnswers = 0;
       let totalAttempts = 0;
       
       examResults.forEach(result => {
-        if (result.answers && result.answers.has(questionId.toString())) {
-          totalAttempts++;
-          const studentAnswer = result.answers.get(questionId.toString());
-          if (studentAnswer === question.correctAnswer) {
-            correctAnswers++;
+        if (!result || !result.answers) return;
+        
+        // Handle both Map and Object formats for answers
+        let studentAnswer = null;
+        const questionIdStr = questionId.toString();
+        
+        if (result.answers instanceof Map) {
+          if (result.answers.has(questionIdStr)) {
+            studentAnswer = result.answers.get(questionIdStr);
+            totalAttempts++;
           }
+        } else if (typeof result.answers === 'object' && result.answers !== null) {
+          if (result.answers[questionIdStr] !== undefined) {
+            studentAnswer = result.answers[questionIdStr];
+            totalAttempts++;
+          }
+        }
+        
+        if (studentAnswer !== null && question.correctAnswer && 
+            String(studentAnswer) === String(question.correctAnswer)) {
+          correctAnswers++;
         }
       });
       
@@ -277,14 +374,14 @@ async function analyzeQuestionDifficulty(exams, results) {
       
       questionAnalysis.push({
         questionId: question._id,
-        questionText: question.questionText.substring(0, 100) + '...',
-        questionType: question.questionType,
-        subject: question.subject,
+        questionText: (question.questionText || '').substring(0, 100) + (question.questionText && question.questionText.length > 100 ? '...' : ''),
+        questionType: question.questionType || 'Unknown',
+        subject: question.subject || 'Unknown',
         difficultyRate: Math.round(difficultyRate * 100) / 100,
         correctAnswers,
         totalAttempts,
-        examTitle: exam.title,
-        marks: question.marks
+        examTitle: exam.title || 'Unknown Exam',
+        marks: question.marks || 0
       });
     }
   }
@@ -297,24 +394,32 @@ function analyzePerformanceTrends(results) {
   const monthlyData = {};
   
   results.forEach(result => {
-    const month = new Date(result.completedAt).toISOString().substring(0, 7); // YYYY-MM
-    if (!monthlyData[month]) {
-      monthlyData[month] = {
-        month,
-        totalExams: 0,
-        totalScore: 0,
-        averageScore: 0,
-        examCount: 0
-      };
-    }
+    if (!result || !result.completedAt) return;
     
-    monthlyData[month].totalExams += 1;
-    monthlyData[month].totalScore += result.percentage;
-    monthlyData[month].examCount += 1;
+    try {
+      const month = new Date(result.completedAt).toISOString().substring(0, 7); // YYYY-MM
+      if (!monthlyData[month]) {
+        monthlyData[month] = {
+          month,
+          totalExams: 0,
+          totalScore: 0,
+          averageScore: 0,
+          examCount: 0
+        };
+      }
+      
+      monthlyData[month].totalExams += 1;
+      monthlyData[month].totalScore += (result.percentage || 0);
+      monthlyData[month].examCount += 1;
+    } catch (error) {
+      console.error('Error processing result for trends:', error);
+    }
   });
   
   Object.values(monthlyData).forEach(month => {
-    month.averageScore = Math.round((month.totalScore / month.totalExams) * 100) / 100;
+    month.averageScore = month.totalExams > 0 
+      ? Math.round((month.totalScore / month.totalExams) * 100) / 100 
+      : 0;
   });
   
   return Object.values(monthlyData).sort((a, b) => a.month.localeCompare(b.month));
@@ -325,7 +430,9 @@ function analyzeSubjectPerformance(results) {
   const subjectData = {};
   
   results.forEach(result => {
-    const subject = result.examId?.subject || 'Unknown';
+    if (!result) return;
+    
+    const subject = (result.examId && result.examId.subject) ? result.examId.subject : 'Unknown';
     if (!subjectData[subject]) {
       subjectData[subject] = {
         subject,
@@ -338,15 +445,18 @@ function analyzeSubjectPerformance(results) {
       };
     }
     
+    const percentage = result.percentage || 0;
     subjectData[subject].totalExams += 1;
-    subjectData[subject].totalScore += result.percentage;
-    subjectData[subject].highestScore = Math.max(subjectData[subject].highestScore, result.percentage);
-    subjectData[subject].lowestScore = Math.min(subjectData[subject].lowestScore, result.percentage);
+    subjectData[subject].totalScore += percentage;
+    subjectData[subject].highestScore = Math.max(subjectData[subject].highestScore, percentage);
+    subjectData[subject].lowestScore = Math.min(subjectData[subject].lowestScore, percentage);
     subjectData[subject].examCount += 1;
   });
   
   Object.values(subjectData).forEach(subject => {
-    subject.averageScore = Math.round((subject.totalScore / subject.totalExams) * 100) / 100;
+    subject.averageScore = subject.totalExams > 0 
+      ? Math.round((subject.totalScore / subject.totalExams) * 100) / 100 
+      : 0;
   });
   
   return Object.values(subjectData).sort((a, b) => b.averageScore - a.averageScore);
@@ -362,19 +472,29 @@ function analyzeOverallDifficulty(exams, results) {
     veryEasy: 0
   };
   
+  if (!exams || !Array.isArray(exams) || !results || !Array.isArray(results)) {
+    return difficultyStats;
+  }
+  
   exams.forEach(exam => {
+    if (!exam || !exam._id) return;
+    
     const examResults = results.filter(result => 
-      result.examId && result.examId._id.toString() === exam._id.toString()
+      result && result.examId && result.examId._id && exam._id &&
+      result.examId._id.toString() === exam._id.toString()
     );
     
     if (examResults.length > 0) {
-      const averageScore = examResults.reduce((sum, result) => sum + result.percentage, 0) / examResults.length;
-      
-      if (averageScore < 40) difficultyStats.veryHard++;
-      else if (averageScore < 60) difficultyStats.hard++;
-      else if (averageScore < 75) difficultyStats.medium++;
-      else if (averageScore < 85) difficultyStats.easy++;
-      else difficultyStats.veryEasy++;
+      const validResults = examResults.filter(r => r && typeof r.percentage === 'number');
+      if (validResults.length > 0) {
+        const averageScore = validResults.reduce((sum, result) => sum + (result.percentage || 0), 0) / validResults.length;
+        
+        if (averageScore < 40) difficultyStats.veryHard++;
+        else if (averageScore < 60) difficultyStats.hard++;
+        else if (averageScore < 75) difficultyStats.medium++;
+        else if (averageScore < 85) difficultyStats.easy++;
+        else difficultyStats.veryEasy++;
+      }
     }
   });
   
@@ -393,14 +513,21 @@ function analyzeOverallTrends(results) {
   const studentTrends = {};
   
   results.forEach(result => {
+    if (!result || !result.userId || !result.userId._id) return;
+    
     const studentId = result.userId._id.toString();
     if (!studentTrends[studentId]) {
       studentTrends[studentId] = [];
     }
-    studentTrends[studentId].push({
-      score: result.percentage,
-      date: new Date(result.completedAt)
-    });
+    
+    try {
+      studentTrends[studentId].push({
+        score: result.percentage || 0,
+        date: result.completedAt ? new Date(result.completedAt) : new Date()
+      });
+    } catch (error) {
+      console.error('Error processing result for trends:', error);
+    }
   });
   
   Object.values(studentTrends).forEach(studentScores => {
@@ -409,8 +536,12 @@ function analyzeOverallTrends(results) {
       const firstHalf = studentScores.slice(0, Math.ceil(studentScores.length / 2));
       const secondHalf = studentScores.slice(Math.ceil(studentScores.length / 2));
       
-      const firstAvg = firstHalf.reduce((sum, score) => sum + score.score, 0) / firstHalf.length;
-      const secondAvg = secondHalf.reduce((sum, score) => sum + score.score, 0) / secondHalf.length;
+      const firstAvg = firstHalf.length > 0 
+        ? firstHalf.reduce((sum, score) => sum + (score.score || 0), 0) / firstHalf.length 
+        : 0;
+      const secondAvg = secondHalf.length > 0 
+        ? secondHalf.reduce((sum, score) => sum + (score.score || 0), 0) / secondHalf.length 
+        : 0;
       
       const difference = secondAvg - firstAvg;
       if (difference > 5) trends.improving++;
@@ -426,49 +557,63 @@ function analyzeOverallTrends(results) {
 
 // Generate AI-powered insights
 async function generateAIInsights(adminAnalytics, globalAnalytics) {
-  const insights = [];
-  
-  // Admin performance insights
-  adminAnalytics.forEach(admin => {
-    if (admin.averageScore < 60) {
-      insights.push({
-        type: 'alert',
-        title: 'Low Performance Alert',
-        description: `${admin.adminName}'s students are performing below average (${admin.averageScore}%)`,
-        confidence: 95,
-        impact: 'high',
-        category: 'Performance',
-        data: { adminId: admin.adminId, averageScore: admin.averageScore }
+  try {
+    const insights = [];
+    
+    // Admin performance insights
+    if (adminAnalytics && Array.isArray(adminAnalytics)) {
+      adminAnalytics.forEach(admin => {
+        if (!admin) return;
+        
+        const avgScore = admin.averageScore || 0;
+        if (avgScore < 60) {
+          insights.push({
+            type: 'alert',
+            title: 'Low Performance Alert',
+            description: `${admin.adminName || 'Admin'}'s students are performing below average (${avgScore.toFixed(1)}%)`,
+            confidence: 95,
+            impact: 'high',
+            category: 'Performance',
+            data: { adminId: admin.adminId, averageScore: avgScore }
+          });
+        }
+        
+        const overallDifficulty = (admin.examDifficulty && admin.examDifficulty.overallDifficulty) 
+          ? admin.examDifficulty.overallDifficulty 
+          : 0;
+        if (overallDifficulty > 4) {
+          insights.push({
+            type: 'recommendation',
+            title: 'Exam Difficulty Adjustment',
+            description: `${admin.adminName || 'Admin'}'s exams are too difficult. Consider reducing difficulty.`,
+            confidence: 88,
+            impact: 'medium',
+            category: 'Content',
+            data: { adminId: admin.adminId, difficulty: overallDifficulty }
+          });
+        }
       });
     }
     
-    if (admin.examDifficulty.overallDifficulty > 4) {
+    // Global insights
+    const overallScore = globalAnalytics?.overallAverageScore || 0;
+    if (overallScore < 70) {
       insights.push({
-        type: 'recommendation',
-        title: 'Exam Difficulty Adjustment',
-        description: `${admin.adminName}'s exams are too difficult. Consider reducing difficulty.`,
-        confidence: 88,
-        impact: 'medium',
-        category: 'Content',
-        data: { adminId: admin.adminId, difficulty: admin.examDifficulty.overallDifficulty }
+        type: 'alert',
+        title: 'Platform Performance Concern',
+        description: `Overall platform average score is ${overallScore.toFixed(1)}%. Consider reviewing content quality.`,
+        confidence: 92,
+        impact: 'high',
+        category: 'Performance',
+        data: { overallScore }
       });
     }
-  });
-  
-  // Global insights
-  if (globalAnalytics.overallAverageScore < 70) {
-    insights.push({
-      type: 'alert',
-      title: 'Platform Performance Concern',
-      description: `Overall platform average score is ${globalAnalytics.overallAverageScore}%. Consider reviewing content quality.`,
-      confidence: 92,
-      impact: 'high',
-      category: 'Performance',
-      data: { overallScore: globalAnalytics.overallAverageScore }
-    });
+    
+    return insights;
+  } catch (error) {
+    console.error('Error generating AI insights:', error);
+    return [];
   }
-  
-  return insights;
 }
 
 // Get admin-specific detailed analytics
