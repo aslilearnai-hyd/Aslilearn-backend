@@ -1,8 +1,10 @@
-# 🚨 Important: DeepSeek Server Location
+# 🚨 Important: DeepSeek V2 Server Location
 
 ## ⚠️ This server.py is for DigitalOcean Droplet, NOT Local Windows!
 
 The `server.py` file in this folder is meant to run on your **DigitalOcean Ubuntu droplet**, not on your local Windows machine.
+
+**Model**: DeepSeek V2 Q3_K_M GGUF (~3.5GB)
 
 ---
 

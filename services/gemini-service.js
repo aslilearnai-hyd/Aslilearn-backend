@@ -118,12 +118,12 @@ This is for IIT JEE Mains coaching, so please provide a structured lesson plan w
 Format the response in a clear, structured manner with proper headings and sections. Make it practical, engaging, and focused on JEE Mains preparation.`;
 
   try {
-    console.log(`🔄 Generating lesson plan using DeepSeek-V3...`);
+    console.log(`🔄 Generating lesson plan using DeepSeek-V2...`);
     
     const response = await axios.post(
       `${deepseekUrl}/chat/completions`,
       {
-        model: 'deepseek-v3',
+        model: 'deepseek-v2',
         messages: [
           {
             role: 'system',
@@ -143,7 +143,7 @@ Format the response in a clear, structured manner with proper headings and secti
     );
     
     const lessonPlan = response.data.choices[0].message.content;
-    console.log(`✅ Successfully generated lesson plan using DeepSeek-V3`);
+    console.log(`✅ Successfully generated lesson plan using DeepSeek-V2`);
     return lessonPlan;
   } catch (error) {
     console.error('❌ Error generating lesson plan:', error.message);
@@ -737,12 +737,12 @@ Remember:
   }
 
   try {
-    console.log(`🔄 Generating ${toolType} using DeepSeek-V3...`);
+    console.log(`🔄 Generating ${toolType} using DeepSeek-V2...`);
     
     const response = await axios.post(
       `${deepseekUrl}/chat/completions`,
       {
-        model: 'deepseek-v3',
+        model: 'deepseek-v2',
         messages: [
           {
             role: 'system',
@@ -762,7 +762,7 @@ Remember:
     );
     
     const generatedText = response.data.choices[0].message.content;
-    console.log(`✅ Successfully generated ${toolType} using DeepSeek-V3`);
+    console.log(`✅ Successfully generated ${toolType} using DeepSeek-V2`);
     return generatedText;
   } catch (error) {
     console.error(`❌ Error generating ${toolType}:`, error.message);
@@ -1218,12 +1218,12 @@ Make it inspiring, actionable, and tailored to the student's goals.`
   }
 
   try {
-    console.log(`🔄 Generating student tool ${toolType} using DeepSeek-V3...`);
+    console.log(`🔄 Generating student tool ${toolType} using DeepSeek-V2...`);
     
     const response = await axios.post(
       `${deepseekUrl}/chat/completions`,
       {
-        model: 'deepseek-v3',
+        model: 'deepseek-v2',
         messages: [
           {
             role: 'system',
@@ -1243,7 +1243,7 @@ Make it inspiring, actionable, and tailored to the student's goals.`
     );
     
     const generatedText = response.data.choices[0].message.content;
-    console.log(`✅ Successfully generated student tool ${toolType} using DeepSeek-V3`);
+    console.log(`✅ Successfully generated student tool ${toolType} using DeepSeek-V2`);
     return generatedText;
   } catch (error) {
     console.error(`❌ Error generating student tool ${toolType}:`, error.message);

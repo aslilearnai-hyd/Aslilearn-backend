@@ -411,7 +411,7 @@ Requirements:
 7. Include clear explanations for each correct answer
 8. Return ONLY the JSON object, no additional text before or after`;
 
-    console.log('🤖 Generating questions with DeepSeek-V3 API...');
+    console.log('🤖 Generating questions with DeepSeek-V2 API...');
     const geminiResponse = await deepseekService.generateStructuredContent(prompt, 'json');
 
     // Parse the JSON response from DeepSeek

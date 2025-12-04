@@ -1,12 +1,12 @@
 // DeepSeek Service - OpenAI-compatible API wrapper
-// Replaces Gemini service with DeepSeek-V3
+// Replaces Gemini service with DeepSeek-V2
 
 const axios = require('axios');
 
 class DeepSeekService {
   constructor() {
     this.apiUrl = process.env.DEEPSEEK_API_URL || 'http://localhost:8000/v1';
-    this.model = 'deepseek-v3';
+    this.model = 'deepseek-v2';
     
     if (!this.apiUrl) {
       console.warn('⚠️  DEEPSEEK_API_URL not set, using default: http://localhost:8000');
@@ -18,7 +18,7 @@ class DeepSeekService {
 
   async generateResponse(message, context = {}, chatHistory = []) {
     try {
-      console.log('🤖 Using DeepSeek-V3 for response...');
+      console.log('🤖 Using DeepSeek-V2 for response...');
       
       const studentName = context?.studentName || 'Student';
 
@@ -232,8 +232,8 @@ Guidelines:
   }
 
   async analyzeImage(imageBase64, context = '') {
-    // DeepSeek-V3 doesn't support vision yet, fallback to text extraction
-    console.log('⚠️  Image analysis not supported by DeepSeek-V3, using fallback');
+    // DeepSeek-V2 doesn't support vision yet, fallback to text extraction
+    console.log('⚠️  Image analysis not supported by DeepSeek-V2, using fallback');
     return await this.analyzeImageMock(imageBase64, context);
   }
 
