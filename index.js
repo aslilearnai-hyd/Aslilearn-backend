@@ -132,6 +132,11 @@ app.use(cors({
       return callback(null, true);
     }
     
+    // Allow custom domain aslilearn.ai and ALL its subdomains (including www)
+    if (origin && origin.match(/^https?:\/\/([a-z0-9-]+\.)?aslilearn\.ai(:[0-9]+)?$/)) {
+      return callback(null, true);
+    }
+    
     // Allow new Vercel frontend domain and its preview deployments
     // Matches: asli-frontend.vercel.app, asli-frontend-*.vercel.app, asli-frontend-*-*.vercel.app
     // This pattern matches all Vercel preview deployment URLs that start with "asli-frontend"
@@ -163,16 +168,20 @@ app.use(cors({
     )) {
       return callback(null, true);
     }
-  
-  // Allow custom domain aslilearn.ai and its subdomains
-  if (origin && origin.match(/^https:\/\/(www\.)?aslilearn\.ai$/)) {
-    return callback(null, true);
-  }
+    
+    // In production, be more permissive to avoid CORS issues
+    if (process.env.NODE_ENV === 'production') {
+      console.log('[CORS] Allowing origin in production:', origin);
+      return callback(null, true);
+    }
     
     console.warn('[CORS] Unrecognized origin, defaulting to allow:', origin);
     callback(null, true);
   },
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Cookie'],
+  exposedHeaders: ['Set-Cookie']
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -201,50 +210,65 @@ app.use((req, res, next) => {
 app.get('/api/health', (req, res) => {
   const origin = req.headers.origin;
   
-  // Check if origin is allowed (same logic as CORS middleware)
-  const isAllowed = !origin || 
-    origin.match(/^http:\/\/localhost(:\d+)?$/) ||
-    origin.match(/^http:\/\/127\.0\.0\.1(:\d+)?$/) ||
-    origin.match(/^http:\/\/localhost:(5173|4173|4174|3000|8080)$/) ||
-    origin.match(/^https:\/\/(www\.)?aslilearn\.ai$/) ||
-    origin.match(/^https:\/\/asli-frontend.*\.vercel\.app$/) ||
-    origin.match(/^https:\/\/alsi-stud-frontend-mf3r.*\.vercel\.app$/);
-  
-  if (isAllowed && origin) {
-    res.header('Access-Control-Allow-Origin', origin);
+  // Always set CORS headers for health check
+  if (origin) {
+    // Allow aslilearn.ai and all subdomains
+    if (origin.match(/^https?:\/\/([a-z0-9-]+\.)?aslilearn\.ai(:[0-9]+)?$/)) {
+      res.header('Access-Control-Allow-Origin', origin);
+    } else if (origin.match(/^https:\/\/asli-frontend.*\.vercel\.app$/) ||
+               origin.match(/^https:\/\/alsi-stud-frontend-mf3r.*\.vercel\.app$/) ||
+               origin.match(/^http:\/\/localhost(:\d+)?$/) ||
+               origin.match(/^http:\/\/127\.0\.0\.1(:\d+)?$/)) {
+      res.header('Access-Control-Allow-Origin', origin);
+    } else {
+      // In production, allow all origins for health check
+      res.header('Access-Control-Allow-Origin', origin || '*');
+    }
   } else {
     res.header('Access-Control-Allow-Origin', '*');
   }
   
   res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
   res.header('Access-Control-Expose-Headers', 'Set-Cookie');
-  res.status(200).json({ status: 'ok', env: process.env.NODE_ENV || 'production' });
+  res.header('Access-Control-Max-Age', '86400'); // 24 hours
+  
+  res.status(200).json({ 
+    status: 'ok', 
+    env: process.env.NODE_ENV || 'production',
+    timestamp: new Date().toISOString(),
+    server: 'aslilearn-backend'
+  });
 });
 
 // Handle OPTIONS preflight for health endpoint
 app.options('/api/health', (req, res) => {
   const origin = req.headers.origin;
   
-  const isAllowed = !origin || 
-    origin.match(/^http:\/\/localhost(:\d+)?$/) ||
-    origin.match(/^http:\/\/127\.0\.0\.1(:\d+)?$/) ||
-    origin.match(/^http:\/\/localhost:(5173|4173|4174|3000|8080)$/) ||
-    origin.match(/^https:\/\/(www\.)?aslilearn\.ai$/) ||
-    origin.match(/^https:\/\/asli-frontend.*\.vercel\.app$/) ||
-    origin.match(/^https:\/\/alsi-stud-frontend-mf3r.*\.vercel\.app$/);
-  
-  if (isAllowed && origin) {
-    res.header('Access-Control-Allow-Origin', origin);
+  // Always allow preflight for health check
+  if (origin) {
+    // Allow aslilearn.ai and all subdomains
+    if (origin.match(/^https?:\/\/([a-z0-9-]+\.)?aslilearn\.ai(:[0-9]+)?$/)) {
+      res.header('Access-Control-Allow-Origin', origin);
+    } else if (origin.match(/^https:\/\/asli-frontend.*\.vercel\.app$/) ||
+               origin.match(/^https:\/\/alsi-stud-frontend-mf3r.*\.vercel\.app$/) ||
+               origin.match(/^http:\/\/localhost(:\d+)?$/) ||
+               origin.match(/^http:\/\/127\.0\.0\.1(:\d+)?$/)) {
+      res.header('Access-Control-Allow-Origin', origin);
+    } else {
+      // In production, allow all origins for health check
+      res.header('Access-Control-Allow-Origin', origin || '*');
+    }
   } else {
     res.header('Access-Control-Allow-Origin', '*');
   }
   
   res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, POST');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
   res.header('Access-Control-Expose-Headers', 'Set-Cookie');
+  res.header('Access-Control-Max-Age', '86400'); // 24 hours
   res.sendStatus(200);
 });
 
