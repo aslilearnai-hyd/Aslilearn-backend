@@ -3900,7 +3900,9 @@ app.use((err, req, res, next) => {
 });
 
 // AI Chat endpoints
-import { geminiService } from './services/gemini-service.cjs';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const { geminiService } = require('./services/gemini-service.cjs');
 
 // Store chat sessions in memory (in production, use a database)
 const chatSessions = new Map();

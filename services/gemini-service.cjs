@@ -7,8 +7,8 @@ class GeminiService {
   constructor() {
     this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-2.5-flash'; // Latest model that works with v1 API
-    this.visionModel = 'gemini-2.5-flash'; // Supports vision
+    this.textModel = 'gemini-1.5-flash'; // Fast and efficient model for chat
+    this.visionModel = 'gemini-1.5-flash'; // Supports vision
     
     if (!this.apiKey) {
       console.warn('⚠️  GEMINI_API_KEY not set in environment variables');
