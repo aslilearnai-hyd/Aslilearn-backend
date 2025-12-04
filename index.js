@@ -47,6 +47,21 @@ if (envResult.error) {
   console.warn('   Attempted path:', envPath);
 } else {
   console.log('✅ Loaded .env file from:', envPath);
+  // Debug: Check if MONGO_URI was loaded
+  if (envResult.parsed) {
+    const hasMongoUri = 'MONGO_URI' in envResult.parsed;
+    console.log('📋 Environment variables loaded:', Object.keys(envResult.parsed).length);
+    console.log('🔍 MONGO_URI in parsed env:', hasMongoUri);
+    if (hasMongoUri) {
+      const mongoUriValue = envResult.parsed.MONGO_URI;
+      console.log('🔍 MONGO_URI value (first 30 chars):', mongoUriValue ? mongoUriValue.substring(0, 30) + '...' : 'EMPTY');
+    }
+  }
+  // Also check process.env after dotenv loads
+  console.log('🔍 MONGO_URI in process.env:', !!process.env.MONGO_URI);
+  if (process.env.MONGO_URI) {
+    console.log('🔍 process.env.MONGO_URI (first 30 chars):', process.env.MONGO_URI.substring(0, 30) + '...');
+  }
 }
 
 const app = express();
@@ -64,6 +79,7 @@ const MONGO_URI = process.env.MONGO_URI;
 if (!MONGO_URI) {
   console.error('❌ MONGO_URI is not set in environment variables!');
   console.error('   Please set MONGO_URI in your .env file');
+  console.error('   Current process.env keys:', Object.keys(process.env).filter(k => k.includes('MONGO')).join(', ') || 'none');
   process.exit(1);
 }
 
