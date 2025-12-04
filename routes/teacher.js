@@ -228,7 +228,7 @@ router.post('/grade-work', upload.single('file'), async (req, res) => {
     }
 
     // Import Gemini service
-    const { geminiService } = require('../services/gemini-service.cjs');
+    const { geminiService } = await import('../services/gemini-service.cjs');
     
     // Extract text from file if uploaded
     let workText = studentWork || '';
@@ -289,7 +289,7 @@ Please provide:
 
 Format your response clearly with sections and bullet points.`;
 
-    // Generate grading using Gemini API
+    // Generate grading using Gemini
         const gradingResult = await geminiService.generateResponse(gradingPrompt, {}, []);
     
     res.json({

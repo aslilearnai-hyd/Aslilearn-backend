@@ -5,9 +5,9 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 class GeminiService {
   constructor() {
-    this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
+    this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-2.5-flash';
+    this.textModel = 'gemini-2.5-flash'; // Latest model that works with v1 API
     
     if (!this.apiKey) {
       console.warn('⚠️  GEMINI_API_KEY not set in environment variables');
@@ -45,11 +45,18 @@ class GeminiService {
   }
 }
 
-// Export functions using Gemini API directly
+// Export functions for backward compatibility with existing code
 export const generateLessonPlan = async (subject, topic, gradeLevel, duration) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+  
+  // Try multiple models in order of preference
+  const modelsToTry = [
+    'gemini-2.5-flash',    // Latest version
+    'gemini-2.0-flash',    // Version 2.0
+    'gemini-pro',          // Stable fallback
+    'gemini-1.5-flash'     // Older but might work
+  ];
 
   const prompt = `Create a comprehensive, detailed lesson plan for IIT JEE Mains preparation:
 
@@ -109,30 +116,32 @@ This is for IIT JEE Mains coaching, so please provide a structured lesson plan w
 
 Format the response in a clear, structured manner with proper headings and sections. Make it practical, engaging, and focused on JEE Mains preparation.`;
 
-  try {
-    console.log(`🔄 Generating lesson plan using Gemini 2.5 Flash...`);
-    
-    const systemInstruction = 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content.';
-    
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }],
-      systemInstruction: systemInstruction
-    });
-    
+  for (const modelName of modelsToTry) {
+    try {
+      console.log(`🔄 Trying model for lesson plan: ${modelName}`);
+      const model = genAI.getGenerativeModel({ model: modelName });
+    const result = await model.generateContent(prompt);
     const response = await result.response;
-    const lessonPlan = response.text();
-    console.log(`✅ Successfully generated lesson plan using Gemini 2.5 Flash`);
-    return lessonPlan;
+      const lessonPlan = response.text();
+      
+      console.log(`✅ Successfully generated lesson plan using ${modelName}`);
+      return lessonPlan;
   } catch (error) {
-    console.error('❌ Error generating lesson plan:', error.message);
-    throw new Error(`Failed to generate lesson plan: ${error.message || 'Unknown error'}`);
+      console.log(`❌ Model ${modelName} failed: ${error.message}`);
+      // If this is the last model, throw the error
+      if (modelName === modelsToTry[modelsToTry.length - 1]) {
+    console.error('Error generating lesson plan:', error);
+        throw new Error(`Failed to generate lesson plan: ${error.message || 'Unknown error'}`);
+      }
+      // Otherwise, try the next model
+      continue;
+    }
   }
 };
 
 export const generateTestQuestions = async (subject, topic, gradeLevel, questionCount, difficulty) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     
     const prompt = `Generate exactly ${questionCount} multiple-choice test questions for:
 - Subject: ${subject}
@@ -163,38 +172,48 @@ Requirements:
 7. Include clear explanations for each correct answer
 8. Return ONLY the JSON object, no additional text before or after`;
 
-  // Include JSON instruction in the prompt
+  // Include JSON instruction in the prompt since systemInstruction is not supported in v1 API
   const fullPrompt = `You are a helpful educational assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.
 
 ${prompt}`;
 
-  try {
-    console.log(`🔄 Generating test questions using Gemini 2.5 Flash...`);
-    const systemInstruction = 'You are a helpful educational assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.';
-    
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: fullPrompt }] }],
-      systemInstruction: systemInstruction
-    });
-    
+  // Try multiple models in order of preference
+  const modelsToTry = [
+    'gemini-2.5-flash',    // Latest version
+    'gemini-2.0-flash',    // Version 2.0
+    'gemini-pro',          // Stable fallback
+    'gemini-1.5-flash'     // Older but might work
+  ];
+
+  for (const modelName of modelsToTry) {
+    try {
+      console.log(`🔄 Trying model for quiz generation: ${modelName}`);
+      const model = genAI.getGenerativeModel({ model: modelName });
+      const result = await model.generateContent(fullPrompt);
     const response = await result.response;
     let text = response.text();
     
     // Clean up markdown code blocks if present
     text = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
     
-    console.log(`✅ Successfully generated questions using Gemini 2.5 Flash`);
+      console.log(`✅ Successfully generated questions using ${modelName}`);
     return text;
   } catch (error) {
+      console.log(`❌ Model ${modelName} failed: ${error.message}`);
+      // If this is the last model, throw the error
+      if (modelName === modelsToTry[modelsToTry.length - 1]) {
     console.error('Error generating test questions:', error);
     throw new Error(`Failed to generate test questions: ${error.message || 'Unknown error'}`);
+      }
+      // Otherwise, try the next model
+      continue;
+    }
   }
 };
 
 export const generateClasswork = async (subject, topic, gradeLevel, assignmentType) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     
     const prompt = `
     Create ${assignmentType} for:
@@ -214,22 +233,36 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
     Include both individual and group work elements if applicable.
     `;
 
-  try {
-    console.log(`🔄 Generating classwork using Gemini 2.5 Flash...`);
+  // Try multiple models in order of preference
+  const modelsToTry = [
+    'gemini-2.5-flash',    // Latest version
+    'gemini-2.0-flash',    // Version 2.0
+    'gemini-pro',          // Stable fallback
+    'gemini-1.5-flash'     // Older but might work
+  ];
+
+  for (const modelName of modelsToTry) {
+    try {
+      console.log(`🔄 Trying model for classwork: ${modelName}`);
+      const model = genAI.getGenerativeModel({ model: modelName });
     const result = await model.generateContent(prompt);
     const response = await result.response;
-    console.log(`✅ Successfully generated classwork using Gemini 2.5 Flash`);
+      console.log(`✅ Successfully generated classwork using ${modelName}`);
     return response.text();
   } catch (error) {
+      console.log(`❌ Model ${modelName} failed: ${error.message}`);
+      if (modelName === modelsToTry[modelsToTry.length - 1]) {
     console.error('Error generating classwork:', error);
-    throw new Error(`Failed to generate classwork: ${error.message || 'Unknown error'}`);
+        throw new Error(`Failed to generate classwork: ${error.message || 'Unknown error'}`);
+      }
+      continue;
+    }
   }
 };
 
 export const generateSchedule = async (subjects, gradeLevels, timeSlots, preferences) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     
     const prompt = `
     Create a teaching schedule for:
@@ -249,24 +282,37 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
     Ensure the schedule is balanced and follows best practices for teaching.
     `;
 
-  try {
-    console.log(`🔄 Generating schedule using Gemini 2.5 Flash...`);
+  // Try multiple models in order of preference
+  const modelsToTry = [
+    'gemini-2.5-flash',    // Latest version
+    'gemini-2.0-flash',    // Version 2.0
+    'gemini-pro',          // Stable fallback
+    'gemini-1.5-flash'     // Older but might work
+  ];
+
+  for (const modelName of modelsToTry) {
+    try {
+      console.log(`🔄 Trying model for schedule: ${modelName}`);
+      const model = genAI.getGenerativeModel({ model: modelName });
     const result = await model.generateContent(prompt);
     const response = await result.response;
-    console.log(`✅ Successfully generated schedule using Gemini 2.5 Flash`);
+      console.log(`✅ Successfully generated schedule using ${modelName}`);
     return response.text();
   } catch (error) {
+      console.log(`❌ Model ${modelName} failed: ${error.message}`);
+      if (modelName === modelsToTry[modelsToTry.length - 1]) {
     console.error('Error generating schedule:', error);
-    throw new Error(`Failed to generate schedule: ${error.message || 'Unknown error'}`);
+        throw new Error(`Failed to generate schedule: ${error.message || 'Unknown error'}`);
+      }
+      continue;
+    }
   }
 };
 
 // Generic teacher tool generator
 export const generateTeacherTool = async (toolType, params) => {
-  // Use Gemini API directly
-  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
+  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
   
   // Define prompts for each tool type
   const toolPrompts = {
@@ -677,23 +723,29 @@ Remember:
     prompt = `IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.\n\n${prompt}`;
   }
 
-  try {
-    console.log(`🔄 Generating ${toolType} using Gemini 2.5 Flash...`);
-    
-    const systemInstruction = 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content. Use LaTeX for mathematical expressions with $ for inline and $$ for display math.';
-    
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }],
-      systemInstruction: systemInstruction
-    });
-    
-    const response = await result.response;
-    const generatedText = response.text();
-    console.log(`✅ Successfully generated ${toolType} using Gemini 2.5 Flash`);
-    return generatedText;
-  } catch (error) {
-    console.error(`❌ Error generating ${toolType}:`, error.message);
-    throw new Error(`Failed to generate ${toolType}: ${error.message || 'Unknown error'}`);
+  const modelsToTry = [
+    'gemini-2.5-flash',
+    'gemini-2.0-flash',
+    'gemini-pro',
+    'gemini-1.5-flash'
+  ];
+
+  for (const modelName of modelsToTry) {
+    try {
+      console.log(`🔄 Trying model for ${toolType}: ${modelName}`);
+      const model = genAI.getGenerativeModel({ model: modelName });
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      console.log(`✅ Successfully generated ${toolType} using ${modelName}`);
+      return response.text();
+    } catch (error) {
+      console.log(`❌ Model ${modelName} failed: ${error.message}`);
+      if (modelName === modelsToTry[modelsToTry.length - 1]) {
+        console.error(`Error generating ${toolType}:`, error);
+        throw new Error(`Failed to generate ${toolType}: ${error.message || 'Unknown error'}`);
+      }
+      continue;
+    }
   }
 };
 
@@ -701,10 +753,8 @@ const geminiService = new GeminiService();
 
 // Student Tool Generator
 export const generateStudentTool = async (toolType, params) => {
-  // Use Gemini API directly
-  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
-  const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+  const { GoogleGenerativeAI } = await import('@google/generative-ai');
+  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
   const toolPrompts = {
     'smart-study-guide-generator': `Create a comprehensive, personalized study guide.
@@ -1145,23 +1195,28 @@ Make it inspiring, actionable, and tailored to the student's goals.`
     prompt = `IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.\n\n${prompt}`;
   }
 
-  try {
-    console.log(`🔄 Generating student tool ${toolType} using Gemini 2.5 Flash...`);
-    
-    const systemInstruction = 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content. Use LaTeX for mathematical expressions with $ for inline and $$ for display math.';
-    
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: prompt }] }],
-      systemInstruction: systemInstruction
-    });
-    
-    const response = await result.response;
-    const generatedText = response.text();
-    console.log(`✅ Successfully generated student tool ${toolType} using Gemini 2.5 Flash`);
-    return generatedText;
-  } catch (error) {
-    console.error(`❌ Error generating student tool ${toolType}:`, error.message);
-    throw new Error(`Failed to generate content: ${error.message}`);
+  const modelsToTry = [
+    'gemini-2.5-flash',
+    'gemini-2.0-flash',
+    'gemini-pro',
+    'gemini-1.5-flash'
+  ];
+
+  for (const modelName of modelsToTry) {
+    try {
+      console.log(`🔄 Trying model for student tool ${toolType}: ${modelName}`);
+      const model = genAI.getGenerativeModel({ model: modelName });
+      const result = await model.generateContent(prompt);
+      const response = await result.response;
+      console.log(`✅ Successfully generated student tool ${toolType} using ${modelName}`);
+      return response.text();
+    } catch (error) {
+      console.log(`❌ Model ${modelName} failed: ${error.message}`);
+      if (modelName === modelsToTry[modelsToTry.length - 1]) {
+        console.error(`Error generating student tool ${toolType}:`, error);
+        throw new Error(`Failed to generate content: ${error.message}`);
+      }
+    }
   }
 };
 
