@@ -16,12 +16,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# DeepSeek V2 Q3_K_M model - supports both single file and sharded files
+# Qwen 2.5 7B Instruct GGUF model - supports both single file and sharded files
 # llama-cpp-python will auto-detect all shards if multiple files exist
-MODEL_DIR = os.path.expanduser("~/models/DeepSeek-V2-Q3_K_M")
+MODEL_DIR = os.path.expanduser("~/models/Qwen2.5-7B-Instruct")
 MODEL_PATH = None
 
-print("🔄 Loading DeepSeek-V2 Q3_K_M model...")
+print("🔄 Loading Qwen 2.5 7B Instruct model...")
 llm = None
 try:
     # Check if directory exists
@@ -53,10 +53,10 @@ try:
             print("✅ Model loaded successfully!")
         else:
             print(f"❌ No .gguf files found in: {MODEL_DIR}")
-            print("💡 Make sure the model files are in: ~/models/DeepSeek-V2-Q3_K_M/")
+            print("💡 Make sure the model files are in: ~/models/Qwen2.5-7B-Instruct/")
     else:
         print(f"❌ Model directory not found: {MODEL_DIR}")
-        print("💡 Make sure the model files are downloaded to: ~/models/DeepSeek-V2-Q3_K_M/")
+        print("💡 Make sure the model files are downloaded to: ~/models/Qwen2.5-7B-Instruct/")
 except Exception as e:
     print(f"❌ Error loading model: {e}")
     import traceback
@@ -68,7 +68,7 @@ class Message(BaseModel):
     content: str
 
 class ChatRequest(BaseModel):
-    model: str = "deepseek-v2"
+    model: str = "qwen2.5-7b-instruct"
     messages: List[Message]
     temperature: float = 0.7
     max_tokens: Optional[int] = 2000
@@ -77,7 +77,7 @@ class ChatRequest(BaseModel):
 async def health():
     return {
         "status": "ok" if llm else "error",
-        "model": "deepseek-v2-q3_k_m",
+        "model": "qwen2.5-7b-instruct",
         "model_loaded": llm is not None
     }
 
@@ -114,7 +114,7 @@ async def chat_completions(request: ChatRequest):
             "id": f"chatcmpl-{hash(prompt)}",
             "object": "chat.completion",
             "created": 1234567890,
-            "model": "deepseek-v2",
+            "model": "qwen2.5-7b-instruct",
             "choices": [{
                 "index": 0,
                 "message": {
@@ -133,5 +133,5 @@ async def chat_completions(request: ChatRequest):
         return {"error": {"message": str(e)}}, 500
 
 if __name__ == "__main__":
-    print("🚀 Starting DeepSeek-V2 API server...")
+    print("🚀 Starting Qwen 2.5 7B Instruct API server...")
     uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")

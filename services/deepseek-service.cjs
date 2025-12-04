@@ -1,12 +1,12 @@
-// DeepSeek Service - OpenAI-compatible API wrapper
-// Replaces Gemini service with DeepSeek-V2
+// Qwen Service - OpenAI-compatible API wrapper
+// Replaces Gemini service with Qwen 2.5 7B Instruct
 
 const axios = require('axios');
 
 class DeepSeekService {
   constructor() {
     this.apiUrl = process.env.DEEPSEEK_API_URL || 'http://localhost:8000/v1';
-    this.model = 'deepseek-v2';
+    this.model = 'qwen2.5-7b-instruct';
     
     if (!this.apiUrl) {
       console.warn('⚠️  DEEPSEEK_API_URL not set, using default: http://localhost:8000');
@@ -18,7 +18,7 @@ class DeepSeekService {
 
   async generateResponse(message, context = {}, chatHistory = []) {
     try {
-      console.log('🤖 Using DeepSeek-V2 for response...');
+      console.log('🤖 Using Qwen 2.5 7B Instruct for response...');
       
       const studentName = context?.studentName || 'Student';
 
@@ -232,8 +232,8 @@ Guidelines:
   }
 
   async analyzeImage(imageBase64, context = '') {
-    // DeepSeek-V2 doesn't support vision yet, fallback to text extraction
-    console.log('⚠️  Image analysis not supported by DeepSeek-V2, using fallback');
+    // Qwen 2.5 7B doesn't support vision yet, fallback to text extraction
+    console.log('⚠️  Image analysis not supported by Qwen 2.5 7B, using fallback');
     return await this.analyzeImageMock(imageBase64, context);
   }
 
