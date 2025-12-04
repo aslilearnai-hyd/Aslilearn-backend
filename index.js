@@ -164,8 +164,13 @@ app.use(cors({
       return callback(null, true);
     }
   
-  // Allow custom domain aslilearn.ai and its subdomains
-  if (origin && origin.match(/^https:\/\/(www\.)?aslilearn\.ai$/)) {
+  // Allow custom domain aslilearn.ai and its subdomains (www, api, etc.)
+  if (origin && origin.match(/^https:\/\/(www\.|api\.)?aslilearn\.ai$/)) {
+    return callback(null, true);
+  }
+  
+  // Allow all aslilearn.ai subdomains
+  if (origin && origin.match(/^https:\/\/[a-z0-9-]+\.aslilearn\.ai$/)) {
     return callback(null, true);
   }
     
@@ -206,7 +211,8 @@ app.get('/api/health', (req, res) => {
     origin.match(/^http:\/\/localhost(:\d+)?$/) ||
     origin.match(/^http:\/\/127\.0\.0\.1(:\d+)?$/) ||
     origin.match(/^http:\/\/localhost:(5173|4173|4174|3000|8080)$/) ||
-    origin.match(/^https:\/\/(www\.)?aslilearn\.ai$/) ||
+    origin.match(/^https:\/\/(www\.|api\.)?aslilearn\.ai$/) ||
+    origin.match(/^https:\/\/[a-z0-9-]+\.aslilearn\.ai$/) ||
     origin.match(/^https:\/\/asli-frontend.*\.vercel\.app$/) ||
     origin.match(/^https:\/\/alsi-stud-frontend-mf3r.*\.vercel\.app$/);
   
@@ -231,7 +237,8 @@ app.options('/api/health', (req, res) => {
     origin.match(/^http:\/\/localhost(:\d+)?$/) ||
     origin.match(/^http:\/\/127\.0\.0\.1(:\d+)?$/) ||
     origin.match(/^http:\/\/localhost:(5173|4173|4174|3000|8080)$/) ||
-    origin.match(/^https:\/\/(www\.)?aslilearn\.ai$/) ||
+    origin.match(/^https:\/\/(www\.|api\.)?aslilearn\.ai$/) ||
+    origin.match(/^https:\/\/[a-z0-9-]+\.aslilearn\.ai$/) ||
     origin.match(/^https:\/\/asli-frontend.*\.vercel\.app$/) ||
     origin.match(/^https:\/\/alsi-stud-frontend-mf3r.*\.vercel\.app$/);
   
