@@ -16,12 +16,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Qwen 2.5 7B Instruct GGUF model - supports both single file and sharded files
+# Llama 3.1 8B Instruct GGUF model - supports both single file and sharded files
 # llama-cpp-python will auto-detect all shards if multiple files exist
-MODEL_DIR = os.path.expanduser("~/models/Qwen2.5-7B-Instruct")
+MODEL_DIR = os.path.expanduser("~/models/Llama-3.1-8B-Instruct")
 MODEL_PATH = None
 
-print("🔄 Loading Qwen 2.5 7B Instruct model...")
+print("🔄 Loading Llama 3.1 8B Instruct model...")
 llm = None
 try:
     # Check if directory exists
@@ -53,10 +53,10 @@ try:
             print("✅ Model loaded successfully!")
         else:
             print(f"❌ No .gguf files found in: {MODEL_DIR}")
-            print("💡 Make sure the model files are in: ~/models/Qwen2.5-7B-Instruct/")
+            print("💡 Make sure the model files are in: ~/models/Llama-3.1-8B-Instruct/")
     else:
         print(f"❌ Model directory not found: {MODEL_DIR}")
-        print("💡 Make sure the model files are downloaded to: ~/models/Qwen2.5-7B-Instruct/")
+        print("💡 Make sure the model files are downloaded to: ~/models/Llama-3.1-8B-Instruct/")
 except Exception as e:
     print(f"❌ Error loading model: {e}")
     import traceback
@@ -68,7 +68,7 @@ class Message(BaseModel):
     content: str
 
 class ChatRequest(BaseModel):
-    model: str = "qwen2.5-7b-instruct"
+    model: str = "llama-3.1-8b-instruct"
     messages: List[Message]
     temperature: float = 0.7
     max_tokens: Optional[int] = 2000
@@ -77,7 +77,7 @@ class ChatRequest(BaseModel):
 async def health():
     return {
         "status": "ok" if llm else "error",
-        "model": "qwen2.5-7b-instruct",
+        "model": "llama-3.1-8b-instruct",
         "model_loaded": llm is not None
     }
 
@@ -114,7 +114,7 @@ async def chat_completions(request: ChatRequest):
             "id": f"chatcmpl-{hash(prompt)}",
             "object": "chat.completion",
             "created": 1234567890,
-            "model": "qwen2.5-7b-instruct",
+            "model": "llama-3.1-8b-instruct",
             "choices": [{
                 "index": 0,
                 "message": {
@@ -133,5 +133,5 @@ async def chat_completions(request: ChatRequest):
         return {"error": {"message": str(e)}}, 500
 
 if __name__ == "__main__":
-    print("🚀 Starting Qwen 2.5 7B Instruct API server...")
+    print("🚀 Starting Llama 3.1 8B Instruct API server...")
     uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
