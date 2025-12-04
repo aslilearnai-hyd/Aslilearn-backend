@@ -5,10 +5,10 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 class GeminiService {
   constructor() {
-    this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-2.5-flash'; // Latest model that works with v1 API
-    this.visionModel = 'gemini-2.5-flash'; // Supports vision
+    this.textModel = 'gemini-2.5-flash';
+    this.visionModel = 'gemini-2.5-flash';
     
     if (!this.apiKey) {
       console.warn('⚠️  GEMINI_API_KEY not set in environment variables');

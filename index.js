@@ -3859,8 +3859,8 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
-// AI Chat endpoints - Using DeepSeek instead of Gemini
-import { deepseekService } from './services/deepseek-service.cjs';
+// AI Chat endpoints - Using Gemini API
+import { geminiService } from './services/gemini-service.cjs';
 
 // Store chat sessions in memory (in production, use a database)
 const chatSessions = new Map();
@@ -3895,8 +3895,8 @@ app.post('/api/ai-chat', async (req, res) => {
     };
     session.messages.push(userMessage);
 
-    // Generate AI response using DeepSeek
-    const aiResponse = await deepseekService.generateResponse(
+    // Generate AI response using Gemini API
+    const aiResponse = await geminiService.generateResponse(
       message, 
       context || session.context, 
       session.messages.slice(-10) // Last 10 messages for context
@@ -3956,7 +3956,7 @@ app.post('/api/ai-chat/analyze-image', async (req, res) => {
     // Remove data URL prefix if present
     const base64Data = image.replace(/^data:image\/[a-z]+;base64,/, '');
     
-    const analysis = await deepseekService.analyzeImage(base64Data, context);
+    const analysis = await geminiService.analyzeImage(base64Data, context);
 
     res.json({
       success: true,

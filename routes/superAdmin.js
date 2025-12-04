@@ -366,8 +366,8 @@ router.post('/iq-rank-activities/generate-questions', async (req, res) => {
     const Subject = (await import('../models/Subject.js')).default;
     const IQRankQuestion = (await import('../models/IQRankQuestion.js')).default;
     const IQRankQuiz = (await import('../models/IQRankQuiz.js')).default;
-    // Using DeepSeek instead of Gemini
-    const { deepseekService } = await import('../services/deepseek-service.cjs');
+    // Using Gemini API
+    const { geminiService } = await import('../services/gemini-service.cjs');
 
     // Get subject details
     const subject = await Subject.findById(subjectId);
@@ -411,8 +411,8 @@ Requirements:
 7. Include clear explanations for each correct answer
 8. Return ONLY the JSON object, no additional text before or after`;
 
-    console.log('🤖 Generating questions with Llama 3.1 8B Instruct API...');
-    const geminiResponse = await deepseekService.generateStructuredContent(prompt, 'json');
+    console.log('🤖 Generating questions with Gemini 2.5 Flash API...');
+    const geminiResponse = await geminiService.generateStructuredContent(prompt, 'json');
 
     // Parse the JSON response from DeepSeek
     let questionsData;

@@ -5,9 +5,9 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 class GeminiService {
   constructor() {
-    this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-2.5-flash'; // Latest model that works with v1 API
+    this.textModel = 'gemini-2.5-flash';
     
     if (!this.apiKey) {
       console.warn('⚠️  GEMINI_API_KEY not set in environment variables');
@@ -45,19 +45,11 @@ class GeminiService {
   }
 }
 
-// Export functions for backward compatibility with existing code
+// Export functions using Gemini API directly
 export const generateLessonPlan = async (subject, topic, gradeLevel, duration) => {
-    // Use DeepSeek API instead of Gemini
-    const axios = (await import('axios')).default;
-    const deepseekUrl = process.env.DEEPSEEK_API_URL || 'http://localhost:8000/v1';
-  
-  // Try multiple models in order of preference
-  const modelsToTry = [
-    'gemini-2.5-flash',    // Latest version
-    'gemini-2.0-flash',    // Version 2.0
-    'gemini-pro',          // Stable fallback
-    'gemini-1.5-flash'     // Older but might work
-  ];
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
+    const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
   const prompt = `Create a comprehensive, detailed lesson plan for IIT JEE Mains preparation:
 
@@ -118,32 +110,18 @@ This is for IIT JEE Mains coaching, so please provide a structured lesson plan w
 Format the response in a clear, structured manner with proper headings and sections. Make it practical, engaging, and focused on JEE Mains preparation.`;
 
   try {
-    console.log(`🔄 Generating lesson plan using Llama 3.1 8B Instruct...`);
+    console.log(`🔄 Generating lesson plan using Gemini 2.5 Flash...`);
     
-    const response = await axios.post(
-      `${deepseekUrl}/chat/completions`,
-      {
-        model: 'llama-3.1-8b-instruct',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content.'
-          },
-          {
-            role: 'user',
-            content: prompt
-          }
-        ],
-        temperature: 0.7,
-        max_tokens: 4000
-      },
-      {
-        timeout: 120000 // 2 minutes timeout
-      }
-    );
+    const systemInstruction = 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content.';
     
-    const lessonPlan = response.data.choices[0].message.content;
-    console.log(`✅ Successfully generated lesson plan using Llama 3.1 8B Instruct`);
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      systemInstruction: systemInstruction
+    });
+    
+    const response = await result.response;
+    const lessonPlan = response.text();
+    console.log(`✅ Successfully generated lesson plan using Gemini 2.5 Flash`);
     return lessonPlan;
   } catch (error) {
     console.error('❌ Error generating lesson plan:', error.message);
@@ -152,8 +130,9 @@ Format the response in a clear, structured manner with proper headings and secti
 };
 
 export const generateTestQuestions = async (subject, topic, gradeLevel, questionCount, difficulty) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
     const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     
     const prompt = `Generate exactly ${questionCount} multiple-choice test questions for:
 - Subject: ${subject}
@@ -184,48 +163,38 @@ Requirements:
 7. Include clear explanations for each correct answer
 8. Return ONLY the JSON object, no additional text before or after`;
 
-  // Include JSON instruction in the prompt since systemInstruction is not supported in v1 API
+  // Include JSON instruction in the prompt
   const fullPrompt = `You are a helpful educational assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.
 
 ${prompt}`;
 
-  // Try multiple models in order of preference
-  const modelsToTry = [
-    'gemini-2.5-flash',    // Latest version
-    'gemini-2.0-flash',    // Version 2.0
-    'gemini-pro',          // Stable fallback
-    'gemini-1.5-flash'     // Older but might work
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for quiz generation: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(fullPrompt);
+  try {
+    console.log(`🔄 Generating test questions using Gemini 2.5 Flash...`);
+    const systemInstruction = 'You are a helpful educational assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.';
+    
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: fullPrompt }] }],
+      systemInstruction: systemInstruction
+    });
+    
     const response = await result.response;
     let text = response.text();
     
     // Clean up markdown code blocks if present
     text = text.replace(/^```json\s*/i, '').replace(/^```\s*/i, '').replace(/\s*```$/i, '').trim();
     
-      console.log(`✅ Successfully generated questions using ${modelName}`);
+    console.log(`✅ Successfully generated questions using Gemini 2.5 Flash`);
     return text;
   } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      // If this is the last model, throw the error
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
     console.error('Error generating test questions:', error);
     throw new Error(`Failed to generate test questions: ${error.message || 'Unknown error'}`);
-      }
-      // Otherwise, try the next model
-      continue;
-    }
   }
 };
 
 export const generateClasswork = async (subject, topic, gradeLevel, assignmentType) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
     const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     
     const prompt = `
     Create ${assignmentType} for:
@@ -245,36 +214,22 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
     Include both individual and group work elements if applicable.
     `;
 
-  // Try multiple models in order of preference
-  const modelsToTry = [
-    'gemini-2.5-flash',    // Latest version
-    'gemini-2.0-flash',    // Version 2.0
-    'gemini-pro',          // Stable fallback
-    'gemini-1.5-flash'     // Older but might work
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for classwork: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
+  try {
+    console.log(`🔄 Generating classwork using Gemini 2.5 Flash...`);
     const result = await model.generateContent(prompt);
     const response = await result.response;
-      console.log(`✅ Successfully generated classwork using ${modelName}`);
+    console.log(`✅ Successfully generated classwork using Gemini 2.5 Flash`);
     return response.text();
   } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
     console.error('Error generating classwork:', error);
-        throw new Error(`Failed to generate classwork: ${error.message || 'Unknown error'}`);
-      }
-      continue;
-    }
+    throw new Error(`Failed to generate classwork: ${error.message || 'Unknown error'}`);
   }
 };
 
 export const generateSchedule = async (subjects, gradeLevels, timeSlots, preferences) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
     const genAI = new GoogleGenerativeAI(apiKey);
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
     
     const prompt = `
     Create a teaching schedule for:
@@ -294,38 +249,24 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
     Ensure the schedule is balanced and follows best practices for teaching.
     `;
 
-  // Try multiple models in order of preference
-  const modelsToTry = [
-    'gemini-2.5-flash',    // Latest version
-    'gemini-2.0-flash',    // Version 2.0
-    'gemini-pro',          // Stable fallback
-    'gemini-1.5-flash'     // Older but might work
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      console.log(`🔄 Trying model for schedule: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
+  try {
+    console.log(`🔄 Generating schedule using Gemini 2.5 Flash...`);
     const result = await model.generateContent(prompt);
     const response = await result.response;
-      console.log(`✅ Successfully generated schedule using ${modelName}`);
+    console.log(`✅ Successfully generated schedule using Gemini 2.5 Flash`);
     return response.text();
   } catch (error) {
-      console.log(`❌ Model ${modelName} failed: ${error.message}`);
-      if (modelName === modelsToTry[modelsToTry.length - 1]) {
     console.error('Error generating schedule:', error);
-        throw new Error(`Failed to generate schedule: ${error.message || 'Unknown error'}`);
-      }
-      continue;
-    }
+    throw new Error(`Failed to generate schedule: ${error.message || 'Unknown error'}`);
   }
 };
 
 // Generic teacher tool generator
 export const generateTeacherTool = async (toolType, params) => {
-  // Use DeepSeek API instead of Gemini
-  const axios = (await import('axios')).default;
-  const deepseekUrl = process.env.DEEPSEEK_API_URL || 'http://localhost:8000/v1';
+  // Use Gemini API directly
+  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
+  const genAI = new GoogleGenerativeAI(apiKey);
+  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
   
   // Define prompts for each tool type
   const toolPrompts = {
@@ -737,32 +678,18 @@ Remember:
   }
 
   try {
-    console.log(`🔄 Generating ${toolType} using Llama 3.1 8B Instruct...`);
+    console.log(`🔄 Generating ${toolType} using Gemini 2.5 Flash...`);
     
-    const response = await axios.post(
-      `${deepseekUrl}/chat/completions`,
-      {
-        model: 'llama-3.1-8b-instruct',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content. Use LaTeX for mathematical expressions with $ for inline and $$ for display math.'
-          },
-          {
-            role: 'user',
-            content: prompt
-          }
-        ],
-        temperature: 0.7,
-        max_tokens: 4000
-      },
-      {
-        timeout: 120000 // 2 minutes timeout
-      }
-    );
+    const systemInstruction = 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content. Use LaTeX for mathematical expressions with $ for inline and $$ for display math.';
     
-    const generatedText = response.data.choices[0].message.content;
-    console.log(`✅ Successfully generated ${toolType} using Llama 3.1 8B Instruct`);
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      systemInstruction: systemInstruction
+    });
+    
+    const response = await result.response;
+    const generatedText = response.text();
+    console.log(`✅ Successfully generated ${toolType} using Gemini 2.5 Flash`);
     return generatedText;
   } catch (error) {
     console.error(`❌ Error generating ${toolType}:`, error.message);
@@ -774,9 +701,10 @@ const geminiService = new GeminiService();
 
 // Student Tool Generator
 export const generateStudentTool = async (toolType, params) => {
-  // Use DeepSeek API instead of Gemini
-  const axios = (await import('axios')).default;
-  const deepseekUrl = process.env.DEEPSEEK_API_URL || 'http://localhost:8000/v1';
+  // Use Gemini API directly
+  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyCubFWwtDGDpj9jYmjzvng2QA_QYq9n4O0';
+  const genAI = new GoogleGenerativeAI(apiKey);
+  const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
 
   const toolPrompts = {
     'smart-study-guide-generator': `Create a comprehensive, personalized study guide.
@@ -1218,32 +1146,18 @@ Make it inspiring, actionable, and tailored to the student's goals.`
   }
 
   try {
-    console.log(`🔄 Generating student tool ${toolType} using Llama 3.1 8B Instruct...`);
+    console.log(`🔄 Generating student tool ${toolType} using Gemini 2.5 Flash...`);
     
-    const response = await axios.post(
-      `${deepseekUrl}/chat/completions`,
-      {
-        model: 'llama-3.1-8b-instruct',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content. Use LaTeX for mathematical expressions with $ for inline and $$ for display math.'
-          },
-          {
-            role: 'user',
-            content: prompt
-          }
-        ],
-        temperature: 0.7,
-        max_tokens: 4000
-      },
-      {
-        timeout: 120000 // 2 minutes timeout
-      }
-    );
+    const systemInstruction = 'You are an expert educational content generator. Format responses using Markdown with clear headings, bullet points, and structured content. Use LaTeX for mathematical expressions with $ for inline and $$ for display math.';
     
-    const generatedText = response.data.choices[0].message.content;
-    console.log(`✅ Successfully generated student tool ${toolType} using Llama 3.1 8B Instruct`);
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: prompt }] }],
+      systemInstruction: systemInstruction
+    });
+    
+    const response = await result.response;
+    const generatedText = response.text();
+    console.log(`✅ Successfully generated student tool ${toolType} using Gemini 2.5 Flash`);
     return generatedText;
   } catch (error) {
     console.error(`❌ Error generating student tool ${toolType}:`, error.message);

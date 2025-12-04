@@ -227,8 +227,8 @@ router.post('/grade-work', upload.single('file'), async (req, res) => {
       return res.status(400).json({ success: false, message: 'Student work or file is required' });
     }
 
-    // Import DeepSeek service (replacing Gemini)
-    const { deepseekService } = require('../services/deepseek-service.cjs');
+    // Import Gemini service
+    const { geminiService } = require('../services/gemini-service.cjs');
     
     // Extract text from file if uploaded
     let workText = studentWork || '';
@@ -247,7 +247,7 @@ router.post('/grade-work', upload.single('file'), async (req, res) => {
         const context = 'Extract all text from this image. If this is student work (essay, assignment, answer), provide the complete text content.';
         
         try {
-          workText = await deepseekService.analyzeImage(imageBase64, context);
+          workText = await geminiService.analyzeImage(imageBase64, context);
         } catch (error) {
           console.error('Image analysis error:', error);
           workText = '[Image uploaded - text extraction failed. Please provide text manually.]';
@@ -289,8 +289,8 @@ Please provide:
 
 Format your response clearly with sections and bullet points.`;
 
-    // Generate grading using DeepSeek
-        const gradingResult = await deepseekService.generateResponse(gradingPrompt, {}, []);
+    // Generate grading using Gemini API
+        const gradingResult = await geminiService.generateResponse(gradingPrompt, {}, []);
     
     res.json({
       success: true,

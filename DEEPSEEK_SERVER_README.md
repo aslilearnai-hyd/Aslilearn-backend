@@ -1,10 +1,10 @@
-# 🚨 Important: Qwen 2.5 7B Instruct Server Location
+# 🚨 Important: Llama 3.1 8B Instruct Server Location
 
 ## ⚠️ This server.py is for DigitalOcean Droplet, NOT Local Windows!
 
 The `server.py` file in this folder is meant to run on your **DigitalOcean Ubuntu droplet**, not on your local Windows machine.
 
-**Model**: Qwen 2.5 7B Instruct GGUF (~4.5GB Q4_K_M)
+**Model**: Llama 3.1 8B Instruct GGUF (~4.8GB Q4_K_M)
 
 ---
 
@@ -18,7 +18,7 @@ The `server.py` file in this folder is meant to run on your **DigitalOcean Ubunt
 
 ### Your Backend (Node.js):
 - ✅ Stays on your production server (Railway/Vercel/etc.)
-- ✅ Connects to Qwen API via: `http://165.232.181.99:8000/v1`
+- ✅ Connects to Llama API via: `http://165.232.181.99:8000/v1`
 
 ---
 
@@ -79,12 +79,12 @@ Since this file shouldn't be in your backend folder, you can:
 
 - **server.py** → Run on **DigitalOcean Droplet** (Ubuntu)
 - **Your Backend** → Run on **Production Server** (Railway/Vercel)
-- **Connection** → Backend connects to Qwen API via HTTP
-- **Model** → Qwen 2.5 7B Instruct GGUF (local inference)
+- **Connection** → Backend connects to Llama API via HTTP
+- **Model** → Llama 3.1 8B Instruct GGUF (local inference)
 
 **Don't try to run server.py on Windows!** Use the droplet setup instead.
 
 ## 📚 Setup Instructions
 
-See `QWEN_SETUP.md` for complete setup instructions.
+See `LLAMA_SETUP.md` for complete setup instructions.
 
