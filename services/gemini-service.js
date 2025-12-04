@@ -320,7 +320,7 @@ export const generateTeacherTool = async (toolType, params) => {
 
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
-Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
 Class: ${params.className || ''}
 
 IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**).
@@ -354,15 +354,21 @@ Important safety notes (if applicable).
 
 Make it engaging, hands-on, and aligned with curriculum standards.`,
 
-    'worksheet-generator': `Design custom worksheets with exercises and problems.
+    'worksheet-mcq-generator': `Design custom worksheets and MCQs with various question types.
 
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
-Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
+Question Type: ${params.questionType || 'All Types'}
 Number of Questions: ${params.questionCount || 10}
 Difficulty: ${params.difficulty || 'medium'}
 
 IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**).
+
+${params.questionType === 'Single Option' ? 'Generate ONLY single-option multiple-choice questions (one correct answer per question).' : ''}
+${params.questionType === 'Multiple Option' ? 'Generate ONLY multiple-option multiple-choice questions (multiple correct answers per question).' : ''}
+${params.questionType === 'Integer Type' ? 'Generate ONLY integer-type questions (numerical answer questions).' : ''}
+${params.questionType === 'All Types' ? 'Generate a mix of question types: single-option MCQs, multiple-option MCQs, integer-type questions, fill-in-the-blank, and short answer questions.' : ''}
 
 ## Worksheet Title
 Provide a clear, descriptive title.
@@ -371,13 +377,11 @@ Provide a clear, descriptive title.
 Clear instructions for students on how to complete the worksheet.
 
 ## Exercises
-Include ${params.questionCount || 10} questions with:
-- Fill-in-the-blank questions
-- Short answer questions
-- Problem-solving questions
-- Multiple choice questions (if applicable)
+Include ${params.questionCount || 10} questions based on the selected question type.
 
 Format each question clearly with proper numbering.
+${params.questionType === 'Single Option' || params.questionType === 'Multiple Option' || params.questionType === 'All Types' ? '\nFor multiple-choice questions:\n- Provide 4 options (A, B, C, D)\n- Mark the correct answer(s) clearly\n- Include brief explanations' : ''}
+${params.questionType === 'Integer Type' || params.questionType === 'All Types' ? '\nFor integer-type questions:\n- Provide numerical answer questions\n- Include step-by-step solutions' : ''}
 
 ## Answer Key
 Provide complete answers for all questions with explanations where needed.
@@ -393,7 +397,7 @@ Make it comprehensive and appropriate for the grade level.`,
 
 Subject: ${params.subject || 'General'}
 Concept: ${params.concept || params.topic || 'General Concept'}
-Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
 
 IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**).
 
@@ -427,7 +431,7 @@ Make it clear, simple, and easy to understand.`,
 
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
-Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
 Duration: ${params.duration || 90} minutes
 
 IMPORTANT: Format your response using Markdown with clear headings (##), subheadings (###), bullet points (-), numbered lists, and bold text (**text**). Make it professional and well-structured.
@@ -486,7 +490,7 @@ Make the content detailed, practical, and focused on JEE Mains preparation.`,
     'homework-creator': `Generate meaningful homework assignments for:
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
-Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
 Duration: ${params.duration || '30 minutes'}
 
 Generate:
@@ -519,7 +523,7 @@ Make it clear, fair, and comprehensive.`,
     'learning-outcomes-generator': `Define measurable learning outcomes for:
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
-Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
 
 Generate:
 1. Course/Unit Title
@@ -535,7 +539,7 @@ Make them specific, measurable, achievable, relevant, and time-bound (SMART).`,
     'story-passage-creator': `Generate engaging stories and reading passages for:
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
-Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
 Length: ${params.length || 'medium'}
 
 Generate:
@@ -552,7 +556,7 @@ Make it engaging, age-appropriate, and educational.`,
     'short-notes-summaries-maker': `Condense complex topics into concise notes for:
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
-Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
 
 Generate:
 1. Topic Title
@@ -568,7 +572,7 @@ Make it concise, clear, and easy to review.`,
     'flashcard-generator': `Build study flashcards for quick revision for:
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
-Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
 Number of Cards: ${params.cardCount || 20}
 
 Generate:
@@ -632,7 +636,7 @@ Make it organized, efficient, and practical.`,
     'exam-question-paper-generator': `Create comprehensive exam papers with varying difficulty for:
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
-Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
 Duration: ${params.duration || '90 minutes'}
 Difficulty Mix: ${params.difficulty || 'mixed'}
 
@@ -644,76 +648,7 @@ Generate:
 5. Answer Key
 6. Time Allocation Suggestions
 
-Make it comprehensive and exam-ready.`,
-
-    'mcq-generator': `You are creating multiple-choice questions. DO NOT output JSON. Output ONLY Markdown format.
-
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-Grade Level: ${params.gradeLevel || 'General'}
-Number of Questions: ${params.questionCount || 10}
-Difficulty: ${params.difficulty || 'medium'}
-
-CRITICAL INSTRUCTIONS:
-1. Output format: Markdown ONLY (NOT JSON, NOT code blocks, just plain Markdown text)
-2. Mathematical notation: Use LaTeX with proper syntax
-   - Inline math: $\\int_0^1 x dx$
-   - Display math: $$\\int_0^{\\frac{\\pi}{2}} \\sin x dx$$
-   - Use single backslash: $\\int$, $\\frac{a}{b}$, $\\sqrt{x}$, $\\sin x$, $\\cos x$, $\\pi$, $e^x$
-3. Structure: Use Markdown headings, lists, and formatting
-
-Generate exactly ${params.questionCount || 10} questions in this Markdown format:
-
-## Question Set Title
-Class ${params.gradeLevel || 'General'} ${params.subject || 'General'}: ${params.topic || 'General Topic'} MCQs
-
-## Questions
-
-### Question 1
-Evaluate the definite integral: $$\\int_0^{\\frac{\\pi}{2}} \\frac{\\sin x}{\\sqrt{1 + \\cos^2 x}} dx$$
-
-**Options:**
-- A. $\\ln(1 + \\sqrt{2})$
-- B. $\\frac{\\pi}{4}$
-- C. $\\frac{\\pi}{2}$
-- D. $\\ln(2)$
-
-**Correct Answer:** A
-
-**Detailed Explanation:**
-
-Let's solve this step by step.
-
-**Step 1: Choose substitution**
-Let $u = \\cos x$. Then $du = -\\sin x dx$, so $\\sin x dx = -du$.
-
-**Step 2: Change limits**
-When $x = 0$, $u = \\cos(0) = 1$.
-When $x = \\frac{\\pi}{2}$, $u = \\cos(\\frac{\\pi}{2}) = 0$.
-
-**Step 3: Rewrite integral**
-$$\\int_0^{\\frac{\\pi}{2}} \\frac{\\sin x}{\\sqrt{1 + \\cos^2 x}} dx = \\int_1^0 \\frac{-du}{\\sqrt{1 + u^2}} = \\int_0^1 \\frac{du}{\\sqrt{1 + u^2}}$$
-
-**Step 4: Evaluate**
-This is a standard integral: $\\int \\frac{du}{\\sqrt{1 + u^2}} = \\ln|u + \\sqrt{1 + u^2}| + C$
-
-Applying limits:
-$$[\\ln|u + \\sqrt{1 + u^2}|]_0^1 = \\ln(1 + \\sqrt{2}) - \\ln(1) = \\ln(1 + \\sqrt{2})$$
-
-**Distractor Analysis:**
-- **A. $\\ln(1 + \\sqrt{2})$**: Correct answer from proper substitution and evaluation.
-- **B. $\\frac{\\pi}{4}$**: Students might confuse with $\\int_0^1 \\frac{dx}{1+x^2} = \\frac{\\pi}{4}$.
-- **C. $\\frac{\\pi}{2}$**: Common mistake from forgetting the substitution factor or incorrect limit evaluation.
-- **D. $\\ln(2)$**: Error in evaluating the logarithm expression or simplification mistake.
-
-[Continue with Question 2, 3, etc. following the same format]
-
-Remember:
-- NO JSON format
-- Use Markdown headings and lists
-- All math in LaTeX with proper syntax
-- Questions appropriate for ${params.gradeLevel || 'General'} level
-- Difficulty: ${params.difficulty || 'medium'}`
+Make it comprehensive and exam-ready.`
   };
 
   let prompt = toolPrompts[toolType] || `Generate content for ${toolType} with the following parameters: ${JSON.stringify(params)}`;
