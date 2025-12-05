@@ -1745,84 +1745,13 @@ app.delete('/api/admin/exams/:id', async (req, res) => {
 
 // Save exam results
 // Update exam result to include board
-app.post('/api/student/exam-results', requireAuth, async (req, res) => {
-  try {
-    const { examId, examTitle, totalQuestions, correctAnswers, wrongAnswers, unattempted, totalMarks, obtainedMarks, percentage, timeTaken, subjectWiseScore, answers } = req.body;
-    
-    // Get student's assigned admin and board
-    const student = await User.findById(req.user.id);
-    if (!student) {
-      return res.status(400).json({ message: 'Student not found' });
-    }
-    
-    if (!student.board) {
-      return res.status(400).json({ message: 'Student board not assigned' });
-    }
-    
-    const resultData = {
-      examId,
-      userId: req.user.id,
-      adminId: student.assignedAdmin || null, // May be null for super-admin created exams
-      board: student.board, // Add board to result
-      examTitle,
-      totalQuestions,
-      correctAnswers,
-      wrongAnswers,
-      unattempted,
-      totalMarks,
-      obtainedMarks,
-      percentage,
-      timeTaken,
-      subjectWiseScore,
-      answers,
-      completedAt: new Date()
-    };
-    
-    // Import ExamResult model
-    const ExamResult = (await import('./models/ExamResult.js')).default;
-    
-    // Save to database
-    const examResult = new ExamResult(resultData);
-    await examResult.save();
-    
-    console.log('✅ Exam result saved successfully');
-    console.log('📋 ExamId:', examResult.examId?.toString());
-    console.log('📋 UserId:', examResult.userId?.toString());
-    console.log('📋 Board:', examResult.board);
-    
-    res.status(201).json({ 
-      success: true,
-      message: 'Result saved successfully',
-      data: examResult
-    });
-  } catch (error) {
-    console.error('Failed to save exam result:', error);
-    res.status(500).json({ message: 'Failed to save result' });
-  }
-});
+// POST exam results - This route is now handled by student.js routes
+// REMOVED: Duplicate route that was causing user data isolation issues
+// The correct route should be in backend/routes/student.js which properly uses req.userId
 
-// Get student exam results - This is now handled by student.js routes
-// Keeping this as a fallback but student.js route should be used instead
-app.get('/api/student/exam-results', requireAuth, async (req, res) => {
-  try {
-    console.log('📋 Fetching exam results for student:', req.user.id);
-    
-    const ExamResult = (await import('./models/ExamResult.js')).default;
-    const results = await ExamResult.find({ userId: req.user.id })
-      .populate('examId', 'title examType')
-      .sort({ completedAt: -1 });
-    
-    console.log(`✅ Found ${results.length} exam results`);
-    
-    res.json({
-      success: true,
-      data: results
-    });
-  } catch (error) {
-    console.error('Failed to fetch exam results:', error);
-    res.status(500).json({ success: false, message: 'Failed to fetch results', error: error.message });
-  }
-});
+// Get student exam results - This route is now handled by student.js routes
+// REMOVED: Duplicate route that was causing user data isolation issues
+// The correct route is in backend/routes/student.js which properly filters by req.userId
 
 // Test endpoint for debugging
 app.get('/api/admin/test', (req, res) => {

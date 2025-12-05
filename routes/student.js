@@ -1394,26 +1394,56 @@ router.get('/homework-submissions', async (req, res) => {
 router.get('/exam-results', async (req, res) => {
   try {
     console.log('📋 Fetching exam results for student:', req.userId);
+    console.log('📋 Request user:', req.user);
     
     if (!req.userId) {
+      console.error('❌ req.userId is not set');
       return res.status(401).json({ success: false, message: 'User not authenticated' });
     }
 
+    // Convert userId to ObjectId to ensure proper matching
+    const mongoose = (await import('mongoose')).default;
+    const userId = mongoose.Types.ObjectId.isValid(req.userId) 
+      ? new mongoose.Types.ObjectId(req.userId) 
+      : req.userId;
+
     const ExamResult = (await import('../models/ExamResult.js')).default;
-    const results = await ExamResult.find({ userId: req.userId })
+    
+    // Ensure we're filtering by the correct userId field
+    const results = await ExamResult.find({ userId: userId })
       .populate('examId', '_id title examType duration totalQuestions totalMarks')
       .sort({ completedAt: -1 });
     
-    console.log(`✅ Found ${results.length} exam results for student`);
+    console.log(`✅ Found ${results.length} exam results for student ${req.userId}`);
+    console.log(`📋 Query filter used: { userId: ${userId} }`);
+    
+    // Verify all results belong to this user
+    const invalidResults = results.filter(r => {
+      const resultUserId = r.userId?.toString ? r.userId.toString() : String(r.userId);
+      return resultUserId !== String(userId);
+    });
+    
+    if (invalidResults.length > 0) {
+      console.error(`⚠️ WARNING: Found ${invalidResults.length} results that don't belong to user ${req.userId}`);
+      // Filter out invalid results
+      const validResults = results.filter(r => {
+        const resultUserId = r.userId?.toString ? r.userId.toString() : String(r.userId);
+        return resultUserId === String(userId);
+      });
+      
+      return res.json({
+        success: true,
+        data: validResults,
+        warning: `Filtered out ${invalidResults.length} invalid results`
+      });
+    }
     
     // Log first result structure for debugging
     if (results.length > 0) {
       console.log('📋 Sample result structure:', {
-        examId: results[0].examId,
-        examIdType: typeof results[0].examId,
-        examIdId: results[0].examId?._id?.toString(),
-        examIdString: results[0].examId?.toString(),
-        userId: results[0].userId?.toString()
+        examId: results[0].examId?._id?.toString(),
+        userId: results[0].userId?.toString(),
+        examTitle: results[0].examTitle || results[0].examId?.title
       });
     }
     
@@ -1427,6 +1457,75 @@ router.get('/exam-results', async (req, res) => {
     res.status(500).json({ 
       success: false, 
       message: 'Failed to fetch exam results',
+      error: error.message 
+    });
+  }
+});
+
+// Save exam results
+router.post('/exam-results', async (req, res) => {
+  try {
+    const { examId, examTitle, totalQuestions, correctAnswers, wrongAnswers, unattempted, totalMarks, obtainedMarks, percentage, timeTaken, subjectWiseScore, answers } = req.body;
+    
+    console.log('📋 Saving exam result for student:', req.userId);
+    console.log('📋 Exam ID:', examId);
+    
+    if (!req.userId) {
+      return res.status(401).json({ success: false, message: 'User not authenticated' });
+    }
+    
+    // Get student's assigned admin and board
+    const student = await User.findById(req.userId);
+    if (!student) {
+      return res.status(400).json({ success: false, message: 'Student not found' });
+    }
+    
+    if (!student.board) {
+      return res.status(400).json({ success: false, message: 'Student board not assigned' });
+    }
+    
+    const resultData = {
+      examId,
+      userId: req.userId, // Use req.userId from verifyToken middleware
+      adminId: student.assignedAdmin || null,
+      board: student.board,
+      examTitle,
+      totalQuestions,
+      correctAnswers,
+      wrongAnswers,
+      unattempted,
+      totalMarks,
+      obtainedMarks,
+      percentage,
+      timeTaken,
+      subjectWiseScore,
+      answers,
+      completedAt: new Date()
+    };
+    
+    // Import ExamResult model
+    const ExamResult = (await import('../models/ExamResult.js')).default;
+    
+    // Save to database
+    const examResult = new ExamResult(resultData);
+    await examResult.save();
+    
+    console.log('✅ Exam result saved successfully');
+    console.log('📋 ExamId:', examResult.examId?.toString());
+    console.log('📋 UserId:', examResult.userId?.toString());
+    console.log('📋 Board:', examResult.board);
+    
+    res.status(201).json({ 
+      success: true,
+      message: 'Result saved successfully',
+      data: examResult
+    });
+  } catch (error) {
+    console.error('❌ Failed to save exam result:', error);
+    console.error('Error stack:', error.stack);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to save result',
       error: error.message 
     });
   }
