@@ -2120,6 +2120,60 @@ router.post('/session-time', async (req, res) => {
   }
 });
 
+// Get user's session time data (weekly study time)
+router.get('/session-time', async (req, res) => {
+  try {
+    const userId = req.userId;
+    
+    if (!userId) {
+      return res.status(401).json({ success: false, message: 'User not authenticated' });
+    }
+    
+    const UserSession = (await import('../models/UserSession.js')).default;
+    
+    // Get session records for the last 7 days
+    const today = new Date();
+    const sevenDaysAgo = new Date(today);
+    sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+    
+    const sessions = await UserSession.find({
+      userId: userId,
+      date: { $gte: sevenDaysAgo.toISOString().split('T')[0] }
+    }).sort({ date: 1 });
+    
+    // Calculate weekly total
+    const weeklyTotal = sessions.reduce((sum, session) => sum + (session.duration || 0), 0);
+    
+    // Get today's session
+    const todayKey = today.toISOString().split('T')[0];
+    const todaySession = sessions.find(s => s.date === todayKey);
+    const todayTotal = todaySession ? (todaySession.duration || 0) : 0;
+    
+    // Format weekly data by day
+    const weeklyData = {};
+    for (let i = 0; i < 7; i++) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - i);
+      const dateKey = date.toISOString().split('T')[0];
+      const session = sessions.find(s => s.date === dateKey);
+      weeklyData[dateKey] = session ? (session.duration || 0) : 0;
+    }
+    
+    res.json({
+      success: true,
+      data: {
+        today: todayTotal,
+        thisWeek: weeklyTotal,
+        weeklyData: weeklyData,
+        sessions: sessions
+      }
+    });
+  } catch (error) {
+    console.error('Get session time error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch session time' });
+  }
+});
+
 // Student AI Tools Route
 router.post('/ai/tool', async (req, res) => {
   try {
