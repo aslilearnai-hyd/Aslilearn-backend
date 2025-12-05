@@ -53,7 +53,8 @@ import {
   updateExam,
   deleteExam,
   addQuestion,
-  bulkUploadExams
+  bulkUploadExams,
+  bulkUploadQuestions
 } from '../controllers/superAdminExamController.js';
 
 const router = express.Router();
@@ -615,6 +616,7 @@ router.get('/exams/:examId/questions', async (req, res) => {
   }
 });
 router.post('/exams/:examId/questions', addQuestion);
+router.post('/exams/:examId/questions/bulk-upload', csvUpload.single('file'), bulkUploadQuestions);
 
 // Debug: Log when routes are registered
 console.log('✅ Super Admin exam routes registered:', {
@@ -624,7 +626,8 @@ console.log('✅ Super Admin exam routes registered:', {
   'GET /boards/:boardCode/exams': 'getExamsByBoard',
   'PUT /exams/:examId': 'updateExam',
   'DELETE /exams/:examId': 'deleteExam',
-  'POST /exams/:examId/questions': 'addQuestion'
+  'POST /exams/:examId/questions': 'addQuestion',
+  'POST /exams/:examId/questions/bulk-upload': 'bulkUploadQuestions'
 });
 
 export default router;

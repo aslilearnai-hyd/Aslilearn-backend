@@ -666,3 +666,263 @@ export const bulkUploadExams = async (req, res) => {
   }
 };
 
+// Bulk Upload Questions via CSV (Super Admin only)
+export const bulkUploadQuestions = async (req, res) => {
+  try {
+    console.log('📝 bulkUploadQuestions controller called');
+    const { examId } = req.params;
+    
+    if (!req.file) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'No CSV file uploaded' 
+      });
+    }
+
+    // Validate examId
+    if (!mongoose.Types.ObjectId.isValid(examId)) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'Invalid exam ID format' 
+      });
+    }
+
+    const exam = await Exam.findById(examId);
+    if (!exam || exam.createdByRole !== 'super-admin') {
+      return res.status(404).json({ 
+        success: false, 
+        message: 'Exam not found or not accessible' 
+      });
+    }
+
+    // Convert buffer to string
+    const csvData = req.file.buffer.toString('utf8');
+    
+    // Parse CSV data - handle both \n and \r\n line endings
+    const lines = csvData.split(/\r?\n/).filter(line => line.trim());
+    if (lines.length < 2) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'CSV file must have at least a header and one data row' 
+      });
+    }
+
+    // Helper function to parse CSV line (handles quoted values)
+    const parseCSVLine = (line) => {
+      const result = [];
+      let current = '';
+      let inQuotes = false;
+      
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        const nextChar = line[i + 1];
+        
+        if (char === '"') {
+          if (inQuotes && nextChar === '"') {
+            current += '"';
+            i++; // Skip next quote
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim());
+          current = '';
+        } else {
+          current += char;
+        }
+      }
+      result.push(current.trim()); // Add last field
+      return result;
+    };
+
+    // Get header row
+    const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/^"|"$/g, ''));
+    
+    // Validate required headers
+    const requiredHeaders = ['questiontext', 'questiontype', 'subject', 'marks'];
+    const missingHeaders = requiredHeaders.filter(h => !headers.includes(h));
+    
+    if (missingHeaders.length > 0) {
+      return res.status(400).json({ 
+        success: false, 
+        message: `Missing required headers: ${missingHeaders.join(', ')}` 
+      });
+    }
+
+    const createdQuestions = [];
+    const errors = [];
+    let createdById = req.userId;
+    
+    // If userId is not a valid ObjectId, create a new one
+    if (!createdById || !mongoose.Types.ObjectId.isValid(createdById)) {
+      createdById = new mongoose.Types.ObjectId();
+    }
+
+    // Process each data row
+    for (let i = 1; i < lines.length; i++) {
+      try {
+        const values = parseCSVLine(lines[i]);
+        
+        if (values.length !== headers.length) {
+          errors.push(`Row ${i + 1}: Column count mismatch (expected ${headers.length}, got ${values.length})`);
+          continue;
+        }
+
+        // Create question object from CSV row
+        const questionData = {};
+        headers.forEach((header, index) => {
+          questionData[header] = values[index]?.trim() || '';
+        });
+
+        // Validate required fields
+        if (!questionData.questiontext && !questionData.questionimage) {
+          errors.push(`Row ${i + 1}: Either questionText or questionImage is required`);
+          continue;
+        }
+
+        // Validate questionType
+        const questionType = (questionData.questiontype || 'mcq').toLowerCase();
+        if (!['mcq', 'multiple', 'integer'].includes(questionType)) {
+          errors.push(`Row ${i + 1}: Invalid questionType "${questionType}". Must be one of: mcq, multiple, integer`);
+          continue;
+        }
+
+        // Validate subject
+        const subject = (questionData.subject || 'maths').toLowerCase();
+        if (!['maths', 'physics', 'chemistry'].includes(subject)) {
+          errors.push(`Row ${i + 1}: Invalid subject "${subject}". Must be one of: maths, physics, chemistry`);
+          continue;
+        }
+
+        // Parse options for MCQ/Multiple
+        let options = [];
+        if (questionType === 'mcq' || questionType === 'multiple') {
+          for (let j = 1; j <= 4; j++) {
+            const optionKey = `option${j}`;
+            const optionValue = questionData[optionKey.toLowerCase()];
+            if (optionValue) {
+              options.push({ text: optionValue, isCorrect: false });
+            }
+          }
+          if (options.length === 0) {
+            errors.push(`Row ${i + 1}: At least one option is required for ${questionType} questions`);
+            continue;
+          }
+        }
+
+        // Parse correct answer based on question type
+        let correctAnswer;
+        if (questionType === 'integer') {
+          const integerAns = questionData.integeranswer || questionData.correctanswer;
+          if (!integerAns) {
+            errors.push(`Row ${i + 1}: integerAnswer is required for integer type questions`);
+            continue;
+          }
+          const parsedInt = parseInt(integerAns);
+          if (isNaN(parsedInt)) {
+            errors.push(`Row ${i + 1}: Invalid integer answer`);
+            continue;
+          }
+          correctAnswer = parsedInt;
+        } else if (questionType === 'multiple') {
+          const correctAnswersStr = questionData.correctanswers || questionData.correctanswer;
+          if (!correctAnswersStr) {
+            errors.push(`Row ${i + 1}: correctAnswers is required for multiple choice questions`);
+            continue;
+          }
+          // Parse comma-separated indices
+          const indices = correctAnswersStr.split(',').map(idx => parseInt(idx.trim())).filter(idx => !isNaN(idx));
+          if (indices.length === 0) {
+            errors.push(`Row ${i + 1}: Invalid correctAnswers format`);
+            continue;
+          }
+          // Convert indices to option texts
+          correctAnswer = indices.map(idx => {
+            if (options[idx]) {
+              return options[idx].text;
+            }
+            return null;
+          }).filter(text => text !== null);
+          if (correctAnswer.length === 0) {
+            errors.push(`Row ${i + 1}: No valid correct answers found`);
+            continue;
+          }
+        } else {
+          // MCQ - single answer
+          const correctAnswerStr = questionData.correctanswer;
+          if (!correctAnswerStr) {
+            errors.push(`Row ${i + 1}: correctAnswer is required for MCQ questions`);
+            continue;
+          }
+          const answerIndex = parseInt(correctAnswerStr);
+          if (isNaN(answerIndex) || !options[answerIndex]) {
+            errors.push(`Row ${i + 1}: Invalid correctAnswer index`);
+            continue;
+          }
+          correctAnswer = options[answerIndex].text;
+        }
+
+        // Validate marks
+        const marks = parseInt(questionData.marks) || 1;
+        if (isNaN(marks) || marks <= 0) {
+          errors.push(`Row ${i + 1}: Invalid marks`);
+          continue;
+        }
+
+        const negativeMarks = parseFloat(questionData.negativemarks) || 0;
+
+        // Create question data object
+        const newQuestionData = {
+          questionText: questionData.questiontext || undefined,
+          questionImage: questionData.questionimage || undefined,
+          questionType,
+          options: questionType === 'integer' ? [] : options,
+          correctAnswer,
+          marks,
+          negativeMarks,
+          explanation: questionData.explanation || undefined,
+          subject,
+          exam: examId,
+          board: exam.board,
+          createdBy: createdById
+        };
+
+        // Create question
+        const newQuestion = new Question(newQuestionData);
+        await newQuestion.save();
+
+        // Add question to exam
+        await Exam.findByIdAndUpdate(examId, { $push: { questions: newQuestion._id } });
+
+        createdQuestions.push({
+          id: newQuestion._id,
+          questionText: newQuestion.questionText || 'Image question',
+          questionType: newQuestion.questionType
+        });
+
+        console.log(`✅ Question created from row ${i + 1}:`, newQuestion.questionText || 'Image question');
+      } catch (error) {
+        console.error(`❌ Error processing row ${i + 1}:`, error);
+        errors.push(`Row ${i + 1}: ${error.message || 'Unknown error'}`);
+      }
+    }
+
+    console.log(`✅ Bulk question upload completed: ${createdQuestions.length} created, ${errors.length} errors`);
+
+    res.json({
+      success: true,
+      message: `Successfully created ${createdQuestions.length} question(s)${errors.length > 0 ? ` with ${errors.length} error(s)` : ''}`,
+      created: createdQuestions.length,
+      data: createdQuestions,
+      errors: errors.length > 0 ? errors : undefined
+    });
+  } catch (error) {
+    console.error('❌ Bulk question upload error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to process CSV file',
+      error: error.message 
+    });
+  }
+};
+
