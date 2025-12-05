@@ -161,3 +161,4 @@ Once backend is accessible:
 2. Check frontend: Should connect without CORS errors
 3. Monitor logs: `pm2 logs aslilearn-backend` or `tail -f logs/app.log`
 
+

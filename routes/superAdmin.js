@@ -52,7 +52,8 @@ import {
   getExamsByBoard,
   updateExam,
   deleteExam,
-  addQuestion
+  addQuestion,
+  bulkUploadExams
 } from '../controllers/superAdminExamController.js';
 
 const router = express.Router();
@@ -169,6 +170,22 @@ const thumbnailUpload = multer({
       cb(null, true);
     } else {
       cb(new Error('Only image files are allowed!'), false);
+    }
+  }
+});
+
+// Configure multer for CSV file uploads (memory storage)
+const csvUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: {
+    fileSize: 5 * 1024 * 1024 // 5MB limit
+  },
+  fileFilter: (req, file, cb) => {
+    // Accept CSV files
+    if (file.mimetype === 'text/csv' || file.originalname.endsWith('.csv')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only CSV files are allowed!'), false);
     }
   }
 });
@@ -561,6 +578,7 @@ router.get('/iq-rank-activities/questions', async (req, res) => {
 
 // Exam Management (Super Admin only)
 // Note: Order matters - specific routes before parameterized ones
+router.post('/exams/bulk-upload', csvUpload.single('file'), bulkUploadExams);
 router.post('/exams', createExam);
 router.get('/exams', getAllExams);
 router.get('/boards/:boardCode/exams', getExamsByBoard);
@@ -600,6 +618,7 @@ router.post('/exams/:examId/questions', addQuestion);
 
 // Debug: Log when routes are registered
 console.log('✅ Super Admin exam routes registered:', {
+  'POST /exams/bulk-upload': 'bulkUploadExams',
   'POST /exams': 'createExam',
   'GET /exams': 'getAllExams',
   'GET /boards/:boardCode/exams': 'getExamsByBoard',

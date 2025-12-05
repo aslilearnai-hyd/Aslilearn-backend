@@ -59,3 +59,4 @@ if (result.error) {
   console.log('🔍 MONGO_URI in process.env:', !!process.env.MONGO_URI);
 }
 
+

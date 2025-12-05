@@ -450,3 +450,219 @@ export const addQuestion = async (req, res) => {
   }
 };
 
+// Bulk Upload Exams via CSV (Super Admin only)
+export const bulkUploadExams = async (req, res) => {
+  try {
+    console.log('📝 bulkUploadExams controller called');
+    
+    if (!req.file) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'No CSV file uploaded' 
+      });
+    }
+
+    // Convert buffer to string
+    const csvData = req.file.buffer.toString('utf8');
+    
+    // Parse CSV data - handle both \n and \r\n line endings
+    const lines = csvData.split(/\r?\n/).filter(line => line.trim());
+    if (lines.length < 2) {
+      return res.status(400).json({ 
+        success: false, 
+        message: 'CSV file must have at least a header and one data row' 
+      });
+    }
+
+    // Helper function to parse CSV line (handles quoted values)
+    const parseCSVLine = (line) => {
+      const result = [];
+      let current = '';
+      let inQuotes = false;
+      
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        const nextChar = line[i + 1];
+        
+        if (char === '"') {
+          if (inQuotes && nextChar === '"') {
+            current += '"';
+            i++; // Skip next quote
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim());
+          current = '';
+        } else {
+          current += char;
+        }
+      }
+      result.push(current.trim()); // Add last field
+      return result;
+    };
+
+    // Get header row
+    const headers = parseCSVLine(lines[0]).map(h => h.trim().toLowerCase().replace(/^"|"$/g, ''));
+    
+    // Validate required headers
+    const requiredHeaders = ['title', 'examtype', 'board', 'duration', 'totalquestions', 'totalmarks', 'startdate', 'enddate'];
+    const missingHeaders = requiredHeaders.filter(h => !headers.includes(h));
+    
+    if (missingHeaders.length > 0) {
+      return res.status(400).json({ 
+        success: false, 
+        message: `Missing required headers: ${missingHeaders.join(', ')}` 
+      });
+    }
+
+    const createdExams = [];
+    const errors = [];
+    let createdById = req.userId;
+    
+    // If userId is not a valid ObjectId, create a new one
+    if (!createdById || !mongoose.Types.ObjectId.isValid(createdById)) {
+      createdById = new mongoose.Types.ObjectId();
+    }
+
+    // Process each data row
+    for (let i = 1; i < lines.length; i++) {
+      try {
+        const values = parseCSVLine(lines[i]);
+        
+        if (values.length !== headers.length) {
+          errors.push(`Row ${i + 1}: Column count mismatch (expected ${headers.length}, got ${values.length})`);
+          continue;
+        }
+
+        // Create exam object from CSV row
+        const examData = {};
+        headers.forEach((header, index) => {
+          examData[header] = values[index]?.trim() || '';
+        });
+
+        // Validate required fields
+        if (!examData.title || !examData.examtype || !examData.board || !examData.duration || 
+            !examData.totalquestions || !examData.totalmarks || !examData.startdate || !examData.enddate) {
+          errors.push(`Row ${i + 1}: Missing required fields`);
+          continue;
+        }
+
+        // Validate examType
+        const examType = examData.examtype.toLowerCase();
+        if (!['weekend', 'mains', 'advanced', 'practice'].includes(examType)) {
+          errors.push(`Row ${i + 1}: Invalid examType "${examType}". Must be one of: weekend, mains, advanced, practice`);
+          continue;
+        }
+
+        // Validate board
+        const board = examData.board.toUpperCase();
+        if (board !== 'ASLI_EXCLUSIVE_SCHOOLS') {
+          errors.push(`Row ${i + 1}: Invalid board "${board}". Must be ASLI_EXCLUSIVE_SCHOOLS`);
+          continue;
+        }
+
+        // Parse filterType and targetSchools
+        const filterType = (examData.filtertype || 'all-schools').toLowerCase();
+        const isSchoolSpecific = filterType === 'specific-schools';
+        const isAllBoards = filterType === 'all-schools';
+        
+        let targetSchools = [];
+        if (isSchoolSpecific && examData.targetschools) {
+          // Parse comma-separated school IDs
+          targetSchools = examData.targetschools.split(',').map((id) => id.trim()).filter((id) => id);
+        }
+
+        // Create exam data object
+        const newExamData = {
+          title: examData.title,
+          description: examData.description || '',
+          examType,
+          duration: parseInt(examData.duration),
+          totalQuestions: parseInt(examData.totalquestions),
+          totalMarks: parseInt(examData.totalmarks),
+          instructions: examData.instructions || '',
+          startDate: new Date(examData.startdate),
+          endDate: new Date(examData.enddate),
+          board,
+          createdByRole: 'super-admin',
+          createdBy: createdById,
+          isActive: true,
+          isSchoolSpecific,
+          isBoardSpecific: false,
+          isAllBoards
+        };
+
+        // Add target schools if provided
+        if (isSchoolSpecific && targetSchools.length > 0) {
+          newExamData.targetSchools = targetSchools.map((id) => {
+            if (mongoose.Types.ObjectId.isValid(id)) {
+              return new mongoose.Types.ObjectId(id);
+            }
+            return id;
+          });
+        }
+
+        // Validate dates
+        if (isNaN(newExamData.startDate.getTime()) || isNaN(newExamData.endDate.getTime())) {
+          errors.push(`Row ${i + 1}: Invalid date format`);
+          continue;
+        }
+
+        if (newExamData.endDate < newExamData.startDate) {
+          errors.push(`Row ${i + 1}: End date must be after start date`);
+          continue;
+        }
+
+        // Validate numeric fields
+        if (isNaN(newExamData.duration) || newExamData.duration <= 0) {
+          errors.push(`Row ${i + 1}: Invalid duration`);
+          continue;
+        }
+
+        if (isNaN(newExamData.totalQuestions) || newExamData.totalQuestions <= 0) {
+          errors.push(`Row ${i + 1}: Invalid totalQuestions`);
+          continue;
+        }
+
+        if (isNaN(newExamData.totalMarks) || newExamData.totalMarks <= 0) {
+          errors.push(`Row ${i + 1}: Invalid totalMarks`);
+          continue;
+        }
+
+        // Create exam
+        const newExam = new Exam(newExamData);
+        await newExam.save();
+
+        createdExams.push({
+          id: newExam._id,
+          title: newExam.title,
+          examType: newExam.examType
+        });
+
+        console.log(`✅ Exam created from row ${i + 1}:`, newExam.title);
+      } catch (error) {
+        console.error(`❌ Error processing row ${i + 1}:`, error);
+        errors.push(`Row ${i + 1}: ${error.message || 'Unknown error'}`);
+      }
+    }
+
+    console.log(`✅ Bulk upload completed: ${createdExams.length} created, ${errors.length} errors`);
+
+    res.json({
+      success: true,
+      message: `Successfully created ${createdExams.length} exam(s)${errors.length > 0 ? ` with ${errors.length} error(s)` : ''}`,
+      created: createdExams.length,
+      data: createdExams,
+      errors: errors.length > 0 ? errors : undefined
+    });
+  } catch (error) {
+    console.error('❌ Bulk upload error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to process CSV file',
+      error: error.message 
+    });
+  }
+};
+

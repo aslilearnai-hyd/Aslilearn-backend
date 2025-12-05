@@ -232,3 +232,4 @@ curl -s http://localhost:5000/api/health || echo "FAILED: Backend not responding
 
 Check PM2 logs first - that will tell you exactly what's wrong!
 
+
