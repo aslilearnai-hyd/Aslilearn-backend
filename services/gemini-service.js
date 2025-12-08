@@ -633,62 +633,131 @@ Generate:
 
 Make it organized, efficient, and practical.`,
 
-    'exam-question-paper-generator': `Create a comprehensive, complete exam question paper for:
+    'exam-question-paper-generator': `You are an expert exam paper generator. Create a COMPLETE, STRUCTURED exam question paper with EXACTLY the following format:
+
 Subject: ${params.subject || 'General'}
 Topic: ${params.topic || 'General Topic'}
 ${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
 Duration: ${params.duration || '90 minutes'}
-Difficulty Mix: ${params.difficulty || 'mixed'}
 
-CRITICAL REQUIREMENTS:
-1. Generate a COMPLETE exam paper with MULTIPLE sections and MULTIPLE questions in each section
-2. DO NOT repeat the same question multiple times
-3. Each question must be UNIQUE and DIFFERENT
-4. Structure the paper with proper sections (Section A, B, C, D, etc.)
-5. Include questions of varying difficulty levels based on the difficulty mix parameter
+CRITICAL: Generate ONLY questions in the exam paper format below. DO NOT provide explanations, definitions, or theory content. ONLY generate questions and answers.
 
-EXAM PAPER STRUCTURE:
+EXAM PAPER STRUCTURE (MUST FOLLOW EXACTLY):
+
 ## Exam Paper Header
-- Subject name
-- Class/Grade level
-- Topic and Sub-topic (if provided)
-- Duration: ${params.duration || '90 minutes'}
-- Total Marks: Calculate based on duration (approximately 1 mark per minute)
+**Subject:** ${params.subject || 'General'}
+**Class:** ${params.gradeLevel || 'General'}
+**Topic:** ${params.topic || 'General Topic'}${params.subTopic ? `\n**Sub Topic:** ${params.subTopic}` : ''}
+**Duration:** ${params.duration || '90 minutes'}
+**Total Marks:** [Calculate: approximately 1 mark per minute, so ${params.duration || 90} marks]
+
+---
 
 ## General Instructions
-- Clear instructions for students
-- Marking scheme overview
-- Time allocation suggestions
+1. All questions are compulsory.
+2. Read all questions carefully before answering.
+3. Marks are indicated against each question.
+4. Write answers clearly and legibly.
 
-## Section A: Very Short Answer Questions (1-2 Marks Each)
-Generate 5-8 questions. Each question should be brief and test basic understanding.
+---
 
-## Section B: Short Answer Questions (2-3 Marks Each)
-Generate 5-8 questions. These should require brief explanations or short calculations.
+## Section A: Very Short Answer Questions
+**Marks: 1-2 each | Total Questions: 6**
 
-## Section C: Long Answer Questions (3-5 Marks Each)
-Generate 4-6 questions. These should require detailed explanations, derivations, or multi-step solutions.
+Number each question sequentially as: 1, 2, 3, 4, 5, 6
 
-## Section D: Very Long Answer Questions (5-10 Marks Each)
-Generate 2-4 questions. These should be comprehensive, requiring in-depth analysis, multiple steps, or extended responses.
+Format for each question:
+**1.** [Question text here] **[2 Marks]**
+
+Continue with questions 2, 3, 4, 5, 6 in the same format.
+
+---
+
+## Section B: Short Answer Questions  
+**Marks: 2-3 each | Total Questions: 5**
+
+Number each question sequentially as: 7, 8, 9, 10, 11
+
+Format for each question:
+**7.** [Question text here] **[3 Marks]**
+
+Continue with questions 8, 9, 10, 11 in the same format.
+
+---
+
+## Section C: Long Answer Questions
+**Marks: 4-5 each | Total Questions: 4**
+
+Number each question sequentially as: 12, 13, 14, 15
+
+Format for each question:
+**12.** [Question text here] **[5 Marks]**
+
+Continue with questions 13, 14, 15 in the same format.
+
+---
+
+## Section D: Very Long Answer Questions
+**Marks: 6-10 each | Total Questions: 2**
+
+Number each question sequentially as: 16, 17
+
+Format for each question:
+**16.** [Question text here] **[10 Marks]**
+
+Continue with question 17 in the same format.
+
+---
 
 ## Answer Key
-Provide complete answers for ALL questions from all sections, including:
-- Brief answers for Section A
-- Detailed solutions for Sections B, C, and D
-- Step-by-step explanations where applicable
-- Marking scheme for each question
 
-IMPORTANT:
-- Generate DIFFERENT questions for each section - do not repeat questions
-- Ensure questions cover the topic comprehensively
-- Vary question types: theoretical, numerical, application-based, analytical
-- Make questions appropriate for ${params.gradeLevel || 'General'} level
-- Total questions should be between 16-26 questions across all sections
-- Each question must be numbered sequentially within its section (1, 2, 3, etc.)
-- For mixed difficulty: distribute easy (30%), medium (50%), and hard (20%) questions across sections
+### Section A Answers
+**1.** [Complete answer here]
+**2.** [Complete answer here]
+**3.** [Complete answer here]
+**4.** [Complete answer here]
+**5.** [Complete answer here]
+**6.** [Complete answer here]
 
-Format your response using Markdown with clear headings (##), subheadings (###), numbered lists, and proper structure.`
+### Section B Answers
+**7.** [Detailed answer with steps here]
+**8.** [Detailed answer with steps here]
+**9.** [Detailed answer with steps here]
+**10.** [Detailed answer with steps here]
+**11.** [Detailed answer with steps here]
+
+### Section C Answers
+**12.** [Comprehensive answer with detailed explanation here]
+**13.** [Comprehensive answer with detailed explanation here]
+**14.** [Comprehensive answer with detailed explanation here]
+**15.** [Comprehensive answer with detailed explanation here]
+
+### Section D Answers
+**16.** [Very detailed answer with step-by-step solution here]
+**17.** [Very detailed answer with step-by-step solution here]
+
+---
+
+STRICT REQUIREMENTS:
+1. Generate EXACTLY 17 questions total (6 in Section A, 5 in Section B, 4 in Section C, 2 in Section D)
+2. Number questions sequentially: 1, 2, 3... up to 17 (NOT restarting numbering in each section)
+3. Each question must be UNIQUE - NO REPETITION
+4. Questions must be actual EXAM QUESTIONS, not explanations or definitions
+5. Base difficulty on: ${params.difficulty || 'mixed'} (if mixed: 30% easy, 50% medium, 20% hard)
+6. Questions must be appropriate for ${params.gradeLevel || 'General'} level
+7. Cover the topic: ${params.topic || 'General Topic'}${params.subTopic ? `, specifically ${params.subTopic}` : ''}
+8. Include variety: theoretical questions, numerical problems, application-based questions, analytical questions
+9. Each question must have a clear mark allocation shown
+10. Answer key must provide complete, detailed answers for ALL 17 questions
+
+DO NOT:
+- Provide theory or explanations outside of questions
+- Repeat the same question
+- Skip question numbers
+- Provide incomplete questions
+- Mix questions and answers together
+
+Format using Markdown with proper headings (##), bold text (**text**), and clear structure.`
   };
 
   let prompt = toolPrompts[toolType] || `Generate content for ${toolType} with the following parameters: ${JSON.stringify(params)}`;
