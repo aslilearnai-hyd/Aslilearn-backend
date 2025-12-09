@@ -1202,39 +1202,64 @@ app.post('/api/admin/events', (req, res, next) => {
     // Get user ID from JWT payload (could be userId, _id, or id)
     let userId = req.user.userId || req.user._id || req.user.id;
     
-    console.log('Initial userId from JWT:', userId, 'Type:', typeof userId);
+    console.log('Initial userId from JWT:', userId, 'Type:', typeof userId, 'Email:', req.user.email);
     
-    // If userId is in JWT but we need the actual user document, fetch it
-    if (userId && !mongoose.Types.ObjectId.isValid(userId)) {
+    // If userId is not a valid ObjectId, try to find user by email
+    if (!userId || !mongoose.Types.ObjectId.isValid(userId)) {
       console.log('userId is not a valid ObjectId, looking up user by email:', req.user.email);
+      if (!req.user.email) {
+        return res.status(400).json({ message: 'User email not found in token' });
+      }
+      
       try {
-        // Try to find user by email if userId is not a valid ObjectId
-        const user = await User.findOne({ 
-          $or: [
-            { email: req.user.email || req.user.email?.toLowerCase() },
-            { _id: userId }
-          ],
+        // Try to find user by email - try multiple approaches
+        const emailLower = req.user.email.toLowerCase().trim();
+        
+        // First try: exact lowercase match
+        let user = await User.findOne({ 
+          email: emailLower,
           role: 'admin'
         });
+        
+        // Second try: case-insensitive with regex (if first fails)
+        if (!user) {
+          user = await User.findOne({ 
+            email: { $regex: new RegExp(`^${emailLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`, 'i') },
+            role: 'admin'
+          });
+        }
+        
+        // Third try: find any user with this email, then check role
+        if (!user) {
+          const anyUser = await User.findOne({ email: emailLower });
+          if (anyUser && anyUser.role === 'admin') {
+            user = anyUser;
+          }
+        }
+        
         if (user) {
           userId = user._id;
           console.log('Found admin user from email for event creation:', user.email, 'ID:', userId);
         } else {
           console.error('Could not find admin user with email:', req.user.email);
-          // Try without role filter as fallback
-          const userWithoutRole = await User.findOne({ 
-            email: req.user.email || req.user.email?.toLowerCase()
+          // List all admin emails for debugging
+          const allAdmins = await User.find({ role: 'admin' }).select('email');
+          console.log('Available admin emails:', allAdmins.map(a => a.email));
+          return res.status(404).json({ 
+            message: `Admin user not found with email: ${req.user.email}`,
+            availableAdmins: allAdmins.map(a => a.email)
           });
-          if (userWithoutRole && userWithoutRole.role === 'admin') {
-            userId = userWithoutRole._id;
-            console.log('Found admin user without role filter:', userWithoutRole.email, 'ID:', userId);
-          } else {
-            return res.status(404).json({ message: 'Admin user not found in database' });
-          }
         }
       } catch (dbError) {
         console.error('Database error while looking up user:', dbError);
-        return res.status(500).json({ message: 'Database error while looking up user', error: dbError.message });
+        console.error('Error name:', dbError.name);
+        console.error('Error message:', dbError.message);
+        console.error('Error stack:', dbError.stack);
+        return res.status(500).json({ 
+          message: 'Database error while looking up user', 
+          error: dbError.message,
+          errorName: dbError.name
+        });
       }
     }
     
