@@ -892,11 +892,26 @@ app.get('/api/assessments', async (req, res) => {
 });
 
 // Admin routes (protected)
-// For development, allow access without authentication
+// For development, allow access without authentication, but prefer real auth if available
 if (process.env.NODE_ENV === 'development') {
-  console.log('Development mode: Admin routes accessible without authentication');
+  console.log('Development mode: Admin routes accessible, but will use real auth if available');
   app.use('/api/admin', (req, res, next) => {
-    // Mock user for development
+    // Check if user is already authenticated via JWT
+    const token = req.headers.authorization?.replace('Bearer ', '');
+    if (token) {
+      try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET || 'your-secret-key');
+        // Use real authenticated user if token is valid
+        req.user = decoded;
+        req.isAuthenticated = () => true;
+        console.log('Development mode: Using authenticated user from JWT:', decoded.email);
+        return next();
+      } catch (error) {
+        // Token invalid, fall through to dev mode
+        console.log('Development mode: JWT invalid, using dev user');
+      }
+    }
+    // Only use mock user if no valid token
     req.user = { _id: 'dev-admin', email: 'dev@admin.com', role: 'admin' };
     req.isAuthenticated = () => true;
     next();
