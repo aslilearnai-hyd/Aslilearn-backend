@@ -1070,9 +1070,63 @@ app.get('/api/admin/events', async (req, res) => {
 });
 
 // POST create event
-app.post('/api/admin/events', eventPhotoUpload.single('photo'), async (req, res) => {
+app.post('/api/admin/events', (req, res, next) => {
+  eventPhotoUpload.single('photo')(req, res, (err) => {
+    if (err) {
+      console.error('Multer error:', err);
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return res.status(400).json({ 
+          message: 'File too large. Maximum size is 5MB.' 
+        });
+      }
+      if (err.message === 'Only image files are allowed!') {
+        return res.status(400).json({ 
+          message: 'Only image files are allowed.' 
+        });
+      }
+      return res.status(500).json({ 
+        message: 'File upload error',
+        error: err.message 
+      });
+    }
+    next();
+  });
+}, async (req, res) => {
   try {
+    console.log('Event creation request received:', {
+      body: req.body,
+      hasFile: !!req.file,
+      user: req.user ? { id: req.user._id || req.user.id, role: req.user.role } : 'No user'
+    });
+
     const { name, date, description } = req.body;
+    
+    // Validate required fields
+    if (!name || !name.trim()) {
+      return res.status(400).json({ message: 'Event name is required' });
+    }
+    
+    if (!date) {
+      return res.status(400).json({ message: 'Event date is required' });
+    }
+
+    // Validate date format
+    const eventDate = new Date(date);
+    if (isNaN(eventDate.getTime())) {
+      return res.status(400).json({ message: 'Invalid date format' });
+    }
+
+    // Validate user
+    if (!req.user || (!req.user._id && !req.user.id)) {
+      console.error('User not found in request:', req.user);
+      return res.status(401).json({ message: 'Unauthorized: User not found' });
+    }
+
+    // Ensure uploads/events directory exists
+    const eventsUploadDir = join(__dirname, 'uploads', 'events');
+    if (!fs.existsSync(eventsUploadDir)) {
+      fs.mkdirSync(eventsUploadDir, { recursive: true });
+    }
     
     let photoUrl = '';
     if (req.file) {
@@ -1080,7 +1134,7 @@ app.post('/api/admin/events', eventPhotoUpload.single('photo'), async (req, res)
     }
 
     const newEvent = new Event({
-      name,
+      name: name.trim(),
       date: new Date(date),
       description: description || '',
       photo: photoUrl,
@@ -1091,7 +1145,11 @@ app.post('/api/admin/events', eventPhotoUpload.single('photo'), async (req, res)
     res.status(201).json(newEvent);
   } catch (error) {
     console.error('Failed to create event:', error);
-    res.status(500).json({ message: 'Failed to create event', error: error.message });
+    res.status(500).json({ 
+      message: 'Failed to create event', 
+      error: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 });
 
