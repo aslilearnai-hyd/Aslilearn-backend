@@ -1207,20 +1207,34 @@ app.post('/api/admin/events', (req, res, next) => {
     // If userId is in JWT but we need the actual user document, fetch it
     if (userId && !mongoose.Types.ObjectId.isValid(userId)) {
       console.log('userId is not a valid ObjectId, looking up user by email:', req.user.email);
-      // Try to find user by email if userId is not a valid ObjectId
-      const user = await User.findOne({ 
-        $or: [
-          { email: req.user.email },
-          { _id: userId }
-        ],
-        role: 'admin'
-      });
-      if (user) {
-        userId = user._id;
-        console.log('Found admin user from email for event creation:', user.email, 'ID:', userId);
-      } else {
-        console.error('Could not find admin user with email:', req.user.email);
-        return res.status(404).json({ message: 'Admin user not found in database' });
+      try {
+        // Try to find user by email if userId is not a valid ObjectId
+        const user = await User.findOne({ 
+          $or: [
+            { email: req.user.email || req.user.email?.toLowerCase() },
+            { _id: userId }
+          ],
+          role: 'admin'
+        });
+        if (user) {
+          userId = user._id;
+          console.log('Found admin user from email for event creation:', user.email, 'ID:', userId);
+        } else {
+          console.error('Could not find admin user with email:', req.user.email);
+          // Try without role filter as fallback
+          const userWithoutRole = await User.findOne({ 
+            email: req.user.email || req.user.email?.toLowerCase()
+          });
+          if (userWithoutRole && userWithoutRole.role === 'admin') {
+            userId = userWithoutRole._id;
+            console.log('Found admin user without role filter:', userWithoutRole.email, 'ID:', userId);
+          } else {
+            return res.status(404).json({ message: 'Admin user not found in database' });
+          }
+        }
+      } catch (dbError) {
+        console.error('Database error while looking up user:', dbError);
+        return res.status(500).json({ message: 'Database error while looking up user', error: dbError.message });
       }
     }
     
@@ -1268,6 +1282,8 @@ app.post('/api/admin/events', (req, res, next) => {
       ? new mongoose.Types.ObjectId(userId) 
       : userId;
 
+    console.log('Creating event with createdBy:', createdByObjectId.toString(), 'Type:', typeof createdByObjectId, 'for user:', userId);
+
     const newEvent = new Event({
       name: name.trim(),
       date: new Date(date),
@@ -1276,16 +1292,30 @@ app.post('/api/admin/events', (req, res, next) => {
       createdBy: createdByObjectId
     });
     
-    console.log('Creating event with createdBy:', createdByObjectId, 'for user:', userId);
+    console.log('Event object before save:', {
+      name: newEvent.name,
+      date: newEvent.date,
+      createdBy: newEvent.createdBy.toString(),
+      createdByType: typeof newEvent.createdBy
+    });
 
     const savedEvent = await newEvent.save();
-    console.log('Event created successfully:', savedEvent._id);
+    console.log('Event created successfully:', {
+      eventId: savedEvent._id,
+      name: savedEvent.name,
+      createdBy: savedEvent.createdBy.toString(),
+      date: savedEvent.date
+    });
     res.status(201).json(savedEvent);
   } catch (error) {
-    console.error('Failed to create event:', error);
+    console.error('Failed to create event - Full error:', error);
+    console.error('Error name:', error.name);
+    console.error('Error message:', error.message);
+    console.error('Error stack:', error.stack);
     res.status(500).json({ 
       message: 'Failed to create event', 
       error: error.message,
+      errorName: error.name,
       stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
