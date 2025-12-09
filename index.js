@@ -1167,7 +1167,13 @@ app.post('/api/admin/events', (req, res, next) => {
     console.log('Event creation request received:', {
       body: req.body,
       hasFile: !!req.file,
-      user: req.user ? { id: req.user._id || req.user.id, role: req.user.role } : 'No user'
+      user: req.user ? { 
+        userId: req.user.userId, 
+        _id: req.user._id, 
+        id: req.user.id, 
+        email: req.user.email,
+        role: req.user.role 
+      } : 'No user'
     });
 
     const { name, date, description } = req.body;
@@ -1188,7 +1194,7 @@ app.post('/api/admin/events', (req, res, next) => {
     }
 
     // Validate user
-    if (!req.user || (!req.user._id && !req.user.id)) {
+    if (!req.user) {
       console.error('User not found in request:', req.user);
       return res.status(401).json({ message: 'Unauthorized: User not found' });
     }
@@ -1196,8 +1202,11 @@ app.post('/api/admin/events', (req, res, next) => {
     // Get user ID from JWT payload (could be userId, _id, or id)
     let userId = req.user.userId || req.user._id || req.user.id;
     
+    console.log('Initial userId from JWT:', userId, 'Type:', typeof userId);
+    
     // If userId is in JWT but we need the actual user document, fetch it
     if (userId && !mongoose.Types.ObjectId.isValid(userId)) {
+      console.log('userId is not a valid ObjectId, looking up user by email:', req.user.email);
       // Try to find user by email if userId is not a valid ObjectId
       const user = await User.findOne({ 
         $or: [
@@ -1209,6 +1218,9 @@ app.post('/api/admin/events', (req, res, next) => {
       if (user) {
         userId = user._id;
         console.log('Found admin user from email for event creation:', user.email, 'ID:', userId);
+      } else {
+        console.error('Could not find admin user with email:', req.user.email);
+        return res.status(404).json({ message: 'Admin user not found in database' });
       }
     }
     
@@ -1228,9 +1240,11 @@ app.post('/api/admin/events', (req, res, next) => {
     
     // Ensure userId is a valid ObjectId
     if (!mongoose.Types.ObjectId.isValid(userId)) {
-      console.error('Invalid user ID format:', userId);
+      console.error('Invalid user ID format after processing:', userId, 'Type:', typeof userId);
       return res.status(400).json({ message: 'Invalid user ID format' });
     }
+    
+    console.log('Final userId for event creation:', userId, 'Type:', typeof userId);
 
     // Ensure uploads/events directory exists
     const eventsUploadDir = join(__dirname, 'uploads', 'events');
