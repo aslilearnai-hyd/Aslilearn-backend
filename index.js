@@ -1060,12 +1060,38 @@ const eventPhotoUpload = multer({
 // GET all events
 app.get('/api/admin/events', async (req, res) => {
   try {
-    const events = await Event.find({ createdBy: req.user._id || req.user.id })
+    // Validate user
+    if (!req.user || (!req.user._id && !req.user.id)) {
+      console.error('GET /api/admin/events - User not found in request:', req.user);
+      return res.status(401).json({ message: 'Unauthorized: User not found' });
+    }
+
+    const userId = req.user._id || req.user.id;
+    console.log('GET /api/admin/events - Fetching events for user:', userId);
+    
+    // Check if Event model is available
+    if (!Event) {
+      console.error('Event model is not available');
+      return res.status(500).json({ message: 'Event model not available' });
+    }
+    
+    const events = await Event.find({ createdBy: userId })
       .sort({ date: 1 });
+    
+    console.log(`GET /api/admin/events - Found ${events.length} events for user ${userId}`);
     res.json(events);
   } catch (error) {
-    console.error('Failed to fetch events:', error);
-    res.status(500).json({ message: 'Failed to fetch events' });
+    console.error('GET /api/admin/events - Failed to fetch events:', error);
+    console.error('Error details:', {
+      message: error.message,
+      stack: error.stack,
+      name: error.name
+    });
+    res.status(500).json({ 
+      message: 'Failed to fetch events',
+      error: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 });
 
@@ -1133,6 +1159,12 @@ app.post('/api/admin/events', (req, res, next) => {
       photoUrl = `${req.protocol}://${req.get('host')}/uploads/events/${req.file.filename}`;
     }
 
+    // Check if Event model is available
+    if (!Event) {
+      console.error('Event model is not available');
+      return res.status(500).json({ message: 'Event model not available' });
+    }
+
     const newEvent = new Event({
       name: name.trim(),
       date: new Date(date),
@@ -1141,8 +1173,9 @@ app.post('/api/admin/events', (req, res, next) => {
       createdBy: req.user._id || req.user.id
     });
 
-    await newEvent.save();
-    res.status(201).json(newEvent);
+    const savedEvent = await newEvent.save();
+    console.log('Event created successfully:', savedEvent._id);
+    res.status(201).json(savedEvent);
   } catch (error) {
     console.error('Failed to create event:', error);
     res.status(500).json({ 

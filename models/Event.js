@@ -31,5 +31,8 @@ const eventSchema = new mongoose.Schema({
 eventSchema.index({ date: 1 });
 eventSchema.index({ createdBy: 1 });
 
-export default mongoose.model('Event', eventSchema);
+// Use existing model if it exists, otherwise create new one
+const Event = mongoose.models.Event || mongoose.model('Event', eventSchema);
+
+export default Event;
 
