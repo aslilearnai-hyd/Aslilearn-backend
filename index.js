@@ -1066,7 +1066,30 @@ app.get('/api/admin/events', async (req, res) => {
       return res.status(401).json({ message: 'Unauthorized: User not found' });
     }
 
-    const userId = req.user._id || req.user.id;
+    let userId = req.user._id || req.user.id;
+    
+    // Handle development mode where userId might be a string like 'dev-admin'
+    // In this case, we need to find a real admin user or skip the query
+    if (typeof userId === 'string' && userId.startsWith('dev-')) {
+      console.log('Development mode detected, finding real admin user...');
+      // Find the first admin user in the database
+      const adminUser = await User.findOne({ role: 'admin' });
+      if (adminUser) {
+        userId = adminUser._id;
+        console.log('Using admin user ID:', userId);
+      } else {
+        // No admin users found, return empty array
+        console.log('No admin users found, returning empty events array');
+        return res.json([]);
+      }
+    }
+    
+    // Ensure userId is a valid ObjectId
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      console.error('Invalid user ID format:', userId);
+      return res.status(400).json({ message: 'Invalid user ID format' });
+    }
+    
     console.log('GET /api/admin/events - Fetching events for user:', userId);
     
     // Check if Event model is available
@@ -1148,6 +1171,28 @@ app.post('/api/admin/events', (req, res, next) => {
       return res.status(401).json({ message: 'Unauthorized: User not found' });
     }
 
+    let userId = req.user._id || req.user.id;
+    
+    // Handle development mode where userId might be a string like 'dev-admin'
+    // In this case, we need to find a real admin user
+    if (typeof userId === 'string' && userId.startsWith('dev-')) {
+      console.log('Development mode detected, finding real admin user...');
+      // Find the first admin user in the database
+      const adminUser = await User.findOne({ role: 'admin' });
+      if (adminUser) {
+        userId = adminUser._id;
+        console.log('Using admin user ID for event creation:', userId);
+      } else {
+        return res.status(400).json({ message: 'No admin user found in database' });
+      }
+    }
+    
+    // Ensure userId is a valid ObjectId
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      console.error('Invalid user ID format:', userId);
+      return res.status(400).json({ message: 'Invalid user ID format' });
+    }
+
     // Ensure uploads/events directory exists
     const eventsUploadDir = join(__dirname, 'uploads', 'events');
     if (!fs.existsSync(eventsUploadDir)) {
@@ -1170,7 +1215,7 @@ app.post('/api/admin/events', (req, res, next) => {
       date: new Date(date),
       description: description || '',
       photo: photoUrl,
-      createdBy: req.user._id || req.user.id
+      createdBy: userId
     });
 
     const savedEvent = await newEvent.save();
