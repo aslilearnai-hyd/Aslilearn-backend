@@ -1289,8 +1289,32 @@ app.delete('/api/admin/events/:id', async (req, res) => {
       return res.status(404).json({ message: 'Event not found' });
     }
 
+    let userId = req.user._id || req.user.id;
+    
+    // Handle development mode where userId might be a string like 'dev-admin'
+    if (typeof userId === 'string' && userId.startsWith('dev-')) {
+      console.log('Development mode detected, finding real admin user...');
+      const adminUser = await User.findOne({ role: 'admin' });
+      if (adminUser) {
+        userId = adminUser._id;
+        console.log('Using admin user ID for event deletion:', userId);
+      } else {
+        return res.status(400).json({ message: 'No admin user found in database' });
+      }
+    }
+    
+    // Ensure userId is a valid ObjectId
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      console.error('Invalid user ID format:', userId);
+      return res.status(400).json({ message: 'Invalid user ID format' });
+    }
+
     // Check if user owns this event
-    if (event.createdBy.toString() !== (req.user._id || req.user.id).toString()) {
+    if (event.createdBy.toString() !== userId.toString()) {
+      console.error('User does not own this event:', {
+        eventCreatedBy: event.createdBy.toString(),
+        userId: userId.toString()
+      });
       return res.status(403).json({ message: 'Unauthorized to delete this event' });
     }
 
