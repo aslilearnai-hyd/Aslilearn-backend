@@ -1175,6 +1175,28 @@ app.delete('/api/admin/events/:id', async (req, res) => {
   }
 });
 
+// Super Admin: Get events by admin ID (read-only view)
+app.get('/api/super-admin/events/:adminId', async (req, res) => {
+  try {
+    const { adminId } = req.params;
+    
+    // Verify admin exists
+    const admin = await User.findById(adminId);
+    if (!admin || admin.role !== 'admin') {
+      return res.status(404).json({ message: 'Admin not found' });
+    }
+
+    // Fetch all events created by this admin
+    const events = await Event.find({ createdBy: adminId })
+      .sort({ date: 1 });
+
+    res.json(events);
+  } catch (error) {
+    console.error('Failed to fetch events:', error);
+    res.status(500).json({ message: 'Failed to fetch events', error: error.message });
+  }
+});
+
 // Admin assessment management
 app.post('/api/admin/assessments', async (req, res) => {
   try {
@@ -4388,8 +4410,10 @@ app.get('/api/super-admin/admins', async (req, res) => {
 
       return {
         id: admin._id,
+        _id: admin._id,
         name: admin.fullName || admin.name,
         email: admin.email,
+        schoolName: admin.schoolName || admin.name || '',
         totalStudents: studentCount,
         totalTeachers: teacherCount,
         createdAt: admin.createdAt,
