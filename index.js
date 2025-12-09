@@ -1066,7 +1066,24 @@ app.get('/api/admin/events', async (req, res) => {
       return res.status(401).json({ message: 'Unauthorized: User not found' });
     }
 
-    let userId = req.user._id || req.user.id;
+    // Get user ID from JWT payload (could be userId, _id, or id)
+    let userId = req.user.userId || req.user._id || req.user.id;
+    
+    // If userId is in JWT but we need the actual user document, fetch it
+    if (userId && !mongoose.Types.ObjectId.isValid(userId)) {
+      // Try to find user by email if userId is not a valid ObjectId
+      const user = await User.findOne({ 
+        $or: [
+          { email: req.user.email },
+          { _id: userId }
+        ],
+        role: 'admin'
+      });
+      if (user) {
+        userId = user._id;
+        console.log('Found admin user from email:', user.email, 'ID:', userId);
+      }
+    }
     
     // Handle development mode where userId might be a string like 'dev-admin'
     // In this case, we need to find a real admin user or skip the query
@@ -1098,7 +1115,12 @@ app.get('/api/admin/events', async (req, res) => {
       return res.status(500).json({ message: 'Event model not available' });
     }
     
-    const events = await Event.find({ createdBy: userId })
+    // Use ObjectId for proper matching
+    const userObjectId = mongoose.Types.ObjectId.isValid(userId) 
+      ? new mongoose.Types.ObjectId(userId) 
+      : userId;
+    
+    const events = await Event.find({ createdBy: userObjectId })
       .sort({ date: 1 });
     
     console.log(`GET /api/admin/events - Found ${events.length} events for user ${userId}`);
@@ -1171,7 +1193,24 @@ app.post('/api/admin/events', (req, res, next) => {
       return res.status(401).json({ message: 'Unauthorized: User not found' });
     }
 
-    let userId = req.user._id || req.user.id;
+    // Get user ID from JWT payload (could be userId, _id, or id)
+    let userId = req.user.userId || req.user._id || req.user.id;
+    
+    // If userId is in JWT but we need the actual user document, fetch it
+    if (userId && !mongoose.Types.ObjectId.isValid(userId)) {
+      // Try to find user by email if userId is not a valid ObjectId
+      const user = await User.findOne({ 
+        $or: [
+          { email: req.user.email },
+          { _id: userId }
+        ],
+        role: 'admin'
+      });
+      if (user) {
+        userId = user._id;
+        console.log('Found admin user from email for event creation:', user.email, 'ID:', userId);
+      }
+    }
     
     // Handle development mode where userId might be a string like 'dev-admin'
     // In this case, we need to find a real admin user
@@ -1210,13 +1249,20 @@ app.post('/api/admin/events', (req, res, next) => {
       return res.status(500).json({ message: 'Event model not available' });
     }
 
+    // Ensure userId is converted to ObjectId
+    const createdByObjectId = mongoose.Types.ObjectId.isValid(userId) 
+      ? new mongoose.Types.ObjectId(userId) 
+      : userId;
+
     const newEvent = new Event({
       name: name.trim(),
       date: new Date(date),
       description: description || '',
       photo: photoUrl,
-      createdBy: userId
+      createdBy: createdByObjectId
     });
+    
+    console.log('Creating event with createdBy:', createdByObjectId, 'for user:', userId);
 
     const savedEvent = await newEvent.save();
     console.log('Event created successfully:', savedEvent._id);
@@ -1242,8 +1288,37 @@ app.put('/api/admin/events/:id', eventPhotoUpload.single('photo'), async (req, r
       return res.status(404).json({ message: 'Event not found' });
     }
 
+    // Get user ID from JWT
+    let userId = req.user.userId || req.user._id || req.user.id;
+    
+    // If userId is in JWT but we need the actual user document, fetch it
+    if (userId && !mongoose.Types.ObjectId.isValid(userId)) {
+      const user = await User.findOne({ 
+        $or: [
+          { email: req.user.email },
+          { _id: userId }
+        ],
+        role: 'admin'
+      });
+      if (user) {
+        userId = user._id;
+      }
+    }
+    
+    // Handle development mode
+    if (typeof userId === 'string' && userId.startsWith('dev-')) {
+      const adminUser = await User.findOne({ role: 'admin' });
+      if (adminUser) {
+        userId = adminUser._id;
+      }
+    }
+    
     // Check if user owns this event
-    if (event.createdBy.toString() !== (req.user._id || req.user.id).toString()) {
+    if (event.createdBy.toString() !== userId.toString()) {
+      console.error('User does not own this event:', {
+        eventCreatedBy: event.createdBy.toString(),
+        userId: userId.toString()
+      });
       return res.status(403).json({ message: 'Unauthorized to update this event' });
     }
 
@@ -1289,7 +1364,24 @@ app.delete('/api/admin/events/:id', async (req, res) => {
       return res.status(404).json({ message: 'Event not found' });
     }
 
-    let userId = req.user._id || req.user.id;
+    // Get user ID from JWT payload (could be userId, _id, or id)
+    let userId = req.user.userId || req.user._id || req.user.id;
+    
+    // If userId is in JWT but we need the actual user document, fetch it
+    if (userId && !mongoose.Types.ObjectId.isValid(userId)) {
+      // Try to find user by email if userId is not a valid ObjectId
+      const user = await User.findOne({ 
+        $or: [
+          { email: req.user.email },
+          { _id: userId }
+        ],
+        role: 'admin'
+      });
+      if (user) {
+        userId = user._id;
+        console.log('Found admin user from email for event deletion:', user.email, 'ID:', userId);
+      }
+    }
     
     // Handle development mode where userId might be a string like 'dev-admin'
     if (typeof userId === 'string' && userId.startsWith('dev-')) {
@@ -1362,7 +1454,12 @@ app.get('/api/super-admin/events/:adminId', async (req, res) => {
     console.log('Admin found:', admin.email, admin.fullName);
     
     // Fetch all events created by this admin
-    const events = await Event.find({ createdBy: adminId })
+    // Use ObjectId for proper matching
+    const adminObjectId = mongoose.Types.ObjectId.isValid(adminId) 
+      ? new mongoose.Types.ObjectId(adminId) 
+      : adminId;
+    
+    const events = await Event.find({ createdBy: adminObjectId })
       .sort({ date: 1 });
 
     console.log(`Found ${events.length} events for admin ${adminId}`);
