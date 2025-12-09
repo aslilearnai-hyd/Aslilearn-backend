@@ -200,8 +200,8 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Cookie'],
   exposedHeaders: ['Set-Cookie']
 }));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 // Serve uploaded files directly from disk
 app.use('/uploads', express.static(join(__dirname, 'uploads')));
@@ -1046,7 +1046,7 @@ const eventPhotoStorage = multer.diskStorage({
 
 const eventPhotoUpload = multer({ 
   storage: eventPhotoStorage,
-  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
+  limits: { fileSize: 10 * 1024 * 1024 }, // 10MB limit (increased from 5MB)
   fileFilter: (req, file, cb) => {
     if (file.mimetype.startsWith('image/')) {
       cb(null, true);
@@ -1125,7 +1125,7 @@ app.post('/api/admin/events', (req, res, next) => {
       console.error('Multer error:', err);
       if (err.code === 'LIMIT_FILE_SIZE') {
         return res.status(400).json({ 
-          message: 'File too large. Maximum size is 5MB.' 
+          message: 'File too large. Maximum size is 10MB.' 
         });
       }
       if (err.message === 'Only image files are allowed!') {
