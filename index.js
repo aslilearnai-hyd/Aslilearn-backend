@@ -1455,25 +1455,50 @@ app.get('/api/super-admin/events/:adminId', async (req, res) => {
     }
 
     console.log('Admin found:', admin.email, admin.fullName, 'ID:', admin._id);
+    console.log('Searching for events with createdBy:', adminObjectId.toString());
     
-    // Fetch all events created by this specific admin
-    // Use ObjectId for proper matching to ensure events are scoped correctly
-    const events = await Event.find({ createdBy: adminObjectId })
-      .sort({ date: 1 });
-
-    console.log(`Found ${events.length} events for admin ${admin.email} (ID: ${adminId})`);
+    // Fetch all events and filter to ensure proper scoping
+    // First, get all events to debug
+    const allEvents = await Event.find({}).sort({ date: 1 });
+    console.log(`Total events in database: ${allEvents.length}`);
     
-    // Log event details for debugging
-    if (events.length > 0) {
-      console.log('Event createdBy values:', events.map(e => ({
+    // Log all events' createdBy values for debugging
+    if (allEvents.length > 0) {
+      console.log('All events createdBy values:', allEvents.map(e => ({
         eventId: e._id,
         eventName: e.name,
-        createdBy: e.createdBy.toString(),
-        createdByType: typeof e.createdBy
+        createdBy: e.createdBy ? e.createdBy.toString() : 'null',
+        createdByMatches: e.createdBy ? e.createdBy.toString() === adminObjectId.toString() : false
       })));
     }
     
-    res.json(events);
+    // Fetch events created by this specific admin using strict ObjectId matching
+    // Try multiple query approaches to ensure we get the right events
+    const events = await Event.find({ 
+      createdBy: adminObjectId 
+    }).sort({ date: 1 });
+    
+    // Also try string comparison as a fallback
+    const eventsByString = await Event.find({}).sort({ date: 1 }).then(evts => 
+      evts.filter(e => e.createdBy && e.createdBy.toString() === adminObjectId.toString())
+    );
+    
+    // Use the ObjectId query result, but log both for comparison
+    console.log(`Found ${events.length} events using ObjectId query for admin ${admin.email} (ID: ${adminId})`);
+    console.log(`Found ${eventsByString.length} events using string comparison`);
+    
+    // Ensure we only return events that match
+    const finalEvents = events.filter(e => {
+      const matches = e.createdBy && e.createdBy.toString() === adminObjectId.toString();
+      if (!matches && e.createdBy) {
+        console.warn(`Event ${e._id} (${e.name}) createdBy ${e.createdBy.toString()} does not match admin ${adminObjectId.toString()}`);
+      }
+      return matches;
+    });
+    
+    console.log(`Returning ${finalEvents.length} events for admin ${admin.email}`);
+    
+    res.json(finalEvents);
   } catch (error) {
     console.error('Failed to fetch events:', error);
     res.status(500).json({ 
