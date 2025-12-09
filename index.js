@@ -1439,8 +1439,11 @@ app.get('/api/super-admin/events/:adminId', async (req, res) => {
       return res.status(400).json({ message: 'Invalid admin ID format' });
     }
     
+    // Convert to ObjectId for proper matching
+    const adminObjectId = new mongoose.Types.ObjectId(adminId);
+    
     // Verify admin exists
-    const admin = await User.findById(adminId);
+    const admin = await User.findById(adminObjectId);
     if (!admin) {
       console.error('Admin not found with ID:', adminId);
       return res.status(404).json({ message: 'Admin not found' });
@@ -1451,18 +1454,25 @@ app.get('/api/super-admin/events/:adminId', async (req, res) => {
       return res.status(403).json({ message: 'User is not an admin' });
     }
 
-    console.log('Admin found:', admin.email, admin.fullName);
+    console.log('Admin found:', admin.email, admin.fullName, 'ID:', admin._id);
     
-    // Fetch all events created by this admin
-    // Use ObjectId for proper matching
-    const adminObjectId = mongoose.Types.ObjectId.isValid(adminId) 
-      ? new mongoose.Types.ObjectId(adminId) 
-      : adminId;
-    
+    // Fetch all events created by this specific admin
+    // Use ObjectId for proper matching to ensure events are scoped correctly
     const events = await Event.find({ createdBy: adminObjectId })
       .sort({ date: 1 });
 
-    console.log(`Found ${events.length} events for admin ${adminId}`);
+    console.log(`Found ${events.length} events for admin ${admin.email} (ID: ${adminId})`);
+    
+    // Log event details for debugging
+    if (events.length > 0) {
+      console.log('Event createdBy values:', events.map(e => ({
+        eventId: e._id,
+        eventName: e.name,
+        createdBy: e.createdBy.toString(),
+        createdByType: typeof e.createdBy
+      })));
+    }
+    
     res.json(events);
   } catch (error) {
     console.error('Failed to fetch events:', error);
