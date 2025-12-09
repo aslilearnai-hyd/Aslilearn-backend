@@ -1339,21 +1339,41 @@ app.delete('/api/admin/events/:id', async (req, res) => {
 app.get('/api/super-admin/events/:adminId', async (req, res) => {
   try {
     const { adminId } = req.params;
+    console.log('Super admin fetching events for adminId:', adminId);
+    
+    // Validate adminId format
+    if (!mongoose.Types.ObjectId.isValid(adminId)) {
+      console.error('Invalid adminId format:', adminId);
+      return res.status(400).json({ message: 'Invalid admin ID format' });
+    }
     
     // Verify admin exists
     const admin = await User.findById(adminId);
-    if (!admin || admin.role !== 'admin') {
+    if (!admin) {
+      console.error('Admin not found with ID:', adminId);
       return res.status(404).json({ message: 'Admin not found' });
     }
+    
+    if (admin.role !== 'admin') {
+      console.error('User is not an admin:', admin.role);
+      return res.status(403).json({ message: 'User is not an admin' });
+    }
 
+    console.log('Admin found:', admin.email, admin.fullName);
+    
     // Fetch all events created by this admin
     const events = await Event.find({ createdBy: adminId })
       .sort({ date: 1 });
 
+    console.log(`Found ${events.length} events for admin ${adminId}`);
     res.json(events);
   } catch (error) {
     console.error('Failed to fetch events:', error);
-    res.status(500).json({ message: 'Failed to fetch events', error: error.message });
+    res.status(500).json({ 
+      message: 'Failed to fetch events', 
+      error: error.message,
+      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+    });
   }
 });
 
