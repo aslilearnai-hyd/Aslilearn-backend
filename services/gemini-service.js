@@ -504,10 +504,30 @@ Generate:
 
 Make it meaningful, relevant, and appropriate for the grade level.`,
 
-    'rubrics-evaluation-generator': `Create clear assessment criteria and rubrics for:
+    'rubrics-evaluation-generator': params.outputType === 'Report Card' 
+      ? `Generate comprehensive student progress reports with feedback for:
+Student Name: ${params.studentName || 'Student'}
+Subject: ${params.subject || 'General'}
+Grade Level: ${params.gradeLevel || 'General'}
+Term: ${params.term || 'Current Term'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}
+
+Generate:
+1. Student Information
+2. Academic Performance Summary
+3. Subject-wise Breakdown
+4. Strengths and Achievements
+5. Areas for Improvement
+6. Teacher Comments
+7. Recommendations
+8. Next Steps
+
+Make it constructive, encouraging, and detailed.`
+      : `Create clear assessment criteria and rubrics for:
 Subject: ${params.subject || 'General'}
 Assignment Type: ${params.assignmentType || 'General Assignment'}
 Grade Level: ${params.gradeLevel || 'General'}
+${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}
 
 Generate:
 1. Rubric Title
@@ -520,21 +540,6 @@ Generate:
 
 Make it clear, fair, and comprehensive.`,
 
-    'learning-outcomes-generator': `Define measurable learning outcomes for:
-Subject: ${params.subject || 'General'}
-Topic: ${params.topic || 'General Topic'}
-${params.subTopic ? `Sub Topic: ${params.subTopic}\n` : ''}Grade Level: ${params.gradeLevel || 'General'}
-
-Generate:
-1. Course/Unit Title
-2. Overall Learning Goals
-3. Specific Learning Outcomes (5-8 outcomes)
-4. Assessment Methods for Each Outcome
-5. Success Criteria
-6. Bloom's Taxonomy Level
-7. Alignment with Standards
-
-Make them specific, measurable, achievable, relevant, and time-bound (SMART).`,
 
     'story-passage-creator': `Generate engaging stories and reading passages for:
 Subject: ${params.subject || 'General'}
@@ -583,39 +588,7 @@ Generate:
 
 Format each card clearly with front and back content.`,
 
-    'report-card-generator': `Generate comprehensive student progress reports with feedback for:
-Student Name: ${params.studentName || 'Student'}
-Subject: ${params.subject || 'General'}
-Grade Level: ${params.gradeLevel || 'General'}
-Term: ${params.term || 'Current Term'}
 
-Generate:
-1. Student Information
-2. Academic Performance Summary
-3. Subject-wise Breakdown
-4. Strengths and Achievements
-5. Areas for Improvement
-6. Teacher Comments
-7. Recommendations
-8. Next Steps
-
-Make it constructive, encouraging, and detailed.`,
-
-    'student-skill-tracker': `Monitor and track student skill development for:
-Student Name: ${params.studentName || 'Student'}
-Subject: ${params.subject || 'General'}
-Grade Level: ${params.gradeLevel || 'General'}
-
-Generate:
-1. Skill Assessment Framework
-2. Current Skill Levels
-3. Skill Categories (e.g., Problem Solving, Critical Thinking, Communication)
-4. Progress Tracking Template
-5. Development Goals
-6. Action Plan
-7. Monitoring Schedule
-
-Make it comprehensive and actionable.`,
 
     'daily-class-plan-maker': `Organize daily teaching schedule efficiently for:
 Date: ${params.date || 'Today'}

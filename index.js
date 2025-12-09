@@ -27,6 +27,7 @@ import UserProgress from './models/UserProgress.js';
 import Exam from './models/Exam.js';
 import Question from './models/Question.js';
 import ExamResult from './models/ExamResult.js';
+import Event from './models/Event.js';
 
 // Import routes
 import superAdminRoutes from './routes/superAdmin.js';
@@ -834,6 +835,11 @@ app.get('/api/auth/me', requireAuth, async (req, res) => {
       assignedClass: user.assignedClass || null
     };
 
+    // If user is an admin, include schoolName
+    if (req.user.role === 'admin') {
+      userData.schoolName = user.schoolName || '';
+    }
+
     // If user is a teacher, fetch their subjects
     if (req.user.role === 'teacher') {
       console.log('Fetching teacher subjects for:', req.user.email);
@@ -1019,6 +1025,153 @@ app.delete('/api/admin/learning-paths/:id', async (req, res) => {
   } catch (error) {
     console.error('Failed to delete learning path:', error);
     res.status(500).json({ message: 'Failed to delete learning path' });
+  }
+});
+
+// Event photo upload storage
+const eventPhotoStorage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    const uploadDir = join(__dirname, 'uploads', 'events');
+    if (!fs.existsSync(uploadDir)) {
+      fs.mkdirSync(uploadDir, { recursive: true });
+    }
+    cb(null, uploadDir);
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    const ext = extname(file.originalname);
+    cb(null, 'event-' + uniqueSuffix + ext);
+  }
+});
+
+const eventPhotoUpload = multer({ 
+  storage: eventPhotoStorage,
+  limits: { fileSize: 5 * 1024 * 1024 }, // 5MB limit
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype.startsWith('image/')) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only image files are allowed!'), false);
+    }
+  }
+});
+
+// Admin event management
+// GET all events
+app.get('/api/admin/events', async (req, res) => {
+  try {
+    const events = await Event.find({ createdBy: req.user._id || req.user.id })
+      .sort({ date: 1 });
+    res.json(events);
+  } catch (error) {
+    console.error('Failed to fetch events:', error);
+    res.status(500).json({ message: 'Failed to fetch events' });
+  }
+});
+
+// POST create event
+app.post('/api/admin/events', eventPhotoUpload.single('photo'), async (req, res) => {
+  try {
+    const { name, date, description } = req.body;
+    
+    let photoUrl = '';
+    if (req.file) {
+      photoUrl = `${req.protocol}://${req.get('host')}/uploads/events/${req.file.filename}`;
+    }
+
+    const newEvent = new Event({
+      name,
+      date: new Date(date),
+      description: description || '',
+      photo: photoUrl,
+      createdBy: req.user._id || req.user.id
+    });
+
+    await newEvent.save();
+    res.status(201).json(newEvent);
+  } catch (error) {
+    console.error('Failed to create event:', error);
+    res.status(500).json({ message: 'Failed to create event', error: error.message });
+  }
+});
+
+// PUT update event
+app.put('/api/admin/events/:id', eventPhotoUpload.single('photo'), async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { name, date, description } = req.body;
+
+    const event = await Event.findById(id);
+    if (!event) {
+      return res.status(404).json({ message: 'Event not found' });
+    }
+
+    // Check if user owns this event
+    if (event.createdBy.toString() !== (req.user._id || req.user.id).toString()) {
+      return res.status(403).json({ message: 'Unauthorized to update this event' });
+    }
+
+    let photoUrl = event.photo;
+    if (req.file) {
+      // Delete old photo if exists
+      if (event.photo) {
+        const oldPhotoPath = event.photo.replace(`${req.protocol}://${req.get('host')}`, '');
+        const fullPath = join(__dirname, oldPhotoPath);
+        if (fs.existsSync(fullPath)) {
+          fs.unlinkSync(fullPath);
+        }
+      }
+      photoUrl = `${req.protocol}://${req.get('host')}/uploads/events/${req.file.filename}`;
+    }
+
+    const updatedEvent = await Event.findByIdAndUpdate(
+      id,
+      {
+        name,
+        date: new Date(date),
+        description: description || '',
+        photo: photoUrl,
+        updatedAt: new Date()
+      },
+      { new: true }
+    );
+
+    res.json(updatedEvent);
+  } catch (error) {
+    console.error('Failed to update event:', error);
+    res.status(500).json({ message: 'Failed to update event', error: error.message });
+  }
+});
+
+// DELETE event
+app.delete('/api/admin/events/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    const event = await Event.findById(id);
+    if (!event) {
+      return res.status(404).json({ message: 'Event not found' });
+    }
+
+    // Check if user owns this event
+    if (event.createdBy.toString() !== (req.user._id || req.user.id).toString()) {
+      return res.status(403).json({ message: 'Unauthorized to delete this event' });
+    }
+
+    // Delete photo if exists
+    if (event.photo) {
+      const photoPath = event.photo.replace(`${req.protocol}://${req.get('host')}`, '');
+      const fullPath = join(__dirname, photoPath);
+      if (fs.existsSync(fullPath)) {
+        fs.unlinkSync(fullPath);
+      }
+    }
+
+    await Event.findByIdAndDelete(id);
+    res.json({ message: 'Event deleted successfully' });
+  } catch (error) {
+    console.error('Failed to delete event:', error);
+    res.status(500).json({ message: 'Failed to delete event', error: error.message });
   }
 });
 
