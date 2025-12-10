@@ -30,6 +30,7 @@ import {
   assignSubjects,
   assignClasses,
   getStudentAnalytics,
+  getIndividualStudentAnalytics,
   assignSubjectsToStudent,
   assignClassToStudent,
   assignSubjectsToClass,
@@ -75,6 +76,7 @@ router.get('/teacher/dashboard', getTeacherDashboardStats);
 // Student Management Routes
 router.get('/students', getStudents);
 router.get('/students/analytics', getStudentAnalytics);
+router.get('/students/:id/analytics', getIndividualStudentAnalytics);
 router.post('/students', addAdminIdToBody, createStudent);
 router.put('/students/:id', verifyDataOwnership(User), updateStudent);
 router.delete('/students/:id', verifyDataOwnership(User), deleteStudent);

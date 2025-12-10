@@ -1054,6 +1054,107 @@ export const getStudentAnalytics = async (req, res) => {
   }
 };
 
+// Individual Student Analytics
+export const getIndividualStudentAnalytics = async (req, res) => {
+  try {
+    const adminId = req.adminId;
+    const { id: studentId } = req.params;
+    
+    if (!adminId) {
+      return res.status(401).json({ success: false, message: 'Admin ID not found' });
+    }
+
+    if (!studentId) {
+      return res.status(400).json({ success: false, message: 'Student ID is required' });
+    }
+
+    // Verify student belongs to this admin
+    const student = await User.findOne({ 
+      _id: studentId, 
+      role: 'student', 
+      assignedAdmin: adminId 
+    }).lean();
+
+    if (!student) {
+      return res.status(404).json({ 
+        success: false, 
+        message: 'Student not found or access denied' 
+      });
+    }
+
+    // Get exam results for this student
+    const examResults = await ExamResult.find({ 
+      userId: studentId,
+      adminId: adminId 
+    })
+      .populate('examId', 'title subject')
+      .sort({ completedAt: -1 })
+      .limit(100)
+      .lean();
+
+    // Calculate performance metrics
+    const performanceMetricsAgg = await ExamResult.aggregate([
+      { $match: { userId: new mongoose.Types.ObjectId(studentId), adminId: new mongoose.Types.ObjectId(adminId) } },
+      { $group: {
+          _id: null,
+          totalExams: { $sum: 1 },
+          totalMarksObtained: { $sum: '$obtainedMarks' },
+          totalMarksPossible: { $sum: '$totalMarks' },
+          totalQuestions: { $sum: '$totalQuestions' },
+          correctAnswers: { $sum: '$correctAnswers' }
+        }
+      }
+    ]);
+
+    const metrics = performanceMetricsAgg[0] || { 
+      totalExams: 0, 
+      totalMarksObtained: 0, 
+      totalMarksPossible: 0,
+      totalQuestions: 0,
+      correctAnswers: 0
+    };
+
+    const averageScore = metrics.totalMarksPossible > 0 
+      ? parseFloat(((metrics.totalMarksObtained / metrics.totalMarksPossible) * 100).toFixed(1))
+      : 0;
+
+    const overallProgress = metrics.totalQuestions > 0
+      ? parseFloat(((metrics.correctAnswers / metrics.totalQuestions) * 100).toFixed(1))
+      : 0;
+
+    // Watch time calculation - can be enhanced later if content progress tracking is available
+    // For now, set to 0 or calculate from other sources if available
+    const watchTime = 0;
+
+    // Format recent activity from exam results
+    const recentActivity = examResults.slice(0, 10).map((result: any) => ({
+      title: result.examId?.title || 'Exam',
+      type: 'exam',
+      date: result.completedAt,
+      score: result.totalMarks > 0 
+        ? parseFloat(((result.obtainedMarks / result.totalMarks) * 100).toFixed(1))
+        : 0,
+      subject: result.examId?.subject || 'General'
+    }));
+
+    res.json({
+      success: true,
+      data: {
+        performance: {
+          totalExams: metrics.totalExams,
+          averageScore: averageScore,
+          overallProgress: overallProgress,
+          watchTime: watchTime
+        },
+        recentActivity: recentActivity
+      }
+    });
+  } catch (error) {
+    console.error('Individual student analytics error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch student analytics' });
+  }
+};
+
 // Exam Management
 export const getExams = async (req, res) => {
   try {
