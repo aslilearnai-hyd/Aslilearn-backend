@@ -17,8 +17,8 @@ export const getAdminDashboardStats = async (req, res) => {
   try {
     const adminId = req.adminId;
     
-    // Get admin to find their board
-    const admin = await User.findById(adminId).select('board');
+    // Get admin to find their board (use lean for faster query)
+    const admin = await User.findById(adminId).select('board').lean();
     const adminBoard = admin?.board;
     
     // Build filter based on user role
@@ -87,7 +87,9 @@ export const getStudents = async (req, res) => {
     })
     .select('-password')
     .populate('assignedClass', 'name classNumber section description')
-    .sort({ createdAt: -1 });
+    .sort({ createdAt: -1 })
+    .limit(1000); // Reasonable limit
+    // Note: lean() removed to maintain populate() functionality
     
     res.json({
       success: true,
@@ -304,7 +306,9 @@ export const getTeachers = async (req, res) => {
     const teachers = await Teacher.find(filter)
       .populate('subjects', 'name description')
       .select('-password')
-      .sort({ createdAt: -1 });
+      .sort({ createdAt: -1 })
+      .limit(500) // Reasonable limit
+      .lean(); // Faster, returns plain objects
     
     // Transform the data to match frontend expectations
     const transformedTeachers = teachers.map(teacher => ({
@@ -578,7 +582,8 @@ export const getVideos = async (req, res) => {
     
     const videos = await Video.find(filter)
       .populate('createdBy', 'fullName')
-      .sort({ createdAt: -1 });
+      .sort({ createdAt: -1 })
+      .limit(500); // Reasonable limit
     
     res.json({
       success: true,
@@ -696,7 +701,8 @@ export const getAssessments = async (req, res) => {
     
     const assessments = await Assessment.find(filter)
       .populate('createdBy', 'fullName')
-      .sort({ createdAt: -1 });
+      .sort({ createdAt: -1 })
+      .limit(500); // Reasonable limit
     
     res.json({
       success: true,
@@ -888,7 +894,7 @@ export const getAnalytics = async (req, res) => {
   }
 };
 
-// Student Analytics for Admin Dashboard
+// Student Analytics for Admin Dashboard - Optimized with aggregation
 export const getStudentAnalytics = async (req, res) => {
   try {
     const adminId = req.adminId;
@@ -897,97 +903,131 @@ export const getStudentAnalytics = async (req, res) => {
       return res.status(401).json({ success: false, message: 'Admin ID not found' });
     }
 
-    // Get all students assigned to this admin
-    const students = await User.find({ 
-      role: 'student', 
-      assignedAdmin: adminId 
-    }).select('fullName email classNumber board');
+    // Use aggregation for class distribution (much faster)
+    const classDistributionAgg = await User.aggregate([
+      { $match: { role: 'student', assignedAdmin: adminId } },
+      { $group: { 
+          _id: { $ifNull: ['$classNumber', 'Unassigned'] }, 
+          count: { $sum: 1 } 
+        } 
+      },
+      { $project: { className: '$_id', count: 1, _id: 0 } },
+      { $sort: { count: -1 } }
+    ]);
 
-    // Get all exam results for these students
+    const classDistributionArray = classDistributionAgg.map(item => ({
+      className: item.className,
+      count: item.count
+    }));
+
+    // Get exam results with limit and lean for performance
     const examResults = await ExamResult.find({ adminId })
       .populate('userId', 'fullName email classNumber')
       .populate('examId', 'title subject')
-      .sort({ completedAt: -1 });
+      .sort({ completedAt: -1 })
+      .limit(1000) // Limit to recent 1000 results
+      .lean();
 
-    // Class Distribution
-    const classDistribution = {};
-    students.forEach(student => {
-      const className = student.classNumber || 'Unassigned';
-      classDistribution[className] = (classDistribution[className] || 0) + 1;
-    });
-
-    const classDistributionArray = Object.entries(classDistribution).map(([className, count]) => ({
-      className,
-      count
-    })).sort((a, b) => b.count - a.count);
-
-    // Performance Metrics
-    const totalExamsTaken = examResults.length;
-    const totalMarksObtained = examResults.reduce((sum, result) => sum + (result.obtainedMarks || 0), 0);
-    const totalMarksPossible = examResults.reduce((sum, result) => sum + (result.totalMarks || 0), 0);
-    const averageScore = totalMarksPossible > 0 ? ((totalMarksObtained / totalMarksPossible) * 100).toFixed(1) : 0;
-
-    // Top Performers
-    const studentPerformance = {};
-    examResults.forEach(result => {
-      const studentId = result.userId?._id?.toString();
-      if (!studentId) return;
-      
-      if (!studentPerformance[studentId]) {
-        studentPerformance[studentId] = {
-          studentId,
-          studentName: result.userId?.fullName || 'Unknown',
-          studentEmail: result.userId?.email || '',
-          totalExams: 0,
-          totalMarks: 0,
-          totalPossibleMarks: 0
-        };
+    // Performance Metrics using aggregation
+    const performanceMetricsAgg = await ExamResult.aggregate([
+      { $match: { adminId: adminId } },
+      { $group: {
+          _id: null,
+          totalExams: { $sum: 1 },
+          totalMarksObtained: { $sum: '$obtainedMarks' },
+          totalMarksPossible: { $sum: '$totalMarks' }
+        }
       }
-      studentPerformance[studentId].totalExams += 1;
-      studentPerformance[studentId].totalMarks += (result.obtainedMarks || 0);
-      studentPerformance[studentId].totalPossibleMarks += (result.totalMarks || 0);
-    });
+    ]);
 
-    const topPerformers = Object.values(studentPerformance)
-      .map((perf) => ({
+    const metrics = performanceMetricsAgg[0] || { totalExams: 0, totalMarksObtained: 0, totalMarksPossible: 0 };
+    const averageScore = metrics.totalMarksPossible > 0 
+      ? ((metrics.totalMarksObtained / metrics.totalMarksPossible) * 100).toFixed(1) 
+      : 0;
+
+    // Top Performers using aggregation
+    const topPerformersAgg = await ExamResult.aggregate([
+      { $match: { adminId: adminId } },
+      { $group: {
+          _id: '$userId',
+          totalExams: { $sum: 1 },
+          totalMarks: { $sum: '$obtainedMarks' },
+          totalPossibleMarks: { $sum: '$totalMarks' }
+        }
+      },
+      { $sort: { totalMarks: -1 } },
+      { $limit: 10 },
+      { $lookup: {
+          from: 'users',
+          localField: '_id',
+          foreignField: '_id',
+          as: 'student'
+        }
+      },
+      { $unwind: { path: '$student', preserveNullAndEmptyArrays: true } },
+      { $project: {
+          studentName: { $ifNull: ['$student.fullName', 'Unknown'] },
+          studentEmail: { $ifNull: ['$student.email', ''] },
+          totalExams: 1,
+          averageScore: {
+            $cond: [
+              { $gt: ['$totalPossibleMarks', 0] },
+              { $multiply: [{ $divide: ['$totalMarks', '$totalPossibleMarks'] }, 100] },
+              0
+            ]
+          }
+        }
+      }
+    ]);
+
+    const topPerformers = topPerformersAgg.map(perf => ({
         studentName: perf.studentName,
         studentEmail: perf.studentEmail,
         totalExams: perf.totalExams,
-        averageScore: perf.totalPossibleMarks > 0 
-          ? ((perf.totalMarks / perf.totalPossibleMarks) * 100).toFixed(1) 
-          : 0
-      }))
-      .sort((a, b) => parseFloat(b.averageScore) - parseFloat(a.averageScore))
-      .slice(0, 10);
+      averageScore: parseFloat(perf.averageScore.toFixed(1))
+    }));
 
-    // Subject Performance
-    const subjectPerformance = {};
-    examResults.forEach(result => {
-      const subject = result.examId?.subject || result.subject || 'Unknown';
-      if (!subjectPerformance[subject]) {
-        subjectPerformance[subject] = {
-          subject,
-          totalExams: 0,
-          totalMarks: 0,
-          totalPossibleMarks: 0
-        };
-      }
-      subjectPerformance[subject].totalExams += 1;
-      subjectPerformance[subject].totalMarks += (result.obtainedMarks || 0);
-      subjectPerformance[subject].totalPossibleMarks += (result.totalMarks || 0);
-    });
+    // Subject Performance using aggregation
+    const subjectPerformanceAgg = await ExamResult.aggregate([
+      { $match: { adminId: adminId } },
+      { $lookup: {
+          from: 'exams',
+          localField: 'examId',
+          foreignField: '_id',
+          as: 'exam'
+        }
+      },
+      { $unwind: { path: '$exam', preserveNullAndEmptyArrays: true } },
+      { $group: {
+          _id: { $ifNull: ['$exam.subject', 'Unknown'] },
+          totalExams: { $sum: 1 },
+          totalMarks: { $sum: '$obtainedMarks' },
+          totalPossibleMarks: { $sum: '$totalMarks' }
+        }
+      },
+      { $project: {
+          subject: '$_id',
+          totalExams: 1,
+          averageScore: {
+            $cond: [
+              { $gt: ['$totalPossibleMarks', 0] },
+              { $multiply: [{ $divide: ['$totalMarks', '$totalPossibleMarks'] }, 100] },
+              0
+            ]
+          },
+          _id: 0
+        }
+      },
+      { $sort: { averageScore: -1 } }
+    ]);
 
-    const subjectPerformanceArray = Object.values(subjectPerformance)
-      .map((subj) => ({
+    const subjectPerformanceArray = subjectPerformanceAgg.map(subj => ({
         subject: subj.subject,
-        averageScore: subj.totalPossibleMarks > 0 
-          ? ((subj.totalMarks / subj.totalPossibleMarks) * 100).toFixed(1) 
-          : 0,
+      averageScore: parseFloat(subj.averageScore.toFixed(1)),
         totalExams: subj.totalExams
-      }))
-      .sort((a, b) => parseFloat(b.averageScore) - parseFloat(a.averageScore));
+    }));
 
-    // Recent Activity (last 5 exam results)
+    // Recent Activity (last 5 exam results) - already limited above
     const recentActivity = examResults.slice(0, 5).map(result => ({
       studentName: result.userId?.fullName || 'Unknown',
       examTitle: result.examId?.title || result.examTitle || 'Unknown',
@@ -1001,7 +1041,7 @@ export const getStudentAnalytics = async (req, res) => {
         classDistribution: classDistributionArray,
         performanceMetrics: {
           averageScore: parseFloat(averageScore),
-          totalExamsTaken,
+          totalExamsTaken: metrics.totalExams,
           topPerformers
         },
         subjectPerformance: subjectPerformanceArray,
@@ -1023,7 +1063,8 @@ export const getExams = async (req, res) => {
     const exams = await Exam.find(filter)
       .populate('createdBy', 'fullName')
       .populate('questions')
-      .sort({ createdAt: -1 });
+      .sort({ createdAt: -1 })
+      .limit(200); // Reasonable limit (exams can be large with questions)
     
     res.json({
       success: true,
@@ -1798,7 +1839,9 @@ export const getClasses = async (req, res) => {
       assignedAdmin: adminId 
     })
     .select('fullName email classNumber phone isActive createdAt lastLogin assignedClass')
-    .populate('assignedClass', '_id name classNumber section');
+    .populate('assignedClass', '_id name classNumber section')
+    .limit(2000); // Reasonable limit for students
+    // Note: lean() removed to maintain populate() functionality
 
     // Get all teachers assigned to this admin
     const teachers = await Teacher.find({

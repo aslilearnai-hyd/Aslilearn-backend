@@ -1202,11 +1202,28 @@ app.post('/api/admin/events', (req, res, next) => {
       return res.status(400).json({ message: 'Event date is required' });
     }
 
-    // Validate date format
-    const eventDate = new Date(date);
+    // Validate date format - parse as local date to avoid timezone issues
+    // Date string format: YYYY-MM-DD
+    let eventDate;
+    if (typeof date === 'string' && date.match(/^\d{4}-\d{2}-\d{2}$/)) {
+      // Parse as local date (not UTC) to preserve the exact date
+      const [year, month, day] = date.split('-').map(Number);
+      eventDate = new Date(year, month - 1, day);
+    } else {
+      eventDate = new Date(date);
+    }
+    
     if (isNaN(eventDate.getTime())) {
       return res.status(400).json({ message: 'Invalid date format' });
     }
+    
+    console.log('Event date parsed:', {
+      inputDate: date,
+      parsedDate: eventDate,
+      year: eventDate.getFullYear(),
+      month: eventDate.getMonth() + 1,
+      day: eventDate.getDate()
+    });
 
     // Validate user
     if (!req.user) {

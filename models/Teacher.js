@@ -83,6 +83,7 @@ teacherSchema.pre('save', function(next) {
 teacherSchema.index({ email: 1 });
 teacherSchema.index({ adminId: 1 });
 teacherSchema.index({ isActive: 1 });
+teacherSchema.index({ adminId: 1, isActive: 1 }); // Compound for admin's active teachers
 
 const Teacher = mongoose.model('Teacher', teacherSchema);
 

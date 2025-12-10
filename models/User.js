@@ -131,5 +131,9 @@ userSchema.index({ assignedAdmin: 1 });
 userSchema.index({ role: 1, assignedAdmin: 1 }); // Compound index for role + admin queries
 userSchema.index({ board: 1 });
 userSchema.index({ role: 1, board: 1 }); // Compound index for role + board queries
+userSchema.index({ role: 1, isActive: 1 }); // For active user queries
+userSchema.index({ role: 1, assignedAdmin: 1, isActive: 1 }); // Compound for admin's active students
+userSchema.index({ assignedClass: 1 }); // For class-based queries
+userSchema.index({ email: 1 }); // For email lookups
 
 export default mongoose.model('User', userSchema);
