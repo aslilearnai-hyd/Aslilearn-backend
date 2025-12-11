@@ -72,6 +72,145 @@ router.use(extractTeacherId);
 router.get('/dashboard', getTeacherDashboardStats);
 router.get('/test', testTeacherData);
 
+// Get teacher's assigned classes
+router.get('/classes', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    console.log('=== FETCHING TEACHER CLASSES ===');
+    console.log('Teacher ID:', teacherId);
+    
+    if (!teacherId) {
+      return res.status(400).json({ success: false, message: 'Teacher ID not found' });
+    }
+    
+    // Get teacher with assigned classes
+    const teacher = await Teacher.findById(teacherId);
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+    
+    if (!teacher.assignedClassIds || teacher.assignedClassIds.length === 0) {
+      console.log('Teacher has no assigned classes');
+      return res.json({ success: true, data: [] });
+    }
+    
+    // Get Class model
+    const Class = (await import('../models/Class.js')).default;
+    
+    // Fetch actual Class documents from database
+    const classDocuments = await Class.find({
+      $or: [
+        { _id: { $in: teacher.assignedClassIds } },
+        { classNumber: { $in: teacher.assignedClassIds } }
+      ],
+      isActive: true
+    })
+    .populate('assignedSubjects', '_id name description code board')
+    .select('_id classNumber section description assignedSubjects');
+    
+    // Get student counts for each class
+    const classObjectIds = classDocuments.map(c => c._id);
+    const students = await User.find({ 
+      role: 'student',
+      assignedClass: { $in: classObjectIds },
+      assignedAdmin: teacher.adminId
+    })
+    .populate('assignedClass', '_id classNumber section')
+    .select('fullName email classNumber assignedClass');
+    
+    // Map classes with student counts
+    const classesWithStudents = classDocuments.map(classDoc => {
+      const classStudents = students.filter(s => 
+        s.assignedClass && s.assignedClass._id.toString() === classDoc._id.toString()
+      );
+      
+      return {
+        _id: classDoc._id,
+        id: classDoc._id,
+        name: `Class ${classDoc.classNumber}${classDoc.section ? ` - ${classDoc.section}` : ''}`,
+        classNumber: classDoc.classNumber,
+        section: classDoc.section,
+        description: classDoc.description,
+        subject: classDoc.assignedSubjects?.map(s => s.name).join(', ') || 'N/A',
+        studentCount: classStudents.length,
+        students: classStudents.map(s => ({
+          id: s._id,
+          name: s.fullName || s.email,
+          email: s.email,
+          status: 'active'
+        })),
+        schedule: 'N/A',
+        room: 'N/A'
+      };
+    });
+    
+    console.log(`Found ${classesWithStudents.length} classes for teacher`);
+    res.json({ success: true, data: classesWithStudents });
+  } catch (error) {
+    console.error('Error fetching teacher classes:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch classes', error: error.message });
+  }
+});
+
+// Get teacher's assigned subjects
+router.get('/subjects', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    console.log('=== FETCHING TEACHER SUBJECTS ===');
+    console.log('Teacher ID:', teacherId);
+    
+    if (!teacherId) {
+      return res.status(400).json({ success: false, message: 'Teacher ID not found' });
+    }
+    
+    // Get teacher with populated subjects
+    const teacher = await Teacher.findById(teacherId).populate('subjects');
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+    
+    if (!teacher.subjects || teacher.subjects.length === 0) {
+      console.log('Teacher has no assigned subjects');
+      return res.json({ success: true, data: [] });
+    }
+    
+    // Get Subject model to ensure we have full subject data
+    const Subject = (await import('../models/Subject.js')).default;
+    
+    // Extract subject IDs (handle both ObjectId and string formats)
+    const subjectIds = teacher.subjects.map(subj => {
+      if (typeof subj === 'object' && subj._id) {
+        return subj._id;
+      }
+      return subj;
+    });
+    
+    // Fetch subject details from database
+    const subjects = await Subject.find({
+      _id: { $in: subjectIds },
+      isActive: true
+    })
+    .sort({ name: 1 })
+    .select('_id name description code board');
+    
+    console.log(`Found ${subjects.length} subjects for teacher`);
+    res.json({ 
+      success: true, 
+      data: subjects.map(subj => ({
+        _id: subj._id.toString(),
+        id: subj._id.toString(),
+        name: subj.name,
+        description: subj.description || '',
+        code: subj.code || '',
+        board: subj.board || ''
+      }))
+    });
+  } catch (error) {
+    console.error('Error fetching teacher subjects:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch subjects', error: error.message });
+  }
+});
+
 // Get subjects for a specific class (shows teacher's assigned subjects)
 // This route must be defined before other routes that might match
 router.get('/classes/:classNumber/subjects', async (req, res) => {
