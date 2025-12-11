@@ -677,6 +677,8 @@ router.post('/homework', async (req, res) => {
 router.get('/students', async (req, res) => {
   try {
     const teacherId = req.teacherId;
+    console.log('=== FETCHING TEACHER STUDENTS ===');
+    console.log('Teacher ID:', teacherId);
     
     // Get teacher's assigned classes
     const teacher = await Teacher.findById(teacherId);
@@ -684,14 +686,38 @@ router.get('/students', async (req, res) => {
       return res.status(404).json({ success: false, message: 'Teacher not found' });
     }
     
+    console.log('Teacher assignedClassIds:', teacher.assignedClassIds);
+    console.log('Teacher adminId:', teacher.adminId);
+    
     // Get students from teacher's assigned classes AND assigned to the same admin as the teacher
     let students = [];
     if (teacher.assignedClassIds && teacher.assignedClassIds.length > 0) {
+      // Get Class model
+      const Class = (await import('../models/Class.js')).default;
+      
+      // First, get the Class documents to find their ObjectIds
+      const classDocuments = await Class.find({
+        $or: [
+          { _id: { $in: teacher.assignedClassIds } },
+          { classNumber: { $in: teacher.assignedClassIds } }
+        ],
+        isActive: true
+      }).select('_id classNumber section');
+
+      const classObjectIds = classDocuments.map(c => c._id);
+      console.log('Found class ObjectIds:', classObjectIds);
+      
+      // Get students assigned to these classes by assignedClass ObjectId
       students = await User.find({ 
         role: 'student',
-        classNumber: { $in: teacher.assignedClassIds },
+        assignedClass: { $in: classObjectIds },
         assignedAdmin: teacher.adminId  // Filter by teacher's admin
-      }).select('-password').sort({ createdAt: -1 });
+      })
+      .populate('assignedClass', '_id classNumber section')
+      .select('-password')
+      .sort({ createdAt: -1 });
+      
+      console.log(`Found ${students.length} students for teacher`);
     }
     
     res.json({ success: true, data: students });
