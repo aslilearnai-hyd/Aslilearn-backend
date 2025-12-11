@@ -1357,6 +1357,112 @@ router.get('/homework-submissions', async (req, res) => {
   }
 });
 
+// Get all remarks created by this teacher (for mobile app)
+router.get('/remarks', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    console.log('=== FETCHING TEACHER REMARKS ===');
+    console.log('Teacher ID:', teacherId);
+    
+    if (!teacherId) {
+      return res.status(400).json({ success: false, message: 'Teacher ID not found' });
+    }
+
+    // Get all remarks created by this teacher
+    const remarks = await StudentRemark.find({ teacherId })
+      .populate('studentId', 'fullName email')
+      .populate('subject', 'name')
+      .sort({ createdAt: -1 });
+
+    console.log(`Found ${remarks.length} remarks by teacher`);
+    res.json({
+      success: true,
+      data: remarks
+    });
+  } catch (error) {
+    console.error('Get teacher remarks error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch remarks', error: error.message });
+  }
+});
+
+// Get class statistics for teacher (for mobile app Class Dashboard)
+router.get('/class-stats', async (req, res) => {
+  try {
+    const teacherId = req.teacherId;
+    console.log('=== FETCHING CLASS STATS ===');
+    console.log('Teacher ID:', teacherId);
+    
+    if (!teacherId) {
+      return res.status(400).json({ success: false, message: 'Teacher ID not found' });
+    }
+
+    // Get teacher
+    const teacher = await Teacher.findById(teacherId);
+    if (!teacher) {
+      return res.status(404).json({ success: false, message: 'Teacher not found' });
+    }
+
+    if (!teacher.assignedClassIds || teacher.assignedClassIds.length === 0) {
+      return res.json({ 
+        success: true, 
+        data: {
+          totalStudents: 0,
+          totalClasses: 0,
+          averageAttendance: 0,
+          averagePerformance: 0
+        }
+      });
+    }
+
+    // Get Class model
+    const Class = (await import('../models/Class.js')).default;
+    
+    // Fetch class documents
+    const classDocuments = await Class.find({
+      $or: [
+        { _id: { $in: teacher.assignedClassIds } },
+        { classNumber: { $in: teacher.assignedClassIds } }
+      ],
+      isActive: true
+    });
+
+    const classObjectIds = classDocuments.map(c => c._id);
+    
+    // Get students for these classes
+    const students = await User.find({ 
+      role: 'student',
+      assignedClass: { $in: classObjectIds },
+      assignedAdmin: teacher.adminId
+    });
+
+    // Get exam results for performance calculation
+    const ExamResult = (await import('../models/ExamResult.js')).default;
+    const examResults = await ExamResult.find({
+      userId: { $in: students.map(s => s._id) }
+    });
+
+    // Calculate average performance
+    let averagePerformance = 0;
+    if (examResults.length > 0) {
+      const totalPercentage = examResults.reduce((sum, result) => sum + (result.percentage || 0), 0);
+      averagePerformance = Math.round(totalPercentage / examResults.length);
+    }
+
+    res.json({
+      success: true,
+      data: {
+        totalStudents: students.length,
+        totalClasses: classDocuments.length,
+        averageAttendance: 85, // Placeholder - implement attendance tracking
+        averagePerformance: averagePerformance
+      }
+    });
+  } catch (error) {
+    console.error('Get class stats error:', error);
+    res.status(500).json({ success: false, message: 'Failed to fetch class stats', error: error.message });
+  }
+});
+
 // Get all remarks for a student
 router.get('/students/:studentId/remarks', async (req, res) => {
   try {
