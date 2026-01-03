@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The SI unit of electric current is:,Volt,Ampere,Ohm,Watt,Ampere
+MCQ,2,The SI unit of electric potential difference is:,Volt,Ampere,Ohm,Watt,Volt
+MCQ,3,The SI unit of resistance is:,Volt,Ampere,Ohm,Watt,Ohm
+MCQ,4,The SI unit of electric power is:,Volt,Ampere,Ohm,Watt,Watt
+MCQ,5,Ohm's law states that:,V = IR,I = VR,R = VI,V = I/R,V = IR
+MCQ,6,The current flowing through a conductor is directly proportional to the potential difference across its ends, provided the temperature remains constant. This is:,Ohm's law,Kirchhoff's law,Faraday's law,Coulomb's law,Ohm's law
+MCQ,7,The resistance of a conductor is:,Directly proportional to its length,Inversely proportional to its length,Independent of length,Proportional to square of length,Directly proportional to its length
+MCQ,8,The resistance of a conductor is:,Directly proportional to its area of cross-section,Inversely proportional to its area of cross-section,Independent of area,Proportional to square of area,Inversely proportional to its area of cross-section
+MCQ,9,The formula for resistance is:,R = ρl/A,R = A/ρl,R = ρA/l,R = lA/ρ,R = ρl/A
+MCQ,10,When resistors are connected in series, the total resistance is:,Sum of individual resistances,Reciprocal of sum of reciprocals,Product of resistances,Average of resistances,Sum of individual resistances
+MCQ,11,When resistors are connected in parallel, the total resistance is:,Sum of individual resistances,Reciprocal of sum of reciprocals,Product of resistances,Average of resistances,Reciprocal of sum of reciprocals
+MCQ,12,The heating effect of electric current is given by:,H = I²Rt,H = VIt,H = V²t/R,All of the above,All of the above
+MCQ,13,The electric power is given by:,P = VI,P = I²R,P = V²/R,All of the above,All of the above
+MCQ,14,The commercial unit of electrical energy is:,Joule,Watt,Kilowatt-hour,Volt,Kilowatt-hour
+MCQ,15,1 kilowatt-hour is equal to:,3.6 × 10⁶ J,3.6 × 10³ J,3.6 × 10⁹ J,3.6 × 10¹² J,3.6 × 10⁶ J
+MCQ,16,A wire of resistance R is cut into n equal parts. The resistance of each part is:,R/n,nR,R,R²,R/n
+MCQ,17,When three resistors R₁, R₂, R₃ are connected in series, the equivalent resistance is:,R₁ + R₂ + R₃,1/R₁ + 1/R₂ + 1/R₃,R₁R₂R₃,(R₁ + R₂ + R₃)/3,R₁ + R₂ + R₃
+MCQ,18,When three resistors R₁, R₂, R₃ are connected in parallel, the equivalent resistance R is:,1/R = 1/R₁ + 1/R₂ + 1/R₃,R = R₁ + R₂ + R₃,R = R₁R₂R₃,R = (R₁ + R₂ + R₃)/3,1/R = 1/R₁ + 1/R₂ + 1/R₃
+MCQ,19,If a current of 2 A flows through a resistor of 5 Ω, the potential difference across it is:,2.5 V,10 V,7 V,3 V,10 V
+MCQ,20,If a potential difference of 12 V is applied across a resistor of 6 Ω, the current flowing is:,2 A,18 A,0.5 A,72 A,2 A
+MCQ,21,The resistivity of a material depends on:,Length of conductor,Area of cross-section,Temperature and nature of material,Current flowing,Temperature and nature of material
+MCQ,22,The resistance of a wire is 10 Ω. If it is stretched to double its length, the new resistance is:,10 Ω,20 Ω,40 Ω,5 Ω,40 Ω
+MCQ,23,A 100 W electric bulb operates at 220 V. The current flowing through it is approximately:,0.45 A,2.2 A,4.5 A,22 A,0.45 A
+MCQ,24,A device of resistance 50 Ω is connected to a 10 V battery. The power consumed is:,0.2 W,2 W,5 W,500 W,2 W
+MCQ,25,Two resistors of 3 Ω and 6 Ω are connected in series. The equivalent resistance is:,2 Ω,3 Ω,6 Ω,9 Ω,9 Ω
+MCQ,26,Two resistors of 3 Ω and 6 Ω are connected in parallel. The equivalent resistance is:,2 Ω,3 Ω,6 Ω,9 Ω,2 Ω
+MCQ,27,The fuse wire should have:,Low melting point,High melting point,Low resistance,High resistance,Low melting point
+MCQ,28,In a series circuit, the current is:,Same through all components,Different in each component,Zero,Maximum,Same through all components
+MCQ,29,In a parallel circuit, the potential difference is:,Same across all branches,Different in each branch,Zero,Maximum,Same across all branches
+MCQ,30,The unit of resistivity is:,Ω,Ωm,Ω/m,Ωm²,Ωm
+MCQ,31,If the length of a wire is doubled and area is halved, the resistance becomes:,Same,Doubled,Quadrupled,Halved,Quadrupled
+MCQ,32,The resistance of a wire is R. If its diameter is doubled, the new resistance is:,R/2,R/4,2R,4R,R/4
+MCQ,33,An electric heater of power 2000 W works for 2 hours. The energy consumed is:,4 kWh,2 kWh,1 kWh,0.5 kWh,4 kWh
+MCQ,34,The heating effect of current is utilized in:,Electric bulb,Electric heater,Electric iron,All of the above,All of the above
+MCQ,35,A wire of resistance 8 Ω is cut into two equal parts. The resistance of each part is:,2 Ω,4 Ω,8 Ω,16 Ω,4 Ω
+MCQ,36,Three resistors of 2 Ω, 3 Ω, and 6 Ω are connected in parallel. The equivalent resistance is:,1 Ω,2 Ω,3 Ω,11 Ω,1 Ω
+MCQ,37,The direction of conventional current is:,From positive to negative,From negative to positive,Random,Opposite to electron flow,From positive to negative
+MCQ,38,The direction of electron flow is:,From positive to negative,From negative to positive,Same as conventional current,Zero,From negative to positive
+MCQ,39,If the potential difference across a conductor is doubled, the current becomes:,Same,Doubled,Halved,Quadrupled,Doubled
+MCQ,40,The resistance of a conductor increases with:,Increase in temperature,Decrease in temperature,No change,Depends on material,Increase in temperature
+MCQ,41,A battery of 6 V is connected to a resistor of 12 Ω. The current is:,0.5 A,2 A,18 A,72 A,0.5 A
+MCQ,42,The power rating of an electric bulb is 60 W. It means the bulb consumes:,60 J of energy per second,60 J of energy per hour,60 W of power per second,60 V of potential difference,60 J of energy per second
+MCQ,43,If three identical bulbs are connected in series to a battery, the brightness of each bulb:,Increases,Decreases,Remains same,Becomes zero,Decreases
+MCQ,44,If three identical bulbs are connected in parallel to a battery, the brightness of each bulb:,Increases,Decreases,Remains same,Becomes zero,Remains same
+MCQ,45,The resistivity of copper is lower than that of:,Silver,Aluminum,Iron,All of the above,Aluminum
+MCQ,46,An electric circuit with no current flowing is called:,Open circuit,Closed circuit,Short circuit,Complete circuit,Open circuit
+MCQ,47,The resistance of a wire depends on:,Length,Area of cross-section,Resistivity,All of the above,All of the above
+MCQ,48,If the voltage is doubled and resistance is halved, the current becomes:,Same,Doubled,Quadrupled,Halved,Quadrupled
+MCQ,49,The energy consumed by a 100 W bulb in 10 hours is:,1 kWh,10 kWh,0.1 kWh,100 kWh,1 kWh
+MCQ,50,The potential difference required to pass 0.5 A current through a 20 Ω resistor is:,10 V,40 V,0.025 V,100 V,10 V
+Integer,1,If a current of 2 A flows through a resistor of 5 Ω, the potential difference is _____ V.,10,,,,
+Integer,2,If a potential difference of 12 V is applied across a resistor of 6 Ω, the current is _____ A.,2,,,,
+Integer,3,Two resistors of 3 Ω and 6 Ω in series have equivalent resistance of _____ Ω.,9,,,,
+Integer,4,Two resistors of 3 Ω and 6 Ω in parallel have equivalent resistance of _____ Ω.,2,,,,
+Integer,5,If resistance R = 10 Ω and current I = 2 A, then power P = I²R = _____ W.,40,,,,
+Integer,6,If voltage V = 12 V and resistance R = 6 Ω, then power P = V²/R = _____ W.,24,,,,
+Integer,7,1 kilowatt-hour = _____ × 10⁶ J (write 3.6, so 3 or 4? Actually 3.6, so let's use 4 for approximation or better: 3600000 J = 3.6 × 10⁶, so coefficient is 3.6, but integer... let's use: The coefficient in 3.6 × 10⁶ is 3.6, but for integer we can ask differently. Actually, let me use: If power is 1000 W for 1 hour, energy is 1 kWh = 3.6 × 10⁶ J. Write the power of 10: 6).,6,,,,
+Integer,8,Three resistors of 2 Ω, 3 Ω, and 6 Ω in parallel have equivalent resistance of _____ Ω.,1,,,,
+Integer,9,If a wire of resistance 8 Ω is cut into two equal parts, resistance of each part is _____ Ω.,4,,,,
+Integer,10,A 100 W bulb at 220 V draws current of approximately 0.45 A. Write the coefficient (for 0.45, write 0, but let's use: if I = 0.4545... A, write integer part: 0, but that's not meaningful. Let's use: A 60 W bulb at 120 V draws current of 0.5 A. Write the coefficient: Actually better: If V = 10 V and R = 5 Ω, then I = _____ A).,2,,,,
+Integer,11,If resistance is 50 Ω and voltage is 10 V, power consumed is _____ W.,2,,,,
+Integer,12,If a wire of resistance R is stretched to double length, new resistance is 4R. Write the coefficient: _____.,4,,,,
+Integer,13,If diameter of wire is doubled, resistance becomes R/4. Write the denominator: _____.,4,,,,
+Integer,14,An electric heater of 2000 W for 2 hours consumes _____ kWh.,4,,,,
+Integer,15,Three resistors 2Ω, 3Ω, 6Ω in parallel give equivalent resistance of _____ Ω.,1,,,,
+Integer,16,If V = 6 V and R = 12 Ω, then I = _____ A.,0.5,Actually 0.5, but integer type... let me use: If V = 12 V and R = 6 Ω, then I = _____ A).,2,,,,
+Integer,17,If I = 2 A and R = 5 Ω, then V = _____ V.,10,,,,
+Integer,18,If I = 1 A and V = 12 V, then R = _____ Ω.,12,,,,
+Integer,19,If P = 60 W and V = 120 V, then I ≈ _____ A (0.5, but integer... let's use: If P = 100 W and V = 200 V, then I = _____ A, which is 0.5... hmm. Let's use: If P = 200 W and V = 100 V, then I = 2 A).,2,,,,
+Integer,20,If P = 40 W and I = 2 A, then R = _____ Ω.,10,,,,
+Integer,21,If P = 24 W and V = 12 V, then I = _____ A.,2,,,,
+Integer,22,If P = 50 W and R = 2 Ω, then I = _____ A.,5,,,,
+Integer,23,Energy consumed by 100 W bulb in 10 hours is _____ kWh.,1,,,,
+Integer,24,Energy consumed by 2000 W heater in 1 hour is _____ kWh.,2,,,,
+Integer,25,If three 4Ω resistors are in series, equivalent resistance is _____ Ω.,12,,,,
+Integer,26,If three 4Ω resistors are in parallel, equivalent resistance is _____ Ω (4/3 = 1.33, so... actually 4/3, but integer... let's use: If two 4Ω are in parallel, equivalent is 2Ω).,2,,,,
+Integer,27,If wire resistance 12Ω is cut into 3 equal parts, each part has resistance of _____ Ω.,4,,,,
+Integer,28,If R = 8Ω and I = 3A, then P = I²R = _____ W.,72,,,,
+Integer,29,If V = 20V and R = 10Ω, then P = V²/R = _____ W.,40,,,,
+Integer,30,If V = 15V and I = 3A, then P = VI = _____ W.,45,,,,
+Integer,31,Two resistors 5Ω and 10Ω in series: equivalent = _____ Ω.,15,,,,
+Integer,32,Two resistors 5Ω and 10Ω in parallel: equivalent = _____ Ω (10/3 = 3.33... let's use: 4Ω and 4Ω in parallel = 2Ω, or 5Ω and 5Ω = 2.5Ω... better: 6Ω and 3Ω in parallel = 2Ω).,2,,,,
+Integer,33,If length is doubled and area halved, resistance becomes _____ times (4 times).,4,,,,
+Integer,34,If diameter is doubled, area becomes 4 times, so resistance becomes 1/4 times. Write denominator: _____.,4,,,,
+Integer,35,1 kWh = 3.6 × 10⁶ J. The exponent is: _____.,6,,,,
+Integer,36,Three resistors 6Ω, 6Ω, 6Ω in parallel: equivalent = _____ Ω.,2,,,,
+Integer,37,Three resistors 6Ω, 6Ω, 6Ω in series: equivalent = _____ Ω.,18,,,,
+Integer,38,If I = 5A and R = 4Ω, then V = _____ V.,20,,,,
+Integer,39,If V = 24V and I = 4A, then R = _____ Ω.,6,,,,
+Integer,40,If P = 100W and I = 5A, then V = _____ V.,20,,,,
+Integer,41,If P = 144W and R = 4Ω, then I = _____ A.,6,,,,
+Integer,42,If P = 72W and V = 12V, then I = _____ A.,6,,,,
+Integer,43,Energy by 500W device for 4 hours = _____ kWh.,2,,,,
+Integer,44,If four 2Ω resistors in series: equivalent = _____ Ω.,8,,,,
+Integer,45,If four 8Ω resistors in parallel: equivalent = _____ Ω.,2,,,,
+Integer,46,If R = 9Ω and I = 2A, then V = _____ V.,18,,,,
+Integer,47,If V = 30V and R = 15Ω, then I = _____ A.,2,,,,
+Integer,48,If I = 4A and V = 16V, then P = _____ W.,64,,,,
+Integer,49,If P = 48W and I = 4A, then R = _____ Ω.,3,,,,
+Integer,50,If P = 36W and V = 12V, then R = _____ Ω.,4,,,,
+Problem,1,Calculate the resistance of a wire of length 2 m and cross-sectional area 1 mm², if the resistivity of the material is 2 × 10⁻⁶ Ωm.,"Given: l = 2 m, A = 1 mm² = 1 × 10⁻⁶ m², ρ = 2 × 10⁻⁶ Ωm. Using R = ρl/A = (2 × 10⁻⁶ × 2) / (1 × 10⁻⁶) = 4 × 10⁻⁶ / 10⁻⁶ = 4 Ω. Answer: Resistance = 4 Ω",,,,
+Problem,2,A current of 0.5 A flows through a resistor of 20 Ω. Calculate the potential difference across the resistor.,"Given: I = 0.5 A, R = 20 Ω. Using Ohm's law: V = IR = 0.5 × 20 = 10 V. Answer: Potential difference = 10 V",,,,
+Problem,3,A potential difference of 12 V is applied across a resistor and a current of 2 A flows through it. Find the resistance of the resistor.,"Given: V = 12 V, I = 2 A. Using Ohm's law: R = V/I = 12/2 = 6 Ω. Answer: Resistance = 6 Ω",,,,
+Problem,4,Two resistors of resistances 3 Ω and 6 Ω are connected in series. Calculate the equivalent resistance.,"Given: R₁ = 3 Ω, R₂ = 6 Ω (in series). Equivalent resistance R = R₁ + R₂ = 3 + 6 = 9 Ω. Answer: Equivalent resistance = 9 Ω",,,,
+Problem,5,Two resistors of resistances 3 Ω and 6 Ω are connected in parallel. Calculate the equivalent resistance.,"Given: R₁ = 3 Ω, R₂ = 6 Ω (in parallel). Using 1/R = 1/R₁ + 1/R₂ = 1/3 + 1/6 = 2/6 + 1/6 = 3/6 = 1/2, so R = 2 Ω. Answer: Equivalent resistance = 2 Ω",,,,
+Problem,6,Three resistors of 2 Ω, 3 Ω, and 6 Ω are connected in parallel. Find the equivalent resistance.,"Given: R₁ = 2 Ω, R₂ = 3 Ω, R₃ = 6 Ω (in parallel). 1/R = 1/R₁ + 1/R₂ + 1/R₃ = 1/2 + 1/3 + 1/6 = 3/6 + 2/6 + 1/6 = 6/6 = 1, so R = 1 Ω. Answer: Equivalent resistance = 1 Ω",,,,
+Problem,7,Calculate the electric power consumed by a device of resistance 50 Ω when a current of 2 A flows through it.,"Given: R = 50 Ω, I = 2 A. Power P = I²R = (2)² × 50 = 4 × 50 = 200 W. Answer: Power = 200 W",,,,
+Problem,8,An electric bulb is rated 100 W - 220 V. Calculate the current drawn by the bulb.,"Given: P = 100 W, V = 220 V. Using P = VI, I = P/V = 100/220 = 10/22 = 5/11 ≈ 0.45 A. Answer: Current = 5/11 A ≈ 0.45 A",,,,
+Problem,9,An electric heater of resistance 20 Ω is connected to a 220 V supply. Calculate the power consumed.,"Given: R = 20 Ω, V = 220 V. Power P = V²/R = (220)²/20 = 48400/20 = 2420 W = 2.42 kW. Answer: Power = 2420 W or 2.42 kW",,,,
+Problem,10,Calculate the energy consumed by an electric heater of power 2000 W in 2 hours.,"Given: P = 2000 W = 2 kW, t = 2 hours. Energy E = P × t = 2 × 2 = 4 kWh. Answer: Energy = 4 kWh",,,,
+Problem,11,A wire of resistance 8 Ω is cut into two equal parts. Find the resistance of each part.,"Given: Original resistance R = 8 Ω. When cut into 2 equal parts, each part has half the length. Since R ∝ l, new resistance of each part = R/2 = 8/2 = 4 Ω. Answer: Resistance of each part = 4 Ω",,,,
+Problem,12,Calculate the heat produced when a current of 5 A flows through a resistor of 10 Ω for 2 minutes.,"Given: I = 5 A, R = 10 Ω, t = 2 minutes = 120 seconds. Heat H = I²Rt = (5)² × 10 × 120 = 25 × 10 × 120 = 30000 J = 30 kJ. Answer: Heat produced = 30000 J or 30 kJ",,,,
+Problem,13,Three resistors of 4 Ω, 8 Ω, and 12 Ω are connected in series. Find the equivalent resistance.,"Given: R₁ = 4 Ω, R₂ = 8 Ω, R₃ = 12 Ω (in series). Equivalent resistance R = R₁ + R₂ + R₃ = 4 + 8 + 12 = 24 Ω. Answer: Equivalent resistance = 24 Ω",,,,
+Problem,14,Three resistors of 4 Ω, 8 Ω, and 8 Ω are connected in parallel. Find the equivalent resistance.,"Given: R₁ = 4 Ω, R₂ = 8 Ω, R₃ = 8 Ω (in parallel). 1/R = 1/R₁ + 1/R₂ + 1/R₃ = 1/4 + 1/8 + 1/8 = 2/8 + 1/8 + 1/8 = 4/8 = 1/2, so R = 2 Ω. Answer: Equivalent resistance = 2 Ω",,,,
+Problem,15,An electric motor takes 5 A from a 220 V line. Calculate the power consumed.,"Given: I = 5 A, V = 220 V. Power P = VI = 220 × 5 = 1100 W = 1.1 kW. Answer: Power = 1100 W or 1.1 kW",,,,
+Problem,16,Calculate the cost of running a 2 kW electric heater for 5 hours, if the cost of electricity is Rs 5 per kWh.,"Given: P = 2 kW, t = 5 hours, cost = Rs 5/kWh. Energy consumed = P × t = 2 × 5 = 10 kWh. Cost = 10 × 5 = Rs 50. Answer: Cost = Rs 50",,,,
+Problem,17,A resistor of 10 Ω is connected to a battery of 12 V. Calculate the current flowing and the power consumed.,"Given: R = 10 Ω, V = 12 V. Current I = V/R = 12/10 = 1.2 A. Power P = V²/R = (12)²/10 = 144/10 = 14.4 W. Answer: Current = 1.2 A, Power = 14.4 W",,,,
+Problem,18,Two resistors of 6 Ω and 12 Ω are connected in parallel and the combination is connected to a 24 V battery. Find the current through each resistor and the total current.,"Given: R₁ = 6 Ω, R₂ = 12 Ω (in parallel), V = 24 V. Current through R₁: I₁ = V/R₁ = 24/6 = 4 A. Current through R₂: I₂ = V/R₂ = 24/12 = 2 A. Total current I = I₁ + I₂ = 4 + 2 = 6 A. Answer: I₁ = 4 A, I₂ = 2 A, Total current = 6 A",,,,
+Problem,19,Calculate the resistance of a wire if a current of 0.5 A flows through it when a potential difference of 2.5 V is applied.,"Given: I = 0.5 A, V = 2.5 V. Resistance R = V/I = 2.5/0.5 = 5 Ω. Answer: Resistance = 5 Ω",,,,
+Problem,20,An electric iron of resistance 50 Ω draws a current of 4.4 A. Calculate the power consumed.,"Given: R = 50 Ω, I = 4.4 A. Power P = I²R = (4.4)² × 50 = 19.36 × 50 = 968 W. Answer: Power = 968 W",,,,
+Problem,21,Calculate the heat produced in 1 minute when a current of 3 A flows through a resistor of 20 Ω.,"Given: I = 3 A, R = 20 Ω, t = 1 minute = 60 seconds. Heat H = I²Rt = (3)² × 20 × 60 = 9 × 20 × 60 = 10800 J = 10.8 kJ. Answer: Heat = 10800 J or 10.8 kJ",,,,
+Problem,22,Three resistors of 3 Ω, 6 Ω, and 9 Ω are connected in series to a 36 V battery. Find the current through the circuit.,"Given: R₁ = 3 Ω, R₂ = 6 Ω, R₃ = 9 Ω (in series), V = 36 V. Equivalent resistance R = 3 + 6 + 9 = 18 Ω. Current I = V/R = 36/18 = 2 A. Answer: Current = 2 A",,,,
+Problem,23,Calculate the equivalent resistance when three resistors of 2 Ω, 4 Ω, and 4 Ω are connected in parallel.,"Given: R₁ = 2 Ω, R₂ = 4 Ω, R₃ = 4 Ω (in parallel). 1/R = 1/2 + 1/4 + 1/4 = 2/4 + 1/4 + 1/4 = 4/4 = 1, so R = 1 Ω. Answer: Equivalent resistance = 1 Ω",,,,
+Problem,24,An electric bulb is rated 60 W - 240 V. Calculate its resistance.,"Given: P = 60 W, V = 240 V. Using P = V²/R, R = V²/P = (240)²/60 = 57600/60 = 960 Ω. Answer: Resistance = 960 Ω",,,,
+Problem,25,A 100 W electric bulb is used for 6 hours daily. Calculate the energy consumed in 30 days.,"Given: P = 100 W = 0.1 kW, t per day = 6 hours, days = 30. Energy per day = 0.1 × 6 = 0.6 kWh. Energy in 30 days = 0.6 × 30 = 18 kWh. Answer: Energy = 18 kWh",,,,
+Problem,26,Calculate the current flowing through a 40 Ω resistor when a potential difference of 20 V is applied across it.,"Given: R = 40 Ω, V = 20 V. Current I = V/R = 20/40 = 0.5 A. Answer: Current = 0.5 A",,,,
+Problem,27,Two resistors of 5 Ω and 10 Ω are connected in series to a 30 V battery. Find the current through each resistor and the potential difference across each.,"Given: R₁ = 5 Ω, R₂ = 10 Ω (in series), V = 30 V. Equivalent resistance R = 5 + 10 = 15 Ω. Current I = V/R = 30/15 = 2 A (same through both). Potential difference across R₁: V₁ = IR₁ = 2 × 5 = 10 V. Potential difference across R₂: V₂ = IR₂ = 2 × 10 = 20 V. Answer: Current = 2 A (through each), V₁ = 10 V, V₂ = 20 V",,,,
+Problem,28,Calculate the power consumed by a device when a current of 2.5 A flows through it and the potential difference is 12 V.,"Given: I = 2.5 A, V = 12 V. Power P = VI = 12 × 2.5 = 30 W. Answer: Power = 30 W",,,,
+Problem,29,A wire of resistance 12 Ω is cut into three equal parts. Find the resistance of each part and the equivalent resistance when they are connected in parallel.,"Given: Original resistance R = 12 Ω. Each part has resistance = R/3 = 12/3 = 4 Ω. When connected in parallel, 1/R_eq = 1/4 + 1/4 + 1/4 = 3/4, so R_eq = 4/3 Ω. Answer: Resistance of each part = 4 Ω, Equivalent resistance in parallel = 4/3 Ω",,,,
+Problem,30,An electric heater of power 1500 W is used for 3 hours. Calculate the energy consumed in kWh.,"Given: P = 1500 W = 1.5 kW, t = 3 hours. Energy E = P × t = 1.5 × 3 = 4.5 kWh. Answer: Energy = 4.5 kWh",,,,
+Problem,31,Calculate the resistance of a conductor if 0.2 A current flows through it when 4 V potential difference is applied.,"Given: I = 0.2 A, V = 4 V. Resistance R = V/I = 4/0.2 = 20 Ω. Answer: Resistance = 20 Ω",,,,
+Problem,32,Two resistors of 8 Ω and 12 Ω are connected in parallel. If the total current is 5 A, find the current through each resistor.,"Given: R₁ = 8 Ω, R₂ = 12 Ω (in parallel), Total current I = 5 A. Equivalent resistance: 1/R = 1/8 + 1/12 = 3/24 + 2/24 = 5/24, R = 24/5 = 4.8 Ω. Voltage V = IR = 5 × 4.8 = 24 V. Current through R₁: I₁ = V/R₁ = 24/8 = 3 A. Current through R₂: I₂ = V/R₂ = 24/12 = 2 A. Answer: I₁ = 3 A, I₂ = 2 A",,,,
+Problem,33,Calculate the heat produced in 5 minutes when a current of 4 A flows through a resistor of 15 Ω.,"Given: I = 4 A, R = 15 Ω, t = 5 minutes = 300 seconds. Heat H = I²Rt = (4)² × 15 × 300 = 16 × 15 × 300 = 72000 J = 72 kJ. Answer: Heat = 72000 J or 72 kJ",,,,
+Problem,34,An electric motor takes 10 A from a 220 V supply. Calculate the power and energy consumed in 2 hours.,"Given: I = 10 A, V = 220 V, t = 2 hours. Power P = VI = 220 × 10 = 2200 W = 2.2 kW. Energy E = P × t = 2.2 × 2 = 4.4 kWh. Answer: Power = 2.2 kW, Energy = 4.4 kWh",,,,
+Problem,35,Three resistors of 6 Ω, 12 Ω, and 18 Ω are connected in series. Calculate the equivalent resistance and the current if they are connected to a 72 V battery.,"Given: R₁ = 6 Ω, R₂ = 12 Ω, R₃ = 18 Ω (in series), V = 72 V. Equivalent resistance R = 6 + 12 + 18 = 36 Ω. Current I = V/R = 72/36 = 2 A. Answer: Equivalent resistance = 36 Ω, Current = 2 A",,,,
+Problem,36,Calculate the cost of energy consumed by a 100 W bulb used for 10 hours per day for 30 days, if the cost is Rs 6 per kWh.,"Given: P = 100 W = 0.1 kW, t per day = 10 hours, days = 30, cost = Rs 6/kWh. Energy per day = 0.1 × 10 = 1 kWh. Energy in 30 days = 1 × 30 = 30 kWh. Cost = 30 × 6 = Rs 180. Answer: Cost = Rs 180",,,,
+Problem,37,A wire of resistance 20 Ω is stretched to double its length. Find the new resistance.,"Given: Original resistance R = 20 Ω. When stretched to double length, if volume remains constant, area becomes half. Since R = ρl/A, new resistance R' = ρ(2l)/(A/2) = 4ρl/A = 4R = 4 × 20 = 80 Ω. Answer: New resistance = 80 Ω",,,,
+Problem,38,Two resistors of 4 Ω and 6 Ω are connected in parallel to a 12 V battery. Find the total current and power consumed.,"Given: R₁ = 4 Ω, R₂ = 6 Ω (in parallel), V = 12 V. Equivalent resistance: 1/R = 1/4 + 1/6 = 3/12 + 2/12 = 5/12, R = 12/5 = 2.4 Ω. Total current I = V/R = 12/2.4 = 5 A. Power P = V²/R = (12)²/2.4 = 144/2.4 = 60 W. Answer: Total current = 5 A, Power = 60 W",,,,
+Problem,39,An electric kettle rated 2 kW works for 15 minutes. Calculate the energy consumed.,"Given: P = 2 kW, t = 15 minutes = 0.25 hours. Energy E = P × t = 2 × 0.25 = 0.5 kWh. Answer: Energy = 0.5 kWh",,,,
+Problem,40,Calculate the resistance of a wire of length 1.5 m, area of cross-section 0.5 mm², if resistivity is 1.7 × 10⁻⁸ Ωm.,"Given: l = 1.5 m, A = 0.5 mm² = 0.5 × 10⁻⁶ m², ρ = 1.7 × 10⁻⁸ Ωm. Resistance R = ρl/A = (1.7 × 10⁻⁸ × 1.5) / (0.5 × 10⁻⁶) = (2.55 × 10⁻⁸) / (0.5 × 10⁻⁶) = 5.1 × 10⁻² = 0.051 Ω. Answer: Resistance = 0.051 Ω",,,,
+Problem,41,A resistor of 25 Ω is connected to a 50 V battery. Calculate the current and power consumed.,"Given: R = 25 Ω, V = 50 V. Current I = V/R = 50/25 = 2 A. Power P = V²/R = (50)²/25 = 2500/25 = 100 W. Answer: Current = 2 A, Power = 100 W",,,,
+Problem,42,Three resistors of 2 Ω, 3 Ω, and 6 Ω are connected in series to a 22 V battery. Find the potential difference across the 6 Ω resistor.,"Given: R₁ = 2 Ω, R₂ = 3 Ω, R₃ = 6 Ω (in series), V = 22 V. Equivalent resistance R = 2 + 3 + 6 = 11 Ω. Current I = V/R = 22/11 = 2 A. Potential difference across 6 Ω: V₃ = IR₃ = 2 × 6 = 12 V. Answer: Potential difference = 12 V",,,,
+Problem,43,Calculate the equivalent resistance when four resistors of 4 Ω each are connected in parallel.,"Given: Four resistors each of 4 Ω (in parallel). 1/R = 1/4 + 1/4 + 1/4 + 1/4 = 4/4 = 1, so R = 1 Ω. Answer: Equivalent resistance = 1 Ω",,,,
+Problem,44,An electric iron of power 1000 W is used for 30 minutes daily. Calculate the energy consumed in a week.,"Given: P = 1000 W = 1 kW, t per day = 30 minutes = 0.5 hours, days = 7. Energy per day = 1 × 0.5 = 0.5 kWh. Energy in week = 0.5 × 7 = 3.5 kWh. Answer: Energy = 3.5 kWh",,,,
+Problem,45,A current of 6 A flows through a resistor of 5 Ω for 10 minutes. Calculate the heat produced.,"Given: I = 6 A, R = 5 Ω, t = 10 minutes = 600 seconds. Heat H = I²Rt = (6)² × 5 × 600 = 36 × 5 × 600 = 108000 J = 108 kJ. Answer: Heat = 108000 J or 108 kJ",,,,
+Problem,46,Two resistors of 10 Ω and 15 Ω are connected in series to a 50 V battery. Find the current and power consumed.,"Given: R₁ = 10 Ω, R₂ = 15 Ω (in series), V = 50 V. Equivalent resistance R = 10 + 15 = 25 Ω. Current I = V/R = 50/25 = 2 A. Power P = I²R = (2)² × 25 = 4 × 25 = 100 W. Answer: Current = 2 A, Power = 100 W",,,,
+Problem,47,Calculate the resistance of a wire if doubling its length doubles the resistance, and the original resistance is 8 Ω. If it's cut into 4 equal parts and connected in parallel, find the equivalent resistance.,"Given: Original resistance R = 8 Ω. When cut into 4 equal parts, each part has resistance = R/4 = 8/4 = 2 Ω. When connected in parallel: 1/R_eq = 1/2 + 1/2 + 1/2 + 1/2 = 4/2 = 2, so R_eq = 0.5 Ω. Answer: Each part = 2 Ω, Equivalent resistance = 0.5 Ω",,,,
+Problem,48,An electric bulb draws 0.5 A current from a 220 V supply. Calculate its power and resistance.,"Given: I = 0.5 A, V = 220 V. Power P = VI = 220 × 0.5 = 110 W. Resistance R = V/I = 220/0.5 = 440 Ω. Answer: Power = 110 W, Resistance = 440 Ω",,,,
+Problem,49,Three resistors of 5 Ω, 10 Ω, and 15 Ω are connected in parallel. If the total current is 11 A, find the potential difference across the combination.,"Given: R₁ = 5 Ω, R₂ = 10 Ω, R₃ = 15 Ω (in parallel), I = 11 A. Equivalent resistance: 1/R = 1/5 + 1/10 + 1/15 = 6/30 + 3/30 + 2/30 = 11/30, R = 30/11 Ω. Potential difference V = IR = 11 × (30/11) = 30 V. Answer: Potential difference = 30 V",,,,
+Problem,50,Calculate the energy consumed by a 500 W device working for 8 hours, and find the cost if electricity costs Rs 4 per kWh.,"Given: P = 500 W = 0.5 kW, t = 8 hours, cost = Rs 4/kWh. Energy E = P × t = 0.5 × 8 = 4 kWh. Cost = 4 × 4 = Rs 16. Answer: Energy = 4 kWh, Cost = Rs 16",,,,
+

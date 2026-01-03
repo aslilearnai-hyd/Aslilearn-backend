@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Health means a state of?,Only physical fitness,Physical and mental well-being,Only absence of disease,None,Physical and mental well-being
+MCQ,2,Disease-free does not always mean?,Healthy,Unhealthy,Sick,None,Healthy
+MCQ,3,Which factor affects health?,Environment,Economy,Social equality,All of these,All of these
+MCQ,4,Which is not a symptom?,Fever,Headache,Cause,Pain,Cause
+MCQ,5,Which is a sign of disease?,Pain,Fatigue,Symptoms,Bacteria,Symptoms
+MCQ,6,Which disease spreads through air?,Malaria,Cholera,Tuberculosis,None,Tuberculosis
+MCQ,7,Which disease spreads by mosquitoes?,TB,Malaria,Typhoid,None,Malaria
+MCQ,8,Which disease spreads by contaminated water?,Cholera,Malaria,TB,None,Cholera
+MCQ,9,Which is a communicable disease?,Cancer,Diabetes,TB,None,TB
+MCQ,10,Which is a non-communicable disease?,Malaria,TB,Diabetes,None,Diabetes
+MCQ,11,Diseases caused by microbes are?,Infectious,Non-infectious,Genetic,None,Infectious
+MCQ,12,Which microbe causes malaria?,Virus,Bacteria,Protozoa,Fungi,Protozoa
+MCQ,13,Which disease is caused by virus?,TB,Cholera,AIDS,Malaria,AIDS
+MCQ,14,Which disease is caused by bacteria?,Polio,TB,Malaria,Cancer,TB
+MCQ,15,Which disease affects lungs?,Malaria,TB,Cholera,None,TB
+MCQ,16,Which disease causes loose motions?,TB,Malaria,Cholera,None,Cholera
+MCQ,17,Which disease spreads through sexual contact?,AIDS,TB,Malaria,None,AIDS
+MCQ,18,Which is an immediate cause of disease?,Virus,Poverty,Pollution,None,Virus
+MCQ,19,Which is an underlying cause of disease?,Virus,Bacteria,Poverty,None,Poverty
+MCQ,20,Which organ system helps in defense?,Digestive,Respiratory,Immune,None,Immune
+MCQ,21,Which cells fight infection?,RBC,WBC,Platelets,None,WBC
+MCQ,22,Immunity means?,Resistance to disease,Weakness,Infection,None,Resistance to disease
+MCQ,23,Which immunity is present from birth?,Acquired,Innate,Artificial,None,Innate
+MCQ,24,Which immunity develops after vaccination?,Innate,Acquired,Inherited,None,Acquired
+MCQ,25,Which is not a method of prevention?,Vaccination,Hygiene,Overcrowding,None,Overcrowding
+MCQ,26,Which disease is preventable by vaccination?,Polio,Diabetes,Cancer,None,Polio
+MCQ,27,Which nutrient deficiency causes scurvy?,Vitamin A,Vitamin B,Vitamin C,Vitamin D,Vitamin C
+MCQ,28,Which nutrient deficiency causes rickets?,Vitamin A,Vitamin C,Vitamin D,Iron,Vitamin D
+MCQ,29,Which nutrient deficiency causes night blindness?,Vitamin A,Vitamin B,Vitamin C,Vitamin D,Vitamin A
+MCQ,30,Which deficiency causes anaemia?,Vitamin C,Iron,Protein,Vitamin D,Iron
+MCQ,31,Which disease is hereditary?,TB,Malaria,Haemophilia,None,Haemophilia
+MCQ,32,Which disease is caused by unhealthy lifestyle?,Malaria,TB,Heart disease,None,Heart disease
+MCQ,33,Which disease spreads through vectors?,TB,Cholera,Malaria,None,Malaria
+MCQ,34,Which is a chronic disease?,Cold,Diarrhoea,TB,None,TB
+MCQ,35,Which is an acute disease?,TB,Cancer,Cold,None,Cold
+MCQ,36,Which factor improves health?,Clean water,Pollution,Poverty,None,Clean water
+MCQ,37,Which disease affects immunity?,Cancer,TB,AIDS,None,AIDS
+MCQ,38,Which microbe causes TB?,Virus,Protozoa,Bacteria,Fungi,Bacteria
+MCQ,39,Which microbe causes cholera?,Virus,Bacteria,Fungi,None,Bacteria
+MCQ,40,Which disease spreads by housefly?,Malaria,Cholera,TB,None,Cholera
+MCQ,41,Which condition weakens immunity?,Good diet,Exercise,Malnutrition,None,Malnutrition
+MCQ,42,Which is a preventive measure?,Vaccination,Treatment,Diagnosis,None,Vaccination
+MCQ,43,Which is curative measure?,Vaccination,Treatment,Sanitation,None,Treatment
+MCQ,44,Which disease is water-borne?,TB,Cholera,Malaria,None,Cholera
+MCQ,45,Which disease is air-borne?,Malaria,TB,Cholera,None,TB
+MCQ,46,Which disease spreads through food?,TB,Cholera,Cancer,None,Cholera
+MCQ,47,Which immunity lasts long?,Innate,Acquired,None,None,Acquired
+MCQ,48,Which disease affects heart?,Malaria,TB,Heart disease,None,Heart disease
+MCQ,49,Which factor does not cause disease?,Pathogen,Poverty,Exercise,None,Exercise
+MCQ,50,Which is essential for good health?,Balanced diet,Pollution,Stress,None,Balanced diet
+
+Integer,1,State of complete well-being?,Health,,,,
+Integer,2,Disease caused by microbes?,Infectious,,,,
+Integer,3,Disease not spread person to person?,Non-communicable,,,,
+Integer,4,Disease spread by mosquitoes?,Malaria,,,,
+Integer,5,Disease spread by water?,Cholera,,,,
+Integer,6,Disease caused by virus?,AIDS,,,,
+Integer,7,Disease caused by bacteria?,TB,,,,
+Integer,8,Cells fighting infection?,WBC,,,,
+Integer,9,Resistance to disease?,Immunity,,,,
+Integer,10,Immunity from birth?,Innate,,,,
+Integer,11,Immunity from vaccination?,Acquired,,,,
+Integer,12,Disease caused by poverty?,TB,,,,
+Integer,13,Disease due to deficiency?,Scurvy,,,,
+Integer,14,Vitamin C deficiency disease?,Scurvy,,,,
+Integer,15,Vitamin D deficiency disease?,Rickets,,,,
+Integer,16,Vitamin A deficiency disease?,Night blindness,,,,
+Integer,17,Iron deficiency disease?,Anaemia,,,,
+Integer,18,Long-lasting disease?,Chronic,,,,
+Integer,19,Short-term disease?,Acute,,,,
+Integer,20,Disease spread by air?,TB,,,,
+Integer,21,Disease spread by sexual contact?,AIDS,,,,
+Integer,22,Underlying cause of disease?,Poverty,,,,
+Integer,23,Immediate cause of disease?,Pathogen,,,,
+Integer,24,Disease caused by protozoa?,Malaria,,,,
+Integer,25,Disease caused by fungus?,Ringworm,,,,
+Integer,26,Disease prevented by vaccine?,Polio,,,,
+Integer,27,Healthy diet type?,Balanced diet,,,,
+Integer,28,Disease affecting immunity?,AIDS,,,,
+Integer,29,Vector-borne disease?,Malaria,,,,
+Integer,30,Disease spread by housefly?,Cholera,,,,
+Integer,31,Disease due to lifestyle?,Heart disease,,,,
+Integer,32,Preventive healthcare?,Vaccination,,,,
+Integer,33,Curative healthcare?,Treatment,,,,
+Integer,34,Disease spread by food?,Cholera,,,,
+Integer,35,Disease affecting lungs?,TB,,,,
+Integer,36,Disease of blood clotting?,Haemophilia,,,,
+Integer,37,Organ system for defense?,Immune system,,,,
+Integer,38,Good health depends on?,Environment,,,,
+Integer,39,Disease without infection?,Diabetes,,,,
+Integer,40,Disease due to malnutrition?,Anaemia,,,,
+Integer,41,Pathogen means?,Disease causing agent,,,,
+Integer,42,Deficiency of protein causes?,Kwashiorkor,,,,
+Integer,43,Deficiency of iodine causes?,Goitre,,,,
+Integer,44,Disease caused by bacteria in water?,Cholera,,,,
+Integer,45,Disease caused by virus in nerves?,Polio,,,,
+Integer,46,Spread through cough?,TB,,,,
+Integer,47,Disease due to genes?,Genetic disease,,,,
+Integer,48,Long immunity method?,Vaccination,,,,
+Integer,49,Factor improving health?,Clean water,,,,
+Integer,50,Healthy lifestyle includes?,Exercise,,,,
+
+Descriptive,1,Define health.,,,,,Health is a state of complete physical, mental and social well-being
+Descriptive,2,Why is health said to be dynamic?,,,,,It depends on environment and lifestyle
+Descriptive,3,What do you mean by disease?,,,,,Disturbance in normal functioning of body
+Descriptive,4,Difference between health and disease.,,,,,Health is well-being; disease is illness
+Descriptive,5,What are symptoms?,,,,,Signs indicating disease
+Descriptive,6,What are causes of disease?,,,,,Immediate and underlying factors
+Descriptive,7,What are immediate causes?,,,,,Pathogens like bacteria and viruses
+Descriptive,8,What are underlying causes?,,,,,Poverty, poor sanitation
+Descriptive,9,Define infectious disease.,,,,,Diseases caused by pathogens
+Descriptive,10,Define non-infectious disease.,,,,,Diseases not caused by microbes
+Descriptive,11,Explain malaria.,,,,,Protozoan disease spread by mosquitoes
+Descriptive,12,Explain tuberculosis.,,,,,Bacterial disease affecting lungs
+Descriptive,13,Explain cholera.,,,,,Water-borne bacterial disease
+Descriptive,14,Explain AIDS.,,,,,Viral disease damaging immune system
+Descriptive,15,What is immunity?,,,,,Ability to resist infection
+Descriptive,16,Types of immunity.,,,,,Innate and acquired
+Descriptive,17,Explain innate immunity.,,,,,Inborn resistance to disease
+Descriptive,18,Explain acquired immunity.,,,,,Immunity developed after exposure
+Descriptive,19,What is vaccination?,,,,,Introduction of weakened pathogen
+Descriptive,20,Why vaccination important?,,,,,Prevents infectious diseases
+Descriptive,21,Explain prevention of diseases.,,,,,Hygiene, vaccination, sanitation
+Descriptive,22,Explain treatment of diseases.,,,,,Medicines to cure disease
+Descriptive,23,What is malnutrition?,,,,,Lack of proper nutrition
+Descriptive,24,Explain deficiency diseases.,,,,,Diseases due to nutrient lack
+Descriptive,25,Explain scurvy.,,,,,Vitamin C deficiency disease
+Descriptive,26,Explain rickets.,,,,,Vitamin D deficiency disease
+Descriptive,27,Explain night blindness.,,,,,Vitamin A deficiency disease
+Descriptive,28,Explain anaemia.,,,,,Iron deficiency disease
+Descriptive,29,What are chronic diseases?,,,,,Long lasting diseases
+Descriptive,30,What are acute diseases?,,,,,Short duration diseases
+Descriptive,31,Why poverty causes disease?,,,,,Poor living conditions
+Descriptive,32,How environment affects health?,,,,,Clean environment prevents disease
+Descriptive,33,Why balanced diet important?,,,,,Provides all nutrients
+Descriptive,34,Why clean water essential?,,,,,Prevents water-borne diseases
+Descriptive,35,Why sanitation important?,,,,,Prevents infections
+Descriptive,36,Role of immune system.,,,,,Protects body from pathogens
+Descriptive,37,Why AIDS is dangerous?,,,,,Destroys immunity
+Descriptive,38,How diseases spread?,,,,,Air water contact vectors
+Descriptive,39,Explain vector-borne diseases.,,,,,Diseases spread by insects
+Descriptive,40,What is public health?,,,,,Community health management
+Descriptive,41,Why exercise important?,,,,,Maintains physical fitness
+Descriptive,42,Why rest important during illness?,,,,,Helps recovery
+Descriptive,43,Explain lifestyle diseases.,,,,,Diseases due to habits
+Descriptive,44,Why early diagnosis important?,,,,,Prevents complications
+Descriptive,45,Why antibiotics not effective against viruses?,,,,,Viruses lack cellular structure
+Descriptive,46,Explain prevention better than cure.,,,,,Prevention reduces disease burden
+Descriptive,47,Why children need vaccination?,,,,,Protects from infections
+Descriptive,48,Explain communicable diseases.,,,,,Diseases spread person to person
+Descriptive,49,Explain non-communicable diseases.,,,,,Diseases not infectious
+Descriptive,50,How can good health be maintained?,,,,,Balanced diet hygiene exercise

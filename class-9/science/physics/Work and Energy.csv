@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Work is said to be done when?,Force is applied,Object moves,Force causes displacement,Both force and displacement,Both force and displacement
+MCQ,2,SI unit of work is?,Watt,Joule,Newton,Pascal,Joule
+MCQ,3,Work done by a force is zero when?,Displacement is zero,Force is zero,Displacement perpendicular to force,All of these,All of these
+MCQ,4,Work done is maximum when angle between force and displacement is?,0°,45°,90°,180°,0°
+MCQ,5,Work done is zero when angle between force and displacement is?,0°,45°,90°,180°,90°
+MCQ,6,Which is a scalar quantity?,Force,Velocity,Work,Acceleration,Work
+MCQ,7,SI unit of energy is?,Joule,Watt,Newton,Pascal,Joule
+MCQ,8,Energy is defined as?,Force applied,Ability to do work,Power used,None,Ability to do work
+MCQ,9,Kinetic energy depends on?,Mass only,Velocity only,Both mass and velocity,None,Both mass and velocity
+MCQ,10,Formula of kinetic energy is?,mv²,½mv²,mv,½m²v,½mv²
+MCQ,11,Which energy is due to motion?,Potential energy,Kinetic energy,Mechanical energy,None,Kinetic energy
+MCQ,12,Potential energy depends on?,Mass and height,Velocity and mass,Speed only,None,Mass and height
+MCQ,13,Formula of potential energy is?,mgh,½mv²,mg/m,hg,mgh
+MCQ,14,Which energy is due to position?,Kinetic energy,Potential energy,Mechanical energy,None,Potential energy
+MCQ,15,SI unit of power is?,Joule,Newton,Watt,Pascal,Watt
+MCQ,16,Power is defined as?,Work/time,Energy/time,Both A and B,None,Both A and B
+MCQ,17,1 watt equals?,1 J/s,1 N/s,1 J,1 N,1 J/s
+MCQ,18,Commercial unit of energy is?,Joule,Watt,kWh,Newton,kWh
+MCQ,19,1 kWh equals?,3.6×10⁵ J,3.6×10⁶ J,3.6×10⁷ J,360 J,3.6×10⁶ J
+MCQ,20,Which energy conversion occurs in electric bulb?,Electrical to light,Electrical to heat,Both A and B,None,Both A and B
+MCQ,21,Law of conservation of energy states?,Energy is destroyed,Energy is created,Energy is conserved,None,Energy is conserved
+MCQ,22,Total energy of isolated system is?,Constant,Increasing,Decreasing,None,Constant
+MCQ,23,Which energy is possessed by stretched spring?,Kinetic,Potential,Mechanical,None,Potential
+MCQ,24,When velocity doubles, kinetic energy becomes?,Double,Triple,Four times,Half,Four times
+MCQ,25,Work done by gravity on falling object is?,Positive,Negative,Zero,None,Positive
+MCQ,26,Work done against gravity is?,Positive,Negative,Zero,None,Negative
+MCQ,27,Which has maximum kinetic energy?,Resting body,Slow body,Fast body,None,Fast body
+MCQ,28,Power depends on?,Work,Time,Both,None,Both
+MCQ,29,If power is high, work is done?,Slowly,Quickly,Not done,None,Quickly
+MCQ,30,Which is unit of power?,Joule,Watt,Newton,Pascal,Watt
+MCQ,31,Mechanical energy is sum of?,KE and PE,KE only,PE only,None,KE and PE
+MCQ,32,Potential energy of body at ground level?,Maximum,Minimum,Zero,None,Zero
+MCQ,33,Work done by friction is?,Positive,Negative,Zero,None,Negative
+MCQ,34,Energy of moving air is?,Solar energy,Kinetic energy,Potential energy,None,Kinetic energy
+MCQ,35,Which energy is stored in food?,Electrical,Chemical,Kinetic,None,Chemical
+MCQ,36,Which device converts mechanical to electrical energy?,Motor,Generator,Battery,None,Generator
+MCQ,37,Which device converts electrical to mechanical energy?,Generator,Motor,Cell,None,Motor
+MCQ,38,Power of a machine is?,Energy,time,Work/time,None,Work/time
+MCQ,39,SI unit of potential energy?,Joule,Newton,Watt,Pascal,Joule
+MCQ,40,Which energy is renewable?,Coal,Petroleum,Wind,None,Wind
+MCQ,41,If no displacement, work done?,Maximum,Minimum,Zero,None,Zero
+MCQ,42,Work done by centripetal force?,Positive,Negative,Zero,None,Zero
+MCQ,43,Energy possessed by flowing water?,Potential,Kinetic,Mechanical,None,Kinetic
+MCQ,44,Which quantity is conserved?,Force,Energy,Power,Velocity,Energy
+MCQ,45,Energy unit of household electricity bill?,Joule,kWh,Watt,Newton,kWh
+MCQ,46,When object is lifted, which energy increases?,KE,PE,Both,None,PE
+MCQ,47,Work done formula?,F+d,F×d,F/d,d/F,F×d
+MCQ,48,Which energy depends on height?,Kinetic,Potential,Mechanical,None,Potential
+MCQ,49,Energy transformation in hydroelectric plant?,Electrical to mechanical,Mechanical to electrical,Heat to electrical,None,Mechanical to electrical
+MCQ,50,Energy can be?,Created,Destroyed,Converted,Both A and B,Converted
+
+Integer,1,SI unit of work?,Joule,,,,
+Integer,2,SI unit of energy?,Joule,,,,
+Integer,3,SI unit of power?,Watt,,,,
+Integer,4,Formula of work?,W=F×s,,,,
+Integer,5,Formula of kinetic energy?,½mv²,,,,
+Integer,6,Formula of potential energy?,mgh,,,,
+Integer,7,Formula of power?,Work/Time,,,,
+Integer,8,Commercial unit of energy?,kWh,,,,
+Integer,9,1 watt equals?,1 J/s,,,,
+Integer,10,1 kWh equals?,3.6×10⁶ J,,,,
+Integer,11,Kinetic energy depends on?,Mass and velocity,,,,
+Integer,12,Potential energy depends on?,Mass and height,,,,
+Integer,13,Work is scalar? (Yes/No),Yes,,,,
+Integer,14,Energy is scalar? (Yes/No),Yes,,,,
+Integer,15,Power is scalar? (Yes/No),Yes,,,,
+Integer,16,Energy ability to do?,Work,,,,
+Integer,17,Work done when no displacement?,Zero,,,,
+Integer,18,Work done against gravity?,Negative,,,,
+Integer,19,Work done by gravity?,Positive,,,,
+Integer,20,Mechanical energy equals?,KE+PE,,,,
+Integer,21,KE of body at rest?,Zero,,,,
+Integer,22,PE at ground level?,Zero,,,,
+Integer,23,Energy conserved? (Yes/No),Yes,,,,
+Integer,24,Unit of electrical energy bill?,kWh,,,,
+Integer,25,If velocity doubles KE?,4 times,,,,
+Integer,26,Power shows rate of?,Doing work,,,,
+Integer,27,Energy stored in spring?,Potential,,,,
+Integer,28,Energy of moving body?,Kinetic,,,,
+Integer,29,Work done by friction?,Negative,,,,
+Integer,30,Energy unit Joule symbol?,J,,,,
+Integer,31,1 kW equals?,1000 W,,,,
+Integer,32,Work done depends on?,Force and displacement,,,,
+Integer,33,Power depends on?,Work and time,,,,
+Integer,34,Energy cannot be destroyed? (Yes/No),Yes,,,,
+Integer,35,Energy of food?,Chemical,,,,
+Integer,36,Energy of wind?,Kinetic,,,,
+Integer,37,Energy stored in dam water?,Potential,,,,
+Integer,38,Machine converting energy?,Generator,,,,
+Integer,39,Work done by centripetal force?,Zero,,,,
+Integer,40,Energy conversion possible? (Yes/No),Yes,,,,
+Integer,41,Energy unit in SI?,Joule,,,,
+Integer,42,Energy of stretched rubber band?,Potential,,,,
+Integer,43,Power unit symbol?,W,,,,
+Integer,44,Work done is maximum at angle?,0°,,,,
+Integer,45,Energy used in home billed in?,kWh,,,,
+Integer,46,Potential energy formula uses g? (Yes/No),Yes,,,,
+Integer,47,Energy of bullet?,Kinetic,,,,
+Integer,48,Energy stored in fuel?,Chemical,,,,
+Integer,49,Work done in lifting object?,Positive,,,,
+Integer,50,Power high means work done?,Fast,,,,
+
+Problem,1,Find work done when force 10 N moves body by 5 m.,,,,,50 J
+Problem,2,Find kinetic energy of 2 kg body moving at 4 m/s.,,,,,16 J
+Problem,3,Find potential energy of 5 kg mass at height 10 m.,,,,,490 J
+Problem,4,Find power if work 100 J done in 5 s.,,,,,20 W
+Problem,5,Find work done if force 20 N moves body 3 m.,,,,,60 J
+Problem,6,Find KE of 1 kg body moving at 10 m/s.,,,,,50 J
+Problem,7,Find PE of 2 kg body at height 5 m.,,,,,98 J
+Problem,8,Find power if work 200 J in 10 s.,,,,,20 W
+Problem,9,Find work done against gravity lifting 10 kg to 2 m.,,,,,196 J
+Problem,10,Find KE of 5 kg body moving at 2 m/s.,,,,,10 J
+Problem,11,Find PE of 1 kg mass at 20 m.,,,,,196 J
+Problem,12,Find power if 500 J work done in 25 s.,,,,,20 W
+Problem,13,Find work done if force 15 N acts over 4 m.,,,,,60 J
+Problem,14,Find KE of 4 kg body moving at 5 m/s.,,,,,50 J
+Problem,15,Find PE of 3 kg mass at 10 m.,,,,,294 J
+Problem,16,Find power if work 300 J in 15 s.,,,,,20 W
+Problem,17,Find KE of 0.5 kg body moving at 8 m/s.,,,,,16 J
+Problem,18,Find work done if force 50 N moves body 2 m.,,,,,100 J
+Problem,19,Find PE of 10 kg mass at height 1 m.,,,,,98 J
+Problem,20,Find power if work 1000 J in 50 s.,,,,,20 W
+Problem,21,Find KE of 3 kg body moving at 6 m/s.,,,,,54 J
+Problem,22,Find work done lifting 2 kg to 5 m.,,,,,98 J
+Problem,23,Find power if 400 J work done in 20 s.,,,,,20 W
+Problem,24,Find KE of 1.5 kg body moving at 4 m/s.,,,,,12 J
+Problem,25,Find PE of 4 kg mass at height 5 m.,,,,,196 J
+Problem,26,Find work done if force 25 N moves body 4 m.,,,,,100 J
+Problem,27,Find power if 600 J work done in 30 s.,,,,,20 W
+Problem,28,Find KE of 2 kg body moving at 7 m/s.,,,,,49 J
+Problem,29,Find PE of 6 kg mass at 5 m.,,,,,294 J
+Problem,30,Find work done lifting 5 kg to 4 m.,,,,,196 J
+Problem,31,Find power if work 900 J in 45 s.,,,,,20 W
+Problem,32,Find KE of 10 kg body moving at 3 m/s.,,,,,45 J
+Problem,33,Find PE of 2 kg body at height 15 m.,,,,,294 J
+Problem,34,Find work done if force 30 N moves body 3 m.,,,,,90 J
+Problem,35,Find power if work 200 J in 10 s.,,,,,20 W
+Problem,36,Find KE of 8 kg body moving at 2 m/s.,,,,,16 J
+Problem,37,Find PE of 7 kg mass at height 10 m.,,,,,686 J
+Problem,38,Find work done lifting 1 kg to 10 m.,,,,,98 J
+Problem,39,Find power if 100 J work done in 5 s.,,,,,20 W
+Problem,40,Find KE of 0.2 kg body moving at 10 m/s.,,,,,10 J
+Problem,41,Find PE of 9 kg body at height 2 m.,,,,,176.4 J
+Problem,42,Find work done if force 40 N moves body 5 m.,,,,,200 J
+Problem,43,Find power if 800 J work done in 40 s.,,,,,20 W
+Problem,44,Find KE of 6 kg body moving at 5 m/s.,,,,,75 J
+Problem,45,Find PE of 12 kg mass at height 2 m.,,,,,235.2 J
+Problem,46,Find work done lifting 20 kg to 1 m.,,,,,196 J
+Problem,47,Find power if work 500 J in 25 s.,,,,,20 W
+Problem,48,Find KE of 1 kg body moving at 6 m/s.,,,,,18 J
+Problem,49,Find PE of 15 kg body at height 1 m.,,,,,147 J
+Problem,50,Find work done if force 10 N moves body 10 m.,,,,,100 J

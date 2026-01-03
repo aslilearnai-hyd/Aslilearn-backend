@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,The surface area of a cube depends on?,Side,Diagonal,Volume,Height,Side
+MCQ,2,Formula for total surface area of cube is?,6a²,4a²,a³,12a²,6a²
+MCQ,3,Formula for volume of cube is?,a²,a³,6a²,3a²,a³
+MCQ,4,Total surface area of a cuboid is?,2(lb+bh+hl),lbh,4lb,6l²,2(lb+bh+hl)
+MCQ,5,Volume of a cuboid is?,l+b+h,lbh,2lbh,lb+h,lbh
+MCQ,6,Curved surface area of cylinder is?,2πr²,πr²,2πrh,πrh,2πrh
+MCQ,7,Total surface area of cylinder is?,2πrh,2πr(r+h),πr²,4πrh,2πr(r+h)
+MCQ,8,Volume of cylinder is?,πr²h,2πrh,πrh²,2πr²h,πr²h
+MCQ,9,Curved surface area of cone is?,πr²,πrl,2πrl,πr²l,πrl
+MCQ,10,Total surface area of cone is?,πrl,πr(l+r),2πrl,πr²,πr(l+r)
+MCQ,11,Volume of cone is?,πr²h,1/3πr²h,2/3πr²h,πrh²,1/3πr²h
+MCQ,12,Curved surface area of sphere is?,4πr²,2πr²,πr²,6πr²,4πr²
+MCQ,13,Volume of sphere is?,4/3πr³,πr³,3/4πr³,2πr³,4/3πr³
+MCQ,14,Radius of sphere affects?,Area only,Volume only,Both,None,Both
+MCQ,15,Which solid has only curved surface?,Cube,Cuboid,Cylinder,Sphere,Sphere
+MCQ,16,Which solid has both flat and curved surfaces?,Sphere,Cylinder,Cube,None,Cylinder
+MCQ,17,Slant height is used in?,Cylinder,Cone,Cube,Sphere,Cone
+MCQ,18,CSA of cube?,4a²,6a²,a³,2a²,4a²
+MCQ,19,Number of faces in cube?,4,5,6,8,6
+MCQ,20,Number of edges in cuboid?,8,10,12,6,12
+MCQ,21,Which solid has maximum volume for same radius?,Cone,Cylinder,Sphere,Cuboid,Sphere
+MCQ,22,Which formula uses slant height?,Cone,Cylinder,Sphere,Cube,Cone
+MCQ,23,Which solid has no edges?,Cube,Cuboid,Cone,Sphere,Sphere
+MCQ,24,Unit of volume?,cm,cm²,cm³,m²,cm³
+MCQ,25,Unit of surface area?,cm,cm²,cm³,m³,cm²
+MCQ,26,If radius doubles, volume of sphere becomes?,Double,Four times,Eight times,Half,Eight times
+MCQ,27,If height doubles, volume of cylinder becomes?,Same,Double,Triple,Half,Double
+MCQ,28,Which solid has circular base?,Cube,Cuboid,Cone,Both cone and cylinder,Both cone and cylinder
+MCQ,29,Volume of cone is what fraction of cylinder?,1/2,1/3,2/3,3/4,1/3
+MCQ,30,CSA of cylinder does not include?,Top,Bottom,Curved part,None,Top
+MCQ,31,CSA of sphere equals?,4πr²,2πr²,πr²,6πr²,4πr²
+MCQ,32,TSA of cube is how many faces?,4,5,6,3,6
+MCQ,33,Volume depends on?,Area,Length,Capacity,None,Capacity
+MCQ,34,Which has maximum TSA for same radius?,Cone,Cylinder,Sphere,Cube,Sphere
+MCQ,35,Volume of cone depends on?,r and h,r only,h only,l only,r and h
+MCQ,36,Slant height is denoted by?,r,h,l,a,l
+MCQ,37,CSA of cone excludes?,Base,Slant,Radius,None,Base
+MCQ,38,Which is hollow solid?,Solid sphere,Hollow sphere,Cube,Cuboid,Hollow sphere
+MCQ,39,Volume of hollow sphere depends on?,Inner radius,Outer radius,Both,None,Both
+MCQ,40,Volume of sphere proportional to?,r²,r³,r,1/r,r³
+MCQ,41,CSA of cube is?,4a²,6a²,2a²,a³,4a²
+MCQ,42,Which solid has square faces?,Cube,Cylinder,Sphere,Cone,Cube
+MCQ,43,Which solid has rectangular faces?,Cuboid,Cube,Sphere,Cone,Cuboid
+MCQ,44,Volume of cuboid proportional to?,l+b+h,lbh,l²,lb,lbh
+MCQ,45,Which has no flat surface?,Sphere,Cylinder,Cone,Cube,Sphere
+MCQ,46,Which has one flat surface?,Sphere,Cone,Cylinder,Cube,Cone
+MCQ,47,Which has two flat surfaces?,Sphere,Cone,Cylinder,Cube,Cylinder
+MCQ,48,If radius becomes half, volume becomes?,Half,One-fourth,One-eighth,Double,One-eighth
+MCQ,49,CSA of cylinder includes?,Curved part only,Top only,Bottom only,None,Curved part only
+MCQ,50,Which chapter deals with mensuration of solids?,Triangles,Circles,Surface areas & volumes,Statistics,Surface areas & volumes
+
+Integer,1,Formula of volume of cube?,a³,,,,
+Integer,2,Formula of TSA of cube?,6a²,,,,
+Integer,3,Formula of volume of cuboid?,lbh,,,,
+Integer,4,Formula of CSA of cylinder?,2πrh,,,,
+Integer,5,Formula of volume of cylinder?,πr²h,,,,
+Integer,6,Formula of CSA of cone?,πrl,,,,
+Integer,7,Formula of volume of cone?,1/3πr²h,,,,
+Integer,8,Formula of CSA of sphere?,4πr²,,,,
+Integer,9,Formula of volume of sphere?,4/3πr³,,,,
+Integer,10,Number of faces in cube?,6,,,,
+Integer,11,Number of edges in cube?,12,,,,
+Integer,12,Number of vertices in cube?,8,,,,
+Integer,13,Unit of surface area?,cm²,,,,
+Integer,14,Unit of volume?,cm³,,,,
+Integer,15,Slant height symbol?,l,,,,
+Integer,16,Volume of cube with side 3 cm?,27 cm³,,,,
+Integer,17,TSA of cube with side 2 cm?,24 cm²,,,,
+Integer,18,Volume of cuboid 2×3×4?,24 cm³,,,,
+Integer,19,CSA of cylinder r=7,h=10?,140π cm²,,,,
+Integer,20,Volume of cylinder r=7,h=10?,490π cm³,,,,
+Integer,21,CSA of cone r=7,l=10?,70π cm²,,,,
+Integer,22,Volume of cone r=7,h=21?,343π cm³,,,,
+Integer,23,CSA of sphere r=7?,196π cm²,,,,
+Integer,24,Volume of sphere r=7?,1372/3π cm³,,,,
+Integer,25,Volume increases with radius? (Yes/No),Yes,,,,
+Integer,26,CSA excludes base? (Cone),Yes,,,,
+Integer,27,CSA of cube includes?,4 faces,,,,
+Integer,28,TSA includes?,All faces,,,,
+Integer,29,Volume measures?,Capacity,,,,
+Integer,30,Slant height relates to?,Cone,,,,
+Integer,31,CSA of sphere equals TSA? (Yes/No),Yes,,,,
+Integer,32,Volume of cone is 1/3 of?,Cylinder,,,,
+Integer,33,Sphere has edges? (Yes/No),No,,,,
+Integer,34,Cube has curved surface? (Yes/No),No,,,,
+Integer,35,Cylinder has curved surface? (Yes/No),Yes,,,,
+Integer,36,Radius doubled → volume becomes?,8 times,,,,
+Integer,37,Height doubled → volume of cone?,Double,,,,
+Integer,38,TSA of cube side a?,6a²,,,,
+Integer,39,CSA of cube side a?,4a²,,,,
+Integer,40,Volume of cuboid 5×4×3?,60 cm³,,,,
+Integer,41,CSA of sphere depends on?,r,,,,
+Integer,42,Volume of sphere proportional to?,r³,,,,
+Integer,43,CSA of cylinder excludes?,Top,,,,
+Integer,44,Which solid has only curved surface?,Sphere,,,,
+Integer,45,Which solid has 2 circular faces?,Cylinder,,,,
+Integer,46,Which solid has 1 circular face?,Cone,,,,
+Integer,47,Which solid has square faces?,Cube,,,,
+Integer,48,Which solid has rectangular faces?,Cuboid,,,,
+Integer,49,Volume unit for metre?,m³,,,,
+Integer,50,Surface area unit for metre?,m²,,,,
+
+Problem,1,Find volume of cube of side 4 cm.,,,,,64 cm³
+Problem,2,Find TSA of cube of side 5 cm.,,,,,150 cm²
+Problem,3,Find CSA of cube of side 3 cm.,,,,,36 cm²
+Problem,4,Find volume of cuboid 6×5×4 cm.,,,,,120 cm³
+Problem,5,Find TSA of cuboid 3×4×5 cm.,,,,,94 cm²
+Problem,6,Find CSA of cylinder r=7 cm,h=10 cm.,,,,,140π cm²
+Problem,7,Find volume of cylinder r=7 cm,h=10 cm.,,,,,490π cm³
+Problem,8,Find TSA of cylinder r=7 cm,h=10 cm.,,,,,(308π) cm²
+Problem,9,Find CSA of cone r=7 cm,l=25 cm.,,,,,175π cm²
+Problem,10,Find volume of cone r=7 cm,h=24 cm.,,,,,392π cm³
+Problem,11,Find CSA of sphere r=7 cm.,,,,,196π cm²
+Problem,12,Find volume of sphere r=7 cm.,,,,,1372/3π cm³
+Problem,13,Find volume of cube side 10 cm.,,,,,1000 cm³
+Problem,14,Find TSA of cube side 8 cm.,,,,,384 cm²
+Problem,15,Find volume of cuboid 10×5×2 cm.,,,,,100 cm³
+Problem,16,Find CSA of cylinder r=3 cm,h=14 cm.,,,,,84π cm²
+Problem,17,Find volume of cylinder r=3 cm,h=14 cm.,,,,,126π cm³
+Problem,18,Find CSA of cone r=5 cm,l=13 cm.,,,,,65π cm²
+Problem,19,Find volume of cone r=5 cm,h=12 cm.,,,,,100π cm³
+Problem,20,Find CSA of sphere r=14 cm.,,,,,784π cm²
+Problem,21,Find volume of sphere r=14 cm.,,,,,11488/3π cm³
+Problem,22,Find volume of cuboid 7×6×5 cm.,,,,,210 cm³
+Problem,23,Find TSA of cuboid 4×3×2 cm.,,,,,52 cm²
+Problem,24,Find volume of cylinder r=5 cm,h=7 cm.,,,,,175π cm³
+Problem,25,Find CSA of cylinder r=5 cm,h=7 cm.,,,,,70π cm²
+Problem,26,Find volume of cone r=3.5 cm,h=6 cm.,,,,,24.5π cm³
+Problem,27,Find CSA of sphere r=3.5 cm.,,,,,49π cm²
+Problem,28,Find volume of cube side 6 cm.,,,,,216 cm³
+Problem,29,Find TSA of cube side 7 cm.,,,,,294 cm²
+Problem,30,Find volume of cuboid 9×8×7 cm.,,,,,504 cm³
+Problem,31,Find CSA of cylinder r=10 cm,h=7 cm.,,,,,140π cm²
+Problem,32,Find volume of cylinder r=10 cm,h=7 cm.,,,,,700π cm³
+Problem,33,Find CSA of cone r=14 cm,l=25 cm.,,,,,350π cm²
+Problem,34,Find volume of cone r=14 cm,h=21 cm.,,,,,1372π cm³
+Problem,35,Find CSA of sphere r=21 cm.,,,,,1764π cm²
+Problem,36,Find volume of sphere r=21 cm.,,,,,12348π cm³
+Problem,37,Find volume of cube side 12 cm.,,,,,1728 cm³
+Problem,38,Find TSA of cube side 9 cm.,,,,,486 cm²
+Problem,39,Find volume of cuboid 11×10×9 cm.,,,,,990 cm³
+Problem,40,Find CSA of cylinder r=14 cm,h=10 cm.,,,,,280π cm²
+Problem,41,Find volume of cylinder r=14 cm,h=10 cm.,,,,,1960π cm³
+Problem,42,Find CSA of cone r=7 cm,l=24 cm.,,,,,168π cm²
+Problem,43,Find volume of cone r=7 cm,h=24 cm.,,,,,392π cm³
+Problem,44,Find CSA of sphere r=28 cm.,,,,,3136π cm²
+Problem,45,Find volume of sphere r=28 cm.,,,,,87808/3π cm³
+Problem,46,Find volume of cuboid 15×10×5 cm.,,,,,750 cm³
+Problem,47,Find TSA of cuboid 8×6×4 cm.,,,,,208 cm²
+Problem,48,Find volume of cylinder r=4 cm,h=21 cm.,,,,,336π cm³
+Problem,49,Find CSA of cylinder r=4 cm,h=21 cm.,,,,,168π cm²
+Problem,50,Find volume of cone r=4 cm,h=21 cm.,,,,,112π cm³

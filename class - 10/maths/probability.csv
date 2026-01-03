@@ -1,0 +1,129 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The probability of an event lies between:,0 and 1,1 and 2,-1 and 1,0 and 2,0 and 1
+MCQ,2,The probability of a sure event is:,0,1,0.5,2,1
+MCQ,3,The probability of an impossible event is:,0,1,0.5,2,0
+MCQ,4,If P(E) = 0.05, then P(not E) =:,0.05,0.5,0.95,1.05,0.95
+MCQ,5,The sum of probabilities of all elementary events of an experiment is:,0,1,0.5,2,1
+MCQ,6,If P(E) = 0.7, then P(not E) =:,0.3,0.7,1.7,0,0.3
+MCQ,7,When a die is thrown, the probability of getting an even number is:,1/2,1/3,1/6,2/3,1/2
+MCQ,8,When a die is thrown, the probability of getting a number less than 7 is:,0,1/6,5/6,1,1
+MCQ,9,When a die is thrown, the probability of getting a prime number is:,1/2,1/3,2/3,5/6,1/2
+MCQ,10,When a coin is tossed, the probability of getting a head is:,0,1/2,1,1/4,1/2
+MCQ,11,When two coins are tossed, the probability of getting two heads is:,1/4,1/2,3/4,1,1/4
+MCQ,12,When two coins are tossed, the probability of getting at least one head is:,1/4,1/2,3/4,1,3/4
+MCQ,13,When three coins are tossed, the probability of getting exactly two heads is:,1/8,3/8,1/2,5/8,3/8
+MCQ,14,When a card is drawn from a pack of 52 cards, the probability of getting a king is:,1/13,1/52,4/52,1/4,1/13
+MCQ,15,When a card is drawn from a pack of 52 cards, the probability of getting a red card is:,1/2,1/4,1/13,2/13,1/2
+MCQ,16,When a card is drawn from a pack of 52 cards, the probability of getting a face card is:,3/13,1/13,4/13,1/4,3/13
+MCQ,17,When a card is drawn from a pack of 52 cards, the probability of getting a spade is:,1/4,1/13,1/52,4/13,1/4
+MCQ,18,A bag contains 5 red and 3 blue balls. The probability of drawing a red ball is:,3/8,5/8,1/2,2/5,5/8
+MCQ,19,A bag contains 5 red and 3 blue balls. The probability of drawing a blue ball is:,3/8,5/8,1/2,2/5,3/8
+MCQ,20,If the probability of an event is p, then the probability of its complement is:,1 - p,1 + p,p - 1,1/p,1 - p
+MCQ,21,When two dice are thrown, the probability of getting a sum of 7 is:,1/6,1/12,1/36,5/36,1/6
+MCQ,22,When two dice are thrown, the probability of getting a sum of 12 is:,1/6,1/12,1/36,5/36,1/36
+MCQ,23,When two dice are thrown, the probability of getting a sum of 2 is:,1/6,1/12,1/36,5/36,1/36
+MCQ,24,When two dice are thrown, the probability of getting a doublet is:,1/6,1/12,1/36,5/36,1/6
+MCQ,25,The probability of selecting a vowel from the letters of the word "MATHEMATICS" is:,4/11,7/11,3/11,2/11,4/11
+MCQ,26,A box contains 10 red, 20 blue, and 30 green balls. The probability of drawing a red ball is:,1/6,1/3,1/2,2/3,1/6
+MCQ,27,A box contains 10 red, 20 blue, and 30 green balls. The probability of drawing a blue ball is:,1/6,1/3,1/2,2/3,1/3
+MCQ,28,The probability of an event that cannot happen is:,0,1,0.5,2,0
+MCQ,29,The probability of an event that is certain to happen is:,0,1,0.5,2,1
+MCQ,30,If P(E) = 0.3 and P(F) = 0.5, and E and F are mutually exclusive, then P(E or F) =:,0.8,0.15,0.2,1,0.8
+MCQ,31,In a class of 30 students, 18 are girls. The probability of selecting a boy is:,2/5,3/5,1/2,1/3,2/5
+MCQ,32,The probability of getting a number greater than 4 when a die is thrown is:,1/3,1/2,2/3,5/6,1/3
+MCQ,33,When a card is drawn from a pack of 52 cards, the probability of getting a black king is:,1/26,1/13,2/13,1/52,1/26
+MCQ,34,When a card is drawn from a pack of 52 cards, the probability of getting an ace is:,1/13,1/52,4/52,1/4,1/13
+MCQ,35,The probability of getting a tail when a coin is tossed is:,0,1/2,1,1/4,1/2
+MCQ,36,When two coins are tossed, the probability of getting no head is:,0,1/4,1/2,3/4,1/4
+MCQ,37,When a die is thrown, the probability of getting a number greater than 6 is:,0,1/6,1,5/6,0
+MCQ,38,When a die is thrown, the probability of getting a number less than 3 is:,1/2,1/3,2/3,1/6,1/3
+MCQ,39,A bag contains 3 red, 5 black, and 4 white balls. The probability of drawing a white ball is:,1/3,1/4,1/2,3/4,1/3
+MCQ,40,A bag contains 3 red, 5 black, and 4 white balls. The probability of drawing a black ball is:,3/12,4/12,5/12,7/12,5/12
+MCQ,41,If P(E) = 0.25, then P(not E) =:,0.25,0.5,0.75,1.25,0.75
+MCQ,42,When three coins are tossed, the probability of getting at least one head is:,1/8,3/8,7/8,1,7/8
+MCQ,43,When three coins are tossed, the probability of getting no head is:,0,1/8,1/2,7/8,1/8
+MCQ,44,The probability of selecting a consonant from the letters of the word "PROBABILITY" is:,6/11,7/11,5/11,4/11,7/11
+MCQ,45,When two dice are thrown, the probability of getting a sum less than 5 is:,1/6,1/12,1/18,1/9,1/6
+MCQ,46,When two dice are thrown, the probability of getting the same number on both dice is:,1/6,1/12,1/36,5/36,1/6
+MCQ,47,A bag contains 8 red and 12 blue balls. The probability of not drawing a red ball is:,2/5,3/5,1/2,4/5,3/5
+MCQ,48,The probability that a leap year has 53 Sundays is:,1/7,2/7,3/7,4/7,2/7
+MCQ,49,The probability that a non-leap year has 53 Sundays is:,0,1/7,2/7,3/7,1/7
+MCQ,50,If the probability of winning a game is 0.4, then the probability of losing it is:,0.4,0.6,1.4,0.2,0.6
+Integer,1,When a die is thrown, the probability of getting an even number is 1/2. Write the numerator: _____.,1,,,,
+Integer,2,When a coin is tossed, the probability of getting a head is 1/2. Write the numerator: _____.,1,,,,
+Integer,3,When two coins are tossed, the probability of getting two heads is 1/4. Write the numerator: _____.,1,,,,
+Integer,4,When two coins are tossed, the probability of getting at least one head is 3/4. Write the numerator: _____.,3,,,,
+Integer,5,When a card is drawn from a pack of 52 cards, the probability of getting a king is 1/13. Write the numerator: _____.,1,,,,
+Integer,6,When a card is drawn from a pack of 52 cards, the probability of getting a red card is 1/2. Write the numerator: _____.,1,,,,
+Integer,7,A bag contains 5 red and 3 blue balls. The probability of drawing a red ball is 5/8. Write the numerator: _____.,5,,,,
+Integer,8,A bag contains 5 red and 3 blue balls. The probability of drawing a blue ball is 3/8. Write the numerator: _____.,3,,,,
+Integer,9,When two dice are thrown, the probability of getting a sum of 7 is 1/6. Write the numerator: _____.,1,,,,
+Integer,10,When two dice are thrown, the probability of getting a sum of 12 is 1/36. Write the numerator: _____.,1,,,,
+Integer,11,When two dice are thrown, the probability of getting a doublet is 1/6. Write the numerator: _____.,1,,,,
+Integer,12,If P(E) = 0.7, then P(not E) = 0.3. Write as fraction numerator (3/10): _____.,3,,,,
+Integer,13,When a die is thrown, the probability of getting a prime number is 1/2. Write the numerator: _____.,1,,,,
+Integer,14,When a card is drawn from a pack of 52 cards, the probability of getting a face card is 3/13. Write the numerator: _____.,3,,,,
+Integer,15,When a card is drawn from a pack of 52 cards, the probability of getting a spade is 1/4. Write the numerator: _____.,1,,,,
+Integer,16,When two dice are thrown, the probability of getting a sum of 2 is 1/36. Write the numerator: _____.,1,,,,
+Integer,17,A box contains 10 red, 20 blue, and 30 green balls. The probability of drawing a red ball is 1/6. Write the numerator: _____.,1,,,,
+Integer,18,A box contains 10 red, 20 blue, and 30 green balls. The probability of drawing a blue ball is 1/3. Write the numerator (for 1/3): _____.,1,,,,
+Integer,19,In a class of 30 students, 18 are girls. The probability of selecting a boy is 2/5. Write the numerator: _____.,2,,,,
+Integer,20,When a die is thrown, the probability of getting a number greater than 4 is 1/3. Write the numerator: _____.,1,,,,
+Integer,21,When a card is drawn from a pack of 52 cards, the probability of getting a black king is 1/26. Write the numerator: _____.,1,,,,
+Integer,22,When a card is drawn from a pack of 52 cards, the probability of getting an ace is 1/13. Write the numerator: _____.,1,,,,
+Integer,23,When two coins are tossed, the probability of getting no head is 1/4. Write the numerator: _____.,1,,,,
+Integer,24,When a die is thrown, the probability of getting a number less than 3 is 1/3. Write the numerator: _____.,1,,,,
+Integer,25,A bag contains 3 red, 5 black, and 4 white balls. The probability of drawing a white ball is 1/3. Write the numerator (for 1/3): _____.,1,,,,
+Integer,26,A bag contains 3 red, 5 black, and 4 white balls. The probability of drawing a black ball is 5/12. Write the numerator: _____.,5,,,,
+Integer,27,If P(E) = 0.25, then P(not E) = 0.75. Write as fraction numerator (3/4): _____.,3,,,,
+Integer,28,When three coins are tossed, the probability of getting at least one head is 7/8. Write the numerator: _____.,7,,,,
+Integer,29,When three coins are tossed, the probability of getting no head is 1/8. Write the numerator: _____.,1,,,,
+Integer,30,When two dice are thrown, the probability of getting the same number on both dice is 1/6. Write the numerator: _____.,1,,,,
+Integer,31,A bag contains 8 red and 12 blue balls. The probability of not drawing a red ball is 3/5. Write the numerator: _____.,3,,,,
+Integer,32,The probability that a leap year has 53 Sundays is 2/7. Write the numerator: _____.,2,,,,
+Integer,33,The probability that a non-leap year has 53 Sundays is 1/7. Write the numerator: _____.,1,,,,
+Integer,34,When a die is thrown, the probability of getting a number less than 7 is 1. Write this: _____.,1,,,,
+Integer,35,When a die is thrown, the probability of getting a number greater than 6 is 0. Write this: _____.,0,,,,
+Integer,36,The probability of a sure event is 1. Write this: _____.,1,,,,
+Integer,37,The probability of an impossible event is 0. Write this: _____.,0,,,,
+Integer,38,When three coins are tossed, the probability of getting exactly two heads is 3/8. Write the numerator: _____.,3,,,,
+Integer,39,When two dice are thrown, the probability of getting a sum less than 5 is 1/6. Write the numerator: _____.,1,,,,
+Integer,40,The probability of selecting a vowel from "MATHEMATICS" is 4/11. Write the numerator: _____.,4,,,,
+Integer,41,The probability of selecting a consonant from "PROBABILITY" is 7/11. Write the numerator: _____.,7,,,,
+Integer,42,If the probability of winning a game is 0.4, then the probability of losing is 0.6. Write as fraction numerator (3/5): _____.,3,,,,
+Integer,43,When a card is drawn, probability of getting a heart is 1/4. Write the numerator: _____.,1,,,,
+Integer,44,When a card is drawn, probability of getting a diamond is 1/4. Write the numerator: _____.,1,,,,
+Integer,45,When a card is drawn, probability of getting a club is 1/4. Write the numerator: _____.,1,,,,
+Integer,46,A bag has 6 red, 4 blue balls. Probability of red is 6/10 = 3/5. Write numerator: _____.,3,,,,
+Integer,47,A bag has 6 red, 4 blue balls. Probability of blue is 4/10 = 2/5. Write numerator: _____.,2,,,,
+Integer,48,When a die is thrown, probability of getting an odd number is 1/2. Write numerator: _____.,1,,,,
+Integer,49,When a die is thrown, probability of getting a multiple of 3 is 1/3. Write numerator: _____.,1,,,,
+Integer,50,When two coins are tossed, probability of getting one head and one tail is 1/2. Write numerator: _____.,1,,,,
+Problem,1,When a die is thrown, find the probability of getting an even number.,"Total outcomes = 6 (1, 2, 3, 4, 5, 6). Favorable outcomes (even numbers) = 3 (2, 4, 6). P(even number) = 3/6 = 1/2. Answer: 1/2",,,,
+Problem,2,When a coin is tossed, find the probability of getting a head.,"Total outcomes = 2 (Head, Tail). Favorable outcome = 1 (Head). P(Head) = 1/2. Answer: 1/2",,,,
+Problem,3,When two coins are tossed simultaneously, find the probability of getting two heads.,"Total outcomes = 4 (HH, HT, TH, TT). Favorable outcome = 1 (HH). P(two heads) = 1/4. Answer: 1/4",,,,
+Problem,4,When two coins are tossed simultaneously, find the probability of getting at least one head.,"Total outcomes = 4 (HH, HT, TH, TT). Favorable outcomes (at least one head) = 3 (HH, HT, TH). P(at least one head) = 3/4. Answer: 3/4",,,,
+Problem,5,A bag contains 5 red and 3 blue balls. A ball is drawn at random. Find the probability that it is red.,"Total balls = 5 + 3 = 8. Red balls = 5. P(red ball) = 5/8. Answer: 5/8",,,,
+Problem,6,A bag contains 5 red and 3 blue balls. A ball is drawn at random. Find the probability that it is blue.,"Total balls = 8. Blue balls = 3. P(blue ball) = 3/8. Answer: 3/8",,,,
+Problem,7,When a die is thrown, find the probability of getting a prime number.,"Total outcomes = 6. Prime numbers on a die = 2, 3, 5 (3 numbers). P(prime number) = 3/6 = 1/2. Answer: 1/2",,,,
+Problem,8,When a die is thrown, find the probability of getting a number less than 7.,"Total outcomes = 6. Numbers less than 7 = 1, 2, 3, 4, 5, 6 (all 6 numbers). P(number < 7) = 6/6 = 1. Answer: 1",,,,
+Problem,9,When a card is drawn from a pack of 52 cards, find the probability of getting a king.,"Total cards = 52. Number of kings = 4. P(king) = 4/52 = 1/13. Answer: 1/13",,,,
+Problem,10,When a card is drawn from a pack of 52 cards, find the probability of getting a red card.,"Total cards = 52. Red cards (hearts + diamonds) = 13 + 13 = 26. P(red card) = 26/52 = 1/2. Answer: 1/2",,,,
+Problem,11,When a card is drawn from a pack of 52 cards, find the probability of getting a face card.,"Total cards = 52. Face cards (Jack, Queen, King) in each suit = 3. Total face cards = 3 × 4 = 12. P(face card) = 12/52 = 3/13. Answer: 3/13",,,,
+Problem,12,When a card is drawn from a pack of 52 cards, find the probability of getting a spade.,"Total cards = 52. Spades = 13. P(spade) = 13/52 = 1/4. Answer: 1/4",,,,
+Problem,13,When two dice are thrown simultaneously, find the probability of getting a sum of 7.,"Total outcomes = 6 × 6 = 36. Favorable outcomes (sum = 7): (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) = 6. P(sum = 7) = 6/36 = 1/6. Answer: 1/6",,,,
+Problem,14,When two dice are thrown simultaneously, find the probability of getting a sum of 12.,"Total outcomes = 36. Favorable outcomes (sum = 12): (6,6) = 1. P(sum = 12) = 1/36. Answer: 1/36",,,,
+Problem,15,When two dice are thrown simultaneously, find the probability of getting a doublet.,"Total outcomes = 36. Doublets: (1,1), (2,2), (3,3), (4,4), (5,5), (6,6) = 6. P(doublet) = 6/36 = 1/6. Answer: 1/6",,,,
+Problem,16,When two dice are thrown simultaneously, find the probability of getting a sum of 2.,"Total outcomes = 36. Favorable outcomes (sum = 2): (1,1) = 1. P(sum = 2) = 1/36. Answer: 1/36",,,,
+Problem,17,A box contains 10 red, 20 blue, and 30 green balls. A ball is drawn at random. Find the probability that it is red.,"Total balls = 10 + 20 + 30 = 60. Red balls = 10. P(red) = 10/60 = 1/6. Answer: 1/6",,,,
+Problem,18,A box contains 10 red, 20 blue, and 30 green balls. A ball is drawn at random. Find the probability that it is blue.,"Total balls = 60. Blue balls = 20. P(blue) = 20/60 = 1/3. Answer: 1/3",,,,
+Problem,19,If P(E) = 0.7, find P(not E).,"P(not E) = 1 - P(E) = 1 - 0.7 = 0.3. Answer: 0.3",,,,
+Problem,20,If P(E) = 0.05, find P(not E).,"P(not E) = 1 - 0.05 = 0.95. Answer: 0.95",,,,
+Problem,21,When three coins are tossed simultaneously, find the probability of getting exactly two heads.,"Total outcomes = 2³ = 8 (HHH, HHT, HTH, THH, HTT, THT, TTH, TTT). Favorable outcomes (exactly 2 heads) = 3 (HHT, HTH, THH). P(exactly 2 heads) = 3/8. Answer: 3/8",,,,
+Problem,22,When three coins are tossed simultaneously, find the probability of getting at least one head.,"Total outcomes = 8. Favorable outcomes (at least one head) = 7 (all except TTT). P(at least one head) = 7/8. Answer: 7/8",,,,
+Problem,23,When three coins are tossed simultaneously, find the probability of getting no head.,"Total outcomes = 8. Favorable outcome (no head) = 1 (TTT). P(no head) = 1/8. Answer: 1/8",,,,
+Problem,24,In a class of 30 students, 18 are girls. If one student is selected at random, find the probability that the student is a boy.,"Total students = 30. Girls = 18. Boys = 30 - 18 = 12. P(boy) = 12/30 = 2/5. Answer: 2/5",,,,
+Problem,25,When a die is thrown, find the probability of getting a number greater than 4.,"Total outcomes = 6. Numbers greater than 4 = 5, 6 (2 numbers). P(number > 4) = 2/6 = 1/3. Answer: 1/3",,,,
+Problem,26,When a card is drawn from a pack of 52 cards, find the probability of getting a black king.,"Total cards = 52. Black kings (king of spades, king of clubs) = 2. P(black king) = 2/52 = 1/26. Answer: 1/26",,,,
+Problem,27,When a card is drawn from a pack of 52 cards, find the probability of getting an ace.,"Total cards = 52. Aces = 4. P(ace) = 4/52 = 1/13. Answer: 1/13",,,,
+Problem,28,A bag contains 3 red, 5 black, and 4 white balls. A ball is drawn at random. Find the probability that it is white.,"Total balls = 3 + 5 + 4 = 12. White balls = 4. P(white) = 4/12 = 1/3. A

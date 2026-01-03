@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who wrote the poem "The Lake Isle of Innisfree"?,Robert Frost,W B Yeats,John Keats,William Wordsworth,W B Yeats
+MCQ,2,The poem expresses a desire for?,City life,Solitude and peace,Wealth,Fame,Solitude and peace
+MCQ,3,Innisfree is a?,City,Lake island,Mountain,Forest,Lake island
+MCQ,4,Where does the poet want to go?,London,Innisfree,Dublin,Paris,Innisfree
+MCQ,5,What will the poet build there?,House,Cottage,Small cabin,Palace,Small cabin
+MCQ,6,How many bean rows will the poet have?,Seven,Nine,Twelve,Ten,Nine
+MCQ,7,What surrounds the bean rows?,Trees,Hedges,Bee-loud glade,Fence,Bee-loud glade
+MCQ,8,What does the poet want to hear?,Music,Wind,Cricket song,Lake water sounds,Lake water sounds
+MCQ,9,The poet hears lake water?,At night,At morning,All day and night,Only evening,All day and night
+MCQ,10,What does peace come dropping from?,Sky,Clouds,Morning veil,Dew,Morning veil
+MCQ,11,Where does peace drop from?,Evening,Morning veil,Night,Stars,Morning veil
+MCQ,12,The poet associates peace with?,Noise,City,Nature,People,Nature
+MCQ,13,What time of day is described as purple?,Morning,Noon,Evening,Night,Evening
+MCQ,14,What shines at noon?,Stars,Sun,Bees,Moon,Moon
+MCQ,15,What is full of linnet’s wings?,Trees,Air,Island,Valley,Air
+MCQ,16,The poet stands in?,Forest,Street,pavement grey,Field,pavement grey
+MCQ,17,Where is the poet currently?,Village,Island,City,Nature,City
+MCQ,18,What sound does the poet hear in his heart?,Wind,Birds,Lake water,Silence,Lake water
+MCQ,19,The poem highlights contrast between?,Rich-poor,City-nature,Old-young,Noise-music,City-nature
+MCQ,20,What is the poet tired of?,Nature,Peace,City noise,Silence,City noise
+MCQ,21,The poem’s tone is?,Angry,Hopeful,Calm and reflective,Sad,Calm and reflective
+MCQ,22,The poet longs for?,Adventure,Solitude,Fame,Wealth,Solitude
+MCQ,23,What does Innisfree symbolize?,Escape,Isolation,Peaceful life,Danger,Peaceful life
+MCQ,24,The poet wants to live?,With people,Alone,In city,In palace,Alone
+MCQ,25,What kind of poem is this?,Narrative,Lyric,Dramatic,Sonnet,Lyric
+MCQ,26,The central theme is?,Nature beauty,Escape into nature,Travel,War,Escape into nature
+MCQ,27,The poem is written in?,Free verse,Blank verse,Rhyming stanzas,Prose,Rhyming stanzas
+MCQ,28,What feeling dominates the poem?,Fear,Anger,Peace,Hatred,Peace
+MCQ,29,The poet’s dream life is?,Busy,Simple,Luxurious,Dangerous,Simple
+MCQ,30,What does the poet seek?,Money,Power,Inner peace,Success,Inner peace
+MCQ,31,What creates peace for the poet?,Crowds,Nature,City lights,Noise,Nature
+MCQ,32,The bees are?,Silent,Loud,Angry,Invisible,Loud
+MCQ,33,The poem shows poet’s?,Greed,Ambition,Longing,Anger,Longing
+MCQ,34,The poet’s heart feels?,Empty,Disturbed,Calm,Heavy,Calm
+MCQ,35,The lake water sound is?,Imaginary,Real,Remembered,Forgotten,Remembered
+MCQ,36,The poet’s imagination works in?,City,Nature memories,Books,People,Nature memories
+MCQ,37,What color is the pavement?,White,Green,Grey,Black,Grey
+MCQ,38,The poet listens to?,Traffic,Lake water,People,Music,Lake water
+MCQ,39,What is the mood at Innisfree?,Chaotic,Peaceful,Busy,Loud,Peaceful
+MCQ,40,What does the linnet symbolize?,Peace,Music,Freedom,Danger,Freedom
+MCQ,41,What literary device is widely used?,Simile,Metaphor,Imagery,Irony,Imagery
+MCQ,42,What does “bee-loud glade” suggest?,Silence,Noise of bees,City noise,Danger,Noise of bees
+MCQ,43,What does the poet dislike?,Nature,Solitude,Urban life,Quietness,Urban life
+MCQ,44,The poet’s desire is?,Temporary,Permanent,Uncertain,Dangerous,Permanent
+MCQ,45,The poem shows escape from?,Happiness,Peace,Modern life,Nature,Modern life
+MCQ,46,What brings calm to the poet’s heart?,Crowds,Noise,Nature sounds,City,Nature sounds
+MCQ,47,The poem ends with?,Anger,Hope,Peace,Fear,Peace
+MCQ,48,The island life is?,Luxurious,Simple,Hard,Noisy,Simple
+MCQ,49,The poet’s present life is?,Peaceful,Busy,Stressful,Ideal,Stressful
+MCQ,50,Main message of poem?,Live in city,Seek peace in nature,Be rich,Be social,Seek peace in nature
+
+Integer,1,Poet?,W B Yeats,,,,
+Integer,2,Poem type?,Lyric,,,,
+Integer,3,Island?,Innisfree,,,,
+Integer,4,Theme?,Peace,,,,
+Integer,5,Bean rows?,Nine,,,,
+Integer,6,Poet location?,City,,,,
+Integer,7,Pavement color?,Grey,,,,
+Integer,8,Desired life?,Simple,,,,
+Integer,9,Sound heard?,Lake water,,,,
+Integer,10,Mood?,Calm,,,,
+Integer,11,Central symbol?,Innisfree,,,,
+Integer,12,Poet desire?,Solitude,,,,
+Integer,13,Noise source?,City,,,,
+Integer,14,Bees?,Loud,,,,
+Integer,15,Peace source?,Nature,,,,
+Integer,16,Evening color?,Purple,,,,
+Integer,17,Poem tone?,Reflective,,,,
+Integer,18,Time heard sound?,Always,,,,
+Integer,19,Poet feeling?,Longing,,,,
+Integer,20,Life contrast?,City vs nature,,,,
+Integer,21,Poem focus?,Inner peace,,,,
+Integer,22,Sound memory?,Yes,,,,
+Integer,23,Place setting?,Island,,,,
+Integer,24,Poet escape?,Nature,,,,
+Integer,25,Poem style?,Rhyming,,,,
+Integer,26,Symbol of freedom?,Linnet,,,,
+Integer,27,Imagery type?,Nature,,,,
+Integer,28,Peace drops?,Softly,,,,
+Integer,29,Poet state?,Dreaming,,,,
+Integer,30,Life goal?,Peace,,,,
+Integer,31,Innisfree mood?,Serene,,,,
+Integer,32,Poet heart?,Calm,,,,
+Integer,33,Poem end emotion?,Peaceful,,,,
+Integer,34,Poet memory?,Nature sounds,,,,
+Integer,35,Urban life?,Stressful,,,,
+Integer,36,Desired sound?,Water lapping,,,,
+Integer,37,Poet imagination?,Strong,,,,
+Integer,38,Life wish?,Solitary,,,,
+Integer,39,Poet present?,City street,,,,
+Integer,40,Poem message?,Nature heals,,,,
+Integer,41,Poet dream?,Escape,,,,
+Integer,42,Poem setting?,City & island,,,,
+Integer,43,Bees sound?,Buzzing,,,,
+Integer,44,Island life?,Quiet,,,,
+Integer,45,Poet inspiration?,Nature,,,,
+Integer,46,Poem theme emotion?,Peace,,,,
+Integer,47,Urban symbol?,Pavement,,,,
+Integer,48,Island symbol?,Calm,,,,
+Integer,49,Poet satisfaction?,Inner,,,,
+Integer,50,Poem title?,The Lake Isle of Innisfree,,,,
+
+Descriptive,1,Who wrote "The Lake Isle of Innisfree"?,,,,,The poem was written by W B Yeats
+Descriptive,2,What is the central theme of the poem?,,,,,The theme is longing for peace and solitude in nature
+Descriptive,3,What does Innisfree symbolize?,,,,,It symbolizes a peaceful and simple life
+Descriptive,4,Why does the poet want to go to Innisfree?,,,,,To escape city noise and find inner peace
+Descriptive,5,Describe the life the poet wants at Innisfree.,,,,,A simple, calm and solitary life close to nature
+Descriptive,6,What kind of house does the poet want?,,,,,A small cabin made of clay and wattles
+Descriptive,7,Explain the significance of nine bean rows.,,,,,They represent self-sufficient simple living
+Descriptive,8,How does nature bring peace to the poet?,,,,,Through soothing sounds and calm surroundings
+Descriptive,9,Describe the contrast between city and Innisfree.,,,,,City is noisy and stressful, Innisfree is peaceful
+Descriptive,10,What sounds does the poet hear?,,,,,The gentle lapping of lake water
+Descriptive,11,What does “bee-loud glade” mean?,,,,,A meadow filled with buzzing bees
+Descriptive,12,Explain the poet’s state of mind.,,,,,He feels restless in the city
+Descriptive,13,Why does the poet remember Innisfree?,,,,,It brings him mental peace
+Descriptive,14,What role does imagination play?,,,,,It helps the poet escape reality
+Descriptive,15,How does the poem reflect nostalgia?,,,,,The poet longs for an ideal natural life
+Descriptive,16,What is meant by “peace comes dropping slow”?,,,,,Peace arrives gently in nature
+Descriptive,17,Why is the poem lyrical?,,,,,It expresses personal emotions
+Descriptive,18,What message does the poem convey?,,,,,Nature offers peace to troubled minds
+Descriptive,19,How does the poet feel standing on grey pavement?,,,,,He feels restless and disturbed
+Descriptive,20,What kind of peace does the poet seek?,,,,,Inner and spiritual peace
+Descriptive,21,Explain the significance of nature imagery.,,,,,It creates a calm and soothing mood
+Descriptive,22,How does the poet connect heart and nature?,,,,,Nature’s sounds echo in his heart
+Descriptive,23,Why is Innisfree ideal for the poet?,,,,,It offers solitude and harmony
+Descriptive,24,Describe the evening scene in the poem.,,,,,Purple glow with quiet atmosphere
+Descriptive,25,What does the linnet symbolize?,,,,,Freedom and natural music
+Descriptive,26,Why is the city life unpleasant for the poet?,,,,,Because of noise and stress
+Descriptive,27,How does the poem inspire readers?,,,,,To seek peace and simplicity
+Descriptive,28,What does the lake water sound represent?,,,,,Calmness and continuity
+Descriptive,29,Why is solitude important to the poet?,,,,,It brings mental peace
+Descriptive,30,Explain the ending of the poem.,,,,,The poet feels peace even in city through memories
+Descriptive,31,What is the poet’s dream life?,,,,,A life close to nature
+Descriptive,32,How does nature act as a healer?,,,,,It soothes troubled minds
+Descriptive,33,Why is the poem relevant today?,,,,,Modern life is stressful
+Descriptive,34,How does the poem show escapism?,,,,,By imagining life away from city
+Descriptive,35,What emotions dominate the poem?,,,,,Peace and longing
+Descriptive,36,Explain the poet’s longing.,,,,,He desires a calm life
+Descriptive,37,What values does the poem promote?,,,,,Simplicity and harmony
+Descriptive,38,How does sound imagery enhance the poem?,,,,,It creates soothing effect
+Descriptive,39,Why is Innisfree unforgettable?,,,,,It symbolizes ideal peace
+Descriptive,40,What contrast is central to the poem?,,,,,City chaos vs natural calm
+Descriptive,41,Explain the poet’s inner conflict.,,,,,Desire for peace while living in city
+Descriptive,42,How does Yeats use nature symbolically?,,,,,To represent inner peace
+Descriptive,43,What does the poem teach about happiness?,,,,,Happiness lies in simplicity
+Descriptive,44,Why is the poem soothing?,,,,,Gentle imagery and rhythm
+Descriptive,45,What does the grey pavement symbolize?,,,,,Urban monotony
+Descriptive,46,How does memory comfort the poet?,,,,,It recreates peaceful moments
+Descriptive,47,Why does the poet listen “in the deep heart’s core”?,,,,,The longing is deep-rooted
+Descriptive,48,Explain the title of the poem.,,,,,It reflects the poet’s dream destination
+Descriptive,49,How does the poem balance reality and imagination?,,,,,City life vs dream of Innisfree
+Descriptive,50,Summarize "The Lake Isle of Innisfree".,,,,,The poem describes the poet’s deep desire to escape the noisy city and live a peaceful, simple life in harmony with nature at Innisfree, which symbolizes inner peace

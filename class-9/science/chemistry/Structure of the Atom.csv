@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Who discovered the electron?,Rutherford,Bohr,Thomson,Chadwick,Thomson
+MCQ,2,Who discovered the nucleus?,Thomson,Rutherford,Bohr,Chadwick,Rutherford
+MCQ,3,Who discovered neutron?,Bohr,Chadwick,Rutherford,Thomson,Chadwick
+MCQ,4,Charge on electron is?,Positive,Negative,Neutral,Variable,Negative
+MCQ,5,Charge on proton is?,Negative,Positive,Neutral,None,Positive
+MCQ,6,Neutron has charge?,Positive,Negative,Neutral,None,Neutral
+MCQ,7,Electron is present in?,Nucleus,Orbit,Shell,None,Shell
+MCQ,8,Protons are present in?,Shell,Orbit,Nucleus,None,Nucleus
+MCQ,9,Neutrons are present in?,Shell,Orbit,Nucleus,None,Nucleus
+MCQ,10,Atomic number is number of?,Neutrons,Electrons,Protons,None,Protons
+MCQ,11,Mass number is sum of?,Protons and electrons,Protons and neutrons,Electrons and neutrons,None,Protons and neutrons
+MCQ,12,Isotopes have same?,Mass number,Atomic number,Neutrons,None,Atomic number
+MCQ,13,Isobars have same?,Atomic number,Mass number,Neutrons,None,Mass number
+MCQ,14,Which is an isotope?,¹²C,¹⁴C,¹⁴N,None,¹⁴C
+MCQ,15,Which is an isobar?,¹⁴C,¹⁴N,¹²C,None,¹⁴N
+MCQ,16,Maximum electrons in K shell?,2,8,18,32,2
+MCQ,17,Maximum electrons in L shell?,2,8,18,32,8
+MCQ,18,Maximum electrons in M shell?,2,8,18,32,18
+MCQ,19,Valency depends on?,Neutrons,Protons,Valence electrons,None,Valence electrons
+MCQ,20,Which shell is outermost?,K,L,M,Valence shell,Valence shell
+MCQ,21,Which model proposed electrons embedded in positive charge?,Rutherford,Bohr,Thomson,Chadwick,Thomson
+MCQ,22,Which model has planetary motion?,Bohr,Rutherford,Thomson,None,Rutherford
+MCQ,23,Bohr model explains?,Spectrum of H,Neutron discovery,None,None,Spectrum of H
+MCQ,24,Which particle has negligible mass?,Electron,Proton,Neutron,None,Electron
+MCQ,25,Relative mass of proton?,1,1/1836,0,None,1
+MCQ,26,Relative mass of electron?,1,1/1836,0,None,1/1836
+MCQ,27,Relative mass of neutron?,1,1/1836,0,None,1
+MCQ,28,Which is neutral atom?,Equal p and e,More p,More e,None,Equal p and e
+MCQ,29,Which ion has gained electron?,Cation,Anion,Atom,None,Anion
+MCQ,30,Which ion has lost electron?,Anion,Cation,Atom,None,Cation
+MCQ,31,Electronic configuration of Na?,2,8,1,2,7,8,2,8,1
+MCQ,32,Atomic number of oxygen?,6,7,8,16,8
+MCQ,33,Mass number of chlorine-35?,17,18,35,52,35
+MCQ,34,Number of neutrons in ¹⁴C?,6,7,8,14,8
+MCQ,35,Which element has atomic number 1?,Helium,Hydrogen,Oxygen,None,Hydrogen
+MCQ,36,Valency of oxygen?,1,2,6,8,2
+MCQ,37,Valency of nitrogen?,3,5,7,None,3
+MCQ,38,Which shell fills first?,K,L,M,N,K
+MCQ,39,Which rule gives shell capacity?,Octet rule,2n² rule,None,None,2n² rule
+MCQ,40,Which element has valency zero?,Oxygen,Nitrogen,Neon,None,Neon
+MCQ,41,Which atom most stable?,With full shell,Empty shell,None,None,With full shell
+MCQ,42,Atomic number equals number of?,Protons,Electrons,Both,None,Both
+MCQ,43,Isotopes have different?,Atomic number,Mass number,Protons,None,Mass number
+MCQ,44,Isobars have different?,Mass number,Atomic number,Neutrons,None,Atomic number
+MCQ,45,Which element has 2,8 configuration?,Neon,Argon,Oxygen,None,Neon
+MCQ,46,Which element has 2,8,8?,Neon,Argon,Sodium,None,Argon
+MCQ,47,Who proposed Bohr model?,Bohr,Rutherford,Thomson,None,Bohr
+MCQ,48,Which particle determines identity of atom?,Electron,Neutron,Proton,None,Proton
+MCQ,49,Which atom has 1 valence electron?,Neon,Sodium,Magnesium,None,Sodium
+MCQ,50,Atomic mass mainly due to?,Electrons,Protons,Neutrons,p+n,p+n
+
+Integer,1,Who discovered electron?,Thomson,,,,
+Integer,2,Who discovered nucleus?,Rutherford,,,,
+Integer,3,Who discovered neutron?,Chadwick,,,,
+Integer,4,Charge on electron?,Negative,,,,
+Integer,5,Charge on proton?,Positive,,,,
+Integer,6,Charge on neutron?,Neutral,,,,
+Integer,7,Atomic number symbol?,Z,,,,
+Integer,8,Mass number symbol?,A,,,,
+Integer,9,Atomic number equals number of?,Protons,,,,
+Integer,10,Mass number equals?,Protons + neutrons,,,,
+Integer,11,Electron mass relative?,1/1836,,,,
+Integer,12,Maximum electrons in K shell?,2,,,,
+Integer,13,Maximum electrons in L shell?,8,,,,
+Integer,14,Maximum electrons in M shell?,18,,,,
+Integer,15,Valence shell electrons called?,Valence electrons,,,,
+Integer,16,Isotope has same atomic number? (Yes/No),Yes,,,,
+Integer,17,Isobar has same mass number? (Yes/No),Yes,,,,
+Integer,18,Neon valency?,0,,,,
+Integer,19,Oxygen valency?,2,,,,
+Integer,20,Hydrogen valency?,1,,,,
+Integer,21,2n² rule for which shell?,Electrons,,,,
+Integer,22,Bohr model applies to?,Hydrogen,,,,
+Integer,23,Electron found in?,Shells,,,,
+Integer,24,Proton found in?,Nucleus,,,,
+Integer,25,Neutron found in?,Nucleus,,,,
+Integer,26,Anion charge?,Negative,,,,
+Integer,27,Cation charge?,Positive,,,,
+Integer,28,Atomic number of carbon?,6,,,,
+Integer,29,Mass number of carbon-12?,12,,,,
+Integer,30,Neutrons in carbon-12?,6,,,,
+Integer,31,Electronic config of O?,2,6,,,,
+Integer,32,Electronic config of Mg?,2,8,2,,,,
+Integer,33,Valency of magnesium?,2,,,,
+Integer,34,Atomic number of sodium?,11,,,,
+Integer,35,Neutrons = A − Z? (Yes/No),Yes,,,,
+Integer,36,Isotopes differ in neutrons? (Yes/No),Yes,,,,
+Integer,37,Isobars differ in protons? (Yes/No),Yes,,,,
+Integer,38,Full outer shell stable? (Yes/No),Yes,,,,
+Integer,39,Which shell fills first?,K,,,,
+Integer,40,Which rule gives max electrons?,2n²,,,,
+Integer,41,Electron symbol?,e⁻,,,,
+Integer,42,Proton symbol?,p⁺,,,,
+Integer,43,Neutron symbol?,n⁰,,,,
+Integer,44,Neon atomic number?,10,,,,
+Integer,45,Argon atomic number?,18,,,,
+Integer,46,Valency zero elements called?,Noble gases,,,,
+Integer,47,Which particle negligible mass?,Electron,,,,
+Integer,48,Identity of atom decided by?,Proton,,,,
+Integer,49,Valence electrons in Na?,1,,,,
+Integer,50,Valence electrons in Cl?,7,,,,
+
+Problem,1,Find number of protons in atom with Z=11.,,,,,11
+Problem,2,Find number of electrons in neutral atom Z=17.,,,,,17
+Problem,3,Find neutrons if A=23 and Z=11.,,,,,12
+Problem,4,Find atomic number if protons are 8.,,,,,8
+Problem,5,Find mass number if p=6 and n=6.,,,,,12
+Problem,6,Find neutrons in chlorine-35.,,,,,18
+Problem,7,Write electronic configuration of sodium.,,,,,2,8,1
+Problem,8,Write electronic configuration of oxygen.,,,,,2,6
+Problem,9,Find valency of magnesium.,,,,,2
+Problem,10,Find valency of chlorine.,,,,,1
+Problem,11,Find number of electrons in Na⁺.,,,,,10
+Problem,12,Find number of electrons in Cl⁻.,,,,,18
+Problem,13,Find protons in carbon-12.,,,,,6
+Problem,14,Find neutrons in carbon-14.,,,,,8
+Problem,15,Write electronic configuration of neon.,,,,,2,8
+Problem,16,Find valence electrons in oxygen.,,,,,6
+Problem,17,Find atomic number of element with config 2,8,2.,,,,,12
+Problem,18,Find element with atomic number 17.,,,,,Chlorine
+Problem,19,Find mass number if neutrons=10 and protons=9.,,,,,19
+Problem,20,Find neutrons in atom Z=13 A=27.,,,,,14
+Problem,21,Find electrons in Mg²⁺.,,,,,10
+Problem,22,Find electrons in Al³⁺.,,,,,10
+Problem,23,Find valency of nitrogen.,,,,,3
+Problem,24,Find atomic number if electrons=18.,,,,,18
+Problem,25,Find shell capacity of N shell.,,,,,32
+Problem,26,Find neutrons in oxygen-16.,,,,,8
+Problem,27,Find protons in aluminium.,,,,,13
+Problem,28,Find atomic number of potassium.,,,,,19
+Problem,29,Find valency of calcium.,,,,,2
+Problem,30,Write electronic config of calcium.,,,,,2,8,8,2
+Problem,31,Find neutrons in Na-23.,,,,,12
+Problem,32,Find atomic number of neon.,,,,,10
+Problem,33,Find valence electrons in aluminium.,,,,,3
+Problem,34,Find atomic number if config 2,8,7.,,,,,17
+Problem,35,Find element with config 2,8,8.,,,,,Argon
+Problem,36,Find electrons in O²⁻.,,,,,10
+Problem,37,Find protons in hydrogen.,,,,,1
+Problem,38,Find neutrons in hydrogen-1.,,,,,0
+Problem,39,Find atomic number of magnesium.,,,,,12
+Problem,40,Find mass number if p=17 and n=18.,,,,,35
+Problem,41,Find neutrons in argon-40.,,,,,22
+Problem,42,Find electrons in K⁺.,,,,,18
+Problem,43,Find valency of sodium.,,,,,1
+Problem,44,Find atomic number if valency zero and config 2,8.,,,,,10
+Problem,45,Find number of shells in sodium.,,,,,3
+Problem,46,Find element with Z=8.,,,,,Oxygen
+Problem,47,Find neutrons in nitrogen-14.,,,,,7
+Problem,48,Find atomic number of nitrogen.,,,,,7
+Problem,49,Find electrons in neutral calcium.,,,,,20
+Problem,50,Find valency of argon.,,,,,0

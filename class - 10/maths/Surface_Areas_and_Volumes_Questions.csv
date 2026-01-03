@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The surface area of a cube with edge length 'a' is:,4a²,5a²,6a²,8a²,6a²
+MCQ,2,The volume of a cube with edge length 'a' is:,a²,a³,2a³,3a³,a³
+MCQ,3,The total surface area of a cuboid with dimensions l, b, h is:,lb + bh + hl,2(lb + bh + hl),lbh,2(l + b + h),2(lb + bh + hl)
+MCQ,4,The volume of a cuboid with dimensions l, b, h is:,lb + bh + hl,2(lb + bh + hl),lbh,2(l + b + h),lbh
+MCQ,5,The curved surface area of a cylinder with radius r and height h is:,πr²h,2πrh,2πr²,πrh,2πrh
+MCQ,6,The total surface area of a cylinder with radius r and height h is:,2πrh,2πr(r + h),πr²h,2πr²,2πr(r + h)
+MCQ,7,The volume of a cylinder with radius r and height h is:,πr²h,2πrh,2πr²,πrh,πr²h
+MCQ,8,The curved surface area of a cone with radius r and slant height l is:,πrl,πr²,πr²h,2πrl,πrl
+MCQ,9,The total surface area of a cone with radius r and slant height l is:,πrl,πr(r + l),πr²,2πrl,πr(r + l)
+MCQ,10,The volume of a cone with radius r and height h is:,(1/3)πr²h,πr²h,2πr²h,3πr²h,(1/3)πr²h
+MCQ,11,The surface area of a sphere with radius r is:,2πr²,4πr²,πr²,3πr²,4πr²
+MCQ,12,The volume of a sphere with radius r is:,(4/3)πr³,2πr³,πr³,(2/3)πr³,(4/3)πr³
+MCQ,13,The curved surface area of a hemisphere with radius r is:,2πr²,3πr²,πr²,4πr²,2πr²
+MCQ,14,The total surface area of a hemisphere with radius r is:,2πr²,3πr²,πr²,4πr²,3πr²
+MCQ,15,The volume of a hemisphere with radius r is:,(2/3)πr³,(4/3)πr³,πr³,2πr³,(2/3)πr³
+MCQ,16,If the radius of a sphere is doubled, its volume becomes:,2 times,4 times,6 times,8 times,8 times
+MCQ,17,If the radius of a sphere is doubled, its surface area becomes:,2 times,4 times,6 times,8 times,4 times
+MCQ,18,The volume of a cube with edge 7 cm is:,49 cm³,343 cm³,294 cm³,196 cm³,343 cm³
+MCQ,19,The surface area of a cube with edge 7 cm is:,49 cm²,294 cm²,343 cm²,196 cm²,294 cm²
+MCQ,20,The volume of a cuboid with dimensions 5 cm, 4 cm, 3 cm is:,12 cm³,60 cm³,47 cm³,94 cm³,60 cm³
+MCQ,21,The total surface area of a cuboid with dimensions 5 cm, 4 cm, 3 cm is:,47 cm²,60 cm²,94 cm²,120 cm²,94 cm²
+MCQ,22,The volume of a cylinder with radius 7 cm and height 10 cm is (use π = 22/7):,220 cm³,440 cm³,1540 cm³,3080 cm³,1540 cm³
+MCQ,23,The curved surface area of a cylinder with radius 7 cm and height 10 cm is (use π = 22/7):,220 cm²,440 cm²,1540 cm²,3080 cm²,440 cm²
+MCQ,24,The total surface area of a cylinder with radius 7 cm and height 10 cm is (use π = 22/7):,374 cm²,748 cm²,1540 cm²,3080 cm²,748 cm²
+MCQ,25,The volume of a cone with radius 7 cm and height 24 cm is (use π = 22/7):,1232 cm³,616 cm³,1848 cm³,3696 cm³,1232 cm³
+MCQ,26,The curved surface area of a cone with radius 7 cm and slant height 25 cm is (use π = 22/7):,350 cm²,550 cm²,700 cm²,1100 cm²,550 cm²
+MCQ,27,The total surface area of a cone with radius 7 cm and slant height 25 cm is (use π = 22/7):,550 cm²,704 cm²,1100 cm²,1540 cm²,704 cm²
+MCQ,28,The volume of a sphere with radius 7 cm is (use π = 22/7):,4312/3 cm³,2156/3 cm³,4312 cm³,2156 cm³,4312/3 cm³
+MCQ,29,The surface area of a sphere with radius 7 cm is (use π = 22/7):,154 cm²,308 cm²,616 cm²,1232 cm²,616 cm²
+MCQ,30,The volume of a hemisphere with radius 7 cm is (use π = 22/7):,2156/3 cm³,4312/3 cm³,308 cm³,616 cm³,2156/3 cm³
+MCQ,31,The curved surface area of a hemisphere with radius 7 cm is (use π = 22/7):,154 cm²,308 cm²,462 cm²,616 cm²,308 cm²
+MCQ,32,The total surface area of a hemisphere with radius 7 cm is (use π = 22/7):,308 cm²,462 cm²,616 cm²,924 cm²,462 cm²
+MCQ,33,If the volume of a cube is 64 cm³, its edge length is:,4 cm,8 cm,16 cm,32 cm,4 cm
+MCQ,34,If the surface area of a cube is 150 cm², its edge length is:,5 cm,10 cm,15 cm,25 cm,5 cm
+MCQ,35,The ratio of volumes of two spheres with radii r and 2r is:,1:2,1:4,1:6,1:8,1:8
+MCQ,36,The ratio of surface areas of two spheres with radii r and 2r is:,1:2,1:4,1:6,1:8,1:4
+MCQ,37,A sphere of radius r is melted and recast into a cylinder of the same radius. The height of the cylinder is:,(2/3)r,(4/3)r,(3/2)r,(3/4)r,(4/3)r
+MCQ,38,The lateral surface area of a cube with edge 'a' is:,4a²,5a²,6a²,8a²,4a²
+MCQ,39,If the height of a cylinder is doubled and radius remains the same, its volume becomes:,2 times,4 times,Same,8 times,2 times
+MCQ,40,If the radius of a cylinder is doubled and height remains the same, its volume becomes:,2 times,4 times,8 times,Same,4 times
+MCQ,41,The slant height of a cone with radius r and height h is:,√(r² + h²),r + h,√(r² - h²),r - h,√(r² + h²)
+MCQ,42,If the radius and height of a cylinder are both doubled, its volume becomes:,2 times,4 times,8 times,16 times,8 times
+MCQ,43,The volume of a frustum of a cone with radii R and r and height h is:,(π/3)h(R² + r² + Rr),(π/3)h(R² - r²),(π/3)h(R + r)²,(π/3)h(R - r)²,(π/3)h(R² + r² + Rr)
+MCQ,44,The curved surface area of a frustum of a cone with radii R and r and slant height l is:,π(R + r)l,π(R - r)l,πRl,πrl,π(R + r)l
+MCQ,45,If a solid sphere of radius r is melted and recast into 'n' solid spheres of radius r/2, then n =:,4,6,8,12,8
+MCQ,46,The volume of water that a cylindrical vessel of radius 7 cm and height 10 cm can hold is (use π = 22/7):,1540 cm³,1540 ml,1540 liters,1540 m³,1540 cm³
+MCQ,47,The number of cubes of edge 2 cm that can be cut from a cube of edge 10 cm is:,25,50,125,250,125
+MCQ,48,If the diameter of a sphere is 14 cm, its volume is (use π = 22/7):,2156/3 cm³,4312/3 cm³,154 cm³,308 cm³,4312/3 cm³
+MCQ,49,The cost of painting a cylindrical tank of radius 7 m and height 10 m at Rs 10 per m² is (use π = 22/7):,Rs 4400,Rs 4840,Rs 8800,Rs 9680,Rs 4840
+MCQ,50,The volume of a right circular cone is 1232 cm³ and its height is 24 cm. Its radius is (use π = 22/7):,5 cm,6 cm,7 cm,8 cm,7 cm
+Integer,1,The volume of a cube with edge 7 cm is _____ cm³.,343,,,,
+Integer,2,The surface area of a cube with edge 7 cm is _____ cm².,294,,,,
+Integer,3,The volume of a cuboid with dimensions 5 cm, 4 cm, 3 cm is _____ cm³.,60,,,,
+Integer,4,The total surface area of a cuboid with dimensions 5 cm, 4 cm, 3 cm is _____ cm².,94,,,,
+Integer,5,The volume of a cylinder with radius 7 cm and height 10 cm is _____ cm³ (use π = 22/7).,1540,,,,
+Integer,6,The curved surface area of a cylinder with radius 7 cm and height 10 cm is _____ cm² (use π = 22/7).,440,,,,
+Integer,7,The total surface area of a cylinder with radius 7 cm and height 10 cm is _____ cm² (use π = 22/7).,748,,,,
+Integer,8,The volume of a cone with radius 7 cm and height 24 cm is _____ cm³ (use π = 22/7).,1232,,,,
+Integer,9,The curved surface area of a cone with radius 7 cm and slant height 25 cm is _____ cm² (use π = 22/7).,550,,,,
+Integer,10,The total surface area of a cone with radius 7 cm and slant height 25 cm is _____ cm² (use π = 22/7).,704,,,,
+Integer,11,The surface area of a sphere with radius 7 cm is _____ cm² (use π = 22/7).,616,,,,
+Integer,12,The volume of a hemisphere with radius 7 cm is 2156/3 cm³. Write numerator: _____.,2156,,,,
+Integer,13,The curved surface area of a hemisphere with radius 7 cm is _____ cm² (use π = 22/7).,308,,,,
+Integer,14,The total surface area of a hemisphere with radius 7 cm is _____ cm² (use π = 22/7).,462,,,,
+Integer,15,If the volume of a cube is 64 cm³, its edge length is _____ cm.,4,,,,
+Integer,16,If the surface area of a cube is 150 cm², its edge length is _____ cm.,5,,,,
+Integer,17,If the radius of a sphere is doubled, its volume becomes _____ times.,8,,,,
+Integer,18,If the radius of a sphere is doubled, its surface area becomes _____ times.,4,,,,
+Integer,19,If the height of a cylinder is doubled and radius remains same, its volume becomes _____ times.,2,,,,
+Integer,20,If the radius of a cylinder is doubled and height remains same, its volume becomes _____ times.,4,,,,
+Integer,21,If radius and height of a cylinder are both doubled, its volume becomes _____ times.,8,,,,
+Integer,22,The number of cubes of edge 2 cm that can be cut from a cube of edge 10 cm is _____.,125,,,,
+Integer,23,If a solid sphere of radius r is melted and recast into spheres of radius r/2, the number of spheres is _____.,8,,,,
+Integer,24,The volume of a cylinder with radius 3.5 cm and height 10 cm is _____ cm³ (use π = 22/7, so 385).,385,,,,
+Integer,25,The curved surface area of a cylinder with radius 3.5 cm and height 10 cm is _____ cm² (use π = 22/7, so 220).,220,,,,
+Integer,26,The volume of a cone with radius 3.5 cm and height 12 cm is _____ cm³ (use π = 22/7, so 154).,154,,,,
+Integer,27,The volume of a sphere with radius 3.5 cm is 539/3 cm³. Write numerator: _____.,539,,,,
+Integer,28,The surface area of a sphere with radius 3.5 cm is _____ cm² (use π = 22/7, so 154).,154,,,,
+Integer,29,The volume of a cube with edge 5 cm is _____ cm³.,125,,,,
+Integer,30,The surface area of a cube with edge 5 cm is _____ cm².,150,,,,
+Integer,31,The volume of a cuboid with dimensions 6 cm, 5 cm, 4 cm is _____ cm³.,120,,,,
+Integer,32,The total surface area of a cuboid with dimensions 6 cm, 5 cm, 4 cm is _____ cm².,148,,,,
+Integer,33,The volume of a cylinder with radius 14 cm and height 5 cm is _____ cm³ (use π = 22/7, so 3080).,3080,,,,
+Integer,34,The curved surface area of a cylinder with radius 14 cm and height 5 cm is _____ cm² (use π = 22/7, so 440).,440,,,,
+Integer,35,The volume of a cone with radius 14 cm and height 15 cm is _____ cm³ (use π = 22/7, so 3080).,3080,,,,
+Integer,36,The surface area of a sphere with radius 14 cm is _____ cm² (use π = 22/7, so 2464).,2464,,,,
+Integer,37,The volume of a hemisphere with radius 14 cm is 17248/3 cm³. Write numerator: _____.,17248,,,,
+Integer,38,The total surface area of a hemisphere with radius 14 cm is _____ cm² (use π = 22/7, so 1848).,1848,,,,
+Integer,39,If the volume of a cube is 125 cm³, its edge length is _____ cm.,5,,,,
+Integer,40,If the surface area of a cube is 96 cm², its edge length is _____ cm.,4,,,,
+Integer,41,The volume of a cylinder with radius 10.5 cm and height 10 cm is _____ cm³ (use π = 22/7, so 3465).,3465,,,,
+Integer,42,The curved surface area of a cylinder with radius 10.5 cm and height 10 cm is _____ cm² (use π = 22/7, so 660).,660,,,,
+Integer,43,The volume of a cone with radius 10.5 cm and height 20 cm is _____ cm³ (use π = 22/7, so 2310).,2310,,,,
+Integer,44,The surface area of a sphere with radius 10.5 cm is _____ cm² (use π = 22/7, so 1386).,1386,,,,
+Integer,45,The volume of a hemisphere with radius 10.5 cm is 4851/2 cm³. Write numerator: _____.,4851,,,,
+Integer,46,The volume of a cube with edge 8 cm is _____ cm³.,512,,,,
+Integer,47,The surface area of a cube with edge 8 cm is _____ cm².,384,,,,
+Integer,48,The volume of a cuboid with dimensions 8 cm, 6 cm, 5 cm is _____ cm³.,240,,,,
+Integer,49,The total surface area of a cuboid with dimensions 8 cm, 6 cm, 5 cm is _____ cm².,236,,,,
+Integer,50,The volume of a cylinder with radius 5 cm and height 14 cm is _____ cm³ (use π = 22/7, so 1100).,1100,,,,
+Problem,1,Find the volume of a cube with edge length 7 cm.,"Volume of cube = a³ = 7³ = 343 cm³. Answer: 343 cm³",,,,
+Problem,2,Find the total surface area of a cube with edge length 7 cm.,"Total surface area = 6a² = 6 × 7² = 6 × 49 = 294 cm². Answer: 294 cm²",,,,
+Problem,3,Find the volume of a cuboid with dimensions 5 cm, 4 cm, and 3 cm.,"Volume = l × b × h = 5 × 4 × 3 = 60 cm³. Answer: 60 cm³",,,,
+Problem,4,Find the total surface area of a cuboid with dimensions 5 cm, 4 cm, and 3 cm.,"Total surface area = 2(lb + bh + hl) = 2(5×4 + 4×3 + 3×5) = 2(20 + 12 + 15) = 2 × 47 = 94 cm². Answer: 94 cm²",,,,
+Problem,5,Find the volume of a cylinder with radius 7 cm and height 10 cm. (Use π = 22/7),"Volume = πr²h = (22/7) × 7² × 10 = (22/7) × 49 × 10 = 22 × 7 × 10 = 1540 cm³. Answer: 1540 cm³",,,,
+Problem,6,Find the curved surface area of a cylinder with radius 7 cm and height 10 cm. (Use π = 22/7),"Curved surface area = 2πrh = 2 × (22/7) × 7 × 10 = 2 × 22 × 10 = 440 cm². Answer: 440 cm²",,,,
+Problem,7,Find the total surface area of a cylinder with radius 7 cm and height 10 cm. (Use π = 22/7),"Total surface area = 2πr(r + h) = 2 × (22/7) × 7(7 + 10) = 2 × 22 × 17 = 748 cm². Answer: 748 cm²",,,,
+Problem,8,Find the volume of a cone with radius 7 cm and height 24 cm. (Use π = 22/7),"Volume = (1/3)πr²h = (1/3) × (22/7) × 7² × 24 = (1/3) × (22/7) × 49 × 24 = (1/3) × 22 × 7 × 24 = (1/3) × 3696 = 1232 cm³. Answer: 1232 cm³",,,,
+Problem,9,Find the curved surface area of a cone with radius 7 cm and slant height 25 cm. (Use π = 22/7),"Curved surface area = πrl = (22/7) × 7 × 25 = 22 × 25 = 550 cm². Answer: 550 cm²",,,,
+Problem,10,Find the total surface area of a cone with radius 7 cm and slant height 25 cm. (Use π = 22/7),"Total surface area = πr(r + l) = (22/7) × 7(7 + 25) = 22 × 32 = 704 cm². Answer: 704 cm²",,,,
+Problem,11,Find the volume of a sphere with radius 7 cm. (Use π = 22/7),"Volume = (4/3)πr³ = (4/3) × (22/7) × 7³ = (4/3) × (22/7) × 343 = (4/3) × 22 × 49 = (4/3) × 1078 = 4312/3 cm³. Answer: 4312/3 cm³",,,,
+Problem,12,Find the surface area of a sphere with radius 7 cm. (Use π = 22/7),"Surface area = 4πr² = 4 × (22/7) × 7² = 4 × (22/7) × 49 = 4 × 22 × 7 = 616 cm². Answer: 616 cm²",,,,
+Problem,13,Find the volume of a hemisphere with radius 7 cm. (Use π = 22/7),"Volume = (2/3)πr³ = (2/3) × (22/7) × 7³ = (2/3) × (22/7) × 343 = (2/3) × 22 × 49 = (2/3) × 1078 = 2156/3 cm³. Answer: 2156/3 cm³",,,,
+Problem,14,Find the curved surface area of a hemisphere with radius 7 cm. (Use π = 22/7),"Curved surface area = 2πr² = 2 × (22/7) × 7² = 2 × (22/7) × 49 = 2 × 22 × 7 = 308 cm². Answer: 308 cm²",,,,
+Problem,15,Find the total surface area of a hemisphere with radius 7 cm. (Use π = 22/7),"Total surface area = 3πr² = 3 × (22/7) × 7² = 3 × (22/7) × 49 = 3 × 22 × 7 = 462 cm². Answer: 462 cm²",,,,
+Problem,16,If the volume of a cube is 64 cm³, find its edge length.,"Volume = a³ = 64, a³ = 4³, a = 4 cm. Answer: 4 cm",,,,
+Problem,17,If the total surface area of a cube is 150 cm², find its edge length.,"Total surface area = 6a² = 150, a² = 150/6 = 25, a = 5 cm. Answer: 5 cm",,,,
+Problem,18,A sphere of radius 7 cm is melted and recast into a cylinder of the same radius. Find the height of the cylinder. (Use π = 22/7),"Volume of sphere = Volume of cylinder. (4/3)π × 7³ = π × 7² × h, (4/3) × 343 = 49h, 1372/3 = 49h, h = 1372/(3 × 49) = 28/3 cm. Answer: 28/3 cm",,,,
+Problem,19,If the radius of a sphere is doubled, find the ratio of the new volume to the original volume.,"Original volume = (4/3)πr³. New volume = (4/3)π(2r)³ = (4/3)π × 8r³ = 8 × (4/3)πr³. Ratio = 8:1. Answer: 8:1",,,,
+Problem,20,If the radius of a sphere is doubled, find the ratio of the new surface area to the original surface area.,"Original surface area = 4πr². New surface area = 4π(2r)² = 4π × 4r² = 16πr² = 4 × 4πr². Ratio = 4:1. Answer: 4:1",,,,
+Problem,21,A cylindrical vessel of radius 7 cm and height 10 cm is full of water. Find the volume of water. (Use π = 22/7),"Volume = πr²h = (22/7) × 7² × 10 = (22/7) × 49 × 10 = 1540 cm³. Answer: 1540 cm³",,,,
+Problem,22,Find the cost of painting a cylindrical tank of radius 7 m and height 10 m at the rate of Rs 10 per m². (Use π = 22/7),"Curved surface area = 2πrh = 2 × (22/7) × 7 × 10 = 440 m². Cost = 440 × 10 = Rs 4400. Answer: Rs 4400",,,,
+Problem,23,A cone has a radius of 7 cm and height of 24 cm. Find its slant height and curved surface area. (Use π = 22/7),"Slant height l = √(r² + h²) = √(7² + 24²) = √(49 + 576) = √625 = 25 cm. Curved surface area = πrl = (22/7) × 7 × 25 = 550 cm². Answer: Slant height = 25 cm, Curved surface area = 550 cm²",,,,
+Problem,24,The volume of a right circular cone is 1232 cm³ and its height is 24 cm. Find its radius. (Use π = 22/7),"Volume = (1/3)πr²h = 1232, (1/3) × (22/7) × r² × 24 = 1232, (1/3) × 22 × r² × 24/7 = 1232, 22 × r² × 8/7 = 1232, r² × 176/7 = 1232, r² = 1232 × 7/176 = 49, r = 7 cm. Answer: 7 cm",,,,
+Problem,25,How many cubes of edge 2 cm can be cut from a cube of edge 10 cm?,"Volume of large cube = 10³ = 1000 cm³. Volume of small cube = 2³ = 8 cm³. Number of cubes = 1000/8 = 125. Answer: 125 cubes",,,,
+Problem,26,A solid sphere of radius 7 cm is melted and recast into 'n' solid spheres of radius 3.5 cm. Find n. (Use π = 22/7),"Volume of large sphere = (4/3)π × 7³ = (4/3)π × 343. Volume of small sphere = (4/3)π × (3.5)³ = (4/3)π × 42.875. n = 343/42.875 = 8. Answer: 8 spheres",,,,
+Problem,27,A hemispherical bowl of radius 7 cm is full of water. Find the volume of water. (Use π = 22/7),"Volume = (2/3)πr³ = (2/3) × (22/7) × 7³ = (2/3) × (22/7) × 343 = (2/3) × 22 × 49 = 2156/3 cm³. Answer: 2156/3 cm³",,,,
+Problem,28,Find the total surface area of a solid hemisphere of radius 7 cm. (Use π = 22/7),"Total surface area = 3πr² = 3 × (22/7) × 7² = 3 × (22/7) × 49 = 3 × 22 × 7 = 462 cm². Answer: 462 cm²",,,,
+Problem,29,A cylindrical vessel of radius 14 cm and height 20 cm is full of water. The water is poured into a conical vessel of radius 7 cm. Find the height to which water rises in the conical vessel. (Use π = 22/7),"Volume of water = π × 14² × 20 = (22/7) × 196 × 20 = 12320 cm³. Volume of cone = (1/3)π × 7² × h = (1/3) × (22/7) × 49 × h = (154/3)h. (154/3)h = 12320, h = 12320 × 3/154 = 240 cm. Answer: 240 cm",,,,
+Problem,30,The diameter of a sphere is 14 cm. Find its volume and surface area. (Use π = 22/7),"Radius = 14/2 = 7 cm. Volume = (4/3)πr³ = (4/3) × (22/7) × 343 = 4312/3 cm³. Surface area = 4πr² = 4 × (22/7) × 49 = 616 cm². Answer: Volume = 4312/3 cm³, Surface area = 616 cm²",,,,
+Problem,31,A metallic sphere of radius 10.5 cm is melted and recast into smaller spheres of radius 3.5 cm. Find the number of spheres formed. (Use π = 22/7),"Volume of large sphere = (4/3)π × (10.5)³ = (4/3)π × 1157.625. Volume of small sphere = (4/3)π × (3.5)³ = (4/3)π × 42.875. Number = 1157.625/42.875 = 27. Answer: 27 spheres",,,,
+Problem,32,A cuboid of dimensions 10 cm × 8 cm × 6 cm is melted and recast into a cube. Find the edge of the cube.,"Volume of cuboid = 10 × 8 × 6 = 480 cm³. Volume of cube = a³ = 480, a = ∛480 = ∛(64 × 7.5) = 4∛7.5. But let's calculate: a³ = 480, a ≈ 7.83 cm. Actually, 7.83³ ≈ 480. More precisely: a = ∛480. Answer: ∛480 cm or approximately 7.83 cm",,,,
+Problem,33,The radius and height of a cylinder are in the ratio 5:7. If its volume is 4400 cm³, find the radius and height. (Use π = 22/7),"Let radius = 5x, height = 7x. Volume = π(5x)²(7x) = (22/7) × 25x² × 7x = 22 × 25x³ = 550x³ = 4400, x³ = 8, x = 2. Radius = 10 cm, Height = 14 cm. Answer: Radius = 10 cm, Height = 14 cm",,,,
+Problem,34,A right circular cone of height 48 cm and base radius 12 cm is melted and recast into spheres of radius 6 cm. Find the number of spheres. (Use π = 22/7),"Volume of cone = (1/3)π × 12² × 48 = (1/3) × (22/7) × 144 × 48 = (1/3) × 22 × 144 × 48/7 = 304128/21 = 14496/1 = 14496 cm³ (simplifying). Actually: (1/3) × (22/7) × 144 × 48 = (22 × 144 × 48)/(21) = 152064/21 = 7241.14... Let me recalculate: (1/3) × (22/7) × 144 × 48 = (22/21) × 6912 = 152064/21. Volume of sphere = (4/3)π × 6³ = (4/3) × (22/7) × 216 = (4 × 22 × 216)/21 = 19008/21. Number = (152064/21) ÷ (19008/21) = 152064/19008 = 8. Answer: 8 spheres",,,,
+Problem,35,A hemispherical bowl of internal radius 9 cm is full of liquid. The liquid is to be filled into cylindrical bottles of radius 3 cm and height 4 cm. Find the number of bottles needed. (Use π = 22/7),"Volume of liquid = (2/3)π × 9³ = (2/3) × (22/7) × 729 = (2 × 22 × 729)/(21) = 32076/21 = 1527.43... Actually: (2/3) × (22/7) × 729 = (44 × 729)/(21) = 32076/21. Volume of bottle = π × 3² × 4 = (22/7) × 9 × 4 = 792/7. Number = (32076/21) ÷ (792/7) = (32076/21) × (7/792) = 224532/16632 = 13.5. Since we need whole bottles, answer is 14. But let's recalculate more carefully: Volume of hemisphere = (2/3)πr³ = (2/3) × (22/7) × 729 = 44 × 729/21 = 32076/21 = 1527.428... Volume of cylinder = πr²h = (22/7) × 9 × 4 = 792/7 = 113.1428... Number = 1527.428/113.1428 = 13.5. So we need 14 bottles. Answer: 14 bottles",,,,
+Problem,36,A sphere of diameter 14 cm is dropped into a cylindrical vessel of diameter 28 cm containing water. Find the rise in water level. (Use π = 22/7),"Radius of sphere = 7 cm. Volume of sphere = (4/3)π × 7³ = (4/3) × (22/7) × 343 = 4312/3 cm³. Radius of cylinder = 14 cm. Let rise in water level = h cm. Volume displaced = π × 14² × h = (22/7) × 196 × h = 616h. 616h = 4312/3, h = 4312/(3 × 616) = 4312/1848 = 7/3 cm. Answer: 7/3 cm",,,,
+Problem,37,The total surface area of a cube is 384 cm². Find its volume.,"Total surface area = 6a² = 384, a² = 64, a = 8 cm. Volume = a³ = 8³ = 512 cm³. Answer: 512 cm³",,,,
+Problem,38,A metallic sphere of radius 4.2 cm is melted and recast into a cylinder of radius 6 cm. Find the height of the cylinder. (Use π = 22/7),"Volume of sphere = (4/3)π × (4.2)³ = (4/3) × (22/7) × 74.088 = (4 × 22 × 74.088)/21 = 6519.744/21 = 310.464. Volume of cylinder = π × 6² × h = (22/7) × 36 × h = 792h/7. 792h/7 = 310.464, h = 310.464 × 7/792 = 2.744 cm. Actually, let's do it more carefully with fractions. Answer: 2.744 cm (approximately)",,,,
+Problem,39,Find the volume of a cylinder whose radius is 3.5 cm and height is 10 cm. (Use π = 22/7),"Volume = πr²h = (22/7) × (3.5)² × 10 = (22/7) × 12.25 × 10 = (22/7) × 122.5 = 2695/7 = 385 cm³. Answer: 385 cm³",,,,
+Problem,40,Find the curved surface area of a cylinder whose radius is 3.5 cm and height is 10 cm. (Use π = 22/7),"Curved surface area = 2πrh = 2 × (22/7) × 3.5 × 10 = 2 × (22/7) × 35 = 2 × 110 = 220 cm². Answer: 220 cm²",,,,
+Problem,41,A cone of height 24 cm has a volume of 1232 cm³. Find its radius. (Use π = 22/7),"Volume = (1/3)πr²h = 1232, (1/3) × (22/7) × r² × 24 = 1232, (22/7) × r² × 8 = 1232, r² × 176/7 = 1232, r² = 1232 × 7/176 = 49, r = 7 cm. Answer: 7 cm",,,,
+Problem,42,The radius and height of a right circular cylinder are in the ratio 2:3. If the volume is 12936 cm³, find the radius and height. (Use π = 22/7),"Let radius = 2x, height = 3x. Volume = π(2x)²(3x) = (22/7) × 4x² × 3x = (22/7) × 12x³ = 264x³/7 = 12936, x³ = 12936 × 7/264 = 343, x = 7. Radius = 14 cm, Height = 21 cm. Answer: Radius = 14 cm, Height = 21 cm",,,,
+Problem,43,A sphere of radius 6 cm is melted and recast into a cylinder of radius 4 cm. Find the height of the cylinder. (Use π = 22/7),"Volume of sphere = (4/3)π × 6³ = (4/3) × (22/7) × 216 = (4 × 22 × 216)/21 = 19008/21 = 905.14... Volume of cylinder = π × 4² × h = (22/7) × 16 × h = 352h/7. 352h/7 = 19008/21, h = 19008 × 7/(21 × 352) = 133056/7392 = 18 cm. Answer: 18 cm",,,,
+Problem,44,Find the volume of a cone with radius 6 cm and height 8 cm. (Use π = 22/7),"Volume = (1/3)πr²h = (1/3) × (22/7) × 6² × 8 = (1/3) × (22/7) × 36 × 8 = (1/3) × (22/7) × 288 = (22 × 288)/(21) = 6336/21 = 301.71... Actually: 6336/21 = 301.714... Let's keep as fraction: 2112/7 cm³. Answer: 2112/7 cm³",,,,
+Problem,45,The volume of a hemisphere is 2425.5 cm³. Find its radius. (Use π = 22/7),"Volume = (2/3)πr³ = 2425.5, (2/3) × (22/7) × r³ = 2425.5, (44/21) × r³ = 2425.5, r³ = 2425.5 × 21/44 = 50935.5/44 = 1157.625, r = ∛1157.625 = 10.5 cm. Answer: 10.5 cm",,,,
+Problem,46,A cylindrical vessel of radius 10 cm and height 15 cm is full of water. If the water is poured into a cylindrical vessel of radius 5 cm, find the height to which water rises. (Use π = 22/7),"Volume of water = π × 10² × 15 = (22/7) × 100 × 15 = 33000/7 cm³. Volume in new vessel = π × 5² × h = (22/7) × 25 × h = 550h/7. 550h/7 = 33000/7, h = 33000/550 = 60 cm. Answer: 60 cm",,,,
+Problem,47,The total surface area of a cube is 486 cm². Find its volume.,"Total surface area = 6a² = 486, a² = 81, a = 9 cm. Volume = a³ = 9³ = 729 cm³. Answer: 729 cm³",,,,
+Problem,48,A solid sphere of radius 3 cm is melted and recast into a solid right circular cone of height 3 cm. Find the radius of the cone. (Use π = 22/7),"Volume of sphere = (4/3)π × 3³ = (4/3) × (22/7) × 27 = (4 × 22 × 27)/21 = 2376/21 = 113.14... Volume of cone = (1/3)πr² × 3 = πr² = (22/7)r². (22/7)r² = 2376/21, r² = 2376/(21 × 22/7) = 2376 × 7/(21 × 22) = 16632/462 = 36, r = 6 cm. Answer: 6 cm",,,,
+Problem,49,Find the volume of a cuboid whose dimensions are 12 cm, 8 cm, and 6 cm.,"Volume = l × b × h = 12 × 8 × 6 = 576 cm³. Answer: 576 cm³",,,,
+Problem,50,Find the total surface area of a cuboid whose dimensions are 12 cm, 8 cm, and 6 cm.,"Total surface area = 2(lb + bh + hl) = 2(12×8 + 8×6 + 6×12) = 2(96 + 48 + 72) = 2 × 216 = 432 cm². Answer: 432 cm²",,,,
+

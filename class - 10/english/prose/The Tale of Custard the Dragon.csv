@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of The Tale of Custard the Dragon?,Ogden Nash,Robert Frost,Carolyn Wells,John Keats,Ogden Nash
+MCQ,2,The Tale of Custard the Dragon is a,Story,Poem,Play,Essay,Poem
+MCQ,3,Who owned Custard?,Belinda,Ink,Blink,Mustard,Belinda
+MCQ,4,Where did Belinda live?,Forest,White house,Green house,Castle,White house
+MCQ,5,What kind of animal was Custard?,Dog,Cat,Dragon,Mouse,Dragon
+MCQ,6,Custard was considered very,Brave,Clever,Cowardly,Strong,Cowardly
+MCQ,7,Who was Ink?,Cat,Dog,Pirate,Mouse,Cat
+MCQ,8,Who was Blink?,Cat,Dog,Mouse,Dragon,Dog
+MCQ,9,Who was Mustard?,Tiger,Mouse,Lion,Cat,Mouse
+MCQ,10,What did Custard always cry for?,Food,Protection,A cage,A fight,A cage
+MCQ,11,Who laughed at Custard?,Pirate,Belinda,All animals,Mustard,All animals
+MCQ,12,What weapon did the pirate have?,Sword,Pistol,Knife,Stick,Pistol
+MCQ,13,What colour was the pirate’s beard?,Black,Green,Yellow,Red,Black
+MCQ,14,Who fought the pirate?,Blink,Ink,Custard,Mustard,Custard
+MCQ,15,What did Custard do to the pirate?,Hugged him,Frightened him,Eat him,Chased him,Eat him
+MCQ,16,How did Custard kill the pirate?,By fire,By biting,By sword,By shouting,By fire
+MCQ,17,After the fight, who was praised?,Custard,Blink,Ink,Mustard,Blink
+MCQ,18,What did Custard ask for after the fight?,Praise,Apology,A cage,Food,A cage
+MCQ,19,The poem is written in a,Serious tone,Humorous tone,Sad tone,Angry tone,Humorous tone
+MCQ,20,The poem shows that appearances can be,Trusted,Deceptive,True,Simple,Deceptive
+MCQ,21,Who was considered the bravest initially?,Blink,Ink,Mustard,Custard,Mustard
+MCQ,22,What kind of dragon was Custard?,Ferocious,Timid,Fire-breathing,Wild,Fire-breathing
+MCQ,23,What did Ink and Blink do during the fight?,Fought,Watched,Escaped,Laughed,Escaped
+MCQ,24,The poem highlights the theme of,True courage,Fear,Nature,Friendship,True courage
+MCQ,25,What animal was Mustard?,Mouse,Tiger,Cat,Dog,Mouse
+MCQ,26,How was Belinda described?,Brave,Rich,Innocent,Clever,Innocent
+MCQ,27,What did Custard have on his back?,Wings,Scales,Spikes,Fur,Spikes
+MCQ,28,What was Custard’s reaction to danger?,Ran away,Asked for cage,Fought,Laughed,Fought
+MCQ,29,The pirate entered with a,Pistol,Sword,Gun and dagger,Bomb,Gun and dagger
+MCQ,30,Who proved to be truly brave?,Blink,Ink,Custard,Mustard,Custard
+MCQ,31,The poem mocks the idea of,False bravery,Animals,Children,Dragons,False bravery
+MCQ,32,What happened to the pirate?,Escaped,Was eaten,Was arrested,Was injured,Was eaten
+MCQ,33,The poem teaches that courage is shown in,Words,Looks,Actions,Size,Actions
+MCQ,34,How did others react after the pirate was killed?,Thanked Custard,Praised Custard,Praised themselves,Apologized,Praised themselves
+MCQ,35,The dragon’s fire symbolizes,Anger,Power,True courage,Destruction,True courage
+MCQ,36,The poem has a,A tragic ending,A moral ending,A sad ending,A fearful ending,A moral ending
+MCQ,37,What did Custard look like?,Scary,Cute,Fierce,Funny,Scary
+MCQ,38,The poem uses which element strongly?,Humour,Tragedy,Horror,Romance,Humour
+MCQ,39,The animals represent,Children,Adults,Human traits,Nature,Human traits
+MCQ,40,What lesson does the poem teach?,Never be afraid,Don’t judge by appearance,Dragons are brave,Fear is good,Don’t judge by appearance
+MCQ,41,The dragon’s name Custard suggests he is,Sweet,Strong,Funny,Weak,Sweet
+MCQ,42,What did the animals call Custard?,Brave dragon,Real hero,Funny dragon,Cowardly dragon,Cowardly dragon
+MCQ,43,The poem’s tone is mostly,Serious,Humorous,Angry,Sad,Humorous
+MCQ,44,Who lived together in the house?,Belinda and animals,Pirate and animals,Only animals,Belinda only,Belinda and animals
+MCQ,45,Who demanded bravery from Custard?,Belinda,Ink,Blink,Mustard,All of them
+MCQ,46,The poem shows bravery is not,Boasting,Talking,Real action,Fearless,Boasting
+MCQ,47,What did Custard breathe?,Smoke,Fire,Water,Air,Fire
+MCQ,48,The pirate was described as,Brave,Strong,Fearless,Wicked,Wicked
+MCQ,49,The poem ends on a note of,Humour,Tragedy,Fear,Sadness,Humour
+MCQ,50,The central idea of the poem is,Dragons are scary,True courage is inner strength,Animals are funny,Fear is bad,True courage is inner strength
+
+Integer,1,Name of the poet?,Ogden Nash,,,,
+Integer,2,Type of poem?,Narrative,,,,
+Integer,3,Owner of Custard?,Belinda,,,,
+Integer,4,Animal Custard is?,Dragon,,,,
+Integer,5,Animal Ink is?,Cat,,,,
+Integer,6,Animal Blink is?,Dog,,,,
+Integer,7,Animal Mustard is?,Mouse,,,,
+Integer,8,Colour of Belinda’s house?,White,,,,
+Integer,9,Custard wanted a?,Cage,,,,
+Integer,10,Poem tone?,Humorous,,,,
+Integer,11,Weapon of pirate?,Pistol,,,,
+Integer,12,Beard colour of pirate?,Black,,,,
+Integer,13,Who fought pirate?,Custard,,,,
+Integer,14,Who killed pirate?,Custard,,,,
+Integer,15,Custard breathed?,Fire,,,,
+Integer,16,Theme of poem?,True courage,,,,
+Integer,17,Others laughed at?,Custard,,,,
+Integer,18,Custard was considered?,Cowardly,,,,
+Integer,19,True hero?,Custard,,,,
+Integer,20,Poem teaches?,Don’t judge by looks,,,,
+Integer,21,Poem style?,Humorous,,,,
+Integer,22,Custard’s demand?,Cage,,,,
+Integer,23,Ink and Blink reaction?,Ran away,,,,
+Integer,24,Mustard’s role?,Boaster,,,,
+Integer,25,Ending type?,Moral,,,,
+Integer,26,Custard’s nature?,Gentle,,,,
+Integer,27,Dragon proved?,Bravery,,,,
+Integer,28,Pirate fate?,Killed,,,,
+Integer,29,Poem message?,Actions matter,,,,
+Integer,30,Poem mood?,Light-hearted,,,,
+Integer,31,Custard’s power?,Fire,,,,
+Integer,32,Others praised?,Themselves,,,,
+Integer,33,Poem setting?,House,,,,
+Integer,34,Custard’s fear?,Mockery,,,,
+Integer,35,Poem appeal?,Children,,,,
+Integer,36,Custard’s courage was?,Hidden,,,,
+Integer,37,Poem length?,Medium,,,,
+Integer,38,Poem type?,Ballad-like,,,,
+Integer,39,Main conflict?,Pirate attack,,,,
+Integer,40,Resolution?,Pirate defeated,,,,
+Integer,41,Poem teaches bravery is?,Situational,,,,
+Integer,42,Custard’s appearance?,Scary,,,,
+Integer,43,Poem has humour?,Yes,,,,
+Integer,44,Poem message tone?,Positive,,,,
+Integer,45,Custard’s bravery shown?,In action,,,,
+Integer,46,Others reaction unfair?,Yes,,,,
+Integer,47,Custard’s real nature?,Brave,,,,
+Integer,48,Poem lesson?,Inner strength,,,,
+Integer,49,Poem audience?,Students,,,,
+Integer,50,Central idea?,True courage,,,,
+
+Descriptive,1,What is the central idea of The Tale of Custard the Dragon?,,,,,True courage is proved by actions, not words
+Descriptive,2,Describe Custard’s character.,,,,,Gentle, timid-looking but truly brave
+Descriptive,3,Why was Custard called a coward?,,,,,He asked for a cage and feared danger
+Descriptive,4,How did Custard show his bravery?,,,,,By killing the pirate
+Descriptive,5,Describe the role of the pirate.,,,,,He creates conflict to test bravery
+Descriptive,6,How did other animals behave during danger?,,,,,They ran away
+Descriptive,7,Why is the poem humorous?,,,,,Because of exaggerated contrasts
+Descriptive,8,What lesson does the poem teach?,,,,,Do not judge by appearance
+Descriptive,9,Why did Custard want a cage?,,,,,For safety
+Descriptive,10,Explain how Custard is a real hero.,,,,,He acted bravely when needed
+Descriptive,11,Describe Belinda’s role.,,,,,Owner and caretaker
+Descriptive,12,What does the dragon symbolize?,,,,,Hidden courage
+Descriptive,13,How does the poem mock false bravery?,,,,,Boasters run away
+Descriptive,14,Why did others laugh at Custard?,,,,,They misunderstood him
+Descriptive,15,Explain the ending of the poem.,,,,,Humorous and ironic
+Descriptive,16,How does humour strengthen the message?,,,,,Makes lesson memorable
+Descriptive,17,Describe the setting of the poem.,,,,,A little white house
+Descriptive,18,Why is the poem appealing to children?,,,,,Funny characters
+Descriptive,19,What makes Custard different from others?,,,,,He proves courage in action
+Descriptive,20,Explain the irony in the poem.,,,,,Coward becomes hero
+Descriptive,21,Why do Ink and Blink escape?,,,,,Fear
+Descriptive,22,What does Mustard represent?,,,,,False courage
+Descriptive,23,How is bravery defined in the poem?,,,,,Facing danger
+Descriptive,24,Explain Custard’s fire.,,,,,Symbol of strength
+Descriptive,25,Why did others take credit?,,,,,Human tendency
+Descriptive,26,What is the moral of the poem?,,,,,Real courage is quiet
+Descriptive,27,How does the poet use exaggeration?,,,,,For comic effect
+Descriptive,28,Describe Custard’s appearance.,,,,,Spikes and sharp teeth
+Descriptive,29,How is fear portrayed?,,,,,Through others’ escape
+Descriptive,30,Why is Custard underestimated?,,,,,Due to his fearfulness
+Descriptive,31,Explain the narrative style.,,,,,Story-like poem
+Descriptive,32,Why is the poem memorable?,,,,,Strong moral
+Descriptive,33,What human traits do animals show?,,,,,Pride and fear
+Descriptive,34,How does the poem convey irony?,,,,,Unexpected hero
+Descriptive,35,Why does Custard not boast?,,,,,True bravery
+Descriptive,36,What is the role of humour?,,,,,Softens lesson
+Descriptive,37,How does the poem reflect real life?,,,,,Appearances deceive
+Descriptive,38,Explain the title.,,,,,Focus on dragon’s story
+Descriptive,39,How is courage tested?,,,,,Through danger
+Descriptive,40,What is the significance of Custard’s name?,,,,,Softness hides strength
+Descriptive,41,How does the poem criticize boasting?,,,,,Boasters fail
+Descriptive,42,Explain the dragon’s transformation.,,,,,Fearful to fearless
+Descriptive,43,Why is Custard a silent hero?,,,,,No pride
+Descriptive,44,What message does the poem give to children?,,,,,Be brave when needed
+Descriptive,45,How does the poem use fantasy?,,,,,To teach moral
+Descriptive,46,Why do others ignore Custard’s bravery?,,,,,Self-praise
+Descriptive,47,Explain the contrast among characters.,,,,,Boasters vs doer
+Descriptive,48,How does the poem end humorously?,,,,,Everyone claims bravery
+Descriptive,49,What makes Custard admirable?,,,,,Inner courage
+Descriptive,50,Summarize The Tale of Custard the Dragon.,,,,,A timid dragon proves true bravery by defeating a pirate

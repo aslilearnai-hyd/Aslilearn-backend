@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who wrote the poem "Wind"?,Robert Frost,Subramania Bharati,Walt Whitman,Sarojini Naidu,Subramania Bharati
+MCQ,2,Who translated "Wind" into English?,Ruskin Bond,A K Ramanujan,Vikram Seth,R K Narayan,A K Ramanujan
+MCQ,3,What is the poem "Wind" about?,Nature only,Destruction,Power of wind and human strength,Weather,Power of wind and human strength
+MCQ,4,What does the wind break?,Trees and houses,Shutters and doors,Mountains,Rivers,Shutters and doors
+MCQ,5,The wind crumbles?,Strong houses,Weak houses,Mountains,Stones,Weak houses
+MCQ,6,What does wind scatter?,Seeds and dust,Clouds,Water,Fire,Seeds and dust
+MCQ,7,The wind laughs at?,Strong people,Weak people,Rivers,Mountains,Weak people
+MCQ,8,What does the poet ask us to do?,Fear wind,Run away,Make friends with wind,Stop wind,Make friends with wind
+MCQ,9,Wind is personified as?,Friend,Enemy,Teacher,God,Enemy
+MCQ,10,What does wind symbolize?,Nature only,Problems and challenges,Joy,Love,Problems and challenges
+MCQ,11,Weak fires are?,Encouraged,Blown out,Strengthened,Ignored,Blown out
+MCQ,12,Strong fires are?,Extinguished,Fanned and made stronger,Ignored,Destroyed,Fanned and made stronger
+MCQ,13,The wind destroys what kind of things?,Strong,Well-built,Weak and fragile,Heavy,Weak and fragile
+MCQ,14,What does the poet advise to face wind?,Hide,Be weak,Be strong,Complain,Be strong
+MCQ,15,The poem gives a message of?,Fear,Weakness,Strength and resilience,Laziness,Strength and resilience
+MCQ,16,The wind breaks the?,Books,Windows,Shutters,Bridges,Shutters
+MCQ,17,The wind represents?,Friendship,Life problems,Nature beauty,Peace,Life problems
+MCQ,18,What happens to weaklings?,They survive,They grow stronger,They are destroyed,They win,They are destroyed
+MCQ,19,Who does wind befriend?,Weak people,Strong people,Children,Animals,Strong people
+MCQ,20,What does wind do to books?,Reads them,Tears pages,Burns them,Ignores them,Tears pages
+MCQ,21,The tone of the poem is?,Joyful,Humorous,Serious and motivational,Sad,Serious and motivational
+MCQ,22,The poem encourages?,Fear of nature,Strength and courage,Running away,Dependence,Strength and courage
+MCQ,23,What should we build strong?,Houses only,Bodies only,Hearts and minds,Clothes,Hearts and minds
+MCQ,24,The wind’s actions are?,Gentle,Kind,Violent and destructive,Peaceful,Violent and destructive
+MCQ,25,The wind god is?,Praised,Feared,Requested to be friend,Ignored,Requested to be friend
+MCQ,26,What does the poet finally do?,Complains,Requests friendship,Fears wind,Stops writing,Requests friendship
+MCQ,27,What literary device is used for wind?,Simile,Metaphor,Personification,Alliteration,Personification
+MCQ,28,The poem suggests life is?,Easy,Comfortable,Full of challenges,Meaningless,Full of challenges
+MCQ,29,The weak structures represent?,Strong people,Weak people,Rivers,Hills,Weak people
+MCQ,30,Strong people are compared to?,Weak fires,Strong fires,Trees,Mountains,Strong fires
+MCQ,31,The wind is called cruel because?,It helps everyone,It destroys weak things,It is noisy,It is silent,It destroys weak things
+MCQ,32,What does wind do to weaklings?,Helps them,Ignores them,Crushes them,Protects them,Crushes them
+MCQ,33,The poet’s advice is to?,Pray,Run,Build strength,Hide,Build strength
+MCQ,34,The wind becomes friend when we are?,Weak,Strong,Afraid,Silent,Strong
+MCQ,35,The poem is a?,Narrative poem,Lyric poem,Didactic poem,Sonnet,Didactic poem
+MCQ,36,The central idea is?,Nature beauty,Wind movement,Overcoming challenges,Travel,Overcoming challenges
+MCQ,37,Wind mocks?,Strong people,Weak people,Fire,Poet,Weak people
+MCQ,38,Wind breaks which of these?,Strong houses,Weak doors,Mountains,Rivers,Weak doors
+MCQ,39,Wind is addressed as?,Brother,Father,God,Enemy,God
+MCQ,40,The poet wants us to?,Fight wind,Strengthen ourselves,Destroy wind,Fear wind,Strengthen ourselves
+MCQ,41,The wind is compared to?,Teacher,Judge,Enemy,Friend,Enemy
+MCQ,42,Strong hearts are?,Broken,Destroyed,Safe,Ignored,Safe
+MCQ,43,The poem teaches us to?,Be weak,Be lazy,Be courageous,Be fearful,Be courageous
+MCQ,44,The wind’s laughter means?,Happiness,Mockery,Friendship,Kindness,Mockery
+MCQ,45,The weak houses symbolize?,Poor people,Weak character,Old buildings,Nature,Weak character
+MCQ,46,The poem is motivational because?,It scares us,It encourages strength,It shows fear,It shows loss,It encourages strength
+MCQ,47,Wind’s friendship comes when?,We fear it,We are strong,We cry,We hide,We are strong
+MCQ,48,The poet suggests to face adversity by?,Complaining,Running away,Being strong,Ignoring,Being strong
+MCQ,49,The wind is powerful because?,It destroys,It tests strength,It moves clouds,It rains,It tests strength
+MCQ,50,The main message of the poem?,Fear nature,Strengthen yourself,Accept weakness,Run away,Strengthen yourself
+
+Integer,1,Poet?,Subramania Bharati,,,,
+Integer,2,Translator?,A K Ramanujan,,,,
+Integer,3,Theme?,Strength,,,,
+Integer,4,Wind symbol?,Problems,,,,
+Integer,5,Weak houses?,Destroyed,,,,
+Integer,6,Strong fires?,Grow stronger,,,,
+Integer,7,Weak fires?,Blown out,,,,
+Integer,8,Wind mocks?,Weaklings,,,,
+Integer,9,Poet advice?,Be strong,,,,
+Integer,10,Wind device?,Personification,,,,
+Integer,11,Poem type?,Didactic,,,,
+Integer,12,Tone?,Motivational,,,,
+Integer,13,Wind breaks?,Shutters,,,,
+Integer,14,Wind scatters?,Seeds,,,,
+Integer,15,Wind tears?,Book pages,,,,
+Integer,16,Strong hearts?,Safe,,,,
+Integer,17,Weak symbol?,Fragility,,,,
+Integer,18,Life lesson?,Resilience,,,,
+Integer,19,Wind as?,Enemy,,,,
+Integer,20,Final request?,Friendship,,,,
+Integer,21,Poem message?,Courage,,,,
+Integer,22,Weak people?,Fail,,,,
+Integer,23,Strong people?,Survive,,,,
+Integer,24,Wind laughs?,Yes,,,,
+Integer,25,Advice focus?,Self strength,,,,
+Integer,26,Problem faced?,Wind,,,,
+Integer,27,Human response?,Build strength,,,,
+Integer,28,Wind power?,Destructive,,,,
+Integer,29,Poet belief?,Strength matters,,,,
+Integer,30,Wind effect?,Testing,,,,
+Integer,31,Weak doors?,Broken,,,,
+Integer,32,Strong build?,Mind,,,,
+Integer,33,Poem mood?,Serious,,,,
+Integer,34,Life comparison?,Wind,,,,
+Integer,35,Weak fires?,Extinguished,,,,
+Integer,36,Wind friendship?,Conditional,,,,
+Integer,37,Strength needed?,Inner,,,,
+Integer,38,Poem focus?,Challenges,,,,
+Integer,39,Wind role?,Tester,,,,
+Integer,40,Message?,Self-reliance,,,,
+Integer,41,Poet request?,Be friend,,,,
+Integer,42,Weak crumble?,Yes,,,,
+Integer,43,Strong resist?,Yes,,,,
+Integer,44,Adversity symbol?,Wind,,,,
+Integer,45,Poem title?,Wind,,,,
+Integer,46,Language?,Simple,,,,
+Integer,47,Theme idea?,Survival,,,,
+Integer,48,Strength type?,Mental,,,,
+Integer,49,Wind tone?,Harsh,,,,
+Integer,50,Poem ending?,Advice,,,,
+
+Descriptive,1,Who wrote the poem "Wind"?,,,,,The poem was written by Subramania Bharati
+Descriptive,2,What is the central theme of the poem?,,,,,The poem focuses on strength and resilience
+Descriptive,3,What does the wind symbolize?,,,,,The wind symbolizes life’s difficulties and challenges
+Descriptive,4,Why does the wind destroy weak things?,,,,,Because weak things cannot resist challenges
+Descriptive,5,How does the poet personify the wind?,,,,,As a cruel and mocking force
+Descriptive,6,What happens to weak houses and doors?,,,,,They are broken by the wind
+Descriptive,7,What happens to strong fires?,,,,,They grow stronger
+Descriptive,8,What advice does the poet give?,,,,,To become strong in body and mind
+Descriptive,9,Why does the wind laugh?,,,,,It mocks weak people
+Descriptive,10,How can we make the wind our friend?,,,,,By becoming strong
+Descriptive,11,Explain the title of the poem.,,,,,It represents challenges in life
+Descriptive,12,What message does the poem convey?,,,,,Strength helps overcome difficulties
+Descriptive,13,How does wind treat weaklings?,,,,,It crushes and destroys them
+Descriptive,14,How does wind treat strong people?,,,,,It becomes their friend
+Descriptive,15,Why is the poem motivational?,,,,,It encourages courage and strength
+Descriptive,16,Explain the metaphor of fire.,,,,,Fire represents inner strength
+Descriptive,17,What do weak houses symbolize?,,,,,Weak character and lack of resilience
+Descriptive,18,What do strong houses symbolize?,,,,,Strong determination
+Descriptive,19,Why should we build strong hearts?,,,,,To face life’s problems
+Descriptive,20,How does the poet view adversity?,,,,,As a test of strength
+Descriptive,21,Explain the line “Wind, come softly.”,,,,,It shows a request to reduce hardship
+Descriptive,22,What change occurs in the poet’s attitude?,,,,,He moves from complaint to advice
+Descriptive,23,Why is wind called a destroyer?,,,,,It breaks weak things
+Descriptive,24,How is nature portrayed?,,,,,As powerful and challenging
+Descriptive,25,What lesson should students learn?,,,,,To be strong and self-reliant
+Descriptive,26,How does the poem reflect real life?,,,,,Life challenges test our strength
+Descriptive,27,Why is strength important?,,,,,It helps us survive hardships
+Descriptive,28,Explain the phrase “build strong houses.”,,,,,It means building strong character
+Descriptive,29,What is the tone of the poem?,,,,,Serious and motivational
+Descriptive,30,How does the poem end?,,,,,With advice to become strong
+Descriptive,31,What literary device dominates the poem?,,,,,Personification
+Descriptive,32,How does wind affect books?,,,,,It tears their pages
+Descriptive,33,Why does the poet address wind as god?,,,,,To show its power
+Descriptive,34,What role does courage play?,,,,,It helps overcome problems
+Descriptive,35,How is weakness portrayed?,,,,,As helpless and fragile
+Descriptive,36,How is strength portrayed?,,,,,As survival and success
+Descriptive,37,Why does the poet criticize weakness?,,,,,Because it leads to failure
+Descriptive,38,How can humans overcome wind?,,,,,By inner strength
+Descriptive,39,What does the poem say about survival?,,,,,Only the strong survive
+Descriptive,40,Explain the human-wind relationship.,,,,,It depends on human strength
+Descriptive,41,Why is the wind unfriendly to weak people?,,,,,They cannot resist it
+Descriptive,42,How does the poem inspire confidence?,,,,,By stressing self-strength
+Descriptive,43,Explain the moral of the poem.,,,,,Be strong to face challenges
+Descriptive,44,How does the poet use nature to teach?,,,,,By comparing wind to problems
+Descriptive,45,What is the significance of fire imagery?,,,,,It shows inner power
+Descriptive,46,Why is the poem relevant today?,,,,,Life still has challenges
+Descriptive,47,How does the poem promote self-reliance?,,,,,It urges inner strength
+Descriptive,48,Explain the ending message.,,,,,Strong people make challenges friends
+Descriptive,49,What makes the poem powerful?,,,,,Its universal message
+Descriptive,50,Summarize the poem "Wind".,,,,,The poem shows how wind, symbolizing life’s challenges, destroys weak things but strengthens the strong, teaching us to build inner strength and resilience

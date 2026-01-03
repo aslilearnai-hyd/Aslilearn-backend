@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The living components of an ecosystem are called,Abiotic factors,Biotic factors,Producers,Consumers,Biotic factors
+MCQ,2,Plants are called producers because they,Consume food,Make their own food,Depend on animals,Decompose waste,Make their own food
+MCQ,3,Which organisms are primary consumers?,Plants,Herbivores,Carnivores,Decomposers,Herbivores
+MCQ,4,Which organisms break down dead plants and animals?,Producers,Herbivores,Carnivores,Decomposers,Decomposers
+MCQ,5,Which is an abiotic component?,Plants,Animals,Fungi,Water,Water
+MCQ,6,Food chain shows,Energy flow,Water cycle,Carbon cycle,Oxygen cycle,Energy flow
+MCQ,7,Which trophic level has maximum energy?,Producers,Primary consumers,Secondary consumers,Tertiary consumers,Producers
+MCQ,8,Energy transfer from one trophic level to next is about,1%,5%,10%,50%,10%
+MCQ,9,Which is a primary consumer?,Grass,Deer,Lion,Bacteria,Deer
+MCQ,10,Which is a secondary consumer?,Grass,Deer,Lion,Algae,Lion
+MCQ,11,Which is the ultimate source of energy?,Moon,Earth,Sun,Water,Sun
+MCQ,12,Which gas is returned to atmosphere by respiration?,Oxygen,Nitrogen,Carbon dioxide,Hydrogen,Carbon dioxide
+MCQ,13,Which cycle maintains balance of oxygen and carbon dioxide?,Nitrogen cycle,Water cycle,Carbon cycle,Oxygen cycle,Carbon cycle
+MCQ,14,Which organisms recycle nutrients?,Producers,Consumers,Decomposers,Carnivores,Decomposers
+MCQ,15,Which pyramid shows energy at different trophic levels?,Pyramid of numbers,Pyramid of biomass,Pyramid of energy,Pyramid of food,Pyramid of energy
+MCQ,16,Which pyramid is always upright?,Numbers,Biomass,Energy,Food,Energy
+MCQ,17,Which substance is biodegradable?,Plastic,Glass,Paper,Polythene,Paper
+MCQ,18,Which substance is non-biodegradable?,Paper,Vegetable waste,Plastic,Cotton,Plastic
+MCQ,19,Accumulation of harmful chemicals is called,Biodegradation,Biomagnification,Biogeochemical cycle,Decomposition,Biomagnification
+MCQ,20,DDT concentration increases at higher trophic levels due to,Respiration,Decomposition,Biomagnification,Photosynthesis,Biomagnification
+MCQ,21,Which practice reduces environmental pollution?,Burning plastic,Using polythene,Recycling waste,Deforestation,Recycling waste
+MCQ,22,Which gas causes greenhouse effect?,Oxygen,Nitrogen,Carbon dioxide,Hydrogen,Carbon dioxide
+MCQ,23,Ozone layer protects us from,Infrared rays,Visible light,Ultraviolet rays,X-rays,Ultraviolet rays
+MCQ,24,Which human activity causes ozone depletion?,Plantation,Afforestation,Use of CFCs,Recycling,Use of CFCs
+MCQ,25,Which is an example of food chain?,Grass → Deer → Lion,Lion → Deer → Grass,Deer → Grass → Lion,Grass → Lion → Deer,Grass → Deer → Lion
+MCQ,26,Which level has least energy?,Producers,Primary consumers,Secondary consumers,Tertiary consumers,Tertiary consumers
+MCQ,27,Which waste can be composted?,Plastic,Glass,Vegetable peels,Metal cans,Vegetable peels
+MCQ,28,Which cycle involves movement of nitrogen?,Water cycle,Carbon cycle,Nitrogen cycle,Oxygen cycle,Nitrogen cycle
+MCQ,29,Which organisms convert complex organic matter into simple substances?,Producers,Consumers,Decomposers,Herbivores,Decomposers
+MCQ,30,Which is a man-made ecosystem?,Forest,Pond,Lake,Aquarium,Aquarium
+MCQ,31,Which ecosystem is largest?,Forest,Grassland,Desert,Oceans,Oceans
+MCQ,32,Which trophic level includes carnivores?,Producers,Primary consumers,Secondary consumers,Decomposers,Secondary consumers
+MCQ,33,Which is not a biodegradable waste?,Paper,Leaves,Plastic,Fruits,Plastic
+MCQ,34,Which practice conserves environment?,Deforestation,Overgrazing,Recycling,Pollution,Recycling
+MCQ,35,Which pyramid can be inverted?,Energy,Biomass,Food,All,None,Biomass
+MCQ,36,Which cycle helps in protein synthesis?,Carbon cycle,Water cycle,Nitrogen cycle,Oxygen cycle,Nitrogen cycle
+MCQ,37,Which component is non-living?,Plants,Animals,Microbes,Air,Air
+MCQ,38,Which ecosystem includes only biotic components?,None,Forest,Grassland,Aquarium,None
+MCQ,39,Which waste causes soil pollution?,Organic waste,Biodegradable waste,Plastic waste,Leaves,Plastic waste
+MCQ,40,Which gas is used by plants in photosynthesis?,Oxygen,Nitrogen,Carbon dioxide,Hydrogen,Carbon dioxide
+MCQ,41,Which pyramid shows number of organisms?,Energy,Biomass,Numbers,Food,Numbers
+MCQ,42,Which consumer eats both plants and animals?,Herbivore,Carnivore,Omnivore,Decomposer,Omnivore
+MCQ,43,Which organisms form first trophic level?,Producers,Consumers,Decomposers,Herbivores,Producers
+MCQ,44,Which is an example of decomposer?,Lion,Deer,Fungi,Grass,Fungi
+MCQ,45,Which process releases oxygen?,Respiration,Photosynthesis,Decomposition,Combustion,Photosynthesis
+MCQ,46,Which substance causes water pollution?,Detergents,Oxygen,Carbon dioxide,Nitrogen,Detergents
+MCQ,47,Which human activity increases carbon dioxide?,Plantation,Deforestation,Recycling,Afforestation,Deforestation
+MCQ,48,Which waste management method is best?,Landfill,Burning,Recycling,Dumping,Recycling
+MCQ,49,Which level receives energy directly from sun?,Producers,Consumers,Decomposers,Carnivores,Producers
+MCQ,50,Environment includes,Only living beings,Only non-living things,Both living and non-living,Only plants,Both living and non-living
+
+Integer,1,Living components?,Biotic,,,,
+Integer,2,Non-living components?,Abiotic,,,,
+Integer,3,Food makers?,Producers,,,,
+Integer,4,Plant eaters?,Herbivores,,,,
+Integer,5,Meat eaters?,Carnivores,,,,
+Integer,6,Nutrient recyclers?,Decomposers,,,,
+Integer,7,Energy source?,Sun,,,,
+Integer,8,Energy transfer percent?,10,,,,
+Integer,9,First trophic level?,Producers,,,,
+Integer,10,Last trophic level?,Decomposers,,,,
+Integer,11,Greenhouse gas?,CO2,,,,
+Integer,12,Ozone protects from?,UV rays,,,,
+Integer,13,Man-made ecosystem?,Aquarium,,,,
+Integer,14,Largest ecosystem?,Ocean,,,,
+Integer,15,Plant process?,Photosynthesis,,,,
+Integer,16,Animal process?,Respiration,,,,
+Integer,17,Paper is?,Biodegradable,,,,
+Integer,18,Plastic is?,Non-biodegradable,,,,
+Integer,19,Harmful chemical increase?,Biomagnification,,,,
+Integer,20,Nitrogen cycle helps in?,Protein synthesis,,,,
+Integer,21,Dead matter breakdown?,Decomposition,,,,
+Integer,22,Energy pyramid shape?,Upright,,,,
+Integer,23,Waste recycling benefit?,Less pollution,,,,
+Integer,24,Food chain length?,Short,,,,
+Integer,25,Environment study?,Ecology,,,,
+Integer,26,CO2 cycle?,Carbon cycle,,,,
+Integer,27,Water cycle component?,Evaporation,,,,
+Integer,28,Top consumer?,Tertiary,,,,
+Integer,29,Soil pollution waste?,Plastic,,,,
+Integer,30,Air pollution gas?,CO2,,,,
+Integer,31,Organisms count pyramid?,Numbers,,,,
+Integer,32,Both eater?,Omnivore,,,,
+Integer,33,Dead plant eater?,Decomposer,,,,
+Integer,34,Human caused warming?,Global warming,,,,
+Integer,35,Ozone depleting gas?,CFCs,,,,
+Integer,36,Waste reuse method?,Recycling,,,,
+Integer,37,Energy loss reason?,Heat,,,,
+Integer,38,Forest removal?,Deforestation,,,,
+Integer,39,Green plants role?,Producers,,,,
+Integer,40,Animal waste cycle?,Nitrogen,,,,
+Integer,41,Food web meaning?,Interlinked chains,,,,
+Integer,42,Environment protection?,Conservation,,,,
+Integer,43,Ecosystem example?,Pond,,,,
+Integer,44,Energy stored in plants?,Chemical,,,,
+Integer,45,Living world balance?,Ecosystem,,,,
+Integer,46,Non-living example?,Air,,,,
+Integer,47,Waste dumping site?,Landfill,,,,
+Integer,48,Sun energy trapped?,Greenhouse effect,,,,
+Integer,49,Chapter name?,Our Environment,,,,
+Integer,50,Study of environment?,Ecology,,,,
+
+Descriptive,1,What is environment?,,,,,Environment includes living and non-living surroundings
+Descriptive,2,Define ecosystem.,,,,,Ecosystem is interaction of biotic and abiotic components
+Descriptive,3,Explain biotic components.,,,,,Living organisms like plants and animals
+Descriptive,4,Explain abiotic components.,,,,,Non-living factors like air and water
+Descriptive,5,What are producers?,,,,,Organisms that make food
+Descriptive,6,What are consumers?,,,,,Organisms that depend on others for food
+Descriptive,7,What are decomposers?,,,,,Organisms that break down dead matter
+Descriptive,8,Explain food chain.,,,,,Sequence of energy transfer
+Descriptive,9,Explain food web.,,,,,Interconnected food chains
+Descriptive,10,Explain trophic levels.,,,,,Levels in food chain
+Descriptive,11,Explain energy flow.,,,,,Unidirectional flow of energy
+Descriptive,12,Why energy decreases at higher levels?,,,,,Due to heat loss
+Descriptive,13,Explain 10% law.,,,,,Only 10% energy transferred
+Descriptive,14,Explain pyramid of energy.,,,,,Shows energy at each level
+Descriptive,15,Explain pyramid of numbers.,,,,,Shows organism count
+Descriptive,16,Explain pyramid of biomass.,,,,,Shows biomass at levels
+Descriptive,17,What is biodegradable waste?,,,,,Waste decomposed naturally
+Descriptive,18,What is non-biodegradable waste?,,,,,Waste not decomposed
+Descriptive,19,Explain biomagnification.,,,,,Increase of toxins in food chain
+Descriptive,20,Explain ozone layer.,,,,,Protects from UV rays
+Descriptive,21,Explain ozone depletion.,,,,,Reduction due to CFCs
+Descriptive,22,Explain carbon cycle.,,,,,Circulation of carbon
+Descriptive,23,Explain nitrogen cycle.,,,,,Movement of nitrogen in nature
+Descriptive,24,Explain water cycle.,,,,,Movement of water
+Descriptive,25,Explain greenhouse effect.,,,,,Trapping of heat
+Descriptive,26,Explain global warming.,,,,,Rise in earth temperature
+Descriptive,27,Explain role of decomposers.,,,,,Recycle nutrients
+Descriptive,28,Explain waste management.,,,,,Proper waste disposal
+Descriptive,29,Explain recycling.,,,,,Reuse of waste
+Descriptive,30,Explain environmental pollution.,,,,,Contamination of environment
+Descriptive,31,Explain air pollution.,,,,,Harmful gases in air
+Descriptive,32,Explain water pollution.,,,,,Contaminated water bodies
+Descriptive,33,Explain soil pollution.,,,,,Soil contamination
+Descriptive,34,Explain deforestation.,,,,,Cutting of forests
+Descriptive,35,Explain conservation.,,,,,Protection of environment
+Descriptive,36,Explain importance of forests.,,,,,Maintain ecological balance
+Descriptive,37,Explain man-made ecosystem.,,,,,Ecosystem created by humans
+Descriptive,38,Explain natural ecosystem.,,,,,Ecosystem formed naturally
+Descriptive,39,Explain role of humans in environment.,,,,,Can protect or harm
+Descriptive,40,Explain sustainable development.,,,,,Development without harm
+Descriptive,41,Explain importance of biodiversity.,,,,,Variety of life forms
+Descriptive,42,Explain environmental balance.,,,,,Stable ecosystem
+Descriptive,43,Explain renewable resources.,,,,,Resources replenished naturally
+Descriptive,44,Explain non-renewable resources.,,,,,Limited resources
+Descriptive,45,Explain ecosystem services.,,,,,Benefits from ecosystem
+Descriptive,46,Explain energy pyramid importance.,,,,,Shows energy loss
+Descriptive,47,Explain waste segregation.,,,,,Separating waste
+Descriptive,48,Explain environmental awareness.,,,,,Knowledge for protection
+Descriptive,49,Explain role of students in conservation.,,,,,Awareness and action
+Descriptive,50,Summarize Our Environment.,,,,,Chapter explains ecosystem and conservation

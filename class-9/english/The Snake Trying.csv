@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who wrote the poem "The Snake Trying"?,Ted Hughes,W W E Ross,Robert Frost,John Keats,W W E Ross
+MCQ,2,The poem describes?,A dangerous snake,A harmless snake escaping,A fight,A forest,A harmless snake escaping
+MCQ,3,Where is the snake trying to go?,Forest,Hole in the wall,Water,Sky,Hole in the wall
+MCQ,4,Who tries to kill the snake?,Farmer,Poet,Man with a stick,Hunter,Man with a stick
+MCQ,5,The snake is?,Aggressive,Poisonous,Harmless,Fierce,Harmless
+MCQ,6,What does the snake do?,Attacks humans,Tries to escape,Sleeps,Bites animals,Tries to escape
+MCQ,7,The snake is chased with?,Stone,Stick,Fire,Knife,Stick
+MCQ,8,The snake’s body is?,Straight,Curved and wriggling,Fat,Stiff,Curved and wriggling
+MCQ,9,The poem shows the snake as?,Cruel,Innocent,Dangerous,Evil,Innocent
+MCQ,10,What is the tone of the poem?,Angry,Sympathetic,Humorous,Joyful,Sympathetic
+MCQ,11,The snake is compared to?,Rope,Water,Lightning,Stick,Water
+MCQ,12,What does the snake want?,Food,To bite,To escape,To rest,To escape
+MCQ,13,The snake moves?,Slowly,Smoothly,Violently,Heavily,Smoothly
+MCQ,14,The man attacks the snake because of?,Fear,Fun,Hatred,Order,Fear
+MCQ,15,The snake represents?,Evil,Danger,Innocent nature,Violence,Innocent nature
+MCQ,16,The poet’s attitude is?,Fearful,Neutral,Compassionate,Angry,Compassionate
+MCQ,17,The poem suggests snakes are?,Always dangerous,Always friendly,Often misunderstood,Monsters,Often misunderstood
+MCQ,18,What happens to the snake at the end?,Dies,Escapes,Bites man,Attacks,Escapes
+MCQ,19,The snake glides like?,Water,Fire,Wind,Stone,Water
+MCQ,20,The poem is a?,Narrative poem,Lyric poem,Didactic poem,Sonnet,Narrative poem
+MCQ,21,What kind of snake is described?,Cobra,Python,Harmless garden snake,Viper,Harmless garden snake
+MCQ,22,The man’s reaction shows?,Kindness,Ignorance,Hatred,Joy,Ignorance
+MCQ,23,The snake is frightened by?,Man’s voice,Stick,Noise,Light,Stick
+MCQ,24,What does the poet want us to feel?,Fear,Hatred,Pity,Anger,Pity
+MCQ,25,The snake’s movement is?,Rough,Graceful,Clumsy,Noisy,Graceful
+MCQ,26,The poem highlights conflict between?,Man and animal,Snake and snake,Man and man,Nature and city,Man and animal
+MCQ,27,The snake’s attempt is to?,Attack,Bite,Hide,Escape,Escape
+MCQ,28,The poem suggests humans should?,Kill snakes,Ignore snakes,Be compassionate,Be violent,Be compassionate
+MCQ,29,The snake is injured?,Yes,No,Severely,Unknown,No
+MCQ,30,The poem promotes?,Fear of snakes,Violence,Coexistence,Hatred,Coexistence
+MCQ,31,The snake’s body shape is?,Rigid,Flexible,Broken,Heavy,Flexible
+MCQ,32,The man uses?,Knife,Stick,Gun,Stone,Stick
+MCQ,33,The snake does not show?,Fear,Aggression,Movement,Life,Aggression
+MCQ,34,The poet describes the snake as?,Enemy,Victim,Monster,Killer,Victim
+MCQ,35,The poem belongs to?,Romantic poetry,Modern poetry,Nonsense poetry,War poetry,Modern poetry
+MCQ,36,The snake is seen as?,Threat,Victim of fear,Fearful creature,Pet,Victim of fear
+MCQ,37,The snake’s escape shows?,Weakness,Strength,Instinct,Cunning,Instinct
+MCQ,38,The poem teaches?,Kill animals,Protect nature,Ignore animals,Hunt snakes,Protect nature
+MCQ,39,The snake’s movement is compared to?,River,Stream,Water flowing,Clouds,Water flowing
+MCQ,40,The poem creates feeling of?,Horror,Sympathy,Joy,Humor,Sympathy
+MCQ,41,The snake is most vulnerable when?,Sleeping,Moving,Escaping,Biting,Escaping
+MCQ,42,The man attacks because?,Snake attacked him,Snake is poisonous,Fear and ignorance,Fun,Fear and ignorance
+MCQ,43,The poet shows nature as?,Cruel,Innocent,Dangerous,Violent,Innocent
+MCQ,44,The poem ends on a?,Violent note,Happy note,Hopeful note,Neutral note,Hopeful note
+MCQ,45,The snake’s intention is?,Harm humans,Defend itself,Survive,Attack,Survive
+MCQ,46,The poem uses imagery of?,Fire,Water,Stone,Air,Water
+MCQ,47,The snake’s struggle is against?,Nature,Humans,Animals,Time,Humans
+MCQ,48,The poet criticizes?,Snake,Man’s cruelty,Nature,Animals,Man’s cruelty
+MCQ,49,The central theme is?,Snake hunting,Human cruelty vs nature,Adventure,Fear,Human cruelty vs nature
+MCQ,50,The poem urges humans to?,Kill snakes,Respect all creatures,Fear animals,Avoid nature,Respect all creatures
+
+Integer,1,Poet?,W W E Ross,,,,
+Integer,2,Poem title?,The Snake Trying,,,,
+Integer,3,Theme?,Compassion,,,,
+Integer,4,Snake type?,Harmless,,,,
+Integer,5,Snake action?,Escaping,,,,
+Integer,6,Human weapon?,Stick,,,,
+Integer,7,Snake movement?,Gliding,,,,
+Integer,8,Snake symbol?,Innocence,,,,
+Integer,9,Poem tone?,Sympathetic,,,,
+Integer,10,Snake destination?,Hole,,,,
+Integer,11,Man reaction?,Fear,,,,
+Integer,12,Snake injured?,No,,,,
+Integer,13,Poem type?,Narrative,,,,
+Integer,14,Conflict?,Man vs nature,,,,
+Integer,15,Poem message?,Coexistence,,,,
+Integer,16,Snake body?,Flexible,,,,
+Integer,17,Poet attitude?,Compassionate,,,,
+Integer,18,Ending?,Escape,,,,
+Integer,19,Poem style?,Free verse,,,,
+Integer,20,Snake movement like?,Water,,,,
+Integer,21,Poem focus?,Snake survival,,,,
+Integer,22,Snake threat?,None,,,,
+Integer,23,Human flaw?,Ignorance,,,,
+Integer,24,Poem mood?,Serious,,,,
+Integer,25,Snake fear?,Stick,,,,
+Integer,26,Poem lesson?,Respect animals,,,,
+Integer,27,Snake life?,In danger,,,,
+Integer,28,Poem era?,Modern,,,,
+Integer,29,Snake aim?,Safety,,,,
+Integer,30,Human action?,Violence,,,,
+Integer,31,Snake behavior?,Non-violent,,,,
+Integer,32,Poem imagery?,Nature,,,,
+Integer,33,Snake struggle?,Survival,,,,
+Integer,34,Poem relevance?,High,,,,
+Integer,35,Poem message type?,Moral,,,,
+Integer,36,Snake environment?,Garden,,,,
+Integer,37,Poem language?,Simple,,,,
+Integer,38,Snake strength?,Instinct,,,,
+Integer,39,Poem emotion?,Pity,,,,
+Integer,40,Snake end?,Safe,,,,
+Integer,41,Poem appeal?,Humanity,,,,
+Integer,42,Snake movement quality?,Graceful,,,,
+Integer,43,Poem theme idea?,Non-violence,,,,
+Integer,44,Snake comparison?,Stream,,,,
+Integer,45,Poet intention?,Awareness,,,,
+Integer,46,Snake response?,Escape,,,,
+Integer,47,Human nature?,Cruel,,,,
+Integer,48,Poem moral?,Live and let live,,,,
+Integer,49,Snake vulnerability?,Exposed,,,,
+Integer,50,Poem title meaning?,Snake trying to escape,,,,
+
+Descriptive,1,Who wrote "The Snake Trying"?,,,,,The poem was written by W W E Ross
+Descriptive,2,What is the central theme of the poem?,,,,,The poem highlights compassion towards animals and condemns human cruelty
+Descriptive,3,Describe the situation presented in the poem.,,,,,A harmless snake is chased by a man and tries to escape
+Descriptive,4,Why does the man try to kill the snake?,,,,,Because of fear and ignorance
+Descriptive,5,How is the snake portrayed?,,,,,As innocent and harmless
+Descriptive,6,What does the snake try to do?,,,,,It tries to escape into a hole
+Descriptive,7,Describe the movement of the snake.,,,,,It glides smoothly like flowing water
+Descriptive,8,What attitude does the poet show towards the snake?,,,,,Sympathy and compassion
+Descriptive,9,How does the poem criticize human behavior?,,,,,By showing cruelty towards a harmless creature
+Descriptive,10,Explain the title of the poem.,,,,,It refers to the snake’s attempt to escape danger
+Descriptive,11,What message does the poem convey?,,,,,Humans should respect all living beings
+Descriptive,12,How does imagery enhance the poem?,,,,,It creates a vivid picture of the snake’s movement
+Descriptive,13,Why is the snake called harmless?,,,,,It does not attack humans
+Descriptive,14,What does the snake symbolize?,,,,,Innocent victims of human fear
+Descriptive,15,Why is the poem relevant today?,,,,,Animal cruelty still exists
+Descriptive,16,How does the poem show conflict between man and nature?,,,,,Man tries to kill the snake unnecessarily
+Descriptive,17,Describe the poet’s feelings.,,,,,He feels pity for the snake
+Descriptive,18,Why should humans not kill snakes?,,,,,They are part of nature and often harmless
+Descriptive,19,What role does fear play in the poem?,,,,,It leads to violence
+Descriptive,20,How does the snake react to danger?,,,,,It tries to escape
+Descriptive,21,What lesson should students learn?,,,,,Live and let live
+Descriptive,22,How is the snake’s struggle described?,,,,,As silent and graceful
+Descriptive,23,Why does the poet condemn the man’s action?,,,,,It is cruel and unnecessary
+Descriptive,24,How does the poem promote non-violence?,,,,,By showing sympathy for the snake
+Descriptive,25,Explain the ending of the poem.,,,,,The snake escapes safely
+Descriptive,26,How does the poet create sympathy?,,,,,By portraying the snake as innocent
+Descriptive,27,What human qualities are criticized?,,,,,Fear and ignorance
+Descriptive,28,Why is the poem a narrative poem?,,,,,It tells a simple story
+Descriptive,29,How does nature appear in the poem?,,,,,Innocent and peaceful
+Descriptive,30,What does the snake’s escape signify?,,,,,Victory of life over violence
+Descriptive,31,How does the poem differ from traditional snake poems?,,,,,It shows snake as harmless
+Descriptive,32,What does the stick symbolize?,,,,,Human violence
+Descriptive,33,Why is the poem emotional?,,,,,It arouses pity
+Descriptive,34,How does the poet use simple language?,,,,,To make message clear
+Descriptive,35,What is the importance of compassion?,,,,,It prevents cruelty
+Descriptive,36,How does the poem teach coexistence?,,,,,By urging humans to let animals live
+Descriptive,37,What makes the snake vulnerable?,,,,,Being exposed
+Descriptive,38,How does the poem reflect environmental awareness?,,,,,It discourages killing animals
+Descriptive,39,Why does the poet call the snake harmless?,,,,,It poses no threat
+Descriptive,40,How does the poem end on a hopeful note?,,,,,The snake survives
+Descriptive,41,What is the significance of water imagery?,,,,,It shows grace and calmness
+Descriptive,42,How does fear affect human actions?,,,,,It causes violence
+Descriptive,43,What does the poem say about instinct?,,,,,Survival instinct guides animals
+Descriptive,44,Why should animals be protected?,,,,,They are part of ecosystem
+Descriptive,45,How does the poem change our view of snakes?,,,,,It removes fear
+Descriptive,46,Explain the poet’s message in one sentence.,,,,,Respect all living beings
+Descriptive,47,Why is the poem suitable for Class 9?,,,,,It teaches moral values
+Descriptive,48,How does the poem use contrast?,,,,,Human cruelty vs animal innocence
+Descriptive,49,What emotions does the poem evoke?,,,,,Pity and sympathy
+Descriptive,50,Summarize "The Snake Trying".,,,,,The poem describes a harmless snake being chased by a fearful man and trying to escape. Through sympathetic imagery, the poet condemns human cruelty and urges compassion and coexistence with all living beings

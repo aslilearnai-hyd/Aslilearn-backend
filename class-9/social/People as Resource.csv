@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,People as resource refers to?,Natural resources,Human skills and abilities,Machines,None,Human skills and abilities
+MCQ,2,Which factor converts population into asset?,Illiteracy,Education,Unemployment,None,Education
+MCQ,3,Which is a measure of quality of population?,Population size,Education level,Birth rate,None,Education level
+MCQ,4,Which sector provides education?,Primary,Secondary,Tertiary,None,Tertiary
+MCQ,5,Human capital is formed by?,Education and health,Land and labour,Capital,None,Education and health
+MCQ,6,Which increases productivity of people?,Training,Illness,Poverty,None,Training
+MCQ,7,Which sector employs maximum people in India?,Primary,Secondary,Tertiary,None,Primary
+MCQ,8,Which activity is part of secondary sector?,Farming,Manufacturing,Teaching,None,Manufacturing
+MCQ,9,Which activity belongs to tertiary sector?,Fishing,Mining,Teaching,None,Teaching
+MCQ,10,Which is NOT an economic activity?,Teaching,Farming,Housework,None,Housework
+MCQ,11,Which age group is working population?,0–14,15–59,60+,All,15–59
+MCQ,12,Unemployment among educated youth is called?,Seasonal unemployment,Disguised unemployment,Educated unemployment,None,Educated unemployment
+MCQ,13,Which unemployment occurs in agriculture?,Seasonal,Disguised,Cyclical,None,Disguised
+MCQ,14,Which unemployment occurs only in some seasons?,Seasonal,Educated,Disguised,None,Seasonal
+MCQ,15,Investment in education results in?,Liability,Asset,Loss,None,Asset
+MCQ,16,Which country invested heavily in human capital?,India,China,Japan,None,Japan
+MCQ,17,Which indicator measures health?,Literacy rate,Life expectancy,Population density,None,Life expectancy
+MCQ,18,Which organisation provides healthcare?,Schools,Hospitals,Factories,None,Hospitals
+MCQ,19,Which improves efficiency of workers?,Training,Unemployment,Illiteracy,None,Training
+MCQ,20,Which sector dominates Indian economy?,Primary,Secondary,Tertiary,None,Primary
+MCQ,21,Which activity adds value to raw materials?,Primary,Secondary,Tertiary,None,Secondary
+MCQ,22,Which activity provides services?,Primary,Secondary,Tertiary,None,Tertiary
+MCQ,23,Which is a non-economic activity?,Teaching,Farming,Cooking at home,None,Cooking at home
+MCQ,24,Which factor reduces human capital?,Illness,Education,Training,None,Illness
+MCQ,25,Which is a cause of unemployment?,Population growth,Education,Training,None,Population growth
+MCQ,26,Which improves standard of living?,Education,Unemployment,None,None,Education
+MCQ,27,Which age group is dependent?,15–59,0–14,20–40,None,0–14
+MCQ,28,Which sector includes transport?,Primary,Secondary,Tertiary,None,Tertiary
+MCQ,29,Which employment hides surplus labour?,Seasonal,Disguised,Educated,None,Disguised
+MCQ,30,Which unemployment common in rural areas?,Educated,Disguised,Cyclical,None,Disguised
+MCQ,31,Which unemployment common in urban areas?,Seasonal,Educated,Disguised,None,Educated
+MCQ,32,Which improves human capital?,Health facilities,Poverty,None,None,Health facilities
+MCQ,33,Which activity produces goods?,Primary and secondary,Tertiary,None,None,Primary and secondary
+MCQ,34,Which is an example of economic activity?,Cooking at home,Teaching in school,None,None,Teaching in school
+MCQ,35,Which sector is knowledge-based?,Primary,Secondary,Tertiary,None,Tertiary
+MCQ,36,Which improves national income?,Skilled population,Illiteracy,None,None,Skilled population
+MCQ,37,Which unemployment occurs due to lack of jobs?,Educated,Seasonal,None,None,Educated
+MCQ,38,Which sector depends on natural resources?,Primary,Secondary,Tertiary,None,Primary
+MCQ,39,Which is investment in people?,Education,Consumption,None,None,Education
+MCQ,40,Which increases human efficiency?,Training,Illness,None,None,Training
+MCQ,41,Which age group forms labour force?,15–59,0–14,60+,None,15–59
+MCQ,42,Which sector converts raw material?,Secondary,Primary,Tertiary,None,Secondary
+MCQ,43,Which sector supports other sectors?,Tertiary,Primary,None,None,Tertiary
+MCQ,44,Which reduces productivity?,Poor health,Education,None,None,Poor health
+MCQ,45,Which type of work is unpaid?,Teaching,Farming,Housework,None,Housework
+MCQ,46,Which sector provides banking?,Primary,Secondary,Tertiary,None,Tertiary
+MCQ,47,Which country has high human development?,India,Nigeria,Japan,None,Japan
+MCQ,48,Which is a sign of developed economy?,High illiteracy,Skilled labour,None,None,Skilled labour
+MCQ,49,Which improves quality of population?,Education and health,Population size,None,None,Education and health
+MCQ,50,People as resource contributes to?,Economic growth,Poverty,None,None,Economic growth
+
+Integer,1,People as resource means?,Human capital,,,,
+Integer,2,Main factor to improve people?,Education,,,,
+Integer,3,Health indicator?,Life expectancy,,,,
+Integer,4,Working age group?,15–59,,,,
+Integer,5,Dependent age group?,0–14,,,,
+Integer,6,Unemployment in agriculture?,Disguised,,,,
+Integer,7,Unemployment in seasons?,Seasonal,,,,
+Integer,8,Educated joblessness?,Educated unemployment,,,,
+Integer,9,Sector using raw material?,Secondary,,,,
+Integer,10,Sector providing services?,Tertiary,,,,
+Integer,11,Sector using nature?,Primary,,,,
+Integer,12,Investment in people?,Education,,,,
+Integer,13,Skill development means?,Training,,,,
+Integer,14,Health facility?,Hospital,,,,
+Integer,15,Quality population indicator?,Literacy,,,,
+Integer,16,Country investing in human capital?,Japan,,,,
+Integer,17,Unpaid activity?,Housework,,,,
+Integer,18,Skilled population leads to?,Growth,,,,
+Integer,19,Labour force age?,15–59,,,,
+Integer,20,Hidden unemployment?,Disguised,,,,
+Integer,21,Season-based unemployment?,Seasonal,,,,
+Integer,22,Urban unemployment?,Educated,,,,
+Integer,23,Primary sector example?,Farming,,,,
+Integer,24,Secondary sector example?,Manufacturing,,,,
+Integer,25,Tertiary sector example?,Teaching,,,,
+Integer,26,Illness reduces?,Productivity,,,,
+Integer,27,Education creates?,Asset,,,,
+Integer,28,Human capital includes?,Skills,,,,
+Integer,29,Joblessness problem?,Unemployment,,,,
+Integer,30,Population quality improved by?,Education,,,,
+Integer,31,Service sector?,Tertiary,,,,
+Integer,32,Raw material conversion?,Secondary,,,,
+Integer,33,Service provider?,Banking,,,,
+Integer,34,Population burden without skills?,Liability,,,,
+Integer,35,Health improves?,Efficiency,,,,
+Integer,36,Knowledge-based sector?,Tertiary,,,,
+Integer,37,Investment return?,Higher income,,,,
+Integer,38,Labour surplus example?,Agriculture,,,,
+Integer,39,Human development needs?,Education health,,,,
+Integer,40,Unemployment cause?,Population growth,,,,
+Integer,41,Unpaid women work?,Household work,,,,
+Integer,42,Productive age group?,15–59,,,,
+Integer,43,Economic activity?,Wage work,,,,
+Integer,44,Non-economic activity?,Housework,,,,
+Integer,45,Main Indian employment sector?,Primary,,,,
+Integer,46,Skilled worker outcome?,Higher productivity,,,,
+Integer,47,Education sector belongs to?,Tertiary,,,,
+Integer,48,Human capital formation?,Education health,,,,
+Integer,49,Health investment example?,Hospital,,,,
+Integer,50,People resource improves?,Economy,,,,
+
+Descriptive,1,What is meant by people as resource?,,,,,People with skills and abilities contributing to economy
+Descriptive,2,How population becomes an asset?,,,,,Through education and health
+Descriptive,3,Explain human capital.,,,,,Stock of skills and health
+Descriptive,4,Why education is important?,,,,,Improves productivity and income
+Descriptive,5,Role of health in human capital.,,,,,Improves efficiency
+Descriptive,6,What is economic activity?,,,,,Activity done for income
+Descriptive,7,What is non-economic activity?,,,,,Activity without monetary gain
+Descriptive,8,Explain primary sector.,,,,,Uses natural resources
+Descriptive,9,Explain secondary sector.,,,,,Converts raw materials
+Descriptive,10,Explain tertiary sector.,,,,,Provides services
+Descriptive,11,What is unemployment?,,,,,Joblessness among willing workers
+Descriptive,12,Explain disguised unemployment.,,,,,Hidden surplus labour
+Descriptive,13,Explain seasonal unemployment.,,,,,Work only in seasons
+Descriptive,14,Explain educated unemployment.,,,,,Educated without jobs
+Descriptive,15,Why unemployment is a problem?,,,,,Wastes human resource
+Descriptive,16,How education reduces unemployment?,,,,,Creates skills
+Descriptive,17,Role of training in productivity.,,,,,Enhances efficiency
+Descriptive,18,Why health facilities important?,,,,,Healthy workforce
+Descriptive,19,What is quality of population?,,,,,Education and health status
+Descriptive,20,How human capital affects growth?,,,,,Increases national income
+Descriptive,21,Why Japan is developed?,,,,,Investment in people
+Descriptive,22,Difference between human and physical capital.,,,,,People vs machines
+Descriptive,23,Why illiteracy is a problem?,,,,,Reduces productivity
+Descriptive,24,How unemployment affects economy?,,,,,Reduces income
+Descriptive,25,Explain labour force.,,,,,Working age population
+Descriptive,26,What is investment in human capital?,,,,,Spending on education health
+Descriptive,27,Why women’s work undervalued?,,,,,Unpaid household work
+Descriptive,28,Explain role of service sector.,,,,,Supports economy
+Descriptive,29,Why population can be liability?,,,,,If unskilled
+Descriptive,30,How skills improve income?,,,,,Better jobs
+Descriptive,31,Explain importance of literacy.,,,,,Awareness and productivity
+Descriptive,32,What is life expectancy?,,,,,Average lifespan
+Descriptive,33,How health affects education?,,,,,Healthy students learn better
+Descriptive,34,Why training is necessary?,,,,,Skill enhancement
+Descriptive,35,Explain rural unemployment.,,,,,Agricultural surplus labour
+Descriptive,36,Explain urban unemployment.,,,,,Educated job seekers
+Descriptive,37,How education benefits society?,,,,,Economic and social development
+Descriptive,38,What is human development?,,,,,Overall well-being
+Descriptive,39,Why people are called resources?,,,,,They produce goods
+Descriptive,40,Explain role of government in human capital.,,,,,Education and health services
+Descriptive,41,How population growth affects unemployment?,,,,,More job seekers
+Descriptive,42,Why skill development important?,,,,,Employment generation
+Descriptive,43,Explain economic growth.,,,,,Increase in income
+Descriptive,44,Why people are greatest asset?,,,,,Innovation and productivity
+Descriptive,45,Explain dependency ratio.,,,,,Dependents to workers
+Descriptive,46,Why poor health is liability?,,,,,Low productivity
+Descriptive,47,Explain employment generation.,,,,,Creating jobs
+Descriptive,48,How education improves standard of living?,,,,,Better income
+Descriptive,49,Explain importance of human capital formation.,,,,,Sustainable development
+Descriptive,50,Summarise People as Resource.,,,,,Population as asset through education and health

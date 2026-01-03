@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Development refers to,Only economic growth,Increase in income only,Overall improvement in quality of life,Industrial growth only,Overall improvement in quality of life
+MCQ,2,Which is the best indicator of development?,Income,Education,Health,All of these,All of these
+MCQ,3,Per capita income means,Total income,Income of rich people,Average income per person,Government income,Average income per person
+MCQ,4,Which organisation publishes Human Development Report?,IMF,World Bank,UNDP,WTO,UNDP
+MCQ,5,Which index measures development?,GDP,CPI,HDI,WPI,HDI
+MCQ,6,Which country has high HDI?,India,Nigeria,Norway,Pakistan,Norway
+MCQ,7,Which factor is NOT included in HDI?,Income,Health,Education,Population,Population
+MCQ,8,Which indicator is used for health?,Life expectancy,Birth rate,Death rate,Population density,Life expectancy
+MCQ,9,Which indicator is used for education?,Literacy rate,Life expectancy,Infant mortality,Population growth,Literacy rate
+MCQ,10,Which indicator is used for income?,Per capita income,Total income,GDP only,GNP only,Per capita income
+MCQ,11,National income divided by population gives,Total income,Per capita income,Average income,GDP,Per capita income
+MCQ,12,Which country is a developing country?,USA,Norway,India,Japan,India
+MCQ,13,Which sector contributes most to India’s GDP?,Primary,Secondary,Tertiary,Quaternary,Tertiary
+MCQ,14,Which indicator shows quality of life?,Income only,HDI,Population,GDP,HDI
+MCQ,15,Which is a non-income indicator?,Income,Profit,Health,Salary,Health
+MCQ,16,Which factor improves standard of living?,Education,Health,Income,All of these,All of these
+MCQ,17,Which country ranks low in HDI?,Norway,USA,India,Japan,India
+MCQ,18,Which organisation gives World Development Report?,UNDP,IMF,World Bank,WTO,World Bank
+MCQ,19,Which is an economic goal?,Freedom,Security,Income,Equality,Income
+MCQ,20,Which is a social goal?,Income,Profit,Education,Production,Education
+MCQ,21,Which factor ensures long life?,Income,Health facilities,Education,Employment,Health facilities
+MCQ,22,Which term means average income?,National income,Per capita income,GDP,GNP,Per capita income
+MCQ,23,Which country is considered developed?,India,Bangladesh,Norway,Nepal,Norway
+MCQ,24,Which indicator reflects education level?,Literacy rate,Life expectancy,Income,GDP,Literacy rate
+MCQ,25,Which measure ignores income distribution?,Per capita income,HDI,Literacy rate,Life expectancy,Per capita income
+MCQ,26,Which goal of development differs from person to person?,National goal,Uniform goal,Personal goal,Government goal,Personal goal
+MCQ,27,Which is a common development goal?,Peace,Security,Equality,All of these,All of these
+MCQ,28,Which factor does HDI combine?,Income only,Health only,Education only,Income, health and education,Income, health and education
+MCQ,29,Which organisation measures per capita income?,UNDP,IMF,World Bank,WHO,World Bank
+MCQ,30,Which indicator shows infant deaths?,Literacy rate,Life expectancy,Infant mortality rate,HDI,Infant mortality rate
+MCQ,31,Which state has high literacy rate?,Bihar,Kerala,Uttar Pradesh,Rajasthan,Kerala
+MCQ,32,Which state has low infant mortality rate?,Bihar,Kerala,Madhya Pradesh,Assam,Kerala
+MCQ,33,Which development goal ensures freedom?,Political rights,Income,Employment,Production,Political rights
+MCQ,34,Which factor shows economic development?,GDP growth,Population growth,Migration,Urbanisation,GDP growth
+MCQ,35,Which indicator measures well-being?,GDP,HDI,CPI,WPI,HDI
+MCQ,36,Which country has high life expectancy?,India,Nigeria,Norway,Pakistan,Norway
+MCQ,37,Which goal ensures safety?,Income,Security,Profit,Production,Security
+MCQ,38,Which indicator shows education access?,Literacy rate,Life expectancy,Income,GDP,Literacy rate
+MCQ,39,Which factor is ignored by GDP?,Income distribution,Production,Output,Growth,Income distribution
+MCQ,40,Which country has low per capita income?,USA,Norway,India,Japan,India
+MCQ,41,Which sector provides services?,Primary,Secondary,Tertiary,Quaternary,Tertiary
+MCQ,42,Which factor is necessary for development?,Resources,People,Technology,All of these,All of these
+MCQ,43,Which indicator shows children health?,IMR,Literacy,Income,HDI,IMR
+MCQ,44,Which goal ensures equal treatment?,Equality,Income,Security,Production,Equality
+MCQ,45,Which indicator is used internationally?,HDI,GDP only,Income only,Population,HDI
+MCQ,46,Which factor increases life expectancy?,Education,Health services,Income,Employment,Health services
+MCQ,47,Which is NOT a development goal?,Income,Security,Pollution,Freedom,Pollution
+MCQ,48,Which state performs best in human development?,Bihar,Kerala,Uttar Pradesh,Odisha,Kerala
+MCQ,49,Which indicator shows poverty?,Low income,Low HDI,High IMR,All of these,All of these
+MCQ,50,Development aims at,More profit,Better life for all,Industrial growth only,Urban growth,Better life for all
+
+Integer,1,Average income?,Per capita income,,,,
+Integer,2,Development index?,HDI,,,,
+Integer,3,Full form of HDI?,Human Development Index,,,,
+Integer,4,Organisation publishing HDR?,UNDP,,,,
+Integer,5,Health indicator?,Life expectancy,,,,
+Integer,6,Education indicator?,Literacy rate,,,,
+Integer,7,Income indicator?,Per capita income,,,,
+Integer,8,Country with high HDI?,Norway,,,,
+Integer,9,Developing country?,India,,,,
+Integer,10,Best Indian state in literacy?,Kerala,,,,
+Integer,11,Low IMR state?,Kerala,,,,
+Integer,12,Indicator of children health?,IMR,,,,
+Integer,13,Economic goal?,Income,,,,
+Integer,14,Social goal?,Education,,,,
+Integer,15,Average years of life?,Life expectancy,,,,
+Integer,16,Income divided by population?,Per capita income,,,,
+Integer,17,Measure ignoring distribution?,Per capita income,,,,
+Integer,18,Organisation giving WDR?,World Bank,,,,
+Integer,19,Common development goal?,Equality,,,,
+Integer,20,Personal goals differ?,Yes,,,,
+Integer,21,Non-income indicator?,Health,,,,
+Integer,22,Indicator of well-being?,HDI,,,,
+Integer,23,Service sector?,Tertiary,,,,
+Integer,24,Child deaths measure?,IMR,,,,
+Integer,25,Political goal?,Freedom,,,,
+Integer,26,State with low development?,Bihar,,,,
+Integer,27,Country with low income?,India,,,,
+Integer,28,Factor ignored by GDP?,Distribution,,,,
+Integer,29,Education improves?,Quality of life,,,,
+Integer,30,Health ensures?,Long life,,,,
+Integer,31,Goal of development?,Better life,,,,
+Integer,32,HDI includes income?,Yes,,,,
+Integer,33,HDI includes health?,Yes,,,,
+Integer,34,HDI includes education?,Yes,,,,
+Integer,35,Standard of living improved by?,Income,,,,
+Integer,36,Social development indicator?,Literacy,,,,
+Integer,37,Economic development indicator?,GDP,,,,
+Integer,38,Freedom ensures?,Choice,,,,
+Integer,39,Security ensures?,Safety,,,,
+Integer,40,Equality ensures?,Fairness,,,,
+Integer,41,Low income means?,Poverty,,,,
+Integer,42,High IMR indicates?,Poor health,,,,
+Integer,43,HDI rank best country?,Norway,,,,
+Integer,44,Indian development index?,Low,,,,
+Integer,45,Long life indicator?,Life expectancy,,,,
+Integer,46,Development is?,Multi-dimensional,,,,
+Integer,47,National income measure?,GDP,,,,
+Integer,48,Quality of life depends on?,Many factors,,,,
+Integer,49,Chapter theme?,Development,,,,
+Integer,50,Development goal?,Human well-being,,,,
+
+Descriptive,1,What is development?,,,,,Development means improvement in quality of life and living standards
+Descriptive,2,Explain different goals of development.,,,,,People have different and common development goals
+Descriptive,3,What is per capita income?,,,,,Average income per person in a country
+Descriptive,4,Why is per capita income used?,,,,,To compare income levels
+Descriptive,5,What are the limitations of per capita income?,,,,,Ignores income distribution
+Descriptive,6,Explain non-income indicators.,,,,,Health and education indicators
+Descriptive,7,What is Human Development Index?,,,,,Index measuring income, health and education
+Descriptive,8,Explain components of HDI.,,,,,Income, life expectancy and literacy
+Descriptive,9,Why HDI is better than income?,,,,,It includes non-income factors
+Descriptive,10,Explain life expectancy.,,,,,Average years a person lives
+Descriptive,11,Explain literacy rate.,,,,,Percentage of literate population
+Descriptive,12,What is infant mortality rate?,,,,,Deaths of infants per 1000 births
+Descriptive,13,Explain role of education in development.,,,,,Improves skills and quality of life
+Descriptive,14,Explain role of health in development.,,,,,Ensures productivity and long life
+Descriptive,15,Explain economic goals of development.,,,,,Income and employment
+Descriptive,16,Explain social goals of development.,,,,,Education, health and equality
+Descriptive,17,Why development goals differ?,,,,,People have different needs
+Descriptive,18,Explain common development goals.,,,,,Peace, security and equality
+Descriptive,19,Explain sustainable development.,,,,,Development without harming future
+Descriptive,20,Explain inter-state development differences.,,,,,Variation among Indian states
+Descriptive,21,Why Kerala has high HDI?,,,,,Better health and education
+Descriptive,22,Why Bihar has low development?,,,,,Poor health and education
+Descriptive,23,Explain income distribution.,,,,,How income is shared
+Descriptive,24,Explain quality of life.,,,,,Standard of living and well-being
+Descriptive,25,Explain role of government in development.,,,,,Provides services and welfare
+Descriptive,26,Explain public facilities.,,,,,Health, education, water
+Descriptive,27,Why public facilities are important?,,,,,Ensure equality
+Descriptive,28,Explain development indicators.,,,,,Measures of progress
+Descriptive,29,Explain limitations of GDP.,,,,,Ignores well-being
+Descriptive,30,Explain development as multi-dimensional.,,,,,Includes social and economic aspects
+Descriptive,31,Explain political goals of development.,,,,,Freedom and rights
+Descriptive,32,Explain equality as development goal.,,,,,Fair opportunities
+Descriptive,33,Explain security as development goal.,,,,,Protection from risks
+Descriptive,34,Explain employment in development.,,,,,Source of income
+Descriptive,35,Explain poverty and development.,,,,,Low income and poor living
+Descriptive,36,Explain link between education and income.,,,,,Education increases earning
+Descriptive,37,Explain role of technology in development.,,,,,Improves productivity
+Descriptive,38,Explain regional imbalance.,,,,,Uneven development
+Descriptive,39,Explain development in India.,,,,,Mixed progress
+Descriptive,40,Explain human development.,,,,,Focus on people
+Descriptive,41,Explain economic growth vs development.,,,,,Growth is part of development
+Descriptive,42,Explain importance of HDI ranking.,,,,,Global comparison
+Descriptive,43,Explain why income alone is insufficient.,,,,,Ignores quality of life
+Descriptive,44,Explain role of nutrition.,,,,,Essential for health
+Descriptive,45,Explain access to clean water.,,,,,Improves health
+Descriptive,46,Explain housing as development factor.,,,,,Ensures safety
+Descriptive,47,Explain gender equality in development.,,,,,Equal opportunities
+Descriptive,48,Explain long-term development goals.,,,,,Sustainability
+Descriptive,49,Explain inclusive development.,,,,,Benefits all sections
+Descriptive,50,Summarize Development chapter.,,,,,Chapter explains development, indicators and goals

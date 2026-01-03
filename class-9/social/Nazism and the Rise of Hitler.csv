@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Who became the Chancellor of Germany in 1933?,Hindenburg,Hitler,Goebbels,Stalin,Hitler
+MCQ,2,Nazism was associated with which country?,Italy,Germany,Russia,France,Germany
+MCQ,3,The Nazi Party was also known as?,DAP,NSDAP,SPD,KPD,NSDAP
+MCQ,4,Who was the leader of Nazi Party?,Hitler,Mussolini,Stalin,Lenin,Hitler
+MCQ,5,Which treaty humiliated Germany after WWI?,Treaty of Paris,Treaty of Vienna,Treaty of Versailles,Treaty of Rome,Treaty of Versailles
+MCQ,6,Which year did World War I end?,1914,1917,1918,1923,1918
+MCQ,7,Which government ruled Germany after WWI?,Imperial,Weimar,Monarchy,Military,Weimar
+MCQ,8,The Weimar Republic was formed in?,1918,1919,1923,1933,1919
+MCQ,9,Who was blamed for Germany’s defeat?,Army,Republicans,Jews,All of these,All of these
+MCQ,10,Which crisis weakened German economy?,Agricultural crisis,Great Depression,Oil crisis,None,Great Depression
+MCQ,11,Great Depression began in?,1923,1929,1933,1939,1929
+MCQ,12,Which class suffered most during depression?,Rich,Middle class,Workers,Nobles,Middle class
+MCQ,13,What did Nazis promise?,Peace,Jobs and bread,Freedom,None,Jobs and bread
+MCQ,14,Which symbol was used by Nazis?,Red star,Swastika,White flag,Cross,Swastika
+MCQ,15,Nazi salute was?,Clapping,Raised arm salute,Handshake,None,Raised arm salute
+MCQ,16,Who was President of Germany before Hitler?,Hitler,Hindenburg,Goebbels,None,Hindenburg
+MCQ,17,Which law gave Hitler dictatorial powers?,Enabling Act,Weimar Act,Emergency Act,None,Enabling Act
+MCQ,18,Enabling Act was passed in?,1930,1932,1933,1935,1933
+MCQ,19,Which party opposed Nazis?,NSDAP,SPD,KPD,None,SPD
+MCQ,20,Who were Gestapo?,Secret police,Army,Navy,Judges,Secret police
+MCQ,21,SS was?,Sports group,Security squad,Student society,None,Security squad
+MCQ,22,Who controlled media in Nazi Germany?,Teachers,Judges,Propaganda ministry,None,Propaganda ministry
+MCQ,23,Who was propaganda minister?,Himmler,Goebbels,Goering,None,Goebbels
+MCQ,24,Which book was written by Hitler?,Mein Kampf,Das Kapital,Social Contract,None,Mein Kampf
+MCQ,25,What did Nazi ideology believe?,Equality,Racial purity,Democracy,None,Racial purity
+MCQ,26,Which race was considered superior?,Aryan,Jewish,Slavic,None,Aryan
+MCQ,27,Which group was persecuted?,Jews,Germans,Nazis,None,Jews
+MCQ,28,Anti-Jewish laws were called?,Jim Crow,Nuremberg Laws,Segregation Acts,None,Nuremberg Laws
+MCQ,29,Nuremberg Laws were passed in?,1933,1935,1937,1939,1935
+MCQ,30,What was Holocaust?,Economic reform,Mass killing of Jews,Political movement,None,Mass killing of Jews
+MCQ,31,Concentration camps were used for?,Education,Imprisonment,Reform,None,Imprisonment
+MCQ,32,Which camp was most infamous?,Auschwitz,Dachau,Buchenwald,None,Auschwitz
+MCQ,33,Who were undesirable in Nazi view?,Disabled,Jews,Homosexuals,All of these,All of these
+MCQ,34,What was Hitler Youth?,Military group,Youth organisation,Police force,None,Youth organisation
+MCQ,35,Who trained girls?,League of German Girls,Hitler Youth,SS,None,League of German Girls
+MCQ,36,What was Nazi education aim?,Critical thinking,Obedience,Equality,None,Obedience
+MCQ,37,Which symbol represented Nazi ideology?,Swastika,Star,Circle,None,Swastika
+MCQ,38,What happened to trade unions?,Strengthened,Banned,Supported,None,Banned
+MCQ,39,Which event gave Hitler emergency powers?,Election loss,Reichstag fire,War,None,Reichstag fire
+MCQ,40,Reichstag fire occurred in?,1930,1932,1933,1935,1933
+MCQ,41,Which ideology opposed Nazism?,Fascism,Democracy,Communism,Both B and C,Both B and C
+MCQ,42,What was Lebensraum?,Economic policy,Living space,Military plan,None,Living space
+MCQ,43,Who were Nazis loyal to?,Democracy,Hitler,Republic,None,Hitler
+MCQ,44,Which country was invaded for Lebensraum?,France,Poland,Russia,None,Poland
+MCQ,45,Which war began in 1939?,WWI,WWII,Cold War,None,WWII
+MCQ,46,Who controlled judiciary?,Judges,Nazi state,People,None,Nazi state
+MCQ,47,What was Nazi worldview called?,Nazism,Fascism,Communism,None,Nazism
+MCQ,48,Which group was brainwashed most?,Adults,Children,Old people,None,Children
+MCQ,49,Which slogan used by Nazis?,Liberty Equality,Blood and Iron,One People One Empire One Leader,None,One People One Empire One Leader
+MCQ,50,Main reason for Nazi rise?,Economic crisis,Strong democracy,None,None,Economic crisis
+
+Integer,1,Hitler became Chancellor in?,1933,,,,
+Integer,2,Nazi Party full form?,NSDAP,,,,
+Integer,3,Weimar Republic formed in?,1919,,,,
+Integer,4,Treaty humiliating Germany?,Versailles,,,,
+Integer,5,Economic crisis year?,1929,,,,
+Integer,6,Depression started in?,1929,,,,
+Integer,7,President before Hitler?,Hindenburg,,,,
+Integer,8,Dictatorial law?,Enabling Act,,,,
+Integer,9,Enabling Act year?,1933,,,,
+Integer,10,Nazi secret police?,Gestapo,,,,
+Integer,11,Propaganda minister?,Goebbels,,,,
+Integer,12,Book by Hitler?,Mein Kampf,,,,
+Integer,13,Anti-Jewish laws?,Nuremberg Laws,,,,
+Integer,14,Nuremberg Laws year?,1935,,,,
+Integer,15,Mass killing of Jews?,Holocaust,,,,
+Integer,16,Infamous camp?,Auschwitz,,,,
+Integer,17,Superior race?,Aryan,,,,
+Integer,18,Nazi youth group?,Hitler Youth,,,,
+Integer,19,Girls organisation?,League of German Girls,,,,
+Integer,20,Parliament fire?,Reichstag Fire,,,,
+Integer,21,Reichstag fire year?,1933,,,,
+Integer,22,Living space idea?,Lebensraum,,,,
+Integer,23,Country invaded first?,Poland,,,,
+Integer,24,WWII began?,1939,,,,
+Integer,25,Nazi symbol?,Swastika,,,,
+Integer,26,Nazi salute?,Raised arm,,,,
+Integer,27,Republic after WWI?,Weimar,,,,
+Integer,28,Jewish persecution law?,Nuremberg,,,,
+Integer,29,Youth brainwashed?,Children,,,,
+Integer,30,Nazi ideology?,Nazism,,,,
+Integer,31,Secret police force?,Gestapo,,,,
+Integer,32,Elite security?,SS,,,,
+Integer,33,Nazi press control?,Propaganda,,,,
+Integer,34,Hitler’s vision?,Racial purity,,,,
+Integer,35,Group blamed for defeat?,Jews,,,,
+Integer,36,Trade unions status?,Banned,,,,
+Integer,37,Leader slogan?,One Leader,,,,
+Integer,38,Nazi worldview?,Racial state,,,,
+Integer,39,Weimar weakness?,Instability,,,,
+Integer,40,Nazi promise?,Employment,,,,
+Integer,41,Targeted minority?,Jews,,,,
+Integer,42,Police terror?,Gestapo,,,,
+Integer,43,Nazi children training?,Military,,,,
+Integer,44,Opposition party?,SPD,,,,
+Integer,45,Nazi army expansion?,Rearmament,,,,
+Integer,46,State controlled media?,Yes,,,,
+Integer,47,Education focus?,Obedience,,,,
+Integer,48,Nazi hatred ideology?,Anti-Semitism,,,,
+Integer,49,Holocaust victims?,Jews,,,,
+Integer,50,Nazi rule end?,1945,,,,
+
+Descriptive,1,What was Nazism?,,,,,A totalitarian ideology based on racial superiority
+Descriptive,2,Explain the Weimar Republic.,,,,,Germany’s democratic government after WWI
+Descriptive,3,Why was Germany unhappy after WWI?,,,,,Humiliating treaty and losses
+Descriptive,4,What was Treaty of Versailles?,,,,,Peace treaty punishing Germany
+Descriptive,5,How did economic crisis help Hitler?,,,,,Unemployment and poverty
+Descriptive,6,Who was Adolf Hitler?,,,,,Leader of Nazi Germany
+Descriptive,7,What promises did Nazis make?,,,,,Jobs national pride
+Descriptive,8,Explain Enabling Act.,,,,,Law giving Hitler dictatorial powers
+Descriptive,9,Role of propaganda in Nazi Germany.,,,,,Controlled public opinion
+Descriptive,10,Who was Goebbels?,,,,,Propaganda minister
+Descriptive,11,What was Gestapo?,,,,,Secret police
+Descriptive,12,What were concentration camps?,,,,,Prisons for enemies
+Descriptive,13,Explain Nazi racial ideology.,,,,,Belief in Aryan superiority
+Descriptive,14,Who were Jews?,,,,,Religious community persecuted
+Descriptive,15,What were Nuremberg Laws?,,,,,Anti-Jewish laws
+Descriptive,16,Explain Holocaust.,,,,,Mass murder of Jews
+Descriptive,17,Why were Jews targeted?,,,,,Racial hatred
+Descriptive,18,How children were controlled?,,,,,Education and youth groups
+Descriptive,19,What was Hitler Youth?,,,,,Youth training organisation
+Descriptive,20,Role of women in Nazi Germany.,,,,,Housewives and mothers
+Descriptive,21,Why democracy failed in Germany?,,,,,Economic and political crises
+Descriptive,22,Explain Reichstag Fire.,,,,,Event used to suppress opposition
+Descriptive,23,What happened to opposition parties?,,,,,They were banned
+Descriptive,24,How media was controlled?,,,,,Strict censorship
+Descriptive,25,Explain Lebensraum.,,,,,Expansion for living space
+Descriptive,26,Why Nazis hated communists?,,,,,Ideological opposition
+Descriptive,27,What was SS?,,,,,Elite security force
+Descriptive,28,How did Nazis control judiciary?,,,,,State interference
+Descriptive,29,Impact of Nazism on society.,,,,,Fear repression discrimination
+Descriptive,30,Why did people support Hitler?,,,,,Economic relief nationalism
+Descriptive,31,How education was changed?,,,,,Focused on obedience
+Descriptive,32,What symbols Nazis used?,,,,,Swastika salute
+Descriptive,33,Why trade unions banned?,,,,,Opposition control
+Descriptive,34,Role of women policies.,,,,,Population growth
+Descriptive,35,What happened to disabled?,,,,,Killed under Nazi policy
+Descriptive,36,Explain Nazi worldview.,,,,,Racial state expansion
+Descriptive,37,Why WWII started?,,,,,Expansionist policies
+Descriptive,38,Consequences of Nazi rule.,,,,,Destruction and genocide
+Descriptive,39,End of Nazi Germany.,,,,,Defeat in WWII
+Descriptive,40,Lessons from Nazism.,,,,,Dangers of dictatorship
+Descriptive,41,How propaganda shaped minds?,,,,,Brainwashing
+Descriptive,42,Why Holocaust remembered?,,,,,Human rights lesson
+Descriptive,43,Role of fear in Nazi state.,,,,,Control society
+Descriptive,44,Why minorities suffered?,,,,,Racial hatred
+Descriptive,45,Explain totalitarianism.,,,,,Complete state control
+Descriptive,46,Why Nazism dangerous?,,,,,Led to genocide war
+Descriptive,47,Impact on Europe.,,,,,War devastation
+Descriptive,48,Why youth targeted?,,,,,Future loyalty
+Descriptive,49,Failure of Weimar Republic.,,,,,Political instability
+Descriptive,50,Importance of studying Nazism.,,,,,To prevent repetition

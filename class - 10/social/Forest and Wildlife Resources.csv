@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Forests are important because they,Provide oxygen,Maintain ecological balance,Provide timber only,Increase rainfall only,Maintain ecological balance
+MCQ,2,Which of the following is a renewable resource?,Coal,Petroleum,Forests,Minerals,Forests
+MCQ,3,Which species is on the verge of extinction?,Normal species,Endangered species,Rare species,Endemic species,Endangered species
+MCQ,4,Which of the following is an endemic species?,Tiger,Asiatic lion,Kangaroo,Elephant,Asiatic lion
+MCQ,5,Which category includes animals with small population?,Endangered,Rare,Normal,Extinct,Rare
+MCQ,6,Species that no longer exist are called,Endangered,Rare,Extinct,Endemic,Extinct
+MCQ,7,Which act was introduced to protect wildlife?,Forest Act,Wildlife Protection Act,Environmental Act,Biodiversity Act,Wildlife Protection Act
+MCQ,8,The Wildlife Protection Act was passed in,1970,1972,1980,1985,1972
+MCQ,9,Reserved forests are,Open for use,Protected by villagers,Most protected forests,Least protected forests,Most protected forests
+MCQ,10,Which forest category allows limited use?,Reserved forest,Protected forest,Unclassed forest,Sacred forest,Protected forest
+MCQ,11,Unclassed forests are found mainly in,Northern plains,Western Ghats,North-Eastern states,Deccan Plateau,North-Eastern states
+MCQ,12,Which group depends most on forests?,Industrialists,Urban people,Tribal communities,Farmers,Tribal communities
+MCQ,13,Which movement aimed to protect forests?,Green Revolution,Chipko Movement,Swadeshi Movement,Narmada Bachao,Chipko Movement
+MCQ,14,Chipko Movement was started in,Uttarakhand,Assam,Rajasthan,Odisha,Uttarakhand
+MCQ,15,Who played a major role in Chipko Movement?,Medha Patkar,Sunderlal Bahuguna,Mahatma Gandhi,B R Ambedkar,Sunderlal Bahuguna
+MCQ,16,Which movement focused on saving sal forests?,Chipko,Appiko,Narmada Bachao,Bishnoi,Appiko
+MCQ,17,Appiko Movement took place in,Kerala,Karnataka,Assam,Uttarakhand,Karnataka
+MCQ,18,Which community protected forests in Rajasthan?,Gonds,Bishnoi,Santhals,Baigas,Bishnoi
+MCQ,19,Deforestation leads to,Soil conservation,Ecological balance,Soil erosion,Increased rainfall,Soil erosion
+MCQ,20,Which is a cause of depletion of forests?,Afforestation,Overgrazing,Conservation,Social forestry,Overgrazing
+MCQ,21,Which species is normally found in a particular region?,Endangered,Rare,Endemic,Extinct,Endemic
+MCQ,22,Which policy emphasized sustainable forest use?,National Forest Policy 1952,National Forest Policy 1988,Forest Act 1927,Wildlife Act 1972,National Forest Policy 1988
+MCQ,23,Which forest category is owned by government?,Private forest,Community forest,Reserved forest,Sacred forest,Reserved forest
+MCQ,24,Joint Forest Management involves,Government only,Villagers only,Government and locals,NGOs only,Government and locals
+MCQ,25,Which animal is critically endangered?,Cow,Dog,Tiger,Goat,Tiger
+MCQ,26,Which of the following is a biosphere reserve?,Corbett,Kaziranga,Nilgiri,Sundarbans,Nilgiri
+MCQ,27,National parks are meant for,Human settlement,Industrial use,Wildlife conservation,Agriculture,Wildlife conservation
+MCQ,28,Which one is NOT a wildlife sanctuary?,Gir,Periyar,Sundarbans,Delhi Zoo,Delhi Zoo
+MCQ,29,Which forest type covers largest area in India?,Tropical evergreen,Tropical deciduous,Montane,Mangrove,Tropical deciduous
+MCQ,30,Which animal is protected in Gir forest?,Elephant,Lion,Tiger,Rhinoceros,Lion
+MCQ,31,Which human activity affects forests most?,Afforestation,Mining,Conservation,Plantation,Mining
+MCQ,32,Poaching refers to,Animal protection,Illegal hunting,Forest plantation,Animal breeding,Illegal hunting
+MCQ,33,Which organisation works for wildlife protection?,WHO,WWF,UNICEF,IMF,WWF
+MCQ,34,Which of the following is a sacred grove?,Temple forest,National park,Reserved forest,Protected forest,Temple forest
+MCQ,35,Which species is NOT endangered?,Tiger,Dodo,Asiatic lion,Cow,Cow
+MCQ,36,Forest resources are important for,Ecological balance,Economic growth,Social needs,All of these,All of these
+MCQ,37,Which state has maximum forest cover?,Punjab,Haryana,Madhya Pradesh,Rajasthan,Madhya Pradesh
+MCQ,38,Wildlife includes,Only animals,Only plants,Both plants and animals,Only birds,Both plants and animals
+MCQ,39,Which act banned hunting in India?,Forest Act,Wildlife Protection Act,Environmental Act,Biodiversity Act,Wildlife Protection Act
+MCQ,40,The main cause of wildlife extinction is,Climate change,Human activities,Natural disasters,Migration,Human activities
+MCQ,41,Which practice helps forest conservation?,Deforestation,Afforestation,Mining,Overgrazing,Afforestation
+MCQ,42,Social forestry aims at,Industrial use,Community benefit,Commercial profit,Deforestation,Community benefit
+MCQ,43,Which movement saved trees by hugging them?,Appiko,Chipko,Narmada,Bishnoi,Chipko
+MCQ,44,Forest and wildlife conservation is necessary for,Humans only,Animals only,Environment only,All living beings,All living beings
+MCQ,45,Which of the following is an extinct species?,Tiger,Lion,Dodo,Elephant,Dodo
+MCQ,46,Forest fires cause,Forest growth,Wildlife loss,Soil fertility,Rainfall,Wildlife loss
+MCQ,47,Which is an example of protected forest?,Reserved forest,National park,Community forest,Private forest,National park
+MCQ,48,Which community practice conserved forests?,Shifting cultivation,Sacred groves,Mining,Urbanisation,Sacred groves
+MCQ,49,The main aim of wildlife conservation is,Economic benefit,Biodiversity protection,Urban growth,Industrialisation,Biodiversity protection
+MCQ,50,Forest and wildlife resources are,Unlimited,Exhaustible,Renewable but limited,Non-renewable,Renewable but limited
+
+Integer,1,Species on verge of extinction?,Endangered,,,,
+Integer,2,Species found only in one region?,Endemic,,,,
+Integer,3,Species no longer existing?,Extinct,,,,
+Integer,4,Act for wildlife protection?,Wildlife Protection Act,,,,
+Integer,5,Year Wildlife Protection Act?,1972,,,,
+Integer,6,Most protected forest?,Reserved,,,,
+Integer,7,Movement to save trees?,Chipko,,,,
+Integer,8,Chipko Movement leader?,Sunderlal Bahuguna,,,,
+Integer,9,Forest movement in Karnataka?,Appiko,,,,
+Integer,10,Community protecting forests in Rajasthan?,Bishnoi,,,,
+Integer,11,Joint forest management includes?,Local people,,,,
+Integer,12,Animal protected in Gir?,Lion,,,,
+Integer,13,Major forest type in India?,Deciduous,,,,
+Integer,14,Illegal hunting?,Poaching,,,,
+Integer,15,Forest cover maximum state?,Madhya Pradesh,,,,
+Integer,16,Organisation for wildlife?,WWF,,,,
+Integer,17,Sacred forest example?,Groves,,,,
+Integer,18,Species with small population?,Rare,,,,
+Integer,19,Forest policy promoting conservation?,1988,,,,
+Integer,20,Forest fire causes?,Loss,,,,
+Integer,21,Forests help in?,Balance,,,,
+Integer,22,Tribal dependence on forests?,High,,,,
+Integer,23,Animal extinct example?,Dodo,,,,
+Integer,24,Human activity harming forests?,Mining,,,,
+Integer,25,Forest conservation practice?,Afforestation,,,,
+Integer,26,Protected area for wildlife?,National park,,,,
+Integer,27,Wildlife includes?,Flora and fauna,,,,
+Integer,28,Poaching banned by?,Law,,,,
+Integer,29,Forest resource type?,Renewable,,,,
+Integer,30,Social forestry benefits?,Community,,,,
+Integer,31,Forest loss term?,Deforestation,,,,
+Integer,32,Movement saving sal forests?,Appiko,,,,
+Integer,33,Protected forest use?,Limited,,,,
+Integer,34,Forest soil erosion reduced by?,Trees,,,,
+Integer,35,Forest products include?,Timber,,,,
+Integer,36,Wildlife conservation aim?,Biodiversity,,,,
+Integer,37,Forest owned by government?,Reserved,,,,
+Integer,38,Forest beyond classification?,Unclassed,,,,
+Integer,39,Forest and wildlife support?,Ecosystem,,,,
+Integer,40,Forest use regulation?,Policy,,,,
+Integer,41,Forest movement state?,Uttarakhand,,,,
+Integer,42,Animal sanctuary example?,Gir,,,,
+Integer,43,Forest protection act year?,1972,,,,
+Integer,44,Forest ecosystem part?,Animals,,,,
+Integer,45,Forest degradation cause?,Overgrazing,,,,
+Integer,46,Forest fire effect?,Habitat loss,,,,
+Integer,47,Community forest example?,Village land,,,,
+Integer,48,Forest helps rainfall?,Yes,,,,
+Integer,49,Forest conservation needed?,Yes,,,,
+Integer,50,Chapter theme?,Conservation,,,,
+
+Descriptive,1,What are forest resources?,,,,,Forest resources include plants, animals and forest products
+Descriptive,2,Explain the importance of forests.,,,,,They maintain ecological balance and support life
+Descriptive,3,What is wildlife?,,,,,Wildlife includes all animals and plants in natural habitat
+Descriptive,4,Explain biodiversity.,,,,,Variety of life forms on Earth
+Descriptive,5,What are endangered species?,,,,,Species at risk of extinction
+Descriptive,6,Explain endemic species.,,,,,Species found in specific regions
+Descriptive,7,What are extinct species?,,,,,Species that no longer exist
+Descriptive,8,Describe causes of forest depletion.,,,,,Mining, agriculture, urbanisation
+Descriptive,9,What is deforestation?,,,,,Large scale removal of forests
+Descriptive,10,Explain the Wildlife Protection Act.,,,,,Law to protect animals and plants
+Descriptive,11,What are reserved forests?,,,,,Highly protected forests
+Descriptive,12,Explain protected forests.,,,,,Forests with limited use
+Descriptive,13,What are unclassed forests?,,,,,Forests not classified
+Descriptive,14,Describe the Chipko Movement.,,,,,Movement to protect trees
+Descriptive,15,Explain Appiko Movement.,,,,,Forest conservation movement
+Descriptive,16,What is Joint Forest Management?,,,,,Participation of locals in conservation
+Descriptive,17,Explain the role of tribal communities.,,,,,They depend on forests
+Descriptive,18,What are sacred groves?,,,,,Forests protected due to religious beliefs
+Descriptive,19,Explain forest conservation.,,,,,Protection and sustainable use
+Descriptive,20,What is poaching?,,,,,Illegal hunting of animals
+Descriptive,21,Describe the importance of wildlife conservation.,,,,,Maintains biodiversity
+Descriptive,22,Explain the impact of mining on forests.,,,,,Leads to land degradation
+Descriptive,23,Describe social forestry.,,,,,Planting trees for community use
+Descriptive,24,Explain causes of wildlife extinction.,,,,,Human activities
+Descriptive,25,What is afforestation?,,,,,Planting of trees
+Descriptive,26,Explain forest policy of 1988.,,,,,Focused on conservation
+Descriptive,27,Describe biosphere reserves.,,,,,Protected large ecosystems
+Descriptive,28,Explain national parks.,,,,,Protected wildlife areas
+Descriptive,29,Describe wildlife sanctuaries.,,,,,Protected animal habitats
+Descriptive,30,Explain role of NGOs in conservation.,,,,,Promote awareness
+Descriptive,31,Explain human impact on wildlife.,,,,,Habitat destruction
+Descriptive,32,What is habitat?,,,,,Natural home of species
+Descriptive,33,Explain forest ecosystem.,,,,,Interconnected living systems
+Descriptive,34,Describe measures to conserve forests.,,,,,Afforestation and laws
+Descriptive,35,Explain need for conservation.,,,,,For future generations
+Descriptive,36,Describe role of government.,,,,,Policy and protection
+Descriptive,37,Explain forest degradation.,,,,,Decline in forest quality
+Descriptive,38,Describe importance of flora and fauna.,,,,,Support life systems
+Descriptive,39,Explain community participation.,,,,,Shared responsibility
+Descriptive,40,What is biodiversity loss?,,,,,Reduction in species
+Descriptive,41,Explain climate impact of deforestation.,,,,,Leads to warming
+Descriptive,42,Describe forest based livelihoods.,,,,,Tribal economy
+Descriptive,43,Explain conservation strategies.,,,,,Protected areas
+Descriptive,44,Describe Chipko Movement leaders.,,,,,Sunderlal Bahuguna
+Descriptive,45,Explain role of women in conservation.,,,,,Active participation
+Descriptive,46,Explain forest rights.,,,,,Access and use rights
+Descriptive,47,Describe sustainable forest use.,,,,,Balanced exploitation
+Descriptive,48,Explain importance of wildlife.,,,,,Ecological balance
+Descriptive,49,Explain forest management.,,,,,Planned use
+Descriptive,50,Summarize Forest and Wildlife Resources.,,,,,Chapter highlights conservation of forests and wildlife

@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Money is anything that is accepted as,Wealth,Payment,Exchange medium,Investment,Exchange medium
+MCQ,2,Which of the following is legal tender?,Gold,Cheque,Currency notes,Jewellery,Currency notes
+MCQ,3,Modern money includes,Coins only,Notes only,Notes and coins,Gold,Notes and coins
+MCQ,4,Who issues currency notes in India?,Government of India,Reserve Bank of India,State Bank of India,Finance Ministry,Reserve Bank of India
+MCQ,5,Money eliminates the problem of,Inflation,Double coincidence of wants,Unemployment,Poverty,Double coincidence of wants
+MCQ,6,Which system existed before money?,Credit system,Barter system,Banking system,Trade system,Barter system
+MCQ,7,Which form of money is paper currency?,Commodity money,Fiat money,Metal money,Digital money,Fiat money
+MCQ,8,Which of the following is a demand deposit?,Fixed deposit,Recurring deposit,Cheque account,PPF,Cheque account
+MCQ,9,Demand deposits are held by,Post office,Banks,Government,Money lenders,Banks
+MCQ,10,Which facility allows withdrawal by cheque?,Savings account,Current account,Demand deposit,Fixed deposit,Demand deposit
+MCQ,11,Banks accept deposits and give,Grants,Subsidies,Loans,Pensions,Loans
+MCQ,12,The interest charged by banks on loans is,Lower than deposits,Higher than deposits,Equal to deposits,Zero,Higher than deposits
+MCQ,13,Which sector provides loans to farmers?,Corporate sector,Formal sector,Informal sector,Foreign sector,Formal sector
+MCQ,14,Which institution belongs to formal credit system?,Moneylender,Trader,Bank,Employer,Bank
+MCQ,15,Which sector charges high interest rates?,Formal sector,Government banks,Informal sector,Cooperative banks,Informal sector
+MCQ,16,Which is NOT a source of informal credit?,Moneylender,Friends,Relatives,Bank,Bank
+MCQ,17,Formal sector credit is supervised by,RBI,Government,Parliament,Courts,RBI
+MCQ,18,Which is an example of collateral?,Salary,Education,Land documents,Identity card,Land documents
+MCQ,19,Collateral is required to,Ensure profit,Reduce interest,Guarantee repayment,Increase loan,Guarantee repayment
+MCQ,20,Which crop failure increases credit need?,Good harvest,Poor harvest,Surplus yield,Export,Poor harvest
+MCQ,21,Which sector follows RBI guidelines?,Informal sector,Formal sector,Private lenders,None,Formal sector
+MCQ,22,Which institution gives loans at low interest?,Moneylenders,Banks,Traders,Employers,Banks
+MCQ,23,Which credit source exploits borrowers?,Formal sector,Informal sector,Cooperative banks,RBI,Informal sector
+MCQ,24,Which term means loan for consumption?,Productive credit,Consumption credit,Capital credit,Trade credit,Consumption credit
+MCQ,25,Which credit helps in income generation?,Consumption credit,Productive credit,Personal credit,Emergency credit,Productive credit
+MCQ,26,Which example shows debt trap?,Low interest loan,High interest loan,No loan,Bank loan,High interest loan
+MCQ,27,Which institution regulates banks?,SBI,RBI,Finance Ministry,SEBI,RBI
+MCQ,28,Which sector includes SHGs?,Formal sector,Informal sector,Government sector,Private sector,Formal sector
+MCQ,29,SHGs mainly provide loans to,Industries,Farmers and poor,Big traders,Corporates,Farmers and poor
+MCQ,30,Which organisation promotes SHGs?,NABARD,IMF,World Bank,WTO,NABARD
+MCQ,31,Which credit source is flexible but risky?,Formal,Informal,Government,Bank,Informal
+MCQ,32,Which form of money is digital?,Coins,Currency,UPI,Gold,UPI
+MCQ,33,Which deposit earns interest?,Demand deposit,Current account,Savings account,Cheque,Savings account
+MCQ,34,Which institution gives agricultural credit?,Banks,Moneylenders,Traders,Employers,Banks
+MCQ,35,Which sector lacks documentation?,Formal,Informal,Government,Bank,Informal
+MCQ,36,Which is a formal credit agency?,Cooperative bank,Moneylender,Trader,Employer,Cooperative bank
+MCQ,37,Which loan requires collateral?,Bank loan,Friend loan,Relatives loan,Traders loan,Bank loan
+MCQ,38,Which system ensures cheap credit?,Formal system,Informal system,Private system,None,Formal system
+MCQ,39,Which credit increases inequality?,Formal,Government,Informal,Cooperative,Informal
+MCQ,40,Which deposit can be withdrawn anytime?,Fixed deposit,Recurring deposit,Demand deposit,PPF,Demand deposit
+MCQ,41,Which body controls money supply?,Government,RBI,Banks,SEBI,RBI
+MCQ,42,Which is NOT money?,Cheque,Note,Gold ornament,Coin,Gold ornament
+MCQ,43,Which credit source has no legal protection?,Formal sector,Informal sector,Banks,Cooperatives,Informal sector
+MCQ,44,Which loan is used for buying seeds?,Consumption loan,Productive loan,Trade loan,Emergency loan,Productive loan
+MCQ,45,Which credit system is safer?,Informal,Formal,Private,None,Formal
+MCQ,46,Which system reduces exploitation?,Formal credit,Informal credit,Private credit,Trader credit,Formal credit
+MCQ,47,Which sector includes moneylenders?,Formal,Informal,Government,Bank,Informal
+MCQ,48,Which form of money is accepted everywhere?,Barter,Credit note,Currency,Cheque,Currency
+MCQ,49,Which credit helps business expansion?,Consumption credit,Productive credit,Emergency credit,Personal credit,Productive credit
+MCQ,50,Money and credit are important for,Trade,Development,Production,All of these,All of these
+
+Integer,1,Medium of exchange?,Money,,,,
+Integer,2,Old exchange system?,Barter,,,,
+Integer,3,Issuer of currency?,RBI,,,,
+Integer,4,Deposit withdrawable anytime?,Demand deposit,,,,
+Integer,5,Loan security?,Collateral,,,,
+Integer,6,Cheap credit source?,Banks,,,,
+Integer,7,High interest sector?,Informal,,,,
+Integer,8,Bank regulator?,RBI,,,,
+Integer,9,Group based lending?,SHG,,,,
+Integer,10,Organisation supporting SHG?,NABARD,,,,
+Integer,11,Paper money type?,Fiat,,,,
+Integer,12,Formal credit source?,Bank,,,,
+Integer,13,Informal lender?,Moneylender,,,,
+Integer,14,Loan for earning income?,Productive,,,,
+Integer,15,Loan for daily needs?,Consumption,,,,
+Integer,16,Safe credit system?,Formal,,,,
+Integer,17,Digital payment example?,UPI,,,,
+Integer,18,Document used as security?,Land papers,,,,
+Integer,19,Deposit earning interest?,Savings,,,,
+Integer,20,High risk credit?,Informal,,,,
+Integer,21,Formal sector follows?,Rules,,,,
+Integer,22,Unregulated credit?,Informal,,,,
+Integer,23,Farmer credit source?,Banks,,,,
+Integer,24,Cheap rural credit?,SHG,,,,
+Integer,25,Main bank function?,Lending,,,,
+Integer,26,Cheque facility?,Demand deposit,,,,
+Integer,27,Institution supervising banks?,RBI,,,,
+Integer,28,Debt trap cause?,High interest,,,,
+Integer,29,Formal credit benefit?,Low interest,,,,
+Integer,30,Collateral example?,House,,,,
+Integer,31,Legal tender?,Currency,,,,
+Integer,32,Money stored in bank?,Deposit,,,,
+Integer,33,Source of unfair credit?,Moneylender,,,,
+Integer,34,Micro credit users?,Poor,,,,
+Integer,35,SHG members?,Women,,,,
+Integer,36,Formal credit safer?,Yes,,,,
+Integer,37,Interest on loan?,More,,,,
+Integer,38,Interest on deposit?,Less,,,,
+Integer,39,Informal credit result?,Exploitation,,,,
+Integer,40,Productive loan example?,Farming,,,,
+Integer,41,Consumption loan example?,Food,,,,
+Integer,42,Institution for rural credit?,NABARD,,,,
+Integer,43,Money supply controller?,RBI,,,,
+Integer,44,Loan guarantee?,Collateral,,,,
+Integer,45,Formal credit availability?,Limited,,,,
+Integer,46,Informal credit availability?,Easy,,,,
+Integer,47,Chapter theme?,Money and Credit,,,,
+Integer,48,Money removes problem of?,Double coincidence,,,,
+Integer,49,Legal bank document?,Cheque,,,,
+Integer,50,Goal of credit?,Development,,,,
+
+Descriptive,1,What is money?,,,,,Money is a medium of exchange used for buying and selling
+Descriptive,2,Explain barter system.,,,,,System of exchange without money
+Descriptive,3,What problem does barter system face?,,,,,Double coincidence of wants
+Descriptive,4,Explain functions of money.,,,,,Medium of exchange and store of value
+Descriptive,5,What is modern money?,,,,,Currency notes and coins
+Descriptive,6,Who issues currency in India?,,,,,Reserve Bank of India
+Descriptive,7,Explain demand deposits.,,,,,Bank deposits withdrawable anytime
+Descriptive,8,Explain role of banks.,,,,,Accept deposits and give loans
+Descriptive,9,What is credit?,,,,,Loan taken to meet needs
+Descriptive,10,Explain need for credit.,,,,,To meet expenses and invest
+Descriptive,11,Explain formal sources of credit.,,,,,Banks and cooperatives
+Descriptive,12,Explain informal sources of credit.,,,,,Moneylenders and traders
+Descriptive,13,Difference between formal and informal credit.,,,,,Interest rate and regulation
+Descriptive,14,Why is formal credit important?,,,,,Prevents exploitation
+Descriptive,15,What is collateral?,,,,,Asset pledged for loan
+Descriptive,16,Explain terms of credit.,,,,,Interest, collateral, time
+Descriptive,17,Explain productive credit.,,,,,Credit for income generation
+Descriptive,18,Explain consumption credit.,,,,,Credit for daily needs
+Descriptive,19,Explain debt trap.,,,,,Borrower unable to repay
+Descriptive,20,Explain role of RBI.,,,,,Controls banks and credit
+Descriptive,21,Why do poor depend on informal credit?,,,,,Easy availability
+Descriptive,22,Explain SHGs.,,,,,Self Help Groups for credit
+Descriptive,23,How do SHGs help poor?,,,,,Provide cheap loans
+Descriptive,24,Explain advantages of SHGs.,,,,,Low interest and empowerment
+Descriptive,25,Explain disadvantages of informal credit.,,,,,High interest exploitation
+Descriptive,26,Explain importance of cheap credit.,,,,,Promotes development
+Descriptive,27,Explain rural credit situation.,,,,,Dependence on moneylenders
+Descriptive,28,Explain urban credit sources.,,,,,Banks and cooperatives
+Descriptive,29,Explain digital payments.,,,,,Cashless transactions
+Descriptive,30,Explain role of NABARD.,,,,,Supports rural banking
+Descriptive,31,Explain why formal credit is limited.,,,,,Documentation issues
+Descriptive,32,Explain bank interest difference.,,,,,Loans higher than deposits
+Descriptive,33,Explain money as store of value.,,,,,Can be saved
+Descriptive,34,Explain legal tender.,,,,,Accepted by law
+Descriptive,35,Explain financial inclusion.,,,,,Access to banking
+Descriptive,36,Explain inequality in credit.,,,,,Poor get costly loans
+Descriptive,37,Explain importance of banking system.,,,,,Economic growth
+Descriptive,38,Explain collateral based lending.,,,,,Secured loans
+Descriptive,39,Explain exploitation by moneylenders.,,,,,High interest rates
+Descriptive,40,Explain credit for agriculture.,,,,,Seeds and equipment
+Descriptive,41,Explain credit for small business.,,,,,Business expansion
+Descriptive,42,Explain role of government in credit.,,,,,Regulation and schemes
+Descriptive,43,Explain bank loan process.,,,,,Application and approval
+Descriptive,44,Explain why credit can be harmful.,,,,,Debt trap
+Descriptive,45,Explain responsible borrowing.,,,,,Proper repayment
+Descriptive,46,Explain cashless economy.,,,,,Digital payments
+Descriptive,47,Explain money and development.,,,,,Supports growth
+Descriptive,48,Explain credit linked exploitation.,,,,,Cycle of debt
+Descriptive,49,Explain long term benefits of formal credit.,,,,,Economic stability
+Descriptive,50,Summarize Money and Credit.,,,,,Chapter explains money, banks and credit system

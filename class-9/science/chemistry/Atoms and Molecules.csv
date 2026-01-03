@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Who proposed the atomic theory?,Dalton,Thomson,Rutherford,Bohr,Dalton
+MCQ,2,Law of conservation of mass was given by?,Dalton,Lavoisier,Newton,Bohr,Lavoisier
+MCQ,3,Law of constant proportions states that?,Mass conserved,Fixed ratio of elements,Atoms indivisible,None,Fixed ratio of elements
+MCQ,4,Which is the smallest particle of matter?,Atom,Molecule,Cell,Electron,Atom
+MCQ,5,Molecule of an element contains?,Same atoms,Different atoms,Only ions,None,Same atoms
+MCQ,6,Molecule of a compound contains?,Same atoms,Different atoms,Only ions,None,Different atoms
+MCQ,7,SI unit of amount of substance?,kg,mole,gram,liter,mole
+MCQ,8,1 mole contains how many particles?,6.02×10²³,3.01×10²³,1×10²³,10²³,6.02×10²³
+MCQ,9,Number 6.02×10²³ is called?,Atomic number,Avogadro number,Mass number,None,Avogadro number
+MCQ,10,Atomic mass unit is based on?,Oxygen atom,Carbon-12 atom,Hydrogen atom,None,Carbon-12 atom
+MCQ,11,1 amu equals?,1/12 mass of C-12,1 g,1 kg,None,1/12 mass of C-12
+MCQ,12,Formula of water is?,HO,H₂O,H₂O₂,None,H₂O
+MCQ,13,Atomicity of oxygen is?,1,2,3,4,2
+MCQ,14,Atomicity of phosphorus is?,2,4,6,8,4
+MCQ,15,Atomicity of sulphur is?,2,6,8,10,8
+MCQ,16,Which is a diatomic molecule?,Helium,Hydrogen,Neon,Argon,Hydrogen
+MCQ,17,Which is a monoatomic gas?,Oxygen,Nitrogen,Helium,Hydrogen,Helium
+MCQ,18,Chemical formula represents?,Atoms only,Molecules only,Composition,None,Composition
+MCQ,19,Molecular mass of H₂O is?,16 u,17 u,18 u,20 u,18 u
+MCQ,20,Formula mass of NaCl is?,23 u,35.5 u,58.5 u,60 u,58.5 u
+MCQ,21,Gram molecular mass of a substance is?,Molecular mass in grams,Atomic mass in grams,None,None,Molecular mass in grams
+MCQ,22,Which law explains balancing equations?,Law of conservation of mass,Law of constant proportion,None,None,Law of conservation of mass
+MCQ,23,Coefficient in equation shows?,Mass,Number of molecules,Volume,None,Number of molecules
+MCQ,24,Which is correct chemical equation?,H₂+O₂→H₂O,H₂+O₂→2H₂O,2H₂+O₂→2H₂O,None,2H₂+O₂→2H₂O
+MCQ,25,Mole of any gas at STP occupies?,11.2 L,22.4 L,44.8 L,None,22.4 L
+MCQ,26,Relative atomic mass of hydrogen?,1,2,16,12,1
+MCQ,27,Relative atomic mass of oxygen?,8,12,14,16,16
+MCQ,28,Which is not an element?,Oxygen,Hydrogen,Water,Nitrogen,Water
+MCQ,29,Which has variable composition?,Compound,Element,Mixture,None,Mixture
+MCQ,30,Which has fixed composition?,Mixture,Compound,Solution,None,Compound
+MCQ,31,Which represents one mole of CO₂?,44 g,22 g,28 g,32 g,44 g
+MCQ,32,Mass of 1 mole of oxygen gas?,16 g,32 g,8 g,None,32 g
+MCQ,33,Molecular formula gives?,Number of atoms,Mass,Exact composition,None,Exact composition
+MCQ,34,Atomic mass of carbon?,6,12,14,16,12
+MCQ,35,Which has maximum atomicity?,H₂,O₂,S₈,P₄,S₈
+MCQ,36,Symbol of sodium?,Na,S,K,So,Na
+MCQ,37,Symbol of potassium?,P,K,Po,Pt,K
+MCQ,38,Which law says mass remains constant?,Conservation law,Constant proportion,None,None,Conservation law
+MCQ,39,1 mole of water contains?,1 mole molecules,2 mole H atoms,Both,None,Both
+MCQ,40,Which has least mass?,1 mole H₂,1 mole O₂,1 mole N₂,None,1 mole H₂
+MCQ,41,Formula mass is used for?,Ionic compounds,Covalent compounds,None,None,Ionic compounds
+MCQ,42,Molecular mass is used for?,Ionic compounds,Covalent compounds,None,None,Covalent compounds
+MCQ,43,Which is an ion?,Na⁺,Na,Na₂,None,Na⁺
+MCQ,44,Which is balanced?,H₂+Cl₂→2HCl,H₂+Cl₂→HCl,None,None,H₂+Cl₂→2HCl
+MCQ,45,Which quantity is conserved in reactions?,Energy,Mass,Volume,None,Mass
+MCQ,46,Empirical formula shows?,Simplest ratio,Exact ratio,None,None,Simplest ratio
+MCQ,47,Molecular formula is?,Multiple of empirical,Same as empirical,None,None,Multiple of empirical
+MCQ,48,Which element exists as molecule?,Iron,Helium,Oxygen,None,Oxygen
+MCQ,49,Which unit is used for atomic mass?,kg,amu,g,mole,amu
+MCQ,50,Atoms combine in?,Simple whole numbers,Fractions,Decimals,None,Simple whole numbers
+
+Integer,1,Who proposed atomic theory?,Dalton,,,,
+Integer,2,Law of conservation of mass given by?,Lavoisier,,,,
+Integer,3,Law of constant proportion by?,Proust,,,,
+Integer,4,Smallest particle of element?,Atom,,,,
+Integer,5,Smallest particle of compound?,Molecule,,,,
+Integer,6,SI unit of amount of substance?,Mole,,,,
+Integer,7,Avogadro number?,6.02×10²³,,,,
+Integer,8,1 mole equals how many particles?,6.02×10²³,,,,
+Integer,9,Standard atom for amu?,Carbon-12,,,,
+Integer,10,Atomicity of hydrogen?,2,,,,
+Integer,11,Atomicity of oxygen?,2,,,,
+Integer,12,Atomicity of nitrogen?,2,,,,
+Integer,13,Atomicity of phosphorus?,4,,,,
+Integer,14,Atomicity of sulphur?,8,,,,
+Integer,15,Formula of water?,H₂O,,,,
+Integer,16,Molecular mass of water?,18 u,,,,
+Integer,17,Formula mass of NaCl?,58.5 u,,,,
+Integer,18,Gram molecular mass means?,Molecular mass in grams,,,,
+Integer,19,1 mole of gas volume at STP?,22.4 L,,,,
+Integer,20,Relative atomic mass of H?,1,,,,
+Integer,21,Relative atomic mass of O?,16,,,,
+Integer,22,Symbol of sodium?,Na,,,,
+Integer,23,Symbol of potassium?,K,,,,
+Integer,24,Mass conserved in reaction? (Yes/No),Yes,,,,
+Integer,25,Atoms indivisible? (Yes/No),No,,,,
+Integer,26,Molecule of element has same atoms? (Yes/No),Yes,,,,
+Integer,27,Molecule of compound has different atoms? (Yes/No),Yes,,,,
+Integer,28,Empirical formula is simplest ratio? (Yes/No),Yes,,,,
+Integer,29,Molecular formula multiple of empirical? (Yes/No),Yes,,,,
+Integer,30,Atomic mass unit symbol?,amu,,,,
+Integer,31,1 mole of O₂ mass?,32 g,,,,
+Integer,32,1 mole of CO₂ mass?,44 g,,,,
+Integer,33,Number of atoms in H₂?,2,,,,
+Integer,34,Number of atoms in H₂O?,3,,,,
+Integer,35,Number of molecules in 1 mole?,6.02×10²³,,,,
+Integer,36,Which law helps balancing equations?,Conservation of mass,,,,
+Integer,37,Chemical equation coefficient shows?,Molecules,,,,
+Integer,38,Element exists independently? (Yes/No),Yes,,,,
+Integer,39,Compound separated chemically? (Yes/No),Yes,,,,
+Integer,40,Mixture separated physically? (Yes/No),Yes,,,,
+Integer,41,Atomic mass of carbon?,12,,,,
+Integer,42,Atomic mass of nitrogen?,14,,,,
+Integer,43,Symbol of chlorine?,Cl,,,,
+Integer,44,Formula of carbon dioxide?,CO₂,,,,
+Integer,45,Number of moles in 12 g C?,1,,,,
+Integer,46,Number of moles in 32 g O₂?,1,,,,
+Integer,47,Mass of 1 mole H₂?,2 g,,,,
+Integer,48,Which has fixed composition?,Compound,,,,
+Integer,49,Atoms combine in whole numbers? (Yes/No),Yes,,,,
+Integer,50,Avogadro number symbol?,Nₐ,,,,
+
+Problem,1,Calculate molecular mass of H₂O.,,,,,18 u
+Problem,2,Calculate molecular mass of CO₂.,,,,,44 u
+Problem,3,Calculate formula mass of NaCl.,,,,,58.5 u
+Problem,4,Find mass of 2 moles of H₂O.,,,,,36 g
+Problem,5,Find mass of 0.5 mole of O₂.,,,,,16 g
+Problem,6,Find number of moles in 44 g CO₂.,,,,,1 mole
+Problem,7,Find number of moles in 18 g H₂O.,,,,,1 mole
+Problem,8,Find mass of 3 moles of O₂.,,,,,96 g
+Problem,9,Find number of molecules in 1 mole of H₂O.,,,,,6.02×10²³
+Problem,10,Find number of atoms in 1 mole of H₂.,,,,,1.204×10²⁴
+Problem,11,Find mass of 1 mole of NaCl.,,,,,58.5 g
+Problem,12,Find moles in 29 g NaCl.,,,,,0.5 mole
+Problem,13,Find mass of 0.25 mole of CO₂.,,,,,11 g
+Problem,14,Find moles in 16 g CH₄.,,,,,1 mole
+Problem,15,Find molecular mass of NH₃.,,,,,17 u
+Problem,16,Find mass of 2 moles NH₃.,,,,,34 g
+Problem,17,Find moles in 34 g NH₃.,,,,,2 moles
+Problem,18,Find volume of 1 mole gas at STP.,,,,,22.4 L
+Problem,19,Find volume of 2 moles gas at STP.,,,,,44.8 L
+Problem,20,Find volume of 0.5 mole gas at STP.,,,,,11.2 L
+Problem,21,Find number of molecules in 2 moles of O₂.,,,,,1.204×10²⁴
+Problem,22,Find number of atoms in 1 mole of CO₂.,,,,,1.806×10²⁴
+Problem,23,Find mass of 1 mole of CaCO₃.,,,,,100 g
+Problem,24,Find molecular mass of CaCO₃.,,,,,100 u
+Problem,25,Find moles in 50 g CaCO₃.,,,,,0.5 mole
+Problem,26,Find mass of 3 moles of H₂.,,,,,6 g
+Problem,27,Find moles in 4 g H₂.,,,,,2 moles
+Problem,28,Find mass of 1 mole of N₂.,,,,,28 g
+Problem,29,Find molecular mass of O₂.,,,,,32 u
+Problem,30,Find number of atoms in 1 mole of N₂.,,,,,1.204×10²⁴
+Problem,31,Find mass of 5 moles of CO₂.,,,,,220 g
+Problem,32,Find moles in 11 g CO₂.,,,,,0.25 mole
+Problem,33,Find mass of 1 mole of glucose (C₆H₁₂O₆).,,,,,180 g
+Problem,34,Find molecular mass of glucose.,,,,,180 u
+Problem,35,Find moles in 90 g glucose.,,,,,0.5 mole
+Problem,36,Find volume of 3 moles gas at STP.,,,,,67.2 L
+Problem,37,Find moles in 22.4 L gas at STP.,,,,,1 mole
+Problem,38,Find mass of 2 moles of N₂.,,,,,56 g
+Problem,39,Find number of molecules in 0.5 mole.,,,,,3.01×10²³
+Problem,40,Find mass of 1 mole of H₂SO₄.,,,,,98 g
+Problem,41,Find molecular mass of H₂SO₄.,,,,,98 u
+Problem,42,Find moles in 49 g H₂SO₄.,,,,,0.5 mole
+Problem,43,Find mass of 4 moles of H₂O.,,,,,72 g
+Problem,44,Find volume of 0.25 mole gas at STP.,,,,,5.6 L
+Problem,45,Find moles in 5.6 L gas at STP.,,,,,0.25 mole
+Problem,46,Find mass of 10 moles of H₂.,,,,,20 g
+Problem,47,Find number of atoms in 1 mole of He.,,,,,6.02×10²³
+Problem,48,Find molecular mass of NaOH.,,,,,40 u
+Problem,49,Find mass of 1 mole of NaOH.,,,,,40 g
+Problem,50,Find moles in 20 g NaOH.,,,,,0.5 mole

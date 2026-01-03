@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Matter is defined as?,Anything that has mass,Anything that occupies space,Both A and B,None,Both A and B
+MCQ,2,Which of the following is matter?,Air,Light,Sound,Heat,Air
+MCQ,3,SI unit of temperature is?,Celsius,Fahrenheit,Kelvin,None,Kelvin
+MCQ,4,Change of state occurs due to change in?,Pressure,Temperature,Both,None,Both
+MCQ,5,Which state of matter has fixed shape?,Solid,Liquid,Gas,None,Solid
+MCQ,6,Which state of matter has fixed volume?,Solid,Liquid,Gas,Solid and liquid,Solid and liquid
+MCQ,7,Which state of matter is highly compressible?,Solid,Liquid,Gas,None,Gas
+MCQ,8,Particles of matter have?,Spaces,Attraction,Motion,All of these,All of these
+MCQ,9,Diffusion is fastest in?,Solid,Liquid,Gas,None,Gas
+MCQ,10,Which state has maximum kinetic energy?,Solid,Liquid,Gas,None,Gas
+MCQ,11,Boiling point of water is?,0°C,50°C,100°C,373°C,100°C
+MCQ,12,Melting point of ice is?,0°C,100°C,273°C,32°C,0°C
+MCQ,13,Latent heat is absorbed during?,Freezing,Condensation,Melting,None,Melting
+MCQ,14,Latent heat of fusion is energy required to?,Change solid to liquid,Change liquid to gas,Change gas to liquid,None,Change solid to liquid
+MCQ,15,Evaporation occurs at?,Boiling point,Any temperature,0°C,None,Any temperature
+MCQ,16,Evaporation causes?,Heating,Cooling,No change,None,Cooling
+MCQ,17,Which factor increases evaporation?,High humidity,Low temperature,High wind speed,None,High wind speed
+MCQ,18,Why does cotton dry faster in summer?,High humidity,High temperature,Low wind,None,High temperature
+MCQ,19,Which has least intermolecular force?,Solid,Liquid,Gas,None,Gas
+MCQ,20,Gas can be liquefied by?,Heating,Cooling and compression,Expansion,None,Cooling and compression
+MCQ,21,Which process is opposite of evaporation?,Boiling,Condensation,Melting,None,Condensation
+MCQ,22,Which process releases latent heat?,Melting,Boiling,Condensation,None,Condensation
+MCQ,23,1 Kelvin equals?,1°C,273°C,273 K,None,1°C
+MCQ,24,Lowest temperature possible is?,0°C,-273°C,0 K,100°C,0 K
+MCQ,25,Which state has negligible attraction?,Solid,Liquid,Gas,None,Gas
+MCQ,26,Why gases fill container?,High attraction,Low motion,High kinetic energy,None,High kinetic energy
+MCQ,27,Sublimation is?,Solid to gas,Gas to solid,Liquid to gas,None,Solid to gas
+MCQ,28,Which substance sublimes?,Salt,Sugar,Ammonium chloride,Water,Ammonium chloride
+MCQ,29,Evaporation increases with?,Decrease in surface area,Increase in humidity,Increase in surface area,None,Increase in surface area
+MCQ,30,Boiling occurs when?,Vapour pressure equals atmospheric pressure,Temperature low,None,None,Vapour pressure equals atmospheric pressure
+MCQ,31,Why we feel cool after sweating?,Evaporation absorbs heat,Condensation releases heat,None,None,Evaporation absorbs heat
+MCQ,32,Particles of matter are?,Stationary,Moving,Dead,None,Moving
+MCQ,33,Which state has definite shape and volume?,Solid,Liquid,Gas,None,Solid
+MCQ,34,Which state has neither shape nor volume?,Solid,Liquid,Gas,None,Gas
+MCQ,35,Rate of evaporation decreases with?,High temperature,Low surface area,High wind,None,Low surface area
+MCQ,36,Which has maximum diffusion?,Solid,Liquid,Gas,None,Gas
+MCQ,37,Intermolecular forces are strongest in?,Solid,Liquid,Gas,None,Solid
+MCQ,38,Conversion of gas to liquid is?,Evaporation,Condensation,Freezing,None,Condensation
+MCQ,39,Boiling is a?,Surface phenomenon,Bulk phenomenon,None,None,Bulk phenomenon
+MCQ,40,Evaporation is a?,Bulk phenomenon,Surface phenomenon,None,None,Surface phenomenon
+MCQ,41,Which has highest density?,Solid,Liquid,Gas,None,Solid
+MCQ,42,Why LPG is stored in cylinders?,High pressure,Low temperature,Both,None,Both
+MCQ,43,Particles of matter attract each other? (Yes/No),Yes,,,,
+MCQ,44,Diffusion is possible in solids? (Yes/No),Yes,,,,
+MCQ,45,Which factor does not affect evaporation?,Surface area,Humidity,Colour,None,Colour
+MCQ,46,Which has minimum density?,Solid,Liquid,Gas,None,Gas
+MCQ,47,Which change absorbs heat?,Freezing,Condensation,Melting,None,Melting
+MCQ,48,Which change releases heat?,Melting,Evaporation,Condensation,None,Condensation
+MCQ,49,SI unit of mass?,kg,g,ton,None,kg
+MCQ,50,Which is matter?,Light,Sound,Air,None,Air
+
+Integer,1,Matter has mass and occupies?,Space,,,,
+Integer,2,SI unit of temperature?,Kelvin,,,,
+Integer,3,Boiling point of water?,100°C,,,,
+Integer,4,Melting point of ice?,0°C,,,,
+Integer,5,Lowest temperature?,0 K,,,,
+Integer,6,1°C equals how many K?,1,,,,
+Integer,7,Gas is highly compressible? (Yes/No),Yes,,,,
+Integer,8,Diffusion fastest in?,Gas,,,,
+Integer,9,Evaporation causes?,Cooling,,,,
+Integer,10,Latent heat of fusion used in?,Melting,,,,
+Integer,11,Sublimation means?,Solid to gas,,,,
+Integer,12,Intermolecular force strongest in?,Solid,,,,
+Integer,13,Evaporation occurs at?,Any temperature,,,,
+Integer,14,Boiling is bulk phenomenon? (Yes/No),Yes,,,,
+Integer,15,Evaporation is surface phenomenon? (Yes/No),Yes,,,,
+Integer,16,Gas has definite volume? (Yes/No),No,,,,
+Integer,17,Liquid has definite volume? (Yes/No),Yes,,,,
+Integer,18,Solid has definite shape? (Yes/No),Yes,,,,
+Integer,19,Humidity increases evaporation? (Yes/No),No,,,,
+Integer,20,Wind speed increases evaporation? (Yes/No),Yes,,,,
+Integer,21,Particles of matter move? (Yes/No),Yes,,,,
+Integer,22,Boiling point depends on?,Pressure,,,,
+Integer,23,Condensation releases?,Heat,,,,
+Integer,24,Evaporation absorbs?,Heat,,,,
+Integer,25,Gas liquefied by?,Cooling and compression,,,,
+Integer,26,Diffusion in solids slow? (Yes/No),Yes,,,,
+Integer,27,Temperature measure of?,Kinetic energy,,,,
+Integer,28,Change of state needs energy? (Yes/No),Yes,,,,
+Integer,29,Particles have spaces? (Yes/No),Yes,,,,
+Integer,30,SI unit of mass?,kg,,,,
+Integer,31,Relative humidity high slows evaporation? (Yes/No),Yes,,,,
+Integer,32,Melting absorbs heat? (Yes/No),Yes,,,,
+Integer,33,Freezing releases heat? (Yes/No),Yes,,,,
+Integer,34,Gas has weakest attraction? (Yes/No),Yes,,,,
+Integer,35,Liquid flows? (Yes/No),Yes,,,,
+Integer,36,Evaporation increases surface area? (Yes/No),Yes,,,,
+Integer,37,Which state has max KE?,Gas,,,,
+Integer,38,Which state rigid?,Solid,,,,
+Integer,39,Which state fills container?,Gas,,,,
+Integer,40,Which state incompressible?,Solid,,,,
+Integer,41,SI unit of mass is kg? (Yes/No),Yes,,,,
+Integer,42,Boiling point of water in K?,373 K,,,,
+Integer,43,Melting point of ice in K?,273 K,,,,
+Integer,44,Diffusion means mixing? (Yes/No),Yes,,,,
+Integer,45,Evaporation faster at high temp? (Yes/No),Yes,,,,
+Integer,46,Which change solid to liquid?,Melting,,,,
+Integer,47,Which change liquid to gas?,Vaporization,,,,
+Integer,48,Which change gas to liquid?,Condensation,,,,
+Integer,49,Which change liquid to solid?,Freezing,,,,
+Integer,50,Gas pressure due to?,Particle collisions,,,,
+
+Problem,1,Convert 25°C to Kelvin.,,,,,298 K
+Problem,2,Convert 300 K to Celsius.,,,,,27°C
+Problem,3,Convert 0°C to Kelvin.,,,,,273 K
+Problem,4,Convert 373 K to Celsius.,,,,,100°C
+Problem,5,Convert -10°C to Kelvin.,,,,,263 K
+Problem,6,Convert 250 K to Celsius.,,,,,-23°C
+Problem,7,Why does evaporation cause cooling?,,,,,Heat absorbed
+Problem,8,Why can gases be compressed easily?,,,,,Large intermolecular spaces
+Problem,9,Why is diffusion faster in gases?,,,,,High kinetic energy
+Problem,10,Why do solids have fixed shape?,,,,,Strong intermolecular force
+Problem,11,Why does water boil at 100°C?,,,,,Vapour pressure equals atmospheric pressure
+Problem,12,Why does sweating cool body?,,,,,Evaporation absorbs heat
+Problem,13,Why LPG stored in cylinders?,,,,,High pressure liquefaction
+Problem,14,Why ice floats on water?,,,,,Lower density
+Problem,15,Why cotton clothes in summer?,,,,,More evaporation
+Problem,16,Why desert cooler at night?,,,,,Rapid radiation
+Problem,17,Why evaporation faster on windy day?,,,,,More vapour removed
+Problem,18,Why water droplets on cold bottle?,,,,,Condensation
+Problem,19,Why solids incompressible?,,,,,Strong attraction
+Problem,20,Why gas fills container?,,,,,Random motion
+Problem,21,Why boiling point increases with pressure?,,,,,More energy needed
+Problem,22,Why smell spreads faster?,,,,,Diffusion
+Problem,23,Why earthen pot cools water?,,,,,Evaporation
+Problem,24,Why evaporation slow in humid day?,,,,,Air saturated
+Problem,25,Why liquids have definite volume?,,,,,Moderate attraction
+Problem,26,Why gases have no fixed shape?,,,,,Weak attraction
+Problem,27,Why solids rigid?,,,,,Strong forces
+Problem,28,Why water vapour condenses?,,,,,Cooling
+Problem,29,Why ice melts at 0°C?,,,,,Latent heat absorbed
+Problem,30,Why boiling water remains at 100°C?,,,,,Latent heat
+Problem,31,Why smell of perfume spreads?,,,,,Diffusion
+Problem,32,Why liquids flow?,,,,,Weak attraction
+Problem,33,Why gases exert pressure?,,,,,Particle collisions
+Problem,34,Why evaporation faster at high temp?,,,,,More kinetic energy
+Problem,35,Why solids dense?,,,,,Close packing
+Problem,36,Why gases less dense?,,,,,Large spaces
+Problem,37,Why sublimation occurs?,,,,,High vapour pressure
+Problem,38,Why snow melts slowly?,,,,,Latent heat
+Problem,39,Why water freezes at 0°C?,,,,,Energy loss
+Problem,40,Why gases liquefied on cooling?,,,,,Reduced KE
+Problem,41,Why solids expand on heating?,,,,,Increased KE
+Problem,42,Why evaporation at any temp?,,,,,Surface phenomenon
+Problem,43,Why boiling is bulk?,,,,,Whole liquid
+Problem,44,Why diffusion slow in solids?,,,,,Low motion
+Problem,45,Why pressure increases in gas?,,,,,More collisions
+Problem,46,Why solids hard?,,,,,Strong bonds
+Problem,47,Why liquids incompressible?,,,,,Less space
+Problem,48,Why water exists in 3 states?,,,,,Moderate forces
+Problem,49,Why gases invisible?,,,,,Low density
+Problem,50,Why heat needed for melting?,,,,,Break forces

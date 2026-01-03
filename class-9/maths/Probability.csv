@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Probability of an event lies between?,0 and 1,−1 and 1,0 and ∞,1 and 2,0 and 1
+MCQ,2,If an event is certain, its probability is?,0,1,1/2,Depends,1
+MCQ,3,If an event is impossible, its probability is?,0,1,−1,Depends,0
+MCQ,4,Probability is defined as?,Favourable outcomes/Total outcomes,Total/Favourable,Mean,None,Favourable outcomes/Total outcomes
+MCQ,5,Which is a random experiment?,Tossing a coin,Sunrise,Ticking clock,None,Tossing a coin
+MCQ,6,The result of a random experiment is called?,Event,Outcome,Sample space,Trial,Outcome
+MCQ,7,The set of all possible outcomes is called?,Event,Trial,Sample space,Experiment,Sample space
+MCQ,8,Probability of getting head when tossing a fair coin?,1,0,1/2,2,1/2
+MCQ,9,Probability of getting tail when tossing a fair coin?,1/2,1,0,2,1/2
+MCQ,10,Probability of getting an even number on a die?,1/6,1/3,1/2,2/3,1/2
+MCQ,11,Probability of getting an odd number on a die?,1/6,1/3,1/2,2/3,1/2
+MCQ,12,Total outcomes when rolling a die?,2,4,6,8,6
+MCQ,13,Total outcomes when tossing two coins?,2,3,4,6,4
+MCQ,14,Probability of getting 6 on a die?,1/6,1/3,1/2,1,1/6
+MCQ,15,Probability of getting a prime number on a die?,1/6,1/3,1/2,2/3,1/2
+MCQ,16,Which event has probability 1?,Impossible,Certain,Equally likely,None,Certain
+MCQ,17,Which event has probability 0?,Certain,Impossible,Sure,None,Impossible
+MCQ,18,If P(E)=1, then event E is?,Impossible,Certain,Random,None,Certain
+MCQ,19,If P(E)=0, then event E is?,Certain,Impossible,Random,None,Impossible
+MCQ,20,Which is an equally likely outcome?,Coin toss,Sunrise,Rainfall,None,Coin toss
+MCQ,21,Probability of getting red card from a deck?,1/52,13/52,26/52,39/52,26/52
+MCQ,22,Probability of getting black card from a deck?,26/52,13/52,1/52,39/52,26/52
+MCQ,23,Probability of getting a king from deck?,1/13,1/52,4/52,13/52,4/52
+MCQ,24,Probability of getting an ace from deck?,1/52,4/52,13/52,26/52,4/52
+MCQ,25,Probability of getting a heart from deck?,1/4,1/13,13/52,26/52,13/52
+MCQ,26,Probability of an event not happening is called?,Event probability,Complementary probability,Zero probability,None,Complementary probability
+MCQ,27,If P(E)=3/5, then P(not E)=?,2/5,3/5,1/5,5/3,2/5
+MCQ,28,Sum of probabilities of an event and its complement?,0,1,2,Depends,1
+MCQ,29,Which probability is theoretical?,Based on experiment,Based on formula,Based on survey,None,Based on formula
+MCQ,30,Probability can be?,Negative,Greater than 1,Between 0 and 1,Integer only,Between 0 and 1
+MCQ,31,Which event cannot occur?,Sure event,Impossible event,Random event,None,Impossible event
+MCQ,32,Probability of getting 7 on a die?,1/6,0,1,Depends,0
+MCQ,33,Probability of getting a number less than 7 on die?,1/6,5/6,1,0,1
+MCQ,34,If all outcomes are favourable, probability is?,0,1/2,1,Depends,1
+MCQ,35,If no outcome is favourable, probability is?,0,1,1/2,Depends,0
+MCQ,36,Probability of drawing a spade from deck?,1/4,1/13,13/52,26/52,13/52
+MCQ,37,Which has highest probability?,Certain event,Impossible event,Random event,None,Certain event
+MCQ,38,Which has lowest probability?,Certain event,Impossible event,Random event,None,Impossible event
+MCQ,39,Probability of getting a face card?,3/13,4/13,12/52,26/52,12/52
+MCQ,40,Probability of getting a red face card?,6/52,12/52,3/13,1/13,6/52
+MCQ,41,Probability of getting tail in two tosses?,1/4,1/2,3/4,1,3/4
+MCQ,42,Total outcomes of tossing three coins?,6,8,4,2,8
+MCQ,43,Probability of getting all heads in two tosses?,1/4,1/2,3/4,1,1/4
+MCQ,44,Probability of getting at least one head in one toss?,0,1/2,1,Depends,1/2
+MCQ,45,Probability of getting a composite number on die?,1/6,1/3,1/2,2/3,1/3
+MCQ,46,Probability of getting number divisible by 3 on die?,1/6,1/3,1/2,2/3,1/3
+MCQ,47,Probability of getting a non-prime on die?,1/6,1/3,1/2,2/3,1/2
+MCQ,48,Which event has probability between 0 and 1?,Certain,Impossible,Random,None,Random
+MCQ,49,Probability of getting even or odd on die?,1/2,1,0,Depends,1
+MCQ,50,Probability chapter belongs to?,Algebra,Geometry,Statistics,Mensuration,Statistics
+
+Integer,1,Probability of a certain event?,1,,,,
+Integer,2,Probability of an impossible event?,0,,,,
+Integer,3,Total outcomes when tossing a coin?,2,,,,
+Integer,4,Total outcomes when rolling a die?,6,,,,
+Integer,5,Probability of head on a fair coin?,1/2,,,,
+Integer,6,Probability of tail on a fair coin?,1/2,,,,
+Integer,7,Probability range?,0 to 1,,,,
+Integer,8,Number of prime numbers on a die?,3,,,,
+Integer,9,Probability of getting a prime on die?,1/2,,,,
+Integer,10,Probability of getting an even number on die?,1/2,,,,
+Integer,11,Probability of getting 1 on die?,1/6,,,,
+Integer,12,Probability of getting number >6 on die?,0,,,,
+Integer,13,Probability of red card from deck?,1/2,,,,
+Integer,14,Probability of black card from deck?,1/2,,,,
+Integer,15,Total cards in a deck?,52,,,,
+Integer,16,Number of kings in deck?,4,,,,
+Integer,17,Probability of getting a king?,1/13,,,,
+Integer,18,Number of aces in deck?,4,,,,
+Integer,19,Probability of getting an ace?,1/13,,,,
+Integer,20,Number of outcomes in two coin tosses?,4,,,,
+Integer,21,Probability of two heads?,1/4,,,,
+Integer,22,Probability of two tails?,1/4,,,,
+Integer,23,Probability of at least one head in two tosses?,3/4,,,,
+Integer,24,Probability of no head in two tosses?,1/4,,,,
+Integer,25,Probability of getting a face card?,3/13,,,,
+Integer,26,Probability of getting a spade?,1/4,,,,
+Integer,27,Probability of getting a heart?,1/4,,,,
+Integer,28,Probability of getting a diamond?,1/4,,,,
+Integer,29,Probability of getting a club?,1/4,,,,
+Integer,30,Probability of odd number on die?,1/2,,,,
+Integer,31,Probability of composite number on die?,1/3,,,,
+Integer,32,Probability of non-prime on die?,1/2,,,,
+Integer,33,Probability of number divisible by 3 on die?,1/3,,,,
+Integer,34,Probability of number less than 3 on die?,1/3,,,,
+Integer,35,Probability of getting 7 on die?,0,,,,
+Integer,36,Probability of getting number ≤6 on die?,1,,,,
+Integer,37,Probability of an event and its complement sum?,1,,,,
+Integer,38,If P(E)=2/5, P(not E)=?,3/5,,,,
+Integer,39,Probability of random event lies?,Between 0 and 1,,,,
+Integer,40,Probability cannot be negative? (Yes/No),Yes,,,,
+Integer,41,Total outcomes of three coin tosses?,8,,,,
+Integer,42,Probability of all heads in three tosses?,1/8,,,,
+Integer,43,Probability of all tails in three tosses?,1/8,,,,
+Integer,44,Probability of at least one tail in one toss?,1/2,,,,
+Integer,45,Probability of drawing a red face card?,3/26,,,,
+Integer,46,Probability of drawing a black face card?,3/26,,,,
+Integer,47,Probability of drawing a queen?,1/13,,,,
+Integer,48,Probability of drawing a card?,1,,,,
+Integer,49,Probability of no outcome favourable?,0,,,,
+Integer,50,Probability of all outcomes favourable?,1,,,,
+
+Problem,1,Find probability of getting a head when tossing a coin.,,,,,1/2
+Problem,2,Find probability of getting an even number on a die.,,,,,1/2
+Problem,3,Find probability of getting a prime number on a die.,,,,,1/2
+Problem,4,Find probability of getting 6 on a die.,,,,,1/6
+Problem,5,Find probability of getting an odd number on a die.,,,,,1/2
+Problem,6,Find probability of getting red card from a deck.,,,,,1/2
+Problem,7,Find probability of getting a king from deck.,,,,,1/13
+Problem,8,Find probability of getting an ace from deck.,,,,,1/13
+Problem,9,Find probability of getting a spade from deck.,,,,,1/4
+Problem,10,Find probability of getting a heart from deck.,,,,,1/4
+Problem,11,Find probability of getting two heads in two coin tosses.,,,,,1/4
+Problem,12,Find probability of getting two tails in two coin tosses.,,,,,1/4
+Problem,13,Find probability of getting at least one head in two tosses.,,,,,3/4
+Problem,14,Find probability of getting no head in two tosses.,,,,,1/4
+Problem,15,Find probability of getting a face card.,,,,,3/13
+Problem,16,Find probability of getting a red face card.,,,,,3/26
+Problem,17,Find probability of getting a black face card.,,,,,3/26
+Problem,18,Find probability of getting a number less than 4 on die.,,,,,1/2
+Problem,19,Find probability of getting a composite number on die.,,,,,1/3
+Problem,20,Find probability of getting a number divisible by 3 on die.,,,,,1/3
+Problem,21,Find probability of getting 7 on die.,,,,,0
+Problem,22,Find probability of getting number ≤6 on die.,,,,,1
+Problem,23,Find probability of getting a card that is not red.,,,,,1/2
+Problem,24,Find probability of getting a non-prime on die.,,,,,1/2
+Problem,25,Find probability of getting at least one tail in one toss.,,,,,1/2
+Problem,26,Find probability of getting all heads in three tosses.,,,,,1/8
+Problem,27,Find probability of getting all tails in three tosses.,,,,,1/8
+Problem,28,Find probability of getting at least one head in three tosses.,,,,,7/8
+Problem,29,Find probability of drawing a queen from deck.,,,,,1/13
+Problem,30,Find probability of drawing a non-face card.,,,,,10/13
+Problem,31,Find probability of drawing a black card.,,,,,1/2
+Problem,32,Find probability of drawing a diamond.,,,,,1/4
+Problem,33,Find probability of getting number greater than 4 on die.,,,,,1/3
+Problem,34,Find probability of getting number less than 2 on die.,,,,,1/6
+Problem,35,Find probability of getting an even prime on die.,,,,,1/6
+Problem,36,Find probability of getting an odd prime on die.,,,,,1/3
+Problem,37,Find probability of drawing a card that is not a king.,,,,,12/13
+Problem,38,Find probability of drawing a card that is not a face card.,,,,,10/13
+Problem,39,Find probability of getting at least one head in one toss.,,,,,1/2
+Problem,40,Find probability of getting tail in one toss.,,,,,1/2
+Problem,41,Find probability of getting a number between 1 and 6 inclusive.,,,,,1
+Problem,42,Find probability of getting 0 on die.,,,,,0
+Problem,43,Find probability of drawing a card from deck.,,,,,1
+Problem,44,Find probability of getting a non-composite number on die.,,,,,2/3
+Problem,45,Find probability of drawing a spade or heart.,,,,,1/2
+Problem,46,Find probability of drawing a king or queen.,,,,,2/13
+Problem,47,Find probability of drawing a red king.,,,,,1/26
+Problem,48,Find probability of drawing a black ace.,,,,,1/26
+Problem,49,Find probability of drawing a card that is neither red nor black.,,,,,0
+Problem,50,Find probability of getting head or tail on one coin toss.,,,,,1

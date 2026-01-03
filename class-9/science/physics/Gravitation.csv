@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Who proposed the law of gravitation?,Einstein,Newton,Galileo,Kepler,Newton
+MCQ,2,Gravitational force acts between?,Two masses,Two charges,Two magnets,None,Two masses
+MCQ,3,SI unit of gravitational force is?,dyne,newton,kg,m/s,newton
+MCQ,4,Gravitational force is?,Contact force,Non-contact force,Frictional force,None,Non-contact force
+MCQ,5,Gravitational force depends on?,Mass only,Distance only,Mass and distance,None,Mass and distance
+MCQ,6,Gravitational force varies inversely as?,r,r²,r³,m,r²
+MCQ,7,Formula of gravitational force?,F=ma,F=Gm1m2/r²,F=mv,F=mg,F=Gm1m2/r²
+MCQ,8,Value of G is?,6.67×10⁻¹¹,9.8,3×10⁸,1.6×10⁻¹⁹,6.67×10⁻¹¹
+MCQ,9,SI unit of G is?,N m²/kg²,kg m²/s²,N/kg,m/s²,N m²/kg²
+MCQ,10,Weight is?,Mass,Force,Energy,Power,Force
+MCQ,11,Weight depends on?,Mass only,Gravity only,Both mass and gravity,None,Both mass and gravity
+MCQ,12,SI unit of weight?,kg,N,m/s²,kg m/s,N
+MCQ,13,Mass of an object is?,Constant,Variable,Zero,Depends,Constant
+MCQ,14,Weight of object on Moon is?,More than Earth,Less than Earth,Same,None,Less than Earth
+MCQ,15,Acceleration due to gravity on Earth is?,9.8 m/s²,10 m/s²,8 m/s²,9 m/s,9.8 m/s²
+MCQ,16,Acceleration due to gravity is denoted by?,a,g,G,v,g
+MCQ,17,Value of g on Moon is?,9.8,4.9,1.6,3.7,1.6
+MCQ,18,Free fall means?,Object moving up,Object under gravity only,Object at rest,None,Object under gravity only
+MCQ,19,During free fall acceleration is?,Zero,g,Variable,Infinite,g
+MCQ,20,Weight of object in free fall is?,Zero,mg,Less than mg,More than mg,Zero
+MCQ,21,Which quantity remains constant everywhere?,Weight,Mass,Gravity,None,Mass
+MCQ,22,Thrust is?,Force,Pressure,Area,None,Force
+MCQ,23,Pressure is?,Force/Area,Area/Force,Force×Area,None,Force/Area
+MCQ,24,SI unit of pressure?,N,m²,N/m²,kg,N/m²
+MCQ,25,Pressure increases when?,Area increases,Force decreases,Area decreases,None,Area decreases
+MCQ,26,Why camels have broad feet?,Increase pressure,Decrease pressure,Increase force,None,Decrease pressure
+MCQ,27,Why sharp knives cut easily?,More area,Less area,Less force,None,Less area
+MCQ,28,Upthrust acts?,Downwards,Upwards,Sideways,None,Upwards
+MCQ,29,Upthrust is also called?,Weight,Buoyant force,Gravity,None,Buoyant force
+MCQ,30,Buoyant force depends on?,Density of fluid,Volume of object,Both,None,Both
+MCQ,31,Archimedes principle states?,Loss of weight equals buoyant force,Mass lost,None,None,Loss of weight equals buoyant force
+MCQ,32,Object floats when?,Weight > buoyant force,Weight < buoyant force,Both equal,None,Weight < buoyant force
+MCQ,33,Object sinks when?,Weight < buoyant force,Weight > buoyant force,Both equal,None,Weight > buoyant force
+MCQ,34,Density is?,Mass/Volume,Volume/Mass,Mass×Volume,None,Mass/Volume
+MCQ,35,SI unit of density?,kg/m³,g/cm³,kg,m³,kg/m³
+MCQ,36,Relative density has unit?,Yes,No,None,None,No
+MCQ,37,Relative density is ratio of?,Two densities,Two masses,Two volumes,None,Two densities
+MCQ,38,Relative density of water is?,0,1,1000,Depends,1
+MCQ,39,If relative density >1 object?,Floats,Sinks,Neutral,None,Sinks
+MCQ,40,If relative density <1 object?,Sinks,Floats,Neutral,None,Floats
+MCQ,41,Weight of object in space?,Zero,Same as Earth,Less,None,Zero
+MCQ,42,Mass of object in space?,Zero,Same as Earth,Less,None,Same as Earth
+MCQ,43,Force between Earth and Moon is?,Equal and opposite,Unequal,None,None,Equal and opposite
+MCQ,44,Gravitation is always?,Attractive,Repulsive,Both,None,Attractive
+MCQ,45,Pressure at bottom of liquid depends on?,Depth,Density,Both,None,Both
+MCQ,46,Why we feel lighter in water?,Loss of mass,Upthrust,Gravity decrease,None,Upthrust
+MCQ,47,SI unit of thrust?,N,N/m²,kg,m/s²,N
+MCQ,48,Which force causes falling?,Magnetic,Gravitational,Friction,None,Gravitational
+MCQ,49,Which remains same on Earth and Moon?,Weight,Mass,Gravity,None,Mass
+MCQ,50,Gravitation is weakest among?,Fundamental forces,Contact forces,None,None,Fundamental forces
+
+Integer,1,Who discovered gravitation?,Newton,,,,
+Integer,2,Formula of gravitational force?,F=Gm1m2/r²,,,,
+Integer,3,Value of g on Earth?,9.8 m/s²,,,,
+Integer,4,Value of g on Moon?,1.6 m/s²,,,,
+Integer,5,SI unit of G?,N m²/kg²,,,,
+Integer,6,Weight formula?,W=mg,,,,
+Integer,7,Mass unit?,kg,,,,
+Integer,8,Weight unit?,N,,,,
+Integer,9,Acceleration due to gravity symbol?,g,,,,
+Integer,10,Gravitation is contact force? (Yes/No),No,,,,
+Integer,11,Weight depends on gravity? (Yes/No),Yes,,,,
+Integer,12,Mass changes with place? (Yes/No),No,,,,
+Integer,13,Free fall acceleration?,g,,,,
+Integer,14,Weight in free fall?,Zero,,,,
+Integer,15,Pressure formula?,Force/Area,,,,
+Integer,16,SI unit of pressure?,N/m²,,,,
+Integer,17,Upthrust acts in which direction?,Upwards,,,,
+Integer,18,Upthrust also called?,Buoyant force,,,,
+Integer,19,Archimedes principle related to?,Buoyancy,,,,
+Integer,20,Density formula?,Mass/Volume,,,,
+Integer,21,SI unit of density?,kg/m³,,,,
+Integer,22,Relative density has unit? (Yes/No),No,,,,
+Integer,23,Relative density of water?,1,,,,
+Integer,24,If RD>1 object?,Sinks,,,,
+Integer,25,If RD<1 object?,Floats,,,,
+Integer,26,Weight in space?,Zero,,,,
+Integer,27,Mass in space?,Same,,,,
+Integer,28,Force between two masses is always?,Attractive,,,,
+Integer,29,Pressure increases with depth? (Yes/No),Yes,,,,
+Integer,30,Camels have broad feet to?,Reduce pressure,,,,
+Integer,31,Sharp knife cuts due to?,High pressure,,,,
+Integer,32,Unit of thrust?,N,,,,
+Integer,33,Buoyant force depends on?,Volume and density,,,,
+Integer,34,Object floats when buoyant force?,Greater than weight,,,,
+Integer,35,Object sinks when weight?,Greater than buoyant force,,,,
+Integer,36,Weight is vector? (Yes/No),Yes,,,,
+Integer,37,Mass is scalar? (Yes/No),Yes,,,,
+Integer,38,Relative density formula?,Density of object/Density of water,,,,
+Integer,39,Gravitation acts between?,Masses,,,,
+Integer,40,Pressure at bottom of liquid depends on?,Depth,,,,
+Integer,41,Weight of 1 kg mass on Earth?,9.8 N,,,,
+Integer,42,Weight of 1 kg mass on Moon?,1.6 N,,,,
+Integer,43,Force of gravity is weakest? (Yes/No),Yes,,,,
+Integer,44,SI unit of density is kg/m³? (Yes/No),Yes,,,,
+Integer,45,Upthrust reduces weight? (Yes/No),Yes,,,,
+Integer,46,Archimedes principle used in?,Ship floating,,,,
+Integer,47,Relative density of ice?,<1,,,,
+Integer,48,Free fall means motion under?,Gravity only,,,,
+Integer,49,Thrust unit?,Newton,,,,
+Integer,50,Density of water?,1000 kg/m³,,,,
+
+Problem,1,Find weight of 5 kg mass on Earth.,,,,,49 N
+Problem,2,Find weight of 10 kg mass on Moon.,,,,,16 N
+Problem,3,Find force between two masses 1 kg and 1 kg at distance 1 m.,,,,,6.67×10⁻¹¹ N
+Problem,4,Find mass if weight is 98 N.,,,,,10 kg
+Problem,5,Find acceleration due to gravity if weight is 19.6 N and mass 2 kg.,,,,,9.8 m/s²
+Problem,6,Find density if mass 10 kg and volume 2 m³.,,,,,5 kg/m³
+Problem,7,Find pressure if force 100 N acts on area 2 m².,,,,,50 N/m²
+Problem,8,Find weight of 2 kg mass in space.,,,,,0
+Problem,9,Find relative density if density is 800 kg/m³.,,,,,0.8
+Problem,10,Find volume if mass 20 kg and density 1000 kg/m³.,,,,,0.02 m³
+Problem,11,Find buoyant force if weight loss is 5 N.,,,,,5 N
+Problem,12,Find weight of 50 kg person on Moon.,,,,,80 N
+Problem,13,Find mass if weight is 49 N.,,,,,5 kg
+Problem,14,Find pressure if force 200 N area 4 m².,,,,,50 N/m²
+Problem,15,Find density if mass 500 g volume 250 cm³.,,,,,2 g/cm³
+Problem,16,Find weight of 1 kg mass on Earth.,,,,,9.8 N
+Problem,17,Find acceleration during free fall.,,,,,9.8 m/s²
+Problem,18,Find pressure at bottom if force 300 N area 3 m².,,,,,100 N/m²
+Problem,19,Find mass if density 2000 kg/m³ volume 0.5 m³.,,,,,1000 kg
+Problem,20,Find weight of 20 kg mass on Earth.,,,,,196 N
+Problem,21,Find relative density if object floats.,,,,,<1
+Problem,22,Find buoyant force acting on floating body.,,,,,Equal to weight
+Problem,23,Find density of water.,,,,,1000 kg/m³
+Problem,24,Find pressure if area decreases and force same.,,,,,Increases
+Problem,25,Find weight if mass doubles.,,,,,Doubles
+Problem,26,Find force of gravity on 2 kg body.,,,,,19.6 N
+Problem,27,Find density if mass 4 kg volume 0.002 m³.,,,,,2000 kg/m³
+Problem,28,Find pressure if force 50 N area 0.5 m².,,,,,100 N/m²
+Problem,29,Find mass if density 500 kg/m³ volume 2 m³.,,,,,1000 kg
+Problem,30,Find weight of 60 kg person on Earth.,,,,,588 N
+Problem,31,Find weight of same person on Moon.,,,,,96 N
+Problem,32,Find relative density of ice.,,,,,0.92
+Problem,33,Find buoyant force if apparent weight loss is 10 N.,,,,,10 N
+Problem,34,Find mass if weight is 196 N.,,,,,20 kg
+Problem,35,Find density if mass 1 kg volume 0.001 m³.,,,,,1000 kg/m³
+Problem,36,Find pressure if force 500 N area 5 m².,,,,,100 N/m²
+Problem,37,Find weight of 3 kg mass on Earth.,,,,,29.4 N
+Problem,38,Find acceleration on Moon.,,,,,1.6 m/s²
+Problem,39,Find volume if mass 2 kg density 1000 kg/m³.,,,,,0.002 m³
+Problem,40,Find mass if density 800 kg/m³ volume 1 m³.,,,,,800 kg
+Problem,41,Find weight loss in water if buoyant force 15 N.,,,,,15 N
+Problem,42,Find weight of 8 kg mass on Earth.,,,,,78.4 N
+Problem,43,Find pressure if force 120 N area 3 m².,,,,,40 N/m²
+Problem,44,Find density if mass 200 g volume 100 cm³.,,,,,2 g/cm³
+Problem,45,Find weight if g becomes half.,,,,,Half
+Problem,46,Find mass if weight is zero.,,,,,0
+Problem,47,Find density of object if RD is 2.,,,,,2000 kg/m³
+Problem,48,Find buoyant force on sinking body.,,,,,Less than weight
+Problem,49,Find pressure if area doubles.,,,,,Half
+Problem,50,Find weight of 100 kg person on Earth.,,,,,980 N

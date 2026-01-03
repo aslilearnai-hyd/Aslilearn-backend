@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,The main aim of improvement in food resources is?,Increase population,Increase food production,Export food,None,Increase food production
+MCQ,2,Which practice improves crop yield?,Irrigation,Crop variety improvement,Both,None,Both
+MCQ,3,Which crop is a cereal?,Wheat,Pulse,Oilseed,Fiber,Wheat
+MCQ,4,Which crop belongs to pulses?,Rice,Wheat,Gram,Cotton,Gram
+MCQ,5,Which crop gives oil?,Mustard,Wheat,Rice,Maize,Mustard
+MCQ,6,Which crop gives fiber?,Cotton,Rice,Wheat,Gram,Cotton
+MCQ,7,Which nutrient is required in large amount?,Micronutrient,Macronutrient,Vitamin,None,Macronutrient
+MCQ,8,Which is a macronutrient?,Iron,Zinc,Nitrogen,Copper,Nitrogen
+MCQ,9,Which is a micronutrient?,Nitrogen,Phosphorus,Zinc,Potassium,Zinc
+MCQ,10,Which fertilizer supplies nitrogen?,Urea,Potash,Super phosphate,None,Urea
+MCQ,11,Which manure improves soil fertility?,Compost,Urea,DAP,None,Compost
+MCQ,12,Green manure is obtained from?,Leguminous plants,Cereals,Oilseeds,None,Leguminous plants
+MCQ,13,Which method supplies water to crops?,Weeding,Irrigation,Harvesting,None,Irrigation
+MCQ,14,Which irrigation method saves water?,Flood irrigation,Drip irrigation,Canal irrigation,None,Drip irrigation
+MCQ,15,Which practice removes unwanted plants?,Harvesting,Weeding,Ploughing,None,Weeding
+MCQ,16,Which is a weed?,Wheat,Gram,Xanthium,Rice,Xanthium
+MCQ,17,Which method controls pests biologically?,Insecticides,Pesticides,Biocontrol,None,Biocontrol
+MCQ,18,Which chemical controls pests?,Fertilizer,Pesticide,Manure,None,Pesticide
+MCQ,19,Which practice loosens soil?,Harvesting,Ploughing,Weeding,None,Ploughing
+MCQ,20,Rabi crops are grown in?,Summer,Rainy,Winter,None,Winter
+MCQ,21,Kharif crops are grown in?,Winter,Summer,Rainy,None,Rainy
+MCQ,22,Which is a rabi crop?,Rice,Maize,Wheat,Cotton,Wheat
+MCQ,23,Which is a kharif crop?,Wheat,Gram,Rice,Mustard,Rice
+MCQ,24,Which disease affects crops?,Rust in wheat,TB,None,None,Rust in wheat
+MCQ,25,Which is a cash crop?,Rice,Wheat,Cotton,Maize,Cotton
+MCQ,26,Which practice prevents soil erosion?,Ploughing,Weeding,Crop rotation,None,Crop rotation
+MCQ,27,Which method increases soil nitrogen?,Crop rotation,Harvesting,None,None,Crop rotation
+MCQ,28,Animal husbandry deals with?,Plants,Animals,Both,None,Animals
+MCQ,29,Which animal gives milk?,Hen,Cow,Fish,None,Cow
+MCQ,30,Which practice improves animal breed?,Cross breeding,Overfeeding,None,None,Cross breeding
+MCQ,31,Poultry farming deals with?,Fish,Hens,Cows,None,Hens
+MCQ,32,Fish farming is called?,Apiculture,Pisciculture,Dairy,None,Pisciculture
+MCQ,33,Which fish lives in fresh water?,Tuna,Rohu,Shark,None,Rohu
+MCQ,34,Which fish lives in sea?,Rohu,Catla,Tuna,None,Tuna
+MCQ,35,Bee keeping is called?,Pisciculture,Apiculture,Dairy,None,Apiculture
+MCQ,36,Which product is obtained from bees?,Milk,Meat,Honey,None,Honey
+MCQ,37,Which nutrient is essential for growth?,Protein,Vitamin C,Water,None,Protein
+MCQ,38,Which disease affects animals?,Foot and mouth disease,Rust,None,None,Foot and mouth disease
+MCQ,39,Which practice prevents animal disease?,Vaccination,Overfeeding,None,None,Vaccination
+MCQ,40,Which crop practice increases yield?,HYV seeds,Traditional seeds,None,None,HYV seeds
+MCQ,41,Which variety matures early?,HYV,Local variety,None,None,HYV
+MCQ,42,Which improves soil structure?,Manure,Fertilizer,None,None,Manure
+MCQ,43,Which provides quick nutrients?,Manure,Fertilizer,None,None,Fertilizer
+MCQ,44,Which animal gives wool?,Cow,Goat,Sheep,None,Sheep
+MCQ,45,Which farming combines crops and animals?,Mixed farming,Monoculture,None,None,Mixed farming
+MCQ,46,Which crop rotation improves fertility?,Legume rotation,Rice only,None,None,Legume rotation
+MCQ,47,Which is a fodder crop?,Berseem,Wheat,Rice,None,Berseem
+MCQ,48,Which animal is used in poultry?,Cow,Hen,Goat,None,Hen
+MCQ,49,Which method controls weeds?,Hand weeding,Harvesting,None,None,Hand weeding
+MCQ,50,Main source of food is?,Plants,Animals,Both,None,Both
+
+Integer,1,Main aim of food resource improvement?,Increase yield,,,,
+Integer,2,Food crops include?,Cereals,,,,
+Integer,3,Pulse crop example?,Gram,,,,
+Integer,4,Oilseed example?,Mustard,,,,
+Integer,5,Fiber crop example?,Cotton,,,,
+Integer,6,Nutrients needed in large amount?,Macronutrients,,,,
+Integer,7,Nitrogen rich fertilizer?,Urea,,,,
+Integer,8,Natural fertilizer?,Manure,,,,
+Integer,9,Water supply method?,Irrigation,,,,
+Integer,10,Water saving irrigation?,Drip,,,,
+Integer,11,Removal of weeds?,Weeding,,,,
+Integer,12,Unwanted plant?,Weed,,,,
+Integer,13,Soil loosening practice?,Ploughing,,,,
+Integer,14,Winter crops?,Rabi,,,,
+Integer,15,Rainy season crops?,Kharif,,,,
+Integer,16,Rabi crop example?,Wheat,,,,
+Integer,17,Kharif crop example?,Rice,,,,
+Integer,18,Animal farming?,Animal husbandry,,,,
+Integer,19,Milk producing animal?,Cow,,,,
+Integer,20,Fish farming?,Pisciculture,,,,
+Integer,21,Bee keeping?,Apiculture,,,,
+Integer,22,Product from bees?,Honey,,,,
+Integer,23,Animal disease prevention?,Vaccination,,,,
+Integer,24,Improved seed type?,HYV,,,,
+Integer,25,Early maturing variety?,HYV,,,,
+Integer,26,Soil fertility improvement?,Crop rotation,,,,
+Integer,27,Legume crop example?,Pea,,,,
+Integer,28,Poultry animal?,Hen,,,,
+Integer,29,Freshwater fish?,Rohu,,,,
+Integer,30,Marine fish?,Tuna,,,,
+Integer,31,Wool producing animal?,Sheep,,,,
+Integer,32,Fodder crop?,Berseem,,,,
+Integer,33,Quick nutrient source?,Fertilizer,,,,
+Integer,34,Soil structure improver?,Manure,,,,
+Integer,35,Weed control chemical?,Weedicide,,,,
+Integer,36,Animal food?,Fodder,,,,
+Integer,37,Crop disease example?,Rust,,,,
+Integer,38,Animal disease example?,FMD,,,,
+Integer,39,Multiple farming system?,Mixed farming,,,,
+Integer,40,Nitrogen fixing plants?,Legumes,,,,
+Integer,41,Traditional seeds yield?,Low,,,,
+Integer,42,HYV yield?,High,,,,
+Integer,43,Crop harvested stage?,Maturity,,,,
+Integer,44,Animal shelter?,Shed,,,,
+Integer,45,Poultry product?,Egg,,,,
+Integer,46,Fish protein source?,Fish meat,,,,
+Integer,47,Weed removal tool?,Hoe,,,,
+Integer,48,Soil nutrient replenishment?,Rotation,,,,
+Integer,49,Animal feed nutrient?,Protein,,,,
+Integer,50,Food resources source?,Agriculture,,,,
+
+Descriptive,1,What is improvement in food resources?,,,,,Methods to increase food production
+Descriptive,2,Why is food production important?,,,,,To meet population needs
+Descriptive,3,Classify crops based on use.,,,,,Food, fodder, fiber crops
+Descriptive,4,What are cereals?,,,,,Crops producing grains
+Descriptive,5,What are pulses?,,,,,Protein rich crops
+Descriptive,6,What are oilseeds?,,,,,Oil producing crops
+Descriptive,7,What are nutrients?,,,,,Substances needed for growth
+Descriptive,8,Define macronutrients.,,,,,Needed in large quantities
+Descriptive,9,Define micronutrients.,,,,,Needed in small quantities
+Descriptive,10,What is manure?,,,,,Organic nutrient source
+Descriptive,11,What is fertilizer?,,,,,Chemical nutrient source
+Descriptive,12,Difference between manure and fertilizer.,,,,,Organic vs chemical
+Descriptive,13,What is green manure?,,,,,Manure from leguminous plants
+Descriptive,14,What is irrigation?,,,,,Supply of water to crops
+Descriptive,15,Methods of irrigation.,,,,,Canal, drip, sprinkler
+Descriptive,16,What are weeds?,,,,,Unwanted plants
+Descriptive,17,Why weeds removed?,,,,,Reduce competition
+Descriptive,18,Methods of weed control.,,,,,Manual, chemical
+Descriptive,19,What is ploughing?,,,,,Loosening soil
+Descriptive,20,What is crop rotation?,,,,,Growing different crops alternately
+Descriptive,21,Advantages of crop rotation.,,,,,Improves fertility
+Descriptive,22,What are rabi crops?,,,,,Winter season crops
+Descriptive,23,What are kharif crops?,,,,,Rainy season crops
+Descriptive,24,What is animal husbandry?,,,,,Care of domestic animals
+Descriptive,25,Importance of animal husbandry.,,,,,Milk meat wool production
+Descriptive,26,What is poultry farming?,,,,,Raising birds for eggs
+Descriptive,27,What is fish farming?,,,,,Raising fish commercially
+Descriptive,28,Types of fisheries.,,,,,Marine and inland
+Descriptive,29,What is apiculture?,,,,,Bee keeping
+Descriptive,30,Importance of apiculture.,,,,,Honey and wax
+Descriptive,31,What are HYV seeds?,,,,,High yielding varieties
+Descriptive,32,Advantages of HYV seeds.,,,,,Higher yield early maturity
+Descriptive,33,What is mixed farming?,,,,,Crop and animal farming together
+Descriptive,34,What is fodder?,,,,,Animal food
+Descriptive,35,Why vaccination important for animals?,,,,,Prevents diseases
+Descriptive,36,Common animal diseases.,,,,,FMD anthrax
+Descriptive,37,What are pests?,,,,,Organisms damaging crops
+Descriptive,38,Methods of pest control.,,,,,Chemical biological
+Descriptive,39,What is biocontrol?,,,,,Using living organisms
+Descriptive,40,What is sustainable agriculture?,,,,,Long-term productivity
+Descriptive,41,Why manure preferred over fertilizer?,,,,,Improves soil structure
+Descriptive,42,Why irrigation important?,,,,,Prevents crop failure
+Descriptive,43,Why legumes important?,,,,,Fix nitrogen
+Descriptive,44,Role of agriculture in economy.,,,,,Food and employment
+Descriptive,45,What is soil fertility?,,,,,Ability to support crops
+Descriptive,46,Why overuse of fertilizers harmful?,,,,,Soil and water pollution
+Descriptive,47,What is organic farming?,,,,,Chemical-free farming
+Descriptive,48,Importance of balanced nutrients.,,,,,Healthy crops
+Descriptive,49,How food resources can be conserved?,,,,,Efficient farming
+Descriptive,50,Future challenges in food production.,,,,,Population growth

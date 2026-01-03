@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Natural resources are?,Man-made resources,Resources from nature,Artificial materials,None,Resources from nature
+MCQ,2,Which is a renewable resource?,Coal,Petroleum,Water,Natural gas,Water
+MCQ,3,Which is a non-renewable resource?,Air,Water,Coal,Sunlight,Coal
+MCQ,4,Which gas is most abundant in air?,Oxygen,Nitrogen,Carbon dioxide,Argon,Nitrogen
+MCQ,5,Which layer of atmosphere contains ozone?,Troposphere,Stratosphere,Mesosphere,Thermosphere,Stratosphere
+MCQ,6,Ozone protects life from?,Infrared rays,Visible light,Ultraviolet rays,Gamma rays,Ultraviolet rays
+MCQ,7,Which gas is essential for respiration?,Nitrogen,Oxygen,Carbon dioxide,Hydrogen,Oxygen
+MCQ,8,Which gas is used in photosynthesis?,Oxygen,Nitrogen,Carbon dioxide,Ozone,Carbon dioxide
+MCQ,9,Which resource is called abiotic?,Plants,Animals,Air,Microorganisms,Air
+MCQ,10,Which resource is biotic?,Water,Soil,Plants,Air,Plants
+MCQ,11,Which component of soil provides fertility?,Sand,Clay,Humus,Gravel,Humus
+MCQ,12,Soil erosion means?,Formation of soil,Removal of top soil,Weathering,None,Removal of top soil
+MCQ,13,Which prevents soil erosion?,Deforestation,Overgrazing,Afforestation,Mining,Afforestation
+MCQ,14,Which water source is underground?,River,Lake,Well,Ocean,Well
+MCQ,15,Which cycle maintains water balance?,Carbon cycle,Nitrogen cycle,Water cycle,Oxygen cycle,Water cycle
+MCQ,16,Which process converts water vapour to water?,Evaporation,Condensation,Transpiration,None,Condensation
+MCQ,17,Which process releases water vapour from plants?,Evaporation,Condensation,Transpiration,None,Transpiration
+MCQ,18,Which gas cycle maintains protein synthesis?,Oxygen cycle,Carbon cycle,Nitrogen cycle,Water cycle,Nitrogen cycle
+MCQ,19,Which bacteria fix nitrogen?,Rhizobium,E.coli,Lactobacillus,None,Rhizobium
+MCQ,20,Which resource is inexhaustible?,Coal,Petroleum,Sunlight,Forest,Sunlight
+MCQ,21,Which resource is exhaustible?,Air,Sunlight,Coal,Wind,Coal
+MCQ,22,Which layer supports life?,Troposphere,Stratosphere,Mesosphere,Thermosphere,Troposphere
+MCQ,23,Which phenomenon increases global temperature?,Deforestation,Greenhouse effect,Ozone depletion,None,Greenhouse effect
+MCQ,24,Which gas is greenhouse gas?,Oxygen,Nitrogen,Carbon dioxide,Hydrogen,Carbon dioxide
+MCQ,25,Which activity causes deforestation?,Afforestation,Plantation,Mining,Conservation,Mining
+MCQ,26,Which resource is shared by all?,Forest,Air,Land,Water,Air
+MCQ,27,Which form of water is solid?,Rain,Snow,Sea water,Groundwater,Snow
+MCQ,28,Which resource is essential for all living beings?,Gold,Water,Coal,Petroleum,Water
+MCQ,29,Which gas causes acid rain?,Oxygen,Nitrogen,SO₂,Hydrogen,SO₂
+MCQ,30,Which organism decomposes dead matter?,Producers,Consumers,Decomposers,None,Decomposers
+MCQ,31,Which resource improves soil fertility?,Fertilizer,Humus,Water,Air,Humus
+MCQ,32,Which human activity causes soil erosion?,Afforestation,Deforestation,Irrigation,None,Deforestation
+MCQ,33,Which cycle involves evaporation?,Nitrogen,Carbon,Water,Oxygen,Water
+MCQ,34,Which is an example of fossil fuel?,Wind,Sunlight,Coal,Water,Coal
+MCQ,35,Which resource is replenished naturally?,Petroleum,Coal,Forest,Natural gas,Forest
+MCQ,36,Which gas forms ozone?,Oxygen,Nitrogen,Hydrogen,Carbon dioxide,Oxygen
+MCQ,37,Which part of soil holds water?,Sand,Clay,Gravel,None,Clay
+MCQ,38,Which resource is overused?,Air,Water,Coal,Sunlight,Water
+MCQ,39,Which gas is released during respiration?,Oxygen,Nitrogen,Carbon dioxide,Ozone,Carbon dioxide
+MCQ,40,Which cycle balances CO₂ and O₂?,Water cycle,Nitrogen cycle,Carbon cycle,None,Carbon cycle
+MCQ,41,Which activity conserves forest?,Cutting trees,Plantation,Mining,Grazing,Plantation
+MCQ,42,Which is a man-made resource?,Forest,Water,Dam,Air,Dam
+MCQ,43,Which gas causes global warming?,Oxygen,Nitrogen,CO₂,Hydrogen,CO₂
+MCQ,44,Which is not natural resource?,Air,Water,Plastic,Soil,Plastic
+MCQ,45,Which resource supports aquatic life?,Soil,Water,Air,Land,Water
+MCQ,46,Which cycle includes nitrification?,Carbon,Nitrogen,Water,Oxygen,Nitrogen
+MCQ,47,Which practice conserves soil?,Terracing,Mining,Deforestation,None,Terracing
+MCQ,48,Which layer contains clouds?,Stratosphere,Troposphere,Mesosphere,None,Troposphere
+MCQ,49,Which gas needed for burning?,Oxygen,Nitrogen,CO₂,None,Oxygen
+MCQ,50,Which resource is common property?,Land,Water,Air,Forest,Air
+
+Integer,1,Resources obtained from nature?,Natural resources,,,,
+Integer,2,Renewable resource example?,Water,,,,
+Integer,3,Non-renewable resource example?,Coal,,,,
+Integer,4,Most abundant gas in air?,Nitrogen,,,,
+Integer,5,Ozone layer found in?,Stratosphere,,,,
+Integer,6,Gas used in respiration?,Oxygen,,,,
+Integer,7,Gas used in photosynthesis?,Carbon dioxide,,,,
+Integer,8,Biotic resource example?,Plants,,,,
+Integer,9,Abiotic resource example?,Air,,,,
+Integer,10,Fertile part of soil?,Humus,,,,
+Integer,11,Removal of top soil?,Soil erosion,,,,
+Integer,12,Process preventing erosion?,Afforestation,,,,
+Integer,13,Underground water source?,Well,,,,
+Integer,14,Cycle of water movement?,Water cycle,,,,
+Integer,15,Water vapour to liquid?,Condensation,,,,
+Integer,16,Water loss from leaves?,Transpiration,,,,
+Integer,17,Nitrogen fixing bacteria?,Rhizobium,,,,
+Integer,18,Inexhaustible resource?,Sunlight,,,,
+Integer,19,Exhaustible resource?,Coal,,,,
+Integer,20,Life supporting layer?,Troposphere,,,,
+Integer,21,Gas causing greenhouse effect?,CO₂,,,,
+Integer,22,Process increasing global temp?,Greenhouse effect,,,,
+Integer,23,Forest removal?,Deforestation,,,,
+Integer,24,Solid form of water?,Ice,,,,
+Integer,25,Gas released in respiration?,Carbon dioxide,,,,
+Integer,26,Gas needed for burning?,Oxygen,,,,
+Integer,27,Decomposers example?,Bacteria,,,,
+Integer,28,Improves soil fertility?,Humus,,,,
+Integer,29,Human cause of erosion?,Deforestation,,,,
+Integer,30,Fossil fuel example?,Coal,,,,
+Integer,31,Resource replenished naturally?,Forest,,,,
+Integer,32,Ozone made from?,Oxygen,,,,
+Integer,33,Water holding soil part?,Clay,,,,
+Integer,34,Carbon cycle balances?,CO₂ and O₂,,,,
+Integer,35,Activity conserving forest?,Plantation,,,,
+Integer,36,Man-made resource?,Dam,,,,
+Integer,37,Not a natural resource?,Plastic,,,,
+Integer,38,Aquatic life support?,Water,,,,
+Integer,39,Soil conservation method?,Terracing,,,,
+Integer,40,Cloud layer?,Troposphere,,,,
+Integer,41,Gas causing acid rain?,SO₂,,,,
+Integer,42,Cycle of nitrogen?,Nitrogen cycle,,,,
+Integer,43,Living resources?,Biotic,,,,
+Integer,44,Non-living resources?,Abiotic,,,,
+Integer,45,Forest resource type?,Renewable,,,,
+Integer,46,Energy from sun?,Solar energy,,,,
+Integer,47,Resource used excessively?,Water,,,,
+Integer,48,Soil component largest?,Minerals,,,,
+Integer,49,Wind energy is?,Renewable,,,,
+Integer,50,Common property resource?,Air,,,,
+
+Descriptive,1,What are natural resources?,,,,,Resources obtained from nature used by humans
+Descriptive,2,Why are natural resources important?,,,,,They support life and human activities
+Descriptive,3,Classify natural resources.,,,,,Renewable and non-renewable
+Descriptive,4,What are renewable resources?,,,,,Resources replenished naturally
+Descriptive,5,What are non-renewable resources?,,,,,Resources that get exhausted
+Descriptive,6,Explain the importance of air.,,,,,Needed for respiration and climate
+Descriptive,7,What is atmosphere?,,,,,Layer of gases around Earth
+Descriptive,8,Name the layers of atmosphere.,,,,,Troposphere, stratosphere etc
+Descriptive,9,What is ozone layer?,,,,,Protective layer absorbing UV rays
+Descriptive,10,Importance of ozone layer.,,,,,Prevents harmful radiation
+Descriptive,11,What is water cycle?,,,,,Continuous circulation of water
+Descriptive,12,Explain evaporation.,,,,,Liquid to vapour conversion
+Descriptive,13,Explain condensation.,,,,,Vapour to liquid conversion
+Descriptive,14,Explain transpiration.,,,,,Loss of water from plants
+Descriptive,15,Importance of water.,,,,,Essential for life processes
+Descriptive,16,What is soil?,,,,,Upper layer supporting plants
+Descriptive,17,Components of soil.,,,,,Sand silt clay humus
+Descriptive,18,What is soil erosion?,,,,,Loss of fertile top soil
+Descriptive,19,Causes of soil erosion.,,,,,Deforestation overgrazing
+Descriptive,20,Methods to prevent soil erosion.,,,,,Afforestation terracing
+Descriptive,21,What is nitrogen cycle?,,,,,Circulation of nitrogen in nature
+Descriptive,22,Role of nitrogen cycle.,,,,,Maintains soil fertility
+Descriptive,23,What is carbon cycle?,,,,,Movement of carbon in ecosystem
+Descriptive,24,Role of decomposers.,,,,,Recycle nutrients
+Descriptive,25,What are biotic resources?,,,,,Living resources
+Descriptive,26,What are abiotic resources?,,,,,Non-living resources
+Descriptive,27,Explain greenhouse effect.,,,,,Trapping of heat by gases
+Descriptive,28,Causes of global warming.,,,,,Excess greenhouse gases
+Descriptive,29,Effects of global warming.,,,,,Climate change
+Descriptive,30,What is deforestation?,,,,,Clearing of forests
+Descriptive,31,Effects of deforestation.,,,,,Soil erosion climate change
+Descriptive,32,What is conservation?,,,,,Careful use of resources
+Descriptive,33,Need for conservation.,,,,,Prevent resource depletion
+Descriptive,34,Explain afforestation.,,,,,Planting trees
+Descriptive,35,Importance of forests.,,,,,Maintain ecological balance
+Descriptive,36,What are fossil fuels?,,,,,Coal petroleum natural gas
+Descriptive,37,Why fossil fuels limited?,,,,,Formed over millions of years
+Descriptive,38,Alternative energy sources.,,,,,Solar wind hydro
+Descriptive,39,Importance of sustainable use.,,,,,Resources for future
+Descriptive,40,Explain water pollution.,,,,,Contamination of water
+Descriptive,41,Causes of water pollution.,,,,,Industrial waste sewage
+Descriptive,42,Effects of water pollution.,,,,,Harms aquatic life
+Descriptive,43,How to conserve water?,,,,,Rainwater harvesting
+Descriptive,44,Explain common property resources.,,,,,Shared by community
+Descriptive,45,Why air is common resource?,,,,,Used by all
+Descriptive,46,Explain soil conservation.,,,,,Prevent soil degradation
+Descriptive,47,Human impact on resources.,,,,,Overexploitation
+Descriptive,48,Importance of biodiversity.,,,,,Maintains ecosystem
+Descriptive,49,Role of government in conservation.,,,,,Laws and protection
+Descriptive,50,Why natural resources must be conserved?,,,,,For future generations

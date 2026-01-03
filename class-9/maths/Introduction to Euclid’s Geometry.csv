@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Who is known as the Father of Geometry?,Pythagoras,Euclid,Archimedes,Newton,Euclid
+MCQ,2,Euclid’s geometry is based on?,Observations,Axioms and postulates,Experiments,Algebra,Axioms and postulates
+MCQ,3,How many axioms are given by Euclid?,5,7,10,Unlimited,5
+MCQ,4,How many postulates are there in Euclid’s geometry?,4,5,6,7,5
+MCQ,5,Things which are equal to the same thing are equal to one another is?,Postulate,Axiom,Theorem,Proof,Axiom
+MCQ,6,A point has?,Length,Breadth,Thickness,No dimension,No dimension
+MCQ,7,A line has?,Length only,Length and breadth,Breadth only,Area,Length only
+MCQ,8,A plane has?,Length only,Length and breadth,Thickness,No dimension,Length and breadth
+MCQ,9,Which is accepted without proof?,Theorem,Axiom,Corollary,Proof,Axiom
+MCQ,10,Which requires proof?,Axiom,Postulate,Theorem,Definition,Theorem
+MCQ,11,A straight line can be drawn joining any two points is?,Axiom,Postulate,Theorem,Definition,Postulate
+MCQ,12,A terminated line can be produced indefinitely is?,Axiom,Postulate,Theorem,Definition,Postulate
+MCQ,13,A circle can be drawn with any centre and radius is?,Postulate,Axiom,Theorem,Definition,Postulate
+MCQ,14,All right angles are equal to one another is?,Axiom,Postulate,Theorem,Definition,Postulate
+MCQ,15,Euclid’s fifth postulate is related to?,Circles,Lines,Parallel lines,Triangles,Parallel lines
+MCQ,16,Axioms are?,Geometry specific,Universal truths,Definitions,Theorems,Universal truths
+MCQ,17,Postulates are?,Universal,Geometry specific,Scientific,Undefined,Geometry specific
+MCQ,18,The statement “Whole is greater than the part” is?,Postulate,Axiom,Theorem,Definition,Axiom
+MCQ,19,A line segment has?,One end,Two ends,No ends,Infinite ends,Two ends
+MCQ,20,A ray has?,One end,Two ends,No ends,Infinite ends,One end
+MCQ,21,A straight line has?,One end,Two ends,No ends,Infinite ends,No ends
+MCQ,22,The book written by Euclid is?,Elements,Geometry,Basics,Principia,Elements
+MCQ,23,Which is not an axiom?,Whole is greater than part,A circle can be drawn,Things equal to same thing are equal,Things added to equals are equal,A circle can be drawn
+MCQ,24,Which is not a postulate?,A line can be drawn,A circle can be drawn,Whole is greater than part,Right angles are equal,Whole is greater than part
+MCQ,25,Euclid’s axioms are also called?,Common notions,Postulates,Theorems,Proofs,Common notions
+MCQ,26,Geometry deals with?,Numbers,Shapes and sizes,Algebra,Graphs,Shapes and sizes
+MCQ,27,A theorem is?,Self evident,Accepted without proof,Requires proof,Definition,Requires proof
+MCQ,28,Postulates are assumed?,False,True without proof,After proof,Randomly,True without proof
+MCQ,29,A point represents?,Position,Length,Area,Volume,Position
+MCQ,30,Which has no thickness?,Plane,Solid,Line,Rectangle,Line
+MCQ,31,Which statement is always true?,Axiom,False statement,Guess,Experiment,Axiom
+MCQ,32,The fifth postulate is also called?,Parallel postulate,Angle postulate,Triangle postulate,Line postulate,Parallel postulate
+MCQ,33,Which concept is undefined?,Point,Triangle,Square,Circle,Point
+MCQ,34,Which is a defined term?,Line,Point,Plane,Triangle,Triangle
+MCQ,35,Euclid’s geometry is?,Two dimensional,Three dimensional,Four dimensional,Algebraic,Two dimensional
+MCQ,36,What is the intersection of two lines?,Line,Point,Plane,Ray,Point
+MCQ,37,Which is accepted without any proof?,Axiom,Theorem,Result,Example,Axiom
+MCQ,38,Which statement is geometry specific?,Postulate,Axiom,Truth,Fact,Postulate
+MCQ,39,Which is infinite?,Line,Line segment,Ray,None,Line
+MCQ,40,A plane extends?,In one direction,In two directions,In three directions,In none,In two directions
+MCQ,41,Euclid’s postulates are?,General truths,Geometrical assumptions,Experiments,Theorems,Geometrical assumptions
+MCQ,42,What is the shape of a point?,Dot,Circle,None,Square,None
+MCQ,43,Which term is undefined in geometry?,Triangle,Square,Angle,Point,Point
+MCQ,44,Two distinct points determine?,One line,Two lines,No line,Infinite lines,One line
+MCQ,45,The study of space is?,Algebra,Geometry,Trigonometry,Statistics,Geometry
+MCQ,46,What is a line segment?,Infinite line,Part of line,Ray,Plane,Part of line
+MCQ,47,What is a ray?,Line with two ends,Line with one end,Line with no end,Plane,Line with one end
+MCQ,48,Which is a solid?,Line,Plane,Cube,Point,Cube
+MCQ,49,Euclid’s geometry is still used because?,It is simple,It is logical,It is old,It is complex,It is logical
+MCQ,50,Which is NOT a dimension?,Length,Breadth,Thickness,Colour,Colour
+
+Integer,1,Father of Geometry?,Euclid,,,,
+Integer,2,Book written by Euclid?,Elements,,,,
+Integer,3,Number of axioms?,5,,,,
+Integer,4,Number of postulates?,5,,,,
+Integer,5,A point has how many dimensions?,0,,,,
+Integer,6,A line has how many dimensions?,1,,,,
+Integer,7,A plane has how many dimensions?,2,,,,
+Integer,8,Things equal to same thing are equal is?,Axiom,,,,
+Integer,9,A straight line can be drawn between two points is?,Postulate,,,,
+Integer,10,Whole is greater than part is?,Axiom,,,,
+Integer,11,Right angles are equal is?,Postulate,,,,
+Integer,12,Parallel lines concept belongs to?,Postulate 5,,,,
+Integer,13,Undefined terms count?,3,,,,
+Integer,14,Undefined terms are?,Point line plane,,,,
+Integer,15,Intersection of two lines?,Point,,,,
+Integer,16,A ray has how many endpoints?,1,,,,
+Integer,17,A line segment has how many endpoints?,2,,,,
+Integer,18,A straight line has endpoints?,0,,,,
+Integer,19,Postulates are geometry specific? (Yes/No),Yes,,,,
+Integer,20,Axioms are universal? (Yes/No),Yes,,,,
+Integer,21,A theorem needs proof? (Yes/No),Yes,,,,
+Integer,22,A plane extends in how many directions?,2,,,,
+Integer,23,A line extends infinitely? (Yes/No),Yes,,,,
+Integer,24,A solid has dimensions?,3,,,,
+Integer,25,Geometry studies?,Space,,,,
+Integer,26,Postulates are assumed? (Yes/No),Yes,,,,
+Integer,27,Axioms are also called?,Common notions,,,,
+Integer,28,A point shows?,Position,,,,
+Integer,29,Defined terms depend on?,Undefined terms,,,,
+Integer,30,Parallel postulate number?,5,,,,
+Integer,31,A plane has thickness? (Yes/No),No,,,,
+Integer,32,Which has no dimension?,Point,,,,
+Integer,33,Which has only length?,Line,,,,
+Integer,34,Which has length and breadth?,Plane,,,,
+Integer,35,Two distinct points determine?,One line,,,,
+Integer,36,Geometry is logical? (Yes/No),Yes,,,,
+Integer,37,Euclid lived in which country?,Greece,,,,
+Integer,38,Elements has how many books?,13,,,,
+Integer,39,Postulates are accepted without proof? (Yes/No),Yes,,,,
+Integer,40,A theorem is proved using?,Axioms,,,,
+Integer,41,Which is infinite?,Line,,,,
+Integer,42,Which is finite?,Line segment,,,,
+Integer,43,Which has one end?,Ray,,,,
+Integer,44,Which has no ends?,Line,,,,
+Integer,45,The fifth postulate deals with?,Parallel lines,,,,
+Integer,46,Geometry is based on logic? (Yes/No),Yes,,,,
+Integer,47,Euclid’s geometry is?,Two dimensional,,,,
+Integer,48,Plane has edges? (Yes/No),No,,,,
+Integer,49,Point occupies space? (Yes/No),No,,,,
+Integer,50,Geometry uses proofs? (Yes/No),Yes,,,,
+
+Problem,1,Name the mathematician who wrote Elements.,,,,,Euclid
+Problem,2,State how many axioms are there in Euclid’s geometry.,,,,,5
+Problem,3,State how many postulates are there in Euclid’s geometry.,,,,,5
+Problem,4,Name the postulate related to parallel lines.,,,,,Fifth postulate
+Problem,5,Write the number of dimensions of a point.,,,,,0
+Problem,6,Write the number of dimensions of a line.,,,,,1
+Problem,7,Write the number of dimensions of a plane.,,,,,2
+Problem,8,Name the book written by Euclid.,,,,,Elements
+Problem,9,What is the intersection of two lines?,,,,,Point
+Problem,10,How many endpoints does a ray have?,,,,,1
+Problem,11,How many endpoints does a line segment have?,,,,,2
+Problem,12,Does a line have endpoints?,,,,,No
+Problem,13,Which term represents position only?,,,,,Point
+Problem,14,State the postulate about drawing a straight line.,,,,,A straight line can be drawn joining any two points
+Problem,15,State the axiom about whole and part.,,,,,Whole is greater than the part
+Problem,16,Name the undefined terms in geometry.,,,,,Point line plane
+Problem,17,Are axioms universal truths?,,,,,Yes
+Problem,18,Are postulates geometry specific?,,,,,Yes
+Problem,19,Does a plane have thickness?,,,,,No
+Problem,20,Which concept has no dimension?,,,,,Point
+Problem,21,What determines a unique straight line?,,,,,Two distinct points
+Problem,22,What does geometry study?,,,,,Space and shapes
+Problem,23,Which postulate states all right angles are equal?,,,,,Fourth postulate
+Problem,24,Can a circle be drawn with any centre and radius?,,,,,Yes
+Problem,25,What is the shape of a line?,,,,,Straight
+Problem,26,Name a concept accepted without proof.,,,,,Axiom
+Problem,27,Name a statement that needs proof.,,,,,Theorem
+Problem,28,What type of truth is an axiom?,,,,,Self evident
+Problem,29,Which term has length and breadth?,,,,,Plane
+Problem,30,Which term has only length?,,,,,Line
+Problem,31,Which term has no shape?,,,,,Point
+Problem,32,How many dimensions does a solid have?,,,,,3
+Problem,33,What is a ray?,,,,,Part of line with one end
+Problem,34,What is a line segment?,,,,,Part of line with two ends
+Problem,35,Does a line extend infinitely?,,,,,Yes
+Problem,36,Which postulate is most controversial?,,,,,Fifth postulate
+Problem,37,What is common notion?,,,,,Another name for axiom
+Problem,38,Name the geometry developed by Euclid.,,,,,Euclidean geometry
+Problem,39,Is Euclid’s geometry logical?,,,,,Yes
+Problem,40,What is the base of geometry?,,,,,Axioms and postulates
+Problem,41,Which term represents flat surface?,,,,,Plane
+Problem,42,Can axioms be proved?,,,,,No
+Problem,43,Are theorems proved?,,,,,Yes
+Problem,44,Which has infinite length?,,,,,Line
+Problem,45,Which has fixed length?,,,,,Line segment
+Problem,46,Does a plane extend infinitely?,,,,,Yes
+Problem,47,Which term is used for geometrical assumption?,,,,,Postulate
+Problem,48,How many books are in Elements?,,,,,13
+Problem,49,Who is called Father of Geometry?,,,,,Euclid
+Problem,50,Is Euclid’s geometry still relevant?,,,,,Yes

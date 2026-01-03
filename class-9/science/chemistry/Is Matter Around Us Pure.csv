@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,A pure substance contains?,Only one kind of particles,Two kinds of particles,Many kinds,None,Only one kind of particles
+MCQ,2,Which of the following is a mixture?,Distilled water,Sodium chloride,Air,Iron,Air
+MCQ,3,Which is a homogeneous mixture?,Soil,Salt solution,Smoke,Milk,Salt solution
+MCQ,4,Which is a heterogeneous mixture?,Air,Sugar solution,Soil,Alloy,Soil
+MCQ,5,Colloid is a?,Homogeneous mixture,Heterogeneous mixture,Pure substance,None,Heterogeneous mixture
+MCQ,6,Solution consists of?,Solute and solvent,Only solute,Only solvent,None,Solute and solvent
+MCQ,7,Which is the solvent in salt solution?,Salt,Water,Solution,None,Water
+MCQ,8,Which mixture shows Tyndall effect?,True solution,Suspension,Colloid,None,Colloid
+MCQ,9,Tyndall effect is due to?,Reflection,Refraction,Scattering,None,Scattering
+MCQ,10,Which is a suspension?,Milk,Salt solution,Muddy water,Sugar solution,Muddy water
+MCQ,11,Suspension particles are?,Invisible,Very small,Large and visible,None,Large and visible
+MCQ,12,Which can be separated by filtration?,Salt solution,Sugar solution,Sand and water,Air,Sand and water
+MCQ,13,Which method separates liquids of different boiling points?,Filtration,Evaporation,Distillation,Decantation,Distillation
+MCQ,14,Which method is used to separate cream from milk?,Centrifugation,Filtration,Evaporation,None,Centrifugation
+MCQ,15,Which method separates dyes from ink?,Sublimation,Chromatography,Distillation,None,Chromatography
+MCQ,16,Which is a compound?,Air,Brass,Water,Salt solution,Water
+MCQ,17,Which has fixed composition?,Mixture,Compound,Solution,None,Compound
+MCQ,18,Which can be separated by physical methods?,Compound,Element,Mixture,None,Mixture
+MCQ,19,Which is an element?,Water,Iron,Salt,Air,Iron
+MCQ,20,Alloys are?,Elements,Compounds,Mixtures,None,Mixtures
+MCQ,21,Brass is an alloy of?,Copper and zinc,Copper and iron,Iron and zinc,None,Copper and zinc
+MCQ,22,Which method separates immiscible liquids?,Distillation,Separating funnel,Evaporation,None,Separating funnel
+MCQ,23,Solubility depends on?,Temperature,Pressure,Both,None,Both
+MCQ,24,Which solution conducts electricity?,Sugar solution,Salt solution,Distilled water,None,Salt solution
+MCQ,25,Which mixture has uniform composition?,Homogeneous,Heterogeneous,Colloid,None,Homogeneous
+MCQ,26,Which is not a mixture?,Air,Milk,Water,Soil,Water
+MCQ,27,Which shows Brownian motion?,True solution,Suspension,Colloid,None,Colloid
+MCQ,28,Which cannot be separated by filtration?,Suspension,Colloid,True solution,None,True solution
+MCQ,29,Which is a saturated solution?,More solute dissolves,No more solute dissolves,None,None,No more solute dissolves
+MCQ,30,Which method is used to obtain salt from seawater?,Filtration,Evaporation,Distillation,None,Evaporation
+MCQ,31,Which is a physical change?,Melting of ice,Burning of paper,Rusting,None,Melting of ice
+MCQ,32,Which is a chemical change?,Boiling water,Dissolving salt,Burning magnesium,None,Burning magnesium
+MCQ,33,Which is not a colloid?,Milk,Smoke,Salt solution,Fog,Salt solution
+MCQ,34,Which mixture is stable?,Suspension,Colloid,True solution,None,True solution
+MCQ,35,Which method separates solids from solids?,Sublimation,Filtration,Decantation,None,Sublimation
+MCQ,36,Which solid sublimes?,Salt,Ammonium chloride,Sand,Sugar,Ammonium chloride
+MCQ,37,Which mixture can be separated by magnet?,Iron and sand,Salt and sugar,Sand and water,None,Iron and sand
+MCQ,38,Which component is present in larger amount?,Solute,Solvent,Both equal,None,Solvent
+MCQ,39,Which is the dispersed phase in milk?,Water,Fat,Protein,None,Fat
+MCQ,40,Which is the dispersion medium in milk?,Fat,Water,Protein,None,Water
+MCQ,41,Which is a true solution?,Salt in water,Muddy water,Milk,Smoke,Salt in water
+MCQ,42,Which mixture settles on standing?,Solution,Colloid,Suspension,None,Suspension
+MCQ,43,Which method separates crude oil?,Filtration,Evaporation,Fractional distillation,None,Fractional distillation
+MCQ,44,Which has variable composition?,Compound,Element,Mixture,None,Mixture
+MCQ,45,Which property remains same in compound?,Composition,Properties,Elements,None,Composition
+MCQ,46,Which has properties different from constituents?,Mixture,Compound,Element,None,Compound
+MCQ,47,Which is a physical method?,Distillation,Combustion,Electrolysis,None,Distillation
+MCQ,48,Which solution has maximum solute?,Dilute,Concentrated,Saturated,None,Saturated
+MCQ,49,Which cannot show Tyndall effect?,Colloid,Suspension,True solution,None,True solution
+MCQ,50,Which mixture is ink?,Solution,Colloid,Suspension,None,Colloid
+
+Integer,1,Pure substance has only one type of?,Particles,,,,
+Integer,2,Air is a?,Mixture,,,,
+Integer,3,Water is a?,Compound,,,,
+Integer,4,Brass is a?,Mixture,,,,
+Integer,5,Milk is a?,Colloid,,,,
+Integer,6,Tyndall effect seen in?,Colloid,,,,
+Integer,7,Solute dissolves in?,Solvent,,,,
+Integer,8,Which is solvent in sugar solution?,Water,,,,
+Integer,9,Solution is homogeneous? (Yes/No),Yes,,,,
+Integer,10,Suspension is heterogeneous? (Yes/No),Yes,,,,
+Integer,11,Colloid particles visible to eye? (Yes/No),No,,,,
+Integer,12,Suspension settles on standing? (Yes/No),Yes,,,,
+Integer,13,Chromatography separates?,Dyes,,,,
+Integer,14,Distillation separates?,Liquids,,,,
+Integer,15,Centrifugation used for?,Cream separation,,,,
+Integer,16,Separating funnel separates?,Immiscible liquids,,,,
+Integer,17,Sublimation means?,Solid to gas,,,,
+Integer,18,Ammonium chloride is?,Sublimable,,,,
+Integer,19,Alloys are homogeneous? (Yes/No),Yes,,,,
+Integer,20,Compound has fixed composition? (Yes/No),Yes,,,,
+Integer,21,Mixture has variable composition? (Yes/No),Yes,,,,
+Integer,22,Element cannot be broken? (Yes/No),Yes,,,,
+Integer,23,Salt solution conducts electricity? (Yes/No),Yes,,,,
+Integer,24,Sugar solution conducts electricity? (Yes/No),No,,,,
+Integer,25,Solubility depends on temperature? (Yes/No),Yes,,,,
+Integer,26,True solution shows Tyndall effect? (Yes/No),No,,,,
+Integer,27,Colloid is stable? (Yes/No),Yes,,,,
+Integer,28,Suspension stable? (Yes/No),No,,,,
+Integer,29,Solvent present in larger amount? (Yes/No),Yes,,,,
+Integer,30,Milk is emulsion? (Yes/No),Yes,,,,
+Integer,31,Dispersed phase in milk?,Fat,,,,
+Integer,32,Dispersion medium in milk?,Water,,,,
+Integer,33,Iron is?,Element,,,,
+Integer,34,Sand and salt separated by?,Dissolution and filtration,,,,
+Integer,35,Ink separated by?,Chromatography,,,,
+Integer,36,Crude oil separated by?,Fractional distillation,,,,
+Integer,37,Salt from seawater obtained by?,Evaporation,,,,
+Integer,38,Mixture can be separated physically? (Yes/No),Yes,,,,
+Integer,39,Compound separated chemically? (Yes/No),Yes,,,,
+Integer,40,Homogeneous mixture uniform? (Yes/No),Yes,,,,
+Integer,41,Colloid scatters light? (Yes/No),Yes,,,,
+Integer,42,Brownian motion seen in?,Colloid,,,,
+Integer,43,Solubility of gas decreases with temperature? (Yes/No),Yes,,,,
+Integer,44,Solution particles invisible? (Yes/No),Yes,,,,
+Integer,45,Alloy example?,Brass,,,,
+Integer,46,Brass contains?,Copper and zinc,,,,
+Integer,47,Muddy water is?,Suspension,,,,
+Integer,48,Smoke is?,Colloid,,,,
+Integer,49,Air is homogeneous? (Yes/No),Yes,,,,
+Integer,50,Water is pure substance? (Yes/No),Yes,,,,
+
+Problem,1,Name the type of mixture: salt + water.,,,,,Homogeneous mixture
+Problem,2,Name the type of mixture: sand + water.,,,,,Heterogeneous mixture
+Problem,3,How will you separate sand and salt?,,,,,Dissolve salt and filter
+Problem,4,How will you separate oil and water?,,,,,Separating funnel
+Problem,5,How will you obtain salt from seawater?,,,,,Evaporation
+Problem,6,How will you separate dyes from ink?,,,,,Chromatography
+Problem,7,Why milk is a colloid?,,,,,Fat dispersed in water
+Problem,8,Why Tyndall effect seen in fog?,,,,,Scattering of light
+Problem,9,Why suspension unstable?,,,,,Particles settle
+Problem,10,Why solution stable?,,,,,Very small particles
+Problem,11,Why alloys homogeneous?,,,,,Uniform composition
+Problem,12,Why compounds have fixed composition?,,,,,Chemical combination
+Problem,13,Why sugar solution clear?,,,,,Particles very small
+Problem,14,Why muddy water filtered?,,,,,Large particles
+Problem,15,Why centrifugation used in dairy?,,,,,Separate cream
+Problem,16,Why salt solution conducts electricity?,,,,,Free ions
+Problem,17,Why sugar solution not conduct?,,,,,No ions
+Problem,18,Why gas solubility decreases with heat?,,,,,Less attraction
+Problem,19,Why colloid shows Brownian motion?,,,,,Particle movement
+Problem,20,Why ink is colloid?,,,,,Pigments dispersed
+Problem,21,Why water is compound?,,,,,Fixed ratio H and O
+Problem,22,Why air is mixture?,,,,,Variable composition
+Problem,23,Why evaporation separates salt?,,,,,Water vaporizes
+Problem,24,Why filtration fails for solution?,,,,,Particles too small
+Problem,25,Why chromatography effective?,,,,,Different adsorption
+Problem,26,Why suspension scatters light?,,,,,Large particles
+Problem,27,Why mixture properties vary?,,,,,No fixed ratio
+Problem,28,Why compound properties differ?,,,,,New substance
+Problem,29,Why distillation separates liquids?,,,,,Different boiling points
+Problem,30,Why fractional distillation for crude oil?,,,,,Many boiling points
+Problem,31,Why separating funnel works?,,,,,Density difference
+Problem,32,Why sublimation separates NH4Cl?,,,,,Direct gas formation
+Problem,33,Why brass not compound?,,,,,Variable composition
+Problem,34,Why milk opaque?,,,,,Light scattering
+Problem,35,Why true solution transparent?,,,,,No scattering
+Problem,36,Why solute dissolves?,,,,,Attraction with solvent
+Problem,37,Why solvent more?,,,,,Dissolves solute
+Problem,38,Why colloid not filtered?,,,,,Small particles
+Problem,39,Why solution does not settle?,,,,,Stable particles
+Problem,40,Why water universal solvent?,,,,,High polarity
+Problem,41,Why air cannot be filtered?,,,,,Gases pass filter
+Problem,42,Why alloy stronger?,,,,,Improved properties
+Problem,43,Why evaporation faster?,,,,,High temperature
+Problem,44,Why salt cannot sublime?,,,,,Strong bonds
+Problem,45,Why smoke harmful?,,,,,Fine particles
+Problem,46,Why cream floats?,,,,,Lower density
+Problem,47,Why heterogeneous visible?,,,,,Non uniform
+Problem,48,Why homogeneous uniform?,,,,,Even mixing
+Problem,49,Why compound has formula?,,,,,Fixed ratio
+Problem,50,Why mixture no formula?,,,,,Variable ratio

@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of The Trees?,Adrienne Rich,Robert Frost,Carolyn Wells,Leslie Norris,Adrienne Rich
+MCQ,2,The Trees is a,Story,Poem,Play,Essay,Poem
+MCQ,3,Where are the trees at the beginning of the poem?,Forest,House,Room,City,Room
+MCQ,4,The trees in the poem symbolize,Nature,Freedom,Women,All of these,All of these
+MCQ,5,What are the trees trying to do?,Grow,Escape,Die,Rest,Escape
+MCQ,6,The trees move towards the,Room,Forest,House,Open space,Forest
+MCQ,7,The poem highlights the theme of,Freedom and confinement,Nature only,Beauty,War,Freedom and confinement
+MCQ,8,The forest was empty because,Trees were cut,Trees were inside,Trees died,Trees moved,Trees were inside
+MCQ,9,The trees’ roots are described as,Strong,Shallow,Working hard,Dead,Working hard
+MCQ,10,The leaves strain towards,Light,Roof,Glass,Wind,Glass
+MCQ,11,The poet describes the trees as,Weak,Silent,Struggling,Dead,Struggling
+MCQ,12,The trees breaking free suggests,Destruction,Freedom,Loss,Death,Freedom
+MCQ,13,What time of day is described?,Morning,Night,Evening,Afternoon,Night
+MCQ,14,The moon is described as,Full,Broken,Shining,Hidden,Broken
+MCQ,15,The poem is written in,Free verse,Rhyming couplets,Sonnet,Ballad,Free verse
+MCQ,16,The poet uses trees to represent,Nature only,Animals,Women,Children,Women
+MCQ,17,The glass in the poem represents,Transparency,Barrier,Beauty,Hope,Barrier
+MCQ,18,The trees’ movement is compared to,Walking,Running,Whispering,Silent movement,Silent movement
+MCQ,19,The poet is sitting inside the,Room,Forest,Garden,House,Room
+MCQ,20,The trees finally reach the,Room,Forest,Roof,Window,Forest
+MCQ,21,The poem suggests that freedom is,Inevitable,Impossible,Painful,Temporary,Inevitable
+MCQ,22,The trees are described as,Passive,Active,Dead,Weak,Active
+MCQ,23,The forest will be,Sad,Empty,Full again,Destroyed,Full again
+MCQ,24,The poet’s tone is,Joyful,Angry,Hopeful,Sympathetic,Sympathetic
+MCQ,25,The trees’ struggle reflects,Human struggle,Nature’s anger,War,Peace,Human struggle
+MCQ,26,The trees moving out symbolize,Loneliness,Rebellion,Growth,Death,Rebellion
+MCQ,27,The poem criticizes,Deforestation,Oppression,Pollution,Technology,Oppression
+MCQ,28,The roots finally snap because,They are weak,They want freedom,They are old,They dry,Because they want freedom
+MCQ,29,The poet uses imagery to show,Beauty of trees,Movement and struggle,Calmness,Joy,Movement and struggle
+MCQ,30,The trees’ exit happens at,Night,Day,Morning,Evening,Night
+MCQ,31,The poem suggests nature cannot be,Controlled,Destroyed,Ignored,Seen,Controlled
+MCQ,32,The trees moving out create a sense of,Joy,Chaos,Silence,Fear,Chaos
+MCQ,33,The poet’s room represents,Freedom,Safety,Confinement,Nature,Confinement
+MCQ,34,The glass breaking suggests,Violence,Liberation,Loss,Accident,Liberation
+MCQ,35,The poem reflects the idea of,Repression and freedom,Love,Nature’s beauty,War,Repression and freedom
+MCQ,36,The trees’ movement is described as,Fast,Violent,Gradual,Lazy,Gradual
+MCQ,37,The poet sympathizes with,Humans,Trees,Animals,Both humans and trees,Both humans and trees
+MCQ,38,The forest symbolizes,Nature,Freedom,Isolation,Danger,Freedom
+MCQ,39,The poem is feminist because it represents,Men,Children,Women’s freedom,Animals,Women’s freedom
+MCQ,40,The trees breaking free show,Strength,Weakness,Confusion,Death,Strength
+MCQ,41,The poem ends with a sense of,Defeat,Victory,Hope,Fear,Hope
+MCQ,42,The poet is writing letters to,Friends,Women,Nature,No one,No one
+MCQ,43,The sound of trees breaking is compared to,Thunder,Glass breaking,Wind,Silence,Glass breaking
+MCQ,44,The trees were earlier,Free,Imprisoned,Happy,Wild,Imprisoned
+MCQ,45,The poet uses symbolism to convey,Message clearly,Confusion,Beauty,Noise,Message clearly
+MCQ,46,The trees moving out suggest change is,Impossible,Slow but sure,Sudden,Painful,Slow but sure
+MCQ,47,The poem reflects a struggle for,Power,Freedom,Money,Land,Freedom
+MCQ,48,The trees’ movement affects the,Room,Forest,Sky,Moon,Moon
+MCQ,49,The poet uses natural elements to express,Political ideas,Human emotions,Science,Weather,Human emotions
+MCQ,50,The central idea of the poem is,Nature’s beauty,Freedom from oppression,Environmentalism,Deforestation,Freedom from oppression
+
+Integer,1,Name of the poet?,Adrienne Rich,,,,
+Integer,2,Type of poem?,Free verse,,,,
+Integer,3,Where are the trees initially?,Room,,,,
+Integer,4,Where do the trees move?,Forest,,,,
+Integer,5,Theme of the poem?,Freedom,,,,
+Integer,6,The forest was empty because?,Trees inside,,,,
+Integer,7,Time described?,Night,,,,
+Integer,8,What breaks?,Glass,,,,
+Integer,9,What snaps?,Roots,,,,
+Integer,10,Poet’s tone?,Sympathetic,,,,
+Integer,11,Trees symbolize?,Oppressed beings,,,,
+Integer,12,Forest symbolizes?,Freedom,,,,
+Integer,13,Room symbolizes?,Confinement,,,,
+Integer,14,Poem style?,Free verse,,,,
+Integer,15,The trees are?,Restless,,,,
+Integer,16,Movement of trees?,Gradual,,,,
+Integer,17,The moon is?,Broken,,,,
+Integer,18,Trees’ struggle shows?,Resistance,,,,
+Integer,19,The poem criticizes?,Oppression,,,,
+Integer,20,Trees finally become?,Free,,,,
+Integer,21,Glass breaking means?,Liberation,,,,
+Integer,22,Poet location?,Inside room,,,,
+Integer,23,Trees’ roots are?,Working hard,,,,
+Integer,24,Poem mood?,Hopeful,,,,
+Integer,25,Trees’ exit creates?,Chaos,,,,
+Integer,26,Trees were earlier?,Confined,,,,
+Integer,27,Poem message?,Freedom inevitable,,,,
+Integer,28,Trees represent?,Women,,,,
+Integer,29,Forest will be?,Full,,,,
+Integer,30,Poem reflects?,Rebellion,,,,
+Integer,31,Trees strain towards?,Light,,,,
+Integer,32,Trees break through?,Glass,,,,
+Integer,33,Poem is symbolic?,Yes,,,,
+Integer,34,Poem theme type?,Social,,,,
+Integer,35,Poem length?,Short,,,,
+Integer,36,Trees are active?,Yes,,,,
+Integer,37,Trees’ movement sound?,Glass breaking,,,,
+Integer,38,Trees affect?,Moon,,,,
+Integer,39,Poem conveys?,Hope,,,,
+Integer,40,Poet uses imagery?,Yes,,,,
+Integer,41,Trees want?,Freedom,,,,
+Integer,42,Room is?,Restrictive,,,,
+Integer,43,Trees finally rest?,Forest,,,,
+Integer,44,Poem relevance?,Modern society,,,,
+Integer,45,Poem message tone?,Positive,,,,
+Integer,46,Trees’ struggle ends in?,Freedom,,,,
+Integer,47,Poem appeals to?,All readers,,,,
+Integer,48,Trees’ journey is?,Symbolic,,,,
+Integer,49,Poem focus?,Liberation,,,,
+Integer,50,Central idea?,Breaking confinement,,,,
+
+Descriptive,1,What is the central idea of the poem The Trees?,,,,,The poem highlights the struggle for freedom from oppression
+Descriptive,2,Explain the symbolism of trees in the poem.,,,,,Trees symbolize oppressed beings seeking freedom
+Descriptive,3,Why are the trees kept inside the house?,,,,,They represent confinement
+Descriptive,4,What does the forest symbolize?,,,,,Freedom and natural life
+Descriptive,5,How do the trees struggle to escape?,,,,,By breaking roots and glass
+Descriptive,6,What is the significance of the breaking glass?,,,,,Symbol of liberation
+Descriptive,7,Explain the feminist interpretation of the poem.,,,,,Trees represent women’s struggle
+Descriptive,8,How does the poet use imagery?,,,,,To show movement and struggle
+Descriptive,9,Why is the forest empty at the beginning?,,,,,Trees are confined inside
+Descriptive,10,Describe the poet’s tone.,,,,,Sympathetic and hopeful
+Descriptive,11,What role does nature play in the poem?,,,,,Symbol of freedom
+Descriptive,12,How does the poem reflect social issues?,,,,,Oppression and liberation
+Descriptive,13,Explain the significance of night in the poem.,,,,,Time of silent rebellion
+Descriptive,14,Why do the trees move silently?,,,,,Fear and determination
+Descriptive,15,How does the poem end?,,,,,With hope and freedom
+Descriptive,16,Explain the contrast between room and forest.,,,,,Confinement vs freedom
+Descriptive,17,What does the moon symbolize?,,,,,Witness to struggle
+Descriptive,18,Why is the poem written in free verse?,,,,,To express freedom
+Descriptive,19,How does the poem convey rebellion?,,,,,Through trees breaking out
+Descriptive,20,Explain the line “roots work all night.”,,,,,Shows struggle for freedom
+Descriptive,21,Why is the poem relevant today?,,,,,Oppression still exists
+Descriptive,22,How does the poet show sympathy?,,,,,By highlighting pain
+Descriptive,23,Explain the significance of silence.,,,,,Silent resistance
+Descriptive,24,How does the poem reflect human emotions?,,,,,Desire for freedom
+Descriptive,25,Why are the trees restless?,,,,,They want freedom
+Descriptive,26,Explain the metaphor of trees breaking free.,,,,,Liberation from oppression
+Descriptive,27,What does the poem suggest about freedom?,,,,,It cannot be suppressed
+Descriptive,28,How does imagery enhance meaning?,,,,,Creates vivid picture
+Descriptive,29,Explain the role of glass.,,,,,Barrier to freedom
+Descriptive,30,How does the poet use nature symbolically?,,,,,To reflect human struggle
+Descriptive,31,Why does the poet sit inside the room?,,,,,Shows separation
+Descriptive,32,Explain the feminist message.,,,,,Women breaking constraints
+Descriptive,33,How does the poem portray confinement?,,,,,Trees trapped inside
+Descriptive,34,Explain the poet’s attitude.,,,,,Supportive of freedom
+Descriptive,35,What lesson does the poem teach?,,,,,Fight for freedom
+Descriptive,36,Why do the roots snap?,,,,,To escape confinement
+Descriptive,37,Explain the imagery of moon.,,,,,Witnessing change
+Descriptive,38,How does the poem show hope?,,,,,Trees reach forest
+Descriptive,39,Why is the poem symbolic?,,,,,Every element has meaning
+Descriptive,40,Explain the struggle depicted.,,,,,Long fight for freedom
+Descriptive,41,How does the poem criticize society?,,,,,By showing oppression
+Descriptive,42,Why is freedom important in the poem?,,,,,Essential for growth
+Descriptive,43,How does the poem appeal emotionally?,,,,,Creates empathy
+Descriptive,44,Explain the significance of movement.,,,,,Represents change
+Descriptive,45,Why is the poem powerful?,,,,,Strong imagery and message
+Descriptive,46,How does the poem reflect rebellion?,,,,,Breaking barriers
+Descriptive,47,Explain the ending of the poem.,,,,,Hopeful liberation
+Descriptive,48,How does the poem inspire readers?,,,,,Encourages resistance
+Descriptive,49,What does the poem suggest about oppression?,,,,,It will end
+Descriptive,50,Summarize the poem The Trees.,,,,,Trees break free from confinement symbolizing liberation

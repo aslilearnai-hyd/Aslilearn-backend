@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of "If I Were You"?,R K Narayan,Douglas James,Jerome K Jerome,Vikram Seth,Douglas James
+MCQ,2,"If I Were You" is a?,Poem,Play,Story,Novel,Play
+MCQ,3,Who is the protagonist of the play?,Burglar,Gerrard,Inspector,Farmer,Gerrard
+MCQ,4,What was Gerrard’s profession?,Writer,Farmer,Teacher,Doctor,Writer
+MCQ,5,Where did Gerrard live?,Village,Town,Forest cottage,City,Forest cottage
+MCQ,6,Why did Gerrard live alone?,Fear,Work,Isolation preference,Crime,Isolation preference
+MCQ,7,Who entered Gerrard’s cottage?,Police,Friend,Criminal,Burglar,Criminal
+MCQ,8,What was the intruder’s intention?,Robbery,Murder,Kidnapping,Shelter,Murder
+MCQ,9,Why did the intruder want to kill Gerrard?,Hatred,Revenge,To take his identity,Money,To take his identity
+MCQ,10,What weapon did the intruder have?,Knife,Gun,Stick,Rope,Gun
+MCQ,11,How did Gerrard react to the intruder?,Panicked,Cried,Stayed calm,Fought back,Stayed calm
+MCQ,12,What quality helped Gerrard save himself?,Strength,Intelligence,Luck,Anger,Intelligence
+MCQ,13,What lie did Gerrard tell the intruder?,He was rich,He was a criminal,He was sick,He was armed,He was a criminal
+MCQ,14,Why did Gerrard say killing him was risky?,Police nearby,Neighbours watch,He was already wanted,None,He was already wanted
+MCQ,15,What did Gerrard say about his life?,Peaceful,Boring,Dangerous,Joyful,Dangerous
+MCQ,16,How did the intruder feel after hearing Gerrard?,Confident,Calm,Afraid,Angry,Afraid
+MCQ,17,What did Gerrard do finally?,Killed intruder,Called police,Locked intruder,Escaped,Locked intruder
+MCQ,18,Where did Gerrard lock the intruder?,Bathroom,Room,Almirah,Cellar,Cellar
+MCQ,19,What happened to the intruder at the end?,Escaped,Arrested,Trapped,Killed,Trapped
+MCQ,20,What theme does the play highlight?,Bravery,Violence,Presence of mind,Revenge,Presence of mind
+MCQ,21,What kind of person was the intruder?,Intelligent,Confident,Stupid,Nervous,Nervous
+MCQ,22,What quality of Gerrard impressed the intruder?,Strength,Humour,Calmness,Courage,Calmness
+MCQ,23,What did the intruder lack?,Weapons,Brains,Experience,Planning,Brains
+MCQ,24,Why was Gerrard not afraid?,He was armed,He was clever,He was strong,He had help,He was clever
+MCQ,25,What does the play teach?,Violence is power,Brute force wins,Intelligence over strength,Crime pays,Intelligence over strength
+MCQ,26,What was Gerrard’s lifestyle?,Social,Busy,Isolated,Dangerous,Isolated
+MCQ,27,What mistake did the intruder make?,Came unarmed,Talked too much,Trusted Gerrard,Chose wrong house,Trusted Gerrard
+MCQ,28,What did Gerrard threaten the intruder with?,Police,Knife,Gun,Law,Gun
+MCQ,29,What does the title suggest?,Fearful thinking,Role reversal,Imagination,Dreaming,Role reversal
+MCQ,30,What was Gerrard’s tone?,Fearful,Angry,Confident,Weak,Confident
+MCQ,31,How did Gerrard describe his work?,Safe,Dangerous,Boring,Easy,Dangerous
+MCQ,32,Why did the intruder want Gerrard’s cottage?,Hide,Live,Steal,Escape,Live
+MCQ,33,What does the intruder represent?,Intelligence,Crime,Fear,Courage,Crime
+MCQ,34,What does Gerrard represent?,Fearlessness,Presence of mind,Violence,Weakness,Presence of mind
+MCQ,35,What kind of ending does the play have?,Tragic,Sad,Happy,Comic,Happy
+MCQ,36,What was the intruder’s weakness?,Anger,Fear,Overconfidence,Laziness,Overconfidence
+MCQ,37,What lesson can criminals learn?,Crime is easy,Think before acting,Strength matters,Never trust,Think before acting
+MCQ,38,Why did Gerrard say police would suspect the intruder?,He lived alone,He was criminal,He had no alibi,He was poor,He had no alibi
+MCQ,39,What made the intruder panic?,Gerrard’s courage,Gerrard’s lie,Gun,Police,Gerrard’s lie
+MCQ,40,What literary genre is this?,Comedy,Tragedy,Thriller,Drama,Drama
+MCQ,41,What quality saves Gerrard?,Luck,Strength,Intelligence,Help,Intelligence
+MCQ,42,Why is the play suspenseful?,Fight,Conversation,Twists,Chase,Twists
+MCQ,43,What does Gerrard value most?,Money,Life,Peace,Freedom,Life
+MCQ,44,What did the intruder think Gerrard was?,Farmer,Criminal,Writer,Rich man,Farmer
+MCQ,45,What helped Gerrard overpower intruder?,Weapon,Strength,Words,Friends,Words
+MCQ,46,What kind of play is this?,Comedy of errors,Psychological drama,Historical,Fantasy,Psychological drama
+MCQ,47,What was Gerrard’s attitude?,Confident,Careless,Arrogant,Weak,Confident
+MCQ,48,What did Gerrard do with the phone?,Called police,Broke it,Ignored it,Used as threat,Used as threat
+MCQ,49,What is the central conflict?,Man vs man,Man vs society,Man vs fear,Man vs nature,Man vs man
+MCQ,50,Main message of the play?,Violence wins,Presence of mind saves life,Crime is brave,Fear is strength,Presence of mind saves life
+
+Integer,1,Author?,Douglas James,,,,
+Integer,2,Genre?,Play,,,,
+Integer,3,Hero?,Gerrard,,,,
+Integer,4,Intruder?,Criminal,,,,
+Integer,5,Weapon?,Gun,,,,
+Integer,6,Gerrard profession?,Writer,,,,
+Integer,7,Setting?,Forest cottage,,,,
+Integer,8,Intruder plan?,Murder,,,,
+Integer,9,Gerrard quality?,Intelligence,,,,
+Integer,10,Theme?,Presence of mind,,,,
+Integer,11,Ending?,Happy,,,,
+Integer,12,Intruder weakness?,Overconfidence,,,,
+Integer,13,Gerrard tone?,Calm,,,,
+Integer,14,Intruder fear?,Police,,,,
+Integer,15,Gerrard trick?,Lie,,,,
+Integer,16,Intruder locked?,Cellar,,,,
+Integer,17,Gerrard lifestyle?,Isolated,,,,
+Integer,18,Lesson?,Think smart,,,,
+Integer,19,Intruder motive?,Identity theft,,,,
+Integer,20,Gerrard strength?,Mind,,,,
+Integer,21,Play type?,Drama,,,,
+Integer,22,Conflict?,Man vs man,,,,
+Integer,23,Weapon threat?,Gun,,,,
+Integer,24,Intruder nature?,Nervous,,,,
+Integer,25,Gerrard victory?,Words,,,,
+Integer,26,Intruder mistake?,Trust,,,,
+Integer,27,Setting mood?,Tense,,,,
+Integer,28,Gerrard fear?,None,,,,
+Integer,29,Message?,Intelligence,,,,
+Integer,30,Intruder fate?,Trapped,,,,
+Integer,31,Gerrard response?,Calm,,,,
+Integer,32,Intruder confidence?,Low,,,,
+Integer,33,Story focus?,Mind game,,,,
+Integer,34,Gerrard tactic?,Psychology,,,,
+Integer,35,Intruder power?,Gun,,,,
+Integer,36,Gerrard defence?,Mind,,,,
+Integer,37,Key value?,Presence of mind,,,,
+Integer,38,Intruder failure?,Planning,,,,
+Integer,39,Play mood?,Suspense,,,,
+Integer,40,Gerrard life?,Risky,,,,
+Integer,41,Intruder fear cause?,Lie,,,,
+Integer,42,Ending emotion?,Relief,,,,
+Integer,43,Play lesson?,Smart thinking,,,,
+Integer,44,Gerrard survival?,Intellect,,,,
+Integer,45,Intruder outcome?,Defeated,,,,
+Integer,46,Setting isolation?,Yes,,,,
+Integer,47,Intruder error?,Underestimate,,,,
+Integer,48,Gerrard control?,Situation,,,,
+Integer,49,Title meaning?,Role reversal,,,,
+Integer,50,Chapter name?,If I Were You,,,,
+
+Descriptive,1,Who is Gerrard?,,,,,Gerrard is a playwright who lives alone in a forest cottage
+Descriptive,2,Why did Gerrard live alone?,,,,,He preferred isolation for his work
+Descriptive,3,Describe the intruder.,,,,,He is a criminal who wants to kill Gerrard
+Descriptive,4,What was the intruder’s plan?,,,,,To kill Gerrard and take his identity
+Descriptive,5,How did Gerrard react to danger?,,,,,He stayed calm and composed
+Descriptive,6,What lie did Gerrard tell?,,,,,That he was a criminal already
+Descriptive,7,Why did the lie scare the intruder?,,,,,It made killing Gerrard risky
+Descriptive,8,How did Gerrard save his life?,,,,,By using intelligence and presence of mind
+Descriptive,9,What quality of Gerrard is admirable?,,,,,His calmness under pressure
+Descriptive,10,What mistake did the intruder make?,,,,,He underestimated Gerrard
+Descriptive,11,How does the play show intelligence over strength?,,,,,Words defeat the armed criminal
+Descriptive,12,Explain the title "If I Were You".,,,,,It reflects role reversal and thinking
+Descriptive,13,What message does the play convey?,,,,,Presence of mind can save lives
+Descriptive,14,Describe the ending of the play.,,,,,The intruder is trapped safely
+Descriptive,15,How is suspense created?,,,,,Through dialogue and twists
+Descriptive,16,Why is Gerrard not afraid?,,,,,He thinks clearly under pressure
+Descriptive,17,What does the intruder symbolise?,,,,,Crime and foolish confidence
+Descriptive,18,What does Gerrard symbolise?,,,,,Intelligence and courage
+Descriptive,19,How is humour used?,,,,,Through witty dialogue
+Descriptive,20,Explain Gerrard’s psychological trick.,,,,,He confuses the intruder mentally
+Descriptive,21,Why is the play realistic?,,,,,Such situations can happen in real life
+Descriptive,22,What lesson should students learn?,,,,,Think calmly in danger
+Descriptive,23,How does Gerrard control the situation?,,,,,By dominating conversation
+Descriptive,24,Why is the intruder nervous?,,,,,He fears police and consequences
+Descriptive,25,What makes the play interesting?,,,,,Mind game between two men
+Descriptive,26,Describe Gerrard’s character.,,,,,Intelligent, calm and confident
+Descriptive,27,Describe the intruder’s character.,,,,,Impulsive and overconfident
+Descriptive,28,What role does fear play?,,,,,Fear weakens the intruder
+Descriptive,29,Why is brute force useless here?,,,,,Mind wins over weapon
+Descriptive,30,How does dialogue drive the story?,,,,,It builds tension
+Descriptive,31,What is the central conflict?,,,,,Between intelligence and violence
+Descriptive,32,How does Gerrard use words as a weapon?,,,,,By misleading the intruder
+Descriptive,33,Why is presence of mind important?,,,,,It helps in emergencies
+Descriptive,34,What would happen without Gerrard’s lie?,,,,,He might have been killed
+Descriptive,35,What does the play say about criminals?,,,,,They are not always smart
+Descriptive,36,Why is the setting important?,,,,,Isolation increases danger
+Descriptive,37,Explain the psychological aspect.,,,,,Mind games decide the outcome
+Descriptive,38,How does Gerrard turn weakness into strength?,,,,,Uses fear to control intruder
+Descriptive,39,What is the moral of the play?,,,,,Intelligence saves life
+Descriptive,40,Why does the intruder lose?,,,,,Due to lack of planning
+Descriptive,41,How does Gerrard show courage?,,,,,By staying calm
+Descriptive,42,Why is the play inspiring?,,,,,It teaches smart thinking
+Descriptive,43,What role does confidence play?,,,,,It overpowers fear
+Descriptive,44,Explain role reversal in the play.,,,,,Victim becomes controller
+Descriptive,45,What makes Gerrard a hero?,,,,,His intelligence
+Descriptive,46,Why does the intruder fail despite gun?,,,,,Fear and confusion
+Descriptive,47,How is the conflict resolved?,,,,,Intruder is locked safely
+Descriptive,48,What does the play teach about fear?,,,,,Fear can be used wisely
+Descriptive,49,Why is the ending satisfying?,,,,,Justice without violence
+Descriptive,50,Summarize "If I Were You".,,,,,The play shows how intelligence and presence of mind help Gerrard outwit an armed intruder and save his life

@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,A political party is a group of people who come together to,Control army,Contest elections,Rule permanently,Oppose democracy,Contest elections
+MCQ,2,Which of the following is a national political party?,DMK,TDP,BJP,Akali Dal,BJP
+MCQ,3,How many national parties are recognised in India (NCERT)?,5,6,7,8,7
+MCQ,4,Which party introduced the slogan “Garibi Hatao”?,BJP,INC,CPI,AAP,INC
+MCQ,5,Which party follows the ideology of cultural nationalism?,INC,BSP,BJP,CPI,BJP
+MCQ,6,Which party represents Bahujan Samaj?,INC,BJP,BSP,CPI,BSP
+MCQ,7,Which party is associated with communist ideology?,INC,BJP,CPI,CPI(M),CPI
+MCQ,8,Which body recognises political parties in India?,Parliament,President,Election Commission,Supreme Court,Election Commission
+MCQ,9,Which party ruled India for the longest period?,BJP,INC,CPI,BSP,INC
+MCQ,10,Which political party supports socialism?,BJP,INC,CPI,BSP,CPI
+MCQ,11,Which is NOT a function of political parties?,Contest elections,Form government,Shape public opinion,Run judiciary,Run judiciary
+MCQ,12,Which system has only one political party?,Democracy,Multi-party system,One-party system,Two-party system,One-party system
+MCQ,13,Which country follows one-party system?,USA,UK,China,India,China
+MCQ,14,Which system has two major parties?,India,China,USA,France,USA
+MCQ,15,India follows which party system?,One-party,Two-party,Multi-party,None,Multi-party
+MCQ,16,Which party is a regional party?,INC,BJP,DMK,CPI,DMK
+MCQ,17,Which party symbol is Lotus?,INC,BJP,BSP,CPI,BJP
+MCQ,18,Which party symbol is Hand?,BJP,INC,CPI,BSP,INC
+MCQ,19,Which party symbol is Elephant?,INC,BJP,BSP,CPI,BSP
+MCQ,20,Which challenge refers to lack of internal democracy?,Dynastic succession,Money power,Internal democracy,Regionalism,Internal democracy
+MCQ,21,Which challenge refers to control by family?,Internal democracy,Dynastic succession,Money power,Corruption,Dynastic succession
+MCQ,22,Which challenge refers to influence of wealth?,Dynastic rule,Money power,Internal democracy,Communalism,Money power
+MCQ,23,Which party was founded in 1885?,BJP,INC,CPI,BSP,INC
+MCQ,24,Which party supports secularism?,BJP,INC,Shiv Sena,Akali Dal,INC
+MCQ,25,Which political party came to power in 2014?,INC,BJP,CPI,BSP,BJP
+MCQ,26,Which party symbol is Hammer and Sickle?,INC,BJP,CPI,BSP,CPI
+MCQ,27,Which system allows many parties?,One-party,Two-party,Multi-party,None,Multi-party
+MCQ,28,Which party leads NDA?,INC,BJP,CPI,BSP,BJP
+MCQ,29,Which alliance is led by INC?,NDA,UPA,Left Front,Third Front,UPA
+MCQ,30,Which party works at state level?,National party,Regional party,Pressure group,None,Regional party
+MCQ,31,Which challenge affects party transparency?,Dynastic rule,Money power,Internal democracy,None,Money power
+MCQ,32,Which party system gives more choices?,One-party,Two-party,Multi-party,None,Multi-party
+MCQ,33,Which party is recognised by Election Commission?,Pressure group,Political party,NGO,Trade union,Political party
+MCQ,34,Which party ideology supports workers?,BJP,INC,CPI,BSP,CPI
+MCQ,35,Which party promotes cultural nationalism?,INC,CPI,BJP,BSP,BJP
+MCQ,36,Which party symbol is Cycle?,BJP,SP,BSP,INC,SP
+MCQ,37,Which challenge weakens democracy?,Strong parties,Internal democracy,Money power,Participation,Money power
+MCQ,38,Which party symbol is Clock?,NCP,INC,BJP,BSP,NCP
+MCQ,39,Which political party supports Bahujans?,INC,BJP,BSP,CPI,BSP
+MCQ,40,Which country has multi-party system?,China,USA,India,UK,India
+MCQ,41,Which party system ensures stability?,One-party,Two-party,Multi-party,None,Two-party
+MCQ,42,Which party symbol is Broom?,INC,BJP,AAP,CPI,AAP
+MCQ,43,Which political party is leftist?,BJP,INC,CPI,BSP,CPI
+MCQ,44,Which party symbol is Bow and Arrow?,Shiv Sena,BJP,INC,BSP,Shiv Sena
+MCQ,45,Which political party was founded in 1980?,INC,BJP,CPI,BSP,BJP
+MCQ,46,Which challenge reduces merit-based leadership?,Internal democracy,Dynastic succession,Money power,None,Dynastic succession
+MCQ,47,Which system may cause instability?,One-party,Two-party,Multi-party,None,Multi-party
+MCQ,48,Which party system exists in China?,Multi-party,Two-party,One-party,None,One-party
+MCQ,49,Which institution ensures free and fair elections?,Parliament,Judiciary,Election Commission,President,Election Commission
+MCQ,50,Political parties are essential for,Dictatorship,Democracy,Monarchy,Military rule,Democracy
+
+Integer,1,Group contesting elections?,Political party,,,,
+Integer,2,Indian party system?,Multi-party,,,,
+Integer,3,Party recognition body?,Election Commission,,,,
+Integer,4,Party symbol of BJP?,Lotus,,,,
+Integer,5,Party symbol of INC?,Hand,,,,
+Integer,6,Party symbol of BSP?,Elephant,,,,
+Integer,7,Communist party?,CPI,,,,
+Integer,8,Oldest party?,INC,,,,
+Integer,9,Party founded in 1980?,BJP,,,,
+Integer,10,Alliance led by BJP?,NDA,,,,
+Integer,11,Alliance led by INC?,UPA,,,,
+Integer,12,Party for Bahujans?,BSP,,,,
+Integer,13,Regional party example?,DMK,,,,
+Integer,14,Two-party country?,USA,,,,
+Integer,15,One-party country?,China,,,,
+Integer,16,Leftist ideology?,Communism,,,,
+Integer,17,Challenge of family rule?,Dynastic succession,,,,
+Integer,18,Challenge of wealth?,Money power,,,,
+Integer,19,Internal elections problem?,Internal democracy,,,,
+Integer,20,Party at state level?,Regional,,,,
+Integer,21,Party ideology of BJP?,Cultural nationalism,,,,
+Integer,22,Party ideology of CPI?,Communism,,,,
+Integer,23,Indian democracy needs?,Political parties,,,,
+Integer,24,Party symbol of CPI?,Hammer and sickle,,,,
+Integer,25,Party symbol of AAP?,Broom,,,,
+Integer,26,Party symbol of SP?,Cycle,,,,
+Integer,27,Party symbol of NCP?,Clock,,,,
+Integer,28,Party symbol of Shiv Sena?,Bow and Arrow,,,,
+Integer,29,National parties (NCERT)?,Seven,,,,
+Integer,30,Party recognition basis?,Votes,,,,
+Integer,31,Political party function?,Contest elections,,,,
+Integer,32,Party forms government?,Yes,,,,
+Integer,33,Party shapes?,Public opinion,,,,
+Integer,34,Party links people and?,Government,,,,
+Integer,35,Internal democracy means?,Internal elections,,,,
+Integer,36,Money power effect?,Corruption,,,,
+Integer,37,Dynastic rule means?,Family control,,,,
+Integer,38,Multi-party benefit?,More choice,,,,
+Integer,39,Two-party benefit?,Stability,,,,
+Integer,40,One-party system leads to?,Dictatorship,,,,
+Integer,41,Regional party works in?,State,,,,
+Integer,42,Party ideology?,Beliefs,,,,
+Integer,43,Party manifesto?,Policies,,,,
+Integer,44,Party leader elected?,Yes,,,,
+Integer,45,Democracy without parties?,Impossible,,,,
+Integer,46,Pressure group is party?,No,,,,
+Integer,47,Party registration by?,Election Commission,,,,
+Integer,48,National party symbol?,Reserved,,,,
+Integer,49,Chapter theme?,Political Parties,,,,
+Integer,50,Democracy strengthened by?,Political parties,,,,
+
+Descriptive,1,What is a political party?,,,,,A political party is a group that contests elections to form government
+Descriptive,2,Explain functions of political parties.,,,,,They contest elections, form government and shape public opinion
+Descriptive,3,Why are political parties necessary?,,,,,They make democracy workable
+Descriptive,4,Explain one-party system.,,,,,Only one party controls power
+Descriptive,5,Explain two-party system.,,,,,Two major parties compete for power
+Descriptive,6,Explain multi-party system.,,,,,Many parties compete for power
+Descriptive,7,Which party system exists in India?,,,,,Multi-party system
+Descriptive,8,Explain national political parties.,,,,,Parties working across India
+Descriptive,9,Explain regional political parties.,,,,,Parties working at state level
+Descriptive,10,Name major national parties.,,,,,INC, BJP, BSP, CPI, CPI(M)
+Descriptive,11,Explain Indian National Congress.,,,,,Oldest national party
+Descriptive,12,Explain Bharatiya Janata Party.,,,,,Right-wing national party
+Descriptive,13,Explain Bahujan Samaj Party.,,,,,Represents Bahujans
+Descriptive,14,Explain Communist Party of India.,,,,,Leftist ideology
+Descriptive,15,Explain role of Election Commission.,,,,,Recognises political parties
+Descriptive,16,Explain challenges faced by political parties.,,,,,Lack of internal democracy, money power
+Descriptive,17,What is dynastic succession?,,,,,Leadership passed within family
+Descriptive,18,What is money power?,,,,,Influence of wealth in politics
+Descriptive,19,Explain lack of internal democracy.,,,,,No internal elections
+Descriptive,20,Explain reforms suggested for parties.,,,,,Transparency and democracy
+Descriptive,21,Explain party manifesto.,,,,,Statement of policies
+Descriptive,22,Explain alliance politics.,,,,,Parties form alliances
+Descriptive,23,Explain role of opposition.,,,,,Checks government
+Descriptive,24,Explain pressure groups vs parties.,,,,,Pressure groups do not contest elections
+Descriptive,25,Explain party discipline.,,,,,Members follow party rules
+Descriptive,26,Explain ideological differences.,,,,,Different beliefs
+Descriptive,27,Explain importance of regional parties.,,,,,Represent regional interests
+Descriptive,28,Explain how parties shape public opinion.,,,,,Through campaigns
+Descriptive,29,Explain role of parties in elections.,,,,,Candidate selection
+Descriptive,30,Explain political party symbols.,,,,,Help illiterate voters
+Descriptive,31,Explain recognition of parties.,,,,,Based on votes and seats
+Descriptive,32,Explain merits of multi-party system.,,,,,More representation
+Descriptive,33,Explain demerits of multi-party system.,,,,,Instability
+Descriptive,34,Explain merits of two-party system.,,,,,Stability
+Descriptive,35,Explain demerits of one-party system.,,,,,No democracy
+Descriptive,36,Explain party-based democracy.,,,,,Governance through parties
+Descriptive,37,Explain challenges to democracy by parties.,,,,,Corruption
+Descriptive,38,Explain internal democracy reforms.,,,,,Regular elections
+Descriptive,39,Explain role of youth in parties.,,,,,Leadership renewal
+Descriptive,40,Explain women representation in parties.,,,,,Still low
+Descriptive,41,Explain transparency in funding.,,,,,Reduce money power
+Descriptive,42,Explain party competition.,,,,,Better governance
+Descriptive,43,Explain political participation.,,,,,Citizens’ involvement
+Descriptive,44,Explain leadership selection.,,,,,Through elections
+Descriptive,45,Explain party ideology.,,,,,Guiding principles
+Descriptive,46,Explain coalition government.,,,,,Multiple parties govern together
+Descriptive,47,Explain importance of opposition.,,,,,Accountability
+Descriptive,48,Explain democratic reforms.,,,,,Improve party functioning
+Descriptive,49,Explain future of political parties.,,,,,Need reforms
+Descriptive,50,Summarize Political Parties.,,,,,Chapter explains role, types and challenges of political parties

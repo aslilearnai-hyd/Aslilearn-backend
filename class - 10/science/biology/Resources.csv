@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Resources that can be replenished naturally are called,Non-renewable,Rare,Renewable,Exhaustible,Renewable
+MCQ,2,Which of the following is a renewable resource?,Coal,Petroleum,Wind,Natural gas,Wind
+MCQ,3,Which is a non-renewable resource?,Water,Forest,Coal,Sunlight,Coal
+MCQ,4,Management of natural resources means,Overuse of resources,Conservation and sustainable use,Complete ban on use,Only government control,Conservation and sustainable use
+MCQ,5,Which resource takes millions of years to form?,Water,Forest,Coal,Wind,Coal
+MCQ,6,Sustainable development means,Using resources fully,Not using resources,Using resources wisely for future,Only economic growth,Using resources wisely for future
+MCQ,7,Which gas is mainly responsible for global warming?,Oxygen,Nitrogen,Carbon dioxide,Hydrogen,Carbon dioxide
+MCQ,8,Which practice helps conserve forests?,Deforestation,Overgrazing,Afforestation,Mining,Afforestation
+MCQ,9,Which source of energy is non-renewable?,Solar,Wind,Coal,Biogas,Coal
+MCQ,10,Which source of energy is renewable?,Petroleum,Nuclear,Wind,Thermal,Wind
+MCQ,11,Which resource is called fossil fuel?,Coal,Water,Forest,Air,Coal
+MCQ,12,Which is a disadvantage of using fossil fuels?,Renewable,Never exhaust,Pollution,Clean energy,Pollution
+MCQ,13,Which method conserves water?,Wastage,Overuse,Rainwater harvesting,Deforestation,Rainwater harvesting
+MCQ,14,Which resource is affected by deforestation?,Air,Water,Forest,All of these,All of these
+MCQ,15,Which movement focused on forest conservation?,Green Revolution,Chipko Movement,White Revolution,Blue Revolution,Chipko Movement
+MCQ,16,Which country has largest forest cover?,India,Brazil,China,Russia,Russia
+MCQ,17,Which practice leads to soil erosion?,Afforestation,Overgrazing,Terrace farming,Contour ploughing,Overgrazing
+MCQ,18,Which method reduces soil erosion?,Overgrazing,Deforestation,Terrace farming,Mining,Terrace farming
+MCQ,19,Which resource is common property?,Private land,House,Air,Car,Air
+MCQ,20,Which energy source causes minimum pollution?,Coal,Petroleum,Solar,Nuclear,Solar
+MCQ,21,Which of the following is an example of watershed management?,Dams,Afforestation,Contour bunding,All of these,All of these
+MCQ,22,Which is an advantage of biogas?,Pollution,Non-renewable,Clean fuel,Expensive,Clean fuel
+MCQ,23,Which resource management involves local people?,Centralised,Community based,Private,None,Community based
+MCQ,24,Which resource is unlimited?,Coal,Petroleum,Sunlight,Forest,Sunlight
+MCQ,25,Which sector uses maximum water?,Domestic,Industrial,Agriculture,Transport,Agriculture
+MCQ,26,Which practice conserves biodiversity?,Deforestation,Poaching,Protected areas,Mining,Protected areas
+MCQ,27,Which is NOT a renewable resource?,Wind,Water,Coal,Sunlight,Coal
+MCQ,28,Which method helps recharge groundwater?,Canal irrigation,Rainwater harvesting,Overuse of wells,Mining,Rainwater harvesting
+MCQ,29,Which is an example of public resource?,Private car,House,Air conditioner,Forest,Forest
+MCQ,30,Which energy source is obtained from animal waste?,Solar,Biogas,Nuclear,Thermal,Biogas
+MCQ,31,Which resource is exhausted fastest?,Forest,Coal,Water,Wind,Coal
+MCQ,32,Which practice ensures long-term availability of resources?,Overuse,Conservation,Wastage,Exploitation,Conservation
+MCQ,33,Which resource management reduces floods?,Deforestation,Dam construction,Mining,Overgrazing,Dam construction
+MCQ,34,Which is an example of sustainable practice?,Overfishing,Afforestation,Mining,Wastage,Afforestation
+MCQ,35,Which resource is shared by all nations?,Land,Water,Oceans,Forests,Oceans
+MCQ,36,Which practice increases carbon dioxide?,Afforestation,Deforestation,Recycling,Wind energy,Deforestation
+MCQ,37,Which resource is used for electricity generation?,Coal,Solar,Both A and B,Wind,Both A and B
+MCQ,38,Which method protects wildlife?,Poaching,Deforestation,Sanctuaries,Mining,Sanctuaries
+MCQ,39,Which resource management ensures ecological balance?,Overuse,Conservation,Industrialisation,Urbanisation,Conservation
+MCQ,40,Which fuel is known as clean fuel?,Coal,Petroleum,Biogas,Diesel,Biogas
+MCQ,41,Which resource is degraded by mining?,Forest,Soil,Water,All of these,All of these
+MCQ,42,Which resource is used by all living beings?,Air,Coal,Petroleum,Metal,Air
+MCQ,43,Which of the following is a man-made resource?,Forest,River,Building,Air,Building
+MCQ,44,Which practice leads to desertification?,Afforestation,Overgrazing,Reforestation,Contour farming,Overgrazing
+MCQ,45,Which is an example of renewable energy?,Thermal,Nuclear,Wind,Diesel,Wind
+MCQ,46,Which resource is conserved by recycling?,Metal ores,Water,Air,Soil,Metal ores
+MCQ,47,Which law protects wildlife in India?,Forest Act,Wildlife Protection Act,Water Act,Air Act,Wildlife Protection Act
+MCQ,48,Which resource is depleted by excessive use?,Coal,Water,Forest,All of these,All of these
+MCQ,49,Which practice ensures equitable use of resources?,Hoarding,Conservation,Overexploitation,Pollution,Conservation
+MCQ,50,Management of resources is necessary to ensure,Soon exhaustion,Sustainable development,Profit only,Industrial growth,Sustainable development
+
+Integer,1,Naturally replenished resources?,Renewable,,,,
+Integer,2,Coal type resource?,Non-renewable,,,,
+Integer,3,Clean energy source?,Solar,,,,
+Integer,4,Forest protection movement?,Chipko,,,,
+Integer,5,Animal waste fuel?,Biogas,,,,
+Integer,6,Resource used by all?,Air,,,,
+Integer,7,Groundwater recharge method?,Rainwater harvesting,,,,
+Integer,8,Soil erosion control?,Terrace farming,,,,
+Integer,9,Resource for future use?,Conservation,,,,
+Integer,10,Energy from sun?,Solar,,,,
+Integer,11,Community resource?,Forest,,,,
+Integer,12,Overuse causes?,Depletion,,,,
+Integer,13,Water conservation method?,Harvesting,,,,
+Integer,14,Wildlife protection law?,Wildlife Protection Act,,,,
+Integer,15,Resource management goal?,Sustainability,,,,
+Integer,16,Fossil fuel example?,Coal,,,,
+Integer,17,Renewable fuel?,Biogas,,,,
+Integer,18,Forest increase?,Afforestation,,,,
+Integer,19,Soil loss cause?,Overgrazing,,,,
+Integer,20,Energy without pollution?,Wind,,,,
+Integer,21,Common property?,Air,,,,
+Integer,22,Resource saving practice?,Recycling,,,,
+Integer,23,Unlimited resource?,Sunlight,,,,
+Integer,24,Mining affects?,Soil,,,,
+Integer,25,Water saving system?,Drip irrigation,,,,
+Integer,26,Energy from waste?,Biogas,,,,
+Integer,27,Forest cutting?,Deforestation,,,,
+Integer,28,Long term use?,Sustainable,,,,
+Integer,29,Resource sharing ensures?,Equity,,,,
+Integer,30,Fuel from plants?,Biomass,,,,
+Integer,31,Soil protection?,Contour farming,,,,
+Integer,32,Wildlife safe area?,Sanctuary,,,,
+Integer,33,Energy crisis cause?,Overuse,,,,
+Integer,34,Resource management type?,Community based,,,,
+Integer,35,Carbon emission gas?,CO2,,,,
+Integer,36,Resource degradation means?,Damage,,,,
+Integer,37,Best fuel?,Clean fuel,,,,
+Integer,38,Water storage method?,Dam,,,,
+Integer,39,Forest product?,Timber,,,,
+Integer,40,Energy source non-renewable?,Coal,,,,
+Integer,41,Resource conservation means?,Protection,,,,
+Integer,42,Energy efficient source?,Solar,,,,
+Integer,43,Soil fertility maintained by?,Crop rotation,,,,
+Integer,44,Environmental balance maintained by?,Conservation,,,,
+Integer,45,Overuse result?,Depletion,,,,
+Integer,46,Resource sharing method?,Equitable use,,,,
+Integer,47,Renewable electricity source?,Wind,,,,
+Integer,48,Forest benefit?,Biodiversity,,,,
+Integer,49,Chapter name?,Management of Natural Resources,,,,
+Integer,50,Resource future depends on?,Sustainable use,,,,
+
+Descriptive,1,What are natural resources?,,,,,Natural resources are materials obtained from nature
+Descriptive,2,Define renewable resources.,,,,,Resources that can be replenished naturally
+Descriptive,3,Define non-renewable resources.,,,,,Resources that take millions of years to form
+Descriptive,4,Why is management of resources important?,,,,,To ensure sustainable use for future
+Descriptive,5,Explain sustainable development.,,,,,Development without harming future needs
+Descriptive,6,Explain forest conservation.,,,,,Protection and management of forests
+Descriptive,7,What is afforestation?,,,,,Planting of trees
+Descriptive,8,Explain Chipko Movement.,,,,,Movement to protect trees
+Descriptive,9,Explain water conservation.,,,,,Saving and proper use of water
+Descriptive,10,What is rainwater harvesting?,,,,,Collection of rainwater
+Descriptive,11,Explain soil conservation.,,,,,Preventing soil erosion
+Descriptive,12,Explain overgrazing.,,,,,Excessive grazing of animals
+Descriptive,13,Explain watershed management.,,,,,Managing water resources
+Descriptive,14,Explain biogas plant.,,,,,Produces fuel from waste
+Descriptive,15,Explain fossil fuels.,,,,,Coal, petroleum, natural gas
+Descriptive,16,Explain advantages of renewable energy.,,,,,Clean and sustainable
+Descriptive,17,Explain disadvantages of non-renewable energy.,,,,,Limited and polluting
+Descriptive,18,Explain wildlife conservation.,,,,,Protection of animals
+Descriptive,19,Explain biodiversity.,,,,,Variety of life forms
+Descriptive,20,Explain deforestation.,,,,,Cutting of forests
+Descriptive,21,Explain effects of deforestation.,,,,,Soil erosion and climate change
+Descriptive,22,Explain role of government in resource management.,,,,,Laws and policies
+Descriptive,23,Explain community participation.,,,,,Local people involvement
+Descriptive,24,Explain equitable distribution of resources.,,,,,Fair sharing
+Descriptive,25,Explain role of forests.,,,,,Maintain ecological balance
+Descriptive,26,Explain mining impacts.,,,,,Land and water pollution
+Descriptive,27,Explain conservation of energy.,,,,,Reducing wastage
+Descriptive,28,Explain renewable energy sources.,,,,,Solar, wind, biogas
+Descriptive,29,Explain non-renewable energy sources.,,,,,Coal and petroleum
+Descriptive,30,Explain environmental conservation.,,,,,Protection of environment
+Descriptive,31,Explain importance of water resources.,,,,,Essential for life
+Descriptive,32,Explain soil as a resource.,,,,,Supports plant growth
+Descriptive,33,Explain importance of recycling.,,,,,Saves resources
+Descriptive,34,Explain sustainable agriculture.,,,,,Farming without degradation
+Descriptive,35,Explain conservation of wildlife.,,,,,Protected areas
+Descriptive,36,Explain natural resource depletion.,,,,,Excessive use
+Descriptive,37,Explain role of individuals in conservation.,,,,,Reduce, reuse, recycle
+Descriptive,38,Explain resource management.,,,,,Planned use of resources
+Descriptive,39,Explain energy crisis.,,,,,Shortage of energy
+Descriptive,40,Explain climate change.,,,,,Long term temperature change
+Descriptive,41,Explain use of alternative energy.,,,,,Reduce pollution
+Descriptive,42,Explain ecosystem balance.,,,,,Stable environment
+Descriptive,43,Explain forest produce.,,,,,Timber and fuel
+Descriptive,44,Explain soil fertility.,,,,,Ability to support crops
+Descriptive,45,Explain impact of industrialisation.,,,,,Resource overuse
+Descriptive,46,Explain conservation laws.,,,,,Protect resources
+Descriptive,47,Explain renewable resource management.,,,,,Sustainable use
+Descriptive,48,Explain non-renewable resource management.,,,,,Limited use
+Descriptive,49,Explain future need of conservation.,,,,,Resources limited
+Descriptive,50,Summarize Management of Natural Resources.,,,,,Chapter explains conservation and sustainable use

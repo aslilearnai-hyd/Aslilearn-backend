@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of The Ball Poem?,Robert Frost,John Berryman,William Wordsworth,John Keats,John Berryman
+MCQ,2,The Ball Poem is a,Story,Poem,Play,Essay,Poem
+MCQ,3,What does the boy lose in the poem?,Bat,Ball,Kite,Book,Ball
+MCQ,4,Where does the ball go?,Road,Field,Water,House,Water
+MCQ,5,The loss of the ball makes the boy feel,Happy,Angry,Shocked,Indifferent,Shocked
+MCQ,6,The ball represents,Only a toy,Money,Childhood possessions,Friendship,Childhood possessions
+MCQ,7,The poem highlights the theme of,Growth and loss,Nature,War,Friendship,Growth and loss
+MCQ,8,The boy is described as standing,Rigidly,Quietly,Helplessly,Happily,Helplessly
+MCQ,9,What emotion does the boy experience first?,Joy,Sadness,Shock,Anger,Shock
+MCQ,10,The poet says the boy is learning to understand,Games,Money,Loss and responsibility,Friendship,Loss and responsibility
+MCQ,11,The ball falls into the,Street,Well,Harbour,River,Harbour
+MCQ,12,The poet does not offer the boy another ball because,He has no money,He wants the boy to learn,The boy refuses,It is not needed,He wants the boy to learn
+MCQ,13,What does the poet mean by “epistemology of loss”?,Knowledge of games,Knowledge of loss,Knowledge of money,Knowledge of life,Knowledge of loss
+MCQ,14,The boy’s reaction shows,Immaturity,Maturity,Indifference,Joy,Maturity
+MCQ,15,The ball symbolizes,Wealth,Loss of innocence,Hope,Freedom,Loss of innocence
+MCQ,16,The poet uses the ball as a symbol of,Materialism,Life’s lessons,Games,Nature,Life’s lessons
+MCQ,17,The boy does not cry because,He is brave,He is shocked,He is happy,He is angry,He is shocked
+MCQ,18,The poet feels that loss is,Avoidable,Temporary,Inevitable,Unimportant,Inevitable
+MCQ,19,The poem teaches that losing things is a part of,Growth,Games,Childhood,Fun,Growth
+MCQ,20,The tone of the poem is,Humorous,Sympathetic,Sarcastic,Angry,Sympathetic
+MCQ,21,The boy’s loss prepares him for,Fear,Adulthood,Games,School,Adulthood
+MCQ,22,What does “no one buys a ball back” suggest?,Money can replace loss,Loss is permanent,Games are over,Nothing,Loss is permanent
+MCQ,23,The boy’s silence shows,Joy,Confusion,Understanding,Anger,Understanding
+MCQ,24,The poem deals with the theme of,Childhood innocence,Loss and responsibility,War,Nature,Loss and responsibility
+MCQ,25,The poet wants the boy to learn to,Play better,Share toys,Accept loss,Forget games,Accept loss
+MCQ,26,The boy’s experience is,A happy moment,A painful lesson,A game,A joke,A painful lesson
+MCQ,27,The ball goes into the water symbolizing,End of game,Irretrievable loss,Fun,Victory,Irretrievable loss
+MCQ,28,The boy’s reaction is compared to,Anger,Helplessness,Joy,Excitement,Helplessness
+MCQ,29,The poet believes loss helps us grow by teaching,Joy,Responsibility,Anger,Fun,Responsibility
+MCQ,30,The boy’s ball was,Borrowed,Old,New,Broken,New
+MCQ,31,The poem reflects a universal experience of,Joy,Loss,Success,Competition,Loss
+MCQ,32,The poet uses simple language to convey,Complex emotions,Humour,Fear,Joy,Complex emotions
+MCQ,33,The poem is written in,Simple style,Complex style,Old English,Prose,Simple style
+MCQ,34,The loss of the ball marks the end of,Boyhood,Innocence,Game,Fun,Innocence
+MCQ,35,The boy’s learning is about,Money,Loss,Games,Friendship,Loss
+MCQ,36,The poet’s attitude towards the boy is,Critical,Indifferent,Sympathetic,Angry,Sympathetic
+MCQ,37,The ball is called a “first loss” because it is the boy’s,Biggest loss,First experience of loss,Last game,Only toy,First experience of loss
+MCQ,38,The poem suggests that material things are,More important,Replaceable,Irreplaceable,Unimportant,Replaceable
+MCQ,39,The boy is learning to accept,Winning,Losing,Fighting,Cheating,Losing
+MCQ,40,The poem is philosophical because it discusses,Games,Life lessons,Nature,War,Life lessons
+MCQ,41,The boy’s realization comes through,Pain,Joy,Fun,Anger,Pain
+MCQ,42,The poet does not console the boy because,He is cruel,He wants him to learn,He ignores him,He is angry,He wants him to learn
+MCQ,43,The poem teaches us to deal with,Success,Loss,Competition,Victory,Loss
+MCQ,44,The boy’s loss is a metaphor for,Life’s losses,Games,Money,Toys,Life’s losses
+MCQ,45,The poet believes that growing up involves,Winning games,Learning loss,Playing more,Being rich,Learning loss
+MCQ,46,The boy’s feelings are best described as,Angry,Sad and thoughtful,Happy,Excited,Sad and thoughtful
+MCQ,47,The poem appeals to,Children only,Adults only,Both children and adults,Poets only,Both children and adults
+MCQ,48,The boy learns that possessions are,Permanent,Temporary,Unimportant,Free,Temporary
+MCQ,49,The poem ends on a note of,Joy,Hope,Realization,Anger,Realization
+MCQ,50,The central message of the poem is,Enjoy games,Accept loss,Value money,Win always,Accept loss
+
+Integer,1,Name of the poet?,John Berryman,,,,
+Integer,2,Type of poem?,Lyric,,,,
+Integer,3,What did the boy lose?,Ball,,,,
+Integer,4,Where did the ball go?,Water,,,,
+Integer,5,Theme of the poem?,Loss and growth,,,,
+Integer,6,Boy’s first reaction?,Shock,,,,
+Integer,7,Boy’s age group?,Young child,,,,
+Integer,8,Symbol of the ball?,Possessions,,,,
+Integer,9,Poet’s tone?,Sympathetic,,,,
+Integer,10,The ball fell into?,Harbour,,,,
+Integer,11,Boy’s learning?,Accepting loss,,,,
+Integer,12,The loss teaches?,Responsibility,,,,
+Integer,13,The poet’s attitude?,Caring,,,,
+Integer,14,First loss?,Ball,,,,
+Integer,15,The poem’s mood?,Serious,,,,
+Integer,16,The ball was?,New,,,,
+Integer,17,Boy’s silence shows?,Understanding,,,,
+Integer,18,Poem theme type?,Philosophical,,,,
+Integer,19,Loss prepares boy for?,Life,,,,
+Integer,20,Poem message?,Accept loss,,,,
+Integer,21,The ball symbolizes?,Innocence,,,,
+Integer,22,Boy’s feeling after loss?,Sad,,,,
+Integer,23,The poet does not replace ball because?,To teach lesson,,,,
+Integer,24,The poem shows loss is?,Inevitable,,,,
+Integer,25,The boy learns to stand up?,Alone,,,,
+Integer,26,Poem language?,Simple,,,,
+Integer,27,Loss helps in?,Maturity,,,,
+Integer,28,Boy’s reaction?,Helplessness,,,,
+Integer,29,Poem length?,Short,,,,
+Integer,30,Poem deals with?,Life lessons,,,,
+Integer,31,Boy’s silence is?,Meaningful,,,,
+Integer,32,The ball loss is?,Irretrievable,,,,
+Integer,33,Boy’s experience is?,Painful,,,,
+Integer,34,Poem focus?,Emotional growth,,,,
+Integer,35,Loss of ball equals?,Loss of innocence,,,,
+Integer,36,Poem teaches?,Responsibility,,,,
+Integer,37,Boy stands?,Rigid,,,,
+Integer,38,The poet observes?,Quietly,,,,
+Integer,39,Boy’s realization?,Sudden,,,,
+Integer,40,Poem is about?,Growing up,,,,
+Integer,41,Boy’s lesson?,Acceptance,,,,
+Integer,42,The ball is replaceable?,Yes,,,,
+Integer,43,Loss teaches boy to?,Cope,,,,
+Integer,44,Poem appeals to?,Everyone,,,,
+Integer,45,Central idea?,Loss leads to maturity,,,,
+Integer,46,Poem mood at end?,Thoughtful,,,,
+Integer,47,Boy learns to?,Live with loss,,,,
+Integer,48,The poet avoids?,Consolation,,,,
+Integer,49,Boy’s experience prepares him for?,Adulthood,,,,
+Integer,50,Overall message?,Life involves loss,,,,
+
+Descriptive,1,What is the central idea of The Ball Poem?,,,,,Loss is an essential part of growing up
+Descriptive,2,How does the loss of the ball affect the boy?,,,,,It shocks and saddens him
+Descriptive,3,What does the ball symbolize in the poem?,,,,,Childhood possessions and innocence
+Descriptive,4,Why does the poet not offer the boy another ball?,,,,,To teach him to accept loss
+Descriptive,5,Explain the phrase “epistemology of loss.”,,,,,Understanding the nature of loss
+Descriptive,6,How does the poem show the boy’s emotional growth?,,,,,Through his reaction to loss
+Descriptive,7,Why is the loss of the ball called the first loss?,,,,,It is the boy’s first major experience of loss
+Descriptive,8,How does the poet convey sympathy for the boy?,,,,,By understanding his feelings
+Descriptive,9,What lesson does the poem teach about life?,,,,,Life involves loss and acceptance
+Descriptive,10,How is the boy’s silence significant?,,,,,It shows realization
+Descriptive,11,Explain the theme of loss in the poem.,,,,,Loss is inevitable and educational
+Descriptive,12,How does the poem reflect childhood innocence?,,,,,Through attachment to the ball
+Descriptive,13,Why is the poem considered philosophical?,,,,,It discusses life lessons
+Descriptive,14,Describe the boy’s reaction when the ball is lost.,,,,,He is shocked and helpless
+Descriptive,15,How does the poet use a simple incident to convey a deep message?,,,,,Loss of ball symbolizes life’s losses
+Descriptive,16,What does the poem suggest about material possessions?,,,,,They are temporary
+Descriptive,17,How does the poem prepare the boy for adulthood?,,,,,By teaching responsibility
+Descriptive,18,Explain the poet’s attitude towards loss.,,,,,Loss is necessary for growth
+Descriptive,19,How does the poem relate to real life?,,,,,Everyone faces loss
+Descriptive,20,Why is the poem relatable to readers?,,,,,Universal experience of loss
+Descriptive,21,Explain how loss leads to maturity.,,,,,It teaches acceptance
+Descriptive,22,What role does pain play in learning?,,,,,It helps growth
+Descriptive,23,Why is the ball important to the boy?,,,,,It is his prized possession
+Descriptive,24,How does the poem end?,,,,,With realization
+Descriptive,25,Explain the emotional journey of the boy.,,,,,Shock to understanding
+Descriptive,26,How does the poet use imagery?,,,,,Ball sinking in water
+Descriptive,27,What does the harbour symbolize?,,,,,Irretrievable loss
+Descriptive,28,Why is the poem relevant today?,,,,,Loss is universal
+Descriptive,29,How does the poem show responsibility?,,,,,Boy learns to cope alone
+Descriptive,30,Explain the significance of “standing rigid.”,,,,,Shows helplessness
+Descriptive,31,How does the poem depict growing up?,,,,,Through learning loss
+Descriptive,32,What is the moral of the poem?,,,,,Accept losses in life
+Descriptive,33,How does the poet teach without preaching?,,,,,Through observation
+Descriptive,34,Why is silence more powerful than words here?,,,,,Shows deep realization
+Descriptive,35,Explain how childhood differs from adulthood in the poem.,,,,,Childhood innocence vs adult understanding
+Descriptive,36,How does the poem portray human emotions?,,,,,Through sadness and acceptance
+Descriptive,37,Why is the boy left alone with his loss?,,,,,To learn independence
+Descriptive,38,Explain the importance of loss in life.,,,,,It builds character
+Descriptive,39,How does the poet make the poem universal?,,,,,Common human experience
+Descriptive,40,What does the poem teach about possessions?,,,,,They can be lost
+Descriptive,41,How does the boy’s reaction change?,,,,,From shock to acceptance
+Descriptive,42,Why is the poem simple yet deep?,,,,,Uses simple incident
+Descriptive,43,Explain how loss brings wisdom.,,,,,Through experience
+Descriptive,44,How does the poem reflect human psychology?,,,,,Attachment to possessions
+Descriptive,45,Why does the poet observe silently?,,,,,To let boy learn
+Descriptive,46,What does the boy ultimately learn?,,,,,To accept loss
+Descriptive,47,How does the poem convey realism?,,,,,Life-like situation
+Descriptive,48,Explain the significance of the title.,,,,,Focus on symbolic loss
+Descriptive,49,How does the poem encourage emotional strength?,,,,,By facing loss
+Descriptive,50,Summarize The Ball Poem.,,,,,A boy’s loss of a ball teaches him about loss and growing up

@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Which institution makes laws in India?,Executive,Legislature,Judiciary,President,Legislature
+MCQ,2,Which institution implements laws?,Legislature,Executive,Judiciary,Parliament,Executive
+MCQ,3,Which institution interprets laws?,Executive,Legislature,Judiciary,Cabinet,Judiciary
+MCQ,4,Who is the head of the state?,Prime Minister,Chief Justice,President,Vice President,President
+MCQ,5,Who is the real executive head?,President,Prime Minister,Governor,Chief Justice,Prime Minister
+MCQ,6,The Prime Minister is appointed by?,People,President,Chief Justice,Parliament,President
+MCQ,7,The Council of Ministers is responsible to?,President,Judiciary,Parliament,None,Parliament
+MCQ,8,Which house is directly elected by people?,Rajya Sabha,Lok Sabha,President,None,Lok Sabha
+MCQ,9,Members of Lok Sabha are elected for?,4 years,5 years,6 years,7 years,5 years
+MCQ,10,Members of Rajya Sabha are elected for?,4 years,5 years,6 years,7 years,6 years
+MCQ,11,Who presides over Lok Sabha?,President,Prime Minister,Speaker,Chief Justice,Speaker
+MCQ,12,Who presides over Rajya Sabha?,President,Vice President,Prime Minister,Speaker,Vice President
+MCQ,13,Which house can remove the government?,Rajya Sabha,Lok Sabha,Judiciary,None,Lok Sabha
+MCQ,14,Who appoints judges of Supreme Court?,Prime Minister,President,Parliament,None,President
+MCQ,15,Which is the highest court in India?,High Court,District Court,Supreme Court,None,Supreme Court
+MCQ,16,Which institution can declare a law unconstitutional?,Executive,Legislature,Judiciary,None,Judiciary
+MCQ,17,What is the Council of Ministers?,Group of MPs,Group of MLAs,Group of Ministers,None,Group of Ministers
+MCQ,18,Which body takes most decisions?,President,Prime Minister,Cabinet,None,Cabinet
+MCQ,19,The Cabinet consists of?,All MPs,All ministers,Senior ministers,None,Senior ministers
+MCQ,20,Which institution is permanent?,Executive,Legislature,Judiciary,None,Judiciary
+MCQ,21,Which body controls government spending?,Executive,Legislature,Judiciary,None,Legislature
+MCQ,22,Which organ works independently?,Executive,Legislature,Judiciary,None,Judiciary
+MCQ,23,Which house represents states?,Lok Sabha,Rajya Sabha,President,None,Rajya Sabha
+MCQ,24,Who can remove judges?,President,Parliament,Prime Minister,None,Parliament
+MCQ,25,Which institution settles disputes between states?,Legislature,Executive,Judiciary,None,Judiciary
+MCQ,26,Which organ executes foreign policy?,Judiciary,Legislature,Executive,None,Executive
+MCQ,27,Who is the head of the Cabinet?,President,Prime Minister,Speaker,None,Prime Minister
+MCQ,28,Which house is also called Upper House?,Lok Sabha,Rajya Sabha,Parliament,None,Rajya Sabha
+MCQ,29,Which house is also called Lower House?,Rajya Sabha,Lok Sabha,Judiciary,None,Lok Sabha
+MCQ,30,Which body controls the armed forces?,Judiciary,Legislature,Executive,None,Executive
+MCQ,31,Which organ can question ministers?,Judiciary,Executive,Legislature,None,Legislature
+MCQ,32,Which institution ensures rule of law?,Executive,Legislature,Judiciary,None,Judiciary
+MCQ,33,Who prepares the budget?,Judiciary,Legislature,Executive,None,Executive
+MCQ,34,Who approves the budget?,Executive,Legislature,Judiciary,None,Legislature
+MCQ,35,Which organ represents the will of people?,Judiciary,Executive,Legislature,None,Legislature
+MCQ,36,Which institution can amend the Constitution?,Judiciary,Executive,Legislature,None,Legislature
+MCQ,37,Which court deals with constitutional issues?,District Court,High Court,Supreme Court,None,Supreme Court
+MCQ,38,Which body checks misuse of power?,Executive,Legislature,Judiciary,None,Judiciary
+MCQ,39,Which organ is politically accountable?,Judiciary,Executive,Legislature,None,Executive
+MCQ,40,Who is part of the Executive?,Judges,Ministers,MLAs,None,Ministers
+MCQ,41,Who leads the Lok Sabha?,Speaker,Prime Minister,President,None,Speaker
+MCQ,42,Which institution frames policies?,Judiciary,Legislature,Executive,None,Executive
+MCQ,43,Which organ is elected by people?,Judiciary,Legislature,President,None,Legislature
+MCQ,44,Which institution ensures justice?,Executive,Legislature,Judiciary,None,Judiciary
+MCQ,45,Which body debates laws?,Judiciary,Executive,Legislature,None,Legislature
+MCQ,46,Which organ has fixed tenure?,Judiciary,Executive,Legislature,None,Judiciary
+MCQ,47,Who is the nominal head of government?,Prime Minister,President,Speaker,None,President
+MCQ,48,Which institution enforces laws?,Judiciary,Executive,Legislature,None,Executive
+MCQ,49,Which body controls administration?,Judiciary,Executive,Legislature,None,Executive
+MCQ,50,Which organ is supreme in law making?,Judiciary,Executive,Legislature,None,Legislature
+
+Integer,1,Law making body?,Legislature,,,,
+Integer,2,Law implementing body?,Executive,,,,
+Integer,3,Law interpreting body?,Judiciary,,,,
+Integer,4,Head of state?,President,,,,
+Integer,5,Real executive?,Prime Minister,,,,
+Integer,6,Lower House?,Lok Sabha,,,,
+Integer,7,Upper House?,Rajya Sabha,,,,
+Integer,8,Lok Sabha term?,5 years,,,,
+Integer,9,Rajya Sabha term?,6 years,,,,
+Integer,10,Highest court?,Supreme Court,,,,
+Integer,11,Head of Cabinet?,Prime Minister,,,,
+Integer,12,Cabinet consists of?,Senior ministers,,,,
+Integer,13,Judiciary is?,Independent,,,,
+Integer,14,Who appoints PM?,President,,,,
+Integer,15,Who presides LS?,Speaker,,,,
+Integer,16,Who presides RS?,Vice President,,,,
+Integer,17,Judges removable by?,Parliament,,,,
+Integer,18,Policy making body?,Executive,,,,
+Integer,19,Debating body?,Legislature,,,,
+Integer,20,Justice providing body?,Judiciary,,,,
+Integer,21,President is?,Nominal head,,,,
+Integer,22,Council of Ministers responsible to?,Parliament,,,,
+Integer,23,State representation?,Rajya Sabha,,,,
+Integer,24,People’s representatives?,Legislature,,,,
+Integer,25,Budget prepared by?,Executive,,,,
+Integer,26,Budget approved by?,Legislature,,,,
+Integer,27,Judiciary tenure?,Fixed,,,,
+Integer,28,Dispute resolution body?,Judiciary,,,,
+Integer,29,Cabinet decisions taken by?,Majority,,,,
+Integer,30,Armed forces controlled by?,Executive,,,,
+Integer,31,Executive accountable to?,Legislature,,,,
+Integer,32,Law amendment body?,Legislature,,,,
+Integer,33,Constitution interpreter?,Judiciary,,,,
+Integer,34,Administrative head?,Prime Minister,,,,
+Integer,35,Judiciary protects?,Rights,,,,
+Integer,36,LS can remove?,Government,,,,
+Integer,37,Executive includes?,Ministers,,,,
+Integer,38,RS represents?,States,,,,
+Integer,39,LS represents?,People,,,,
+Integer,40,Judiciary checks?,Power misuse,,,,
+Integer,41,Parliament consists of?,LS and RS,,,,
+Integer,42,Head of judiciary?,Chief Justice,,,,
+Integer,43,Executive policies framed by?,Cabinet,,,,
+Integer,44,Judiciary can strike laws?,Yes,,,,
+Integer,45,Legislature debates?,Bills,,,,
+Integer,46,Executive enforces?,Laws,,,,
+Integer,47,Judiciary ensures?,Justice,,,,
+Integer,48,Nominal head?,President,,,,
+Integer,49,Real power lies with?,Cabinet,,,,
+Integer,50,Three organs of government?,Legislature Executive Judiciary,,,,
+
+Descriptive,1,What is meant by Working of Institutions?,,,,,Functioning of government bodies
+Descriptive,2,Name the three organs of government.,,,,,Legislature Executive Judiciary
+Descriptive,3,Explain the role of Legislature.,,,,,Makes laws and controls government
+Descriptive,4,Explain the role of Executive.,,,,,Implements laws and policies
+Descriptive,5,Explain the role of Judiciary.,,,,,Interprets laws and delivers justice
+Descriptive,6,Who is the President of India?,,,,,Nominal head of state
+Descriptive,7,Why is the Prime Minister called real executive?,,,,,Exercises actual power
+Descriptive,8,What is Council of Ministers?,,,,,Group of ministers led by PM
+Descriptive,9,What is Cabinet?,,,,,Top decision making body
+Descriptive,10,Difference between Cabinet and Council of Ministers.,,,,,Cabinet is smaller and powerful
+Descriptive,11,What is Lok Sabha?,,,,,House of the People
+Descriptive,12,What is Rajya Sabha?,,,,,Council of States
+Descriptive,13,Powers of Lok Sabha.,,,,,Controls executive passes budget
+Descriptive,14,Powers of Rajya Sabha.,,,,,Represents states reviews laws
+Descriptive,15,Why judiciary is independent?,,,,,Ensures fair justice
+Descriptive,16,What is judicial review?,,,,,Power to check laws
+Descriptive,17,Why separation of powers important?,,,,,Prevents misuse of power
+Descriptive,18,How does Parliament control Executive?,,,,,Questions and no confidence motion
+Descriptive,19,What is a no-confidence motion?,,,,,Removes government
+Descriptive,20,How is Prime Minister appointed?,,,,,By President
+Descriptive,21,How are judges appointed?,,,,,By President
+Descriptive,22,Why judiciary has fixed tenure?,,,,,Ensure independence
+Descriptive,23,What is role of Speaker?,,,,,Presides Lok Sabha
+Descriptive,24,What is role of Vice President?,,,,,Presides Rajya Sabha
+Descriptive,25,Explain law making process.,,,,,Bill debate and approval
+Descriptive,26,How budget is passed?,,,,,Presented by executive approved by legislature
+Descriptive,27,Why Cabinet decisions important?,,,,,Collective responsibility
+Descriptive,28,How judiciary protects rights?,,,,,Enforces constitution
+Descriptive,29,Explain accountability of executive.,,,,,Responsible to Parliament
+Descriptive,30,Why Legislature is powerful?,,,,,Represents people
+Descriptive,31,What is collective responsibility?,,,,,Ministers act together
+Descriptive,32,Explain independence of judiciary.,,,,,Free from political pressure
+Descriptive,33,Why President has limited powers?,,,,,Ceremonial role
+Descriptive,34,How Parliament represents people?,,,,,Elected representatives
+Descriptive,35,Why judiciary is guardian of constitution?,,,,,Protects constitutional values
+Descriptive,36,How laws are implemented?,,,,,By executive machinery
+Descriptive,37,What is the role of courts?,,,,,Deliver justice
+Descriptive,38,Why cabinet secrecy important?,,,,,Free discussion
+Descriptive,39,How institutions work together?,,,,,Checks and balances
+Descriptive,40,Explain separation of powers with example.,,,,,Each organ has distinct role
+Descriptive,41,Why disputes go to judiciary?,,,,,Neutral decision
+Descriptive,42,How executive influences legislature?,,,,,Policy proposals
+Descriptive,43,Why judiciary cannot make laws?,,,,,Separation of powers
+Descriptive,44,Importance of Parliament.,,,,,Democratic law making
+Descriptive,45,Why executive is answerable?,,,,,Public accountability
+Descriptive,46,How judiciary checks executive?,,,,,Judicial review
+Descriptive,47,Role of institutions in democracy.,,,,,Ensure smooth governance
+Descriptive,48,What happens if institutions fail?,,,,,Democracy weakens
+Descriptive,49,Why institutional balance needed?,,,,,Prevent dictatorship
+Descriptive,50,Summarise working of institutions.,,,,,Three organs work together democratically

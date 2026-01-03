@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Which of the following is a quadratic equation?,x² + 2x + 1 = 0,x³ - x² + 2 = 0,2x + 3 = 0,5x - 7 = 0,x² + 2x + 1 = 0
+MCQ,2,The standard form of a quadratic equation is:,ax² + bx + c = 0, a ≠ 0,ax + b = 0,ax³ + bx² + c = 0,ax² = 0,ax² + bx + c = 0, a ≠ 0
+MCQ,3,The roots of the equation x² - 5x + 6 = 0 are:,1 and 6,2 and 3,3 and 5,1 and 5,2 and 3
+MCQ,4,The discriminant of the equation 2x² - 4x + 2 = 0 is:,0,4,8,16,0
+MCQ,5,If the discriminant of a quadratic equation is positive, then the equation has:,Two distinct real roots,Two equal real roots,No real roots,One real root,Two distinct real roots
+MCQ,6,If the discriminant of a quadratic equation is zero, then the equation has:,Two distinct real roots,Two equal real roots,No real roots,One real root,Two equal real roots
+MCQ,7,If the discriminant of a quadratic equation is negative, then the equation has:,Two distinct real roots,Two equal real roots,No real roots,One real root,No real roots
+MCQ,8,The quadratic formula to find roots of ax² + bx + c = 0 is:,x = (-b ± √(b² - 4ac))/2a,x = (b ± √(b² - 4ac))/2a,x = (-b ± √(b² + 4ac))/2a,x = (b ± √(b² + 4ac))/2a,x = (-b ± √(b² - 4ac))/2a
+MCQ,9,The discriminant of the equation x² - 4x + 4 = 0 is:,0,4,8,16,0
+MCQ,10,The roots of the equation x² - 4 = 0 are:,2 and -2,2 and 2,-2 and -2,4 and -4,2 and -2
+MCQ,11,If the sum of the roots of a quadratic equation is 7 and the product is 10, the equation is:,x² - 7x + 10 = 0,x² + 7x + 10 = 0,x² - 10x + 7 = 0,x² + 10x + 7 = 0,x² - 7x + 10 = 0
+MCQ,12,The roots of the equation x² + 7x + 12 = 0 are:,-3 and -4,3 and 4,-3 and 4,3 and -4,-3 and -4
+MCQ,13,The discriminant of x² + 4x + 5 = 0 is:,-4,4,16,-16,-4
+MCQ,14,The nature of roots of the equation x² + 4x + 5 = 0 is:,Two distinct real roots,Two equal real roots,No real roots,One real root,No real roots
+MCQ,15,The roots of the equation 2x² - 7x + 3 = 0 are:,1/2 and 3,1 and 3,1/2 and -3,-1/2 and 3,1/2 and 3
+MCQ,16,If one root of the equation x² - 6x + k = 0 is 2, find the value of k.,8,10,12,14,8
+MCQ,17,The roots of the equation x² - 8x + 15 = 0 are:,3 and 5,2 and 6,1 and 15,4 and 4,3 and 5
+MCQ,18,If the discriminant of ax² + bx + c = 0 is D = b² - 4ac, then for D = 0:,Roots are real and equal,Roots are real and distinct,Roots are imaginary,No roots,Roots are real and equal
+MCQ,19,The roots of the equation 3x² - 2x - 1 = 0 are:,1 and -1/3,1 and 1/3,-1 and -1/3,-1 and 1/3,1 and -1/3
+MCQ,20,The quadratic equation whose roots are 3 and -2 is:,x² - x - 6 = 0,x² + x - 6 = 0,x² - x + 6 = 0,x² + x + 6 = 0,x² - x - 6 = 0
+MCQ,21,The discriminant of the equation 4x² - 12x + 9 = 0 is:,0,36,144,-144,0
+MCQ,22,The roots of the equation x² - 9 = 0 are:,3 and -3,3 and 3,-3 and -3,9 and -9,3 and -3
+MCQ,23,If the roots of x² + px + q = 0 are equal, then:,p² = 4q,p² = -4q,p² = q,p² = -q,p² = 4q
+MCQ,24,The roots of the equation 6x² - x - 2 = 0 are:,2/3 and -1/2,2/3 and 1/2,-2/3 and -1/2,-2/3 and 1/2,2/3 and -1/2
+MCQ,25,The quadratic equation x² - 5x + 6 = 0 can be factorized as:,(x - 2)(x - 3) = 0,(x + 2)(x + 3) = 0,(x - 2)(x + 3) = 0,(x + 2)(x - 3) = 0,(x - 2)(x - 3) = 0
+MCQ,26,The sum of the roots of the equation 2x² - 8x + 6 = 0 is:,4,-4,3,-3,4
+MCQ,27,The product of the roots of the equation 2x² - 8x + 6 = 0 is:,4,-4,3,-3,3
+MCQ,28,If α and β are the roots of x² - 5x + 6 = 0, then α + β is:,5,-5,6,-6,5
+MCQ,29,If α and β are the roots of x² - 5x + 6 = 0, then αβ is:,5,-5,6,-6,6
+MCQ,30,The roots of the equation x² - 2x - 8 = 0 are:,4 and -2,2 and 4,-4 and 2,-2 and -4,4 and -2
+MCQ,31,The discriminant of 3x² + 2x - 1 = 0 is:,16,8,4,2,16
+MCQ,32,The nature of roots of 3x² + 2x - 1 = 0 is:,Two distinct real roots,Two equal real roots,No real roots,One real root,Two distinct real roots
+MCQ,33,The roots of the equation x² - 10x + 25 = 0 are:,5 and 5,5 and -5,-5 and -5,10 and -10,5 and 5
+MCQ,34,If the roots of x² - kx + 4 = 0 are equal, then k is:,-4,4,±4,±2,±4
+MCQ,35,The roots of the equation 5x² - 6x - 2 = 0 are:,Real and distinct,Real and equal,Imaginary,None,Real and distinct
+MCQ,36,The quadratic equation x² + 3x - 4 = 0 can be written as:,(x + 4)(x - 1) = 0,(x - 4)(x + 1) = 0,(x + 4)(x + 1) = 0,(x - 4)(x - 1) = 0,(x + 4)(x - 1) = 0
+MCQ,37,If the equation x² - 4x + k = 0 has equal roots, then k is:,4,-4,2,-2,4
+MCQ,38,The roots of the equation 2x² + 5x + 3 = 0 are:,-1 and -3/2,1 and 3/2,-1 and 3/2,1 and -3/2,-1 and -3/2
+MCQ,39,The discriminant of x² - 6x + 9 = 0 is:,0,36,-36,12,0
+MCQ,40,The quadratic equation whose roots are 5 and -3 is:,x² - 2x - 15 = 0,x² + 2x - 15 = 0,x² - 2x + 15 = 0,x² + 2x + 15 = 0,x² - 2x - 15 = 0
+MCQ,41,If the discriminant D < 0, then the roots are:,Real and distinct,Real and equal,Complex/Imaginary,Zero,Complex/Imaginary
+MCQ,42,The roots of the equation x² - 3x + 2 = 0 are:,1 and 2,-1 and -2,1 and -2,-1 and 2,1 and 2
+MCQ,43,The sum of roots of x² + 7x + 12 = 0 is:,-7,7,12,-12,-7
+MCQ,44,The product of roots of x² + 7x + 12 = 0 is:,-7,7,12,-12,12
+MCQ,45,If the equation x² - px + 8 = 0 has equal roots, then p is:,-4√2,4√2,±4√2,±8,±4√2
+MCQ,46,The roots of the equation 4x² - 4x + 1 = 0 are:,1/2 and 1/2,1 and 1,-1/2 and -1/2,1/4 and 1/4,1/2 and 1/2
+MCQ,47,The quadratic equation x² - 7x + 10 = 0 has:,Two distinct real roots,Two equal real roots,No real roots,One real root,Two distinct real roots
+MCQ,48,If α and β are the roots of x² + px + q = 0, then α + β is:,-p,p,q,-q,-p
+MCQ,49,If α and β are the roots of x² + px + q = 0, then αβ is:,-p,p,q,-q,q
+MCQ,50,The quadratic formula gives the solution of ax² + bx + c = 0 when:,a ≠ 0,b ≠ 0,c ≠ 0,All of the above,a ≠ 0
+Integer,1,The discriminant of the equation x² - 4x + 4 = 0 is:.,0,,,,
+Integer,2,The discriminant of x² + 4x + 5 = 0 is:.,-4,,,,
+Integer,3,The roots of the equation x² - 5x + 6 = 0 are: (Enter the smaller root),2,,,,
+Integer,4,The roots of the equation x² - 5x + 6 = 0 are: (Enter the larger root),3,,,,
+Integer,5,If one root of the equation x² - 6x + k = 0 is 2, then k =:.,8,,,,
+Integer,6,The discriminant of the equation 2x² - 4x + 2 = 0 is:.,0,,,,
+Integer,7,The sum of the roots of the equation x² - 7x + 10 = 0 is:.,7,,,,
+Integer,8,The product of the roots of the equation x² - 7x + 10 = 0 is:.,10,,,,
+Integer,9,The discriminant of x² - 8x + 15 = 0 is:.,4,,,,
+Integer,10,The roots of x² - 9 = 0 are: (Enter the positive root),3,,,,
+Integer,11,The discriminant of 3x² + 2x - 1 = 0 is:.,16,,,,
+Integer,12,If the roots of x² - kx + 4 = 0 are equal, then k² =:.,16,,,,
+Integer,13,The roots of x² - 10x + 25 = 0 are: (Enter the repeated root),5,,,,
+Integer,14,The discriminant of x² - 6x + 9 = 0 is:.,0,,,,
+Integer,15,The sum of roots of x² + 7x + 12 = 0 is:.,-7,,,,
+Integer,16,The product of roots of x² + 7x + 12 = 0 is:.,12,,,,
+Integer,17,The roots of x² - 3x + 2 = 0 are: (Enter the smaller root),1,,,,
+Integer,18,The roots of x² - 3x + 2 = 0 are: (Enter the larger root),2,,,,
+Integer,19,If the equation x² - 4x + k = 0 has equal roots, then k =:.,4,,,,
+Integer,20,The discriminant of 4x² - 12x + 9 = 0 is:.,0,,,,
+Integer,21,The roots of 2x² - 7x + 3 = 0 are: (Enter the smaller root as numerator of fraction 1/2, so enter 1),1,,,,
+Integer,22,The roots of 2x² - 7x + 3 = 0 are: (Enter the larger root),3,,,,
+Integer,23,The discriminant of x² + 3x - 4 = 0 is:.,25,,,,
+Integer,24,The roots of x² + 3x - 4 = 0 are: (Enter the positive root),1,,,,
+Integer,25,The roots of x² + 3x - 4 = 0 are: (Enter the negative root),-4,,,,
+Integer,26,The sum of roots of 2x² - 8x + 6 = 0 is:.,4,,,,
+Integer,27,The product of roots of 2x² - 8x + 6 = 0 is:.,3,,,,
+Integer,28,The discriminant of 5x² - 6x - 2 = 0 is:.,76,,,,
+Integer,29,The roots of x² - 2x - 8 = 0 are: (Enter the positive root),4,,,,
+Integer,30,The roots of x² - 2x - 8 = 0 are: (Enter the negative root),-2,,,,
+Integer,31,The discriminant of 6x² - x - 2 = 0 is:.,49,,,,
+Integer,32,If the roots of x² - px + 8 = 0 are equal, then p² =:.,32,,,,
+Integer,33,The roots of 4x² - 4x + 1 = 0 are: (Enter the repeated root as numerator, so 1/2 means enter 1),1,,,,
+Integer,34,The discriminant of x² - 5x + 6 = 0 is:.,1,,,,
+Integer,35,The roots of x² - 8x + 15 = 0 are: (Enter the smaller root),3,,,,
+Integer,36,The roots of x² - 8x + 15 = 0 are: (Enter the larger root),5,,,,
+Integer,37,The discriminant of 2x² + 5x + 3 = 0 is:.,1,,,,
+Integer,38,The roots of 3x² - 2x - 1 = 0 are: (Enter the positive root as numerator),1,,,,
+Integer,39,The discriminant of x² + 11x + 30 = 0 is:.,1,,,,
+Integer,40,The roots of x² + 11x + 30 = 0 are: (Enter the smaller root),-6,,,,
+Integer,41,The roots of x² + 11x + 30 = 0 are: (Enter the larger root),-5,,,,
+Integer,42,The discriminant of x² - 12x + 36 = 0 is:.,0,,,,
+Integer,43,The roots of x² - 12x + 36 = 0 are: (Enter the repeated root),6,,,,
+Integer,44,The discriminant of x² + x - 6 = 0 is:.,25,,,,
+Integer,45,The roots of x² + x - 6 = 0 are: (Enter the positive root),2,,,,
+Integer,46,The roots of x² + x - 6 = 0 are: (Enter the negative root),-3,,,,
+Integer,47,The discriminant of 7x² - 9x + 2 = 0 is:.,25,,,,
+Integer,48,The sum of roots of x² - 13x + 42 = 0 is:.,13,,,,
+Integer,49,The product of roots of x² - 13x + 42 = 0 is:.,42,,,,
+Integer,50,The discriminant of x² - 14x + 49 = 0 is:.,0,,,,
+Problem,1,Find the roots of the quadratic equation x² - 3x - 10 = 0 by factorization method.,"x² - 3x - 10 = (x - 5)(x + 2) = 0. Therefore, x = 5 or x = -2. Answer: x = 5, x = -2",,,,
+Problem,2,Find the roots of the quadratic equation 2x² - 7x + 3 = 0 by factorization method.,"2x² - 7x + 3 = (2x - 1)(x - 3) = 0. Therefore, x = 1/2 or x = 3. Answer: x = 1/2, x = 3",,,,
+Problem,3,Find the roots of the quadratic equation x² - 4x - 5 = 0 by the method of completing the square.,"x² - 4x = 5, x² - 4x + 4 = 5 + 4, (x - 2)² = 9, x - 2 = ±3, x = 2 ± 3. Therefore, x = 5 or x = -1. Answer: x = 5, x = -1",,,,
+Problem,4,Find the roots of the quadratic equation 2x² - 7x + 3 = 0 using the quadratic formula.,"Using x = (-b ± √(b² - 4ac))/2a, where a = 2, b = -7, c = 3. Discriminant = 49 - 24 = 25. x = (7 ± 5)/4. Therefore, x = 3 or x = 1/2. Answer: x = 3, x = 1/2",,,,
+Problem,5,Find the discriminant of the quadratic equation 3x² - 2x - 1/3 = 0 and hence find the nature of its roots.,"Discriminant D = b² - 4ac = 4 - 4(3)(-1/3) = 4 + 4 = 8. Since D > 0, the roots are real and distinct. Answer: Discriminant = 8, roots are real and distinct",,,,
+Problem,6,Find the values of k for which the quadratic equation 2x² + kx + 3 = 0 has equal roots.,"For equal roots, discriminant = 0. k² - 4(2)(3) = 0, k² - 24 = 0, k² = 24, k = ±2√6. Answer: k = ±2√6",,,,
+Problem,7,Find the values of k for which the quadratic equation x² - 4x + k = 0 has two distinct real roots.,"For two distinct real roots, discriminant > 0. 16 - 4k > 0, 4k < 16, k < 4. Answer: k < 4",,,,
+Problem,8,Find the values of k for which the quadratic equation x² - 4x + k = 0 has no real roots.,"For no real roots, discriminant < 0. 16 - 4k < 0, 4k > 16, k > 4. Answer: k > 4",,,,
+Problem,9,If -5 is a root of the quadratic equation 2x² + px - 15 = 0 and the quadratic equation p(x² + x) + k = 0 has equal roots, find the value of k.,"Substituting x = -5 in 2x² + px - 15 = 0: 50 - 5p - 15 = 0, 5p = 35, p = 7. For px² + px + k = 0 to have equal roots: p² - 4pk = 0, 49 - 28k = 0, k = 49/28 = 7/4. Answer: k = 7/4",,,,
+Problem,10,The sum of the squares of two consecutive positive integers is 365. Find the integers.,"Let integers be x and x + 1. Then x² + (x + 1)² = 365, x² + x² + 2x + 1 = 365, 2x² + 2x - 364 = 0, x² + x - 182 = 0, (x + 14)(x - 13) = 0, x = 13 (positive). Therefore, integers are 13 and 14. Answer: 13 and 14",,,,
+Problem,11,The altitude of a right triangle is 7 cm less than its base. If the hypotenuse is 13 cm, find the other two sides.,"Let base = x cm, altitude = (x - 7) cm. By Pythagoras: x² + (x - 7)² = 13², x² + x² - 14x + 49 = 169, 2x² - 14x - 120 = 0, x² - 7x - 60 = 0, (x - 12)(x + 5) = 0, x = 12. Therefore, base = 12 cm, altitude = 5 cm. Answer: Base = 12 cm, Altitude = 5 cm",,,,
+Problem,12,A cottage industry produces a certain number of pottery articles in a day. It was observed on a particular day that the cost of production of each article (in rupees) was 3 more than twice the number of articles produced on that day. If the total cost of production on that day was Rs 90, find the number of articles produced and the cost of each article.,"Let number of articles = x, cost per article = 2x + 3. Then x(2x + 3) = 90, 2x² + 3x - 90 = 0, (2x + 15)(x - 6) = 0, x = 6. Therefore, number of articles = 6, cost per article = Rs 15. Answer: 6 articles, Rs 15 each",,,,
+Problem,13,Find the roots of 4x² + 3x + 5 = 0 by the method of completing the square.,"4x² + 3x = -5, x² + (3/4)x = -5/4, x² + (3/4)x + 9/64 = -5/4 + 9/64, (x + 3/8)² = (-80 + 9)/64 = -71/64. Since right side is negative, no real roots. Answer: No real roots",,,,
+Problem,14,Find the roots of the following quadratic equations by factorization: (i) x² - 3x - 10 = 0 (ii) 2x² + x - 6 = 0,"(i) x² - 3x - 10 = (x - 5)(x + 2) = 0, so x = 5, x = -2. (ii) 2x² + x - 6 = (2x - 3)(x + 2) = 0, so x = 3/2, x = -2. Answer: (i) x = 5, -2; (ii) x = 3/2, -2",,,,
+Problem,15,Find the roots of the following quadratic equations by factorization: (i) √2x² + 7x + 5√2 = 0 (ii) 2x² - x + 1/8 = 0,"(i) √2x² + 7x + 5√2 = (√2x + 5)(x + √2) = 0, so x = -5/√2, x = -√2. (ii) 2x² - x + 1/8 = 0, multiplying by 8: 16x² - 8x + 1 = 0, (4x - 1)² = 0, so x = 1/4. Answer: (i) x = -5/√2, -√2; (ii) x = 1/4",,,,
+Problem,16,Find the roots of the following equations: (i) x - 1/x = 3, x ≠ 0 (ii) 1/(x + 4) - 1/(x - 7) = 11/30, x ≠ -4, 7,"(i) x - 1/x = 3, so x² - 1 = 3x, x² - 3x - 1 = 0. Using quadratic formula: x = (3 ± √13)/2. (ii) 1/(x + 4) - 1/(x - 7) = 11/30, simplifying: (x - 7 - x - 4)/(x² - 3x - 28) = 11/30, -11/(x² - 3x - 28) = 11/30, so x² - 3x - 28 = -30, x² - 3x + 2 = 0, (x - 1)(x - 2) = 0, x = 1 or 2. Answer: (i) x = (3 ± √13)/2; (ii) x = 1, 2",,,,
+Problem,17,The sum of the reciprocals of Rehman's ages (in years) 3 years ago and 5 years from now is 1/3. Find his present age.,"Let present age = x years. Then 1/(x - 3) + 1/(x + 5) = 1/3, (x + 5 + x - 3)/(x² + 2x - 15) = 1/3, (2x + 2)/(x² + 2x - 15) = 1/3, 6x + 6 = x² + 2x - 15, x² - 4x - 21 = 0, (x - 7)(x + 3) = 0, x = 7. Answer: Present age = 7 years",,,,
+Problem,18,In a class test, the sum of Shefali's marks in Mathematics and English is 30. Had she got 2 marks more in Mathematics and 3 marks less in English, the product of their marks would have been 210. Find her marks in the two subjects.,"Let Mathematics marks = x, English marks = 30 - x. Then (x + 2)(30 - x - 3) = 210, (x + 2)(27 - x) = 210, 27x + 54 - x² - 2x = 210, -x² + 25x - 156 = 0, x² - 25x + 156 = 0, (x - 12)(x - 13) = 0, x = 12 or 13. Therefore, marks are 12 and 18, or 13 and 17. Answer: Mathematics = 12, English = 18; or Mathematics = 13, English = 17",,,,
+Problem,19,The diagonal of a rectangular field is 60 m more than the shorter side. If the longer side is 30 m more than the shorter side, find the sides of the field.,"Let shorter side = x m, longer side = (x + 30) m, diagonal = (x + 60) m. By Pythagoras: x² + (x + 30)² = (x + 60)², x² + x² + 60x + 900 = x² + 120x + 3600, x² - 60x - 2700 = 0, (x - 90)(x + 30) = 0, x = 90. Therefore, sides are 90 m and 120 m. Answer: 90 m and 120 m",,,,
+Problem,20,The difference of squares of two numbers is 180. The square of the smaller number is 8 times the larger number. Find the two numbers.,"Let larger number = x, smaller number = y. Then x² - y² = 180 and y² = 8x. Substituting: x² - 8x = 180, x² - 8x - 180 = 0, (x - 18)(x + 10) = 0, x = 18. Then y² = 144, y = ±12. Taking positive: y = 12. Answer: Numbers are 18 and 12",,,,
+Problem,21,A train travels 360 km at a uniform speed. If the speed had been 5 km/h more, it would have taken 1 hour less for the same journey. Find the speed of the train.,"Let speed = x km/h, time = 360/x hours. New speed = (x + 5) km/h, new time = 360/(x + 5) hours. Then 360/x - 360/(x + 5) = 1, 360(x + 5 - x) = x(x + 5), 1800 = x² + 5x, x² + 5x - 1800 = 0, (x + 45)(x - 40) = 0, x = 40. Answer: Speed = 40 km/h",,,,
+Problem,22,Two water taps together can fill a tank in 9 3/8 hours. The tap of larger diameter takes 10 hours less than the smaller one to fill the tank separately. Find the time in which each tap can separately fill the tank.,"Let smaller tap takes x hours, larger tap takes (x - 10) hours. In 1 hour, smaller fills 1/x, larger fills 1/(x - 10). Together: 1/x + 1/(x - 10) = 8/75, (2x - 10)/(x² - 10x) = 8/75, 75(2x - 10) = 8(x² - 10x), 150x - 750 = 8x² - 80x, 8x² - 230x + 750 = 0, 4x² - 115x + 375 = 0, (x - 25)(4x - 15) = 0, x = 25. Therefore, smaller tap = 25 hours, larger tap = 15 hours. Answer: Smaller = 25 hours, Larger = 15 hours",,,,
+Problem,23,An express train takes 1 hour less than a passenger train to travel 132 km between Mysore and Bangalore (without taking into consideration the time they stop at intermediate stations). If the average speed of the express train is 11 km/h more than that of the passenger train, find the average speed of the two trains.,"Let speed of passenger train = x km/h, speed of express train = (x + 11) km/h. Time: passenger = 132/x, express = 132/(x + 11). Then 132/x - 132/(x + 11) = 1, 132(x + 11 - x) = x(x + 11), 1452 = x² + 11x, x² + 11x - 1452 = 0, (x + 44)(x - 33) = 0, x = 33. Therefore, passenger = 33 km/h, express = 44 km/h. Answer: Passenger = 33 km/h, Express = 44 km/h",,,,
+Problem,24,Sum of the areas of two squares is 468 m². If the difference of their perimeters is 24 m, find the sides of the two squares.,"Let sides be x m and y m, with x > y. Then x² + y² = 468 and 4x - 4y = 24, so x - y = 6, x = y + 6. Substituting: (y + 6)² + y² = 468, y² + 12y + 36 + y² = 468, 2y² + 12y - 432 = 0, y² + 6y - 216 = 0, (y + 18)(y - 12) = 0, y = 12. Then x = 18. Answer: Sides are 18 m and 12 m",,,,
+Problem,25,Find the roots of the quadratic equation 3x² - 2√6x + 2 = 0 by factorization.,"3x² - 2√6x + 2 = (√3x - √2)² = 0. Therefore, √3x - √2 = 0, x = √2/√3 = √6/3. Answer: x = √6/3 (repeated root)",,,,
+Problem,26,Find the roots of the quadratic equation x² - (√3 + 1)x + √3 = 0 by factorization.,"x² - (√3 + 1)x + √3 = (x - √3)(x - 1) = 0. Therefore, x = √3 or x = 1. Answer: x = √3, x = 1",,,,
+Problem,27,Find the nature of the roots of the following quadratic equations. If the real roots exist, find them: (i) 2x² - 3x + 5 = 0 (ii) 3x² - 4√3x + 4 = 0,"(i) Discriminant = 9 - 40 = -31 < 0, so no real roots. (ii) Discriminant = 48 - 48 = 0, so equal real roots. x = (4√3)/(6) = 2√3/3. Answer: (i) No real roots; (ii) x = 2√3/3 (repeated)",,,,
+Problem,28,Find the values of k for each of the following quadratic equations, so that they have two equal roots: (i) 2x² + kx + 3 = 0 (ii) kx(x - 2) + 6 = 0,"(i) For equal roots: k² - 24 = 0, k² = 24, k = ±2√6. (ii) kx² - 2kx + 6 = 0. For equal roots: 4k² - 24k = 0, 4k(k - 6) = 0, k = 0 or k = 6. But k ≠ 0, so k = 6. Answer: (i) k = ±2√6; (ii) k = 6",,,,
+Problem,29,Is it possible to design a rectangular mango grove whose length is twice its breadth, and the area is 800 m²? If so, find its length and breadth.,"Let breadth = x m, length = 2x m. Area = 2x² = 800, x² = 400, x = 20. Therefore, breadth = 20 m, length = 40 m. Answer: Yes, length = 40 m, breadth = 20 m",,,,
+Problem,30,Is the following situation possible? If so, determine their present ages. The sum of the ages of two friends is 20 years. Four years ago, the product of their ages in years was 48.,"Let ages be x and (20 - x) years. Four years ago: (x - 4)(20 - x - 4) = 48, (x - 4)(16 - x) = 48, 16x - 64 - x² + 4x = 48, -x² + 20x - 112 = 0, x² - 20x + 112 = 0. Discriminant = 400 - 448 = -48 < 0. Therefore, situation is not possible. Answer: Not possible",,,,
+Problem,31,Is it possible to design a rectangular park of perimeter 80 m and area 400 m²? If so, find its length and breadth.,"Let length = x m, breadth = y m. Then 2(x + y) = 80, so x + y = 40, y = 40 - x. Area = x(40 - x) = 400, 40x - x² = 400, x² - 40x + 400 = 0, (x - 20)² = 0, x = 20. Then y = 20. Answer: Yes, length = 20 m, breadth = 20 m (it's a square)",,,,
+Problem,32,Find the discriminant of the quadratic equation 2x² - 4x + 3 = 0 and hence find the nature of its roots.,"Discriminant D = b² - 4ac = 16 - 24 = -8. Since D < 0, the roots are not real (complex). Answer: Discriminant = -8, no real roots",,,,
+Problem,33,Find the roots of the quadratic equation x² - 4√2x + 6 = 0.,"Using quadratic formula: x = (4√2 ± √(32 - 24))/2 = (4√2 ± √8)/2 = (4√2 ± 2√2)/2 = 2√2 ± √2. Therefore, x = 3√2 or x = √2. Answer: x = 3√2, x = √2",,,,
+Problem,34,Find the roots of the equation 1/x - 1/(x - 2) = 3, x ≠ 0, 2.,"1/x - 1/(x - 2) = 3, (x - 2 - x)/(x(x - 2)) = 3, -2/(x² - 2x) = 3, -2 = 3(x² - 2x), 3x² - 6x + 2 = 0. Using quadratic formula: x = (6 ± √(36 - 24))/6 = (6 ± √12)/6 = (6 ± 2√3)/6 = 1 ± √3/3. Answer: x = 1 ± √3/3",,,,
+Problem,35,Find the roots of x + 1/x = 3, x ≠ 0.,"x + 1/x = 3, x² + 1 = 3x, x² - 3x + 1 = 0. Using quadratic formula: x = (3 ± √(9 - 4))/2 = (3 ± √5)/2. Answer: x = (3 ± √5)/2",,,,
+Problem,36,Find the roots of the equation (x - 1)/(x - 2) + (x - 3)/(x - 4) = 10/3, x ≠ 2, 4.,"Cross multiplying and simplifying: (x - 1)(x - 4) + (x - 3)(x - 2) = (10/3)(x - 2)(x - 4). After simplification: 3(2x² - 10x + 10) = 10(x² - 6x + 8), 6x² - 30x + 30 = 10x² - 60x + 80, 4x² - 30x + 50 = 0, 2x² - 15x + 25 = 0, (2x - 5)(x - 5) = 0, x = 5/2 or x = 5. Answer: x = 5/2, x = 5",,,,
+Problem,37,Find the roots of the equation 1/(x + 1) + 2/(x + 2) = 4/(x + 4), x ≠ -1, -2, -4.,"1/(x + 1) + 2/(x + 2) = 4/(x + 4). Cross multiplying: (x + 2 + 2(x + 1))/((x + 1)(x + 2)) = 4/(x + 4), (3x + 4)/(x² + 3x + 2) = 4/(x + 4), (3x + 4)(x + 4) = 4(x² + 3x + 2), 3x² + 16x + 16 = 4x² + 12x + 8, x² - 4x - 8 = 0. Using quadratic formula: x = (4 ± √(16 + 32))/2 = (4 ± √48)/2 = 2 ± 2√3. Answer: x = 2 ± 2√3",,,,
+Problem,38,Find the roots of the equation √(2x + 9) + x = 13.,"√(2x + 9) = 13 - x. Squaring: 2x + 9 = 169 - 26x + x², x² - 28x + 160 = 0, (x - 8)(x - 20) = 0, x = 8 or x = 20. Checking: For x = 8, √25 + 8 = 13. For x = 20, √49 + 20 = 27 ≠ 13. Answer: x = 8",,,,
+Problem,39,Find the roots of the equation x² + 2√2x - 6 = 0 by the method of completing the square.,"x² + 2√2x = 6, x² + 2√2x + 2 = 6 + 2, (x + √2)² = 8, x + √2 = ±2√2, x = -√2 ± 2√2. Therefore, x = √2 or x = -3√2. Answer: x = √2, x = -3√2",,,,
+Problem,40,Find the roots of 3x² - 2√6x + 2 = 0 by the quadratic formula.,"Using x = (-b ± √(b² - 4ac))/2a, where a = 3, b = -2√6, c = 2. Discriminant = 24 - 24 = 0. x = (2√6)/(6) = √6/3. Answer: x = √6/3 (repeated root)",,,,
+Problem,41,A natural number, when increased by 12, equals 160 times its reciprocal. Find the number.,"Let number = x. Then x + 12 = 160/x, x² + 12x - 160 = 0, (x + 20)(x - 8) = 0, x = 8 (positive). Answer: The number is 8",,,,
+Problem,42,A fast train takes 3 hours less than a slow train for a journey of 600 km. If the speed of the slow train is 10 km/h less than that of the fast train, find the speed of the two trains.,"Let speed of fast train = x km/h, speed of slow train = (x - 10) km/h. Time: fast = 600/x, slow = 600/(x - 10). Then 600/(x - 10) - 600/x = 3, 600(x - (x - 10)) = 3x(x - 10), 6000 = 3x² - 30x, x² - 10x - 2000 = 0, (x - 50)(x + 40) = 0, x = 50. Therefore, fast = 50 km/h, slow = 40 km/h. Answer: Fast = 50 km/h, Slow = 40 km/h",,,,
+Problem,43,The sum of two numbers is 15 and the sum of their reciprocals is 3/10. Find the numbers.,"Let numbers be x and (15 - x). Then 1/x + 1/(15 - x) = 3/10, (15 - x + x)/(x(15 - x)) = 3/10, 15/(15x - x²) = 3/10, 150 = 3(15x - x²), 50 = 15x - x², x² - 15x + 50 = 0, (x - 5)(x - 10) = 0, x = 5 or 10. Answer: Numbers are 5 and 10",,,,
+Problem,44,Find the consecutive positive integers, sum of whose squares is 365.,"Let integers be x and x + 1. Then x² + (x + 1)² = 365, x² + x² + 2x + 1 = 365, 2x² + 2x - 364 = 0, x² + x - 182 = 0, (x + 14)(x - 13) = 0, x = 13. Answer: 13 and 14",,,,
+Problem,45,The hypotenuse of a right triangle is 6 m more than twice the shortest side. If the third side is 2 m less than the hypotenuse, find the sides of the triangle.,"Let shortest side = x m, hypotenuse = (2x + 6) m, third side = (2x + 4) m. By Pythagoras: x² + (2x + 4)² = (2x + 6)², x² + 4x² + 16x + 16 = 4x² + 24x + 36, x² - 8x - 20 = 0, (x - 10)(x + 2) = 0, x = 10. Therefore, sides are 10 m, 24 m, 26 m. Answer: 10 m, 24 m, 26 m",,,,
+Problem,46,Find the roots of the quadratic equation x²/2 + x - 1/2 = 0 by factorization.,"Multiplying by 2: x² + 2x - 1 = 0. Using quadratic formula: x = (-2 ± √(4 + 4))/2 = (-2 ± 2√2)/2 = -1 ± √2. Answer: x = -1 ± √2",,,,
+Problem,47,Find the values of p for which the quadratic equation 4x² + px + 3 = 0 has equal roots.,"For equal roots, discriminant = 0. p² - 4(4)(3) = 0, p² - 48 = 0, p² = 48, p = ±4√3. Answer: p = ±4√3",,,,
+Problem,48,Find the value of k for which the quadratic equation (k + 1)x² - 2(k - 1)x + 1 = 0 has equal roots.,"For equal roots, discriminant = 0. 4(k - 1)² - 4(k + 1) = 0, (k - 1)² - (k + 1) = 0, k² - 2k + 1 - k - 1 = 0, k² - 3k = 0, k(k - 3) = 0, k = 0 or k = 3. But k ≠ -1, so k = 3. Answer: k = 3",,,,
+Problem,49,Find the roots of the equation 2x² - 5x + 3 = 0 by the method of completing the square.,"2x² - 5x = -3, x² - (5/2)x = -3/2, x² - (5/2)x + 25/16 = -3/2 + 25/16, (x - 5/4)² = (-24 + 25)/16 = 1/16, x - 5/4 = ±1/4, x = 5/4 ± 1/4. Therefore, x = 3/2 or x = 1. Answer: x = 3/2, x = 1",,,,
+Problem,50,The area of a right triangle is 600 cm². If the base of the triangle exceeds the altitude by 10 cm, find the dimensions of the triangle.,"Let altitude = x cm, base = (x + 10) cm. Area = (1/2)x(x + 10) = 600, x(x + 10) = 1200, x² + 10x - 1200 = 0, (x + 40)(x - 30) = 0, x = 30. Therefore, altitude = 30 cm, base = 40 cm. Answer: Altitude = 30 cm, Base = 40 cm",,,,
+

@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,India is located in which hemisphere?,Northern,Eastern,Southern,Both Northern and Eastern,Both Northern and Eastern
+MCQ,2,The latitudinal extent of India lies between?,6°N–38°N,8°N–37°N,10°N–40°N,0°–30°N,8°N–37°N
+MCQ,3,The longitudinal extent of India is?,60°E–90°E,68°E–97°E,70°E–100°E,65°E–95°E,68°E–97°E
+MCQ,4,Which latitude passes through the middle of India?,Tropic of Cancer,Equator,Arctic Circle,Prime Meridian,Tropic of Cancer
+MCQ,5,The Tropic of Cancer is located at?,23°30′N,0°,66°30′N,90°,23°30′N
+MCQ,6,The Indian Standard Time is based on which longitude?,82°30′E,75°E,90°E,0°,82°30′E
+MCQ,7,India’s total area is about?,2.4 million sq km,3.28 million sq km,4 million sq km,5 million sq km,3.28 million sq km
+MCQ,8,India ranks how many in the world by area?,5th,6th,7th,8th,7th
+MCQ,9,India shares its longest land boundary with?,Pakistan,Bangladesh,China,Nepal,Bangladesh
+MCQ,10,Which ocean lies to the south of India?,Atlantic,Pacific,Indian Ocean,Arctic,Indian Ocean
+MCQ,11,Which sea lies to the west of India?,Arabian Sea,Bay of Bengal,Red Sea,Mediterranean,Arabian Sea
+MCQ,12,Which bay lies to the east of India?,Arabian Sea,Bay of Bengal,Red Sea,Persian Gulf,Bay of Bengal
+MCQ,13,India’s southernmost point is?,Kanyakumari,Indira Point,Gangotri,None,Indira Point
+MCQ,14,Indira Point is located in?,Lakshadweep,Andaman and Nicobar,Kerala,Tamil Nadu,Andaman and Nicobar
+MCQ,15,Which island group lies in the Bay of Bengal?,Lakshadweep,Andaman and Nicobar,Maldives,Sri Lanka,Andaman and Nicobar
+MCQ,16,Lakshadweep islands are located in?,Bay of Bengal,Arabian Sea,Indian Ocean,None,Arabian Sea
+MCQ,17,India is centrally located in relation to?,Europe,Africa,East Asia,South Asia,South Asia
+MCQ,18,Which country does NOT share a land boundary with India?,Nepal,Bhutan,Sri Lanka,Myanmar,Sri Lanka
+MCQ,19,Sri Lanka is separated from India by?,Palk Strait,Malacca Strait,Bering Strait,None,Palk Strait
+MCQ,20,Which line divides the Earth into eastern and western hemispheres?,Equator,Tropic of Cancer,Prime Meridian,Arctic Circle,Prime Meridian
+MCQ,21,India stretches from west to east for about?,2000 km,2500 km,2900 km,3200 km,2900 km
+MCQ,22,India stretches from north to south for about?,2500 km,3000 km,3200 km,3500 km,3200 km
+MCQ,23,The Standard Meridian of India passes through?,Delhi,Mirzapur,Chennai,Mumbai,Mirzapur
+MCQ,24,Why does India have a single time?,Same longitude extent,To maintain uniformity,Small size,None,To maintain uniformity
+MCQ,25,Which continent is India a part of?,Africa,Europe,Asia,Australia,Asia
+MCQ,26,India lies entirely in the?,Northern Hemisphere,Southern Hemisphere,Western Hemisphere,Eastern Hemisphere,Northern Hemisphere
+MCQ,27,Which neighbouring country lies to the north of India?,Sri Lanka,Nepal,Myanmar,Maldives,Nepal
+MCQ,28,Which neighbouring country lies to the east of India?,Pakistan,Afghanistan,Myanmar,China,Myanmar
+MCQ,29,Which neighbouring country lies to the west of India?,China,Bangladesh,Pakistan,Nepal,Pakistan
+MCQ,30,India’s location helps in?,Isolation,Trade routes,Cyclones,None,Trade routes
+MCQ,31,India is connected to the world through?,Mountains,Seas,Deserts,Both seas and land,Both seas and land
+MCQ,32,Which ocean is named after India?,Pacific,Atlantic,Indian,None,Indian
+MCQ,33,The Tropic of Cancer divides India into?,Two equal halves,Tropical and subtropical zones,Northern and southern hemispheres,None,Tropical and subtropical zones
+MCQ,34,Which direction is India located from Europe?,East,West,North,South,East
+MCQ,35,India’s central location helped in?,Isolation,Cultural contacts,Wars,None,Cultural contacts
+MCQ,36,The Indian mainland is connected to which island by Palk Strait?,Andaman,Nicobar,Sri Lanka,Lakshadweep,Sri Lanka
+MCQ,37,Which latitude indicates tropical zone?,0°,23°30′N,66°30′N,90°,23°30′N
+MCQ,38,Which country is closest to India’s southern tip?,Sri Lanka,Maldives,Indonesia,None,Sri Lanka
+MCQ,39,India’s time is ahead of GMT by?,4 hours,5 hours,5½ hours,6 hours,5½ hours
+MCQ,40,Which physical feature isolates India from Asia?,Plains,Plateau,Mountains,Deserts,Mountains
+MCQ,41,Which mountain range separates India from Central Asia?,Aravalli,Western Ghats,Himalayas,None,Himalayas
+MCQ,42,India has how many island groups?,One,Two,Three,Four,Two
+MCQ,43,The Bay of Bengal lies to which direction of India?,West,East,North,South,East
+MCQ,44,Which sea route connected India with Europe?,Silk Route,Cape Route,Spice Route,None,Spice Route
+MCQ,45,Which neighbouring country lies south of India?,China,Sri Lanka,Nepal,Myanmar,Sri Lanka
+MCQ,46,India occupies what percentage of world land area?,1%,2%,2.4%,3%,2.4%
+MCQ,47,India’s location influenced?,Climate only,Trade only,Culture and trade,None,Culture and trade
+MCQ,48,The Standard Time of India is based on?,Local time,82°30′E longitude,Equator,None,82°30′E longitude
+MCQ,49,Which factor helps India connect East and West?,Mountains,Central location,Climate,None,Central location
+MCQ,50,India is separated from Asia by?,Oceans,Mountains,Plains,None,Mountains
+
+Integer,1,Latitudinal extent starts at?,8°N,,,,
+Integer,2,Latitudinal extent ends at?,37°N,,,,
+Integer,3,Longitudinal extent starts at?,68°E,,,,
+Integer,4,Longitudinal extent ends at?,97°E,,,,
+Integer,5,Standard Meridian of India?,82°30′E,,,,
+Integer,6,Tropic of Cancer latitude?,23°30′N,,,,
+Integer,7,India’s area in million sq km?,3.28,,,,
+Integer,8,India’s rank by area?,7,,,,
+Integer,9,Ocean south of India?,Indian Ocean,,,,
+Integer,10,Sea west of India?,Arabian Sea,,,,
+Integer,11,Bay east of India?,Bay of Bengal,,,,
+Integer,12,Southernmost point?,Indira Point,,,,
+Integer,13,Island group in Bay of Bengal?,Andaman and Nicobar,,,,
+Integer,14,Island group in Arabian Sea?,Lakshadweep,,,,
+Integer,15,Neighbour country to west?,Pakistan,,,,
+Integer,16,Neighbour country to east?,Myanmar,,,,
+Integer,17,Neighbour country to north?,Nepal,,,,
+Integer,18,Strait between India and Sri Lanka?,Palk Strait,,,,
+Integer,19,India time ahead of GMT?,5½ hours,,,,
+Integer,20,India’s continent?,Asia,,,,
+Integer,21,Number of island groups?,2,,,,
+Integer,22,India lies in which hemisphere?,Northern,,,,
+Integer,23,Prime Meridian longitude?,0°,,,,
+Integer,24,Indian Standard Time based on?,Mirzapur,,,,
+Integer,25,India’s north-south extent?,3200 km,,,,
+Integer,26,India’s east-west extent?,2900 km,,,,
+Integer,27,Tropic divides India into?,Two zones,,,,
+Integer,28,India’s longest boundary?,Bangladesh,,,,
+Integer,29,Country south of India?,Sri Lanka,,,,
+Integer,30,Ocean named after India?,Indian,,,,
+Integer,31,Mountain barrier?,Himalayas,,,,
+Integer,32,Sea route used in ancient trade?,Spice Route,,,,
+Integer,33,India’s central location helps?,Trade,,,,
+Integer,34,Island south of Nicobar?,Indira Point,,,,
+Integer,35,India occupies % of world land?,2.4,,,,
+Integer,36,Direction of Bay of Bengal?,East,,,,
+Integer,37,Direction of Arabian Sea?,West,,,,
+Integer,38,Latitude showing tropics?,23°30′N,,,,
+Integer,39,Longitude showing IST?,82°30′E,,,,
+Integer,40,India separated from Asia by?,Mountains,,,,
+Integer,41,Neighbouring island nation?,Sri Lanka,,,,
+Integer,42,Mainland southern tip?,Kanyakumari,,,,
+Integer,43,Island group coral origin?,Lakshadweep,,,,
+Integer,44,Island group volcanic origin?,Andaman,,,,
+Integer,45,Central Indian town for IST?,Mirzapur,,,,
+Integer,46,India extends between hemispheres?,Eastern and Northern,,,,
+Integer,47,Time difference across India?,2 hours,,,,
+Integer,48,India connected to world by?,Seas and land,,,,
+Integer,49,India lies in tropics?,Yes,,,,
+Integer,50,Physical barrier north of India?,Himalayas,,,,
+
+Descriptive,1,What is the latitudinal extent of India?,,,,,8°N to 37°N
+Descriptive,2,What is the longitudinal extent of India?,,,,,68°E to 97°E
+Descriptive,3,Explain the location of India.,,,,,India lies in Northern and Eastern hemispheres
+Descriptive,4,Why is Tropic of Cancer important?,,,,,It divides India into tropical and subtropical zones
+Descriptive,5,What is Indian Standard Time?,,,,,Uniform time based on 82°30′E
+Descriptive,6,Why does India need a single time?,,,,,To maintain uniformity
+Descriptive,7,Describe India’s size.,,,,,7th largest country by area
+Descriptive,8,What is India’s total area?,,,,,3.28 million sq km
+Descriptive,9,Name India’s neighbouring countries.,,,,,Pakistan China Nepal Bhutan Bangladesh Myanmar Afghanistan Sri Lanka
+Descriptive,10,Why is India centrally located in Asia?,,,,,It lies between East and West
+Descriptive,11,How does location affect trade?,,,,,Facilitates sea and land routes
+Descriptive,12,What are India’s island groups?,,,,,Andaman and Nicobar, Lakshadweep
+Descriptive,13,Describe the Andaman and Nicobar Islands.,,,,,Located in Bay of Bengal
+Descriptive,14,Describe Lakshadweep Islands.,,,,,Located in Arabian Sea
+Descriptive,15,Why is Indira Point significant?,,,,,Southernmost point of India
+Descriptive,16,What separates India from Sri Lanka?,,,,,Palk Strait
+Descriptive,17,Explain India’s hemispherical position.,,,,,Entirely in Northern Hemisphere
+Descriptive,18,Why is India called a subcontinent?,,,,,Large size and diversity
+Descriptive,19,How does Himalayas protect India?,,,,,Acts as climatic and physical barrier
+Descriptive,20,What is the importance of oceans to India?,,,,,Trade and climate
+Descriptive,21,Explain India’s east-west extent.,,,,,About 2900 km
+Descriptive,22,Explain India’s north-south extent.,,,,,About 3200 km
+Descriptive,23,Why is Mirzapur chosen for IST?,,,,,Near central longitude
+Descriptive,24,What is GMT?,,,,,Greenwich Mean Time
+Descriptive,25,How far is India ahead of GMT?,,,,,5½ hours
+Descriptive,26,What role does location play in culture?,,,,,Encouraged cultural exchange
+Descriptive,27,How did sea routes help India?,,,,,Connected with Europe Africa Asia
+Descriptive,28,Explain the significance of Indian Ocean.,,,,,Named after India
+Descriptive,29,Why is India strategically important?,,,,,Central Asian location
+Descriptive,30,What are land routes of India?,,,,,Through mountain passes
+Descriptive,31,Explain India’s political neighbours.,,,,,Seven land neighbours
+Descriptive,32,Why is Sri Lanka an island neighbour?,,,,,Separated by Palk Strait
+Descriptive,33,How does latitude affect climate?,,,,,Controls temperature
+Descriptive,34,How does longitude affect time?,,,,,Determines IST
+Descriptive,35,What is Prime Meridian?,,,,,0° longitude
+Descriptive,36,What is Equator?,,,,,0° latitude
+Descriptive,37,Why is India not too cold?,,,,,Tropical location
+Descriptive,38,How does India connect East and West?,,,,,Through trade routes
+Descriptive,39,Why is India’s location advantageous?,,,,,Trade cultural contact
+Descriptive,40,Explain India’s strategic location.,,,,,Central position in Asia
+Descriptive,41,What is subcontinent?,,,,,Large distinct landmass
+Descriptive,42,How does size influence unity?,,,,,Large but unified
+Descriptive,43,What is maritime boundary?,,,,,Sea boundary
+Descriptive,44,Why is Bay of Bengal important?,,,,,Trade and ports
+Descriptive,45,Why is Arabian Sea important?,,,,,Trade with west
+Descriptive,46,How many time zones does India use?,,,,,One
+Descriptive,47,Why is time difference within India?,,,,,Large east-west extent
+Descriptive,48,Explain India’s physical isolation.,,,,,Mountains and seas
+Descriptive,49,Why is geography important?,,,,,Shapes history and economy
+Descriptive,50,Summarise India’s size and location.,,,,,Large country strategically located

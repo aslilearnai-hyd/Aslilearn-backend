@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,The basic instruments used for geometrical constructions are?,Ruler and compass,Ruler and protractor,Compass and protractor,Divider and scale,Ruler and compass
+MCQ,2,Which instrument is used to draw arcs?,Ruler,Compass,Protractor,Divider,Compass
+MCQ,3,Which instrument is used to draw straight lines?,Compass,Divider,Ruler,Protractor,Ruler
+MCQ,4,Which angle can be constructed using compass and ruler?,30°,45°,60°,All of these,All of these
+MCQ,5,To construct a 60° angle, which arc is used?,Semicircle,Equilateral triangle,Right triangle,Isosceles triangle,Equilateral triangle
+MCQ,6,Which angle cannot be directly constructed?,30°,45°,60°,20°,20°
+MCQ,7,Perpendicular bisector divides a line segment into?,Two unequal parts,Two equal parts,Three parts,None,Two equal parts
+MCQ,8,Angle bisector divides an angle into?,Two equal angles,Two unequal angles,Three angles,None,Two equal angles
+MCQ,9,Which construction uses equal radius arcs?,Perpendicular bisector,Angle bisector,Both,None,Both
+MCQ,10,What is the first step in most constructions?,Draw a rough figure,Measure angle,Use compass,None,Draw a rough figure
+MCQ,11,Which angle is constructed by bisecting 90°?,30°,45°,60°,90°,45°
+MCQ,12,Which angle is constructed by bisecting 60°?,30°,45°,90°,120°,30°
+MCQ,13,A perpendicular bisector always passes through?,Midpoint,Endpoint,Vertex,None,Midpoint
+MCQ,14,An angle bisector divides angle in ratio?,1:1,2:1,3:1,Depends,1:1
+MCQ,15,Which construction needs compass opened more than half?,Perpendicular bisector,Angle bisector,None,Both,Both
+MCQ,16,Which angle is used to construct 15°?,30°,45°,60°,90°,30°
+MCQ,17,Which angle is bisected to get 22.5°?,45°,60°,90°,30°,45°
+MCQ,18,What is the locus of points equidistant from endpoints?,Perpendicular bisector,Angle bisector,Median,None,Perpendicular bisector
+MCQ,19,To draw perpendicular at a point on line, arcs are drawn?,Above line,Below line,Both sides,None,Both sides
+MCQ,20,Which construction creates a right angle?,Perpendicular line,Angle bisector,Median,None,Perpendicular line
+MCQ,21,Which angle is half of 90°?,30°,45°,60°,15°,45°
+MCQ,22,Which is not needed in construction?,Compass,Ruler,Protractor,Sharp pencil,Protractor
+MCQ,23,The bisector of a straight angle is?,45°,90°,180°,60°,90°
+MCQ,24,Which angle is formed by perpendicular lines?,45°,60°,90°,120°,90°
+MCQ,25,Which is constructed first to get 75°?,60°,45°,30°,90°,60°
+MCQ,26,Which angle is sum of 45° and 30°?,75°,60°,90°,15°,75°
+MCQ,27,Which angle is difference of 45° and 30°?,15°,75°,60°,90°,15°
+MCQ,28,Which angle cannot be obtained by bisection?,20°,15°,22.5°,30°,20°
+MCQ,29,The midpoint of line segment is found by?,Angle bisector,Perpendicular bisector,Median,None,Perpendicular bisector
+MCQ,30,Which is a valid construction?,Angle 60°,Angle 90°,Angle 45°,All,All
+MCQ,31,Which tool helps draw circles?,Ruler,Compass,Protractor,None,Compass
+MCQ,32,Which angle is supplementary of 60°?,120°,30°,90°,45°,120°
+MCQ,33,Which construction gives 120°?,Exterior of 60°,Bisect 90°,Add 30°,None,Exterior of 60°
+MCQ,34,Which angle is obtained by adding 45° and 45°?,60°,90°,120°,30°,90°
+MCQ,35,Which construction ensures accuracy?,Rough drawing,Exact arcs,Guessing,None,Exact arcs
+MCQ,36,Which angle is bisected to get 7.5°?,15°,30°,45°,60°,15°
+MCQ,37,Which construction uses equal arcs from endpoints?,Perpendicular bisector,Angle bisector,Median,None,Perpendicular bisector
+MCQ,38,Which angle is half of straight angle?,45°,60°,90°,180°,90°
+MCQ,39,Which is used to mark equal distances?,Ruler,Compass,Protractor,None,Compass
+MCQ,40,Which is not an angle?,Line,Point,Ray,Triangle,Point
+MCQ,41,Angle formed by two intersecting lines?,Vertex,Right angle,Obtuse angle,None,Vertex
+MCQ,42,Which construction divides a segment equally?,Angle bisector,Perpendicular bisector,Median,None,Perpendicular bisector
+MCQ,43,Which angle is triple of 30°?,60°,90°,120°,150°,90°
+MCQ,44,Which is smallest angle constructible?,15°,30°,45°,60°,15°
+MCQ,45,Which angle is constructed using equilateral triangle?,60°,45°,90°,30°,60°
+MCQ,46,Which is half of 60°?,15°,30°,45°,90°,30°
+MCQ,47,Which construction gives midpoint?,Perpendicular bisector,Angle bisector,None,Both,Perpendicular bisector
+MCQ,48,Which angle is reflex?,200°,90°,60°,45°,200°
+MCQ,49,Which angle is acute?,30°,100°,120°,180°,30°
+MCQ,50,Which angle is obtuse?,120°,60°,45°,30°,120°
+
+Integer,1,Name the tool used to draw arcs.,Compass,,,,
+Integer,2,Name the tool used to draw straight line.,Ruler,,,,
+Integer,3,Angle formed by perpendicular lines.,90°,,,,
+Integer,4,Angle formed by straight line.,180°,,,,
+Integer,5,Number of basic instruments.,2,,,,
+Integer,6,Angle bisector divides angle into how many equal parts?,2,,,,
+Integer,7,Perpendicular bisector divides line into how many parts?,2,,,,
+Integer,8,Half of 60°?,30°,,,,
+Integer,9,Half of 90°?,45°,,,,
+Integer,10,Half of 45°?,22.5°,,,,
+Integer,11,Half of 30°?,15°,,,,
+Integer,12,Sum of 45° and 30°?,75°,,,,
+Integer,13,Difference of 45° and 30°?,15°,,,,
+Integer,14,Supplement of 60°?,120°,,,,
+Integer,15,Complement of 30°?,60°,,,,
+Integer,16,Angle obtained by bisecting straight angle?,90°,,,,
+Integer,17,Tool used to copy distance.,Compass,,,,
+Integer,18,Tool not allowed in constructions.,Protractor,,,,
+Integer,19,Angle greater than 90° is called?,Obtuse,,,,
+Integer,20,Angle less than 90°?,Acute,,,,
+Integer,21,Right angle value?,90°,,,,
+Integer,22,Straight angle value?,180°,,,,
+Integer,23,Reflex angle is greater than?,180°,,,,
+Integer,24,Midpoint is equidistant from?,Endpoints,,,,
+Integer,25,Angle formed at intersection?,Vertex,,,,
+Integer,26,Which bisects angle?,Angle bisector,,,,
+Integer,27,Which bisects line segment?,Perpendicular bisector,,,,
+Integer,28,Angle formed by equilateral triangle?,60°,,,,
+Integer,29,Angle constructed first for 15°?,30°,,,,
+Integer,30,Angle constructed first for 22.5°?,45°,,,,
+Integer,31,Which angle cannot be bisected to get integer?,20°,,,,
+Integer,32,Angle less than straight angle?,180°,,,,
+Integer,33,Number of rays forming angle?,2,,,,
+Integer,34,Which ensures accuracy?,Exact arcs,,,,
+Integer,35,Which construction uses equal arcs?,Perpendicular bisector,,,,
+Integer,36,Angle equal to sum of 30° and 60°?,90°,,,,
+Integer,37,Angle equal to difference of 60° and 45°?,15°,,,,
+Integer,38,Angle greater than 90° but less than 180°?,Obtuse,,,,
+Integer,39,Angle equal to 2×45°?,90°,,,,
+Integer,40,Angle equal to 3×30°?,90°,,,,
+Integer,41,Angle obtained from exterior of equilateral triangle?,120°,,,,
+Integer,42,Tool to measure angle (not allowed)?,Protractor,,,,
+Integer,43,Which line makes 90°?,Perpendicular,,,,
+Integer,44,Angle equal to half of 180°?,90°,,,,
+Integer,45,Which construction gives equal halves of angle?,Angle bisector,,,,
+Integer,46,Which construction gives equal halves of segment?,Perpendicular bisector,,,,
+Integer,47,Which angle is smallest constructible?,15°,,,,
+Integer,48,Angle equal to 4×30°?,120°,,,,
+Integer,49,Angle equal to 5×30°?,150°,,,,
+Integer,50,Angle equal to 6×30°?,180°,,,,
+
+Problem,1,Construct a line segment of length 7 cm.,,,,,Construction done
+Problem,2,Construct the perpendicular bisector of a line segment.,,,,,Construction done
+Problem,3,Construct a 60° angle.,,,,,Construction done
+Problem,4,Construct a 30° angle.,,,,,Construction done
+Problem,5,Construct a 90° angle.,,,,,Construction done
+Problem,6,Construct a 45° angle.,,,,,Construction done
+Problem,7,Construct a 120° angle.,,,,,Construction done
+Problem,8,Construct a 15° angle.,,,,,Construction done
+Problem,9,Construct a perpendicular to a line at a point.,,,,,Construction done
+Problem,10,Construct a perpendicular to a line from a point outside.,,,,,Construction done
+Problem,11,Construct the angle bisector of a given angle.,,,,,Construction done
+Problem,12,Construct a line segment of length 5.5 cm.,,,,,Construction done
+Problem,13,Construct a 75° angle.,,,,,Construction done
+Problem,14,Construct a 22.5° angle.,,,,,Construction done
+Problem,15,Construct a triangle with one side 6 cm and one angle 60°.,,,,,Construction done
+Problem,16,Construct a right angle at a point.,,,,,Construction done
+Problem,17,Construct a straight angle.,,,,,Construction done
+Problem,18,Construct the midpoint of a given segment.,,,,,Construction done
+Problem,19,Construct a triangle with base 5 cm and angle 30°.,,,,,Construction done
+Problem,20,Construct a triangle with base 7 cm and angle 45°.,,,,,Construction done
+Problem,21,Construct an obtuse angle of 120°.,,,,,Construction done
+Problem,22,Construct an acute angle of 30°.,,,,,Construction done
+Problem,23,Construct a triangle using 6 cm, 60° and 45°.,,,,,Construction done
+Problem,24,Construct a perpendicular at midpoint of line.,,,,,Construction done
+Problem,25,Construct an angle equal to given angle.,,,,,Construction done
+Problem,26,Construct a triangle with two sides and included angle.,,,,,Construction done
+Problem,27,Construct a perpendicular bisector of 8 cm segment.,,,,,Construction done
+Problem,28,Construct a line parallel to given line.,,,,,Construction done
+Problem,29,Construct an angle of 135°.,,,,,Construction done
+Problem,30,Construct an angle of 105°.,,,,,Construction done
+Problem,31,Construct an angle of 150°.,,,,,Construction done
+Problem,32,Construct an angle of 165°.,,,,,Construction done
+Problem,33,Construct a triangle with base 6 cm and height 4 cm.,,,,,Construction done
+Problem,34,Construct an angle of 90° using compass.,,,,,Construction done
+Problem,35,Construct an angle of 45° using bisection.,,,,,Construction done
+Problem,36,Construct a triangle with given base and median.,,,,,Construction done
+Problem,37,Construct an angle of 75° using 45° and 30°.,,,,,Construction done
+Problem,38,Construct a triangle with base 8 cm and angle 60°.,,,,,Construction done
+Problem,39,Construct an angle of 30° using 60°.,,,,,Construction done
+Problem,40,Construct an angle of 22.5° using 45°.,,,,,Construction done
+Problem,41,Construct a triangle with one side 5 cm and right angle.,,,,,Construction done
+Problem,42,Construct a perpendicular through a given point.,,,,,Construction done
+Problem,43,Construct a triangle with one side 7 cm and angle 90°.,,,,,Construction done
+Problem,44,Construct an angle bisector of 120°.,,,,,Construction done
+Problem,45,Construct a perpendicular bisector of 10 cm line.,,,,,Construction done
+Problem,46,Construct a triangle with base 6 cm and angle 15°.,,,,,Construction done
+Problem,47,Construct a triangle with base 9 cm and angle 30°.,,,,,Construction done
+Problem,48,Construct an angle of 180°.,,,,,Construction done
+Problem,49,Construct a triangle with base 8 cm and angle 45°.,,,,,Construction done
+Problem,50,Construct a perpendicular from external point.,,,,,Construction done

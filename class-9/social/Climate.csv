@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Climate refers to?,Daily weather,Long term weather,Temperature only,Rainfall only,Long term weather
+MCQ,2,The climate of India is described as?,Equatorial,Tropical monsoon,Desert,Polar,Tropical monsoon
+MCQ,3,Which factor controls Indian climate?,Latitude only,Altitude only,Monsoon winds,Ocean currents,Monsoon winds
+MCQ,4,India lies mainly in which climatic zone?,Temperate,Tropical,Polar,Frigid,Tropical
+MCQ,5,Which winds bring rainfall to India?,Trade winds,Westerlies,Monsoon winds,Polar winds,Monsoon winds
+MCQ,6,South-West Monsoon arrives in India in?,January,March,June,September,June
+MCQ,7,Which monsoon gives most rainfall?,North-East,South-West,None,None,South-West
+MCQ,8,Retreating monsoon occurs in?,June,July,October,December,October
+MCQ,9,Which region receives highest rainfall?,Thar Desert,Western Ghats,Deccan Plateau,None,Western Ghats
+MCQ,10,Which place receives least rainfall?,Cherrapunji,Jaisalmer,Mawsynram,None,Jaisalmer
+MCQ,11,Cherrapunji is famous for?,Lowest rainfall,Highest rainfall,No rainfall,None,Highest rainfall
+MCQ,12,Which winds cause winter rain in north India?,Monsoon,Westerlies,Trade winds,None,Westerlies
+MCQ,13,What is Loo?,Cold wind,Hot dry wind,Rainy wind,None,Hot dry wind
+MCQ,14,Which months are summer in India?,March-May,June-Sept,Oct-Nov,Dec-Feb,March-May
+MCQ,15,Which months are winter in India?,March-May,June-Sept,Oct-Nov,Dec-Feb,Dec-Feb
+MCQ,16,Which season has cyclones?,Summer,Monsoon,Retreating monsoon,Winter,Retreating monsoon
+MCQ,17,Which ocean influences Indian climate?,Atlantic,Pacific,Indian,Arctic,Indian
+MCQ,18,Which current affects Indian climate?,Gulf Stream,El Nino,None,None,El Nino
+MCQ,19,Which phenomenon weakens monsoon?,La Nina,El Nino,Trade winds,None,El Nino
+MCQ,20,Which phenomenon strengthens monsoon?,El Nino,La Nina,None,None,La Nina
+MCQ,21,Which state gets rain from retreating monsoon?,Punjab,Rajasthan,Tamil Nadu,None,Tamil Nadu
+MCQ,22,Which branch of monsoon hits Western Ghats?,Arabian Sea branch,Bay of Bengal branch,None,None,Arabian Sea branch
+MCQ,23,Which branch hits eastern India first?,Arabian Sea,Bay of Bengal,None,None,Bay of Bengal
+MCQ,24,Which region gets orographic rainfall?,Plateau,Plains,Western Ghats,None,Western Ghats
+MCQ,25,Which area lies in rain shadow?,Windward side,Leeward side,Coast,None,Leeward side
+MCQ,26,What causes monsoon?,Pressure difference,Rotation of Earth,Tides,None,Pressure difference
+MCQ,27,Which winds reverse direction seasonally?,Trade winds,Monsoon winds,Westerlies,None,Monsoon winds
+MCQ,28,What is burst of monsoon?,Sudden rainfall,Gradual rain,No rain,None,Sudden rainfall
+MCQ,29,Which climate factor refers to height?,Latitude,Altitude,Distance from sea,None,Altitude
+MCQ,30,Which area has equable climate?,Interior,Coastal,None,None,Coastal
+MCQ,31,Why coastal areas have less temperature range?,Altitude,Sea breeze,Latitude,None,Sea breeze
+MCQ,32,Which region has extreme climate?,Coastal,Interior,None,None,Interior
+MCQ,33,Which season is called hot weather season?,Summer,Winter,Monsoon,None,Summer
+MCQ,34,Which season is called cold weather season?,Summer,Winter,Monsoon,None,Winter
+MCQ,35,Which season has retreating monsoon winds?,Summer,Winter,Post-monsoon,None,Post-monsoon
+MCQ,36,Which region gets snowfall?,Plains,Plateau,Himalayas,None,Himalayas
+MCQ,37,Which area gets convectional rainfall?,Plains,Plateau,Coastal,None,Plateau
+MCQ,38,What causes cyclones?,High pressure,Low pressure,None,None,Low pressure
+MCQ,39,Which factor affects rainfall distribution?,Relief,Latitude,Altitude,All of these,All of these
+MCQ,40,Which area receives winter rain?,Tamil Nadu,Punjab,Rajasthan,None,Tamil Nadu
+MCQ,41,What is monsoon?,Seasonal wind,Daily wind,Ocean current,None,Seasonal wind
+MCQ,42,Which wind blows from land to sea?,Sea breeze,Land breeze,Monsoon,None,Land breeze
+MCQ,43,Which wind blows from sea to land?,Land breeze,Sea breeze,Trade winds,None,Sea breeze
+MCQ,44,Which factor causes fog?,Low temp,High humidity,Condensation,All,All
+MCQ,45,Which month monsoon withdraws from India?,July,August,October,December,October
+MCQ,46,Which area receives rainfall throughout year?,Desert,Coastal,Himalayas,None,Coastal
+MCQ,47,Which place is coldest in winter?,Chennai,Delhi,Leh,None,Leh
+MCQ,48,Which factor causes heat waves?,Low pressure,High temperature,None,None,High temperature
+MCQ,49,Which side of Western Ghats is wet?,Leeward,Windward,None,None,Windward
+MCQ,50,Which side of Western Ghats is dry?,Windward,Leeward,None,None,Leeward
+
+Integer,1,India’s climate type?,Monsoon,,,,
+Integer,2,Main rainfall season?,Monsoon,,,,
+Integer,3,Hot weather months?,March-May,,,,
+Integer,4,Cold weather months?,Dec-Feb,,,,
+Integer,5,Monsoon arrival month?,June,,,,
+Integer,6,Monsoon retreat month?,October,,,,
+Integer,7,Highest rainfall place?,Mawsynram,,,,
+Integer,8,Lowest rainfall place?,Jaisalmer,,,,
+Integer,9,Hot dry wind?,Loo,,,,
+Integer,10,Wind reversal?,Monsoon,,,,
+Integer,11,Arabian Sea branch?,Monsoon,,,,
+Integer,12,Bay of Bengal branch?,Monsoon,,,,
+Integer,13,Winter rain cause?,Westerlies,,,,
+Integer,14,TN winter rain?,Yes,,,,
+Integer,15,Climate factor latitude?,Distance from equator,,,,
+Integer,16,Climate factor altitude?,Height,,,,
+Integer,17,Climate factor relief?,Mountains,,,,
+Integer,18,Climate factor distance from sea?,Continentality,,,,
+Integer,19,Ocean affecting India?,Indian Ocean,,,,
+Integer,20,Weak monsoon phenomenon?,El Nino,,,,
+Integer,21,Strong monsoon phenomenon?,La Nina,,,,
+Integer,22,Pressure causes monsoon?,Difference,,,,
+Integer,23,Extreme climate region?,Interior,,,,
+Integer,24,Equable climate region?,Coastal,,,,
+Integer,25,Cyclone season?,Retreating monsoon,,,,
+Integer,26,Windward side rainfall?,High,,,,
+Integer,27,Leeward side rainfall?,Low,,,,
+Integer,28,Monsoon burst means?,Sudden rain,,,,
+Integer,29,Snowfall region?,Himalayas,,,,
+Integer,30,Rain shadow area?,Deccan,,,,
+Integer,31,Monsoon direction?,Seasonal,,,,
+Integer,32,Western disturbance season?,Winter,,,,
+Integer,33,Climate means?,Average weather,,,,
+Integer,34,Daily weather called?,Weather,,,,
+Integer,35,Highest temp season?,Summer,,,,
+Integer,36,Lowest temp season?,Winter,,,,
+Integer,37,Cyclone cause?,Low pressure,,,,
+Integer,38,Fog cause?,Condensation,,,,
+Integer,39,Heat wave cause?,High temperature,,,,
+Integer,40,Sea breeze time?,Day,,,,
+Integer,41,Land breeze time?,Night,,,,
+Integer,42,Winter rainfall region?,Northwest,,,,
+Integer,43,Convectional rain area?,Plateau,,,,
+Integer,44,Orographic rain area?,Western Ghats,,,,
+Integer,45,Cold place?,Leh,,,,
+Integer,46,Hot place?,Rajasthan,,,,
+Integer,47,Humidity highest near?,Sea,,,,
+Integer,48,Monsoon ends in?,October,,,,
+Integer,49,Climate affects?,Agriculture,,,,
+Integer,50,Main wind system?,Monsoon,,,,
+
+Descriptive,1,What is climate?,,,,,Average weather of a place over long period
+Descriptive,2,Describe the climate of India.,,,,,Tropical monsoon climate
+Descriptive,3,What is monsoon?,,,,,Seasonal reversal of winds
+Descriptive,4,Factors affecting climate.,,,,,Latitude altitude distance from sea relief winds
+Descriptive,5,Explain latitude as climate factor.,,,,,Controls temperature
+Descriptive,6,Explain altitude as climate factor.,,,,,Higher altitude cooler climate
+Descriptive,7,Explain distance from sea.,,,,,Controls temperature range
+Descriptive,8,Explain relief as climate factor.,,,,,Mountains block winds
+Descriptive,9,Explain pressure and winds.,,,,,Cause monsoon
+Descriptive,10,Explain jet streams.,,,,,High altitude winds influencing monsoon
+Descriptive,11,What is South-West Monsoon?,,,,,Rainy season winds
+Descriptive,12,Explain onset of monsoon.,,,,,Arrival of rain in June
+Descriptive,13,Explain burst of monsoon.,,,,,Sudden heavy rainfall
+Descriptive,14,What is retreating monsoon?,,,,,Withdrawal of monsoon
+Descriptive,15,Why Tamil Nadu gets winter rain?,,,,,North-East monsoon
+Descriptive,16,What are western disturbances?,,,,,Winter rain bearing winds
+Descriptive,17,Explain summer season.,,,,,Hot dry season
+Descriptive,18,Explain winter season.,,,,,Cold dry season
+Descriptive,19,Explain monsoon season.,,,,,Rainfall period
+Descriptive,20,Explain post-monsoon season.,,,,,Cyclones and rain
+Descriptive,21,What is Loo?,,,,,Hot dry wind
+Descriptive,22,Why Western Ghats get heavy rain?,,,,,Orographic rainfall
+Descriptive,23,Why Deccan is rain shadow?,,,,,Leeward side
+Descriptive,24,Explain El Nino.,,,,,Warm ocean current weakening monsoon
+Descriptive,25,Explain La Nina.,,,,,Cold current strengthening monsoon
+Descriptive,26,Importance of monsoon.,,,,,Agriculture water supply
+Descriptive,27,Problems of monsoon.,,,,,Floods droughts
+Descriptive,28,What is orographic rainfall?,,,,,Rain due to mountains
+Descriptive,29,What is convectional rainfall?,,,,,Heat caused rainfall
+Descriptive,30,What is cyclonic rainfall?,,,,,Rain from low pressure
+Descriptive,31,Why coastal areas equable?,,,,,Sea influence
+Descriptive,32,Why interiors extreme?,,,,,No sea influence
+Descriptive,33,Explain rainfall distribution.,,,,,Uneven across India
+Descriptive,34,Why north India cold in winter?,,,,,Distance from sea
+Descriptive,35,Why Himalayas important for climate?,,,,,Block cold winds
+Descriptive,36,Explain monsoon mechanism.,,,,,Pressure and wind reversal
+Descriptive,37,How climate affects vegetation?,,,,,Rainfall temperature
+Descriptive,38,How climate affects agriculture?,,,,,Crop pattern
+Descriptive,39,How climate affects lifestyle?,,,,,Clothing food housing
+Descriptive,40,What are heat waves?,,,,,Extreme high temperature
+Descriptive,41,What are cold waves?,,,,,Extreme low temperature
+Descriptive,42,Explain fog.,,,,,Condensation near surface
+Descriptive,43,What are cyclones?,,,,,Low pressure storms
+Descriptive,44,Why rainfall decreases east to west?,,,,,Distance from sea
+Descriptive,45,Why deserts receive low rain?,,,,,Rain shadow effect
+Descriptive,46,Why climate study important?,,,,,Planning agriculture
+Descriptive,47,How climate influences economy?,,,,,Agriculture industry
+Descriptive,48,How climate causes disasters?,,,,,Floods droughts cyclones
+Descriptive,49,Measures to manage climate risks?,,,,,Preparedness
+Descriptive,50,Summarise Indian climate.,,,,,Monsoon-based varied climate

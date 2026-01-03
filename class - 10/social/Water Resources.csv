@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Water is considered a renewable resource because it,Is unlimited,Is reused in water cycle,Is cheap,Flows continuously,Is reused in water cycle
+MCQ,2,The main source of freshwater is,Rivers and lakes,Seas,Oceans,Glaciers,Rivers and lakes
+MCQ,3,Which process brings water back to land?,Evaporation,Condensation,Precipitation,Transpiration,Precipitation
+MCQ,4,Which river valley civilisation developed water harvesting?,Indus Valley,Nile,Mesopotamian,Chinese,Indus Valley
+MCQ,5,Which method was used in Rajasthan to conserve water?,Canals,Tankas,Tube wells,Dams,Tankas
+MCQ,6,Johads are traditional water harvesting structures in,Gujarat,Rajasthan,Punjab,Kerala,Rajasthan
+MCQ,7,Which state revived traditional water harvesting through johads?,Punjab,Haryana,Rajasthan,Bihar,Rajasthan
+MCQ,8,Who led the water conservation movement in Rajasthan?,Medha Patkar,Rajendra Singh,Sunderlal Bahuguna,M S Swaminathan,Rajendra Singh
+MCQ,9,Which dam is built on river Narmada?,Hirakud,Sardar Sarovar,Bhakra Nangal,Tehri,Sardar Sarovar
+MCQ,10,Multi-purpose river projects are built for,Irrigation only,Power only,Flood control only,Multiple uses,Multiple uses
+MCQ,11,Which project is built on river Sutlej?,Hirakud,Bhakra Nangal,Damodar Valley,Tehri,Bhakra Nangal
+MCQ,12,The main objective of dams is,Water storage,Electricity generation,Irrigation,All of these,All of these
+MCQ,13,Which river is associated with Hirakud Dam?,Narmada,Mahanadi,Sutlej,Ganga,Mahanadi
+MCQ,14,Which river is known as river of sorrow in Bihar?,Yamuna,Kosi,Ganga,Brahmaputra,Kosi
+MCQ,15,Large dams have been criticised for,Providing irrigation,Generating electricity,Displacement of people,Water storage,Displacement of people
+MCQ,16,Which movement opposed large dams?,Chipko,Narmada Bachao,Appiko,Bishnoi,Narmada Bachao
+MCQ,17,Which dam is built on river Bhagirathi?,Bhakra,Tehri,Hirakud,Sardar Sarovar,Tehri
+MCQ,18,The Narmada Bachao Andolan was led by,Rajendra Singh,Medha Patkar,Gandhi,Nehru,Medha Patkar
+MCQ,19,Which method helps recharge groundwater?,Canal irrigation,Rainwater harvesting,Dams,Drip irrigation,Rainwater harvesting
+MCQ,20,Over-irrigation causes,Soil fertility,Waterlogging,Afforestation,Recharge,Waterlogging
+MCQ,21,Which sector uses maximum water in India?,Domestic,Industrial,Agricultural,Commercial,Agricultural
+MCQ,22,Water scarcity means,Less rainfall,Unequal distribution,Overuse,All of these,All of these
+MCQ,23,Which state faces acute water scarcity?,Kerala,Punjab,Rajasthan,Assam,Rajasthan
+MCQ,24,Which traditional system was used in Meghalaya?,Johads,Bunds,Bamboo drip irrigation,Tankas,Bamboo drip irrigation
+MCQ,25,Which harvesting system is used in Tamil Nadu?,Tankas,Eris,Johads,Canals,Eris
+MCQ,26,Which region uses inundation canals?,Northern plains,Plateau,Desert,Coastal,Northern plains
+MCQ,27,Which dam was the first multi-purpose project in India?,Bhakra Nangal,Hirakud,Damodar Valley,Tehri,Damodar Valley
+MCQ,28,Water resources are important for,Life only,Agriculture only,Industry only,All human activities,All human activities
+MCQ,29,Which river project is called temple of modern India?,Bhakra Nangal,Hirakud,Damodar Valley,Tehri,Bhakra Nangal
+MCQ,30,Which problem is caused by dams?,Flood control,Hydel power,Ecological imbalance,Irrigation,Ecological imbalance
+MCQ,31,Which region practices rooftop rainwater harvesting?,Thar Desert,Western Ghats,Plains,Himalayas,Thar Desert
+MCQ,32,Which factor increases water demand?,Population growth,Afforestation,Conservation,Rainfall,Population growth
+MCQ,33,Which activity depletes groundwater?,Rainwater harvesting,Afforestation,Tube wells,Contour ploughing,Tube wells
+MCQ,34,Which river basin project was built to control floods?,Bhakra Nangal,Damodar Valley,Hirakud,Tehri,Damodar Valley
+MCQ,35,Which dam displaced the largest number of people?,Tehri,Hirakud,Bhakra Nangal,Sardar Sarovar,Sardar Sarovar
+MCQ,36,Which water conservation method stores rainwater?,Canals,Harvesting,Dams,Tubewells,Harvesting
+MCQ,37,Water cycle includes evaporation, condensation and,Precipitation,Runoff,Infiltration,Storage,Precipitation
+MCQ,38,Which sector demands water for cooling?,Agriculture,Domestic,Industry,Transport,Industry
+MCQ,39,Which traditional structure stored drinking water?,Tankas,Canals,Dams,Reservoirs,Tankas
+MCQ,40,Which movement supported water conservation?,Narmada Bachao,Chipko,Green Revolution,Both A and B,Both A and B
+MCQ,41,Which river project is on river Krishna?,Bhakra,Hirakud,Nagarjuna Sagar,Tehri,Nagarjuna Sagar
+MCQ,42,The main cause of water scarcity in cities is,Low rainfall,Overpopulation,Pollution only,Forests,Overpopulation
+MCQ,43,Which technique reduces water wastage?,Flood irrigation,Drip irrigation,Canal irrigation,Tank irrigation,Drip irrigation
+MCQ,44,Which area suffers from waterlogging?,Arid areas,Irrigated plains,Hilly areas,Plateau,Irrigated plains
+MCQ,45,Which state has maximum rainwater harvesting tradition?,Rajasthan,Assam,Punjab,Kerala,Rajasthan
+MCQ,46,Water resources should be used,Sustainably,Excessively,Carelessly,Commercially,Sustainably
+MCQ,47,Which dam is built on river Mahanadi?,Hirakud,Bhakra,Tehri,Nagarjuna Sagar,Hirakud
+MCQ,48,Which activity helps water conservation?,Deforestation,Rainwater harvesting,Overuse,Pollution,Rainwater harvesting
+MCQ,49,Which factor affects water availability?,Relief,Climate,Population,All of these,All of these
+MCQ,50,The main aim of water management is,Sustainable use,Maximum use,Industrial growth,Urbanisation,Sustainable use
+
+Integer,1,Main source of freshwater?,Rivers,,,,
+Integer,2,Traditional structure in Rajasthan?,Tankas,,,,
+Integer,3,Leader of water movement?,Rajendra Singh,,,,
+Integer,4,Dam on Narmada river?,Sardar Sarovar,,,,
+Integer,5,Method to recharge groundwater?,Rainwater harvesting,,,,
+Integer,6,Movement opposing dams?,Narmada Bachao,,,,
+Integer,7,Maximum water using sector?,Agriculture,,,,
+Integer,8,State facing water scarcity?,Rajasthan,,,,
+Integer,9,Traditional system in Meghalaya?,Bamboo drip irrigation,,,,
+Integer,10,Traditional tanks in Tamil Nadu?,Eris,,,,
+Integer,11,First multipurpose project?,Damodar Valley,,,,
+Integer,12,River of sorrow?,Kosi,,,,
+Integer,13,Dam on Sutlej?,Bhakra Nangal,,,,
+Integer,14,Dam on Bhagirathi?,Tehri,,,,
+Integer,15,Process bringing rain?,Precipitation,,,,
+Integer,16,Over-irrigation causes?,Waterlogging,,,,
+Integer,17,Technique saving water?,Drip irrigation,,,,
+Integer,18,Water scarcity caused by?,Overuse,,,,
+Integer,19,Structure storing drinking water?,Tankas,,,,
+Integer,20,River of Hirakud Dam?,Mahanadi,,,,
+Integer,21,Water cycle stage?,Evaporation,,,,
+Integer,22,Movement leader Narmada?,Medha Patkar,,,,
+Integer,23,Traditional harvesting in desert?,Rooftop harvesting,,,,
+Integer,24,Dam called temple of modern India?,Bhakra Nangal,,,,
+Integer,25,Main aim of dams?,Multiple uses,,,,
+Integer,26,Technique reducing runoff?,Harvesting,,,,
+Integer,27,Region of inundation canals?,Northern plains,,,,
+Integer,28,Water used for cooling?,Industry,,,,
+Integer,29,Cause of groundwater depletion?,Tube wells,,,,
+Integer,30,Water conservation needed?,Yes,,,,
+Integer,31,Harvesting stores?,Rainwater,,,,
+Integer,32,River project on Krishna?,Nagarjuna Sagar,,,,
+Integer,33,Problem due to dams?,Displacement,,,,
+Integer,34,Area with waterlogging?,Irrigated plains,,,,
+Integer,35,Traditional johads region?,Rajasthan,,,,
+Integer,36,Water used for crops?,Irrigation,,,,
+Integer,37,Scarcity affects?,Development,,,,
+Integer,38,Water management aim?,Sustainability,,,,
+Integer,39,Population increases?,Demand,,,,
+Integer,40,Water source polluted?,Rivers,,,,
+Integer,41,Technique harvesting roof water?,Rooftop harvesting,,,,
+Integer,42,Multipurpose dam benefit?,Power,,,,
+Integer,43,River linked with floods Bihar?,Kosi,,,,
+Integer,44,Water harvesting prevents?,Scarcity,,,,
+Integer,45,Excess irrigation causes?,Salinity,,,,
+Integer,46,Conservation movement?,Narmada Bachao,,,,
+Integer,47,Water availability depends on?,Rainfall,,,,
+Integer,48,Traditional storage?,Johads,,,,
+Integer,49,Main theme?,Water conservation,,,,
+Integer,50,Chapter focus?,Water resources,,,,
+
+Descriptive,1,What are water resources?,,,,,Water resources include rivers, lakes, groundwater and rainwater
+Descriptive,2,Explain the importance of water.,,,,,Water is essential for life and development
+Descriptive,3,Describe the water cycle.,,,,,Continuous circulation of water on earth
+Descriptive,4,What is water scarcity?,,,,,Shortage of water availability
+Descriptive,5,Causes of water scarcity.,,,,,Overuse, population growth, pollution
+Descriptive,6,Explain traditional water harvesting.,,,,,Methods to store rainwater
+Descriptive,7,Describe tankas.,,,,,Underground water storage structures
+Descriptive,8,Explain johads.,,,,,Earthen check dams
+Descriptive,9,What is bamboo drip irrigation?,,,,,Traditional system in Meghalaya
+Descriptive,10,Explain multi-purpose river projects.,,,,,Projects serving multiple needs
+Descriptive,11,Advantages of dams.,,,,,Irrigation, power, flood control
+Descriptive,12,Disadvantages of dams.,,,,,Displacement and ecological damage
+Descriptive,13,Explain Narmada Bachao Andolan.,,,,,Movement opposing big dams
+Descriptive,14,Describe Bhakra Nangal Project.,,,,,Multipurpose dam on Sutlej
+Descriptive,15,Explain Hirakud Dam.,,,,,Dam on Mahanadi
+Descriptive,16,What is rainwater harvesting?,,,,,Collection of rainwater
+Descriptive,17,Explain rooftop rainwater harvesting.,,,,,Collecting roof runoff
+Descriptive,18,Why conserve water?,,,,,For future sustainability
+Descriptive,19,Explain groundwater depletion.,,,,,Over-extraction of groundwater
+Descriptive,20,Describe water management.,,,,,Planned use of water
+Descriptive,21,Explain irrigation methods.,,,,,Drip, canal, tube well
+Descriptive,22,Impact of over-irrigation.,,,,,Waterlogging and salinity
+Descriptive,23,Role of dams in development.,,,,,Support agriculture and power
+Descriptive,24,Why large dams are controversial?,,,,,Social and environmental issues
+Descriptive,25,Explain water conservation measures.,,,,,Harvesting and efficient use
+Descriptive,26,Describe water use in agriculture.,,,,,Largest consumer of water
+Descriptive,27,Explain industrial water use.,,,,,Cooling and processing
+Descriptive,28,Explain domestic water use.,,,,,Drinking and sanitation
+Descriptive,29,Explain role of community in conservation.,,,,,Public participation
+Descriptive,30,Describe traditional systems of Tamil Nadu.,,,,,Eris tanks
+Descriptive,31,Explain water scarcity in Rajasthan.,,,,,Low rainfall and overuse
+Descriptive,32,Describe Damodar Valley Project.,,,,,Flood control project
+Descriptive,33,Explain the term sustainable water use.,,,,,Use without depletion
+Descriptive,34,Describe impact of population on water.,,,,,Increases demand
+Descriptive,35,Explain causes of floods.,,,,,Excess rainfall and dams
+Descriptive,36,Describe the importance of rainwater harvesting.,,,,,Recharges groundwater
+Descriptive,37,Explain river interlinking.,,,,,Connecting river basins
+Descriptive,38,Explain water pollution.,,,,,Contamination of water
+Descriptive,39,Explain role of government.,,,,,Policies and projects
+Descriptive,40,Describe water resources of India.,,,,,Rivers, lakes, groundwater
+Descriptive,41,Explain ecological impact of dams.,,,,,Affects ecosystems
+Descriptive,42,Explain water conservation at home.,,,,,Saving and reuse
+Descriptive,43,Describe community water management.,,,,,Shared responsibility
+Descriptive,44,Explain role of NGOs.,,,,,Awareness and action
+Descriptive,45,Describe traditional knowledge systems.,,,,,Indigenous practices
+Descriptive,46,Explain need for water planning.,,,,,Balanced use
+Descriptive,47,Describe water crisis.,,,,,Severe scarcity
+Descriptive,48,Explain importance of rivers.,,,,,Support civilisation
+Descriptive,49,Explain future challenges of water.,,,,,Increasing scarcity
+Descriptive,50,Summarize Water Resources.,,,,,Chapter focuses on water conservation and management

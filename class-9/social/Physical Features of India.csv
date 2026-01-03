@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,How many major physical divisions does India have?,4,5,6,7,6
+MCQ,2,Which is the northernmost physical division?,Coastal Plains,Peninsular Plateau,Indian Desert,Himalayan Mountains,Himalayan Mountains
+MCQ,3,Which mountains are geologically young?,Aravallis,Himalayas,Nilgiris,Satpuras,Himalayas
+MCQ,4,The Himalayas were formed by?,Volcanic activity,Folding of crust,Weathering,Erosion,Folding of crust
+MCQ,5,Which range lies to the north of Great Himalayas?,Himachal,Himadri,Shiwalik,Trans-Himalaya,Trans-Himalaya
+MCQ,6,Which range is known as Himadri?,Greater Himalayas,Lesser Himalayas,Outer Himalayas,None,Greater Himalayas
+MCQ,7,Which range has highest peaks?,Shiwalik,Himachal,Himadri,None,Himadri
+MCQ,8,Which range is the southernmost?,Himadri,Himachal,Shiwalik,None,Shiwalik
+MCQ,9,Which plateau lies north of the plains?,Deccan Plateau,Central Highlands,Chotanagpur Plateau,None,Central Highlands
+MCQ,10,Which is the oldest landmass?,Himalayas,Peninsular Plateau,Plains,Desert,Peninsular Plateau
+MCQ,11,The Peninsular Plateau is composed of?,Sedimentary rocks,Igneous rocks,Metamorphic rocks,Old crystalline rocks,Old crystalline rocks
+MCQ,12,Which plateau lies in eastern India?,Malwa Plateau,Chotanagpur Plateau,Deccan Plateau,None,Chotanagpur Plateau
+MCQ,13,The Northern Plains are formed by?,Wind deposits,Glacial deposits,Alluvial deposits,Lava flows,Alluvial deposits
+MCQ,14,Which rivers formed Northern Plains?,Indus Ganga Brahmaputra,Narmada Tapi,None,None,Indus Ganga Brahmaputra
+MCQ,15,Which soil is found in Northern Plains?,Black soil,Laterite soil,Alluvial soil,Red soil,Alluvial soil
+MCQ,16,Which desert lies in western India?,Gobi,Thar,Kalahari,None,Thar
+MCQ,17,The Thar Desert lies to the?,East of Aravalli,West of Aravalli,North of Himalayas,None,West of Aravalli
+MCQ,18,Which river flows through Thar Desert?,Yamuna,Luni,Ganga,None,Luni
+MCQ,19,Which coastal plains lie on western side?,Eastern Coastal Plains,Western Coastal Plains,None,None,Western Coastal Plains
+MCQ,20,Which coastal plains are wider?,Eastern,Western,Both,None,Eastern
+MCQ,21,Which delta is largest?,Ganga delta,Mahanadi delta,Krishna delta,None,Ganga delta
+MCQ,22,Which islands are volcanic?,Lakshadweep,Andaman and Nicobar,None,None,Andaman and Nicobar
+MCQ,23,Lakshadweep islands are of?,Volcanic origin,Coral origin,Alluvial origin,None,Coral origin
+MCQ,24,Which is the highest peak in India?,Mount Everest,K2,Kanchenjunga,Nanda Devi,Kanchenjunga
+MCQ,25,Which plateau is rich in minerals?,Malwa,Chotanagpur,Deccan,None,Chotanagpur
+MCQ,26,Which physical division is flat and fertile?,Plateau,Plains,Mountains,Desert,Plains
+MCQ,27,Which river forms gorge?,Ganga,Brahmaputra,Narmada,None,Narmada
+MCQ,28,Which river flows in rift valley?,Yamuna,Narmada,Ganga,None,Narmada
+MCQ,29,Which plain is most densely populated?,Coastal Plains,Northern Plains,Desert,None,Northern Plains
+MCQ,30,Which hills are in south India?,Aravalli,Western Ghats,Shiwalik,None,Western Ghats
+MCQ,31,The Western Ghats are also called?,Nilgiris,Sahyadris,Cardamom Hills,None,Sahyadris
+MCQ,32,Which plateau is triangular in shape?,Chotanagpur,Deccan,Malwa,None,Deccan
+MCQ,33,Which coast has lagoons?,Eastern,Western,Both,None,Western
+MCQ,34,Which physical feature protects India from cold winds?,Plains,Plateau,Himalayas,None,Himalayas
+MCQ,35,Which area has sparse vegetation?,Plains,Plateau,Desert,None,Desert
+MCQ,36,Which plateau is lava formed?,Malwa,Deccan,Chotanagpur,None,Deccan
+MCQ,37,Which river is longest in Northern Plains?,Yamuna,Ganga,Indus,None,Ganga
+MCQ,38,Which coast has deltas?,Western,Eastern,Both,None,Eastern
+MCQ,39,Which region is called storehouse of minerals?,Northern Plains,Peninsular Plateau,Desert,None,Peninsular Plateau
+MCQ,40,Which river forms Sundarbans delta?,Ganga,Yamuna,Brahmaputra,None,Ganga
+MCQ,41,Which island group lies in Arabian Sea?,Andaman,Lakshadweep,None,None,Lakshadweep
+MCQ,42,Which physical feature is most rugged?,Plains,Plateau,Mountains,None,Mountains
+MCQ,43,Which plains are divided into Bhabar and Terai?,Coastal Plains,Northern Plains,None,None,Northern Plains
+MCQ,44,Which hills are in northeast India?,Western Ghats,Purvanchal,None,None,Purvanchal
+MCQ,45,Which region receives highest rainfall?,Desert,Plains,Western Ghats,None,Western Ghats
+MCQ,46,Which plateau is surrounded by plains?,Chotanagpur,Malwa,Deccan,None,Deccan
+MCQ,47,Which soil dominates Peninsular Plateau?,Alluvial,Black,Laterite,None,Black
+MCQ,48,Which region has coral reefs?,Andaman,Lakshadweep,None,None,Lakshadweep
+MCQ,49,Which feature lies between Himalayas and Plateau?,Plains,Desert,None,None,Plains
+MCQ,50,Which is a fold mountain?,Aravalli,Himalayas,Nilgiris,None,Himalayas
+
+Integer,1,Number of physical divisions?,6,,,,
+Integer,2,Northern mountain range?,Himalayas,,,,
+Integer,3,Young fold mountains?,Himalayas,,,,
+Integer,4,Oldest landmass?,Peninsular Plateau,,,,
+Integer,5,Highest Himalayan range?,Himadri,,,,
+Integer,6,Southernmost Himalayan range?,Shiwalik,,,,
+Integer,7,Highest peak in India?,Kanchenjunga,,,,
+Integer,8,Longest river of plains?,Ganga,,,,
+Integer,9,Type of soil in plains?,Alluvial,,,,
+Integer,10,Desert in India?,Thar,,,,
+Integer,11,River in desert?,Luni,,,,
+Integer,12,Flat fertile land?,Plains,,,,
+Integer,13,Plateau rich in minerals?,Chotanagpur,,,,
+Integer,14,Triangular plateau?,Deccan,,,,
+Integer,15,Western Ghats also called?,Sahyadris,,,,
+Integer,16,Island group coral origin?,Lakshadweep,,,,
+Integer,17,Island group volcanic?,Andaman and Nicobar,,,,
+Integer,18,Coast with lagoons?,Western,,,,
+Integer,19,Coast with deltas?,Eastern,,,,
+Integer,20,Major river forming delta?,Ganga,,,,
+Integer,21,Plateau lava formed?,Deccan,,,,
+Integer,22,Plains divided into?,Bhabar Terai,,,,
+Integer,23,Mountain protecting India?,Himalayas,,,,
+Integer,24,Most populated region?,Northern Plains,,,,
+Integer,25,River in rift valley?,Narmada,,,,
+Integer,26,Gorge forming river?,Narmada,,,,
+Integer,27,Soil in plateau?,Black,,,,
+Integer,28,Hills in south?,Western Ghats,,,,
+Integer,29,Hills in northeast?,Purvanchal,,,,
+Integer,30,Region of sparse vegetation?,Desert,,,,
+Integer,31,Storehouse of minerals?,Peninsular Plateau,,,,
+Integer,32,Delta largest?,Ganga,,,,
+Integer,33,River forming Sundarbans?,Ganga,,,,
+Integer,34,Old mountain range?,Aravalli,,,,
+Integer,35,Alluvial soil region?,Plains,,,,
+Integer,36,Western coastal plains are?,Narrow,,,,
+Integer,37,Eastern coastal plains are?,Wide,,,,
+Integer,38,Highest rainfall region?,Western Ghats,,,,
+Integer,39,Central highlands part of?,Plateau,,,,
+Integer,40,Volcanic islands?,Andaman,,,,
+Integer,41,Coral islands?,Lakshadweep,,,,
+Integer,42,Desert west of?,Aravalli,,,,
+Integer,43,Plains formed by rivers?,Indus Ganga Brahmaputra,,,,
+Integer,44,Major physical barrier?,Himalayas,,,,
+Integer,45,Plateau shape?,Triangular,,,,
+Integer,46,Physical feature between mountains and plateau?,Plains,,,,
+Integer,47,Youngest landform?,Himalayas,,,,
+Integer,48,Region of agriculture?,Plains,,,,
+Integer,49,Highest mountains?,Himalayas,,,,
+Integer,50,Rock type of plateau?,Crystalline,,,,
+
+Descriptive,1,Name the major physical divisions of India.,,,,,Himalayas Plains Plateau Desert Coastal Plains Islands
+Descriptive,2,Describe the Himalayas.,,,,,Young fold mountains in the north
+Descriptive,3,Explain the three Himalayan ranges.,,,,,Himadri Himachal Shiwalik
+Descriptive,4,Importance of Himalayas.,,,,,Climate barrier rivers protection
+Descriptive,5,What are Northern Plains?,,,,,Alluvial plains formed by rivers
+Descriptive,6,Formation of Northern Plains.,,,,,Deposition by rivers
+Descriptive,7,Subdivisions of Northern Plains.,,,,,Bhabar Terai Bhangar Khadar
+Descriptive,8,Describe the Peninsular Plateau.,,,,,Old crystalline plateau
+Descriptive,9,Why plateau is rich in minerals?,,,,,Igneous rocks
+Descriptive,10,Explain Central Highlands.,,,,,Northern part of plateau
+Descriptive,11,Explain Deccan Plateau.,,,,,Southern triangular plateau
+Descriptive,12,What are Western Ghats?,,,,,Mountain range along west coast
+Descriptive,13,What are Eastern Ghats?,,,,,Discontinuous hills on east
+Descriptive,14,Describe the Indian Desert.,,,,,Hot dry sandy region
+Descriptive,15,Why vegetation sparse in desert?,,,,,Low rainfall
+Descriptive,16,Describe Coastal Plains.,,,,,Narrow western wide eastern
+Descriptive,17,Western Coastal Plains.,,,,,Narrow lagoons estuaries
+Descriptive,18,Eastern Coastal Plains.,,,,,Wide deltas
+Descriptive,19,Describe Andaman and Nicobar Islands.,,,,,Volcanic islands in Bay of Bengal
+Descriptive,20,Describe Lakshadweep Islands.,,,,,Coral islands in Arabian Sea
+Descriptive,21,Importance of plains.,,,,,Agriculture settlement
+Descriptive,22,Importance of plateau.,,,,,Minerals industries
+Descriptive,23,Importance of mountains.,,,,,Climate rivers defense
+Descriptive,24,Importance of coastal plains.,,,,,Ports trade
+Descriptive,25,What are islands?,,,,,Land surrounded by water
+Descriptive,26,Why Himalayas are young?,,,,,Recently folded
+Descriptive,27,Explain river systems of plains.,,,,,Indus Ganga Brahmaputra
+Descriptive,28,Why Peninsular Plateau is oldest?,,,,,Stable landmass
+Descriptive,29,Describe Aravalli range.,,,,,Old fold mountains
+Descriptive,30,Explain Chotanagpur Plateau.,,,,,Mineral rich region
+Descriptive,31,What is a delta?,,,,,River deposit at mouth
+Descriptive,32,Why eastern coast has deltas?,,,,,Rivers deposit silt
+Descriptive,33,Why western coast has estuaries?,,,,,Fast flowing rivers
+Descriptive,34,What is a lagoon?,,,,,Shallow coastal water body
+Descriptive,35,Explain Bhabar region.,,,,,Pebble deposition zone
+Descriptive,36,Explain Terai region.,,,,,Marshy fertile belt
+Descriptive,37,Explain Bhangar.,,,,,Old alluvial soil
+Descriptive,38,Explain Khadar.,,,,,New alluvial soil
+Descriptive,39,Why Northern Plains fertile?,,,,,Alluvial soil
+Descriptive,40,Why Himalayas block cold winds?,,,,,High altitude barrier
+Descriptive,41,Why Deccan Plateau slopes east?,,,,,Rivers flow east
+Descriptive,42,What is rift valley?,,,,,Crack in earth crust
+Descriptive,43,Which rivers flow west?,,,,,Narmada Tapi
+Descriptive,44,Why coastal plains important?,,,,,Trade fisheries
+Descriptive,45,How physical features affect life?,,,,,Occupation settlement climate
+Descriptive,46,Why desert has sand dunes?,,,,,Wind action
+Descriptive,47,What are Purvanchal hills?,,,,,Eastern Himalayan extension
+Descriptive,48,How islands formed?,,,,,Volcanic and coral
+Descriptive,49,Why geography important?,,,,,Resource distribution
+Descriptive,50,Summarise physical features of India.,,,,,Diverse landforms supporting life

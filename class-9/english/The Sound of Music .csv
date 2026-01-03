@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of "The Sound of Music"?,Isaac Asimov,Deborah Cowley,Deborah Cowley & Selma Lagerlöf,Ruskin Bond,Deborah Cowley
+MCQ,2,The Sound of Music has how many parts?,One,Two,Three,Four,Two
+MCQ,3,Who is the protagonist of Part I?,Evelyn Glennie,Bismillah Khan,Ustad Amjad Ali Khan,Pandit Ravi Shankar,Evelyn Glennie
+MCQ,4,Evelyn Glennie was famous for playing which instrument?,Violin,Piano,Percussion,Flute,Percussion
+MCQ,5,At what age did Evelyn lose her hearing?,8,10,11,12,11
+MCQ,6,What was the cause of Evelyn’s deafness?,Accident,Infection,Nerve damage,Birth defect,Nerve damage
+MCQ,7,Who motivated Evelyn to sense music differently?,Her mother,Her father,Ron Forbes,Her teacher,Ron Forbes
+MCQ,8,How did Evelyn feel vibrations?,Through ears,Through eyes,Through body,Through instruments,Through body
+MCQ,9,Evelyn gave her first solo performance at age,14,15,16,17,16
+MCQ,10,Evelyn received which award?,Grammy,Bharat Ratna,Royal Academy award,Padma Bhushan,Padma Bhushan
+MCQ,11,Part II of the chapter is about?,Evelyn Glennie,Bismillah Khan,Ravi Shankar,Zakir Hussain,Bismillah Khan
+MCQ,12,Bismillah Khan was associated with which instrument?,Tabla,Flute,Shehnai,Sitar,Shehnai
+MCQ,13,Bismillah Khan was born in?,Patna,Dumraon,Varanasi,Delhi,Dumraon
+MCQ,14,Bismillah Khan belonged to which state?,Uttar Pradesh,Bihar,West Bengal,Rajasthan,Bihar
+MCQ,15,Which river did Bismillah Khan love?,Yamuna,Ganga,Brahmaputra,Godavari,Ganga
+MCQ,16,Who introduced shehnai in the royal court?,Ustad Bismillah Khan,Ali Bux,Amjad Ali Khan,Alla Rakha,Ali Bux
+MCQ,17,Bismillah Khan gave first major performance at age,14,16,18,20,14
+MCQ,18,Which event made shehnai famous worldwide?,Concerts,Radio,Independence Day broadcast,Films,Independence Day broadcast
+MCQ,19,Bismillah Khan played shehnai on 15 August 1947 at?,Delhi Gate,India Gate,Red Fort,Rashtrapati Bhavan,Red Fort
+MCQ,20,Which award was refused by Bismillah Khan?,Padma Shri,Bharat Ratna,Padma Bhushan,Padma Vibhushan,Bharat Ratna
+MCQ,21,Which award did Bismillah Khan receive?,Padma Bhushan,Bharat Ratna,Grammy,Oscar,Bharat Ratna
+MCQ,22,Bismillah Khan believed music was a gift of?,Humans,God,Nature,Practice,God
+MCQ,23,Why did Bismillah Khan refuse to settle abroad?,Language barrier,Food issues,Love for India,No money,Love for India
+MCQ,24,Shehnai is usually played on?,Weddings,Festivals,Temples,All occasions,All occasions
+MCQ,25,Shehnai evolved from which instrument?,Pungi,Flute,Trumpet,Drum,Pungi
+MCQ,26,What quality made Evelyn successful?,Luck,Confidence,Hard work,Intelligence,Hard work
+MCQ,27,Evelyn inspired people by?,Speech,Music,Books,Films,Music
+MCQ,28,Bismillah Khan was deeply attached to?,Mumbai,Delhi,Varanasi,Kolkata,Varanasi
+MCQ,29,Which media helped popularise shehnai?,TV,Films,Radio,Newspapers,Radio
+MCQ,30,Which theme is common in both parts?,Fame,Money,Perseverance,Travel,Perseverance
+MCQ,31,Evelyn studied at which academy?,Royal Academy of Music,Juilliard,Trinity College,Oxford,Royal Academy of Music
+MCQ,32,Evelyn was sensitive to vibrations through?,Hands and legs,Feet and hands,Ears only,Instruments only,Feet and hands
+MCQ,33,Bismillah Khan performed in which country?,USA,UK,Iran,All of these,All of these
+MCQ,34,Which city is famous for shehnai?,Patna,Dumraon,Varanasi,Delhi,Varanasi
+MCQ,35,Evelyn proved disability is?,Weakness,Barrier,Challenge not limitation,Failure,Challenge not limitation
+MCQ,36,Bismillah Khan considered music as?,Career,Devotion,Business,Hobby,Devotion
+MCQ,37,Evelyn listened to music through?,Ears,Body vibrations,Instruments only,Technology,Body vibrations
+MCQ,38,Bismillah Khan learnt music from?,Ali Bux,His father,Radio,Self practice,Ali Bux
+MCQ,39,Which honour is highest?,Padma Shri,Padma Bhushan,Padma Vibhushan,Bharat Ratna,Bharat Ratna
+MCQ,40,Which quality describes Bismillah Khan?,Greedy,Humble,Arrogant,Lazy,Humble
+MCQ,41,Which festival did Bismillah Khan perform at temples?,Diwali,Holi,Ganga festival,Id,Holi
+MCQ,42,Evelyn travelled worldwide for?,Education,Music performances,Tourism,Teaching,Music performances
+MCQ,43,The chapter teaches lesson of?,Talent only,Hard work and devotion,Money,Fame,Hard work and devotion
+MCQ,44,Bismillah Khan believed music brought?,Fame,Money,Spirituality,Competition,Spirituality
+MCQ,45,Evelyn’s story inspires?,Musicians only,Disabled people,Everyone,Students only,Everyone
+MCQ,46,Which language did Bismillah Khan prefer?,English,Hindi,Urdu,Bhojpuri,Bhojpuri
+MCQ,47,Shehnai is associated with?,Sadness,Auspicious occasions,Wars,Folk dance,Auspicious occasions
+MCQ,48,Evelyn overcame deafness by?,Technology,Practice,Feeling vibrations,Teachers,Feeling vibrations
+MCQ,49,Which city was Bismillah Khan’s soul?,Patna,Delhi,Mumbai,Varanasi,Varanasi
+MCQ,50,Central idea of chapter?,Music fame,Success stories,Power of music and dedication,History of music,Power of music and dedication
+
+Integer,1,Author?,Deborah Cowley,,,,
+Integer,2,Parts in chapter?,Two,,,,
+Integer,3,Part I artist?,Evelyn Glennie,,,,
+Integer,4,Part II artist?,Bismillah Khan,,,,
+Integer,5,Evelyn instrument?,Percussion,,,,
+Integer,6,Bismillah instrument?,Shehnai,,,,
+Integer,7,Evelyn hearing loss age?,11,,,,
+Integer,8,Bismillah birth place?,Dumraon,,,,
+Integer,9,Bismillah city love?,Varanasi,,,,
+Integer,10,River loved?,Ganga,,,,
+Integer,11,Evelyn mentor?,Ron Forbes,,,,
+Integer,12,Shehnai origin?,Pungi,,,,
+Integer,13,First Red Fort performance?,1947,,,,
+Integer,14,Bismillah award?,Bharat Ratna,,,,
+Integer,15,Evelyn academy?,Royal Academy,,,,
+Integer,16,Bismillah teacher?,Ali Bux,,,,
+Integer,17,Evelyn first solo age?,16,,,,
+Integer,18,Shehnai popularised by?,Radio,,,,
+Integer,19,Evelyn sense?,Vibrations,,,,
+Integer,20,Bismillah refused?,Foreign stay,,,,
+Integer,21,Theme?,Perseverance,,,,
+Integer,22,Evelyn disability?,Deafness,,,,
+Integer,23,Bismillah music belief?,Devotion,,,,
+Integer,24,Evelyn success factor?,Hard work,,,,
+Integer,25,Bismillah humility?,Yes,,,,
+Integer,26,Music language?,Universal,,,,
+Integer,27,Evelyn inspiration?,Disabled people,,,,
+Integer,28,Bismillah nationality?,Indian,,,,
+Integer,29,Evelyn travelled?,Worldwide,,,,
+Integer,30,Shehnai occasions?,Auspicious,,,,
+Integer,31,Bismillah honour?,Padma awards,,,,
+Integer,32,Evelyn vibration sense?,Feet,,,,
+Integer,33,Bismillah performance place?,Temples,,,,
+Integer,34,Evelyn message?,Never give up,,,,
+Integer,35,Bismillah faith?,God,,,,
+Integer,36,Evelyn childhood?,Struggle,,,,
+Integer,37,Bismillah festival?,Holi,,,,
+Integer,38,Evelyn listening method?,Touch,,,,
+Integer,39,Chapter theme?,Music,,,,
+Integer,40,Bismillah nature?,Humble,,,,
+Integer,41,Evelyn inspiration source?,Teacher,,,,
+Integer,42,Shehnai usage?,Weddings,,,,
+Integer,43,Bismillah lifetime?,Long,,,,
+Integer,44,Evelyn nationality?,Scottish,,,,
+Integer,45,Bismillah performance year?,1947,,,,
+Integer,46,Evelyn dedication?,Strong,,,,
+Integer,47,Bismillah legacy?,Shehnai,,,,
+Integer,48,Evelyn limitation?,Deaf,,,,
+Integer,49,Music impact?,Motivation,,,,
+Integer,50,Chapter name?,The Sound of Music,,,,
+
+Descriptive,1,Who was Evelyn Glennie?,,,,,She was a deaf percussionist who achieved global fame
+Descriptive,2,How did Evelyn lose her hearing?,,,,,Due to nerve damage
+Descriptive,3,Who helped Evelyn sense music?,,,,,Ron Forbes guided her
+Descriptive,4,How did Evelyn feel music?,,,,,Through vibrations in her body
+Descriptive,5,Why is Evelyn an inspiration?,,,,,She overcame disability with hard work
+Descriptive,6,What message does Evelyn’s story give?,,,,,Disability is not inability
+Descriptive,7,Who was Bismillah Khan?,,,,,A great shehnai maestro
+Descriptive,8,Where was Bismillah Khan born?,,,,,He was born in Dumraon
+Descriptive,9,What instrument did Bismillah Khan play?,,,,,He played the shehnai
+Descriptive,10,Who taught Bismillah Khan?,,,,,His uncle Ali Bux
+Descriptive,11,Why is shehnai important?,,,,,It is played on auspicious occasions
+Descriptive,12,How did shehnai gain recognition?,,,,,Through radio and Red Fort performance
+Descriptive,13,Why did Bismillah Khan refuse foreign offers?,,,,,Due to love for India
+Descriptive,14,What awards did Bismillah Khan receive?,,,,,Padma awards and Bharat Ratna
+Descriptive,15,What role did Ganga play?,,,,,It inspired Bismillah Khan
+Descriptive,16,Explain Evelyn’s struggle.,,,,,She overcame deafness with determination
+Descriptive,17,Explain Bismillah Khan’s devotion to music.,,,,,He considered music a form of worship
+Descriptive,18,What is the theme of the chapter?,,,,,Power of music and perseverance
+Descriptive,19,How is music universal?,,,,,It transcends language and barriers
+Descriptive,20,Compare Evelyn and Bismillah Khan.,,,,,Both showed dedication and passion
+Descriptive,21,What makes Evelyn’s success remarkable?,,,,,Her disability did not stop her
+Descriptive,22,What values does the chapter teach?,,,,,Hard work, humility and devotion
+Descriptive,23,Why is Bismillah Khan remembered?,,,,,For popularising shehnai
+Descriptive,24,How did radio help Indian music?,,,,,It spread classical music
+Descriptive,25,Why is perseverance important?,,,,,It leads to success
+Descriptive,26,What challenges did Evelyn face?,,,,,Deafness and training difficulties
+Descriptive,27,How did Evelyn inspire others?,,,,,By performing worldwide
+Descriptive,28,What does Bismillah Khan’s life show?,,,,,Love for culture and nation
+Descriptive,29,How did Evelyn train herself?,,,,,By sensing vibrations
+Descriptive,30,Why is humility important?,,,,,It keeps artists grounded
+Descriptive,31,Explain role of teacher in Evelyn’s life.,,,,,Ron Forbes shaped her career
+Descriptive,32,Explain cultural value of shehnai.,,,,,Symbol of celebration
+Descriptive,33,Why is music considered divine?,,,,,It connects to spirituality
+Descriptive,34,What lesson does Bismillah Khan teach?,,,,,Stay rooted to culture
+Descriptive,35,How did Evelyn change perceptions?,,,,,Proved disabled can excel
+Descriptive,36,What is significance of Red Fort performance?,,,,,Symbol of national pride
+Descriptive,37,Why is the chapter inspiring?,,,,,It shows triumph over obstacles
+Descriptive,38,Explain title of the chapter.,,,,,Highlights impact of music
+Descriptive,39,How did Evelyn view her disability?,,,,,As a challenge not barrier
+Descriptive,40,Why is dedication important?,,,,,It ensures mastery
+Descriptive,41,Explain Bismillah Khan’s simplicity.,,,,,He lived a humble life
+Descriptive,42,How does music unite people?,,,,,Through emotions
+Descriptive,43,What hardships did Bismillah face?,,,,,Limited resources initially
+Descriptive,44,Why is cultural heritage important?,,,,,Preserves identity
+Descriptive,45,Explain Evelyn’s achievements.,,,,,Global performances and awards
+Descriptive,46,Explain importance of practice.,,,,,Leads to excellence
+Descriptive,47,What does the chapter say about success?,,,,,Success comes with effort
+Descriptive,48,Why should we respect artists?,,,,,They enrich culture
+Descriptive,49,How does the story motivate students?,,,,,Encourages perseverance
+Descriptive,50,Summarize "The Sound of Music".,,,,,The chapter celebrates music, dedication and triumph over adversity

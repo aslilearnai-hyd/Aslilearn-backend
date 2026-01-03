@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Statistics deals with?,Collection of data,Analysis of data,Interpretation of data,All of these,All of these
+MCQ,2,Raw data means?,Ungrouped data,Grouped data,Classified data,Tabulated data,Ungrouped data
+MCQ,3,Data arranged in ascending or descending order is called?,Grouped data,Raw data,Array,Frequency table,Array
+MCQ,4,The number of times a value occurs is called?,Class interval,Frequency,Range,Mean,Frequency
+MCQ,5,The difference between highest and lowest value is called?,Mean,Mode,Range,Median,Range
+MCQ,6,The middle value of data is called?,Mean,Median,Mode,Range,Median
+MCQ,7,The value which occurs most frequently is called?,Mean,Median,Mode,Range,Mode
+MCQ,8,Which measure is affected most by extreme values?,Mean,Median,Mode,None,Mean
+MCQ,9,Which measure is not affected by extreme values?,Mean,Median,Mode,Both B and C,Both B and C
+MCQ,10,Arithmetic mean is represented by?,x̄,m,μ,a,x̄
+MCQ,11,Mean of first 10 natural numbers is?,4.5,5,5.5,6,5.5
+MCQ,12,Median of 1,2,3,4,5 is?,2,3,4,5,3
+MCQ,13,Mode of 2,3,3,5,7 is?,2,3,5,7,3
+MCQ,14,If all observations are equal, mean is?,Greater,Smaller,Same,None,Same
+MCQ,15,Which data has no mode?,Uniform data,Grouped data,All values same,All values different,All values different
+MCQ,16,Mean of data depends on?,All values,Only middle value,Highest value,None,All values
+MCQ,17,Median divides data into?,Two equal parts,Three equal parts,Four equal parts,None,Two equal parts
+MCQ,18,Mode can be found graphically using?,Histogram,Ogive,Bar graph,Pie chart,Histogram
+MCQ,19,The total of frequencies is denoted by?,∑x,∑f,n,f,∑f
+MCQ,20,Mean formula is?,∑f/∑x,∑fx/∑f,∑x/n,x/n,∑fx/∑f
+MCQ,21,Range = ?,Highest value + Lowest value,Highest − Lowest,Mean − Mode,None,Highest − Lowest
+MCQ,22,Which measure is suitable for qualitative data?,Mean,Median,Mode,Range,Mode
+MCQ,23,Which measure is best for open-ended data?,Mean,Median,Mode,Range,Median
+MCQ,24,The average of observations is called?,Mean,Median,Mode,None,Mean
+MCQ,25,Which graph represents frequency distribution?,Histogram,Line graph,Pie chart,None,Histogram
+MCQ,26,Which measure always lies between highest and lowest value?,Mean,Median,Mode,All,All
+MCQ,27,Mean of even number of observations is?,Middle value,Average of two middle values,Highest value,None,Average of two middle values
+MCQ,28,Median of odd number of observations is?,Middle value,Average,Mode,None,Middle value
+MCQ,29,Mode is useful when data is?,Numerical,Qualitative,Grouped,None,Qualitative
+MCQ,30,Which measure can have more than one value?,Mean,Median,Mode,Range,Mode
+MCQ,31,Mean is calculated by?,Addition only,Division only,Addition and division,None,Addition and division
+MCQ,32,Which is positional average?,Mean,Median,Mode,Range,Median
+MCQ,33,Which is most stable measure?,Mean,Median,Mode,None,Mean
+MCQ,34,Which measure is easiest to calculate?,Mean,Median,Mode,Range,Mode
+MCQ,35,If frequency is zero, observation is?,Ignored,Counted twice,Highest,None,Ignored
+MCQ,36,Mean of data 2,4,6 is?,3,4,6,12,4
+MCQ,37,Median of data 5,8,9,12 is?,8,8.5,9,10,8.5
+MCQ,38,Mode of data 1,2,3,4 is?,1,2,3,None,None
+MCQ,39,Which measure uses all observations?,Mean,Median,Mode,None,Mean
+MCQ,40,Which is affected by frequency?,Mean,Median,Mode,All,All
+MCQ,41,Which measure is shown by highest bar in histogram?,Mean,Median,Mode,Range,Mode
+MCQ,42,Which data can be grouped?,Small data,Large data,Qualitative,None,Large data
+MCQ,43,Statistics helps in?,Decision making,Planning,Forecasting,All,All
+MCQ,44,Frequency table shows?,Observations only,Count only,Observations with count,None,Observations with count
+MCQ,45,Median of 3,7,9,11,13?,7,9,11,13,9
+MCQ,46,Mean of 1,1,1,1 is?,0,1,4,Depends,1
+MCQ,47,Mode of 5,5,6,6 is?,5,6,Both 5 and 6,None,Both 5 and 6
+MCQ,48,Range of 10,20,30 is?,10,20,30,40,20
+MCQ,49,Which measure best represents data?,Mean,Median,Mode,Depends,Depends
+MCQ,50,Statistics is useful in?,Maths only,Science only,Economics only,All fields,All fields
+
+Integer,1,What is the middle value called?,Median,,,,
+Integer,2,What is the most frequent value called?,Mode,,,,
+Integer,3,What is average called?,Mean,,,,
+Integer,4,Arrange data in order is called?,Array,,,,
+Integer,5,Difference between highest and lowest value?,Range,,,,
+Integer,6,Mean of 2,4,6?,4,,,,
+Integer,7,Median of 1,3,5?,3,,,,
+Integer,8,Mode of 1,2,2,3?,2,,,,
+Integer,9,Mean of 5,5,5?,5,,,,
+Integer,10,Median of 2,4,6,8?,5,,,,
+Integer,11,Range of 5,10,15?,10,,,,
+Integer,12,Total frequency is denoted by?,∑f,,,,
+Integer,13,Mean formula uses?,∑fx/∑f,,,,
+Integer,14,Which average uses position?,Median,,,,
+Integer,15,Which average uses frequency?,Mean,,,,
+Integer,16,Mean is affected by extreme values? (Yes/No),Yes,,,,
+Integer,17,Median is affected by extreme values? (Yes/No),No,,,,
+Integer,18,Mode is useful for qualitative data? (Yes/No),Yes,,,,
+Integer,19,Number of middle values in odd data?,1,,,,
+Integer,20,Number of middle values in even data?,2,,,,
+Integer,21,Median of 4,6,8?,6,,,,
+Integer,22,Mode of 3,3,3,4?,3,,,,
+Integer,23,Mean of 10,20?,15,,,,
+Integer,24,Range of 2,9?,7,,,,
+Integer,25,Mean of 1,2,3,4?,2.5,,,,
+Integer,26,Median of 1,2,3,4?,2.5,,,,
+Integer,27,Mode of 7,8,9?,No mode,,,,
+Integer,28,Mean of 6,8,10?,8,,,,
+Integer,29,Median of 5,7,9?,7,,,,
+Integer,30,Range of 12,18?,6,,,,
+Integer,31,Mean symbol?,x̄,,,,
+Integer,32,Median divides data into?,Two parts,,,,
+Integer,33,Mode may be more than one? (Yes/No),Yes,,,,
+Integer,34,Mean uses all values? (Yes/No),Yes,,,,
+Integer,35,Median depends on position? (Yes/No),Yes,,,,
+Integer,36,Statistics is branch of?,Mathematics,,,,
+Integer,37,Data arranged is?,Array,,,,
+Integer,38,Mean of 0,0,0?,0,,,,
+Integer,39,Mode of 2,2,2?,2,,,,
+Integer,40,Median of 1,1,2?,1,,,,
+Integer,41,Range of 100,150?,50,,,,
+Integer,42,Mean of 2,6?,4,,,,
+Integer,43,Median of 3,5,7,9?,6,,,,
+Integer,44,Mode of 1,2,3,1?,1,,,,
+Integer,45,Mean of 4 numbers sum 20?,5,,,,
+Integer,46,Median of 10,20,30?,20,,,,
+Integer,47,Range of 3,6,9?,6,,,,
+Integer,48,Mean of 1,3,5,7?,4,,,,
+Integer,49,Median of 8,10?,9,,,,
+Integer,50,Mode of 5,6,7?,No mode,,,,
+
+Problem,1,Find mean of 2,4,6,8.,,,,,5
+Problem,2,Find median of 3,7,9,11,13.,,,,,9
+Problem,3,Find mode of 1,2,2,3,4.,,,,,2
+Problem,4,Find range of 5,15,25.,,,,,20
+Problem,5,Find mean of 10,20,30.,,,,,20
+Problem,6,Find median of 2,4,6,8.,,,,,5
+Problem,7,Find mode of 3,3,5,7.,,,,,3
+Problem,8,Find mean of 1,1,1,1.,,,,,1
+Problem,9,Find range of 12,18.,,,,,6
+Problem,10,Find median of 1,3,5.,,,,,3
+Problem,11,Find mean of 4,6,8.,,,,,6
+Problem,12,Find mode of 5,6,7.,,,,,No mode
+Problem,13,Find range of 20,50.,,,,,30
+Problem,14,Find median of 6,10,14,18.,,,,,12
+Problem,15,Find mean of 2,3,4,5.,,,,,3.5
+Problem,16,Find mode of 1,1,2,2.,,,,,1 and 2
+Problem,17,Find range of 8,16,24.,,,,,16
+Problem,18,Find mean of 9,11.,,,,,10
+Problem,19,Find median of 4,5,6.,,,,,5
+Problem,20,Find mean of 5 numbers sum 50.,,,,,10
+Problem,21,Find range of 100,250.,,,,,150
+Problem,22,Find median of 7,9,11,13.,,,,,10
+Problem,23,Find mean of 3,6,9.,,,,,6
+Problem,24,Find mode of 4,4,4,5.,,,,,4
+Problem,25,Find range of 1,10.,,,,,9
+Problem,26,Find mean of 6,6,6.,,,,,6
+Problem,27,Find median of 2,5,8.,,,,,5
+Problem,28,Find mode of 9,10,11.,,,,,No mode
+Problem,29,Find range of 15,45.,,,,,30
+Problem,30,Find mean of 12,18.,,,,,15
+Problem,31,Find median of 10,20,30.,,,,,20
+Problem,32,Find mean of 1,4,7.,,,,,4
+Problem,33,Find mode of 6,6,7,8.,,,,,6
+Problem,34,Find range of 30,60.,,,,,30
+Problem,35,Find mean of 8,10,12.,,,,,10
+Problem,36,Find median of 3,5,7,9,11.,,,,,7
+Problem,37,Find mode of 2,3,2,4.,,,,,2
+Problem,38,Find range of 14,28.,,,,,14
+Problem,39,Find mean of 20,30.,,,,,25
+Problem,40,Find median of 5,10.,,,,,7.5
+Problem,41,Find mean of 4 numbers sum 40.,,,,,10
+Problem,42,Find range of 200,500.,,,,,300
+Problem,43,Find median of 6,8,10.,,,,,8
+Problem,44,Find mode of 1,2,3.,,,,,No mode
+Problem,45,Find mean of 2,8.,,,,,5
+Problem,46,Find median of 9,11,13,15.,,,,,12
+Problem,47,Find range of 7,21.,,,,,14
+Problem,48,Find mean of 5,10,15.,,,,,10
+Problem,49,Find median of 1,2.,,,,,1.5
+Problem,50,Find mode of 3,3,3.,,,,,3

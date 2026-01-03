@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of Fire and Ice?,Robert Frost,William Wordsworth,John Keats,Walt Whitman,Robert Frost
+MCQ,2,Fire and Ice is a,Story,Poem,Play,Essay,Poem
+MCQ,3,What does fire symbolize in the poem?,Love,Desire,Hatred,Cold,Desire
+MCQ,4,What does ice symbolize in the poem?,Anger,Desire,Hatred,Love,Hatred
+MCQ,5,The poem Fire and Ice is about,Seasons,End of the world,Nature,War,End of the world
+MCQ,6,According to the poet, some people believe the world will end in,Ice,Fire,Water,Air,Fire
+MCQ,7,Others believe the world will end in,Ice,Fire,Storm,Earthquake,Ice
+MCQ,8,Fire is compared with which human emotion?,Love,Desire,Hatred,Peace,Desire
+MCQ,9,Ice is compared with which human emotion?,Love,Jealousy,Hatred,Joy,Hatred
+MCQ,10,The poem is an example of,Optimism,Pessimism,Symbolism,Romanticism,Symbolism
+MCQ,11,How many lines are there in the poem?,6,8,9,10,9
+MCQ,12,Fire and Ice follows which rhyme scheme?,AABB,ABAABCBCB,ABAB,AAAA,ABAABCBCB
+MCQ,13,The poet agrees more with the idea of the world ending by,Ice,Fire,Both,None,Both
+MCQ,14,The poem highlights dangers of,Love and peace,Desire and hatred,War and peace,Nature and man,Desire and hatred
+MCQ,15,Which word shows strong desire?,Ice,Fire,Favor,Hate,Fire
+MCQ,16,Which word shows cold emotions?,Fire,Love,Ice,Joy,Ice
+MCQ,17,The tone of the poem is,Humorous,Serious,Playful,Sad,Serious
+MCQ,18,The poem Fire and Ice is a,Sonnet,Lyric,Ballad,Elegy,Lyric
+MCQ,19,The poet uses fire and ice as,Real elements,Symbols,Metaphors for seasons,Objects,Symbols
+MCQ,20,The poem warns against,Greed,Anger,Extreme emotions,Nature,Extreme emotions
+MCQ,21,Which human weakness is more destructive according to poet?,Love,Desire,Hatred,Kindness,Hatred
+MCQ,22,Fire represents excessive,Cold,Greed,Desire,Hatred,Desire
+MCQ,23,Ice represents lack of,Hatred,Emotion,Desire,Love,Emotion
+MCQ,24,The poem suggests that hatred is,Less dangerous,More dangerous,Harmless,Temporary,More dangerous
+MCQ,25,What will destroy the world according to poet?,Nature,Emotions,Fire only,Ice only,Emotions
+MCQ,26,The poet has experienced,Fire,Ice,Both fire and ice,None,Both fire and ice
+MCQ,27,The poem is short but,Complex,Simple,Confusing,Incomplete,Complex
+MCQ,28,Fire and Ice deals with,Human psychology,History,Geography,Science,Human psychology
+MCQ,29,The poem conveys a,Scientific fact,Moral lesson,Story,Nature scene,Moral lesson
+MCQ,30,The poem’s message is,Neutral emotions are safe,Extreme emotions destroy life,Love saves world,Hatred wins,Extreme emotions destroy life
+MCQ,31,The poet believes hatred can be equally,Powerful,Harmless,Destructive,Pleasant,Destructive
+MCQ,32,Which emotion cools relationships?,Love,Hatred,Joy,Desire,Hatred
+MCQ,33,Which emotion burns relationships?,Hatred,Desire,Peace,Calmness,Desire
+MCQ,34,The poem has a philosophical theme related to,Life and death,War,Seasons,Nature,Life and death
+MCQ,35,The ending of the poem is,Optimistic,Pessimistic,Neutral,Confusing,Serious
+MCQ,36,The poet supports the view that ice is sufficient to,Save the world,End the world,Freeze emotions,Cool fire,End the world
+MCQ,37,Fire and Ice was written by a poet from,England,America,India,France,America
+MCQ,38,The poem shows balance between,Fire and water,Fire and ice,Love and peace,Joy and sorrow,Fire and ice
+MCQ,39,The poet’s attitude is,Emotional,Logical,Reflective,Angry,Reflective
+MCQ,40,The poem uses which figure of speech mainly?,Simile,Symbolism,Alliteration,Personification,Symbolism
+MCQ,41,The poet believes desire is related to,Fire,Ice,Water,Wind,Fire
+MCQ,42,The poet believes hatred is related to,Fire,Ice,Air,Earth,Ice
+MCQ,43,The poem suggests that emotions can be,Harmless,Dangerous,Neutral,Pleasant,Dangerous
+MCQ,44,The poem is relevant because it reflects,Human emotions,Nature only,Seasons,Science,Human emotions
+MCQ,45,The poem is set in,City,Nature,Imaginary world,Universe,Imaginary world
+MCQ,46,Fire and Ice is a poem of,Love,Conflict,Warning,Nature,Warning
+MCQ,47,The poem’s message is universal because,Everyone feels emotions,Everyone loves fire,Everyone hates ice,Everyone studies poetry,Everyone feels emotions
+MCQ,48,The poet warns humanity against,Technology,Extreme emotions,War,Nature,Extreme emotions
+MCQ,49,The poem is written in,Complex language,Simple language,Technical language,Old English,Simple language
+MCQ,50,Fire and Ice ends with a tone of,Humour,Warning,Joy,Hope,Warning
+
+Integer,1,Name of the poet?,Robert Frost,,,,
+Integer,2,Poem title?,Fire and Ice,,,,
+Integer,3,Number of lines?,9,,,,
+Integer,4,Poem type?,Lyric,,,,
+Integer,5,Symbol of desire?,Fire,,,,
+Integer,6,Symbol of hatred?,Ice,,,,
+Integer,7,Theme of poem?,Destructive emotions,,,,
+Integer,8,Fire represents?,Desire,,,,
+Integer,9,Ice represents?,Hatred,,,,
+Integer,10,Poem language?,Simple,,,,
+Integer,11,Poet nationality?,American,,,,
+Integer,12,Poem tone?,Serious,,,,
+Integer,13,Main literary device?,Symbolism,,,,
+Integer,14,Rhyme scheme?,ABAABCBCB,,,,
+Integer,15,Poem length?,Short,,,,
+Integer,16,Poet supports end by?,Both fire and ice,,,,
+Integer,17,Emotion causing heat?,Desire,,,,
+Integer,18,Emotion causing cold?,Hatred,,,,
+Integer,19,Message of poem?,Extreme emotions destroy,,,,
+Integer,20,Fire is related to?,Burning desire,,,,
+Integer,21,Ice is related to?,Cold hatred,,,,
+Integer,22,Poem theme type?,Philosophical,,,,
+Integer,23,World destruction cause?,Emotions,,,,
+Integer,24,Poet experienced fire?,Yes,,,,
+Integer,25,Poet experienced ice?,Yes,,,,
+Integer,26,Poem ends with?,Warning,,,,
+Integer,27,Main contrast?,Fire vs Ice,,,,
+Integer,28,Poem’s idea source?,Human nature,,,,
+Integer,29,Extreme desire leads to?,Destruction,,,,
+Integer,30,Extreme hatred leads to?,Destruction,,,,
+Integer,31,Poem lesson?,Control emotions,,,,
+Integer,32,Fire is hot?,Yes,,,,
+Integer,33,Ice is cold?,Yes,,,,
+Integer,34,Poem relevance?,Timeless,,,,
+Integer,35,Emotion intensity shown?,Extreme,,,,
+Integer,36,Fire symbol nature?,Aggressive,,,,
+Integer,37,Ice symbol nature?,Passive,,,,
+Integer,38,Poem focus?,Human flaws,,,,
+Integer,39,Fire burns?,Relationships,,,,
+Integer,40,Ice freezes?,Relationships,,,,
+Integer,41,Poem type?,Didactic,,,,
+Integer,42,Fire equals?,Passion,,,,
+Integer,43,Ice equals?,Indifference,,,,
+Integer,44,Poem uses contrast?,Yes,,,,
+Integer,45,Poem impact?,Strong,,,,
+Integer,46,Poet warns?,Humanity,,,,
+Integer,47,Poem style?,Simple yet deep,,,,
+Integer,48,Fire causes?,Heat,,,,
+Integer,49,Ice causes?,Cold,,,,
+Integer,50,Overall mood?,Serious,,,,
+
+Descriptive,1,What is the central idea of the poem Fire and Ice?,,,,,Extreme human emotions can destroy the world
+Descriptive,2,Explain the symbolism of fire in the poem.,,,,,Fire symbolizes desire and passion
+Descriptive,3,Explain the symbolism of ice in the poem.,,,,,Ice symbolizes hatred and cold emotions
+Descriptive,4,What does the poet mean by the end of the world?,,,,,Destruction caused by emotions
+Descriptive,5,Why does the poet mention two beliefs?,,,,,To compare destructive emotions
+Descriptive,6,How is the poem a warning to mankind?,,,,,Against uncontrolled emotions
+Descriptive,7,Why is Fire and Ice a symbolic poem?,,,,,Elements represent emotions
+Descriptive,8,What message does the poem convey?,,,,,Extreme emotions are harmful
+Descriptive,9,How does Frost use simple language?,,,,,To convey deep meaning
+Descriptive,10,Why does the poet agree with both views?,,,,,Both emotions are destructive
+Descriptive,11,Explain the tone of the poem.,,,,,Serious and warning
+Descriptive,12,Why is hatred considered dangerous?,,,,,It freezes relationships
+Descriptive,13,How does desire destroy relationships?,,,,,By uncontrolled passion
+Descriptive,14,Explain the philosophical aspect of the poem.,,,,,Life destroyed by emotions
+Descriptive,15,Why is the poem relevant today?,,,,,Emotional conflicts still exist
+Descriptive,16,How does the poem reflect human psychology?,,,,,Shows emotional extremes
+Descriptive,17,Why is the poem short yet powerful?,,,,,Condensed message
+Descriptive,18,Explain the contrast used in the poem.,,,,,Fire vs Ice
+Descriptive,19,How does the poem warn against excess?,,,,,Extreme emotions destroy
+Descriptive,20,What literary device dominates the poem?,,,,,Symbolism
+Descriptive,21,Explain the poet’s view on desire.,,,,,It can destroy
+Descriptive,22,Explain the poet’s view on hatred.,,,,,Equally destructive
+Descriptive,23,How does Frost balance fire and ice?,,,,,Both are destructive
+Descriptive,24,Why does the poet use natural elements?,,,,,To explain emotions
+Descriptive,25,Explain the ending of the poem.,,,,,Warning to humanity
+Descriptive,26,How does the poem show moral teaching?,,,,,Control emotions
+Descriptive,27,What does the poem suggest about human behavior?,,,,,Emotions need control
+Descriptive,28,Explain the universal appeal of the poem.,,,,,Everyone has emotions
+Descriptive,29,How is Fire and Ice a didactic poem?,,,,,Teaches moral lesson
+Descriptive,30,Why does Frost prefer symbolism?,,,,,To express ideas effectively
+Descriptive,31,Explain the significance of rhyme scheme.,,,,,Enhances meaning
+Descriptive,32,How does the poem reflect inner conflicts?,,,,,Emotional struggle
+Descriptive,33,What lesson does the poem teach students?,,,,,Balance emotions
+Descriptive,34,Explain why ice is sufficient to end the world.,,,,,Hatred destroys slowly
+Descriptive,35,How does fire represent passion?,,,,,Burning desire
+Descriptive,36,How does ice represent indifference?,,,,,Cold emotions
+Descriptive,37,Why is the poem philosophical?,,,,,Deals with life and destruction
+Descriptive,38,Explain the poet’s attitude.,,,,,Thoughtful and reflective
+Descriptive,39,How does the poem remain timeless?,,,,,Human emotions never change
+Descriptive,40,Explain the importance of contrast.,,,,,Clarifies message
+Descriptive,41,Why does the poet use few words?,,,,,Strong impact
+Descriptive,42,How does Frost criticize human flaws?,,,,,Through symbolism
+Descriptive,43,Explain the moral of the poem.,,,,,Extreme emotions destroy life
+Descriptive,44,How does the poem reflect real life?,,,,,Emotions cause conflicts
+Descriptive,45,Explain the use of imagery.,,,,,Fire and ice imagery
+Descriptive,46,Why does the poem end abruptly?,,,,,Leaves strong message
+Descriptive,47,How does the poem inspire self-control?,,,,,Warns against excess
+Descriptive,48,Explain Frost’s writing style.,,,,,Simple yet deep
+Descriptive,49,What is the relevance of fire and ice today?,,,,,Modern emotional conflicts
+Descriptive,50,Summarize the poem Fire and Ice.,,,,,Poem warns against destructive emotions

@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,What does the term globalisation refer to?,Political unity,Economic integration,Cultural isolation,Military alliance,Economic integration
+MCQ,2,The Silk Routes connected,Asia with Europe,Asia with Africa,Europe with America,America with Africa,Asia with Europe
+MCQ,3,The Silk Routes existed since,6th century BCE,1st century CE,7th century CE,10th century CE,1st century CE
+MCQ,4,Which commodity was widely traded along the Silk Routes?,Spices,Silk,Gold,Cotton,Silk
+MCQ,5,Who introduced the concept of free trade?,Merchants,Economic historians,Industrialists,Economists,Economists
+MCQ,6,Which crop led to famine in Ireland?,Rice,Potato,Wheat,Maize,Potato
+MCQ,7,The Irish Potato Famine occurred during,1830s,1840s,1850s,1860s,1840s
+MCQ,8,Which continent supplied labour to plantations?,Asia,Africa,Europe,Australia,Africa
+MCQ,9,Indentured labourers were mainly sent to,Europe,America,Asia,Australia,America
+MCQ,10,The term indenture refers to,Agreement,Tax,Trade,Migration,Agreement
+MCQ,11,Which country industrialised first?,France,Germany,USA,Britain,Britain
+MCQ,12,Industrialisation led to,Global trade decline,Mass unemployment,Increased production,Isolation,Increased production
+MCQ,13,Which invention boosted global trade?,Steam engine,Spinning jenny,Telegraph,Telephone,Steam engine
+MCQ,14,Colonial powers exported raw materials from,Colonies,Europe,America,Asia,Colonies
+MCQ,15,Who controlled most colonies?,Asian countries,European powers,African kingdoms,American states,European powers
+MCQ,16,The Bretton Woods system was established in,1919,1929,1944,1947,1944
+MCQ,17,The World Bank was created to promote,Trade,Peace,Reconstruction,Colonialism,Reconstruction
+MCQ,18,Which war disrupted global trade severely?,World War I,Crimean War,Napoleonic Wars,Civil War,World War I
+MCQ,19,The Great Depression began in,1918,1929,1939,1945,1929
+MCQ,20,Which country was worst affected by the Great Depression?,USA,Germany,Britain,France,USA
+MCQ,21,The Great Depression led to,High employment,Low prices,Economic boom,Stability,Low prices
+MCQ,22,Which system promoted protectionism?,Free trade,Colonialism,Globalisation,Protectionism,Protectionism
+MCQ,23,After WWII, global trade was dominated by,Asia,Africa,USA and Europe,Latin America,USA and Europe
+MCQ,24,Which institution promotes international trade?,IMF,WHO,UNESCO,ILO,IMF
+MCQ,25,Which crop transformed global food habits?,Rice,Wheat,Potato,Maize,Potato
+MCQ,26,Who migrated as indentured labourers?,Farmers,Artisans,Workers,Slaves,Workers
+MCQ,27,Colonial trade mainly benefited,Colonies,Europe,Workers,Farmers,Europe
+MCQ,28,Which transport reduced travel time?,Ships,Camels,Railways,Steamships,Steamships
+MCQ,29,The word diaspora means,Forced labour,Scattered population,Slavery,Migration,Scattered population
+MCQ,30,Which continent received European migrants?,Asia,Africa,America,Australia,America
+MCQ,31,Globalisation before 1850 was based on,Technology,Trade and migration,Industrialisation,Capital flows,Trade and migration
+MCQ,32,Which crop was grown in colonies for export?,Cotton,Wheat,Rice,Millets,Cotton
+MCQ,33,Which disease spread through global trade?,Malaria,Plague,Smallpox,Cholera,Cholera
+MCQ,34,The Corn Laws were related to,Industry,Trade of grain,Labour,Colonies,Trade of grain
+MCQ,35,Which country repealed Corn Laws?,France,Germany,USA,Britain,Britain
+MCQ,36,Indentured labourers signed contracts for,Life,Short term,Long term,No term,Long term
+MCQ,37,Which revolution increased demand for raw materials?,French Revolution,Russian Revolution,Industrial Revolution,American Revolution,Industrial Revolution
+MCQ,38,The Great Depression affected farmers due to,High prices,Low demand,High taxes,Good harvests,Low demand
+MCQ,39,Which currency system was based on gold?,Silver standard,Gold standard,Bretton Woods,Floating system,Gold standard
+MCQ,40,Globalisation after 1950 was led by,Europe,Asia,USA,Africa,USA
+MCQ,41,Which factor does NOT promote globalisation?,Trade,Migration,Technology,Isolation,Isolation
+MCQ,42,Which product connected global markets?,Spices,Tea,Silk,Cotton,Cotton
+MCQ,43,Which period is called the age of globalisation?,19th century,20th century,18th century,17th century,19th century
+MCQ,44,Which group suffered during the Depression?,Industrialists,Traders,Farmers,Bankers,Farmers
+MCQ,45,Which event ended the Bretton Woods system?,Great Depression,Cold War,Oil crisis,1971 dollar crisis,1971 dollar crisis
+MCQ,46,Which region became manufacturing hub?,Africa,Asia,Europe,America,Europe
+MCQ,47,Colonial rule reshaped,Economies,Culture only,Politics only,Languages,Economies
+MCQ,48,Which continent was source of slaves?,Asia,Africa,Europe,America,Africa
+MCQ,49,Globalisation increased,Interdependence,Isolation,Autarky,Division,Interdependence
+MCQ,50,The central idea of the chapter is,Colonialism only,Trade history,Evolution of globalisation,Industrial history,Evolution of globalisation
+
+Integer,1,Name of trade routes?,Silk Routes,,,,
+Integer,2,Country first industrialised?,Britain,,,,
+Integer,3,Famine crop in Ireland?,Potato,,,,
+Integer,4,Year Great Depression began?,1929,,,,
+Integer,5,Labour sent to colonies?,Indentured,,,,
+Integer,6,War that disrupted trade?,World War I,,,,
+Integer,7,Organisation created in 1944?,IMF,,,,
+Integer,8,Trade system based on gold?,Gold standard,,,,
+Integer,9,Country worst hit by depression?,USA,,,,
+Integer,10,Main colonial benefit?,Europe,,,,
+Integer,11,Export crop of colonies?,Cotton,,,,
+Integer,12,Term for scattered population?,Diaspora,,,,
+Integer,13,Transport boosting trade?,Steamships,,,,
+Integer,14,Continent supplying slaves?,Africa,,,,
+Integer,15,Institution for reconstruction?,World Bank,,,,
+Integer,16,Industrial demand increased?,Raw materials,,,,
+Integer,17,Depression affected?,Farmers,,,,
+Integer,18,Repealed grain laws?,Corn Laws,,,,
+Integer,19,Country repealing Corn Laws?,Britain,,,,
+Integer,20,Labour contract name?,Indenture,,,,
+Integer,21,Revolution boosting trade?,Industrial Revolution,,,,
+Integer,22,Postwar global leader?,USA,,,,
+Integer,23,Pre-1850 globalisation based on?,Trade,,,,
+Integer,24,Commodity shaping food habits?,Potato,,,,
+Integer,25,Colonial power region?,Europe,,,,
+Integer,26,Main migration destination?,America,,,,
+Integer,27,Global currency base?,Gold,,,,
+Integer,28,Depression price trend?,Falling,,,,
+Integer,29,Colonies supplied?,Raw materials,,,,
+Integer,30,Globalisation increased?,Interdependence,,,,
+Integer,31,Trade law repealed in 1846?,Corn Laws,,,,
+Integer,32,Transport invention?,Steam engine,,,,
+Integer,33,Indentured labour origin?,Asia,,,,
+Integer,34,Period of depression?,1930s,,,,
+Integer,35,Colonial export market?,Europe,,,,
+Integer,36,Major cash crop?,Cotton,,,,
+Integer,37,Global trade route?,Silk Routes,,,,
+Integer,38,War II end year?,1945,,,,
+Integer,39,Pre-modern globalisation based on?,Trade and migration,,,,
+Integer,40,World economic crisis?,Great Depression,,,,
+Integer,41,Post-war system?,Bretton Woods,,,,
+Integer,42,Global institution?,IMF,,,,
+Integer,43,Transport reduced cost?,Steamship,,,,
+Integer,44,Industrial hub?,Europe,,,,
+Integer,45,Depression unemployment?,High,,,,
+Integer,46,Colonial labour system?,Indenture,,,,
+Integer,47,Trade increased by?,Technology,,,,
+Integer,48,Main chapter theme?,Globalisation,,,,
+Integer,49,Food habit changer?,Potato,,,,
+Integer,50,Colonial economy reshaped?,Yes,,,,
+
+Descriptive,1,What is globalisation?,,,,,Globalisation refers to the integration of economies and societies
+Descriptive,2,Explain the role of Silk Routes.,,,,,They connected Asia and Europe through trade
+Descriptive,3,Describe the Irish Potato Famine.,,,,,Crop failure caused mass deaths and migration
+Descriptive,4,What was indentured labour?,,,,,Contract-based labour system
+Descriptive,5,Explain pre-modern globalisation.,,,,,Based on trade and migration
+Descriptive,6,How did technology promote global trade?,,,,,Reduced transport time and cost
+Descriptive,7,Describe the impact of Industrial Revolution.,,,,,Increased production and trade
+Descriptive,8,What were the Corn Laws?,,,,,British laws restricting grain imports
+Descriptive,9,Explain the Great Depression.,,,,,Worldwide economic crisis of 1930s
+Descriptive,10,How did depression affect farmers?,,,,,Low prices and demand
+Descriptive,11,Explain colonial trade patterns.,,,,,Raw materials exported to Europe
+Descriptive,12,Describe indentured labour conditions.,,,,,Harsh and exploitative
+Descriptive,13,What was the Bretton Woods system?,,,,,Postwar economic system
+Descriptive,14,Explain post-war globalisation.,,,,,Led by USA and Europe
+Descriptive,15,How did globalisation affect food habits?,,,,,Introduced new crops
+Descriptive,16,Explain the role of steamships.,,,,,Boosted global trade
+Descriptive,17,Describe migration in 19th century.,,,,,Europeans moved to America
+Descriptive,18,What was the impact of World War I?,,,,,Disrupted trade
+Descriptive,19,Explain gold standard.,,,,,Currency linked to gold
+Descriptive,20,How did colonies support Europe?,,,,,Supplied raw materials
+Descriptive,21,Explain plantation economies.,,,,,Cash crop production
+Descriptive,22,Describe global trade networks.,,,,,Interlinked markets
+Descriptive,23,What caused the Great Depression?,,,,,Overproduction and low demand
+Descriptive,24,Explain effects of depression.,,,,,Unemployment and poverty
+Descriptive,25,How did technology change economies?,,,,,Improved connectivity
+Descriptive,26,Explain labour migration.,,,,,Search for work
+Descriptive,27,What was impact of colonialism?,,,,,Economic exploitation
+Descriptive,28,Explain globalisation after 1950.,,,,,Expansion of trade and investment
+Descriptive,29,Describe role of IMF.,,,,,Stabilise economies
+Descriptive,30,Explain global interdependence.,,,,,Countries depend on each other
+Descriptive,31,How did wars affect global trade?,,,,,Caused disruption
+Descriptive,32,Explain agricultural commercialisation.,,,,,Farming for market
+Descriptive,33,Describe diaspora.,,,,,Scattered communities
+Descriptive,34,Explain protectionism.,,,,,Restricting imports
+Descriptive,35,What were effects of cheap imports?,,,,,Hurt local farmers
+Descriptive,36,Explain role of capital flows.,,,,,Investment across borders
+Descriptive,37,Describe changes in transport.,,,,,Steamships and railways
+Descriptive,38,Explain migration causes.,,,,,Economic hardship
+Descriptive,39,How did globalisation evolve?,,,,,Gradually over centuries
+Descriptive,40,Explain link between trade and empire.,,,,,Colonies supplied markets
+Descriptive,41,Describe colonial labour systems.,,,,,Forced and contract labour
+Descriptive,42,Explain food trade history.,,,,,Crops moved across continents
+Descriptive,43,How did depression impact India?,,,,,Falling agricultural prices
+Descriptive,44,Explain significance of Bretton Woods.,,,,,Stabilised global economy
+Descriptive,45,What lessons from Great Depression?,,,,,Need regulation
+Descriptive,46,Explain modern globalisation.,,,,,Trade, capital, technology
+Descriptive,47,Describe role of technology.,,,,,Connectivity and speed
+Descriptive,48,Explain changes in world economy.,,,,,Integration of markets
+Descriptive,49,Why is globalisation uneven?,,,,,Unequal benefits
+Descriptive,50,Summarize The Making of a Global World.,,,,,The chapter traces evolution of globalisation over time

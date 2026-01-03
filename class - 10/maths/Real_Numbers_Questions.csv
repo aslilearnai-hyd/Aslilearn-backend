@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The decimal form of 129/(2² × 5⁷ × 7⁵) is:,Terminating,Non-terminating,Non-terminating non-repeating,None of the above,Non-terminating non-repeating
+MCQ,2,HCF of 8, 9, 25 is:,8,9,25,1,1
+MCQ,3,Which of the following is not irrational?,"(2 - √3)²","(√2 + √3)²","(√2 - √3)(√2 + √3)","2√7/7","(√2 - √3)(√2 + √3)"
+MCQ,4,The product of a rational and irrational number is:,Rational,Irrational,Both of the above,None of the above,Irrational
+MCQ,5,The sum of a rational and irrational number is:,Rational,Irrational,Both of the above,None of the above,Irrational
+MCQ,6,The product of two different irrational numbers is always:,Rational,Irrational,Both of the above,None of the above,Both of the above
+MCQ,7,The sum of two irrational numbers is always:,Irrational,Rational,Rational or Irrational,One,Rational or Irrational
+MCQ,8,According to Euclid's division lemma, if b = 3, then any integer can be expressed as a =:,3q,3q + 1,3q + 2,All of the above,All of the above
+MCQ,9,The product of three consecutive positive integers is divisible by:,4,6,No common factor,Only 1,6
+MCQ,10,The decimal expansion of 17/8 will terminate after how many places of decimals?,1,2,3,Will not terminate,3
+MCQ,11,If HCF (a, b) = 12 and a × b = 1800, then LCM (a, b) is:,3600,900,150,90,150
+MCQ,12,For any positive integers a and b, HCF(a, b) × LCM(a, b) =:,a + b,a - b,a × b,a ÷ b,a × b
+MCQ,13,The decimal expansion of √2 is:,Terminating,Non-terminating repeating,Non-terminating non-repeating,None of these,Non-terminating non-repeating
+MCQ,14,Which of the following is a rational number?,√2,√3,√4,√5,√4
+MCQ,15,The HCF of 96 and 404 is:,4,2,8,12,4
+MCQ,16,The LCM of 96 and 404 is:,9696,4848,2424,1212,9696
+MCQ,17,If p and q are positive integers such that p = ab² and q = a³b, where a and b are prime numbers, then HCF(p, q) is:,ab,ab²,a³b,a³b²,ab
+MCQ,18,If p and q are positive integers such that p = ab² and q = a³b, where a and b are prime numbers, then LCM(p, q) is:,ab,ab²,a³b,a³b²,a³b²
+MCQ,19,The decimal expansion of 6/15 will terminate after how many places?,1,2,3,Will not terminate,1
+MCQ,20,According to Euclid's division algorithm, for any two positive integers a and b, there exist unique integers q and r such that a = bq + r, where r must satisfy:,0 ≤ r < b,0 < r < b,0 ≤ r ≤ b,1 ≤ r < b,0 ≤ r < b
+MCQ,21,The number 7 × 11 × 13 + 13 is:,A prime number,A composite number,Neither prime nor composite,1,A composite number
+MCQ,22,The number 2 × 3 × 4 + 4 is:,A prime number,A composite number,Neither prime nor composite,1,A composite number
+MCQ,23,Which of the following rational numbers have a terminating decimal expansion?,1/7,1/11,1/15,7/8,7/8
+MCQ,24,Which of the following rational numbers have a non-terminating repeating decimal expansion?,3/8,1/3,5/4,17/50,1/3
+MCQ,25,The HCF of 52 and 130 is:,26,13,2,52,26
+MCQ,26,The LCM of 52 and 130 is:,260,130,520,104,260
+MCQ,27,If n is an odd positive integer, then n² - 1 is divisible by:,2,4,8,16,8
+MCQ,28,The smallest number that is divisible by both 18 and 24 is:,36,48,72,144,72
+MCQ,29,The largest number that divides 70 and 125 leaving remainders 5 and 8 respectively is:,13,65,875,1750,13
+MCQ,30,The decimal expansion of 13/3125 will terminate after how many decimal places?,3,4,5,6,5
+MCQ,31,If HCF(306, 657) = 9, then LCM(306, 657) is:,22338,22383,22833,22888,22338
+MCQ,32,Which of the following is an irrational number?,0.14,0.1416,0.1416 (bar),0.4014001400014...,0.4014001400014...
+MCQ,33,The decimal expansion of 35/50 will terminate after how many decimal places?,1,2,3,Will not terminate,2
+MCQ,34,If the decimal expansion of a rational number terminates, then the denominator can be expressed in the form:,2^m × 5^n,2^m,5^n,2^m × 3^n,2^m × 5^n
+MCQ,35,The number √7 is:,Rational,Irrational,Integer,Natural number,Irrational
+MCQ,36,The number (3 + √5)(3 - √5) is:,Irrational,Rational,Integer,Natural number,Rational
+MCQ,37,If a = 2³ × 3, b = 2 × 3², then HCF(a, b) is:,6,12,18,36,6
+MCQ,38,If a = 2³ × 3, b = 2 × 3², then LCM(a, b) is:,72,36,24,12,72
+MCQ,39,The smallest prime number is:,0,1,2,3,2
+MCQ,40,The number of prime numbers between 1 and 50 is:,15,16,17,18,15
+MCQ,41,If a number ends with 0, its square ends with:,0,1,4,9,0
+MCQ,42,The decimal expansion of 1/17 is:,Terminating,Non-terminating repeating,Non-terminating non-repeating,None,Non-terminating repeating
+MCQ,43,For any positive integer n, n³ - n is divisible by:,2,3,6,All of these,6
+MCQ,44,The HCF of 867 and 255 is:,51,17,3,1,51
+MCQ,45,The LCM of 867 and 255 is:,4335,43350,13005,26010,4335
+MCQ,46,If a and b are co-prime, then HCF(a, b) is:,1,a,b,ab,1
+MCQ,47,If a and b are co-prime, then LCM(a, b) is:,1,a,b,ab,ab
+MCQ,48,The number 1.2345678910111213... is:,Rational,Irrational,Integer,Natural number,Irrational
+MCQ,49,Every positive integer can be expressed as:,Product of primes,Sum of primes,Product of even numbers,Sum of even numbers,Product of primes
+MCQ,50,The Fundamental Theorem of Arithmetic states that:,Every composite number can be expressed as a product of primes uniquely,Every natural number can be expressed as a product of primes,Every integer can be expressed as a product of primes,All of the above,Every composite number can be expressed as a product of primes uniquely
+Integer,1,Find the HCF of 135 and 225.,15,,,,
+Integer,2,Find the LCM of 12 and 18.,36,,,,
+Integer,3,The HCF of 96 and 404 is:.,4,,,,
+Integer,4,The LCM of 96 and 404 is:.,9696,,,,
+Integer,5,Find the HCF of 6, 72 and 120.,6,,,,
+Integer,6,Find the LCM of 6, 72 and 120.,360,,,,
+Integer,7,The decimal expansion of 13/3125 will terminate after how many decimal places?,5,,,,
+Integer,8,The decimal expansion of 17/8 will terminate after how many decimal places?,3,,,,
+Integer,9,If HCF(306, 657) = 9, then LCM(306, 657) is:.,22338,,,,
+Integer,10,Find the HCF of 867 and 255.,51,,,,
+Integer,11,Find the LCM of 867 and 255.,4335,,,,
+Integer,12,Find the largest number that divides 70 and 125 leaving remainders 5 and 8 respectively.,13,,,,
+Integer,13,Find the smallest number which when divided by 12, 15 and 18 leaves a remainder of 7 in each case.,187,,,,
+Integer,14,Find the HCF of 52 and 130.,26,,,,
+Integer,15,Find the LCM of 52 and 130.,260,,,,
+Integer,16,The decimal expansion of 35/50 will terminate after how many decimal places?,2,,,,
+Integer,17,If HCF(26, 91) = 13, then LCM(26, 91) is:.,182,,,,
+Integer,18,Find the HCF of 65 and 117.,13,,,,
+Integer,19,Find the LCM of 65 and 117.,585,,,,
+Integer,20,The decimal expansion of 6/15 will terminate after how many decimal places?,1,,,,
+Integer,21,Find the HCF of 81 and 237.,3,,,,
+Integer,22,Find the LCM of 81 and 237.,6399,,,,
+Integer,23,If a = 2³ × 3 and b = 2 × 3², then HCF(a, b) is:.,6,,,,
+Integer,24,If a = 2³ × 3 and b = 2 × 3², then LCM(a, b) is:.,72,,,,
+Integer,25,The smallest number divisible by 12, 15 and 18 is:.,180,,,,
+Integer,26,Find the HCF of 136, 170 and 255.,17,,,,
+Integer,27,Find the LCM of 136, 170 and 255.,2040,,,,
+Integer,28,If HCF(240, 228) = 12, then LCM(240, 228) is:.,4560,,,,
+Integer,29,The decimal expansion of 29/343 will terminate after how many decimal places? (Answer: Will not terminate),0,,,,
+Integer,30,Find the HCF of 196 and 38220.,196,,,,
+Integer,31,Find the LCM of 196 and 38220.,38220,,,,
+Integer,32,The decimal expansion of 15/1600 will terminate after how many decimal places?,4,,,,
+Integer,33,If HCF(180, 252) = 36, then LCM(180, 252) is:.,1260,,,,
+Integer,34,Find the HCF of 420 and 130.,10,,,,
+Integer,35,Find the LCM of 420 and 130.,5460,,,,
+Integer,36,The decimal expansion of 23/(2³ × 5²) will terminate after how many decimal places?,3,,,,
+Integer,37,Find the HCF of 455 and 42.,7,,,,
+Integer,38,Find the LCM of 455 and 42.,2730,,,,
+Integer,39,If HCF(616, 32) = 8, then LCM(616, 32) is:.,2464,,,,
+Integer,40,The decimal expansion of 6/125 will terminate after how many decimal places?,3,,,,
+Integer,41,Find the HCF of 56, 96 and 404.,4,,,,
+Integer,42,Find the LCM of 56, 96 and 404.,22688,,,,
+Integer,43,The smallest number divisible by 8, 12 and 20 is:.,120,,,,
+Integer,44,Find the HCF of 100 and 190.,10,,,,
+Integer,45,Find the LCM of 100 and 190.,1900,,,,
+Integer,46,The decimal expansion of 77/210 will terminate after how many decimal places? (Answer: Will not terminate),0,,,,
+Integer,47,If HCF(144, 180) = 36, then LCM(144, 180) is:.,720,,,,
+Integer,48,Find the HCF of 18, 54 and 81.,9,,,,
+Integer,49,Find the LCM of 18, 54 and 81.,162,,,,
+Integer,50,The decimal expansion of 13/(2² × 5) will terminate after how many decimal places?,2,,,,
+Problem,1,Use Euclid's division algorithm to find the HCF of 135 and 225.,"Using Euclid's division algorithm: 225 = 135 × 1 + 90, 135 = 90 × 1 + 45, 90 = 45 × 2 + 0. Since remainder is 0, HCF = 45. Answer: 45",,,,
+Problem,2,Use Euclid's division algorithm to find the HCF of 196 and 38220.,"Using Euclid's division algorithm: 38220 = 196 × 195 + 0. Since remainder is 0, HCF = 196. Answer: 196",,,,
+Problem,3,Use Euclid's division algorithm to find the HCF of 867 and 255.,"Using Euclid's division algorithm: 867 = 255 × 3 + 102, 255 = 102 × 2 + 51, 102 = 51 × 2 + 0. Since remainder is 0, HCF = 51. Answer: 51",,,,
+Problem,4,Show that any positive odd integer is of the form 6q + 1, 6q + 3 or 6q + 5, where q is some integer.,"Let a be any positive integer and b = 6. Then by Euclid's division lemma, a = 6q + r, where 0 ≤ r < 6. So r = 0, 1, 2, 3, 4, 5. For odd integers, r cannot be 0, 2, or 4. Therefore, odd integers are of the form 6q + 1, 6q + 3, or 6q + 5.",,,,
+Problem,5,An army contingent of 616 members is to march behind an army band of 32 members in a parade. The two groups are to march in the same number of columns. What is the maximum number of columns in which they can march?,"We need to find HCF(616, 32). Using Euclid's algorithm: 616 = 32 × 19 + 8, 32 = 8 × 4 + 0. HCF = 8. Therefore, they can march in maximum 8 columns. Answer: 8 columns",,,,
+Problem,6,Find the LCM and HCF of 12, 15 and 21 by the prime factorisation method.,"Prime factorization: 12 = 2² × 3, 15 = 3 × 5, 21 = 3 × 7. HCF = 3 (common factor), LCM = 2² × 3 × 5 × 7 = 420. Answer: HCF = 3, LCM = 420",,,,
+Problem,7,Find the LCM and HCF of 6, 72 and 120, using the prime factorisation method.,"Prime factorization: 6 = 2 × 3, 72 = 2³ × 3², 120 = 2³ × 3 × 5. HCF = 2 × 3 = 6, LCM = 2³ × 3² × 5 = 360. Answer: HCF = 6, LCM = 360",,,,
+Problem,8,Find the HCF of 96 and 404 by the prime factorisation method. Hence, find their LCM.,"Prime factorization: 96 = 2⁵ × 3, 404 = 2² × 101. HCF = 2² = 4, LCM = 2⁵ × 3 × 101 = 9696. Answer: HCF = 4, LCM = 9696",,,,
+Problem,9,Find the HCF and LCM of 6, 72 and 120 using the prime factorisation method.,"Prime factorization: 6 = 2 × 3, 72 = 2³ × 3², 120 = 2³ × 3 × 5. HCF = 2 × 3 = 6, LCM = 2³ × 3² × 5 = 360. Answer: HCF = 6, LCM = 360",,,,
+Problem,10,Find the LCM and HCF of 510 and 92 and verify that LCM × HCF = product of the two numbers.,"Prime factorization: 510 = 2 × 3 × 5 × 17, 92 = 2² × 23. HCF = 2, LCM = 2² × 3 × 5 × 17 × 23 = 23460. Verification: LCM × HCF = 23460 × 2 = 46920, Product = 510 × 92 = 46920. Hence verified.",,,,
+Problem,11,Find the LCM and HCF of 336 and 54 and verify that LCM × HCF = product of the two numbers.,"Prime factorization: 336 = 2⁴ × 3 × 7, 54 = 2 × 3³. HCF = 2 × 3 = 6, LCM = 2⁴ × 3³ × 7 = 3024. Verification: LCM × HCF = 3024 × 6 = 18144, Product = 336 × 54 = 18144. Hence verified.",,,,
+Problem,12,Find the LCM and HCF of the following integers by applying the prime factorisation method: (i) 12, 15 and 21 (ii) 17, 23 and 29 (iii) 8, 9 and 25.,"(i) 12 = 2² × 3, 15 = 3 × 5, 21 = 3 × 7. HCF = 3, LCM = 2² × 3 × 5 × 7 = 420. (ii) 17, 23, 29 are primes. HCF = 1, LCM = 17 × 23 × 29 = 11339. (iii) 8 = 2³, 9 = 3², 25 = 5². HCF = 1, LCM = 2³ × 3² × 5² = 1800.",,,,
+Problem,13,Given that HCF (306, 657) = 9, find LCM (306, 657).,"Using the formula: HCF × LCM = Product of numbers. 9 × LCM = 306 × 657. LCM = (306 × 657) / 9 = 22338. Answer: LCM = 22338",,,,
+Problem,14,Check whether 6^n can end with the digit 0 for any natural number n.,"For a number to end with digit 0, it must be divisible by 2 and 5, i.e., its prime factorization must contain 2 and 5. Since 6^n = (2 × 3)^n = 2^n × 3^n, it contains only 2 and 3, not 5. Therefore, 6^n cannot end with digit 0 for any natural number n.",,,,
+Problem,15,Explain why 7 × 11 × 13 + 13 and 7 × 6 × 5 × 4 × 3 × 2 × 1 + 5 are composite numbers.,"7 × 11 × 13 + 13 = 13(7 × 11 + 1) = 13 × 78. Since it has factors other than 1 and itself, it is composite. 7 × 6 × 5 × 4 × 3 × 2 × 1 + 5 = 5(7 × 6 × 4 × 3 × 2 × 1 + 1) = 5 × 1009. Since it has factors other than 1 and itself, it is composite.",,,,
+Problem,16,There is a circular path around a sports field. Sonia takes 18 minutes to drive one round of the field, while Ravi takes 12 minutes for the same. Suppose they both start at the same point and at the same time, and go in the same direction. After how many minutes will they meet again at the starting point?,"We need to find LCM(18, 12). Prime factorization: 18 = 2 × 3², 12 = 2² × 3. LCM = 2² × 3² = 36. Therefore, they will meet again after 36 minutes. Answer: 36 minutes",,,,
+Problem,17,Prove that √5 is irrational.,"Assume √5 is rational. Then √5 = p/q where p, q are integers, q ≠ 0, and HCF(p, q) = 1. Then 5 = p²/q², so p² = 5q². This means 5 divides p², so 5 divides p. Let p = 5k. Then 25k² = 5q², so q² = 5k². This means 5 divides q², so 5 divides q. But then 5 divides both p and q, contradicting HCF(p, q) = 1. Therefore, √5 is irrational.",,,,
+Problem,18,Prove that 3 + 2√5 is irrational.,"Assume 3 + 2√5 is rational. Then 3 + 2√5 = p/q, where p, q are integers, q ≠ 0. Then 2√5 = p/q - 3 = (p - 3q)/q, so √5 = (p - 3q)/(2q). Since p, q are integers, (p - 3q)/(2q) is rational. But we know √5 is irrational. This is a contradiction. Therefore, 3 + 2√5 is irrational.",,,,
+Problem,19,Without actually performing the long division, state whether the rational number 13/3125 will have a terminating decimal expansion or a non-terminating repeating decimal expansion.,"13/3125 = 13/(5⁵). The denominator is of the form 2^m × 5^n (here m = 0, n = 5). Therefore, it has a terminating decimal expansion. Answer: Terminating decimal expansion",,,,
+Problem,20,Without actually performing the long division, state whether the rational number 17/8 will have a terminating decimal expansion or a non-terminating repeating decimal expansion.,"17/8 = 17/2³. The denominator is of the form 2^m × 5^n (here m = 3, n = 0). Therefore, it has a terminating decimal expansion. Answer: Terminating decimal expansion",,,,
+Problem,21,Write down the decimal expansions of those rational numbers which have terminating decimal expansions: (i) 13/3125 (ii) 17/8 (iii) 64/455 (iv) 15/1600.,"(i) 13/3125 = 0.00416 (5 decimal places) (ii) 17/8 = 2.125 (3 decimal places) (iii) 64/455 = Non-terminating (iv) 15/1600 = 0.009375 (6 decimal places)",,,,
+Problem,22,The following real numbers have decimal expansions as given below. In each case, decide whether they are rational or not. If they are rational, and of the form p/q, what can you say about the prime factors of q? (i) 43.123456789 (ii) 0.120120012000120000... (iii) 43.123456789 (bar),"(i) 43.123456789 is terminating, so it is rational. q has prime factors 2^m × 5^n. (ii) 0.120120012000120000... is non-terminating and non-repeating, so it is irrational. (iii) 43.123456789 (bar) is non-terminating but repeating, so it is rational. q has prime factors other than 2 and 5.",,,,
+Problem,23,Find the largest number that will divide 398, 436 and 542 leaving remainders 7, 11 and 15 respectively.,"We need to find HCF of (398 - 7) = 391, (436 - 11) = 425, (542 - 15) = 527. Using Euclid's algorithm: 527 = 425 × 1 + 102, 425 = 102 × 4 + 17, 102 = 17 × 6 + 0. HCF(425, 527) = 17. Now HCF(391, 17): 391 = 17 × 23 + 0. HCF = 17. Answer: 17",,,,
+Problem,24,Find the smallest number which when increased by 17 is exactly divisible by 520 and 468.,"We need to find LCM(520, 468) and subtract 17. Prime factorization: 520 = 2³ × 5 × 13, 468 = 2² × 3² × 13. LCM = 2³ × 3² × 5 × 13 = 4680. Required number = 4680 - 17 = 4663. Answer: 4663",,,,
+Problem,25,Find the HCF and LCM of 404 and 96 and verify that HCF × LCM = Product of the two given numbers.,"Prime factorization: 404 = 2² × 101, 96 = 2⁵ × 3. HCF = 2² = 4, LCM = 2⁵ × 3 × 101 = 9696. Verification: HCF × LCM = 4 × 9696 = 38784, Product = 404 × 96 = 38784. Hence verified.",,,,
+Problem,26,Find the LCM of 96 and 360 by using fundamental theorem of arithmetic.,"Prime factorization: 96 = 2⁵ × 3, 360 = 2³ × 3² × 5. LCM = 2⁵ × 3² × 5 = 1440. Answer: LCM = 1440",,,,
+Problem,27,Find the HCF of 96 and 360 by using fundamental theorem of arithmetic.,"Prime factorization: 96 = 2⁵ × 3, 360 = 2³ × 3² × 5. HCF = 2³ × 3 = 24. Answer: HCF = 24",,,,
+Problem,28,If HCF(18, 504) = 18, find LCM(18, 504).,"Using the formula: HCF × LCM = Product of numbers. 18 × LCM = 18 × 504. LCM = 504. Answer: LCM = 504",,,,
+Problem,29,Express 3825 as a product of its prime factors.,"Using prime factorization: 3825 = 3 × 1275 = 3 × 3 × 425 = 3 × 3 × 5 × 85 = 3 × 3 × 5 × 5 × 17 = 3² × 5² × 17. Answer: 3² × 5² × 17",,,,
+Problem,30,Express 5005 as a product of its prime factors.,"Using prime factorization: 5005 = 5 × 1001 = 5 × 7 × 143 = 5 × 7 × 11 × 13. Answer: 5 × 7 × 11 × 13",,,,
+Problem,31,Find the LCM and HCF of 26 and 91 and verify that LCM × HCF = product of the two numbers.,"Prime factorization: 26 = 2 × 13, 91 = 7 × 13. HCF = 13, LCM = 2 × 7 × 13 = 182. Verification: HCF × LCM = 13 × 182 = 2366, Product = 26 × 91 = 2366. Hence verified.",,,,
+Problem,32,Prove that √3 is irrational.,"Assume √3 is rational. Then √3 = p/q where p, q are integers, q ≠ 0, and HCF(p, q) = 1. Then 3 = p²/q², so p² = 3q². This means 3 divides p², so 3 divides p. Let p = 3k. Then 9k² = 3q², so q² = 3k². This means 3 divides q², so 3 divides q. But then 3 divides both p and q, contradicting HCF(p, q) = 1. Therefore, √3 is irrational.",,,,
+Problem,33,Show that 5 - √3 is irrational.,"Assume 5 - √3 is rational. Then 5 - √3 = p/q, where p, q are integers, q ≠ 0. Then -√3 = p/q - 5 = (p - 5q)/q, so √3 = (5q - p)/q. Since p, q are integers, (5q - p)/q is rational. But we know √3 is irrational. This is a contradiction. Therefore, 5 - √3 is irrational.",,,,
+Problem,34,Find the HCF of 65 and 117 and express it in the form 65m + 117n.,"Using Euclid's algorithm: 117 = 65 × 1 + 52, 65 = 52 × 1 + 13, 52 = 13 × 4 + 0. HCF = 13. Now, 13 = 65 - 52 × 1 = 65 - (117 - 65 × 1) × 1 = 65 - 117 + 65 = 65 × 2 - 117 × 1. Therefore, HCF = 65 × 2 + 117 × (-1). Answer: m = 2, n = -1",,,,
+Problem,35,Find the largest number which divides 615 and 963 leaving remainder 6 in each case.,"We need to find HCF of (615 - 6) = 609 and (963 - 6) = 957. Using Euclid's algorithm: 957 = 609 × 1 + 348, 609 = 348 × 1 + 261, 348 = 261 × 1 + 87, 261 = 87 × 3 + 0. HCF = 87. Answer: 87",,,,
+Problem,36,Three bells toll at intervals of 9, 12, 15 minutes respectively. If they start tolling together, after what time will they next toll together?,"We need to find LCM(9, 12, 15). Prime factorization: 9 = 3², 12 = 2² × 3, 15 = 3 × 5. LCM = 2² × 3² × 5 = 180 minutes = 3 hours. Answer: 180 minutes or 3 hours",,,,
+Problem,37,Find the smallest number which when divided by 28 and 32 leaves remainder 8 and 12 respectively.,"Let the number be N. Then N = 28a + 8 = 32b + 12. We need to find LCM(28, 32). Prime factorization: 28 = 2² × 7, 32 = 2⁵. LCM = 2⁵ × 7 = 224. The number is 224 - 20 = 204 (since 28 - 8 = 20 and 32 - 12 = 20). Answer: 204",,,,
+Problem,38,Check whether 15^n can end with the digit 0 for any natural number n.,"For a number to end with digit 0, it must be divisible by 2 and 5. Since 15^n = (3 × 5)^n = 3^n × 5^n, it contains 5 but not 2. Therefore, 15^n cannot end with digit 0 for any natural number n.",,,,
+Problem,39,Find the HCF of 81 and 237 and express it as 81x + 237y.,"Using Euclid's algorithm: 237 = 81 × 2 + 75, 81 = 75 × 1 + 6, 75 = 6 × 12 + 3, 6 = 3 × 2 + 0. HCF = 3. Working backwards: 3 = 75 - 6 × 12 = 75 - (81 - 75) × 12 = 75 - 81 × 12 + 75 × 12 = 75 × 13 - 81 × 12 = (237 - 81 × 2) × 13 - 81 × 12 = 237 × 13 - 81 × 38. Therefore, 3 = 81 × (-38) + 237 × 13. Answer: x = -38, y = 13",,,,
+Problem,40,Show that the square of any positive integer is either of the form 3m or 3m + 1 for some integer m.,"Let a be any positive integer. Then by Euclid's division lemma, a = 3q, 3q + 1, or 3q + 2. Case 1: a = 3q, then a² = 9q² = 3(3q²) = 3m. Case 2: a = 3q + 1, then a² = 9q² + 6q + 1 = 3(3q² + 2q) + 1 = 3m + 1. Case 3: a = 3q + 2, then a² = 9q² + 12q + 4 = 3(3q² + 4q + 1) + 1 = 3m + 1. Hence proved.",,,,
+Problem,41,Prove that √7 is irrational.,"Assume √7 is rational. Then √7 = p/q where p, q are integers, q ≠ 0, and HCF(p, q) = 1. Then 7 = p²/q², so p² = 7q². This means 7 divides p², so 7 divides p. Let p = 7k. Then 49k² = 7q², so q² = 7k². This means 7 divides q², so 7 divides q. But then 7 divides both p and q, contradicting HCF(p, q) = 1. Therefore, √7 is irrational.",,,,
+Problem,42,Find the LCM and HCF of 84, 90 and 120 by applying the prime factorisation method.,"Prime factorization: 84 = 2² × 3 × 7, 90 = 2 × 3² × 5, 120 = 2³ × 3 × 5. HCF = 2 × 3 = 6, LCM = 2³ × 3² × 5 × 7 = 2520. Answer: HCF = 6, LCM = 2520",,,,
+Problem,43,Find the smallest number which is divisible by 18, 24 and 32.,"We need to find LCM(18, 24, 32). Prime factorization: 18 = 2 × 3², 24 = 2³ × 3, 32 = 2⁵. LCM = 2⁵ × 3² = 288. Answer: 288",,,,
+Problem,44,Find the largest number that divides 445, 572 and 699 leaving remainders 4, 5 and 6 respectively.,"We need to find HCF of (445 - 4) = 441, (572 - 5) = 567, (699 - 6) = 693. Prime factorization: 441 = 3² × 7², 567 = 3⁴ × 7, 693 = 3² × 7 × 11. HCF = 3² × 7 = 63. Answer: 63",,,,
+Problem,45,Two tankers contain 850 litres and 680 litres of petrol respectively. Find the maximum capacity of a container which can measure the petrol of either tanker in exact number of times.,"We need to find HCF(850, 680). Using Euclid's algorithm: 850 = 680 × 1 + 170, 680 = 170 × 4 + 0. HCF = 170. Answer: 170 litres",,,,
+Problem,46,Show that one and only one out of n, n + 2, n + 4 is divisible by 3, where n is any positive integer.,"By Euclid's division lemma, n = 3q, 3q + 1, or 3q + 2. Case 1: n = 3q, then n is divisible by 3, n + 2 = 3q + 2 not divisible, n + 4 = 3q + 4 = 3(q + 1) + 1 not divisible. Case 2: n = 3q + 1, then n not divisible, n + 2 = 3q + 3 = 3(q + 1) divisible, n + 4 = 3q + 5 not divisible. Case 3: n = 3q + 2, then n not divisible, n + 2 = 3q + 4 not divisible, n + 4 = 3q + 6 = 3(q + 2) divisible. Hence proved.",,,,
+Problem,47,Find the LCM of the numbers 16, 20, 24 by prime factorisation method.,"Prime factorization: 16 = 2⁴, 20 = 2² × 5, 24 = 2³ × 3. LCM = 2⁴ × 3 × 5 = 240. Answer: LCM = 240",,,,
+Problem,48,Find the HCF of the numbers 18, 54, 81 by prime factorisation method.,"Prime factorization: 18 = 2 × 3², 54 = 2 × 3³, 81 = 3⁴. HCF = 3² = 9. Answer: HCF = 9",,,,
+Problem,49,If d is the HCF of 56 and 72, find x and y satisfying d = 56x + 72y.,"Using Euclid's algorithm: 72 = 56 × 1 + 16, 56 = 16 × 3 + 8, 16 = 8 × 2 + 0. HCF = 8. Working backwards: 8 = 56 - 16 × 3 = 56 - (72 - 56) × 3 = 56 - 72 × 3 + 56 × 3 = 56 × 4 - 72 × 3. Therefore, 8 = 56 × 4 + 72 × (-3). Answer: x = 4, y = -3",,,,
+Problem,50,Show that any positive odd integer is of the form 4q + 1 or 4q + 3, where q is some integer.,"Let a be any positive integer and b = 4. Then by Euclid's division lemma, a = 4q + r, where 0 ≤ r < 4. So r = 0, 1, 2, 3. For odd integers, r cannot be 0 or 2. Therefore, odd integers are of the form 4q + 1 or 4q + 3.",,,,
+

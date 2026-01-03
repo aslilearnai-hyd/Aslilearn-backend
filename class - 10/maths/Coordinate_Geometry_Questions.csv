@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The distance between the points (2, 3) and (5, 7) is:,5 units,4 units,5 units,6 units,5 units
+MCQ,2,The distance of the point (3, 4) from the origin is:,5 units,7 units,3 units,4 units,5 units
+MCQ,3,The coordinates of the midpoint of the line segment joining (2, 3) and (6, 5) is:,(4, 4),(3, 4),(4, 3),(3, 3),(4, 4)
+MCQ,4,The section formula for dividing the line joining (x₁, y₁) and (x₂, y₂) in the ratio m:n internally is:,((mx₂ + nx₁)/(m+n), (my₂ + ny₁)/(m+n)),((mx₁ + nx₂)/(m+n), (my₁ + ny₂)/(m+n)),((mx₂ - nx₁)/(m-n), (my₂ - ny₁)/(m-n)),((mx₁ - nx₂)/(m-n), (my₁ - ny₂)/(m-n)),((mx₂ + nx₁)/(m+n), (my₂ + ny₁)/(m+n))
+MCQ,5,The area of a triangle with vertices (0, 0), (4, 0), and (0, 3) is:,6 square units,12 square units,7 square units,5 square units,6 square units
+MCQ,6,The distance between the points (a, b) and (-a, -b) is:,2√(a² + b²),√(a² + b²),a² + b²,2(a² + b²),2√(a² + b²)
+MCQ,7,The coordinates of the point which divides the line joining (1, 2) and (4, 5) in the ratio 2:1 internally is:,(3, 4),(2, 3),(4, 5),(5, 6),(3, 4)
+MCQ,8,Three points are collinear if the area of the triangle formed by them is:,Greater than zero,Less than zero,Equal to zero,Undefined,Equal to zero
+MCQ,9,The centroid of a triangle with vertices (0, 0), (4, 0), and (0, 6) is:,(4/3, 2),(2, 4/3),(4/3, 6),(2, 2),(4/3, 2)
+MCQ,10,The distance between points (x₁, y₁) and (x₂, y₂) is given by:,√[(x₂ - x₁)² + (y₂ - y₁)²],√[(x₂ + x₁)² + (y₂ + y₁)²],(x₂ - x₁)² + (y₂ - y₁)²,(x₂ + x₁)² + (y₂ + y₁)²,√[(x₂ - x₁)² + (y₂ - y₁)²]
+MCQ,11,The midpoint of the line segment joining (a, b) and (c, d) is:,((a+c)/2, (b+d)/2),((a-c)/2, (b-d)/2),((a+c), (b+d)),((a-c), (b-d)),((a+c)/2, (b+d)/2)
+MCQ,12,The area of triangle with vertices (x₁, y₁), (x₂, y₂), (x₃, y₃) is:,1/2 |x₁(y₂ - y₃) + x₂(y₃ - y₁) + x₃(y₁ - y₂)|,1/2 (x₁(y₂ - y₃) + x₂(y₃ - y₁) + x₃(y₁ - y₂)),|x₁(y₂ - y₃) + x₂(y₃ - y₁) + x₃(y₁ - y₂)|,x₁(y₂ - y₃) + x₂(y₃ - y₁) + x₃(y₁ - y₂),1/2 |x₁(y₂ - y₃) + x₂(y₃ - y₁) + x₃(y₁ - y₂)|
+MCQ,13,If the distance between (2, -3) and (10, y) is 10 units, then y =:,3 or -9,3 or 9,-3 or -9,-3 or 9,3 or -9
+MCQ,14,The point on x-axis equidistant from (2, 3) and (4, 1) is:,(3, 0),(0, 3),(5, 0),(0, 5),(3, 0)
+MCQ,15,The coordinates of the point dividing the line joining (1, 2) and (7, 8) in the ratio 1:2 internally is:,(3, 4),(4, 3),(5, 6),(6, 5),(3, 4)
+MCQ,16,The distance between (0, 5) and (-5, 0) is:,5√2,5,10,√5,5√2
+MCQ,17,The area of triangle with vertices (1, 1), (4, 1), and (1, 5) is:,6 square units,12 square units,8 square units,10 square units,6 square units
+MCQ,18,If the midpoint of (a, b) and (3, 4) is (2, 3), then (a, b) is:,(1, 2),(2, 1),(4, 5),(5, 4),(1, 2)
+MCQ,19,The point which divides the line joining (0, 0) and (6, 8) in the ratio 3:2 internally is:,(18/5, 24/5),(24/5, 18/5),(3, 4),(4, 3),(18/5, 24/5)
+MCQ,20,Three points A(1, 2), B(3, 4), C(5, 6) are:,Collinear,Non-collinear,Forming a right triangle,Forming an equilateral triangle,Collinear
+MCQ,21,The distance of point (4, 3) from x-axis is:,3 units,4 units,5 units,7 units,3 units
+MCQ,22,The distance of point (4, 3) from y-axis is:,3 units,4 units,5 units,7 units,4 units
+MCQ,23,The coordinates of the point dividing (2, 3) and (8, 9) in the ratio 1:1 is:,(5, 6),(6, 5),(4, 5),(5, 4),(5, 6)
+MCQ,24,If A(2, 3), B(4, k), C(6, -3) are collinear, then k =:,0,1,-1,3,0
+MCQ,25,The area of quadrilateral with vertices (0, 0), (4, 0), (4, 3), (0, 3) is:,12 square units,10 square units,14 square units,16 square units,12 square units
+MCQ,26,The point on y-axis equidistant from (3, 4) and (-3, 4) is:,(0, 4),(4, 0),(0, 3),(3, 0),(0, 4)
+MCQ,27,The distance between (cos θ, sin θ) and (-cos θ, -sin θ) is:,2,1,0,√2,2
+MCQ,28,If the distance between (a, 2) and (3, 4) is 2√2, then a =:,1 or 5,1 or -5,3 or 5,3 or -5,1 or 5
+MCQ,29,The centroid divides each median in the ratio:,1:2,2:1,1:1,3:1,2:1
+MCQ,30,The area of triangle with vertices (-2, 0), (2, 0), (0, 3) is:,6 square units,3 square units,9 square units,12 square units,6 square units
+MCQ,31,If P divides the line joining A(1, 2) and B(4, 5) externally in the ratio 2:1, then P is:,(7, 8),(8, 7),(-2, -1),(-1, -2),(7, 8)
+MCQ,32,The coordinates of the point which divides the join of (1, 2) and (4, 5) in the ratio 2:3 internally is:,(11/5, 16/5),(16/5, 11/5),(2, 3),(3, 2),(11/5, 16/5)
+MCQ,33,The distance between parallel lines y = c and y = d is:,|c - d|,|c + d|,c - d,c + d,|c - d|
+MCQ,34,If A(0, 0), B(3, 0), C(0, 4) are vertices of a triangle, then its area is:,6 square units,12 square units,7 square units,5 square units,6 square units
+MCQ,35,The midpoint of the line joining (a+b, a-b) and (a-b, a+b) is:,(a, a),(b, b),(a, b),(b, a),(a, a)
+MCQ,36,If three points (0, 0), (3, √3), (3, k) form an equilateral triangle, then k =:,2√3,√3,3,2,2√3
+MCQ,37,The area of triangle formed by points (x, y), (x₁, y₁), (x₂, y₂) is zero, then the points are:,Collinear,Non-collinear,Vertices of right triangle,Vertices of equilateral triangle,Collinear
+MCQ,38,If A(1, 2), B(4, y), C(x, 6), D(3, 5) are vertices of a parallelogram, then (x, y) is:,(6, 3),(3, 6),(5, 4),(4, 5),(6, 3)
+MCQ,39,The distance between points on x-axis which are 10 units from (2, 3) are:,(2+√91, 0) and (2-√91, 0),(-8, 0) and (12, 0),(10, 0) and (-10, 0),(5, 0) and (-5, 0),(-8, 0) and (12, 0)
+MCQ,40,If the centroid of triangle with vertices (x₁, y₁), (x₂, y₂), (x₃, y₃) is (0, 0), then x₁+x₂+x₃ =:,0,1,-1,3,0
+MCQ,41,The coordinates of the point which divides the join of (-1, 7) and (4, -3) in the ratio 2:3 internally is:,(1, 3),(3, 1),(2, 5),(5, 2),(1, 3)
+MCQ,42,The distance of the point (5, 12) from the origin is:,13 units,12 units,17 units,7 units,13 units
+MCQ,43,If the points (a, 0), (0, b), (1, 1) are collinear, then:,1/a + 1/b = 1,a + b = 1,ab = 1,a = b,1/a + 1/b = 1
+MCQ,44,The area of triangle with vertices (2, 1), (4, 3), (6, 5) is:,0 square units,1 square unit,2 square units,3 square units,0 square units
+MCQ,45,The point on x-axis which is equidistant from (2, -5) and (-2, 9) is:,(7, 0),(-7, 0),(0, 7),(0, -7),(-7, 0)
+MCQ,46,If the distance between (2, -3) and (x, 5) is 10, then x =:,8 or -4,8 or 4,-8 or 4,-8 or -4,8 or -4
+MCQ,47,The coordinates of the centroid of triangle with vertices (0, 6), (8, 12), (8, 0) is:,(16/3, 6),(6, 16/3),(8, 6),(6, 8),(16/3, 6)
+MCQ,48,If A(2, 3), B(4, 5), C(5, 6) are three points, then the area of triangle ABC is:,0 square units,1 square unit,2 square units,3 square units,0 square units
+MCQ,49,The distance between (sin θ, cos θ) and (cos θ, sin θ) is:,√2|sin θ - cos θ|,|sin θ - cos θ|,√2,1,√2|sin θ - cos θ|
+MCQ,50,If the points (1, 2), (4, y), (x, 6), (3, 5) are vertices of a parallelogram taken in order, then (x, y) is:,(6, 3),(3, 6),(5, 4),(4, 5),(6, 3)
+Integer,1,The distance between the points (2, 3) and (5, 7) is _____ units.,5,,,,
+Integer,2,The distance of the point (3, 4) from the origin is _____ units.,5,,,,
+Integer,3,The x-coordinate of the midpoint of the line joining (2, 3) and (6, 5) is: _____.,4,,,,
+Integer,4,The y-coordinate of the midpoint of the line joining (2, 3) and (6, 5) is: _____.,4,,,,
+Integer,5,The area of triangle with vertices (0, 0), (4, 0), and (0, 3) is _____ square units.,6,,,,
+Integer,6,The distance between (0, 5) and (-5, 0) is 5√2. Write the coefficient: _____.,5,,,,
+Integer,7,The area of triangle with vertices (1, 1), (4, 1), and (1, 5) is _____ square units.,6,,,,
+Integer,8,The distance of point (4, 3) from x-axis is _____ units.,3,,,,
+Integer,9,The distance of point (4, 3) from y-axis is _____ units.,4,,,,
+Integer,10,The area of quadrilateral with vertices (0, 0), (4, 0), (4, 3), (0, 3) is _____ square units.,12,,,,
+Integer,11,The distance between (cos 60°, sin 60°) and (-cos 60°, -sin 60°) is: _____.,2,,,,
+Integer,12,The area of triangle with vertices (-2, 0), (2, 0), (0, 3) is _____ square units.,6,,,,
+Integer,13,The distance of point (5, 12) from the origin is _____ units.,13,,,,
+Integer,14,The area of triangle with vertices (0, 0), (3, 0), (0, 4) is _____ square units.,6,,,,
+Integer,15,If A(2, 3), B(4, k), C(6, -3) are collinear, then k =: _____.,0,,,,
+Integer,16,The distance between (2, -3) and (10, y) is 10. One value of y is: _____ (write positive value).,3,,,,
+Integer,17,The x-coordinate of the point dividing (1, 2) and (4, 5) in ratio 2:1 internally is: _____.,3,,,,
+Integer,18,The y-coordinate of the point dividing (1, 2) and (4, 5) in ratio 2:1 internally is: _____.,4,,,,
+Integer,19,The area of triangle with vertices (2, 1), (4, 3), (6, 5) is _____ square units.,0,,,,
+Integer,20,The distance between (3, 4) and (6, 8) is _____ units.,5,,,,
+Integer,21,The x-coordinate of the midpoint of (-3, 5) and (7, -3) is: _____.,2,,,,
+Integer,22,The y-coordinate of the midpoint of (-3, 5) and (7, -3) is: _____.,1,,,,
+Integer,23,The distance between (a, b) and (-a, -b) when a=3, b=4 is: _____ units.,10,,,,
+Integer,24,The area of triangle with vertices (1, 2), (3, 4), (5, 6) is _____ square units.,0,,,,
+Integer,25,If the distance between (2, -3) and (x, 5) is 10, then one value of x is: _____ (positive value).,8,,,,
+Integer,26,The x-coordinate of the centroid of triangle (0, 0), (4, 0), (0, 6) is: _____ (write numerator for 4/3 as 4).,4,,,,
+Integer,27,The distance between points on x-axis which are 5 units from (2, 3). One x-coordinate is: _____ (positive value).,6,,,,
+Integer,28,The area of triangle with vertices (-1, 0), (3, 0), (0, 4) is _____ square units.,8,,,,
+Integer,29,The distance between (4, 3) and (8, 6) is _____ units.,5,,,,
+Integer,30,If the midpoint of (a, 2) and (4, 6) is (3, 4), then a =: _____.,2,,,,
+Integer,31,The area of triangle with vertices (0, 0), (5, 0), (0, 12) is _____ square units.,30,,,,
+Integer,32,The distance between (1, 1) and (4, 5) is _____ units.,5,,,,
+Integer,33,The x-coordinate of the point dividing (0, 0) and (6, 8) in ratio 3:2 internally. Numerator is: _____ (for 18/5, write 18).,18,,,,
+Integer,34,The area of triangle with vertices (2, 3), (5, 7), (8, 11) is _____ square units.,0,,,,
+Integer,35,The distance between (-3, 4) and (5, -2) is _____ units.,10,,,,
+Integer,36,The y-coordinate of the centroid of triangle (1, 2), (4, 6), (7, 4) is: _____ (for 12/3 = 4).,4,,,,
+Integer,37,The distance between (0, 0) and (12, 5) is _____ units.,13,,,,
+Integer,38,The area of triangle with vertices (3, 4), (6, 4), (3, 8) is _____ square units.,6,,,,
+Integer,39,The distance between (7, 24) and the origin is _____ units.,25,,,,
+Integer,40,The x-coordinate of the point dividing (-1, 7) and (4, -3) in ratio 2:3 internally is: _____.,1,,,,
+Integer,41,The area of triangle with vertices (-2, -1), (1, 2), (4, 5) is _____ square units.,0,,,,
+Integer,42,The distance between (6, 8) and (10, 11) is _____ units.,5,,,,
+Integer,43,The y-coordinate of the centroid of triangle (0, 0), (8, 0), (0, 12) is: _____.,4,,,,
+Integer,44,The distance between (9, 12) and the origin is _____ units.,15,,,,
+Integer,45,The area of triangle with vertices (4, 5), (8, 5), (4, 9) is _____ square units.,8,,,,
+Integer,46,The distance between (15, 8) and (3, 4) is _____ units.,4√10. Write the coefficient: _____.,4,,,,
+Integer,47,The x-coordinate of the midpoint of (a, b) and (c, d) when a=1, c=7 is: _____.,4,,,,
+Integer,48,The area of triangle with vertices (5, 2), (9, 2), (5, 6) is _____ square units.,8,,,,
+Integer,49,The distance between (20, 21) and (4, 3) is _____ units.,30,,,,
+Integer,50,The y-coordinate of the point dividing (2, 3) and (8, 9) in ratio 1:2 internally is: _____ (for 15/3 = 5).,5,,,,
+Problem,1,Find the distance between the points (2, 3) and (5, 7).,"Using distance formula: d = √[(x₂ - x₁)² + (y₂ - y₁)²] = √[(5 - 2)² + (7 - 3)²] = √[3² + 4²] = √[9 + 16] = √25 = 5 units. Answer: 5 units",,,,
+Problem,2,Find the distance of the point (3, 4) from the origin.,"Distance from origin = √[(3 - 0)² + (4 - 0)²] = √[3² + 4²] = √[9 + 16] = √25 = 5 units. Answer: 5 units",,,,
+Problem,3,Find the coordinates of the midpoint of the line segment joining (2, 3) and (6, 5).,"Midpoint = ((x₁ + x₂)/2, (y₁ + y₂)/2) = ((2 + 6)/2, (3 + 5)/2) = (8/2, 8/2) = (4, 4). Answer: (4, 4)",,,,
+Problem,4,Find the coordinates of the point which divides the line joining (1, 2) and (4, 5) in the ratio 2:1 internally.,"Using section formula: P = ((mx₂ + nx₁)/(m+n), (my₂ + ny₁)/(m+n)) = ((2×4 + 1×1)/(2+1), (2×5 + 1×2)/(2+1)) = ((8+1)/3, (10+2)/3) = (9/3, 12/3) = (3, 4). Answer: (3, 4)",,,,
+Problem,5,Find the area of the triangle with vertices (0, 0), (4, 0), and (0, 3).,"Area = 1/2 |x₁(y₂ - y₃) + x₂(y₃ - y₁) + x₃(y₁ - y₂)| = 1/2 |0(0-3) + 4(3-0) + 0(0-0)| = 1/2 |0 + 12 + 0| = 1/2 × 12 = 6 square units. Answer: 6 square units",,,,
+Problem,6,Find the distance between the points (0, 5) and (-5, 0).,"d = √[(-5 - 0)² + (0 - 5)²] = √[(-5)² + (-5)²] = √[25 + 25] = √50 = 5√2 units. Answer: 5√2 units",,,,
+Problem,7,Find the coordinates of the point which divides the line joining (-1, 7) and (4, -3) in the ratio 2:3 internally.,"P = ((2×4 + 3×(-1))/(2+3), (2×(-3) + 3×7)/(2+3)) = ((8-3)/5, (-6+21)/5) = (5/5, 15/5) = (1, 3). Answer: (1, 3)",,,,
+Problem,8,Find the area of the triangle with vertices (1, 1), (4, 1), and (1, 5).,"Area = 1/2 |1(1-5) + 4(5-1) + 1(1-1)| = 1/2 |1(-4) + 4(4) + 0| = 1/2 |-4 + 16| = 1/2 × 12 = 6 square units. Answer: 6 square units",,,,
+Problem,9,Find the coordinates of the centroid of the triangle with vertices (0, 0), (4, 0), and (0, 6).,"Centroid = ((x₁+x₂+x₃)/3, (y₁+y₂+y₃)/3) = ((0+4+0)/3, (0+0+6)/3) = (4/3, 6/3) = (4/3, 2). Answer: (4/3, 2)",,,,
+Problem,10,Check whether the points (1, 2), (3, 4), and (5, 6) are collinear.,"Area = 1/2 |1(4-6) + 3(6-2) + 5(2-4)| = 1/2 |1(-2) + 3(4) + 5(-2)| = 1/2 |-2 + 12 - 10| = 1/2 × 0 = 0. Since area = 0, the points are collinear. Answer: Yes, they are collinear",,,,
+Problem,11,Find the point on x-axis which is equidistant from (2, -5) and (-2, 9).,"Let the point be (x, 0). Distance from (2, -5): √[(x-2)² + (0+5)²] = √[(x-2)² + 25]. Distance from (-2, 9): √[(x+2)² + (0-9)²] = √[(x+2)² + 81]. Equating: (x-2)² + 25 = (x+2)² + 81, x² - 4x + 4 + 25 = x² + 4x + 4 + 81, -4x + 29 = 4x + 85, -8x = 56, x = -7. Point is (-7, 0). Answer: (-7, 0)",,,,
+Problem,12,Find the distance between the points (a, b) and (-a, -b).,"d = √[(-a - a)² + (-b - b)²] = √[(-2a)² + (-2b)²] = √[4a² + 4b²] = √[4(a² + b²)] = 2√(a² + b²). Answer: 2√(a² + b²)",,,,
+Problem,13,Find the coordinates of the point which divides the line joining (2, 3) and (8, 9) in the ratio 1:2 internally.,"P = ((1×8 + 2×2)/(1+2), (1×9 + 2×3)/(1+2)) = ((8+4)/3, (9+6)/3) = (12/3, 15/3) = (4, 5). Answer: (4, 5)",,,,
+Problem,14,If A(2, 3), B(4, k), C(6, -3) are collinear, find the value of k.,"For collinearity, area = 0. 1/2 |2(k-(-3)) + 4(-3-3) + 6(3-k)| = 0, |2(k+3) + 4(-6) + 6(3-k)| = 0, |2k+6 -24 + 18 - 6k| = 0, |-4k| = 0, k = 0. Answer: k = 0",,,,
+Problem,15,Find the area of the quadrilateral with vertices (0, 0), (4, 0), (4, 3), (0, 3).,"Dividing into two triangles: Triangle 1: (0,0), (4,0), (4,3). Area = 1/2 |0(0-3) + 4(3-0) + 4(0-0)| = 6. Triangle 2: (0,0), (4,3), (0,3). Area = 1/2 |0(3-3) + 4(3-0) + 0(0-3)| = 6. Total = 12 square units. Answer: 12 square units",,,,
+Problem,16,Find the distance of the point (5, 12) from the origin.,"Distance = √[(5-0)² + (12-0)²] = √[25 + 144] = √169 = 13 units. Answer: 13 units",,,,
+Problem,17,Find the coordinates of the point which divides the line joining (0, 0) and (6, 8) in the ratio 3:2 internally.,"P = ((3×6 + 2×0)/(3+2), (3×8 + 2×0)/(3+2)) = (18/5, 24/5). Answer: (18/5, 24/5)",,,,
+Problem,18,Find the area of the triangle with vertices (2, 1), (4, 3), and (6, 5).,"Area = 1/2 |2(3-5) + 4(5-1) + 6(1-3)| = 1/2 |2(-2) + 4(4) + 6(-2)| = 1/2 |-4 + 16 - 12| = 1/2 × 0 = 0. Answer: 0 square units (points are collinear)",,,,
+Problem,19,Find the point on y-axis which is equidistant from (3, 4) and (-3, 4).,"Let the point be (0, y). Distance from (3, 4): √[(0-3)² + (y-4)²] = √[9 + (y-4)²]. Distance from (-3, 4): √[(0+3)² + (y-4)²] = √[9 + (y-4)²]. Both are equal for all y. But since both points have y=4, the point on y-axis equidistant is (0, 4). Answer: (0, 4)",,,,
+Problem,20,If the distance between (2, -3) and (x, 5) is 10, find the values of x.,"10 = √[(x-2)² + (5-(-3))²] = √[(x-2)² + 8²] = √[(x-2)² + 64]. Squaring: 100 = (x-2)² + 64, (x-2)² = 36, x-2 = ±6, x = 8 or x = -4. Answer: x = 8 or x = -4",,,,
+Problem,21,Find the coordinates of the centroid of the triangle with vertices (1, 2), (4, 6), and (7, 4).,"Centroid = ((1+4+7)/3, (2+6+4)/3) = (12/3, 12/3) = (4, 4). Answer: (4, 4)",,,,
+Problem,22,Find the area of the triangle with vertices (-2, 0), (2, 0), and (0, 3).,"Area = 1/2 |-2(0-3) + 2(3-0) + 0(0-0)| = 1/2 |-2(-3) + 2(3) + 0| = 1/2 |6 + 6| = 1/2 × 12 = 6 square units. Answer: 6 square units",,,,
+Problem,23,Find the distance between the points (3, 4) and (6, 8).,"d = √[(6-3)² + (8-4)²] = √[3² + 4²] = √[9 + 16] = √25 = 5 units. Answer: 5 units",,,,
+Problem,24,Find the coordinates of the midpoint of the line joining (-3, 5) and (7, -3).,"Midpoint = ((-3+7)/2, (5+(-3))/2) = (4/2, 2/2) = (2, 1). Answer: (2, 1)",,,,
+Problem,25,Find the area of the triangle with vertices (3, 4), (6, 4), and (3, 8).,"Area = 1/2 |3(4-8) + 6(8-4) + 3(4-4)| = 1/2 |3(-4) + 6(4) + 0| = 1/2 |-12 + 24| = 1/2 × 12 = 6 square units. Answer: 6 square units",,,,
+Problem,26,If the points (1, 2), (4, y), (x, 6), (3, 5) are vertices of a parallelogram taken in order, find x and y.,"In a parallelogram, diagonals bisect each other. Midpoint of AC = Midpoint of BD. Midpoint of AC = ((1+x)/2, (2+6)/2) = ((1+x)/2, 4). Midpoint of BD = ((4+3)/2, (y+5)/2) = (7/2, (y+5)/2). Equating: (1+x)/2 = 7/2, x = 6. (y+5)/2 = 4, y = 3. Answer: x = 6, y = 3",,,,
+Problem,27,Find the distance between the points (7, 24) and the origin.,"Distance = √[(7-0)² + (24-0)²] = √[49 + 576] = √625 = 25 units. Answer: 25 units",,,,
+Problem,28,Find the coordinates of the point which divides the line joining (2, 3) and (8, 9) in the ratio 2:1 internally.,"P = ((2×8 + 1×2)/(2+1), (2×9 + 1×3)/(2+1)) = ((16+2)/3, (18+3)/3) = (18/3, 21/3) = (6, 7). Answer: (6, 7)",,,,
+Problem,29,Find the area of the triangle with vertices (4, 5), (8, 5), and (4, 9).,"Area = 1/2 |4(5-9) + 8(9-5) + 4(5-5)| = 1/2 |4(-4) + 8(4) + 0| = 1/2 |-16 + 32| = 1/2 × 16 = 8 square units. Answer: 8 square units",,,,
+Problem,30,Find the distance between the points (-3, 4) and (5, -2).,"d = √[(5-(-3))² + (-2-4)²] = √[(5+3)² + (-6)²] = √[8² + 36] = √[64 + 36] = √100 = 10 units. Answer: 10 units",,,,
+Problem,31,Find the coordinates of the centroid of the triangle with vertices (0, 6), (8, 12), and (8, 0).,"Centroid = ((0+8+8)/3, (6+12+0)/3) = (16/3, 18/3) = (16/3, 6). Answer: (16/3, 6)",,,,
+Problem,32,Find the distance between the points (9, 12) and the origin.,"Distance = √[(9-0)² + (12-0)²] = √[81 + 144] = √225 = 15 units. Answer: 15 units",,,,
+Problem,33,Find the area of the triangle with vertices (0, 0), (5, 0), and (0, 12).,"Area = 1/2 |0(0-12) + 5(12-0) + 0(0-0)| = 1/2 |0 + 60 + 0| = 1/2 × 60 = 30 square units. Answer: 30 square units",,,,
+Problem,34,Find the coordinates of the point which divides the line joining (-1, 7) and (4, -3) in the ratio 3:2 internally.,"P = ((3×4 + 2×(-1))/(3+2), (3×(-3) + 2×7)/(3+2)) = ((12-2)/5, (-9+14)/5) = (10/5, 5/5) = (2, 1). Answer: (2, 1)",,,,
+Problem,35,Find the distance between the points (1, 1) and (4, 5).,"d = √[(4-1)² + (5-1)²] = √[3² + 4²] = √[9 + 16] = √25 = 5 units. Answer: 5 units",,,,
+Problem,36,Find the area of the triangle with vertices (-1, 0), (3, 0), and (0, 4).,"Area = 1/2 |-1(0-4) + 3(4-0) + 0(0-0)| = 1/2 |-1(-4) + 3(4) + 0| = 1/2 |4 + 12| = 1/2 × 16 = 8 square units. Answer: 8 square units",,,,
+Problem,37,Find the coordinates of the midpoint of the line joining (a, b) and (c, d).,"Midpoint = ((a+c)/2, (b+d)/2). Answer: ((a+c)/2, (b+d)/2)",,,,
+Problem,38,If the distance between (a, 2) and (3, 4) is 2√2, find the values of a.,"2√2 = √[(3-a)² + (4-2)²] = √[(3-a)² + 4]. Squaring: 8 = (3-a)² + 4, (3-a)² = 4, 3-a = ±2, a = 1 or a = 5. Answer: a = 1 or a = 5",,,,
+Problem,39,Find the coordinates of the centroid of the triangle with vertices (1, -1), (4, 3), and (7, -3).,"Centroid = ((1+4+7)/3, (-1+3+(-3))/3) = (12/3, -1/3) = (4, -1/3). Answer: (4, -1/3)",,,,
+Problem,40,Find the area of the triangle with vertices (5, 2), (9, 2), and (5, 6).,"Area = 1/2 |5(2-6) + 9(6-2) + 5(2-2)| = 1/2 |5(-4) + 9(4) + 0| = 1/2 |-20 + 36| = 1/2 × 16 = 8 square units. Answer: 8 square units",,,,
+Problem,41,Find the distance between the points (6, 8) and (10, 11).,"d = √[(10-6)² + (11-8)²] = √[4² + 3²] = √[16 + 9] = √25 = 5 units. Answer: 5 units",,,,
+Problem,42,Find the coordinates of the point which divides the line joining (0, 0) and (12, 16) in the ratio 3:1 internally.,"P = ((3×12 + 1×0)/(3+1), (3×16 + 1×0)/(3+1)) = (36/4, 48/4) = (9, 12). Answer: (9, 12)",,,,
+Problem,43,Find the area of the triangle with vertices (2, 3), (5, 7), and (8, 11).,"Area = 1/2 |2(7-11) + 5(11-3) + 8(3-7)| = 1/2 |2(-4) + 5(8) + 8(-4)| = 1/2 |-8 + 40 - 32| = 1/2 × 0 = 0. Answer: 0 square units (collinear)",,,,
+Problem,44,Find the distance between the points (20, 21) and (4, 3).,"d = √[(4-20)² + (3-21)²] = √[(-16)² + (-18)²] = √[256 + 324] = √580 = 2√145. Answer: 2√145 units",,,,
+Problem,45,Find the coordinates of the centroid of the triangle with vertices (2, 3), (5, 6), and (8, 9).,"Centroid = ((2+5+8)/3, (3+6+9)/3) = (15/3, 18/3) = (5, 6). Answer: (5, 6)",,,,
+Problem,46,Find the area of the triangle with vertices (-2, -1), (1, 2), and (4, 5).,"Area = 1/2 |-2(2-5) + 1(5-(-1)) + 4(-1-2)| = 1/2 |-2(-3) + 1(6) + 4(-3)| = 1/2 |6 + 6 - 12| = 1/2 × 0 = 0. Answer: 0 square units (collinear)",,,,
+Problem,47,Find the point on x-axis which is equidistant from (1, 2) and (5, 2).,"Let the point be (x, 0). Distance from (1, 2): √[(x-1)² + 4]. Distance from (5, 2): √[(x-5)² + 4]. Equating: (x-1)² = (x-5)², x² - 2x + 1 = x² - 10x + 25, 8x = 24, x = 3. Point is (3, 0). Answer: (3, 0)",,,,
+Problem,48,Find the distance between the points (15, 8) and (3, 4).,"d = √[(3-15)² + (4-8)²] = √[(-12)² + (-4)²] = √[144 + 16] = √160 = 4√10 units. Answer: 4√10 units",,,,
+Problem,49,Find the coordinates of the point which divides the line joining (1, 2) and (7, 8) in the ratio 1:2 internally.,"P = ((1×7 + 2×1)/(1+2), (1×8 + 2×2)/(1+2)) = ((7+2)/3, (8+4)/3) = (9/3, 12/3) = (3, 4). Answer: (3, 4)",,,,
+Problem,50,Find the area of the triangle with vertices (a, b+c), (b, c+a), and (c, a+b).,"Area = 1/2 |a((c+a) - (a+b)) + b((a+b) - (b+c)) + c((b+c) - (c+a))| = 1/2 |a(c-b) + b(a-c) + c(b-a)| = 1/2 |ac - ab + ab - bc + bc - ac| = 1/2 × 0 = 0. Answer: 0 square units (points are collinear)",,,,
+

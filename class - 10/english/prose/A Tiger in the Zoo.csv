@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of A Tiger in the Zoo?,Robert Frost,Leslie Norris,William Blake,John Keats,Leslie Norris
+MCQ,2,A Tiger in the Zoo is a,Story,Poem,Play,Essay,Poem
+MCQ,3,Where is the tiger in the poem?,Forest,Zoo,Mountain,River,Zoo
+MCQ,4,The tiger is locked in a,Den,Cage,Forest,Valley,Cage
+MCQ,5,What is the tiger doing in the cage?,Sleeping,Running,Pacing,Roaring,Pacing
+MCQ,6,The tiger’s movement is described as,Free,Fast,Slow and quiet,Violent,Slow and quiet
+MCQ,7,What does the tiger ignore?,Visitors,Food,Keeper,Bars,Visitors
+MCQ,8,The tiger’s strength is described as,Weak,Powerful,Average,Small,Powerful
+MCQ,9,The poet contrasts the tiger’s life in the zoo with,City life,Forest life,Human life,Bird life,Forest life
+MCQ,10,The tiger should be lurking near,House,Water hole,Cage gate,Road,Water hole
+MCQ,11,The tiger in the wild would be hunting,Deer,Buffalo,Elephants,Goats,Deer
+MCQ,12,The tiger hears the patrolling cars at,Evening,Night,Morning,Afternoon,Night
+MCQ,13,What emotion does the tiger show?,Joy,Anger,Indifference,Happiness,Anger
+MCQ,14,The tiger’s eyes are described as,Friendly,Bright and soft,Angry and sharp,Closed,Angry and sharp
+MCQ,15,The poem highlights the theme of,Freedom vs captivity,Love,Nature’s beauty,War,Freedom vs captivity
+MCQ,16,The tiger’s strength is locked behind,Walls,Bars,Trees,Fences,Bars
+MCQ,17,The poet sympathizes with the tiger because it is,Hungry,Angry,Imprisoned,Wild,Imprisoned
+MCQ,18,The tiger’s roar is directed at,Visitors,Cars,Stars,Keeper,Stars
+MCQ,19,The poet wants the tiger to be,In cage,In forest,With humans,Trained,In forest
+MCQ,20,What time does the tiger hear cars?,Day,Night,Evening,Morning,Night
+MCQ,21,The tiger walks in the cage with,Anger,Fear,Pride,Joy,Anger
+MCQ,22,The tiger’s movement suggests,Freedom,Powerlessness,Happiness,Excitement,Powerlessness
+MCQ,23,The zoo represents,Freedom,Protection,Captivity,Nature,Captivity
+MCQ,24,The forest represents,Danger,Freedom,City life,Crowd,Freedom
+MCQ,25,The tiger’s roar is,A sign of joy,A sign of fear,A protest,A greeting,A protest
+MCQ,26,The poem shows animals are happier in,Zoos,Cages,Forests,Cities,Forests
+MCQ,27,The tiger ignores visitors because,He is sleeping,He is angry,He is used to them,He is tired,He is angry
+MCQ,28,The tiger’s pacing shows,Excitement,Anger and frustration,Joy,Freedom,Anger and frustration
+MCQ,29,The poem criticizes,Wild animals,Hunters,Zoos,Forests,Zoos
+MCQ,30,The tiger’s natural habitat is,Zoo,Cage,Forest,City,Forest
+MCQ,31,The tiger’s claws are described as,Soft,Weak,Sharp and strong,Broken,Sharp and strong
+MCQ,32,The tiger stalks its prey near,House,Water hole,Cage gate,City,Water hole
+MCQ,33,The tiger’s strength is called,Unused,Lost,Locked,Destroyed,Locked
+MCQ,34,The poet uses contrast between,Man and animal,Zoo and forest,Day and night,Noise and silence,Zoo and forest
+MCQ,35,The tiger’s eyes are full of,Peace,Fear,Rage,Joy,Rage
+MCQ,36,The poem makes readers feel,Sad,Happy,Indifferent,Excited,Sad
+MCQ,37,The tiger is described as,Weak,Majestic,Lazy,Friendly,Majestic
+MCQ,38,The poet feels that keeping animals in cages is,Caring,Cruel,Safe,Useful,Cruel
+MCQ,39,The tiger’s silence suggests,Peace,Submission,Anger,Fear,Anger
+MCQ,40,The poem ends with the tiger,Escaping,Sleeping,Staring at stars,Attacking,Staring at stars
+MCQ,41,The tiger’s roar reaches,People,Cars,Stars,Forest,Stars
+MCQ,42,The poem reflects concern for,Human life,Wildlife,Nature only,Cities,Wildlife
+MCQ,43,The tiger is restless because of,Lack of food,Illness,Loss of freedom,Noise,Loss of freedom
+MCQ,44,The tiger’s cage is described as,Wide,Comfortable,Narrow,Open,Narrow
+MCQ,45,The poem suggests that animals should live,With humans,In cages,In forests,In cities,In forests
+MCQ,46,The tiger’s movement is compared to,Running,Pacing,Flying,Jumping,Pacing
+MCQ,47,The tiger’s life in the zoo is,Joyful,Peaceful,Unnatural,Safe,Unnatural
+MCQ,48,The poet uses imagery to show,Beauty of zoo,Sadness of captivity,Nature’s danger,Happiness of animals,Sadness of captivity
+MCQ,49,The central idea of the poem is,Animal training,Animal freedom,Human power,Zoo management,Animal freedom
+MCQ,50,The poem appeals to,Both children and adults,Only children,Only adults,Only poets,Both children and adults
+
+Integer,1,Name of the poet?,Leslie Norris,,,,
+Integer,2,Type of poem?,Lyric,,,,
+Integer,3,Where is the tiger?,Zoo,,,,
+Integer,4,The tiger moves by?,Pacing,,,,
+Integer,5,The cage is made of?,Bars,,,,
+Integer,6,Tiger’s natural home?,Forest,,,,
+Integer,7,Tiger hunts near?,Water hole,,,,
+Integer,8,Time when tiger hears cars?,Night,,,,
+Integer,9,Main theme?,Freedom vs captivity,,,,
+Integer,10,Tiger’s emotion?,Anger,,,,
+Integer,11,Tiger’s strength is?,Locked,,,,
+Integer,12,The tiger ignores?,Visitors,,,,
+Integer,13,Tiger’s eyes show?,Rage,,,,
+Integer,14,Poet’s feeling?,Sympathy,,,,
+Integer,15,The poem criticizes?,Zoos,,,,
+Integer,16,Forest represents?,Freedom,,,,
+Integer,17,Zoo represents?,Captivity,,,,
+Integer,18,Tiger’s movement speed?,Slow,,,,
+Integer,19,Tiger’s claws?,Sharp,,,,
+Integer,20,Tiger stalks prey?,Silently,,,,
+Integer,21,Tiger’s roar at?,Stars,,,,
+Integer,22,Tiger’s mood?,Frustrated,,,,
+Integer,23,Tiger’s life is?,Restricted,,,,
+Integer,24,Tiger walks?,Angrily,,,,
+Integer,25,The poem tone?,Serious,,,,
+Integer,26,Tiger’s power?,Unused,,,,
+Integer,27,Tiger’s habitat contrast?,Zoo and forest,,,,
+Integer,28,Tiger hears sounds of?,Cars,,,,
+Integer,29,The poem setting?,Zoo,,,,
+Integer,30,Tiger’s freedom?,Lost,,,,
+Integer,31,Tiger’s nature?,Wild,,,,
+Integer,32,Tiger’s cage size?,Small,,,,
+Integer,33,Tiger’s reaction to zoo?,Anger,,,,
+Integer,34,Tiger in wild would be?,Free,,,,
+Integer,35,Poet’s message?,Let animals be free,,,,
+Integer,36,Tiger’s life in zoo?,Unhappy,,,,
+Integer,37,Tiger’s movement type?,Repetitive,,,,
+Integer,38,The poem evokes?,Pity,,,,
+Integer,39,Tiger’s roar shows?,Protest,,,,
+Integer,40,The poem’s mood?,Sad,,,,
+Integer,41,Tiger’s prey?,Deer,,,,
+Integer,42,Tiger’s strength compared to?,Power,,,,
+Integer,43,Tiger ignores people because?,Anger,,,,
+Integer,44,The poem shows cruelty of?,Captivity,,,,
+Integer,45,Tiger’s eyes are?,Angry,,,,
+Integer,46,Tiger’s condition?,Imprisoned,,,,
+Integer,47,Tiger’s roar time?,Night,,,,
+Integer,48,Tiger’s desire?,Freedom,,,,
+Integer,49,Poet’s concern?,Wildlife,,,,
+Integer,50,Central message?,Freedom for animals,,,,
+
+Descriptive,1,What is the central idea of the poem A Tiger in the Zoo?,,,,,Wild animals suffer in captivity and deserve freedom
+Descriptive,2,Describe the tiger’s condition in the zoo.,,,,,It is imprisoned, restless and angry
+Descriptive,3,How does the poet contrast the zoo and the forest?,,,,,Zoo shows captivity, forest shows freedom
+Descriptive,4,Why does the tiger pace in the cage?,,,,,Due to anger and frustration
+Descriptive,5,What does the tiger’s roar symbolize?,,,,,Protest against captivity
+Descriptive,6,Describe the tiger in its natural habitat.,,,,,Free, powerful and majestic
+Descriptive,7,How does the poet show sympathy for the tiger?,,,,,By highlighting its suffering
+Descriptive,8,Why is the tiger angry in the zoo?,,,,,Loss of freedom
+Descriptive,9,What message does the poem convey?,,,,,Animals should live free
+Descriptive,10,Explain the significance of the title.,,,,,Focuses on captivity of tiger
+Descriptive,11,How does imagery enhance the poem?,,,,,Shows contrast clearly
+Descriptive,12,What role does night play in the poem?,,,,,Shows loneliness and protest
+Descriptive,13,Why does the tiger ignore visitors?,,,,,Anger and helplessness
+Descriptive,14,Describe the tiger’s movement.,,,,,Slow, silent and repetitive
+Descriptive,15,What does the forest symbolize?,,,,,Freedom and natural life
+Descriptive,16,What does the zoo symbolize?,,,,,Imprisonment
+Descriptive,17,How does the poem criticize zoos?,,,,,Shows cruelty of captivity
+Descriptive,18,Why is the tiger described as majestic?,,,,,Because of its strength
+Descriptive,19,How does the poet use contrast effectively?,,,,,Zoo vs forest
+Descriptive,20,Why does the tiger roar at stars?,,,,,Expression of protest
+Descriptive,21,Explain the tone of the poem.,,,,,Serious and sympathetic
+Descriptive,22,What emotions does the poem evoke?,,,,,Pity and concern
+Descriptive,23,How does the poem reflect wildlife conservation?,,,,,Advocates freedom
+Descriptive,24,Why is the tiger’s strength called locked?,,,,,It cannot be used
+Descriptive,25,What does the tiger’s silence suggest?,,,,,Suppressed anger
+Descriptive,26,How does captivity affect the tiger?,,,,,Makes it restless
+Descriptive,27,Explain the poet’s attitude towards animals.,,,,,Sympathetic
+Descriptive,28,Why is the tiger restless at night?,,,,,Feels imprisoned
+Descriptive,29,How does the poem appeal to readers?,,,,,Creates empathy
+Descriptive,30,What lesson does the poem teach?,,,,,Freedom is essential
+Descriptive,31,Describe the tiger’s eyes.,,,,,Full of rage
+Descriptive,32,How does the poem use simple language?,,,,,To convey strong message
+Descriptive,33,Why should animals not be caged?,,,,,They lose freedom
+Descriptive,34,Explain the contrast between power and helplessness.,,,,,Strong yet imprisoned
+Descriptive,35,How does the poet describe the tiger’s walk?,,,,,Angry pacing
+Descriptive,36,Why is the forest life ideal for the tiger?,,,,,Natural freedom
+Descriptive,37,What is the significance of water hole?,,,,,Natural hunting place
+Descriptive,38,How does the poem show human cruelty?,,,,,Through captivity
+Descriptive,39,Why is the poem still relevant today?,,,,,Zoos still exist
+Descriptive,40,Explain how the poem creates awareness.,,,,,About animal rights
+Descriptive,41,What does the tiger’s roar reveal?,,,,,Pain and anger
+Descriptive,42,Why does the poet compare day and night?,,,,,To show contrast
+Descriptive,43,Explain the role of imagery in the poem.,,,,,Vivid pictures
+Descriptive,44,How does the poem make readers question captivity?,,,,,Shows suffering
+Descriptive,45,What is the moral of the poem?,,,,,Animals deserve freedom
+Descriptive,46,Describe the tiger’s feelings.,,,,,Anger and frustration
+Descriptive,47,How does the poem show loss of natural life?,,,,,Through cage imagery
+Descriptive,48,Why is the tiger’s life unnatural in the zoo?,,,,,Away from habitat
+Descriptive,49,Explain the ending of the poem.,,,,,Tiger roars in protest
+Descriptive,50,Summarize the poem A Tiger in the Zoo.,,,,,Poem highlights suffering of a caged tiger and need for freedom

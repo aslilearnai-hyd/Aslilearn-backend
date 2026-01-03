@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who wrote the poem "On Killing a Tree"?,Robert Frost,Gieve Patel,W B Yeats,John Keats,Gieve Patel
+MCQ,2,The poem is about?,Planting trees,Cutting grass,Killing a tree,Forest life,Killing a tree
+MCQ,3,The poem highlights?,Ease of killing trees,Difficulty of killing trees,Beauty of trees,Tree planting,Difficulty of killing trees
+MCQ,4,What is NOT enough to kill a tree?,Chopping,Hacking,Simple jab,Root removal,Simple jab
+MCQ,5,What grows from the tree?,Leaves,Bark,Sap,Flowers,Sap
+MCQ,6,The tree draws strength from?,Air,Water,Earth,Sun,Earth
+MCQ,7,Which part of the tree is most sensitive?,Bark,Leaves,Root,Branches,Root
+MCQ,8,What happens when the bark is cut?,Tree dies immediately,Tree bleeds sap,Tree heals,Nothing,Tree bleeds sap
+MCQ,9,What must be pulled out to kill a tree?,Stem,Branch,Root,Leaf,Root
+MCQ,10,The root is described as?,Weak,Strong,Anchored,Shallow,Anchored
+MCQ,11,The tone of the poem is?,Joyful,Humorous,Ironical and serious,Romantic,Ironical and serious
+MCQ,12,The poet indirectly condemns?,Nature,Humans,Animals,Plants,Humans
+MCQ,13,What does "leprous hide" refer to?,Tree bark,Tree root,Tree leaves,Tree stem,Tree bark
+MCQ,14,What will scorch and choke the tree?,Water,Air,Sun and air,Soil,Sun and air
+MCQ,15,The poem suggests trees are?,Weak,Strong and resilient,Easy to destroy,Useless,Strong and resilient
+MCQ,16,The poet compares killing a tree to?,Easy act,Painful process,Instant action,Game,Painful process
+MCQ,17,What literary device is dominant?,Simile,Metaphor,Personification,Alliteration,Personification
+MCQ,18,The tree’s strength comes from?,Leaves,Branches,Roots,Bark,Roots
+MCQ,19,What happens if roots remain?,Tree dies,Tree survives,Tree dries,Nothing,Tree survives
+MCQ,20,The poem conveys message about?,Nature’s weakness,Nature’s strength,Urban life,Technology,Nature’s strength
+MCQ,21,The tree heals by?,Bleeding sap,New shoots,Drying up,Burning,New shoots
+MCQ,22,The act of killing a tree is described as?,Natural,Cruel,Simple,Funny,Cruel
+MCQ,23,The poet uses scientific tone to?,Praise humans,Explain brutality,Encourage cutting,Entertain,Explain brutality
+MCQ,24,What does "anchoring earth" mean?,Shallow roots,Deep roots,Loose soil,Sand,Deep roots
+MCQ,25,The poem is a?,Narrative poem,Lyric poem,Didactic poem,Sonnet,Didactic poem
+MCQ,26,The poem warns against?,Tree planting,Deforestation,Nature care,Gardening,Deforestation
+MCQ,27,What happens after chopping?,Tree regrows,Tree bleeds and heals,Tree dies instantly,Nothing,Tree bleeds and heals
+MCQ,28,Which part absorbs nourishment?,Leaves,Branches,Roots,Bark,Roots
+MCQ,29,The poet’s attitude is?,Supportive of cutting,Critical of killing trees,Neutral,Happy,Critical of killing trees
+MCQ,30,What does the poet emphasize?,Human power,Tree’s life force,Tools,Nature beauty,Tree’s life force
+MCQ,31,The tree struggles against?,Humans,Animals,Time,Nature,Humans
+MCQ,32,What dries the tree?,Water,Air,Sun,Soil,Sun
+MCQ,33,What does the poem teach?,How to cut trees,Tree anatomy,Respect nature,Plant crops,Respect nature
+MCQ,34,The process of killing a tree is?,Quick,Slow and violent,Easy,Painless,Slow and violent
+MCQ,35,The tree represents?,Weakness,Life and resilience,Decoration,Furniture,Life and resilience
+MCQ,36,What happens if roots are exposed?,Tree lives,Tree strengthens,Tree dies,Nothing,Tree dies
+MCQ,37,The poem belongs to?,Romantic poetry,Modern poetry,Nonsense poetry,War poetry,Modern poetry
+MCQ,38,What does sap signify?,Water,Blood of tree,Food,Strength,Blood of tree
+MCQ,39,The poem criticizes?,Trees,Axes,Human cruelty,Nature,Human cruelty
+MCQ,40,What is the theme?,Nature destruction,Tree growth,Forest travel,Gardening,Nature destruction
+MCQ,41,The poem uses irony because?,Trees die easily,Trees resist killing,Humans care for trees,Trees feel pain,Trees resist killing
+MCQ,42,The poet describes tree killing as?,Heroic,Scientific,Brutal and cruel,Funny,Brutal and cruel
+MCQ,43,The poet wants readers to?,Cut trees carefully,Respect trees,Ignore trees,Study science,Respect trees
+MCQ,44,What does "browning harden" refer to?,Tree death,Tree healing,Tree growth,Tree flowering,Tree death
+MCQ,45,The poem is shocking because?,Simple language,Violent imagery,Humor,Length,Violent imagery
+MCQ,46,The tree’s fight is against?,Wind,Fire,Humans,Animals,Humans
+MCQ,47,The poem shows trees are?,Lifeless,Living beings,Objects,Decorative,Living beings
+MCQ,48,What will finally kill the tree?,Axe,Burning,Root removal,Water,Root removal
+MCQ,49,The poem creates awareness about?,Gardening,Deforestation,Weather,Travel,Deforestation
+MCQ,50,Central idea of poem?,Tree cutting methods,Tree resistance and cruelty of humans,Nature beauty,Tools,Tree resistance and cruelty of humans
+
+Integer,1,Poet?,Gieve Patel,,,,
+Integer,2,Poem title?,On Killing a Tree,,,,
+Integer,3,Theme?,Deforestation,,,,
+Integer,4,Tree strength?,Roots,,,,
+Integer,5,Root description?,Anchored,,,,
+Integer,6,Sap meaning?,Tree blood,,,,
+Integer,7,Tone?,Serious,,,,
+Integer,8,Poem type?,Didactic,,,,
+Integer,9,Tree heals?,Yes,,,,
+Integer,10,Main message?,Respect nature,,,,
+Integer,11,Tree survives cuts?,Yes,,,,
+Integer,12,Root role?,Nourishment,,,,
+Integer,13,Process speed?,Slow,,,,
+Integer,14,Tree symbol?,Life,,,,
+Integer,15,Poem style?,Free verse,,,,
+Integer,16,Poem era?,Modern,,,,
+Integer,17,Tree killer?,Humans,,,,
+Integer,18,Violence shown?,Yes,,,,
+Integer,19,Tree regrowth?,Possible,,,,
+Integer,20,Poet attitude?,Critical,,,,
+Integer,21,Theme focus?,Nature destruction,,,,
+Integer,22,Tree response?,Resistance,,,,
+Integer,23,Root removal?,Essential,,,,
+Integer,24,Tree pain?,Implied,,,,
+Integer,25,Poem mood?,Harsh,,,,
+Integer,26,Tree resilience?,Strong,,,,
+Integer,27,Leprous hide?,Bark,,,,
+Integer,28,Tree enemy?,Humans,,,,
+Integer,29,Tree life force?,Earth,,,,
+Integer,30,Poem imagery?,Violent,,,,
+Integer,31,Poem lesson?,Environmental awareness,,,,
+Integer,32,Tree death cause?,Uprooting,,,,
+Integer,33,Poem impact?,Shocking,,,,
+Integer,34,Poet intention?,Awareness,,,,
+Integer,35,Tree survival depends on?,Roots,,,,
+Integer,36,Tree nourishment?,Soil,,,,
+Integer,37,Poem relevance?,High,,,,
+Integer,38,Tree healing sign?,Sap,,,,
+Integer,39,Poem structure?,Steps,,,,
+Integer,40,Tree struggle?,Against humans,,,,
+Integer,41,Poem focus?,Tree killing,,,,
+Integer,42,Tree symbolism?,Nature,,,,
+Integer,43,Poem ending?,Tree death,,,,
+Integer,44,Poem appeal?,Protect nature,,,,
+Integer,45,Tree weakness?,Root exposure,,,,
+Integer,46,Poem realism?,High,,,,
+Integer,47,Poem emotion?,Anger,,,,
+Integer,48,Tree resilience shown?,Yes,,,,
+Integer,49,Poem warning?,Deforestation,,,,
+Integer,50,Poem message?,Save trees,,,,
+
+Descriptive,1,Who wrote "On Killing a Tree"?,,,,,The poem was written by Gieve Patel
+Descriptive,2,What is the central theme of the poem?,,,,,The poem highlights the cruelty of killing trees and the strength of nature
+Descriptive,3,Why is killing a tree not easy?,,,,,Because a tree is resilient and can heal and regrow
+Descriptive,4,What does the poet mean by "leprous hide"?,,,,,It refers to the rough bark of the tree
+Descriptive,5,How does a tree heal itself?,,,,,By bleeding sap and growing new shoots
+Descriptive,6,Why is root removal necessary?,,,,,Roots are the source of life and nourishment
+Descriptive,7,Describe the process of killing a tree.,,,,,It involves chopping, uprooting and exposing roots
+Descriptive,8,What message does the poem convey?,,,,,Humans should respect and protect nature
+Descriptive,9,How does the poet criticize human cruelty?,,,,,By describing violent imagery
+Descriptive,10,Explain the title of the poem.,,,,,It ironically explains how difficult it is to kill a tree
+Descriptive,11,What does sap symbolize?,,,,,The life force of the tree
+Descriptive,12,How is the tree personified?,,,,,It is shown as a living being that feels pain
+Descriptive,13,Why is the poem ironical?,,,,,Because killing a tree requires effort
+Descriptive,14,What role do roots play?,,,,,They anchor and nourish the tree
+Descriptive,15,Why is the poem relevant today?,,,,,Deforestation is still a major issue
+Descriptive,16,How does the poet show tree’s resistance?,,,,,By showing regrowth after cutting
+Descriptive,17,What is the poet’s attitude?,,,,,Critical and condemning
+Descriptive,18,How does imagery strengthen the poem?,,,,,It creates a shocking effect
+Descriptive,19,What lesson should students learn?,,,,,Respect and save trees
+Descriptive,20,Why is the tone serious?,,,,,Because of environmental concern
+Descriptive,21,Explain the violence in the poem.,,,,,It shows cruelty against nature
+Descriptive,22,How does the tree symbolize life?,,,,,It resists destruction
+Descriptive,23,Why does the poet describe steps?,,,,,To emphasize brutality
+Descriptive,24,What does exposure to sun and air do?,,,,,It kills the tree
+Descriptive,25,How does the poem evoke empathy?,,,,,By showing tree’s struggle
+Descriptive,26,What does the poem say about humans?,,,,,They are cruel to nature
+Descriptive,27,Why is uprooting more cruel?,,,,,It destroys life source
+Descriptive,28,How does the poem promote environmental awareness?,,,,,By showing consequences of deforestation
+Descriptive,29,Explain the phrase "anchoring earth".,,,,,It refers to deep roots holding soil
+Descriptive,30,What happens if a tree is not uprooted?,,,,,It survives and regrows
+Descriptive,31,Why does the poet use scientific language?,,,,,To emphasize realism
+Descriptive,32,How does the poem differ from romantic nature poems?,,,,,It is harsh and realistic
+Descriptive,33,What emotions does the poem evoke?,,,,,Shock and concern
+Descriptive,34,Why is tree killing compared to murder?,,,,,Because trees are living beings
+Descriptive,35,What is the significance of roots in life?,,,,,They represent survival
+Descriptive,36,How does the poem warn humans?,,,,,By showing tree’s resilience
+Descriptive,37,Why is the poem didactic?,,,,,It teaches a moral lesson
+Descriptive,38,How does the poet use irony?,,,,,By explaining killing as complex
+Descriptive,39,What role does earth play?,,,,,It nourishes life
+Descriptive,40,Why should trees be protected?,,,,,They sustain life
+Descriptive,41,How does the poem relate to environmental issues?,,,,,It highlights deforestation
+Descriptive,42,What is the poet’s final message?,,,,,Save and respect trees
+Descriptive,43,Explain how trees fight back.,,,,,They regrow after being cut
+Descriptive,44,Why is the poem powerful?,,,,,Due to strong imagery
+Descriptive,45,What does the poem say about life?,,,,,Life is resilient
+Descriptive,46,How does the poem change reader’s perspective?,,,,,It creates awareness
+Descriptive,47,Why is the poem suitable for Class 9?,,,,,It teaches environmental values
+Descriptive,48,How does the poem depict cruelty?,,,,,Through violent acts
+Descriptive,49,What does the poem urge society to do?,,,,,Stop deforestation
+Descriptive,50,Summarize "On Killing a Tree".,,,,,The poem describes how killing a tree is a slow and cruel process, showing the resilience of nature and condemning human brutality while urging respect and protection of trees

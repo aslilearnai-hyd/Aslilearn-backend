@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Population refers to?,Animals of a region,People living in an area,Plants of a region,Houses of a region,People living in an area
+MCQ,2,India is the world’s ______ most populous country.,First,Second,Third,Fourth,Second
+MCQ,3,Which census year is the latest in India?,2001,2011,2021,1991,2011
+MCQ,4,Census in India is conducted every?,5 years,8 years,10 years,15 years,10 years
+MCQ,5,Which state has the highest population?,Rajasthan,Uttar Pradesh,Maharashtra,Bihar,Uttar Pradesh
+MCQ,6,Which state has the lowest population?,Goa,Sikkim,Tripura,Mizoram,Sikkim
+MCQ,7,Population density means?,Total population,Birth rate,People per unit area,Death rate,People per unit area
+MCQ,8,Population density of India (2011) is?,324,382,412,460,382
+MCQ,9,Which state has highest population density?,Rajasthan,West Bengal,Bihar,Uttar Pradesh,Bihar
+MCQ,10,Which state has lowest population density?,Punjab,Kerala,Sikkim,Assam,Sikkim
+MCQ,11,Which region has sparse population?,Plains,Coastal areas,Desert,Hills,Desert
+MCQ,12,Which region has dense population?,Himalayas,Desert,Northern Plains,Plateau,Northern Plains
+MCQ,13,Population growth means?,Decrease in population,Increase in population,Migration,None,Increase in population
+MCQ,14,Natural growth of population depends on?,Birth and death rates,Migration only,Census,None,Birth and death rates
+MCQ,15,Which factor does NOT affect population distribution?,Climate,Relief,Soil,Religion,Religion
+MCQ,16,Which state has high population due to fertile land?,Rajasthan,Himachal Pradesh,Uttar Pradesh,Sikkim,Uttar Pradesh
+MCQ,17,Which factor attracts people to cities?,Forests,Employment,Climate,None,Employment
+MCQ,18,Which area has low population due to harsh climate?,Plains,Coastal,Desert,None,Desert
+MCQ,19,Population change due to movement is called?,Birth rate,Death rate,Migration,None,Migration
+MCQ,20,Which type of migration is movement within country?,International,Internal,Seasonal,None,Internal
+MCQ,21,Which type of migration is movement between countries?,Internal,External,Seasonal,None,External
+MCQ,22,Which age group is economically productive?,0–14 years,15–59 years,60+ years,All,15–59 years
+MCQ,23,Population below 15 years is called?,Working population,Dependent population,Old age population,None,Dependent population
+MCQ,24,Population above 60 years is called?,Youth,Adult,Aged population,None,Aged population
+MCQ,25,Sex ratio means?,Men per 1000 women,Women per 1000 men,Total population,None,Women per 1000 men
+MCQ,26,Sex ratio of India (2011) is?,940,943,950,960,943
+MCQ,27,Which state has highest sex ratio?,Punjab,Haryana,Kerala,Uttar Pradesh,Kerala
+MCQ,28,Which state has lowest sex ratio?,Kerala,Punjab,Haryana,Bihar,Haryana
+MCQ,29,Literacy rate means?,Ability to read only,Ability to read and write,Education level,None,Ability to read and write
+MCQ,30,Literacy rate of India (2011) is?,64%,68%,74%,80%,74%
+MCQ,31,Which state has highest literacy rate?,Bihar,Kerala,Rajasthan,Uttar Pradesh,Kerala
+MCQ,32,Which state has lowest literacy rate?,Kerala,Bihar,Goa,Punjab,Bihar
+MCQ,33,Which factor improves literacy?,Poverty,Education facilities,Climate,None,Education facilities
+MCQ,34,Which population group needs most facilities?,Working,Aged,Dependent,None,Dependent
+MCQ,35,Which census provides population data?,Sample survey,Census,Interview,None,Census
+MCQ,36,Population explosion means?,Sudden decrease,Sudden increase,Migration,None,Sudden increase
+MCQ,37,Which problem is caused by overpopulation?,More jobs,Resource scarcity,High income,None,Resource scarcity
+MCQ,38,Which policy helps control population?,Education,Family planning,Migration,None,Family planning
+MCQ,39,Which state shows slow population growth?,Bihar,Uttar Pradesh,Kerala,Rajasthan,Kerala
+MCQ,40,Which region attracts migrants?,Rural areas,Urban areas,Forests,None,Urban areas
+MCQ,41,Which factor pushes people away?,Employment,Poverty,Facilities,None,Poverty
+MCQ,42,Which is a pull factor?,Unemployment,War,Jobs,None,Jobs
+MCQ,43,Which is a push factor?,Education,Healthcare,Unemployment,None,Unemployment
+MCQ,44,Which age group is dependent?,15–59,0–14,20–40,None,0–14
+MCQ,45,Which state is most populous?,Bihar,Maharashtra,Uttar Pradesh,West Bengal,Uttar Pradesh
+MCQ,46,Which UT has highest population density?,Chandigarh,Delhi,Puducherry,None,Delhi
+MCQ,47,Which factor affects population growth?,Birth rate,Death rate,Migration,All of these,All of these
+MCQ,48,Which sector attracts population?,Agriculture,Industry,Services,All,All
+MCQ,49,Population distribution in India is?,Uniform,Uneven,Equal,None,Uneven
+MCQ,50,Which census year recorded highest population growth?,1951–61,1961–71,1971–81,2001–11,1971–81
+
+Integer,1,Latest census year?,2011,,,,
+Integer,2,India population rank?,2,,,,
+Integer,3,Census interval?,10 years,,,,
+Integer,4,Most populous state?,Uttar Pradesh,,,,
+Integer,5,Least populous state?,Sikkim,,,,
+Integer,6,Population density means?,People per sq km,,,,
+Integer,7,India population density (2011)?,382,,,,
+Integer,8,Highest density state?,Bihar,,,,
+Integer,9,Lowest density state?,Sikkim,,,,
+Integer,10,Densely populated region?,Northern Plains,,,,
+Integer,11,Sparsely populated region?,Thar Desert,,,,
+Integer,12,Population increase called?,Growth,,,,
+Integer,13,Natural growth depends on?,Birth and death,,,,
+Integer,14,Movement of people?,Migration,,,,
+Integer,15,Migration within country?,Internal,,,,
+Integer,16,Migration between countries?,International,,,,
+Integer,17,Working age group?,15–59,,,,
+Integer,18,Young dependents age?,0–14,,,,
+Integer,19,Aged population age?,60+,,,,
+Integer,20,Sex ratio meaning?,Women per 1000 men,,,,
+Integer,21,India sex ratio (2011)?,943,,,,
+Integer,22,Highest sex ratio state?,Kerala,,,,
+Integer,23,Lowest sex ratio state?,Haryana,,,,
+Integer,24,Literacy meaning?,Read and write,,,,
+Integer,25,India literacy rate?,74%,,,,
+Integer,26,Highest literacy state?,Kerala,,,,
+Integer,27,Lowest literacy state?,Bihar,,,,
+Integer,28,Population data source?,Census,,,,
+Integer,29,Population explosion means?,Rapid growth,,,,
+Integer,30,Overpopulation causes?,Resource shortage,,,,
+Integer,31,Family planning controls?,Population,,,,
+Integer,32,Urban migration cause?,Jobs,,,,
+Integer,33,Rural migration cause?,Poverty,,,,
+Integer,34,Pull factor example?,Employment,,,,
+Integer,35,Push factor example?,Unemployment,,,,
+Integer,36,Uneven population distribution due to?,Physical factors,,,,
+Integer,37,High fertility rate causes?,Population growth,,,,
+Integer,38,Low mortality rate causes?,Population growth,,,,
+Integer,39,Dependent population includes?,Children and aged,,,,
+Integer,40,Economically active population?,Working age,,,,
+Integer,41,Most crowded UT?,Delhi,,,,
+Integer,42,Population study term?,Demography,,,,
+Integer,43,Government survey for population?,Census,,,,
+Integer,44,Sex ratio unit?,Per 1000 men,,,,
+Integer,45,Population control measure?,Education,,,,
+Integer,46,Population affects?,Resources,,,,
+Integer,47,Population distribution type?,Uneven,,,,
+Integer,48,Most migrants move to?,Cities,,,,
+Integer,49,Population growth highest decade?,1971–81,,,,
+Integer,50,Population depends on?,Resources,,,,
+
+Descriptive,1,What is population?,,,,,Number of people living in an area
+Descriptive,2,Define population density.,,,,,People per unit area
+Descriptive,3,Why is India highly populated?,,,,,Fertile land favourable climate
+Descriptive,4,Explain uneven population distribution.,,,,,Varied relief climate resources
+Descriptive,5,Factors affecting population distribution.,,,,,Physical economic social
+Descriptive,6,Why Northern Plains densely populated?,,,,,Fertile soil flat land
+Descriptive,7,Why deserts sparsely populated?,,,,,Harsh climate lack of water
+Descriptive,8,What is population growth?,,,,,Increase in population
+Descriptive,9,Explain natural growth.,,,,,Birth rate minus death rate
+Descriptive,10,What is migration?,,,,,Movement of people
+Descriptive,11,Types of migration.,,,,,Internal and international
+Descriptive,12,Push factors of migration.,,,,,Poverty unemployment
+Descriptive,13,Pull factors of migration.,,,,,Jobs education
+Descriptive,14,What is sex ratio?,,,,,Women per 1000 men
+Descriptive,15,Importance of sex ratio.,,,,,Gender balance indicator
+Descriptive,16,What is literacy rate?,,,,,Ability to read and write
+Descriptive,17,Why literacy important?,,,,,Development empowerment
+Descriptive,18,What is age composition?,,,,,Population by age groups
+Descriptive,19,Define dependent population.,,,,,Young and aged population
+Descriptive,20,Define working population.,,,,,15–59 years group
+Descriptive,21,What is census?,,,,,Official population count
+Descriptive,22,Why census important?,,,,,Planning and policy
+Descriptive,23,Problems of overpopulation.,,,,,Unemployment poverty pressure
+Descriptive,24,Advantages of large population.,,,,,Labour market
+Descriptive,25,Population explosion causes.,,,,,High birth rate
+Descriptive,26,Measures to control population.,,,,,Education family planning
+Descriptive,27,Role of education in population control.,,,,,Awareness
+Descriptive,28,Why Kerala has high literacy?,,,,,Social reforms education
+Descriptive,29,Why Bihar has low literacy?,,,,,Poverty lack of facilities
+Descriptive,30,Explain population pyramid.,,,,,Age sex structure
+Descriptive,31,How population affects resources?,,,,,Overuse scarcity
+Descriptive,32,How population affects environment?,,,,,Pollution deforestation
+Descriptive,33,What is demography?,,,,,Study of population
+Descriptive,34,Why population data needed?,,,,,Development planning
+Descriptive,35,How migration affects population?,,,,,Redistribution
+Descriptive,36,Impact of urbanisation.,,,,,Growth of cities
+Descriptive,37,Why people migrate to cities?,,,,,Employment facilities
+Descriptive,38,Problems of urban population.,,,,,Slums congestion
+Descriptive,39,How population affects economy?,,,,,Labour consumption
+Descriptive,40,Explain sex ratio variations.,,,,,Cultural factors
+Descriptive,41,Why female literacy important?,,,,,Women empowerment
+Descriptive,42,How age composition affects economy?,,,,,Dependency ratio
+Descriptive,43,Why population growth declined recently?,,,,,Awareness planning
+Descriptive,44,Population policies in India.,,,,,Family welfare
+Descriptive,45,What is population distribution?,,,,,Spread of population
+Descriptive,46,Why coastal areas populated?,,,,,Trade climate
+Descriptive,47,Why mountains sparsely populated?,,,,,Harsh terrain
+Descriptive,48,Role of government in population control.,,,,,Policies awareness
+Descriptive,49,Why population study important?,,,,,Sustainable development
+Descriptive,50,Summarise population of India.,,,,,Large uneven diverse population

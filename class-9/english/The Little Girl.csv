@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of "The Little Girl"?,Ruskin Bond,Katherine Mansfield,Roald Dahl,Charles Dickens,Katherine Mansfield
+MCQ,2,What is the name of the little girl?,Keira,Kezia,Katie,Kelly,Kezia
+MCQ,3,What was Kezia afraid of?,Mother,Father,Teacher,Neighbours,Father
+MCQ,4,What was Kezia’s father by profession?,Doctor,Teacher,Office clerk,Businessman,Office clerk
+MCQ,5,What did Kezia think her father was?,Kind and gentle,Funny,Strict and scary,Loving,Strict and scary
+MCQ,6,What gift did Kezia make for her father?,Cake,Card,Pin-cushion,Drawing,Pin-cushion
+MCQ,7,What did Kezia fill the pin-cushion with?,Cotton,Cloth scraps,Paper pieces,Thread,Paper pieces
+MCQ,8,Where did Kezia get the papers from?,Her notebook,Bookshelf,Her father’s speech,Bin,Her father’s speech
+MCQ,9,Why was Kezia punished?,She tore papers,She lost money,She was rude,She broke a cup,She tore papers
+MCQ,10,What punishment did Kezia receive?,Scolding,No food,Beating,Standing outside,Beating
+MCQ,11,Who was Kezia’s grandmother?,Strict,Loving,Angry,Silent,Loving
+MCQ,12,Who comforted Kezia after punishment?,Mother,Father,Grandmother,Teacher,Grandmother
+MCQ,13,What did Kezia stutter while speaking?,Because of fear,Illness,Fun,Habit,Because of fear
+MCQ,14,What sound scared Kezia at night?,Wind,Thunder,Father’s snore,Dog,Father’s snore
+MCQ,15,Why was Kezia left alone at night?,Parents went out,Father travelled,Grandmother sick,School trip,Parents went out
+MCQ,16,Who slept beside Kezia at night?,Mother,Grandmother,Father,Nanny,Father
+MCQ,17,What changed Kezia’s feelings?,Punishment,Kind words,Father’s care,Fear,Father’s care
+MCQ,18,How did Kezia feel after that night?,More afraid,Happy,Safe and loved,Angry,Safe and loved
+MCQ,19,What kind of father was Kezia’s father initially?,Strict,Playful,Caring,Gentle,Strict
+MCQ,20,What theme does the story highlight?,Education,Love and understanding,Discipline only,Adventure,Love and understanding
+MCQ,21,Why did Kezia misunderstand her father?,Lack of time,Harsh behaviour,Fear,Both B and C,Both B and C
+MCQ,22,How did father speak to Kezia?,Softly,Kindly,Loudly and harshly,Jokingly,Loudly and harshly
+MCQ,23,What did Kezia wish for?,New toy,Chocolate,Better father,Love and affection,Love and affection
+MCQ,24,What did Kezia call her father?,Papa,Sir,Father,Daddy,Father
+MCQ,25,Why did father scold Kezia?,For stuttering,For tearing speech,For noise,For play,For tearing speech
+MCQ,26,What was Kezia’s age group?,Teenager,Adult,Small child,Old,Small child
+MCQ,27,Who arranged Kezia’s gift idea?,Mother,Grandmother,Teacher,Father,Grandmother
+MCQ,28,What quality did grandmother show?,Anger,Love,Strictness,Fear,Love
+MCQ,29,What did Kezia learn at the end?,To fear father,To hate father,To understand father,To avoid father,To understand father
+MCQ,30,What was father tired of?,Office work,Home,Family,Talking,Office work
+MCQ,31,What did father do every evening?,Read,Play,Relax and sleep,Talk,Relax and sleep
+MCQ,32,What symbolises misunderstanding?,Fear,Love,Trust,Care,Fear
+MCQ,33,What caused Kezia’s fear?,Father’s voice,Size,Behaviour,All of these,All of these
+MCQ,34,How did father treat Kezia at night?,Harsh,Silent,Protective,Careless,Protective
+MCQ,35,What did Kezia realise?,Father hated her,Father loved her,Father ignored her,Father was cruel,Father loved her
+MCQ,36,What did the story teach?,Obedience only,Strict parenting,Understanding parents,Rebellion,Understanding parents
+MCQ,37,What was the pin-cushion meant for?,Decoration,Gift,Play,Practice,Gift
+MCQ,38,What made Kezia cry?,Fear,Beating,Loneliness,All of these,All of these
+MCQ,39,Who represents affection?,Father,Mother,Grandmother,Teacher,Grandmother
+MCQ,40,What was father’s routine nature?,Lazy,Busy,Carefree,Joyful,Busy
+MCQ,41,What is the central conflict?,Child vs school,Child vs fear,Child vs parents,Child vs society,Child vs fear
+MCQ,42,How did Kezia speak?,Fluently,Stutteringly,Loudly,Clearly,Stutteringly
+MCQ,43,What frightened Kezia the most?,Dark,Noise,Father,Dog,Father
+MCQ,44,Who helped Kezia understand her father?,Mother,Grandmother,Father himself,Nanny,Father himself
+MCQ,45,What changed Kezia’s perspective?,Time,Punishment,Father’s kindness,Night,Father’s kindness
+MCQ,46,What was father’s real nature?,Cruel,Indifferent,Loving but strict,Careless,Loving but strict
+MCQ,47,What emotion dominates story?,Fear,Love,Understanding,All of these,All of these
+MCQ,48,What kind of story is this?,Adventure,Psychological,Comedy,Fantasy,Psychological
+MCQ,49,What does the title refer to?,Small girl’s fear,Little girl’s emotions,Little girl’s innocence,All of these,All of these
+MCQ,50,What is the moral of the story?,Fear parents,Parents are cruel,Understanding reduces fear,Children are weak,Understanding reduces fear
+
+Integer,1,Author?,Katherine Mansfield,,,,
+Integer,2,Protagonist?,Kezia,,,,
+Integer,3,Kezia feared?,Father,,,,
+Integer,4,Kezia gift?,Pin-cushion,,,,
+Integer,5,Papers taken from?,Speech,,,,
+Integer,6,Punishment?,Beating,,,,
+Integer,7,Comforter?,Grandmother,,,,
+Integer,8,Father’s job?,Office clerk,,,,
+Integer,9,Kezia’s speech problem?,Stuttering,,,,
+Integer,10,Night fear?,Father’s snore,,,,
+Integer,11,Parents went?,Party,,,,
+Integer,12,Slept with Kezia?,Father,,,,
+Integer,13,Kezia emotion initially?,Fear,,,,
+Integer,14,Kezia emotion end?,Love,,,,
+Integer,15,Grandmother trait?,Loving,,,,
+Integer,16,Father trait?,Strict,,,,
+Integer,17,Theme?,Understanding,,,,
+Integer,18,Kezia age?,Child,,,,
+Integer,19,Pin-cushion filling?,Paper,,,,
+Integer,20,Father tired of?,Work,,,,
+Integer,21,Father routine?,Sleep,,,,
+Integer,22,Speech purpose?,Office,,,,
+Integer,23,Kezia feeling end?,Safe,,,,
+Integer,24,Story type?,Psychological,,,,
+Integer,25,Fear cause?,Misunderstanding,,,,
+Integer,26,Father behaviour?,Harsh,,,,
+Integer,27,Real father nature?,Loving,,,,
+Integer,28,Kezia wish?,Affection,,,,
+Integer,29,Lesson?,Understanding,,,,
+Integer,30,Grandmother role?,Support,,,,
+Integer,31,Kezia mistake?,Tearing speech,,,,
+Integer,32,Father voice?,Loud,,,,
+Integer,33,Kezia cried because?,Pain,,,,
+Integer,34,Ending emotion?,Relief,,,,
+Integer,35,Central idea?,Parent-child relationship,,,,
+Integer,36,Kezia fear symbol?,Father,,,,
+Integer,37,Support system?,Grandmother,,,,
+Integer,38,Father tired?,Yes,,,,
+Integer,39,Kezia misunderstanding?,Yes,,,,
+Integer,40,Kezia change?,Realisation,,,,
+Integer,41,Story lesson?,Empathy,,,,
+Integer,42,Childhood theme?,Fear,,,,
+Integer,43,Family type?,Nuclear,,,,
+Integer,44,Father kindness shown?,Night,,,,
+Integer,45,Story setting?,Home,,,,
+Integer,46,Kezia emotion?,Innocent,,,,
+Integer,47,Father discipline?,Strict,,,,
+Integer,48,Story focus?,Emotions,,,,
+Integer,49,Title meaning?,Little girl,,,,
+Integer,50,Chapter name?,The Little Girl,,,,
+
+Descriptive,1,Who is Kezia?,,,,,Kezia is a small girl afraid of her father
+Descriptive,2,Why was Kezia afraid of her father?,,,,,Because of his harsh behaviour
+Descriptive,3,Describe Kezia’s father.,,,,,He was strict, busy and disciplined
+Descriptive,4,Describe Kezia’s grandmother.,,,,,She was loving and understanding
+Descriptive,5,What gift did Kezia prepare?,,,,,She made a pin-cushion
+Descriptive,6,Why did Kezia tear the papers?,,,,,She did not know their importance
+Descriptive,7,What punishment did Kezia receive?,,,,,She was beaten by her father
+Descriptive,8,How did grandmother help Kezia?,,,,,She comforted and supported her
+Descriptive,9,What scared Kezia at night?,,,,,Her father’s loud snoring
+Descriptive,10,Why was Kezia left alone?,,,,,Parents went to a party
+Descriptive,11,How did father behave at night?,,,,,He was caring and protective
+Descriptive,12,What changed Kezia’s view?,,,,,Her father’s kindness
+Descriptive,13,Explain Kezia’s misunderstanding.,,,,,She mistook strictness for lack of love
+Descriptive,14,How is fear shown?,,,,,Through Kezia’s stuttering and silence
+Descriptive,15,What lesson does the story teach?,,,,,Understanding reduces fear
+Descriptive,16,Explain parent-child relationship.,,,,,Lack of communication creates fear
+Descriptive,17,How did father show love?,,,,,By comforting Kezia at night
+Descriptive,18,Why is grandmother important?,,,,,She bridges emotional gap
+Descriptive,19,Explain the title.,,,,,Refers to innocent fearful child
+Descriptive,20,What is the theme?,,,,,Love and understanding
+Descriptive,21,Describe Kezia’s emotions.,,,,,Fear, pain, relief and love
+Descriptive,22,Why did Kezia stutter?,,,,,Due to fear of father
+Descriptive,23,How does the story end?,,,,,With Kezia feeling safe and loved
+Descriptive,24,Explain misunderstanding.,,,,,Lack of emotional expression
+Descriptive,25,What role does discipline play?,,,,,It creates distance if harsh
+Descriptive,26,Why did Kezia cry?,,,,,Because of pain and fear
+Descriptive,27,How does story reflect childhood?,,,,,Shows innocence and fear
+Descriptive,28,What message for parents?,,,,,Be understanding and expressive
+Descriptive,29,What message for children?,,,,,Try to understand parents
+Descriptive,30,Why is father strict?,,,,,Due to work stress
+Descriptive,31,Explain emotional change in Kezia.,,,,,Fear turns into love
+Descriptive,32,Why is father misunderstood?,,,,,He does not express affection
+Descriptive,33,How does story show empathy?,,,,,Father comforts child
+Descriptive,34,What values are highlighted?,,,,,Love, patience, empathy
+Descriptive,35,Why is story psychological?,,,,,Focus on emotions
+Descriptive,36,Explain role of fear.,,,,,Fear blocks understanding
+Descriptive,37,How does communication matter?,,,,,It reduces misunderstanding
+Descriptive,38,Explain childhood innocence.,,,,,Kezia’s actions were innocent
+Descriptive,39,How does author present father?,,,,,As strict but caring
+Descriptive,40,What does Kezia learn?,,,,,Father loves her
+Descriptive,41,How is love expressed silently?,,,,,Through protection
+Descriptive,42,Why is night incident important?,,,,,It changes Kezia’s perception
+Descriptive,43,Explain father’s fatigue.,,,,,Due to office work
+Descriptive,44,How does grandmother influence?,,,,,She gives emotional support
+Descriptive,45,Why is the story relatable?,,,,,Many children fear strict parents
+Descriptive,46,What causes fear in children?,,,,,Harsh discipline
+Descriptive,47,Explain importance of empathy.,,,,,Builds strong relationships
+Descriptive,48,What does story say about parenting?,,,,,Balance discipline with love
+Descriptive,49,Explain emotional growth of Kezia.,,,,,She gains understanding
+Descriptive,50,Summarize "The Little Girl".,,,,,The story shows how understanding and love remove fear between parents and children

@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of the play The Proposal?,William Shakespeare,Anton Chekhov,George Bernard Shaw,Oscar Wilde,Anton Chekhov
+MCQ,2,What is the genre of The Proposal?,Tragedy,Comedy,Historical play,Romance,Comedy
+MCQ,3,Who comes to visit Chubukov at the beginning?,Natalya,Stepan Chubukov,Ivan Lomov,Servant,Ivan Lomov
+MCQ,4,Why does Lomov visit Chubukov?,To borrow money,To propose marriage,To buy land,To settle a dispute,To propose marriage
+MCQ,5,What does Lomov wear when he visits?,Casual clothes,Evening suit,Formal dress and gloves,Traditional dress,Formal dress and gloves
+MCQ,6,Lomov suffers from which health problem?,Heart disease,Nervous disorder,Asthma,Fever,Nervous disorder
+MCQ,7,What land do Lomov and Natalya argue about?,Birchwoods,Oxsmeadows,Meadows,Farms,Oxsmeadows
+MCQ,8,Who is Chubukov?,Natalya’s husband,Natalya’s father,Lomov’s uncle,Lomov’s father,Natalya’s father
+MCQ,9,Natalya is ______ by nature.,Calm,Lazy,Argumentative,Silent,Argumentative
+MCQ,10,What causes Lomov to faint repeatedly?,Fear,Anger,Over excitement,Illness,Over excitement
+MCQ,11,What does Chubukov initially think Lomov has come for?,Loan,Land dispute,Marriage proposal,Business deal,Loan
+MCQ,12,What topic causes the first major argument?,Marriage,Health,Property ownership,Weather,Property ownership
+MCQ,13,What does Natalya value the most?,Love,Property,Money,Family honour,Property
+MCQ,14,What is Lomov afraid of?,Marriage,Death,Property loss,Dogs,Death
+MCQ,15,Which animals do Lomov and Chubukov argue about?,Cows,Horses,Dogs,Goats,Dogs
+MCQ,16,What is the name of Lomov’s dog?,Guess,Squeezer,Retriever,Bully,Squeezer
+MCQ,17,What is the name of Chubukov’s dog?,Guess,Bully,Squeezer,Rex,Guess
+MCQ,18,Why does Lomov bring documents?,To show wealth,To prove ownership,To impress Natalya,To borrow money,To prove ownership
+MCQ,19,How does Natalya react to Lomov’s proposal initially?,Happy,Confused,Unaware,Angry,Unaware
+MCQ,20,What happens when Natalya learns about the proposal?,She rejects it,She becomes calm,She regrets and panics,She laughs,She regrets and panics
+MCQ,21,What does Chubukov call Lomov during arguments?,Gentleman,Scoundrel,Friend,Hero,Scoundrel
+MCQ,22,The Proposal is mainly a satire on,Marriage and property,Politics,Education,War,Marriage and property
+MCQ,23,What causes Lomov to collapse again?,Fear of dogs,Marriage pressure,Argument,Weather,Argument
+MCQ,24,What does Natalya do to revive Lomov?,Calls doctor,Cries,Offers water,Argues again,Offers water
+MCQ,25,How does the play end?,With a wedding,With a fight,With Lomov leaving,With Lomov fainting,With a wedding
+MCQ,26,Chubukov represents which human trait?,Generosity,Greed,Kindness,Patience,Greed
+MCQ,27,Natalya is concerned most about,Emotions,Property boundaries,Lomov’s health,Marriage proposal,Property boundaries
+MCQ,28,Why is Lomov nervous by nature?,He fears disputes,He fears illness,He fears death,He fears marriage,He fears death
+MCQ,29,What does Lomov want in life?,Peace,Marriage and property,Health,Power,Marriage and property
+MCQ,30,The play highlights which social evil?,Dowry system,Materialism,Casteism,Illiteracy,Materialism
+MCQ,31,What is Chubukov’s attitude towards Lomov initially?,Friendly,Rude,Indifferent,Welcoming,Welcoming
+MCQ,32,Lomov is a _______, by profession.,Doctor,Landowner,Lawyer,Merchant,Landowner
+MCQ,33,Natalya behaves politely at first because,Lomov is rich,She is educated,She expects proposal,She fears father,She expects proposal
+MCQ,34,What makes the play humorous?,Serious tone,Exaggerated emotions,Tragic end,Romantic scenes,Exaggerated emotions
+MCQ,35,Who dominates the conversations?,Lomov,Natalya,Chubukov,Servant,Natalya
+MCQ,36,Why does Lomov carry medicines?,He is sick,He fears death,Doctor advised,Habit,He fears death
+MCQ,37,What happens after Lomov faints?,Proposal forgotten,He is revived,He leaves,Doctor arrives,He is revived
+MCQ,38,Which quality of Lomov is shown?,Bravery,Confidence,Weakness,Leadership,Weakness
+MCQ,39,Why does Natalya start crying?,Lomov leaves,Proposal lost,Argument lost,Health issue,Proposal lost
+MCQ,40,What does Chubukov finally do?,Drives Lomov out,Forces proposal,Calls doctor,Ends discussion,Forces proposal
+MCQ,41,The play is set in,Russia,England,France,Germany,Russia
+MCQ,42,Which theme dominates the play?,Love,Property and marriage,War,Friendship,Property and marriage
+MCQ,43,What type of marriage is shown?,Love marriage,Arranged marriage,Forced marriage,Traditional marriage,Arranged marriage
+MCQ,44,Lomov’s character reflects,Hypocrisy,Nervousness,Confidence,Wisdom,Nervousness
+MCQ,45,Natalya’s character reflects,Romanticism,Greed,Kindness,Patience,Greed
+MCQ,46,Chubukov wants Lomov to marry because,Love,Money,Property benefit,Social status,Property benefit
+MCQ,47,Why is Lomov considered comical?,His appearance,His nervous breakdowns,His wealth,His speech,His nervous breakdowns
+MCQ,48,What does the play criticize?,True love,Social values,Materialism,Family bonds,Materialism
+MCQ,49,Who is the most practical character?,Lomov,Natalya,Chubukov,Servant,Chubukov
+MCQ,50,The Proposal teaches us about,Forgiveness,Greed in relationships,Honesty,Patience,Greed in relationships
+
+Integer,1,Author of The Proposal?,Anton Chekhov,,,,
+Integer,2,Genre of the play?,Comedy,,,,
+Integer,3,Name of the protagonist?,Ivan Lomov,,,,
+Integer,4,Name of Natalya’s father?,Chubukov,,,,
+Integer,5,Property disputed?,Oxsmeadows,,,,
+Integer,6,Lomov’s illness?,Nervous disorder,,,,
+Integer,7,Natalya’s surname?,Chubukova,,,,
+Integer,8,Type of play?,One-act,,,,
+Integer,9,Country of setting?,Russia,,,,
+Integer,10,Lomov’s profession?,Landowner,,,,
+Integer,11,Chubukov’s dog?,Guess,,,,
+Integer,12,Lomov’s dog?,Squeezer,,,,
+Integer,13,Lomov’s purpose of visit?,Marriage proposal,,,,
+Integer,14,Natalya’s nature?,Argumentative,,,,
+Integer,15,Main theme?,Materialism,,,,
+Integer,16,Ending of the play?,Marriage,,,,
+Integer,17,Language of original play?,Russian,,,,
+Integer,18,Lomov’s fear?,Death,,,,
+Integer,19,Chubukov’s nature?,Greedy,,,,
+Integer,20,Form of marriage?,Arranged,,,,
+Integer,21,Lomov’s age group?,Middle-aged,,,,
+Integer,22,Reason for argument?,Property,,,,
+Integer,23,Comic element used?,Exaggeration,,,,
+Integer,24,Natalya’s reaction to proposal?,Panic,,,,
+Integer,25,Chubukov’s relation to Lomov?,Neighbor,,,,
+Integer,26,Lomov’s clothing style?,Formal,,,,
+Integer,27,Chubukov’s mood changes?,Frequently,,,,
+Integer,28,Lomov collapses due to?,Stress,,,,
+Integer,29,Theme criticized?,Greed,,,,
+Integer,30,Play length?,Short,,,,
+Integer,31,Type of humour?,Situational,,,,
+Integer,32,Lomov’s weakness?,Nervousness,,,,
+Integer,33,Natalya’s obsession?,Land,,,,
+Integer,34,Chubukov’s goal?,Marriage deal,,,,
+Integer,35,Play structure?,One act,,,,
+Integer,36,Primary conflict?,Property dispute,,,,
+Integer,37,Lomov’s health fear?,Heart,,,,
+Integer,38,Natalya’s awareness initially?,Unaware,,,,
+Integer,39,Marriage motive?,Property,,,,
+Integer,40,Final agreement?,Marriage,,,,
+Integer,41,Number of main characters?,3,,,,
+Integer,42,Play tone?,Comic,,,,
+Integer,43,Setting?,Village,,,,
+Integer,44,Ending mood?,Ironic,,,,
+Integer,45,Main female character?,Natalya,,,,
+Integer,46,Main male character?,Lomov,,,,
+Integer,47,Property documents carried?,Yes,,,,
+Integer,48,Comic relief source?,Arguments,,,,
+Integer,49,Social satire target?,Marriage,,,,
+Integer,50,Moral lesson?,Greed ruins relations,,,,
+
+Descriptive,1,Describe Lomov’s character.,,,,,Nervous and weak landowner obsessed with property
+Descriptive,2,Describe Natalya’s character.,,,,,Argumentative and materialistic
+Descriptive,3,Describe Chubukov’s character.,,,,,Greedy and manipulative
+Descriptive,4,What is the central theme of the play?,,,,,Materialism in marriage
+Descriptive,5,Why does Lomov visit Chubukov?,,,,,To propose marriage
+Descriptive,6,Explain the significance of Oxsmeadows.,,,,,Symbol of property obsession
+Descriptive,7,How does humour arise in the play?,,,,,Through exaggerated arguments
+Descriptive,8,What makes The Proposal a comedy?,,,,,Comic situations and characters
+Descriptive,9,Explain Lomov’s fear of death.,,,,,Shows nervous temperament
+Descriptive,10,How is marriage treated in the play?,,,,,As a business deal
+Descriptive,11,Describe the role of property.,,,,,Cause of conflict
+Descriptive,12,Why does Natalya panic?,,,,,She fears losing proposal
+Descriptive,13,What is the irony in the play?,,,,,Marriage despite conflicts
+Descriptive,14,How does Chubukov manipulate the situation?,,,,,Forces marriage
+Descriptive,15,Explain the title The Proposal.,,,,,Refers to marriage proposal
+Descriptive,16,Why is Lomov comical?,,,,,Frequent nervous breakdowns
+Descriptive,17,How is social satire shown?,,,,,Through materialistic characters
+Descriptive,18,Why does Lomov faint repeatedly?,,,,,Stress and anxiety
+Descriptive,19,Explain the dog argument.,,,,,Shows petty nature
+Descriptive,20,What role does health play?,,,,,Adds humour
+Descriptive,21,Why is the ending ironic?,,,,,Marriage without love
+Descriptive,22,What does the play criticize?,,,,,Greed in relationships
+Descriptive,23,Explain Natalya’s transformation.,,,,,From polite to aggressive
+Descriptive,24,How does Chekhov use exaggeration?,,,,,For comic effect
+Descriptive,25,Why is Lomov suitable match?,,,,,Property owner
+Descriptive,26,Explain conflict in the play.,,,,,Property and ego
+Descriptive,27,How does humour highlight flaws?,,,,,Makes criticism light
+Descriptive,28,What social message does play give?,,,,,Materialism destroys relations
+Descriptive,29,Why is Lomov insecure?,,,,,Health and fear
+Descriptive,30,How does setting affect story?,,,,,Reflects rural life
+Descriptive,31,Explain importance of documents.,,,,,Symbol of ownership
+Descriptive,32,Why does Chubukov change attitude?,,,,,Sees advantage
+Descriptive,33,How does play reflect society?,,,,,Marriage as transaction
+Descriptive,34,Explain role of arguments.,,,,,Drive plot forward
+Descriptive,35,Why is Natalya dominating?,,,,,Strong personality
+Descriptive,36,Explain dramatic irony.,,,,,Audience aware of proposal
+Descriptive,37,How does Chekhov create comedy?,,,,,Through character flaws
+Descriptive,38,Why does Lomov want marriage?,,,,,Security and stability
+Descriptive,39,Explain symbolism of fainting.,,,,,Weakness of characters
+Descriptive,40,How does play end?,,,,,With forced marriage
+Descriptive,41,Why is Chubukov practical?,,,,,Seeks benefit
+Descriptive,42,Explain title relevance.,,,,,Central action
+Descriptive,43,How does play mock romance?,,,,,No emotional bond
+Descriptive,44,What lesson does play teach?,,,,,Greed harms relations
+Descriptive,45,Explain Lomov’s mental state.,,,,,Anxious and unstable
+Descriptive,46,Why does Natalya argue intensely?,,,,,Property obsession
+Descriptive,47,How does humour soften criticism?,,,,,Makes satire acceptable
+Descriptive,48,Explain marriage theme.,,,,,Business arrangement
+Descriptive,49,Why is play still relevant?,,,,,Materialism exists today
+Descriptive,50,What is Chekhov’s message?,,,,,Human greed is foolish

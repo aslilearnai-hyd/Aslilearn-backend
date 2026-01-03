@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Heron’s formula is used to find area of?,Rectangle,Triangle,Circle,Square,Triangle
+MCQ,2,Heron’s formula can be applied when?,Base and height are known,All sides are known,Angles are known,Only base is known,All sides are known
+MCQ,3,The semi-perimeter of a triangle is?,a+b+c,a+b+c/2,(a+b+c)/2,a+b/2+c,(a+b+c)/2
+MCQ,4,If sides are a,b,c then s denotes?,Perimeter,Area,Semi-perimeter,Height,Semi-perimeter
+MCQ,5,Formula for area using Heron’s formula is?,√(s(s−a)(s−b)(s−c)),1/2 bh,ab√3/4,πr²,√(s(s−a)(s−b)(s−c))
+MCQ,6,Heron’s formula applies to?,Right triangle only,Equilateral triangle only,Any triangle,Isosceles only,Any triangle
+MCQ,7,Value of s for sides 3,4,5?,6,12,5,4,6
+MCQ,8,Area of triangle with sides 3,4,5?,6,12,24,5,6
+MCQ,9,If sides are equal, triangle is?,Scalene,Isosceles,Equilateral,None,Equilateral
+MCQ,10,Area of equilateral triangle of side a?,a²,√3a²/4,3a²/4,a³,√3a²/4
+MCQ,11,Heron’s formula was given by?,Euclid,Pythagoras,Heron,Archimedes,Heron
+MCQ,12,Unit of area is?,cm,cm²,cm³,m,cm²
+MCQ,13,Semi-perimeter is always?,Greater than perimeter,Half of perimeter,Double perimeter,None,Half of perimeter
+MCQ,14,If sides are 5,12,13 then triangle is?,Acute,Obtuse,Right,Equilateral,Right
+MCQ,15,Area of triangle with sides 5,12,13?,30,60,78,90,30
+MCQ,16,If area is zero then triangle is?,Valid,Degenerate,Equilateral,None,Degenerate
+MCQ,17,Heron’s formula involves?,Sides only,Angles only,Height only,Radius,Sides only
+MCQ,18,If s=a+b+c then it is?,Perimeter,Area,Wrong,Height,Wrong
+MCQ,19,Heron’s formula is useful when?,Height is not known,Base is not known,Sides are known,Both A and C,Both A and C
+MCQ,20,If triangle sides are 7,24,25 then area?,84,48,60,90,84
+MCQ,21,Which triangle satisfies Heron’s formula?,Scalene,Isosceles,Equilateral,All,All
+MCQ,22,Area of triangle is always?,Negative,Zero,Positive,Integer,Positive
+MCQ,23,Heron’s formula gives area in?,Square units,Cubic units,Linear units,None,Square units
+MCQ,24,If sides are 8,15,17 then area?,60,64,120,80,60
+MCQ,25,Heron’s formula uses square root?,Yes,No,Sometimes,Never,Yes
+MCQ,26,Semi-perimeter of triangle with perimeter 24?,12,24,6,48,12
+MCQ,27,Triangle with sides 2,3,6 is?,Possible,Impossible,Right,Equilateral,Impossible
+MCQ,28,Heron’s formula works for obtuse triangle?,Yes,No,Sometimes,Never,Yes
+MCQ,29,Heron’s formula works for acute triangle?,Yes,No,Sometimes,Never,Yes
+MCQ,30,Heron’s formula works for right triangle?,Yes,No,Sometimes,Never,Yes
+MCQ,31,Which is required to apply Heron’s formula?,Angles,Sides,Height,Base,Sides
+MCQ,32,If s−a is negative then?,Area imaginary,Triangle invalid,Area zero,None,Triangle invalid
+MCQ,33,Area of triangle with sides 6,8,10?,24,48,30,40,24
+MCQ,34,Which formula finds area without height?,Heron’s,Pythagoras,Distance,None,Heron’s
+MCQ,35,Heron’s formula is most useful for?,Scalene triangle,Right triangle,Equilateral triangle,Isosceles triangle,Scalene triangle
+MCQ,36,If sides are 10,10,12 triangle is?,Equilateral,Isosceles,Scalene,Right,Isosceles
+MCQ,37,Area of triangle with sides 10,10,12?,48,60,96,72,48
+MCQ,38,Semi-perimeter depends on?,Area,Perimeter,Sides,Height,Sides
+MCQ,39,Heron’s formula gives exact area? ,Yes,No,Sometimes,Never,Yes
+MCQ,40,Which symbol is used for semi-perimeter?,p,s,h,a,s
+MCQ,41,If triangle sides are 4,4,4 then area?,4√3,8√3,16√3,2√3,4√3
+MCQ,42,Heron’s formula includes how many terms inside root?,2,3,4,5,4
+MCQ,43,Area of triangle cannot be?,Negative,Positive,Zero,Real,Negative
+MCQ,44,If sides are a,a,a then triangle is?,Scalene,Isosceles,Equilateral,None,Equilateral
+MCQ,45,Heron’s formula is derived from?,Geometry,Algebra,Trigonometry,None,Geometry
+MCQ,46,Heron’s formula can be used for isosceles?,Yes,No,Sometimes,Never,Yes
+MCQ,47,Heron’s formula avoids finding?,Height,Base,Perimeter,Angle,Height
+MCQ,48,Area from Heron’s formula is always?,Exact,Approximate,Both,None,Exact
+MCQ,49,If triangle sides are 1,1,2 then area?,0,1,2,√3,0
+MCQ,50,Heron’s formula is part of which class?,8,9,10,11,9
+
+Integer,1,Write Heron’s formula.,√(s(s−a)(s−b)(s−c)),,,,
+Integer,2,Write formula for semi-perimeter.,(a+b+c)/2,,,,
+Integer,3,Find s if sides are 5,6,7.,9,,,,
+Integer,4,Find s if sides are 3,4,5.,6,,,,
+Integer,5,Area of triangle with sides 3,4,5.,6,,,,
+Integer,6,Find s if perimeter is 30.,15,,,,
+Integer,7,Unit of area.,Square unit,,,,
+Integer,8,Triangle with sides 2,3,6 is possible?,No,,,,
+Integer,9,Area of triangle is always positive? (Yes/No),Yes,,,,
+Integer,10,Heron’s formula uses height? (Yes/No),No,,,,
+Integer,11,Find s if sides are 8,15,17.,20,,,,
+Integer,12,Area of triangle with sides 6,8,10.,24,,,,
+Integer,13,Triangle with sides 7,24,25 is?,Right,,,,
+Integer,14,Area of triangle with sides 5,12,13.,30,,,,
+Integer,15,Find s if sides are 10,10,12.,16,,,,
+Integer,16,Area of triangle with sides 10,10,12.,48,,,,
+Integer,17,Heron’s formula works for all triangles? (Yes/No),Yes,,,,
+Integer,18,Find s if sides are 4,4,4.,6,,,,
+Integer,19,Area of equilateral triangle side 4.,4√3,,,,
+Integer,20,If area is zero, triangle is?,Degenerate,,,,
+Integer,21,Find s if sides are 9,10,11.,15,,,,
+Integer,22,Area of triangle with sides 9,10,11.,√(15×6×5×4)=√1800=30√2,,,,
+Integer,23,Semi-perimeter is half of?,Perimeter,,,,
+Integer,24,Area cannot be negative? (Yes/No),Yes,,,,
+Integer,25,Heron’s formula avoids finding?,Height,,,,
+Integer,26,Find s if sides are 6,7,8.,10.5,,,,
+Integer,27,Triangle with sides 1,1,2 area?,0,,,,
+Integer,28,Find s if sides are 12,13,5.,15,,,,
+Integer,29,Area of triangle with sides 8,15,17.,60,,,,
+Integer,30,Find s if sides are 14,13,15.,21,,,,
+Integer,31,Heron’s formula involves square root? (Yes/No),Yes,,,,
+Integer,32,Triangle with equal sides is?,Equilateral,,,,
+Integer,33,Heron’s formula uses sides only? (Yes/No),Yes,,,,
+Integer,34,Area unit for metres?,m²,,,,
+Integer,35,Find s if sides are 20,21,29.,35,,,,
+Integer,36,Area of triangle with sides 20,21,29.,210,,,,
+Integer,37,Triangle inequality must be satisfied? (Yes/No),Yes,,,,
+Integer,38,Heron’s formula introduced by?,Heron,,,,
+Integer,39,Find s if sides are 7,8,9.,12,,,,
+Integer,40,Area of triangle with sides 7,8,9.,6√15,,,,
+Integer,41,Triangle with sides 4,5,6 area?,√(7.5×3.5×2.5×1.5)=√98.4375,,,,
+Integer,42,Heron’s formula symbol for semi-perimeter?,s,,,,
+Integer,43,Area depends on sides? (Yes/No),Yes,,,,
+Integer,44,Heron’s formula gives exact area? (Yes/No),Yes,,,,
+Integer,45,Triangle with sides 3,3,6 possible?,No,,,,
+Integer,46,Area of triangle with sides 13,14,15.,84,,,,
+Integer,47,Find s if sides are 13,14,15.,21,,,,
+Integer,48,Area of triangle with sides 5,5,8.,12,,,,
+Integer,49,Triangle sides 6,6,6 area?,9√3,,,,
+Integer,50,Heron’s formula is for which shape?,Triangle,,,,
+
+Problem,1,Find area of triangle with sides 3 cm,4 cm,5 cm.,,,,,6 cm²
+Problem,2,Find area of triangle with sides 5 cm,12 cm,13 cm.,,,,,30 cm²
+Problem,3,Find area of triangle with sides 6 cm,8 cm,10 cm.,,,,,24 cm²
+Problem,4,Find area of triangle with sides 7 cm,24 cm,25 cm.,,,,,84 cm²
+Problem,5,Find area of triangle with sides 8 cm,15 cm,17 cm.,,,,,60 cm²
+Problem,6,Find area of triangle with sides 9 cm,10 cm,11 cm.,,,,,30√2 cm²
+Problem,7,Find area of triangle with sides 10 cm,10 cm,12 cm.,,,,,48 cm²
+Problem,8,Find area of triangle with sides 4 cm,4 cm,4 cm.,,,,,4√3 cm²
+Problem,9,Find area of triangle with sides 5 cm,5 cm,8 cm.,,,,,12 cm²
+Problem,10,Find area of triangle with sides 6 cm,7 cm,8 cm.,,,,,(√(10.5×4.5×3.5×2.5)) cm²
+Problem,11,Find area of triangle with sides 13 cm,14 cm,15 cm.,,,,,84 cm²
+Problem,12,Find area of triangle with sides 20 cm,21 cm,29 cm.,,,,,210 cm²
+Problem,13,Find area of triangle with sides 7 cm,8 cm,9 cm.,,,,,6√15 cm²
+Problem,14,Find area of triangle with sides 12 cm,13 cm,5 cm.,,,,,30 cm²
+Problem,15,Find area of triangle with sides 14 cm,13 cm,15 cm.,,,,,84 cm²
+Problem,16,Find area of equilateral triangle of side 6 cm.,,,,,9√3 cm²
+Problem,17,Find area of triangle with sides 4 cm,5 cm,6 cm.,,,,,√98.4375 cm²
+Problem,18,Find area of triangle with sides 15 cm,15 cm,18 cm.,,,,,108 cm²
+Problem,19,Find area of triangle with sides 9 cm,9 cm,12 cm.,,,,,36 cm²
+Problem,20,Find area of triangle with sides 16 cm,18 cm,10 cm.,,,,,72 cm²
+Problem,21,Find area of triangle with sides 5 cm,6 cm,7 cm.,,,,,(√216) cm²
+Problem,22,Find area of triangle with sides 8 cm,8 cm,12 cm.,,,,,32 cm²
+Problem,23,Find area of triangle with sides 6 cm,6 cm,6 cm.,,,,,9√3 cm²
+Problem,24,Find area of triangle with sides 10 cm,24 cm,26 cm.,,,,,120 cm²
+Problem,25,Find area of triangle with sides 12 cm,16 cm,20 cm.,,,,,96 cm²
+Problem,26,Find area of triangle with sides 7 cm,10 cm,13 cm.,,,,,28 cm²
+Problem,27,Find area of triangle with sides 9 cm,40 cm,41 cm.,,,,,180 cm²
+Problem,28,Find area of triangle with sides 20 cm,30 cm,40 cm.,,,,,√(45×25×15×5) cm²
+Problem,29,Find area of triangle with sides 5 cm,5 cm,6 cm.,,,,,12 cm²
+Problem,30,Find area of triangle with sides 11 cm,13 cm,24 cm.,,,,,60 cm²
+Problem,31,Find area of triangle with sides 18 cm,24 cm,30 cm.,,,,,216 cm²
+Problem,32,Find area of triangle with sides 25 cm,25 cm,30 cm.,,,,,300 cm²
+Problem,33,Find area of triangle with sides 15 cm,20 cm,25 cm.,,,,,150 cm²
+Problem,34,Find area of triangle with sides 4 cm,13 cm,15 cm.,,,,,24 cm²
+Problem,35,Find area of triangle with sides 10 cm,17 cm,21 cm.,,,,,84 cm²
+Problem,36,Find area of triangle with sides 14 cm,48 cm,50 cm.,,,,,336 cm²
+Problem,37,Find area of triangle with sides 8 cm,10 cm,12 cm.,,,,,(√(15×7×5×3)) cm²
+Problem,38,Find area of triangle with sides 9 cm,12 cm,15 cm.,,,,,54 cm²
+Problem,39,Find area of triangle with sides 6 cm,25 cm,29 cm.,,,,,60 cm²
+Problem,40,Find area of triangle with sides 7 cm,15 cm,20 cm.,,,,,42 cm²
+Problem,41,Find area of triangle with sides 13 cm,20 cm,21 cm.,,,,,126 cm²
+Problem,42,Find area of triangle with sides 16 cm,30 cm,34 cm.,,,,,240 cm²
+Problem,43,Find area of triangle with sides 8 cm,15 cm,17 cm.,,,,,60 cm²
+Problem,44,Find area of triangle with sides 20 cm,20 cm,24 cm.,,,,,192 cm²
+Problem,45,Find area of triangle with sides 12 cm,35 cm,37 cm.,,,,,210 cm²
+Problem,46,Find area of triangle with sides 10 cm,10 cm,16 cm.,,,,,48 cm²
+Problem,47,Find area of triangle with sides 15 cm,36 cm,39 cm.,,,,,270 cm²
+Problem,48,Find area of triangle with sides 9 cm,15 cm,18 cm.,,,,,54 cm²
+Problem,49,Find area of triangle with sides 14 cm,14 cm,20 cm.,,,,,98 cm²
+Problem,50,Find area of triangle with sides 5 cm,12 cm,13 cm.,,,,,30 cm²

@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Sound is produced due to?,Reflection,Vibration,Refraction,None,Vibration
+MCQ,2,Sound needs which medium to travel?,Vacuum,Air,Any medium,None,Any medium
+MCQ,3,Speed of sound is maximum in?,Air,Water,Solids,None,Solids
+MCQ,4,Speed of sound in air is about?,150 m/s,330 m/s,500 m/s,1000 m/s,330 m/s
+MCQ,5,SI unit of frequency is?,Hz,dB,m/s,s,Hz
+MCQ,6,Pitch of sound depends on?,Amplitude,Frequency,Speed,None,Frequency
+MCQ,7,Loudness of sound depends on?,Frequency,Amplitude,Speed,None,Amplitude
+MCQ,8,Sound waves are?,Transverse,Longitudinal,Electromagnetic,None,Longitudinal
+MCQ,9,Unit of loudness is?,Hz,dB,Watt,Joule,dB
+MCQ,10,Which quantity determines shrillness?,Amplitude,Frequency,Wavelength,None,Frequency
+MCQ,11,Time period is reciprocal of?,Speed,Wavelength,Frequency,None,Frequency
+MCQ,12,SI unit of time period is?,Second,Hertz,m/s,None,Second
+MCQ,13,Sound cannot travel in?,Solid,Liquid,Gas,Vacuum,Vacuum
+MCQ,14,Human audible range is?,10–20000 Hz,20–20000 Hz,50–10000 Hz,None,20–20000 Hz
+MCQ,15,Sound above 20 kHz is called?,Infrasonic,Audible,Ultrasonic,None,Ultrasonic
+MCQ,16,Sound below 20 Hz is called?,Ultrasonic,Audible,Infrasonic,None,Infrasonic
+MCQ,17,Unit of wavelength is?,Hz,m,s,m/s,m
+MCQ,18,Relation between v, f and λ?,v=f/λ,v=fλ,v=λ/f,None,v=fλ
+MCQ,19,Echo is due to?,Refraction,Reflection,Diffraction,None,Reflection
+MCQ,20,Echo heard when distance >?,5 m,10 m,17 m,34 m,17 m
+MCQ,21,SONAR works on principle of?,Refraction,Reflection,Diffraction,None,Reflection
+MCQ,22,Sound energy travels in form of?,Particles,Heat,Waves,None,Waves
+MCQ,23,Which has highest pitch?,Low frequency,High frequency,High amplitude,None,High frequency
+MCQ,24,Which has highest loudness?,Low amplitude,High amplitude,High frequency,None,High amplitude
+MCQ,25,Speed of sound depends on?,Medium,Temperature,Both,None,Both
+MCQ,26,Sound travels fastest in?,Steel,Water,Air,None,Steel
+MCQ,27,Noise is?,Pleasant sound,Unpleasant sound,Soft sound,None,Unpleasant sound
+MCQ,28,Musical sound is?,Noise,Pleasant,Harsh,None,Pleasant
+MCQ,29,Which animal hears ultrasonic sound?,Human,Dog,Elephant,None,Dog
+MCQ,30,Bats use ultrasonic waves for?,Hearing,Navigation,Communication,None,Navigation
+MCQ,31,Frequency of sound depends on?,Source,Medium,Distance,None,Source
+MCQ,32,Amplitude of sound relates to?,Pitch,Loudness,Speed,None,Loudness
+MCQ,33,Which wave does sound represent?,Transverse,Longitudinal,Electromagnetic,None,Longitudinal
+MCQ,34,Sound wave consists of?,Crests and troughs,Compressions and rarefactions,Nodes,None,Compressions and rarefactions
+MCQ,35,Unit of speed of sound?,m/s,Hz,m,N,m/s
+MCQ,36,Which factor does not affect speed of sound?,Medium,Temperature,Amplitude,None,Amplitude
+MCQ,37,Sound produced by vibrating tuning fork is?,Noise,Musical,Both,None,Musical
+MCQ,38,Ultrasound is used in?,SONAR,Medical imaging,Both,None,Both
+MCQ,39,Reflection of sound obeys?,Newton laws,Same laws as light,None,None,Same laws as light
+MCQ,40,Which instrument measures frequency?,Thermometer,Stroboscope,Oscilloscope,None,Oscilloscope
+MCQ,41,Time period T equals?,1/f,f,λ/v,None,1/f
+MCQ,42,Greater wavelength means?,Lower frequency,Higher frequency,None,None,Lower frequency
+MCQ,43,Sound energy is?,Mechanical,Electrical,Thermal,None,Mechanical
+MCQ,44,Sound cannot travel in space because?,No medium,No vibration,None,None,No medium
+MCQ,45,Speed of sound increases with?,Decrease in temperature,Increase in temperature,None,None,Increase in temperature
+MCQ,46,Sound wave transfers?,Matter,Energy,Mass,None,Energy
+MCQ,47,Which wave property determines pitch?,Amplitude,Frequency,Wavelength,None,Frequency
+MCQ,48,Which wave property determines loudness?,Amplitude,Frequency,Speed,None,Amplitude
+MCQ,49,Speed of sound in air at 0°C?,331 m/s,343 m/s,300 m/s,None,331 m/s
+MCQ,50,Which sound has more energy?,Loud sound,Soft sound,High pitch,None,Loud sound
+
+Integer,1,Sound is produced by?,Vibrations,,,,
+Integer,2,SI unit of frequency?,Hertz,,,,
+Integer,3,SI unit of wavelength?,Meter,,,,
+Integer,4,SI unit of speed?,m/s,,,,
+Integer,5,Pitch depends on?,Frequency,,,,
+Integer,6,Loudness depends on?,Amplitude,,,,
+Integer,7,Sound wave type?,Longitudinal,,,,
+Integer,8,Sound needs medium? (Yes/No),Yes,,,,
+Integer,9,Speed of sound in air?,330 m/s,,,,
+Integer,10,Audible range?,20–20000 Hz,,,,
+Integer,11,Ultrasonic frequency >?,20000 Hz,,,,
+Integer,12,Infrasonic frequency <?,20 Hz,,,,
+Integer,13,Time period formula?,1/f,,,,
+Integer,14,Wave equation?,v=fλ,,,,
+Integer,15,Echo due to?,Reflection,,,,
+Integer,16,SONAR uses?,Ultrasound,,,,
+Integer,17,Speed fastest in?,Solids,,,,
+Integer,18,Noise is pleasant? (Yes/No),No,,,,
+Integer,19,Musical sound pleasant? (Yes/No),Yes,,,,
+Integer,20,Speed depends on medium? (Yes/No),Yes,,,,
+Integer,21,Unit of loudness?,dB,,,,
+Integer,22,Amplitude relates to?,Loudness,,,,
+Integer,23,Frequency relates to?,Pitch,,,,
+Integer,24,Sound travels in vacuum? (Yes/No),No,,,,
+Integer,25,Sound wave carries?,Energy,,,,
+Integer,26,Sound reflection laws same as light? (Yes/No),Yes,,,,
+Integer,27,Speed increases with temperature? (Yes/No),Yes,,,,
+Integer,28,Unit of time period?,Second,,,,
+Integer,29,Sound is mechanical wave? (Yes/No),Yes,,,,
+Integer,30,Bats use sound for?,Navigation,,,,
+Integer,31,Human ear hears ultrasonic? (Yes/No),No,,,,
+Integer,32,Sound wave has compressions? (Yes/No),Yes,,,,
+Integer,33,Pitch high means frequency?,High,,,,
+Integer,34,Loud sound amplitude?,High,,,,
+Integer,35,Speed unit m/s? (Yes/No),Yes,,,,
+Integer,36,Sound energy type?,Mechanical,,,,
+Integer,37,Wave length symbol?,λ,,,,
+Integer,38,Frequency symbol?,f,,,,
+Integer,39,Time period symbol?,T,,,,
+Integer,40,Speed symbol?,v,,,,
+Integer,41,Sound cannot travel without?,Medium,,,,
+Integer,42,Human voice produced by?,Vocal cords,,,,
+Integer,43,Noise pollution harmful? (Yes/No),Yes,,,,
+Integer,44,Ultrasound used in medical? (Yes/No),Yes,,,,
+Integer,45,Sound travels slower in air than water? (Yes/No),Yes,,,,
+Integer,46,Sound is energy? (Yes/No),Yes,,,,
+Integer,47,Greater frequency means pitch?,High,,,,
+Integer,48,Echo minimum distance?,17 m,,,,
+Integer,49,Speed of sound symbol?,v,,,,
+Integer,50,Sound wave shape?,Compression–rarefaction,,,,
+
+Problem,1,Find wavelength if v=330 m/s and f=660 Hz.,,,,,0.5 m
+Problem,2,Find frequency if v=340 m/s and λ=0.68 m.,,,,,500 Hz
+Problem,3,Find speed if f=1000 Hz and λ=0.34 m.,,,,,340 m/s
+Problem,4,Find time period if frequency is 200 Hz.,,,,,0.005 s
+Problem,5,Find frequency if time period is 0.01 s.,,,,,100 Hz
+Problem,6,Find wavelength if speed 300 m/s and frequency 600 Hz.,,,,,0.5 m
+Problem,7,Find speed of sound if λ=2 m and f=150 Hz.,,,,,300 m/s
+Problem,8,Find time period if f=50 Hz.,,,,,0.02 s
+Problem,9,Find wavelength if v=330 m/s f=110 Hz.,,,,,3 m
+Problem,10,Find frequency if v=330 m/s λ=1.65 m.,,,,,200 Hz
+Problem,11,Find speed if f=400 Hz λ=0.85 m.,,,,,340 m/s
+Problem,12,Find time period if f=250 Hz.,,,,,0.004 s
+Problem,13,Find frequency if T=0.02 s.,,,,,50 Hz
+Problem,14,Find wavelength if v=340 m/s f=170 Hz.,,,,,2 m
+Problem,15,Find speed if f=100 Hz λ=3.4 m.,,,,,340 m/s
+Problem,16,Find frequency if v=300 m/s λ=0.6 m.,,,,,500 Hz
+Problem,17,Find time period if f=1000 Hz.,,,,,0.001 s
+Problem,18,Find wavelength if v=330 m/s f=330 Hz.,,,,,1 m
+Problem,19,Find speed if f=200 Hz λ=1.7 m.,,,,,340 m/s
+Problem,20,Find frequency if T=0.005 s.,,,,,200 Hz
+Problem,21,Find wavelength if v=340 m/s f=680 Hz.,,,,,0.5 m
+Problem,22,Find time period if f=125 Hz.,,,,,0.008 s
+Problem,23,Find frequency if v=330 m/s λ=0.33 m.,,,,,1000 Hz
+Problem,24,Find speed if f=50 Hz λ=6.6 m.,,,,,330 m/s
+Problem,25,Find wavelength if v=300 m/s f=150 Hz.,,,,,2 m
+Problem,26,Find frequency if T=0.004 s.,,,,,250 Hz
+Problem,27,Find time period if f=400 Hz.,,,,,0.0025 s
+Problem,28,Find wavelength if v=340 m/s f=340 Hz.,,,,,1 m
+Problem,29,Find speed if f=250 Hz λ=1.36 m.,,,,,340 m/s
+Problem,30,Find frequency if v=340 m/s λ=0.17 m.,,,,,2000 Hz
+Problem,31,Find wavelength if speed 330 m/s and frequency 165 Hz.,,,,,2 m
+Problem,32,Find time period if frequency 500 Hz.,,,,,0.002 s
+Problem,33,Find speed if f=600 Hz λ=0.55 m.,,,,,330 m/s
+Problem,34,Find frequency if v=330 m/s λ=3.3 m.,,,,,100 Hz
+Problem,35,Find wavelength if v=300 m/s f=100 Hz.,,,,,3 m
+Problem,36,Find time period if f=100 Hz.,,,,,0.01 s
+Problem,37,Find frequency if T=0.001 s.,,,,,1000 Hz
+Problem,38,Find speed if f=200 Hz λ=1.5 m.,,,,,300 m/s
+Problem,39,Find wavelength if v=340 m/s f=85 Hz.,,,,,4 m
+Problem,40,Find frequency if v=340 m/s λ=0.68 m.,,,,,500 Hz
+Problem,41,Find time period if f=40 Hz.,,,,,0.025 s
+Problem,42,Find speed if f=800 Hz λ=0.425 m.,,,,,340 m/s
+Problem,43,Find wavelength if v=330 m/s f=30 Hz.,,,,,11 m
+Problem,44,Find frequency if T=0.02 s.,,,,,50 Hz
+Problem,45,Find speed if f=1000 Hz λ=0.34 m.,,,,,340 m/s
+Problem,46,Find wavelength if v=300 m/s f=75 Hz.,,,,,4 m
+Problem,47,Find frequency if v=330 m/s λ=0.66 m.,,,,,500 Hz
+Problem,48,Find time period if f=25 Hz.,,,,,0.04 s
+Problem,49,Find speed if f=500 Hz λ=0.68 m.,,,,,340 m/s
+Problem,50,Find wavelength if v=340 m/s f=1700 Hz.,,,,,0.2 m

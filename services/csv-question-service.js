@@ -6,8 +6,20 @@ import { parse } from 'csv-parse/sync';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Path to client src folder (where CSV files are stored)
-const CLIENT_SRC_PATH = path.join(__dirname, '../../client/src');
+// Path to CSV files - check backend folder first (for Railway), then client folder (for local dev)
+const BACKEND_CSV_PATH = path.join(__dirname, '../class-9'); // Check if CSV files are in backend
+const CLIENT_SRC_PATH = path.join(__dirname, '../../client/src'); // Fallback to client folder
+
+// Determine which path to use
+// __dirname is backend/services, so ../ is backend folder
+let CSV_BASE_PATH;
+if (fs.existsSync(BACKEND_CSV_PATH)) {
+  CSV_BASE_PATH = path.join(__dirname, '..'); // Use backend folder (backend/)
+  console.log('📁 Using CSV files from backend folder:', CSV_BASE_PATH);
+} else {
+  CSV_BASE_PATH = path.join(__dirname, '../../client/src'); // Use client folder
+  console.log('📁 Using CSV files from client folder:', CSV_BASE_PATH);
+}
 
 /**
  * Read questions from CSV file
@@ -26,7 +38,7 @@ function readQuestionsFromCSV(classNumber, subject, topic) {
       // Try common sub-subjects first
       const subSubjects = ['biology', 'chemistry', 'physics'];
       for (const subSubject of subSubjects) {
-        const testPath = path.join(CLIENT_SRC_PATH, classFolder, 'science', subSubject, `${topic}.csv`);
+        const testPath = path.join(CSV_BASE_PATH, classFolder, 'science', subSubject, `${topic}.csv`);
         if (fs.existsSync(testPath)) {
           csvPath = testPath;
           break;
@@ -35,15 +47,15 @@ function readQuestionsFromCSV(classNumber, subject, topic) {
       
       // If not found in sub-subjects, try directly in science folder
       if (!csvPath) {
-        const directPath = path.join(CLIENT_SRC_PATH, classFolder, 'science', `${topic}.csv`);
+        const directPath = path.join(CSV_BASE_PATH, classFolder, 'science', `${topic}.csv`);
         if (fs.existsSync(directPath)) {
           csvPath = directPath;
         }
       }
     } else if (subject.toLowerCase() === 'english') {
       // For English, check if there's a prose subfolder
-      const prosePath = path.join(CLIENT_SRC_PATH, classFolder, 'english', 'prose', `${topic}.csv`);
-      const directPath = path.join(CLIENT_SRC_PATH, classFolder, 'english', `${topic}.csv`);
+      const prosePath = path.join(CSV_BASE_PATH, classFolder, 'english', 'prose', `${topic}.csv`);
+      const directPath = path.join(CSV_BASE_PATH, classFolder, 'english', `${topic}.csv`);
       
       if (fs.existsSync(prosePath)) {
         csvPath = prosePath;
@@ -52,7 +64,7 @@ function readQuestionsFromCSV(classNumber, subject, topic) {
       }
     } else {
       // For other subjects (maths, social), try direct path
-      csvPath = path.join(CLIENT_SRC_PATH, classFolder, subject.toLowerCase(), `${topic}.csv`);
+      csvPath = path.join(CSV_BASE_PATH, classFolder, subject.toLowerCase(), `${topic}.csv`);
     }
     
     if (!csvPath || !fs.existsSync(csvPath)) {
@@ -158,7 +170,7 @@ export function getAvailableTopics(classNumber, subject) {
     let subjectPath;
     if (subject.toLowerCase() === 'science') {
       // Check all science subfolders
-      const sciencePath = path.join(CLIENT_SRC_PATH, classFolder, 'science');
+      const sciencePath = path.join(CSV_BASE_PATH, classFolder, 'science');
       if (fs.existsSync(sciencePath)) {
         const subDirs = fs.readdirSync(sciencePath, { withFileTypes: true });
         for (const subDir of subDirs) {
@@ -178,7 +190,7 @@ export function getAvailableTopics(classNumber, subject) {
       }
     } else if (subject.toLowerCase() === 'english') {
       // Check prose subfolder and direct folder
-      const englishPath = path.join(CLIENT_SRC_PATH, classFolder, 'english');
+      const englishPath = path.join(CSV_BASE_PATH, classFolder, 'english');
       console.log('📂 English path:', englishPath);
       console.log('📂 English path exists:', fs.existsSync(englishPath));
       
@@ -216,7 +228,7 @@ export function getAvailableTopics(classNumber, subject) {
       }
     } else {
       // Direct subject folder
-      subjectPath = path.join(CLIENT_SRC_PATH, classFolder, subject.toLowerCase());
+      subjectPath = path.join(CSV_BASE_PATH, classFolder, subject.toLowerCase());
       console.log('📂 Checking subject path:', subjectPath);
       console.log('📂 Path exists:', fs.existsSync(subjectPath));
       

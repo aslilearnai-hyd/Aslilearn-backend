@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of "The Fun They Had"?,H.G. Wells,Isaac Asimov,Ruskin Bond,Roald Dahl,Isaac Asimov
+MCQ,2,In which year is the story set?,2050,2100,2157,2200,2157
+MCQ,3,What was Margie writing in her diary?,A poem,A letter,An essay,About Tommy’s book,About Tommy’s book
+MCQ,4,How old is Margie?,9,10,11,13,11
+MCQ,5,How old is Tommy?,11,12,13,14,13
+MCQ,6,What kind of book did Tommy find?,Digital book,Printed book,Notebook,Magazine,Printed book
+MCQ,7,Where did Tommy find the book?,Library,School attic,His house attic,Margie’s house,His house attic
+MCQ,8,Why was the book special?,It was colorful,It had moving pictures,It was very old,It was handwritten,It was very old
+MCQ,9,What surprised Margie about the book?,No pictures,Words didn’t move,Old paper,All of these,All of these
+MCQ,10,What kind of teacher did Margie have?,Human teacher,Robot teacher,Online teacher,Video teacher,Robot teacher
+MCQ,11,Where was Margie’s school?,In a building,In her house,In the town hall,In a library,In her house
+MCQ,12,Who repaired Margie’s mechanical teacher?,Her father,Tommy,A mechanic,A scientist,A mechanic
+MCQ,13,What subject did Margie dislike?,English,Geography,Maths,Science,Maths
+MCQ,14,Why did Margie hate school?,Too much homework,Mechanical teacher,Gave tests daily,All of these,All of these
+MCQ,15,What was wrong with Margie’s teacher?,Screen cracked,Too fast teaching,Geography sector faulty,Voice issue,Geography sector faulty
+MCQ,16,How did old schools function?,At home,Online,With human teachers,Through robots,With human teachers
+MCQ,17,How did students learn in old schools?,Individually,In groups,Online only,At night,In groups
+MCQ,18,What did children do together in old schools?,Studied alone,Played and learned,Used robots,Stayed silent,Played and learned
+MCQ,19,Why did Margie think old schools were fun?,No homework,Human teachers,Children together,All of these,All of these
+MCQ,20,Who controlled Margie’s study schedule?,Teacher,Parents,Computer,Government,Computer
+MCQ,21,What subject was Margie studying at the end?,English,Geography,History,Maths,History
+MCQ,22,What kind of tests did Margie have?,Weekly,Monthly,Daily,Yearly,Daily
+MCQ,23,What did Margie’s mother believe?,Girls can’t learn,Robots teach best,School timing fixed,Kids need rest,Robots teach best
+MCQ,24,What was Tommy’s opinion about the book?,Boring,Funny,Interesting,Useless,Interesting
+MCQ,25,Why didn’t Margie like history?,Too hard,About the past,Robot taught it,No pictures,About the past
+MCQ,26,What does the story mainly highlight?,Future travel,Space science,Education system,Robots only,Education system
+MCQ,27,Which device taught Margie?,Tablet,Television,Mechanical teacher,Phone,Mechanical teacher
+MCQ,28,What replaced human teachers?,Robots,Computers,Books,Parents,Robots
+MCQ,29,What was Margie’s attitude towards school?,Happy,Excited,Hateful,Curious,Hateful
+MCQ,30,What made Margie sad at the end?,Homework,Old schools fun,Tommy’s book,Robot teacher,Old schools fun
+MCQ,31,Which subject was repaired?,Maths,English,Geography,History,Geography
+MCQ,32,What did Margie imagine?,Future schools,Old schools,New robots,Space travel,Old schools
+MCQ,33,What kind of story is this?,Fantasy,Science fiction,Comedy,Biography,Science fiction
+MCQ,34,What shows advancement in future?,Flying cars,Mechanical teachers,Space colonies,Time travel,Mechanical teachers
+MCQ,35,What did Margie learn alone?,Everything,Nothing,Most subjects,Only maths,Most subjects
+MCQ,36,Why were tests frequent?,Learning check,Robot design,School rule,Fun activity,Learning check
+MCQ,37,Who enjoyed history more?,Margie,Tommy,Both,None,Tommy
+MCQ,38,What was the tone of the story?,Sad,Humorous,Thought-provoking,Angry,Thought-provoking
+MCQ,39,What did Margie envy?,Tommy’s book,Old schools,Human teachers,Friends,Old schools
+MCQ,40,What theme is central?,Loneliness,Technology vs humanity,War,Adventure,Technology vs humanity
+MCQ,41,What replaced classrooms?,Homes,Online portals,Robots,Books,Homes
+MCQ,42,What did Margie imagine children doing?,Studying alone,Playing together,Using robots,Reading silently,Playing together
+MCQ,43,What kind of education did Margie receive?,Personalised,Group-based,Outdoor,Practical,Personalised
+MCQ,44,Why was Margie bored?,Isolation,Too many friends,No books,No play,Isolation
+MCQ,45,What does the title suggest?,Fun with robots,Fun of books,Joy of old schools,Fun of future,Joy of old schools
+MCQ,46,Which subject Margie hated most?,History,English,Maths,Science,Maths
+MCQ,47,What did Margie think of the book?,Strange,Boring,Wonderful,Old-fashioned,Strange
+MCQ,48,What kind of future is shown?,Utopian,Dystopian,Neutral,Magical,Dystopian
+MCQ,49,What did Margie wish for?,Holiday,No tests,Old school experience,New robot,Old school experience
+MCQ,50,What is the moral of the story?,Books are boring,Robots are bad,Human interaction is important,Future is bad,Human interaction is important
+
+Integer,1,Author?,Isaac Asimov,,,,
+Integer,2,Story year?,2157,,,,
+Integer,3,Margie age?,11,,,,
+Integer,4,Tommy age?,13,,,,
+Integer,5,Teacher type?,Mechanical,,,,
+Integer,6,Book type?,Printed,,,,
+Integer,7,Book location?,Attic,,,,
+Integer,8,School place?,Home,,,,
+Integer,9,Margie hated?,Maths,,,,
+Integer,10,Repairman?,Mechanic,,,,
+Integer,11,Subject repaired?,Geography,,,,
+Integer,12,Teaching style?,Individual,,,,
+Integer,13,Old school teacher?,Human,,,,
+Integer,14,School type?,Virtual,,,,
+Integer,15,Tests frequency?,Daily,,,,
+Integer,16,Diary date?,17 May 2157,,,,
+Integer,17,Genre?,Science fiction,,,,
+Integer,18,Central theme?,Education,,,,
+Integer,19,Future teacher?,Robot,,,,
+Integer,20,Old schools fun because?,Togetherness,,,,
+Integer,21,Margie subject at end?,History,,,,
+Integer,22,Education controller?,Computer,,,,
+Integer,23,Book pages?,Paper,,,,
+Integer,24,Margie feeling?,Sad,,,,
+Integer,25,Old school location?,Building,,,,
+Integer,26,Children studied?,Together,,,,
+Integer,27,Homework place?,Screen,,,,
+Integer,28,Old schools had?,Classrooms,,,,
+Integer,29,Tommy reaction?,Interested,,,,
+Integer,30,Margie wish?,Old school,,,,
+Integer,31,Teaching speed issue?,Too fast,,,,
+Integer,32,Robot teacher part?,Sector,,,,
+Integer,33,Old schools subject?,Same,,,,
+Integer,34,Margie’s imagination?,Past,,,,
+Integer,35,Story message?,Human touch,,,,
+Integer,36,Learning mode?,Isolated,,,,
+Integer,37,Technology level?,Advanced,,,,
+Integer,38,Old books lacked?,Screens,,,,
+Integer,39,Children interaction?,Low,,,,
+Integer,40,Emotion at end?,Longing,,,,
+Integer,41,School timing?,Fixed,,,,
+Integer,42,Book age?,Old,,,,
+Integer,43,Margie diary?,Personal,,,,
+Integer,44,Teacher size?,Large,,,,
+Integer,45,Education type?,Automated,,,,
+Integer,46,Old schools joy?,Fun,,,,
+Integer,47,Robot advantage?,Personalised,,,,
+Integer,48,Robot drawback?,Isolation,,,,
+Integer,49,Story focus?,Education,,,,
+Integer,50,Chapter name?,The Fun They Had,,,,
+
+Descriptive,1,Who wrote "The Fun They Had"?,,,,,It was written by Isaac Asimov
+Descriptive,2,When is the story set?,,,,,The story is set in the year 2157
+Descriptive,3,Describe Margie.,,,,,Margie is an 11-year-old girl who dislikes her robotic school
+Descriptive,4,Describe Tommy.,,,,,Tommy is a curious 13-year-old boy interested in old books
+Descriptive,5,What kind of school did Margie have?,,,,,She studied at home with a mechanical teacher
+Descriptive,6,Why did Margie hate school?,,,,,Because of isolation, daily tests and robotic teaching
+Descriptive,7,What was special about the book?,,,,,It was a printed book with fixed words
+Descriptive,8,How were old schools different?,,,,,They had human teachers and group learning
+Descriptive,9,Why were old schools fun?,,,,,Children learned and played together
+Descriptive,10,What role did technology play?,,,,,Technology replaced human interaction
+Descriptive,11,Explain the mechanical teacher.,,,,,A robot that taught subjects individually
+Descriptive,12,Why was the geography sector faulty?,,,,,It was set too fast for Margie
+Descriptive,13,What did the mechanic do?,,,,,He repaired and adjusted the teacher
+Descriptive,14,How was learning personalised?,,,,,Each child had a separate teacher
+Descriptive,15,Why did Margie feel sad at the end?,,,,,She longed for old school life
+Descriptive,16,Describe education in 2157.,,,,,Automated, individual and technology-based
+Descriptive,17,What is the theme of the story?,,,,,Technology vs human interaction
+Descriptive,18,Why is the story science fiction?,,,,,It depicts futuristic education
+Descriptive,19,What does the title suggest?,,,,,Joy of traditional schooling
+Descriptive,20,Explain Margie’s imagination.,,,,,She imagined children learning together
+Descriptive,21,How did Tommy view the book?,,,,,He found it interesting and informative
+Descriptive,22,What is the central message?,,,,,Human interaction is vital in education
+Descriptive,23,Compare old and new schools.,,,,,Old had humans, new had robots
+Descriptive,24,How did children study in old schools?,,,,,Together in classrooms
+Descriptive,25,Why did Margie dislike history?,,,,,It was about the past
+Descriptive,26,What does the diary entry show?,,,,,Margie’s curiosity and emotions
+Descriptive,27,How were tests conducted?,,,,,Through the mechanical teacher daily
+Descriptive,28,What role did parents play?,,,,,They trusted robots for teaching
+Descriptive,29,What is ironic about the future?,,,,,Advanced tech caused loneliness
+Descriptive,30,How is isolation shown?,,,,,Margie studied alone
+Descriptive,31,What advantages did robots have?,,,,,Personalised teaching
+Descriptive,32,What disadvantages did robots have?,,,,,Lack of human warmth
+Descriptive,33,Why was Margie curious?,,,,,She wanted to know about old schools
+Descriptive,34,What did children share in old schools?,,,,,Books, fun and experiences
+Descriptive,35,How does the story reflect reality?,,,,,Over-dependence on technology
+Descriptive,36,Why did Margie envy old schools?,,,,,They were lively and joyful
+Descriptive,37,What kind of future is shown?,,,,,A mechanical and lonely future
+Descriptive,38,How does Asimov warn readers?,,,,,By showing loss of humanity
+Descriptive,39,Explain the education system shown.,,,,,Automated and home-based
+Descriptive,40,What is the importance of teachers?,,,,,They guide emotionally and socially
+Descriptive,41,How is curiosity shown?,,,,,Through Margie’s questions
+Descriptive,42,Why was the book old?,,,,,It belonged to the past
+Descriptive,43,What lesson does the story teach?,,,,,Balance technology with humanity
+Descriptive,44,How did Margie feel about learning?,,,,,She found it boring
+Descriptive,45,What contrast is shown?,,,,,Past joy vs future isolation
+Descriptive,46,Why is human contact important?,,,,,It promotes social growth
+Descriptive,47,Explain the ending.,,,,,Margie dreams of joyful schools
+Descriptive,48,How does the story affect readers?,,,,,Makes them value schools
+Descriptive,49,Why is the story relevant today?,,,,,Increasing digital education
+Descriptive,50,Summarize "The Fun They Had".,,,,,The story highlights the importance of human interaction in education

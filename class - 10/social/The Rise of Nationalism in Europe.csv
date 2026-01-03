@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is considered the architect of German unification?,Otto von Bismarck,Giuseppe Mazzini,Victor Emmanuel II,Napoleon III,Otto von Bismarck
+MCQ,2,The French Revolution began in the year,1774,1789,1815,1848,1789
+MCQ,3,The concept of nation-state emerged strongly in,18th century,19th century,20th century,17th century,19th century
+MCQ,4,Who was the leader of the Young Italy movement?,Garibaldi,Mazzini,Bismarck,Metternich,Mazzini
+MCQ,5,The Treaty of Vienna was signed in,1815,1830,1848,1871,1815
+MCQ,6,Which country was unified under Victor Emmanuel II?,Germany,Italy,France,Austria,Italy
+MCQ,7,The Zollverein was related to,Political union,Religious reform,Economic union,Military alliance,Economic union
+MCQ,8,Who led the unification of Italy?,Garibaldi,Bismarck,Mazzini,Metternich,Garibaldi
+MCQ,9,The Frankfurt Parliament met in,1848,1815,1830,1871,1848
+MCQ,10,The German Empire was proclaimed in,Paris,Berlin,Versailles,Vienna,Versailles
+MCQ,11,Who was proclaimed the German Emperor in 1871?,Bismarck,William I,Napoleon III,Frederick II,William I
+MCQ,12,The ideology that emphasized loyalty to the nation is called,Imperialism,Colonialism,Nationalism,Socialism,Nationalism
+MCQ,13,Who represented conservatism in Europe?,Liberals,Radicals,Metternich,Nationalists,Metternich
+MCQ,14,The revolution of liberals occurred in,1815,1830,1848,1870,1848
+MCQ,15,Which symbol represented the German nation?,Marianne,Germania,Bharat Mata,Italia,Germania
+MCQ,16,Marianne was the national symbol of,Italy,France,Germany,Austria,France
+MCQ,17,The first expression of nationalism came with,French Revolution,Industrial Revolution,Russian Revolution,American War,French Revolution
+MCQ,18,Which country opposed nationalist movements?,Italy,Germany,Austria-Hungary,France,Austria-Hungary
+MCQ,19,Who said “When France sneezes, the rest of Europe catches cold”?,Metternich,Napoleon,Bismarck,Mazzini,Metternich
+MCQ,20,Who was a revolutionary nationalist?,Metternich,Mazzini,Bismarck,Napoleon,Mazzini
+MCQ,21,The middle class played a major role in,Liberal nationalism,Conservatism,Imperialism,Colonialism,Liberal nationalism
+MCQ,22,Which revolution led to the end of monarchy in France?,1789,1815,1830,1848,1789
+MCQ,23,The Napoleonic Code was introduced in,1804,1815,1789,1848,1804
+MCQ,24,Who opposed women’s suffrage in 19th century?,Liberals,Conservatives,Radicals,Nationalists,Liberals
+MCQ,25,Which group wanted universal suffrage?,Liberals,Conservatives,Radicals,Monarchs,Radicals
+MCQ,26,Who unified Italy by military means?,Mazzini,Garibaldi,Victor Emmanuel II,Metternich,Garibaldi
+MCQ,27,The Habsburg Empire ruled over,Italy and Germany,Austria-Hungary,France and Italy,Spain and Portugal,Austria-Hungary
+MCQ,28,Who was the ruler of Sardinia-Piedmont?,Victor Emmanuel II,Garibaldi,Mazzini,Bismarck,Victor Emmanuel II
+MCQ,29,Which country emerged as a powerful nation after 1871?,Italy,France,Germany,Austria,Germany
+MCQ,30,Nationalism spread to Eastern Europe due to,Industrialization,Imperialism,Oppression,Colonialism,Oppression
+MCQ,31,The term nationalism means,Love for culture,Loyalty to ruler,Loyalty to nation,Hatred of others,Loyalty to nation
+MCQ,32,Which language was promoted as national language in France?,German,Italian,French,Latin,French
+MCQ,33,Who introduced reforms in France before Napoleon?,Louis XVI,Jacobins,Metternich,William I,Jacobins
+MCQ,34,Who was known as the Iron Chancellor?,Garibaldi,Bismarck,Mazzini,Napoleon,Bismarck
+MCQ,35,Which war helped German unification?,Franco-Prussian War,Crimean War,World War I,Napoleonic Wars,Franco-Prussian War
+MCQ,36,Nationalism in Europe led to,Unity,Peace,Conflicts,Isolation,Conflicts
+MCQ,37,Which class led nationalist movements?,Peasants,Workers,Middle class,Aristocracy,Middle class
+MCQ,38,Who opposed the Frankfurt Parliament?,Monarchs,Liberals,Radicals,Nationalists,Monarchs
+MCQ,39,Which country became a nation-state in 1871?,France,Germany,Italy,Austria,Germany
+MCQ,40,What did liberalism stand for?,Equality before law,Monarchy,Dictatorship,Imperialism,Equality before law
+MCQ,41,Which symbol represented liberty in France?,Germania,Marianne,Crown,Eagle,Marianne
+MCQ,42,Who believed in monarchy and tradition?,Liberals,Radicals,Conservatives,Nationalists,Conservatives
+MCQ,43,Nationalism often led to the suppression of,Minorities,Majorities,Middle class,Rulers,Minorities
+MCQ,44,Who supported the idea of a united Italy?,Mazzini,Bismarck,Metternich,Napoleon,Mazzini
+MCQ,45,The Treaty of Vienna aimed to restore,Democracy,Liberalism,Monarchy,Nationalism,Monarchy
+MCQ,46,Which empire was multi-national?,German Empire,French Empire,Habsburg Empire,British Empire,Habsburg Empire
+MCQ,47,Which movement emphasized cultural unity?,Political movement,Economic movement,Cultural nationalism,Colonialism,Cultural nationalism
+MCQ,48,The unification of Italy was completed in,1861,1871,1848,1815,1861
+MCQ,49,Which country faced nationalist tensions?,Britain,France,Austria-Hungary,USA,Austria-Hungary
+MCQ,50,The rise of nationalism promoted,Equality,Unity,Imperialism,Both unity and conflict,Both unity and conflict
+
+Integer,1,Year of French Revolution?,1789,,,,
+Integer,2,Year of Treaty of Vienna?,1815,,,,
+Integer,3,Architect of German unification?,Bismarck,,,,
+Integer,4,Leader of Young Italy?,Mazzini,,,,
+Integer,5,German emperor in 1871?,William I,,,,
+Integer,6,Italian ruler during unification?,Victor Emmanuel II,,,,
+Integer,7,Economic union of Germany?,Zollverein,,,,
+Integer,8,Year of Frankfurt Parliament?,1848,,,,
+Integer,9,National symbol of France?,Marianne,,,,
+Integer,10,National symbol of Germany?,Germania,,,,
+Integer,11,Leader of Italian unification?,Garibaldi,,,,
+Integer,12,Iron Chancellor?,Bismarck,,,,
+Integer,13,Code introduced by Napoleon?,Napoleonic Code,,,,
+Integer,14,Empire ruling Austria-Hungary?,Habsburg,,,,
+Integer,15,Year Germany unified?,1871,,,,
+Integer,16,Ideology of nation?,Nationalism,,,,
+Integer,17,Supporters of monarchy?,Conservatives,,,,
+Integer,18,Revolutionary year?,1848,,,,
+Integer,19,Leader of France after revolution?,Napoleon,,,,
+Integer,20,Language promoted in France?,French,,,,
+Integer,21,Middle class supported?,Nationalism,,,,
+Integer,22,Unification of Italy year?,1861,,,,
+Integer,23,Parliament of Germany?,Frankfurt,,,,
+Integer,24,Leader of conservatism?,Metternich,,,,
+Integer,25,War aiding German unity?,Franco-Prussian War,,,,
+Integer,26,Liberals demanded?,Equality,,,,
+Integer,27,Radicals wanted?,Universal suffrage,,,,
+Integer,28,Capital of German Empire?,Berlin,,,,
+Integer,29,Revolution started in?,France,,,,
+Integer,30,Symbol of Italy?,Italia,,,,
+Integer,31,Nationality of Mazzini?,Italian,,,,
+Integer,32,Nationality of Bismarck?,German,,,,
+Integer,33,Empire opposing nationalism?,Austria-Hungary,,,,
+Integer,34,Unification leader of Sardinia?,Victor Emmanuel II,,,,
+Integer,35,Main class of nationalism?,Middle class,,,,
+Integer,36,Ideology opposing nationalism?,Conservatism,,,,
+Integer,37,Year Napoleonic Code?,1804,,,,
+Integer,38,Nationality of Garibaldi?,Italian,,,,
+Integer,39,Revolution against monarchy?,French Revolution,,,,
+Integer,40,Leader of France?,Napoleon,,,,
+Integer,41,Country unified last?,Germany,,,,
+Integer,42,Symbol of liberty?,Marianne,,,,
+Integer,43,Movement for unity?,Nationalism,,,,
+Integer,44,Empire with many languages?,Habsburg,,,,
+Integer,45,Group denied voting rights?,Women,,,,
+Integer,46,Political ideology of freedom?,Liberalism,,,,
+Integer,47,Opposition to Frankfurt Parliament?,Monarchs,,,,
+Integer,48,Country fragmented before unity?,Germany,,,,
+Integer,49,Nationalist movement year?,1848,,,,
+Integer,50,Main outcome of nationalism?,Nation-states,,,,
+
+Descriptive,1,Explain the rise of nationalism in Europe.,,,,,Nationalism grew due to French Revolution and spread of liberal ideas
+Descriptive,2,What was the role of the French Revolution in nationalism?,,,,,It inspired equality and national identity
+Descriptive,3,Describe the role of Giuseppe Mazzini.,,,,,He promoted Italian unity
+Descriptive,4,Explain the unification of Germany.,,,,,Led by Bismarck through wars
+Descriptive,5,Explain the unification of Italy.,,,,,Achieved through Garibaldi and Victor Emmanuel II
+Descriptive,6,What was the Frankfurt Parliament?,,,,,Assembly to unify Germany
+Descriptive,7,Describe the ideology of liberalism.,,,,,Equality before law and freedom
+Descriptive,8,What was conservatism?,,,,,Belief in monarchy and tradition
+Descriptive,9,Explain the Treaty of Vienna.,,,,,Restored monarchies after Napoleon
+Descriptive,10,How did nationalism affect Europe?,,,,,Created unity and conflicts
+Descriptive,11,Describe the role of Zollverein.,,,,,Economic unity of Germany
+Descriptive,12,Who was Metternich?,,,,,A conservative Austrian leader
+Descriptive,13,Explain the significance of 1848 revolutions.,,,,,Demanded rights and unity
+Descriptive,14,What is a nation-state?,,,,,A state with common identity
+Descriptive,15,Explain cultural nationalism.,,,,,Unity through culture and language
+Descriptive,16,How did Napoleon spread nationalism?,,,,,Through reforms and laws
+Descriptive,17,Describe the role of women in nationalism.,,,,,Limited political rights
+Descriptive,18,What problems did nationalism create?,,,,,Suppression of minorities
+Descriptive,19,Explain the role of middle class.,,,,,Led liberal movements
+Descriptive,20,What was the Habsburg Empire?,,,,,A multinational empire
+Descriptive,21,Explain the symbolism of Marianne.,,,,,Symbol of French liberty
+Descriptive,22,Explain the symbolism of Germania.,,,,,Symbol of German nation
+Descriptive,23,What was the Young Italy movement?,,,,,Movement for Italian unity
+Descriptive,24,Explain the Franco-Prussian War.,,,,,Led to German unity
+Descriptive,25,How did language help nationalism?,,,,,Created shared identity
+Descriptive,26,Explain the role of education.,,,,,Spread nationalist ideas
+Descriptive,27,Why did liberals fail in 1848?,,,,,Opposition from monarchs
+Descriptive,28,Explain the idea of conservatism.,,,,,Preserving old institutions
+Descriptive,29,Describe the impact of nationalism on minorities.,,,,,Often oppressed
+Descriptive,30,Explain the Napoleonic Code.,,,,,Ensured equality before law
+Descriptive,31,How did nationalism spread to Eastern Europe?,,,,,Due to oppression
+Descriptive,32,What was the role of wars in unification?,,,,,Helped create unity
+Descriptive,33,Explain the role of Garibaldi.,,,,,Led military campaigns
+Descriptive,34,Describe Victor Emmanuel II.,,,,,King of unified Italy
+Descriptive,35,Explain the causes of nationalism.,,,,,Political and economic factors
+Descriptive,36,How did nationalism affect politics?,,,,,Led to nation-states
+Descriptive,37,Explain the failure of Frankfurt Parliament.,,,,,Lack of support
+Descriptive,38,Describe liberal nationalism.,,,,,Freedom and unity
+Descriptive,39,What was the impact of nationalism?,,,,,Unity and conflict
+Descriptive,40,Explain the term nationalism.,,,,,Loyalty to the nation
+Descriptive,41,How did nationalism challenge empires?,,,,,Demanded independence
+Descriptive,42,Explain the rise of nation-states.,,,,,Unified territories
+Descriptive,43,Describe cultural unity in Europe.,,,,,Language and traditions
+Descriptive,44,Explain political nationalism.,,,,,Demanded sovereign states
+Descriptive,45,What was the role of symbols?,,,,,Inspired unity
+Descriptive,46,Explain the problems of nationalism.,,,,,Led to wars
+Descriptive,47,Describe the role of intellectuals.,,,,,Spread ideas
+Descriptive,48,How did nationalism affect borders?,,,,,Redrew Europe
+Descriptive,49,Explain nationalism in France.,,,,,Unified citizens
+Descriptive,50,Summarize The Rise of Nationalism in Europe.,,,,,Nationalism unified nations but also caused conflicts

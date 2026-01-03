@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Palampur is an example of?,Town,City,Village,Metro,Village
+MCQ,2,Main occupation of Palampur people?,Industry,Trade,Agriculture,Mining,Agriculture
+MCQ,3,Which factor of production is most important in Palampur?,Capital,Land,Labour,Enterprise,Land
+MCQ,4,What is multiple cropping?,Growing one crop,Growing two or more crops,Growing only cash crops,None,Growing two or more crops
+MCQ,5,Which crop is grown in rainy season?,Wheat,Rice,Potato,Sugarcane,Rice
+MCQ,6,Which crop is grown in winter season?,Rice,Wheat,Maize,Sugarcane,Wheat
+MCQ,7,What enabled multiple cropping in Palampur?,Rainfall,Irrigation,Fertilizers,None,Irrigation
+MCQ,8,Which is a fixed factor of production?,Labour,Capital,Land,Enterprise,Land
+MCQ,9,Which is a working capital?,Land,Tools,Seeds,Machines,Seeds
+MCQ,10,Which is an example of capital?,Land,Labour,Tools,Water,Tools
+MCQ,11,Which animal is used in farming?,Camel,Elephant,Bullocks,Horse,Bullocks
+MCQ,12,What type of farming is done in Palampur?,Subsistence,Commercial,Shifting,None,Commercial
+MCQ,13,Which method increased farm production?,Multiple cropping,Single cropping,None,None,Multiple cropping
+MCQ,14,Which non-farm activity exists in Palampur?,Fishing,Dairy,Mining,None,Dairy
+MCQ,15,Which product is sold to nearby towns?,Milk,Grain,Vegetables,None,Milk
+MCQ,16,Which factor provides physical effort?,Land,Labour,Capital,Enterprise,Labour
+MCQ,17,Which factor organizes production?,Labour,Capital,Enterprise,Land,Enterprise
+MCQ,18,What is HYV seeds?,Low yield seeds,High yield variety seeds,Natural seeds,None,High yield variety seeds
+MCQ,19,Which input increases soil fertility?,Pesticides,Fertilizers,Water,None,Fertilizers
+MCQ,20,Which season depends on monsoon?,Rabi,Kharif,Zaid,None,Kharif
+MCQ,21,Which season wheat grown?,Kharif,Rabi,Zaid,None,Rabi
+MCQ,22,Which crop is a cash crop?,Rice,Wheat,Sugarcane,Maize,Sugarcane
+MCQ,23,Which activity provides regular income?,Farming,Dairy,Mining,None,Dairy
+MCQ,24,What is surplus?,Less production,Extra production,No production,None,Extra production
+MCQ,25,What happens to surplus?,Stored,Wasted,Sold,None,Sold
+MCQ,26,Which group owns most land?,Small farmers,Landless labourers,Large farmers,None,Large farmers
+MCQ,27,Who work on others’ land?,Large farmers,Small farmers,Landless labourers,None,Landless labourers
+MCQ,28,Which credit source is formal?,Moneylender,Friend,Bank,None,Bank
+MCQ,29,Which credit source charges high interest?,Bank,Cooperative,Moneylender,None,Moneylender
+MCQ,30,Which activity needs less land?,Farming,Dairy,Mining,None,Dairy
+MCQ,31,Which capital includes machines?,Fixed capital,Working capital,Human capital,None,Fixed capital
+MCQ,32,Which capital is used up in production?,Fixed,Working,None,None,Working
+MCQ,33,Which resource is limited?,Labour,Land,Capital,None,Land
+MCQ,34,Which irrigation source used in Palampur?,Canals,Tubewells,Tanks,None,Tubewells
+MCQ,35,Which non-farm activity involves buying and selling?,Dairy,Transport,Shopkeeping,None,Shopkeeping
+MCQ,36,Which activity uses vehicles?,Farming,Dairy,Transport,None,Transport
+MCQ,37,Which factor earns profit?,Labour,Land,Enterprise,None,Enterprise
+MCQ,38,Which farmer uses modern inputs?,Large farmer,Landless labourer,None,None,Large farmer
+MCQ,39,Which is a problem of landless labourers?,High income,Low wages,More land,None,Low wages
+MCQ,40,Which improves productivity?,Traditional seeds,Modern inputs,None,None,Modern inputs
+MCQ,41,Which farming depends on rainfall?,Rainfed,Irrigated,None,None,Rainfed
+MCQ,42,Which village activity is non-agricultural?,Farming,Dairy,None,None,Dairy
+MCQ,43,Which factor is human effort?,Labour,Land,Capital,None,Labour
+MCQ,44,Which factor is natural resource?,Land,Labour,Capital,None,Land
+MCQ,45,Which factor includes tools and machines?,Capital,Land,Labour,None,Capital
+MCQ,46,Which activity supports agriculture?,Dairy,Mining,None,None,Dairy
+MCQ,47,Which group suffers poverty?,Large farmers,Small farmers,Landless labourers,None,Landless labourers
+MCQ,48,Which crop rotation helps soil?,Multiple cropping,Single cropping,None,None,Multiple cropping
+MCQ,49,Which activity gives year-round income?,Dairy,Farming,None,None,Dairy
+MCQ,50,Which economy sector is Palampur?,Primary,Secondary,Tertiary,None,Primary
+
+Integer,1,Main occupation of Palampur?,Agriculture,,,,
+Integer,2,Most important factor?,Land,,,,
+Integer,3,Two crops method?,Multiple cropping,,,,
+Integer,4,Season of rice?,Kharif,,,,
+Integer,5,Season of wheat?,Rabi,,,,
+Integer,6,Source of irrigation?,Tubewells,,,,
+Integer,7,High yield seeds?,HYV,,,,
+Integer,8,Fixed factor?,Land,,,,
+Integer,9,Working capital example?,Seeds,,,,
+Integer,10,Milk producing activity?,Dairy,,,,
+Integer,11,Extra production?,Surplus,,,,
+Integer,12,Surplus sold in?,Market,,,,
+Integer,13,Big land owners?,Large farmers,,,,
+Integer,14,No land owners?,Landless labourers,,,,
+Integer,15,Formal credit source?,Bank,,,,
+Integer,16,High interest lender?,Moneylender,,,,
+Integer,17,Non-farm activity?,Dairy,,,,
+Integer,18,Vehicle activity?,Transport,,,,
+Integer,19,Buying selling activity?,Shopkeeping,,,,
+Integer,20,Organising factor?,Enterprise,,,,
+Integer,21,Physical effort factor?,Labour,,,,
+Integer,22,Natural resource?,Land,,,,
+Integer,23,Tools machines factor?,Capital,,,,
+Integer,24,Land availability?,Limited,,,,
+Integer,25,Modern seeds?,HYV,,,,
+Integer,26,Soil nutrient input?,Fertilizer,,,,
+Integer,27,Income regular source?,Dairy,,,,
+Integer,28,Cash crop?,Sugarcane,,,,
+Integer,29,Farming type?,Commercial,,,,
+Integer,30,Labour problem?,Low wages,,,,
+Integer,31,Main irrigation source?,Tubewells,,,,
+Integer,32,Extra land use method?,Multiple cropping,,,,
+Integer,33,Capital used up?,Working capital,,,,
+Integer,34,Capital reusable?,Fixed capital,,,,
+Integer,35,Profit earning factor?,Enterprise,,,,
+Integer,36,Non-agricultural sector?,Dairy,,,,
+Integer,37,Village economy?,Primary,,,,
+Integer,38,Human effort?,Labour,,,,
+Integer,39,Natural input?,Land,,,,
+Integer,40,Machine input?,Capital,,,,
+Integer,41,Small farmers issue?,Low income,,,,
+Integer,42,Landless depend on?,Wages,,,,
+Integer,43,Modern farming input?,HYV seeds,,,,
+Integer,44,Water supply?,Irrigation,,,,
+Integer,45,Market activity?,Shopkeeping,,,,
+Integer,46,Transport uses?,Vehicles,,,,
+Integer,47,Farm output sold?,Surplus,,,,
+Integer,48,Farming support activity?,Dairy,,,,
+Integer,49,Village studied?,Palampur,,,,
+Integer,50,Chapter focus?,Production,,,,
+
+Descriptive,1,What is the story of village Palampur?,,,,,A case study of rural economy
+Descriptive,2,What are the main activities in Palampur?,,,,,Farming and non-farm activities
+Descriptive,3,Explain factors of production.,,,,,Land labour capital enterprise
+Descriptive,4,Why is land important?,,,,,Base of agriculture
+Descriptive,5,What is multiple cropping?,,,,,Growing more than one crop
+Descriptive,6,How is multiple cropping possible?,,,,,Through irrigation
+Descriptive,7,Explain modern farming methods.,,,,,HYV seeds fertilizers machines
+Descriptive,8,What are HYV seeds?,,,,,High yield variety seeds
+Descriptive,9,What is working capital?,,,,,Inputs used up in production
+Descriptive,10,What is fixed capital?,,,,,Tools and machines
+Descriptive,11,Explain surplus production.,,,,,Extra output sold in market
+Descriptive,12,What happens to surplus?,,,,,Sold for income
+Descriptive,13,Who are large farmers?,,,,,Own large land
+Descriptive,14,Who are small farmers?,,,,,Own small land
+Descriptive,15,Who are landless labourers?,,,,,Work on others’ land
+Descriptive,16,Explain non-farm activities.,,,,,Dairy transport shopkeeping
+Descriptive,17,Why dairy important?,,,,,Regular income
+Descriptive,18,Explain transport activity.,,,,,Moves goods and people
+Descriptive,19,Explain shopkeeping.,,,,,Buying and selling goods
+Descriptive,20,Why non-farm activities needed?,,,,,Reduce dependence on farming
+Descriptive,21,What is irrigation?,,,,,Artificial water supply
+Descriptive,22,How irrigation improved farming?,,,,,Enabled multiple cropping
+Descriptive,23,Problems of small farmers.,,,,,Low income debts
+Descriptive,24,Problems of landless labourers?,,,,,Low wages no security
+Descriptive,25,What is credit?,,,,,Borrowed money
+Descriptive,26,Formal sources of credit.,,,,,Banks cooperatives
+Descriptive,27,Informal sources of credit.,,,,,Moneylenders friends
+Descriptive,28,Why moneylenders harmful?,,,,,High interest
+Descriptive,29,What is capital?,,,,,Man-made resources
+Descriptive,30,Role of labour in farming.,,,,,Physical work
+Descriptive,31,Role of enterprise.,,,,,Organises production
+Descriptive,32,Why land is limited?,,,,,Fixed natural resource
+Descriptive,33,Effects of modern farming.,,,,,Higher production
+Descriptive,34,Environmental impact of farming.,,,,,Soil and water pollution
+Descriptive,35,Why surplus important?,,,,,Income generation
+Descriptive,36,Difference between fixed and working capital.,,,,,Reusable vs consumable
+Descriptive,37,Why Palampur well connected?,,,,,Roads and transport
+Descriptive,38,How markets help farmers?,,,,,Sell produce
+Descriptive,39,Why education needed?,,,,,Better productivity
+Descriptive,40,Explain primary sector.,,,,,Depends on natural resources
+Descriptive,41,Why agriculture dominant?,,,,,Rural economy
+Descriptive,42,What is production?,,,,,Creation of goods
+Descriptive,43,Explain organisation of production.,,,,,Use of factors
+Descriptive,44,Why wages low?,,,,,Excess labour
+Descriptive,45,How to improve village economy?,,,,,More non-farm jobs
+Descriptive,46,Why credit essential?,,,,,Buy inputs
+Descriptive,47,How technology helps farming?,,,,,Increases yield
+Descriptive,48,Explain rural employment.,,,,,Farming and non-farm
+Descriptive,49,Why Palampur representative village?,,,,,Shows Indian village economy
+Descriptive,50,Summarise Palampur economy.,,,,,Agriculture with non-farm support

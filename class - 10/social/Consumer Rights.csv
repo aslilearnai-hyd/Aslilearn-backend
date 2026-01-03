@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is a consumer?,Producer,Seller,User of goods,Trader,User of goods
+MCQ,2,Consumer rights aim to protect consumers from,Producers,Traders,Unfair practices,Government,Unfair practices
+MCQ,3,Which Act protects consumer rights in India?,RTI Act,Consumer Protection Act,Factories Act,IT Act,Consumer Protection Act
+MCQ,4,Consumer Protection Act was enacted in the year,1986,1991,2005,2019,1986
+MCQ,5,Right to be protected against hazardous goods is called,Right to choice,Right to safety,Right to information,Right to redressal,Right to safety
+MCQ,6,Which right ensures correct information?,Right to safety,Right to choice,Right to information,Right to be heard,Right to information
+MCQ,7,Which right allows consumer to select products?,Right to choice,Right to safety,Right to information,Right to education,Right to choice
+MCQ,8,Right to seek compensation is known as,Right to safety,Right to redressal,Right to choice,Right to education,Right to redressal
+MCQ,9,Which right ensures consumer complaints are heard?,Right to be heard,Right to safety,Right to choice,Right to information,Right to be heard
+MCQ,10,Right to knowledge about consumer rights is,Right to education,Right to choice,Right to safety,Right to redressal,Right to education
+MCQ,11,Which logo ensures quality of food products?,ISI,AGMARK,Hallmark,FSSAI,FSSAI
+MCQ,12,Which logo is for agricultural products?,ISI,AGMARK,Hallmark,FSSAI,AGMARK
+MCQ,13,Which logo is for industrial products?,AGMARK,Hallmark,ISI,FSSAI,ISI
+MCQ,14,Which logo certifies gold jewellery?,ISI,AGMARK,Hallmark,FSSAI,Hallmark
+MCQ,15,Which organisation resolves consumer disputes?,Police,Courts,Consumer forums,Parliament,Consumer forums
+MCQ,16,Which level of consumer court handles district cases?,District forum,State commission,National commission,High court,District forum
+MCQ,17,Which court handles cases above ₹1 crore?,District forum,State commission,National commission,Consumer cell,National commission
+MCQ,18,Which practice cheats consumers?,Fair trade,Legal trade,Adulteration,Standardisation,Adulteration
+MCQ,19,Which practice involves false promises?,Adulteration,Hoarding,False advertising,Standardisation,False advertising
+MCQ,20,Which organisation spreads consumer awareness?,WHO,UNESCO,Consumer organisations,RBI,Consumer organisations
+MCQ,21,Which right protects against exploitation?,Right to safety,Right to redressal,All rights,Right to choice,All rights
+MCQ,22,Which Act was replaced by Consumer Protection Act 2019?,1986 Act,RTI Act,IT Act,Labour Act,1986 Act
+MCQ,23,Which right ensures fair prices?,Right to choice,Right to information,Right to safety,Right to education,Right to choice
+MCQ,24,Which practice involves mixing impurities?,Hoarding,Adulteration,Black marketing,False advertising,Adulteration
+MCQ,25,Which practice means storing goods to raise prices?,Hoarding,Adulteration,Subsidy,Standardisation,Hoarding
+MCQ,26,Which document helps in complaint?,Warranty,Bill,Cash memo,Guarantee,Cash memo
+MCQ,27,Which right helps consumers file complaints?,Right to safety,Right to redressal,Right to education,Right to choice,Right to redressal
+MCQ,28,Which body protects consumer interests?,Consumer court,Police station,Parliament,NGO,Consumer court
+MCQ,29,Which organisation runs consumer awareness campaigns?,NGOs,RBI,SEBI,WTO,NGOs
+MCQ,30,Which right allows consumers to speak?,Right to be heard,Right to safety,Right to choice,Right to education,Right to be heard
+MCQ,31,Which symbol ensures product quality?,Logo,Brand name,Trademark,Certification mark,Certification mark
+MCQ,32,Which right ensures safety from harmful goods?,Right to safety,Right to information,Right to choice,Right to education,Right to safety
+MCQ,33,Which practice sells goods at high prices?,Fair trade,Black marketing,Standardisation,Subsidy,Black marketing
+MCQ,34,Which right empowers consumers?,Right to education,Right to choice,Right to safety,All rights,All rights
+MCQ,35,Which court is at state level?,District forum,State commission,National commission,High court,State commission
+MCQ,36,Which document proves purchase?,Warranty,Guarantee,Bill,Brand name,Bill
+MCQ,37,Which right ensures access to variety?,Right to choice,Right to safety,Right to information,Right to redressal,Right to choice
+MCQ,38,Which right protects consumer health?,Right to safety,Right to information,Right to choice,Right to education,Right to safety
+MCQ,39,Which practice gives wrong information?,Adulteration,False advertising,Black marketing,Hoarding,False advertising
+MCQ,40,Which logo certifies food safety?,ISI,AGMARK,Hallmark,FSSAI,FSSAI
+MCQ,41,Which consumer right ensures fairness?,Right to choice,Right to redressal,Right to education,Right to be heard,Right to choice
+MCQ,42,Which consumer forum is highest?,District,State,National,Local,National
+MCQ,43,Which right teaches consumers awareness?,Right to education,Right to safety,Right to information,Right to choice,Right to education
+MCQ,44,Which practice harms consumers?,Fair trade,Standardisation,Adulteration,Quality control,Adulteration
+MCQ,45,Which organisation issues ISI mark?,BIS,RBI,SEBI,WHO,BIS
+MCQ,46,Which right ensures compensation?,Right to redressal,Right to safety,Right to choice,Right to information,Right to redressal
+MCQ,47,Which practice misleads consumers?,False advertising,Standardisation,Certification,Fair trade,False advertising
+MCQ,48,Which court handles consumer disputes?,High court,Consumer court,Parliament,Police,Consumer court
+MCQ,49,Which right protects consumer interest?,All rights,Right to safety,Right to choice,Right to education,All rights
+MCQ,50,Consumer awareness leads to,Fraud,Exploitation,Protection,Loss,Protection
+
+Integer,1,User of goods?,Consumer,,,,
+Integer,2,Consumer law?,Consumer Protection Act,,,,
+Integer,3,Year of Consumer Protection Act?,1986,,,,
+Integer,4,Right against hazardous goods?,Safety,,,,
+Integer,5,Right to correct details?,Information,,,,
+Integer,6,Right to choose products?,Choice,,,,
+Integer,7,Right to compensation?,Redressal,,,,
+Integer,8,Right to complain?,Be heard,,,,
+Integer,9,Right to awareness?,Education,,,,
+Integer,10,Food quality mark?,FSSAI,,,,
+Integer,11,Agricultural quality mark?,AGMARK,,,,
+Integer,12,Industrial quality mark?,ISI,,,,
+Integer,13,Gold jewellery mark?,Hallmark,,,,
+Integer,14,Consumer court at district level?,District forum,,,,
+Integer,15,Highest consumer court?,National commission,,,,
+Integer,16,Cheating practice?,Adulteration,,,,
+Integer,17,False promise practice?,False advertising,,,,
+Integer,18,Price manipulation?,Hoarding,,,,
+Integer,19,Illegal high pricing?,Black marketing,,,,
+Integer,20,Proof of purchase?,Bill,,,,
+Integer,21,Organisation issuing ISI?,BIS,,,,
+Integer,22,Consumer awareness body?,NGO,,,,
+Integer,23,Consumer complaint forum?,Consumer court,,,,
+Integer,24,Right protecting health?,Safety,,,,
+Integer,25,Right ensuring variety?,Choice,,,,
+Integer,26,Consumer protection year updated?,2019,,,,
+Integer,27,Consumer law replacement?,1986 Act,,,,
+Integer,28,Practice mixing impurities?,Adulteration,,,,
+Integer,29,Consumer dispute resolution?,Forums,,,,
+Integer,30,Product quality assurance?,Certification,,,,
+Integer,31,Consumer exploitation means?,Cheating,,,,
+Integer,32,Consumer forum at state level?,State commission,,,,
+Integer,33,Highest compensation court?,National commission,,,,
+Integer,34,Right to raise voice?,Be heard,,,,
+Integer,35,Consumer education spreads?,Awareness,,,,
+Integer,36,Right to fair price?,Choice,,,,
+Integer,37,Organisation for consumer help?,NGO,,,,
+Integer,38,Legal receipt?,Cash memo,,,,
+Integer,39,Consumer awareness day?,15 March,,,,
+Integer,40,Quality food authority?,FSSAI,,,,
+Integer,41,Unsafe goods affect?,Health,,,,
+Integer,42,Consumer responsibility?,Awareness,,,,
+Integer,43,Consumer protection symbol?,Logo,,,,
+Integer,44,Consumer complaint document?,Bill,,,,
+Integer,45,Consumer interest protection?,Rights,,,,
+Integer,46,Consumer protection goal?,Safety,,,,
+Integer,47,Consumer exploitation stopped by?,Law,,,,
+Integer,48,Consumer education builds?,Confidence,,,,
+Integer,49,Chapter theme?,Consumer Rights,,,,
+Integer,50,Consumer court function?,Justice,,,,
+
+Descriptive,1,Who is a consumer?,,,,,A consumer is a person who uses goods or services
+Descriptive,2,Why are consumer rights important?,,,,,They protect consumers from exploitation
+Descriptive,3,Explain Consumer Protection Act.,,,,,Law to safeguard consumer interests
+Descriptive,4,List six consumer rights.,,,,,Safety, information, choice, redressal, be heard, education
+Descriptive,5,Explain right to safety.,,,,,Protection from hazardous goods
+Descriptive,6,Explain right to information.,,,,,Access to correct product details
+Descriptive,7,Explain right to choice.,,,,,Freedom to select goods
+Descriptive,8,Explain right to redressal.,,,,,Compensation for loss
+Descriptive,9,Explain right to be heard.,,,,,Consumer voice in forums
+Descriptive,10,Explain right to education.,,,,,Awareness of rights
+Descriptive,11,What is adulteration?,,,,,Mixing harmful substances
+Descriptive,12,What is false advertising?,,,,,Misleading promotions
+Descriptive,13,Explain hoarding.,,,,,Stocking goods to raise prices
+Descriptive,14,Explain black marketing.,,,,,Illegal selling at high prices
+Descriptive,15,Explain standardisation.,,,,,Quality certification
+Descriptive,16,Explain ISI mark.,,,,,Industrial quality mark
+Descriptive,17,Explain AGMARK.,,,,,Agricultural quality mark
+Descriptive,18,Explain Hallmark.,,,,,Gold purity mark
+Descriptive,19,Explain FSSAI.,,,,,Food safety authority
+Descriptive,20,Explain consumer forums.,,,,,Courts for consumer disputes
+Descriptive,21,Explain district forum.,,,,,Handles local cases
+Descriptive,22,Explain state commission.,,,,,Handles state-level cases
+Descriptive,23,Explain national commission.,,,,,Highest consumer court
+Descriptive,24,Explain importance of bill.,,,,,Proof of purchase
+Descriptive,25,Explain consumer awareness.,,,,,Knowledge of rights
+Descriptive,26,Explain role of NGOs.,,,,,Spread awareness
+Descriptive,27,Explain consumer responsibilities.,,,,,Be informed and careful
+Descriptive,28,Explain unfair trade practices.,,,,,Cheating consumers
+Descriptive,29,Explain product safety.,,,,,Health protection
+Descriptive,30,Explain compensation.,,,,,Refund or damages
+Descriptive,31,Explain consumer movement.,,,,,Demand for rights
+Descriptive,32,Explain quality assurance.,,,,,Standard products
+Descriptive,33,Explain consumer exploitation.,,,,,Unfair practices
+Descriptive,34,Explain role of government.,,,,,Law enforcement
+Descriptive,35,Explain legal protection.,,,,,Consumer laws
+Descriptive,36,Explain need for consumer awareness.,,,,,Prevent exploitation
+Descriptive,37,Explain consumer education.,,,,,Knowledge of rights
+Descriptive,38,Explain importance of certification marks.,,,,,Ensure quality
+Descriptive,39,Explain consumer redressal process.,,,,,Complaint resolution
+Descriptive,40,Explain cash memo.,,,,,Purchase receipt
+Descriptive,41,Explain misleading advertisements.,,,,,False claims
+Descriptive,42,Explain consumer protection measures.,,,,,Rights and laws
+Descriptive,43,Explain safety standards.,,,,,Prevent harm
+Descriptive,44,Explain consumer rights day.,,,,,15 March celebration
+Descriptive,45,Explain product labelling.,,,,,Information on packaging
+Descriptive,46,Explain role of courts.,,,,,Justice to consumers
+Descriptive,47,Explain consumer empowerment.,,,,,Confidence to complain
+Descriptive,48,Explain impact of awareness.,,,,,Reduced exploitation
+Descriptive,49,Explain modern consumer challenges.,,,,,Online frauds
+Descriptive,50,Summarize Consumer Rights.,,,,,Chapter explains rights and protection of consumers

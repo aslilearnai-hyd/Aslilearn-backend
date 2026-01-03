@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,The sum of interior angles of a triangle is?,90°,180°,270°,360°,180°
+MCQ,2,A triangle with all sides equal is called?,Scalene,Isosceles,Equilateral,Right,Equilateral
+MCQ,3,A triangle with two equal sides is called?,Scalene,Isosceles,Equilateral,Right,Isosceles
+MCQ,4,A triangle with all sides unequal is called?,Scalene,Isosceles,Equilateral,Right,Scalene
+MCQ,5,A triangle with one angle 90° is called?,Acute,Obtuse,Right,Equilateral,Right
+MCQ,6,Which criterion proves congruence of triangles?,AAA,SSS,SSA,AA,SSS
+MCQ,7,Which congruence rule uses two sides and included angle?,SSS,SAS,ASA,RHS,SAS
+MCQ,8,Which rule is applicable only to right triangles?,SSS,SAS,ASA,RHS,RHS
+MCQ,9,Which is not a congruence rule?,SSS,SAS,AAA,RHS,AAA
+MCQ,10,If two triangles are congruent, their corresponding sides are?,Equal,Unequal,Proportional,Random,Equal
+MCQ,11,If two triangles are congruent, their corresponding angles are?,Equal,Unequal,Supplementary,Complementary,Equal
+MCQ,12,A triangle with all angles less than 90° is?,Acute,Right,Obtuse,Equilateral,Acute
+MCQ,13,A triangle with one angle more than 90° is?,Acute,Right,Obtuse,Isosceles,Obtuse
+MCQ,14,Which triangle has exactly two equal angles?,Scalene,Isosceles,Equilateral,Right,Isosceles
+MCQ,15,In an equilateral triangle, each angle is?,30°,45°,60°,90°,60°
+MCQ,16,The longest side of a right triangle is?,Base,Height,Hypotenuse,Median,Hypotenuse
+MCQ,17,The side opposite the right angle is?,Base,Height,Hypotenuse,Median,Hypotenuse
+MCQ,18,In a triangle, the sum of any two sides is?,Less than third side,Equal to third side,Greater than third side,Zero,Greater than third side
+MCQ,19,Which triangle has sides 3 cm, 4 cm, 5 cm?,Acute,Obtuse,Right,Equilateral,Right
+MCQ,20,Which congruence rule uses two angles and one side?,SSS,SAS,ASA,RHS,ASA
+MCQ,21,In isosceles triangle, angles opposite equal sides are?,Equal,Unequal,90°,Supplementary,Equal
+MCQ,22,Which angle is opposite the longest side?,Smallest angle,Right angle,Largest angle,Acute angle,Largest angle
+MCQ,23,If two angles of a triangle are 50° and 60°, the third is?,60°,70°,80°,90°,70°
+MCQ,24,How many medians does a triangle have?,1,2,3,4,3
+MCQ,25,The point where medians meet is called?,Centroid,Incentre,Circumcentre,Orthocentre,Centroid
+MCQ,26,The centroid divides each median in the ratio?,1:1,2:1,3:1,1:2,2:1
+MCQ,27,The perpendicular from vertex to opposite side is called?,Median,Altitude,Angle bisector,Height,Altitude
+MCQ,28,How many altitudes does a triangle have?,1,2,3,4,3
+MCQ,29,The angle bisectors of a triangle meet at?,Centroid,Incentre,Circumcentre,Orthocentre,Incentre
+MCQ,30,Which centre is equidistant from all sides?,Centroid,Incentre,Circumcentre,Orthocentre,Incentre
+MCQ,31,Which centre is equidistant from all vertices?,Centroid,Incentre,Circumcentre,Orthocentre,Circumcentre
+MCQ,32,The perpendicular bisectors of sides meet at?,Centroid,Incentre,Circumcentre,Orthocentre,Circumcentre
+MCQ,33,The altitudes of a triangle meet at?,Centroid,Incentre,Circumcentre,Orthocentre,Orthocentre
+MCQ,34,Which triangle has centroid, incentre, circumcentre at same point?,Scalene,Isosceles,Equilateral,Right,Equilateral
+MCQ,35,In a right triangle, the circumcentre lies at?,Inside triangle,On hypotenuse,Outside triangle,At centroid,On hypotenuse
+MCQ,36,In an obtuse triangle, the orthocentre lies?,Inside,On side,Outside,At centroid,Outside
+MCQ,37,Which triangle has all angles equal?,Scalene,Isosceles,Equilateral,Right,Equilateral
+MCQ,38,Which triangle has exactly one right angle?,Acute,Obtuse,Right,Equilateral,Right
+MCQ,39,Which is a valid triangle?,2,3,6,3,4,5,1,2,3,4,4,8,3,4,5
+MCQ,40,The sum of two angles of a triangle is?,Less than 180°,Equal to 180°,Greater than 180°,90°,Less than 180°
+MCQ,41,If two sides are 5 cm and 7 cm, third side can be?,12 cm,2 cm,10 cm,20 cm,10 cm
+MCQ,42,Which rule proves triangles similar?,SSS,SAS,AA,RHS,AA
+MCQ,43,In an isosceles triangle, the altitude from vertex is also?,Median,Angle bisector,Perpendicular bisector,All,All
+MCQ,44,Which triangle always has equal sides and angles?,Scalene,Isosceles,Equilateral,Right,Equilateral
+MCQ,45,Which centre lies always inside triangle?,Centroid,Incentre,Circumcentre,Orthocentre,Incentre
+MCQ,46,Which triangle has one angle equal to 90°?,Acute,Obtuse,Right,Equilateral,Right
+MCQ,47,The base angles of an isosceles triangle are?,Equal,Unequal,Right,Supplementary,Equal
+MCQ,48,Which is not a type of triangle based on sides?,Scalene,Isosceles,Right,Equilateral,Right
+MCQ,49,Which is not a type based on angles?,Acute,Obtuse,Right,Isosceles,Isosceles
+MCQ,50,The smallest side of a triangle is opposite the?,Largest angle,Smallest angle,Right angle,Obtuse angle,Smallest angle
+
+Integer,1,Sum of angles of triangle?,180°, , , ,
+Integer,2,Number of sides in triangle?,3, , , ,
+Integer,3,Number of angles in triangle?,3, , , ,
+Integer,4,Each angle of equilateral triangle?,60°, , , ,
+Integer,5,Longest side of right triangle?,Hypotenuse, , , ,
+Integer,6,Number of medians?,3, , , ,
+Integer,7,Number of altitudes?,3, , , ,
+Integer,8,Number of angle bisectors?,3, , , ,
+Integer,9,Angles opposite equal sides in isosceles triangle?,Equal, , , ,
+Integer,10,Triangle with all sides unequal?,Scalene, , , ,
+Integer,11,Triangle with two equal sides?,Isosceles, , , ,
+Integer,12,Triangle with all sides equal?,Equilateral, , , ,
+Integer,13,Triangle with one angle >90°?,Obtuse, , , ,
+Integer,14,Triangle with one angle =90°?,Right, , , ,
+Integer,15,Triangle with all angles <90°?,Acute, , , ,
+Integer,16,Centroid divides median in ratio?,2:1, , , ,
+Integer,17,Meeting point of medians?,Centroid, , , ,
+Integer,18,Meeting point of angle bisectors?,Incentre, , , ,
+Integer,19,Meeting point of perpendicular bisectors?,Circumcentre, , , ,
+Integer,20,Meeting point of altitudes?,Orthocentre, , , ,
+Integer,21,Sum of any two sides is greater than third? (Yes/No),Yes, , , ,
+Integer,22,Number of congruence rules?,4, , , ,
+Integer,23,RHS applicable to which triangle?,Right, , , ,
+Integer,24,In equilateral triangle, all centres coincide? (Yes/No),Yes, , , ,
+Integer,25,Triangle inequality involves how many sides?,3, , , ,
+Integer,26,Side opposite largest angle is?,Longest, , , ,
+Integer,27,Side opposite smallest angle is?,Shortest, , , ,
+Integer,28,Is AAA a congruence rule? (Yes/No),No, , , ,
+Integer,29,Is SAS a congruence rule? (Yes/No),Yes, , , ,
+Integer,30,Is SSA a congruence rule? (Yes/No),No, , , ,
+Integer,31,Number of vertices in triangle?,3, , , ,
+Integer,32,Triangle has area? (Yes/No),Yes, , , ,
+Integer,33,Right triangle has how many acute angles?,2, , , ,
+Integer,34,In right triangle, sum of acute angles?,90°, , , ,
+Integer,35,Median divides triangle into equal areas? (Yes/No),Yes, , , ,
+Integer,36,Altitude is perpendicular to?,Base, , , ,
+Integer,37,Angle bisector divides angle into?,Equal parts, , , ,
+Integer,38,In obtuse triangle, orthocentre lies?,Outside, , , ,
+Integer,39,In acute triangle, orthocentre lies?,Inside, , , ,
+Integer,40,In right triangle, orthocentre lies?,Vertex, , , ,
+Integer,41,Incentre lies inside triangle? (Yes/No),Yes, , , ,
+Integer,42,Circumcentre of right triangle lies on?,Hypotenuse, , , ,
+Integer,43,Triangle with angles 60°,60°,60°?,Equilateral, , , ,
+Integer,44,Triangle with angles 30°,60°,90°?,Right, , , ,
+Integer,45,If two angles equal, opposite sides are?,Equal, , , ,
+Integer,46,If two sides equal, opposite angles are?,Equal, , , ,
+Integer,47,Triangle is a closed figure? (Yes/No),Yes, , , ,
+Integer,48,Minimum number of sides to form triangle?,3, , , ,
+Integer,49,Can triangle have two right angles? (Yes/No),No, , , ,
+Integer,50,Triangle is a polygon? (Yes/No),Yes, , , ,
+
+Problem,1,Find the third angle if two angles are 40° and 60°.,,,,,80°
+Problem,2,Find each angle of an equilateral triangle.,,,,,60°
+Problem,3,Find the supplementary angle of 120°.,,,,,60°
+Problem,4,Find the third angle if two angles are equal to 50°.,,,,,80°
+Problem,5,Find the sum of angles of triangle.,,,,,180°
+Problem,6,Find the largest angle in an equilateral triangle.,,,,,60°
+Problem,7,Find the smallest angle in right triangle.,,,,,<90°
+Problem,8,Find the missing angle if two angles are 30° and 90°.,,,,,60°
+Problem,9,Check if sides 3,4,5 form a triangle.,,,,,Yes
+Problem,10,Check if sides 2,3,6 form a triangle.,,,,,No
+Problem,11,Find the type of triangle with sides 5,5,8.,,,,,Isosceles
+Problem,12,Find the type of triangle with angles 45°,45°,90°.,,,,,Right
+Problem,13,Find the type of triangle with angles 60°,60°,60°.,,,,,Equilateral
+Problem,14,Find the third angle if one angle is 90° and another is 35°.,,,,,55°
+Problem,15,Find the sum of acute angles in right triangle.,,,,,90°
+Problem,16,Find the angle opposite the longest side.,,,,,Largest angle
+Problem,17,Find the side opposite the smallest angle.,,,,,Shortest side
+Problem,18,Find number of medians in triangle.,,,,,3
+Problem,19,Find number of altitudes in triangle.,,,,,3
+Problem,20,Find number of angle bisectors in triangle.,,,,,3
+Problem,21,Find the ratio in which centroid divides median.,,,,,2:1
+Problem,22,Name the meeting point of medians.,,,,,Centroid
+Problem,23,Name the meeting point of altitudes.,,,,,Orthocentre
+Problem,24,Name the meeting point of angle bisectors.,,,,,Incentre
+Problem,25,Name the meeting point of perpendicular bisectors.,,,,,Circumcentre
+Problem,26,Find the third angle if two angles are 70° and 50°.,,,,,60°
+Problem,27,Check if triangle with sides 4,4,4 is scalene.,,,,,No
+Problem,28,Find the largest angle in right triangle.,,,,,90°
+Problem,29,Find the smallest angle in equilateral triangle.,,,,,60°
+Problem,30,Find the missing angle if triangle is isosceles with equal angles 40°.,,,,,100°
+Problem,31,Find if 6,8,10 form a right triangle.,,,,,Yes
+Problem,32,Find if 5,6,7 form a triangle.,,,,,Yes
+Problem,33,Find the third angle if two angles are complementary.,,,,,90°−(given)
+Problem,34,Find the number of sides in triangle.,,,,,3
+Problem,35,Find the number of vertices in triangle.,,,,,3
+Problem,36,Find the sum of all interior angles.,,,,,180°
+Problem,37,Find type of triangle with sides 7,8,9.,,,,,Scalene
+Problem,38,Find type of triangle with sides 6,6,10.,,,,,Isosceles
+Problem,39,Find if triangle with angles 100°,40°,40° is valid.,,,,,Yes
+Problem,40,Find if triangle with angles 90°,60°,40° is valid.,,,,,No
+Problem,41,Find the angle opposite hypotenuse.,,,,,90°
+Problem,42,Find the angle opposite equal sides in isosceles triangle.,,,,,Equal
+Problem,43,Find the sum of two equal angles if third is 40°.,,,,,140°
+Problem,44,Find each angle of isosceles triangle if vertex angle is 40°.,,,,,70°
+Problem,45,Find if triangle with sides 1,2,3 exists.,,,,,No
+Problem,46,Find the largest side of right triangle.,,,,,Hypotenuse
+Problem,47,Find if triangle with sides 10,5,5 exists.,,,,,No
+Problem,48,Find the smallest angle if largest is 100° and another is 50°.,,,,,30°
+Problem,49,Find the third angle if two angles are equal and sum is 120°.,,,,,60°
+Problem,50,Find if triangle with angles 60°,60°,70° exists.,,,,,No

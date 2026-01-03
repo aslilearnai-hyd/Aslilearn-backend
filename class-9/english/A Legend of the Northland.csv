@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who wrote the poem "A Legend of the Northland"?,Robert Frost,Phoebe Cary,Emily Dickinson,Sarojini Naidu,Phoebe Cary
+MCQ,2,The poem is based on a?,True story,Legend,Autobiography,Play,Legend
+MCQ,3,The poem explains why the?,Crow flies,Woodpecker pecks,Robin sings,Sparrow chirps,Woodpecker pecks
+MCQ,4,Which bird is mentioned in the poem?,Crow,Parrot,Woodpecker,Eagle,Woodpecker
+MCQ,5,Who came to the woman’s door?,A beggar,A saint,An old man,Saint Peter,Saint Peter
+MCQ,6,Saint Peter asked for?,Money,Food,Clothes,Shelter,Food
+MCQ,7,What was the woman baking?,Bread,Cake,Pancakes,Cookies,Pancakes
+MCQ,8,The woman was?,Kind,Selfish,Generous,Poor,Selfish
+MCQ,9,Why did the woman not give food?,She was poor,Food was little,She was greedy,She was sick,She was greedy
+MCQ,10,What did Saint Peter do when angry?,Left silently,Blessed her,Cursed her,Punished her,Cursed her
+MCQ,11,What did the woman turn into?,Crow,Woodpecker,Sparrow,Stone,Woodpecker
+MCQ,12,What was her punishment?,Death,Poverty,Become bird,Isolation,Become bird
+MCQ,13,What colour clothes did the bird have?,Red and white,Black and white,Blue and green,Yellow and brown,Black and white
+MCQ,14,What sound does the bird make?,Chirp,Peck,Roar,Sing,Peck
+MCQ,15,What does the bird live on?,Seeds,Trees,Insects,Worms,Trees
+MCQ,16,What does the bird do all day?,Fly freely,Peck wood,Sing,Rest,Peck wood
+MCQ,17,The woman’s house was?,Big,Small,Empty,Modern,Small
+MCQ,18,The poem teaches a lesson about?,Nature,Kindness,Travel,Birds,Kindness
+MCQ,19,Saint Peter represents?,Power,Justice,Godliness,Punishment,Godliness
+MCQ,20,The woman’s fault was?,Poverty,Pride,Greed,Anger,Greed
+MCQ,21,The poem is a?,Narrative poem,Lyric poem,Sonnet,Play,Narrative poem
+MCQ,22,The setting of the poem is?,Northland,Southland,City,Village,Northland
+MCQ,23,What does Northland refer to?,Cold region,Warm region,Desert,City,Cold region
+MCQ,24,The pancakes became?,Bigger,Smaller,Burnt,Hard,Smaller
+MCQ,25,Why did Saint Peter punish her?,She lied,She refused help,She was rude,She slept,She refused help
+MCQ,26,The bird wears?,Red cap,White cap,Black cap,Golden cap,Black cap
+MCQ,27,What does the bird use as food?,Grain,Fruits,Insects,Bark,Insects
+MCQ,28,The moral of the poem is?,Be rich,Be kind,Be clever,Be silent,Be kind
+MCQ,29,The woman tried to bake?,Many cakes,One large cake,Small cakes,None,Small cakes
+MCQ,30,The poem shows punishment for?,Greed,Anger,Poverty,Illness,Greed
+MCQ,31,What kind of poem is this?,Funny,Didactic,Romantic,Tragic,Didactic
+MCQ,32,What is Saint Peter’s role?,Beggar,Saint,Judge,Messenger,Saint
+MCQ,33,The bird’s sound is compared to?,Music,Drumming,Laughter,Crying,Drumming
+MCQ,34,The woman lived?,With family,Alone,With children,In palace,Alone
+MCQ,35,The bird’s life is?,Free,Happy,Hard,Easy,Hard
+MCQ,36,What lesson do children learn?,Sharing,Kindness,Greed,Both A and B,Both A and B
+MCQ,37,Why is the woman unhappy at end?,She lost food,She became bird,She was punished,All of these,All of these
+MCQ,38,The bird pecks on?,Stone,Metal,Wood,Ground,Wood
+MCQ,39,The poem warns against?,Greed,Kindness,Charity,Helpfulness,Greed
+MCQ,40,What does Saint Peter test?,Strength,Kindness,Wealth,Faith,Kindness
+MCQ,41,The poem is popular because?,Moral lesson,Adventure,Humour,Drama,Moral lesson
+MCQ,42,The woman’s nature was?,Helpful,Self-centered,Kind,Friendly,Self-centered
+MCQ,43,What happens to selfish people?,They succeed,They are punished,They gain wealth,Nothing,They are punished
+MCQ,44,The poem’s ending is?,Happy,Sad,Just,Mysterious,Just
+MCQ,45,The bird symbolizes?,Freedom,Punishment,Kindness,Wealth,Punishment
+MCQ,46,The poem belongs to?,Folklore,History,Science,Fiction,Folklore
+MCQ,47,Why is Saint Peter angry?,Refusal of food,Noise,Delay,Lies,Refusal of food
+MCQ,48,What is the woman’s biggest weakness?,Fear,Greed,Laziness,Anger,Greed
+MCQ,49,The poet wants readers to be?,Greedy,Kind,Silent,Clever,Kind
+MCQ,50,Central theme of poem?,Charity and kindness,Nature,Travel,Birds,Charity and kindness
+
+Integer,1,Poet?,Phoebe Cary,,,,
+Integer,2,Poem type?,Legend,,,,
+Integer,3,Setting?,Northland,,,,
+Integer,4,Saint?,Peter,,,,
+Integer,5,Woman trait?,Greedy,,,,
+Integer,6,Bird?,Woodpecker,,,,
+Integer,7,Bird colour?,Black and white,,,,
+Integer,8,Punishment?,Turned bird,,,,
+Integer,9,Moral?,Be kind,,,,
+Integer,10,Bird action?,Pecking,,,,
+Integer,11,Saint role?,Tester,,,,
+Integer,12,Food asked?,Cake,,,,
+Integer,13,Poem theme?,Kindness,,,,
+Integer,14,Lesson?,Charity,,,,
+Integer,15,Bird home?,Tree,,,,
+Integer,16,Bird sound?,Drumming,,,,
+Integer,17,Setting climate?,Cold,,,,
+Integer,18,Woman fate?,Punished,,,,
+Integer,19,Bird life?,Hard,,,,
+Integer,20,Poem nature?,Didactic,,,,
+Integer,21,Woman feeling?,Selfish,,,,
+Integer,22,Saint mood?,Angry,,,,
+Integer,23,Poem message?,Share,,,,
+Integer,24,Woman lived?,Alone,,,,
+Integer,25,Poem ending?,Moral,,,,
+Integer,26,Bird food?,Insects,,,,
+Integer,27,Saint identity?,Holy man,,,,
+Integer,28,Woman mistake?,Greed,,,,
+Integer,29,Poem origin?,Folklore,,,,
+Integer,30,Poem focus?,Human values,,,,
+Integer,31,Bird symbol?,Punishment,,,,
+Integer,32,Saint action?,Curse,,,,
+Integer,33,Woman reaction?,Refusal,,,,
+Integer,34,Bird colour cap?,Black,,,,
+Integer,35,Bird beak?,Hard,,,,
+Integer,36,Poem teaches?,Generosity,,,,
+Integer,37,Woman bread size?,Small,,,,
+Integer,38,Bird work?,Peck wood,,,,
+Integer,39,Poem audience?,Children,,,,
+Integer,40,Poem tone?,Moralistic,,,,
+Integer,41,Saint test?,Kindness,,,,
+Integer,42,Bird lifestyle?,Lonely,,,,
+Integer,43,Poem language?,Simple,,,,
+Integer,44,Bird freedom?,Limited,,,,
+Integer,45,Woman reward?,None,,,,
+Integer,46,Poem lesson?,Sharing,,,,
+Integer,47,Poem title?,A Legend of the Northland,,,,
+Integer,48,Woman baking?,Cake,,,,
+Integer,49,Poem message?,Be generous,,,,
+Integer,50,Ending result?,Justice,,,,
+
+Descriptive,1,Who wrote "A Legend of the Northland"?,,,,,The poem was written by Phoebe Cary
+Descriptive,2,What kind of poem is this?,,,,,It is a narrative poem based on a legend
+Descriptive,3,What is the poem about?,,,,,It is about greed and punishment
+Descriptive,4,Who was Saint Peter?,,,,,He was a saint who tested human kindness
+Descriptive,5,Why did Saint Peter visit the woman?,,,,,He was hungry and asked for food
+Descriptive,6,How did the woman behave?,,,,,She behaved selfishly and refused help
+Descriptive,7,Why did the pancakes shrink?,,,,,Because of the woman’s greed
+Descriptive,8,What punishment was given to the woman?,,,,,She was turned into a woodpecker
+Descriptive,9,Describe the woodpecker.,,,,,A bird with black and white feathers
+Descriptive,10,Why was the woman cursed?,,,,,For her greed and lack of charity
+Descriptive,11,What moral lesson does the poem teach?,,,,,We should be kind and generous
+Descriptive,12,Explain the title of the poem.,,,,,It is a legend from the cold Northland
+Descriptive,13,What does the woodpecker symbolize?,,,,,Punishment for greed
+Descriptive,14,Why is the bird’s life hard?,,,,,It must peck wood for food
+Descriptive,15,How does Saint Peter test kindness?,,,,,By asking for food
+Descriptive,16,What message does the poet give?,,,,,Greed leads to punishment
+Descriptive,17,Describe the setting of the poem.,,,,,A cold region called Northland
+Descriptive,18,Why is the poem suitable for children?,,,,,It teaches moral values
+Descriptive,19,How does greed affect the woman?,,,,,It leads to her downfall
+Descriptive,20,What values are highlighted?,,,,,Kindness and charity
+Descriptive,21,Why did the woman live alone?,,,,,Because she was selfish
+Descriptive,22,How does the poem end?,,,,,With a moral lesson
+Descriptive,23,What role does Saint Peter play?,,,,,A judge of human behavior
+Descriptive,24,Explain the punishment given.,,,,,She became a bird forever
+Descriptive,25,How does the poem show justice?,,,,,Wrongdoing is punished
+Descriptive,26,Why is charity important?,,,,,It helps others and builds humanity
+Descriptive,27,What is the tone of the poem?,,,,,Moralistic
+Descriptive,28,Why is the woodpecker always pecking?,,,,,To earn its food
+Descriptive,29,How does the poem warn readers?,,,,,Against selfishness
+Descriptive,30,Explain the woman’s character.,,,,,She is greedy and unkind
+Descriptive,31,What does Northland symbolize?,,,,,A harsh and cold place
+Descriptive,32,Why is the poem called a legend?,,,,,It explains a natural phenomenon
+Descriptive,33,How does the poet use symbolism?,,,,,Bird represents punishment
+Descriptive,34,What lesson should students learn?,,,,,Always help others
+Descriptive,35,Why is the woman’s punishment severe?,,,,,Because greed is serious
+Descriptive,36,How does the poem relate to real life?,,,,,Greed still harms people
+Descriptive,37,Why is kindness important in society?,,,,,It builds harmony
+Descriptive,38,What happens when we refuse to help?,,,,,We face consequences
+Descriptive,39,How does the poem explain nature?,,,,,Through legend
+Descriptive,40,Why does the bird wear black?,,,,,It symbolizes punishment
+Descriptive,41,What does the bird’s beak show?,,,,,Hard life
+Descriptive,42,How does the poem teach morality?,,,,,Through story
+Descriptive,43,Why did Saint Peter feel angry?,,,,,Because of refusal to help
+Descriptive,44,How does the poem inspire generosity?,,,,,By showing consequences of greed
+Descriptive,45,Explain the moral in your own words.,,,,,Greed leads to loss
+Descriptive,46,Why is sharing important?,,,,,It shows humanity
+Descriptive,47,What happens to selfish people?,,,,,They are punished
+Descriptive,48,How is the poem relevant today?,,,,,Greed still exists
+Descriptive,49,Why is the poem memorable?,,,,,Strong moral message
+Descriptive,50,Summarize "A Legend of the Northland".,,,,,The poem narrates a legend in which a greedy woman refuses to help Saint Peter and is punished by being turned into a woodpecker, teaching the lesson that greed leads to punishment and kindness is essential

@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,A chemical reaction in which heat is absorbed is called:,Exothermic reaction,Endothermic reaction,Combination reaction,Decomposition reaction,Endothermic reaction
+MCQ,2,A chemical reaction in which heat is released is called:,Exothermic reaction,Endothermic reaction,Combination reaction,Decomposition reaction,Exothermic reaction
+MCQ,3,The process in which a substance gains oxygen is called:,Reduction,Oxidation,Neutralization,Displacement,Oxidation
+MCQ,4,The process in which a substance loses oxygen is called:,Reduction,Oxidation,Neutralization,Displacement,Reduction
+MCQ,5,The process in which a substance gains hydrogen is called:,Oxidation,Reduction,Neutralization,Displacement,Reduction
+MCQ,6,The process in which a substance loses hydrogen is called:,Oxidation,Reduction,Neutralization,Displacement,Oxidation
+MCQ,7,A reaction in which two or more substances combine to form a single product is called:,Decomposition reaction,Combination reaction,Displacement reaction,Double displacement reaction,Combination reaction
+MCQ,8,A reaction in which a single compound breaks down into two or more simpler substances is called:,Combination reaction,Decomposition reaction,Displacement reaction,Double displacement reaction,Decomposition reaction
+MCQ,9,A reaction in which a more reactive element displaces a less reactive element from its compound is called:,Combination reaction,Decomposition reaction,Displacement reaction,Double displacement reaction,Displacement reaction
+MCQ,10,A reaction in which there is an exchange of ions between two compounds is called:,Combination reaction,Decomposition reaction,Displacement reaction,Double displacement reaction,Double displacement reaction
+MCQ,11,The reaction between an acid and a base to form salt and water is called:,Oxidation,Reduction,Neutralization,Displacement,Neutralization
+MCQ,12,Rusting of iron is an example of:,Fast reaction,Slow reaction,Reversible reaction,Irreversible reaction,Slow reaction
+MCQ,13,Burning of magnesium ribbon is an example of:,Slow reaction,Fast reaction,Reversible reaction,Endothermic reaction,Fast reaction
+MCQ,14,The process of depositing a layer of zinc on iron is called:,Rusting,Galvanization,Electroplating,Anodizing,Galvanization
+MCQ,15,Corrosion of silver produces:,Silver oxide,Silver chloride,Silver sulphide,Silver nitrate,Silver sulphide
+MCQ,16,The process of coating iron with a layer of zinc to prevent rusting is called:,Rusting,Galvanization,Tinning,Electroplating,Galvanization
+MCQ,17,In a balanced chemical equation, the number of atoms of each element on both sides are:,Equal,Unequal,Different,Same,Equal
+MCQ,18,The reaction: 2Mg + O₂ → 2MgO is an example of:,Decomposition reaction,Combination reaction,Displacement reaction,Double displacement reaction,Combination reaction
+MCQ,19,The reaction: 2H₂O → 2H₂ + O₂ is an example of:,Combination reaction,Decomposition reaction,Displacement reaction,Double displacement reaction,Decomposition reaction
+MCQ,20,The reaction: Zn + CuSO₄ → ZnSO₄ + Cu is an example of:,Combination reaction,Decomposition reaction,Displacement reaction,Double displacement reaction,Displacement reaction
+MCQ,21,The reaction: AgNO₃ + NaCl → AgCl + NaNO₃ is an example of:,Combination reaction,Decomposition reaction,Displacement reaction,Double displacement reaction,Double displacement reaction
+MCQ,22,The reaction: NaOH + HCl → NaCl + H₂O is an example of:,Oxidation reaction,Reduction reaction,Neutralization reaction,Displacement reaction,Neutralization reaction
+MCQ,23,When copper is exposed to moist air, it forms:,Copper oxide,Copper hydroxide,Copper carbonate,Copper sulphate,Copper carbonate
+MCQ,24,The process of respiration is an example of:,Exothermic reaction,Endothermic reaction,Combination reaction,Decomposition reaction,Exothermic reaction
+MCQ,25,The process of photosynthesis is an example of:,Exothermic reaction,Endothermic reaction,Combination reaction,Decomposition reaction,Endothermic reaction
+MCQ,26,When quicklime reacts with water, it forms:,Calcium carbonate,Calcium hydroxide,Calcium oxide,Calcium chloride,Calcium hydroxide
+MCQ,27,The reaction: CaO + H₂O → Ca(OH)₂ is:,Exothermic,Endothermic,Neutral,Reversible,Exothermic
+MCQ,28,When zinc reacts with dilute hydrochloric acid, the gas evolved is:,Oxygen,Hydrogen,Carbon dioxide,Nitrogen,Hydrogen
+MCQ,29,When calcium carbonate is heated, it decomposes to form:,Calcium oxide and water,Calcium oxide and carbon dioxide,Calcium hydroxide and carbon dioxide,Calcium chloride and carbon dioxide,Calcium oxide and carbon dioxide
+MCQ,30,The reaction: Fe + CuSO₄ → FeSO₄ + Cu represents:,Oxidation of Fe,Reduction of Fe,Oxidation of Cu,Both oxidation of Fe and reduction of Cu,Both oxidation of Fe and reduction of Cu
+MCQ,31,A substance that speeds up a chemical reaction without being consumed is called:,Reactant,Product,Catalyst,Inhibitor,Catalyst
+MCQ,32,In the reaction: 2H₂ + O₂ → 2H₂O, the ratio of volumes is:,1:1:2,2:1:2,2:2:1,1:2:1,2:1:2
+MCQ,33,The reaction: Pb + CuCl₂ → PbCl₂ + Cu will occur because:,Lead is more reactive than copper,Copper is more reactive than lead,Both have same reactivity,Reaction is not possible,Lead is more reactive than copper
+MCQ,34,The reaction: Cu + 2AgNO₃ → Cu(NO₃)₂ + 2Ag will occur because:,Copper is more reactive than silver,Silver is more reactive than copper,Both have same reactivity,Reaction is not possible,Copper is more reactive than silver
+MCQ,35,When silver nitrate solution is added to sodium chloride solution, a white precipitate is formed. The precipitate is:,Silver chloride,Silver nitrate,Sodium chloride,Sodium nitrate,Silver chloride
+MCQ,36,The reaction: BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl is an example of:,Precipitation reaction,Neutralization reaction,Oxidation reaction,Reduction reaction,Precipitation reaction
+MCQ,37,When hydrogen sulphide gas is passed through copper sulphate solution, a black precipitate is formed. The precipitate is:,Copper sulphide,Copper oxide,Copper chloride,Copper carbonate,Copper sulphide
+MCQ,38,The reaction: Zn + 2HCl → ZnCl₂ + H₂ is an example of:,Oxidation reaction,Reduction reaction,Both oxidation and reduction,Neutralization reaction,Both oxidation and reduction
+MCQ,39,In the reaction: 2Na + Cl₂ → 2NaCl, sodium is:,Oxidized,Reduced,Neither oxidized nor reduced,Both oxidized and reduced,Oxidized
+MCQ,40,In the reaction: 2Na + Cl₂ → 2NaCl, chlorine is:,Oxidized,Reduced,Neither oxidized nor reduced,Both oxidized and reduced,Reduced
+MCQ,41,The reaction: CaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂ is an example of:,Combination reaction,Decomposition reaction,Displacement reaction,Double displacement reaction,Double displacement reaction
+MCQ,42,When magnesium ribbon burns in air, it forms:,Magnesium oxide,Magnesium hydroxide,Magnesium carbonate,Magnesium chloride,Magnesium oxide
+MCQ,43,The reaction: CH₄ + 2O₂ → CO₂ + 2H₂O is an example of:,Combustion reaction,Decomposition reaction,Displacement reaction,Double displacement reaction,Combustion reaction
+MCQ,44,The reaction: 2KClO₃ → 2KCl + 3O₂ requires:,Heat,Light,Electricity,All of the above,All of the above
+MCQ,45,When lead nitrate is heated, it decomposes to give:,Lead oxide, nitrogen dioxide and oxygen,Lead oxide and nitrogen,Lead and nitrogen,Lead and oxygen,Lead oxide, nitrogen dioxide and oxygen
+MCQ,46,The reaction: 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂ is an example of:,Thermal decomposition,Photochemical decomposition,Electrolytic decomposition,Combination reaction,Thermal decomposition
+MCQ,47,When electricity is passed through water, it decomposes into:,Hydrogen and oxygen,Hydrogen and carbon dioxide,Oxygen and carbon dioxide,Hydrogen peroxide,Hydrogen and oxygen
+MCQ,48,The reaction: 2H₂O → 2H₂ + O₂ (with electricity) is an example of:,Thermal decomposition,Photochemical decomposition,Electrolytic decomposition,Combination reaction,Electrolytic decomposition
+MCQ,49,When hydrogen peroxide decomposes in presence of sunlight, it forms:,Water and oxygen,Water and hydrogen,Hydrogen and oxygen,Only water,Water and oxygen
+MCQ,50,The reaction: 2H₂O₂ → 2H₂O + O₂ (in presence of light) is an example of:,Thermal decomposition,Photochemical decomposition,Electrolytic decomposition,Combination reaction,Photochemical decomposition
+Integer,1,In the reaction 2H₂ + O₂ → 2H₂O, the coefficient of H₂ is: _____.,2,,,,
+Integer,2,In the reaction 2H₂ + O₂ → 2H₂O, the coefficient of O₂ is: _____.,1,,,,
+Integer,3,In the reaction 2H₂ + O₂ → 2H₂O, the coefficient of H₂O is: _____.,2,,,,
+Integer,4,In the reaction Zn + 2HCl → ZnCl₂ + H₂, the coefficient of HCl is: _____.,2,,,,
+Integer,5,In the reaction CaCO₃ → CaO + CO₂, the coefficient of CaCO₃ is: _____ (typically 1, but balanced as shown, so 1).,1,,,,
+Integer,6,In the reaction 2Mg + O₂ → 2MgO, the coefficient of Mg is: _____.,2,,,,
+Integer,7,In the reaction 2Mg + O₂ → 2MgO, the coefficient of MgO is: _____.,2,,,,
+Integer,8,In the reaction 2H₂O → 2H₂ + O₂, the coefficient of H₂ is: _____.,2,,,,
+Integer,9,In the reaction 2H₂O → 2H₂ + O₂, the coefficient of O₂ is: _____.,1,,,,
+Integer,10,In the reaction Fe + CuSO₄ → FeSO₄ + Cu, the coefficient of each reactant is: _____ (1).,1,,,,
+Integer,11,In the reaction 2Na + Cl₂ → 2NaCl, the coefficient of NaCl is: _____.,2,,,,
+Integer,12,In the reaction 2KClO₃ → 2KCl + 3O₂, the coefficient of O₂ is: _____.,3,,,,
+Integer,13,In the reaction 2KClO₃ → 2KCl + 3O₂, the coefficient of KClO₃ is: _____.,2,,,,
+Integer,14,In the reaction 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂, the coefficient of NO₂ is: _____.,4,,,,
+Integer,15,In the reaction 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂, the coefficient of PbO is: _____.,2,,,,
+Integer,16,In the reaction CH₄ + 2O₂ → CO₂ + 2H₂O, the coefficient of O₂ is: _____.,2,,,,
+Integer,17,In the reaction CH₄ + 2O₂ → CO₂ + 2H₂O, the coefficient of H₂O is: _____.,2,,,,
+Integer,18,In the reaction BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl, the coefficient of NaCl is: _____.,2,,,,
+Integer,19,In the reaction CaO + H₂O → Ca(OH)₂, the coefficient of each substance is: _____ (1).,1,,,,
+Integer,20,In the reaction Zn + H₂SO₄ → ZnSO₄ + H₂, the coefficient of each substance is: _____ (1).,1,,,,
+Integer,21,In the reaction 2H₂ + O₂ → 2H₂O, number of H atoms on left side: _____ (4).,4,,,,
+Integer,22,In the reaction 2H₂ + O₂ → 2H₂O, number of O atoms on left side: _____ (2).,2,,,,
+Integer,23,In the reaction 2H₂ + O₂ → 2H₂O, number of H atoms on right side: _____ (4).,4,,,,
+Integer,24,In the reaction 2H₂ + O₂ → 2H₂O, number of O atoms on right side: _____ (2).,2,,,,
+Integer,25,In the reaction 2Mg + O₂ → 2MgO, number of Mg atoms on left side: _____ (2).,2,,,,
+Integer,26,In the reaction 2Mg + O₂ → 2MgO, number of O atoms on left side: _____ (2).,2,,,,
+Integer,27,In the reaction 2Mg + O₂ → 2MgO, number of Mg atoms on right side: _____ (2).,2,,,,
+Integer,28,In the reaction 2Mg + O₂ → 2MgO, number of O atoms on right side: _____ (2).,2,,,,
+Integer,29,In the reaction 2KClO₃ → 2KCl + 3O₂, number of O atoms on left side: _____ (6).,6,,,,
+Integer,30,In the reaction 2KClO₃ → 2KCl + 3O₂, number of O atoms on right side: _____ (6).,6,,,,
+Integer,31,In the reaction 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂, number of N atoms on left side: _____ (4).,4,,,,
+Integer,32,In the reaction 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂, number of N atoms on right side: _____ (4).,4,,,,
+Integer,33,In the reaction CH₄ + 2O₂ → CO₂ + 2H₂O, number of C atoms on each side: _____ (1).,1,,,,
+Integer,34,In the reaction CH₄ + 2O₂ → CO₂ + 2H₂O, number of H atoms on left side: _____ (4).,4,,,,
+Integer,35,In the reaction CH₄ + 2O₂ → CO₂ + 2H₂O, number of H atoms on right side: _____ (4).,4,,,,
+Integer,36,In the reaction 2H₂O → 2H₂ + O₂, number of molecules of H₂ produced: _____ (2).,2,,,,
+Integer,37,In the reaction 2H₂O → 2H₂ + O₂, number of molecules of O₂ produced: _____ (1).,1,,,,
+Integer,38,In the reaction Zn + 2HCl → ZnCl₂ + H₂, number of H atoms on left side: _____ (2).,2,,,,
+Integer,39,In the reaction Zn + 2HCl → ZnCl₂ + H₂, number of H atoms on right side: _____ (2).,2,,,,
+Integer,40,In the reaction CaCO₃ → CaO + CO₂, number of C atoms on each side: _____ (1).,1,,,,
+Integer,41,In the reaction BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl, number of Cl atoms on left side: _____ (2).,2,,,,
+Integer,42,In the reaction BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl, number of Cl atoms on right side: _____ (2).,2,,,,
+Integer,43,In the reaction 2Na + Cl₂ → 2NaCl, number of Na atoms on left side: _____ (2).,2,,,,
+Integer,44,In the reaction 2Na + Cl₂ → 2NaCl, number of Cl atoms on left side: _____ (2).,2,,,,
+Integer,45,In the reaction 2Na + Cl₂ → 2NaCl, number of Na atoms on right side: _____ (2).,2,,,,
+Integer,46,In the reaction 2Na + Cl₂ → 2NaCl, number of Cl atoms on right side: _____ (2).,2,,,,
+Integer,47,In the reaction 2H₂O₂ → 2H₂O + O₂, coefficient of H₂O₂ is: _____.,2,,,,
+Integer,48,In the reaction 2H₂O₂ → 2H₂O + O₂, coefficient of H₂O is: _____.,2,,,,
+Integer,49,In the reaction 2H₂O₂ → 2H₂O + O₂, coefficient of O₂ is: _____.,1,,,,
+Integer,50,In the reaction AgNO₃ + NaCl → AgCl + NaNO₃, coefficient of each substance is: _____ (1).,1,,,,
+Reaction,1,Balance the chemical equation: H₂ + O₂ → H₂O,"To balance: H₂ + O₂ → H₂O. Left side: H = 2, O = 2. Right side: H = 2, O = 1. To balance O, put 2 before H₂O: H₂ + O₂ → 2H₂O. Now right side: H = 4, O = 2. To balance H, put 2 before H₂: 2H₂ + O₂ → 2H₂O. Balanced equation: 2H₂ + O₂ → 2H₂O. Answer: 2H₂ + O₂ → 2H₂O",,,,
+Reaction,2,Balance the chemical equation: Zn + HCl → ZnCl₂ + H₂,"To balance: Zn + HCl → ZnCl₂ + H₂. Left side: Zn = 1, H = 1, Cl = 1. Right side: Zn = 1, Cl = 2, H = 2. To balance Cl and H, put 2 before HCl: Zn + 2HCl → ZnCl₂ + H₂. Now balanced. Answer: Zn + 2HCl → ZnCl₂ + H₂",,,,
+Reaction,3,Balance the chemical equation: Mg + O₂ → MgO,"To balance: Mg + O₂ → MgO. Left side: Mg = 1, O = 2. Right side: Mg = 1, O = 1. To balance O, put 2 before MgO: Mg + O₂ → 2MgO. Now right side: Mg = 2. Put 2 before Mg: 2Mg + O₂ → 2MgO. Balanced. Answer: 2Mg + O₂ → 2MgO",,,,
+Reaction,4,Balance the chemical equation: CaCO₃ → CaO + CO₂,"To balance: CaCO₃ → CaO + CO₂. Left side: Ca = 1, C = 1, O = 3. Right side: Ca = 1, C = 1, O = 3. Already balanced. Answer: CaCO₃ → CaO + CO₂ (already balanced)",,,,
+Reaction,5,Balance the chemical equation: Fe + CuSO₄ → FeSO₄ + Cu,"To balance: Fe + CuSO₄ → FeSO₄ + Cu. Left side: Fe = 1, Cu = 1, S = 1, O = 4. Right side: Fe = 1, Cu = 1, S = 1, O = 4. Already balanced. Answer: Fe + CuSO₄ → FeSO₄ + Cu (already balanced)",,,,
+Reaction,6,Balance the chemical equation: Na + Cl₂ → NaCl,"To balance: Na + Cl₂ → NaCl. Left side: Na = 1, Cl = 2. Right side: Na = 1, Cl = 1. To balance Cl, put 2 before NaCl: Na + Cl₂ → 2NaCl. Now right side: Na = 2. Put 2 before Na: 2Na + Cl₂ → 2NaCl. Balanced. Answer: 2Na + Cl₂ → 2NaCl",,,,
+Reaction,7,Balance the chemical equation: H₂O → H₂ + O₂,"To balance: H₂O → H₂ + O₂. Left side: H = 2, O = 1. Right side: H = 2, O = 2. To balance O, put 2 before H₂O: 2H₂O → H₂ + O₂. Now left side: H = 4. Put 2 before H₂: 2H₂O → 2H₂ + O₂. Balanced. Answer: 2H₂O → 2H₂ + O₂",,,,
+Reaction,8,Balance the chemical equation: KClO₃ → KCl + O₂,"To balance: KClO₃ → KCl + O₂. Left side: K = 1, Cl = 1, O = 3. Right side: K = 1, Cl = 1, O = 2. To balance O, put 3/2 before O₂ or multiply by 2: 2KClO₃ → 2KCl + 3O₂. Balanced. Answer: 2KClO₃ → 2KCl + 3O₂",,,,
+Reaction,9,Balance the chemical equation: Pb(NO₃)₂ → PbO + NO₂ + O₂,"To balance: Pb(NO₃)₂ → PbO + NO₂ + O₂. Left side: Pb = 1, N = 2, O = 6. Right side: Pb = 1, N = 1, O = 5. Put 2 before Pb(NO₃)₂: 2Pb(NO₃)₂ → PbO + NO₂ + O₂. Left: Pb = 2, N = 4, O = 12. Put 2 before PbO and 4 before NO₂: 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂. Right: Pb = 2, N = 4, O = 2 + 8 + 2 = 12. Balanced. Answer: 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂",,,,
+Reaction,10,Balance the chemical equation: CH₄ + O₂ → CO₂ + H₂O,"To balance: CH₄ + O₂ → CO₂ + H₂O. Left side: C = 1, H = 4, O = 2. Right side: C = 1, H = 2, O = 3. Put 2 before H₂O: CH₄ + O₂ → CO₂ + 2H₂O. Right: H = 4, O = 4. Put 2 before O₂: CH₄ + 2O₂ → CO₂ + 2H₂O. Balanced. Answer: CH₄ + 2O₂ → CO₂ + 2H₂O",,,,
+Reaction,11,Balance the chemical equation: BaCl₂ + Na₂SO₄ → BaSO₄ + NaCl,"To balance: BaCl₂ + Na₂SO₄ → BaSO₄ + NaCl. Left side: Ba = 1, Cl = 2, Na = 2, S = 1, O = 4. Right side: Ba = 1, Cl = 1, Na = 1, S = 1, O = 4. Put 2 before NaCl: BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl. Balanced. Answer: BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl",,,,
+Reaction,12,Balance the chemical equation: CaO + H₂O → Ca(OH)₂,"To balance: CaO + H₂O → Ca(OH)₂. Left side: Ca = 1, O = 2, H = 2. Right side: Ca = 1, O = 2, H = 2. Already balanced. Answer: CaO + H₂O → Ca(OH)₂ (already balanced)",,,,
+Reaction,13,Balance the chemical equation: AgNO₃ + NaCl → AgCl + NaNO₃,"To balance: AgNO₃ + NaCl → AgCl + NaNO₃. Left side: Ag = 1, N = 1, O = 3, Na = 1, Cl = 1. Right side: Ag = 1, N = 1, O = 3, Na = 1, Cl = 1. Already balanced. Answer: AgNO₃ + NaCl → AgCl + NaNO₃ (already balanced)",,,,
+Reaction,14,Balance the chemical equation: H₂SO₄ + NaOH → Na₂SO₄ + H₂O,"To balance: H₂SO₄ + NaOH → Na₂SO₄ + H₂O. Left side: H = 3, S = 1, O = 5, Na = 1. Right side: H = 2, S = 1, O = 5, Na = 2. Put 2 before NaOH: H₂SO₄ + 2NaOH → Na₂SO₄ + H₂O. Left: H = 4, Na = 2. Put 2 before H₂O: H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O. Balanced. Answer: H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O",,,,
+Reaction,15,Balance the chemical equation: Zn + H₂SO₄ → ZnSO₄ + H₂,"To balance: Zn + H₂SO₄ → ZnSO₄ + H₂. Left side: Zn = 1, H = 2, S = 1, O = 4. Right side: Zn = 1, H = 2, S = 1, O = 4. Already balanced. Answer: Zn + H₂SO₄ → ZnSO₄ + H₂ (already balanced)",,,,
+Reaction,16,Write the balanced equation for: Magnesium burns in oxygen to form magnesium oxide.,"Magnesium + Oxygen → Magnesium oxide. Mg + O₂ → MgO. To balance: 2Mg + O₂ → 2MgO. Answer: 2Mg + O₂ → 2MgO",,,,
+Reaction,17,Write the balanced equation for: Hydrogen reacts with oxygen to form water.,"Hydrogen + Oxygen → Water. H₂ + O₂ → H₂O. To balance: 2H₂ + O₂ → 2H₂O. Answer: 2H₂ + O₂ → 2H₂O",,,,
+Reaction,18,Write the balanced equation for: Zinc reacts with dilute hydrochloric acid to form zinc chloride and hydrogen.,"Zinc + Hydrochloric acid → Zinc chloride + Hydrogen. Zn + HCl → ZnCl₂ + H₂. To balance: Zn + 2HCl → ZnCl₂ + H₂. Answer: Zn + 2HCl → ZnCl₂ + H₂",,,,
+Reaction,19,Write the balanced equation for: Calcium carbonate decomposes on heating to form calcium oxide and carbon dioxide.,"Calcium carbonate → Calcium oxide + Carbon dioxide. CaCO₃ → CaO + CO₂. Already balanced. Answer: CaCO₃ → CaO + CO₂",,,,
+Reaction,20,Write the balanced equation for: Iron displaces copper from copper sulphate solution.,"Iron + Copper sulphate → Iron sulphate + Copper. Fe + CuSO₄ → FeSO₄ + Cu. Already balanced. Answer: Fe + CuSO₄ → FeSO₄ + Cu",,,,
+Reaction,21,Write the balanced equation for: Sodium reacts with chlorine to form sodium chloride.,"Sodium + Chlorine → Sodium chloride. Na + Cl₂ → NaCl. To balance: 2Na + Cl₂ → 2NaCl. Answer: 2Na + Cl₂ → 2NaCl",,,,
+Reaction,22,Write the balanced equation for: Water decomposes to form hydrogen and oxygen (electrolysis).,"Water → Hydrogen + Oxygen. H₂O → H₂ + O₂. To balance: 2H₂O → 2H₂ + O₂. Answer: 2H₂O → 2H₂ + O₂",,,,
+Reaction,23,Write the balanced equation for: Quicklime reacts with water to form slaked lime.,"Calcium oxide (Quicklime) + Water → Calcium hydroxide (Slaked lime). CaO + H₂O → Ca(OH)₂. Already balanced. Answer: CaO + H₂O → Ca(OH)₂",,,,
+Reaction,24,Write the balanced equation for: Silver nitrate reacts with sodium chloride to form silver chloride and sodium nitrate.,"Silver nitrate + Sodium chloride → Silver chloride + Sodium nitrate. AgNO₃ + NaCl → AgCl + NaNO₃. Already balanced. Answer: AgNO₃ + NaCl → AgCl + NaNO₃",,,,
+Reaction,25,Write the balanced equation for: Barium chloride reacts with sodium sulphate to form barium sulphate and sodium chloride.,"Barium chloride + Sodium sulphate → Barium sulphate + Sodium chloride. BaCl₂ + Na₂SO₄ → BaSO₄ + NaCl. To balance: BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl. Answer: BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl",,,,
+Reaction,26,Write the balanced equation for: Methane burns in oxygen to form carbon dioxide and water.,"Methane + Oxygen → Carbon dioxide + Water. CH₄ + O₂ → CO₂ + H₂O. To balance: CH₄ + 2O₂ → CO₂ + 2H₂O. Answer: CH₄ + 2O₂ → CO₂ + 2H₂O",,,,
+Reaction,27,Write the balanced equation for: Potassium chlorate decomposes on heating to form potassium chloride and oxygen.,"Potassium chlorate → Potassium chloride + Oxygen. KClO₃ → KCl + O₂. To balance: 2KClO₃ → 2KCl + 3O₂. Answer: 2KClO₃ → 2KCl + 3O₂",,,,
+Reaction,28,Write the balanced equation for: Lead nitrate decomposes on heating to form lead oxide, nitrogen dioxide and oxygen.,"Lead nitrate → Lead oxide + Nitrogen dioxide + Oxygen. Pb(NO₃)₂ → PbO + NO₂ + O₂. To balance: 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂. Answer: 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂",,,,
+Reaction,29,Write the balanced equation for: Sulphuric acid reacts with sodium hydroxide to form sodium sulphate and water.,"Sulphuric acid + Sodium hydroxide → Sodium sulphate + Water. H₂SO₄ + NaOH → Na₂SO₄ + H₂O. To balance: H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O. Answer: H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O",,,,
+Reaction,30,Write the balanced equation for: Zinc reacts with sulphuric acid to form zinc sulphate and hydrogen.,"Zinc + Sulphuric acid → Zinc sulphate + Hydrogen. Zn + H₂SO₄ → ZnSO₄ + H₂. Already balanced. Answer: Zn + H₂SO₄ → ZnSO₄ + H₂",,,,
+Reaction,31,Identify the type of reaction: 2Mg + O₂ → 2MgO,"This is a combination reaction because two substances (magnesium and oxygen) combine to form a single product (magnesium oxide). Answer: Combination reaction",,,,
+Reaction,32,Identify the type of reaction: CaCO₃ → CaO + CO₂,"This is a decomposition reaction because a single compound (calcium carbonate) breaks down into two simpler substances (calcium oxide and carbon dioxide). Answer: Decomposition reaction",,,,
+Reaction,33,Identify the type of reaction: Fe + CuSO₄ → FeSO₄ + Cu,"This is a displacement reaction because iron (more reactive) displaces copper (less reactive) from copper sulphate. Answer: Displacement reaction",,,,
+Reaction,34,Identify the type of reaction: BaCl₂ + Na₂SO₄ → BaSO₄ + 2NaCl,"This is a double displacement reaction because there is an exchange of ions between the two compounds (Ba²⁺ and Na⁺, Cl⁻ and SO₄²⁻). Answer: Double displacement reaction",,,,
+Reaction,35,Identify the type of reaction: NaOH + HCl → NaCl + H₂O,"This is a neutralization reaction (also a type of double displacement) because an acid (HCl) reacts with a base (NaOH) to form salt (NaCl) and water (H₂O). Answer: Neutralization reaction",,,,
+Reaction,36,Identify the type of reaction: 2H₂O → 2H₂ + O₂,"This is a decomposition reaction because a single compound (water) breaks down into two simpler substances (hydrogen and oxygen). Answer: Decomposition reaction",,,,
+Reaction,37,Identify the type of reaction: CH₄ + 2O₂ → CO₂ + 2H₂O,"This is a combustion reaction because a substance (methane) burns in oxygen to produce carbon dioxide and water. Answer: Combustion reaction",,,,
+Reaction,38,Identify which substance is oxidized and which is reduced in: Fe + CuSO₄ → FeSO₄ + Cu,"In this reaction: Iron (Fe) loses electrons and forms Fe²⁺, so it is oxidized. Copper (Cu²⁺) gains electrons and forms Cu, so it is reduced. Answer: Fe is oxidized, Cu is reduced",,,,
+Reaction,39,Identify which substance is oxidized and which is reduced in: 2Na + Cl₂ → 2NaCl,"In this reaction: Sodium (Na) loses electrons to form Na⁺, so it is oxidized. Chlorine (Cl) gains electrons to form Cl⁻, so it is reduced. Answer: Na is oxidized, Cl is reduced",,,,
+Reaction,40,Identify which substance is oxidized and which is reduced in: Zn + 2HCl → ZnCl₂ + H₂,"In this reaction: Zinc (Zn) loses electrons to form Zn²⁺, so it is oxidized. Hydrogen (H⁺) gains electrons to form H₂, so it is reduced. Answer: Zn is oxidized, H is reduced",,,,
+Reaction,41,State whether the reaction is exothermic or endothermic: 2Mg + O₂ → 2MgO,"When magnesium burns in oxygen, a large amount of heat and light is released. This is an exothermic reaction. Answer: Exothermic reaction",,,,
+Reaction,42,State whether the reaction is exothermic or endothermic: CaCO₃ → CaO + CO₂,"When calcium carbonate decomposes, it requires heat. This is an endothermic reaction. Answer: Endothermic reaction",,,,
+Reaction,43,State whether the reaction is exothermic or endothermic: CaO + H₂O → Ca(OH)₂,"When quicklime reacts with water, a large amount of heat is released. This is an exothermic reaction. Answer: Exothermic reaction",,,,
+Reaction,44,State whether the reaction is exothermic or endothermic: 2H₂O → 2H₂ + O₂,"When water decomposes (electrolysis), electrical energy is required. This is an endothermic reaction. Answer: Endothermic reaction",,,,
+Reaction,45,Write the word equation and balanced chemical equation for rusting of iron.,"Rusting of iron: Iron + Oxygen + Water → Hydrated Iron(III) oxide (Rust). Chemical equation: 4Fe + 3O₂ + 6H₂O → 4Fe(OH)₃ or simplified: 4Fe + 3O₂ + 2H₂O → 2Fe₂O₃·H₂O. Answer: Iron + Oxygen + Water → Rust (4Fe + 3O₂ + 6H₂O → 4Fe(OH)₃)",,,,
+Reaction,46,What happens when zinc reacts with copper sulphate solution? Write the balanced equation.,"When zinc reacts with copper sulphate, zinc displaces copper because zinc is more reactive. Zinc sulphate and copper are formed. Balanced equation: Zn + CuSO₄ → ZnSO₄ + Cu. The blue color of copper sulphate fades and copper is deposited. Answer: Zn + CuSO₄ → ZnSO₄ + Cu (displacement reaction)",,,,
+Reaction,47,What happens when silver nitrate solution is added to sodium chloride solution? Write the balanced equation.,"When silver nitrate is added to sodium chloride, a white precipitate of silver chloride is formed. This is a double displacement (precipitation) reaction. Balanced equation: AgNO₃ + NaCl → AgCl + NaNO₃. Answer: White precipitate of AgCl is formed. AgNO₃ + NaCl → AgCl + NaNO₃",,,,
+Reaction,48,What happens when hydrogen sulphide gas is passed through copper sulphate solution? Write the balanced equation.,"When hydrogen sulphide is passed through copper sulphate solution, a black precipitate of copper sulphide is formed. Balanced equation: H₂S + CuSO₄ → CuS + H₂SO₄. Answer: Black precipitate of CuS is formed. H₂S + CuSO₄ → CuS + H₂SO₄",,,,
+Reaction,49,Write the balanced equation for the reaction between sodium hydroxide and hydrochloric acid.,"Sodium hydroxide + Hydrochloric acid → Sodium chloride + Water. Balanced equation: NaOH + HCl → NaCl + H₂O. This is a neutralization reaction. Answer: NaOH + HCl → NaCl + H₂O (neutralization reaction)",,,,
+Reaction,50,Write the balanced equation for the thermal decomposition of lead nitrate.,"Lead nitrate decomposes on heating to form lead oxide, nitrogen dioxide, and oxygen. Balanced equation: 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂. This is a thermal decomposition reaction. Answer: 2Pb(NO₃)₂ → 2PbO + 4NO₂ + O₂ (thermal decomposition)",,,,
+

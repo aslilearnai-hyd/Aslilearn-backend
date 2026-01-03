@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The angle of incidence is equal to the angle of reflection. This is:,First law of reflection,Second law of reflection,Law of refraction,Law of dispersion,Second law of reflection
+MCQ,2,The incident ray, the reflected ray, and the normal at the point of incidence lie in the same plane. This is:,First law of reflection,Second law of reflection,Law of refraction,Law of dispersion,First law of reflection
+MCQ,3,A concave mirror forms a real and inverted image when the object is placed:,At infinity,At the focus,Between focus and pole,Between focus and center of curvature,Beyond the center of curvature
+MCQ,4,A convex mirror always forms:,Real and inverted image,Virtual and erect image,Real and erect image,Virtual and inverted image,Virtual and erect image
+MCQ,5,The mirror formula is:,1/f = 1/v + 1/u,1/f = 1/v - 1/u,1/f = -1/v + 1/u,f = v + u,1/f = 1/v + 1/u
+MCQ,6,For a concave mirror, the focal length is:,Positive,Negative,Zero,Infinite,Negative
+MCQ,7,For a convex mirror, the focal length is:,Positive,Negative,Zero,Infinite,Positive
+MCQ,8,The magnification (m) for a mirror is given by:,-v/u,v/u,-u/v,u/v,-v/u
+MCQ,9,When magnification is negative, the image is:,Real and inverted,Virtual and erect,Real and erect,Virtual and inverted,Real and inverted
+MCQ,10,The refractive index of a medium is defined as the ratio of:,Speed of light in vacuum to speed of light in medium,Speed of light in medium to speed of light in vacuum,Wavelength in vacuum to wavelength in medium,Wavelength in medium to wavelength in vacuum,Speed of light in vacuum to speed of light in medium
+MCQ,11,Snell's law states that:,(sin i)/(sin r) = constant,(sin r)/(sin i) = constant,sin i × sin r = constant,sin i + sin r = constant,(sin i)/(sin r) = constant
+MCQ,12,The refractive index of glass is approximately:,1.0,1.5,2.0,2.5,1.5
+MCQ,13,The refractive index of water is approximately:,1.0,1.33,1.5,2.0,1.33
+MCQ,14,A convex lens converges light rays and is also called:,Diverging lens,Converging lens,Plano lens,Concave lens,Converging lens
+MCQ,15,A concave lens diverges light rays and is also called:,Converging lens,Diverging lens,Plano lens,Convex lens,Diverging lens
+MCQ,16,For a convex lens, the focal length is:,Positive,Negative,Zero,Infinite,Positive
+MCQ,17,For a concave lens, the focal length is:,Positive,Negative,Zero,Infinite,Negative
+MCQ,18,The lens formula is:,1/f = 1/v - 1/u,1/f = 1/v + 1/u,1/f = -1/v - 1/u,f = v - u,1/f = 1/v - 1/u
+MCQ,19,The power of a lens is given by:,1/f (in meters),f (in meters),1/f (in cm),f (in cm),1/f (in meters)
+MCQ,20,The unit of power of a lens is:,Meter,Centimeter,Diopter,Volt,Diopter
+MCQ,21,A convex lens forms a real and inverted image when the object is placed:,At infinity,At the focus,Between focus and optical center,Beyond the focus,Beyond the focus
+MCQ,22,A concave lens always forms:,Real and inverted image,Virtual and erect image,Real and erect image,Virtual and inverted image,Virtual and erect image
+MCQ,23,The magnification (m) for a lens is given by:,-v/u,v/u,-u/v,u/v,v/u
+MCQ,24,When light travels from air to glass, it:,Bends away from normal,Bends towards normal,Does not bend,Reflects,Bends towards normal
+MCQ,25,When light travels from glass to air, it:,Bends away from normal,Bends towards normal,Does not bend,Reflects,Bends away from normal
+MCQ,26,The critical angle is the angle of incidence for which the angle of refraction is:,0°,30°,45°,90°,90°
+MCQ,27,Total internal reflection occurs when light travels from:,Rarer to denser medium,Denser to rarer medium,Air to water,Water to air,Denser to rarer medium
+MCQ,28,The focal length of a plane mirror is:,Zero,Infinity,Positive,Negative,Infinity
+MCQ,29,A concave mirror of focal length 10 cm forms an image at 20 cm. The object distance is:,-20 cm,-15 cm,-30 cm,-10 cm,-20 cm
+MCQ,30,A convex lens of focal length 20 cm forms an image at 30 cm. The object distance is:,-60 cm,-40 cm,-50 cm,-30 cm,-60 cm
+MCQ,31,The power of a convex lens of focal length 25 cm is:,+4 D,+2 D,+0.4 D,+0.25 D,+4 D
+MCQ,32,The power of a concave lens of focal length -20 cm is:,-5 D,-0.05 D,-0.2 D,+5 D,-5 D
+MCQ,33,When an object is placed at 2F of a convex lens, the image is formed at:,F,2F,Infinity,Between F and 2F,2F
+MCQ,34,When an object is placed at F of a convex lens, the image is formed at:,F,2F,Infinity,Between F and 2F,Infinity
+MCQ,35,The magnification produced by a plane mirror is:,+1,-1,0,2,+1
+MCQ,36,The image formed by a plane mirror is:,Real,Virtual,Real or virtual,Neither real nor virtual,Virtual
+MCQ,37,A convex lens is thicker at the:,Center,Edges,Same thickness everywhere,Depends on the lens,Center
+MCQ,38,A concave lens is thicker at the:,Center,Edges,Same thickness everywhere,Depends on the lens,Edges
+MCQ,39,The refractive index of diamond is approximately:,1.5,2.0,2.42,3.0,2.42
+MCQ,40,The speed of light in vacuum is approximately:,3 × 10⁸ m/s,3 × 10¹⁰ m/s,3 × 10⁶ m/s,3 × 10⁴ m/s,3 × 10⁸ m/s
+MCQ,41,When light enters a denser medium from a rarer medium, its speed:,Increases,Decreases,Remains same,Becomes zero,Decreases
+MCQ,42,When light enters a rarer medium from a denser medium, its speed:,Increases,Decreases,Remains same,Becomes zero,Increases
+MCQ,43,A real image can be:,Captured on screen,Cannot be captured on screen,Always virtual,Sometimes virtual,Captured on screen
+MCQ,44,A virtual image:,Can be captured on screen,Cannot be captured on screen,Always real,Sometimes real,Cannot be captured on screen
+MCQ,45,The radius of curvature (R) and focal length (f) of a spherical mirror are related as:,R = 2f,R = f/2,R = f,R = 3f,R = 2f
+MCQ,46,For a concave mirror, when object is at infinity, the image is formed at:,Infinity,Focus,Center of curvature,Pole,Focus
+MCQ,47,For a convex mirror, when object is at infinity, the image is formed at:,Infinity,Focus,Center of curvature,Pole,Focus
+MCQ,48,The angle of incidence in a plane mirror equals the angle of reflection. This angle is measured from:,The mirror surface,The normal,The horizontal,The vertical,The normal
+MCQ,49,A lens of power +2.5 D has a focal length of:,40 cm,25 cm,2.5 cm,0.4 cm,40 cm
+MCQ,50,The phenomenon of splitting of white light into its constituent colors is called:,Reflection,Refraction,Dispersion,Total internal reflection,Dispersion
+Integer,1,The focal length of a concave mirror is -20 cm. Write the magnitude (ignore sign): _____ cm.,20,,,,
+Integer,2,The focal length of a convex lens is +25 cm. Write the magnitude: _____ cm.,25,,,,
+Integer,3,If the radius of curvature of a mirror is 40 cm, the focal length is _____ cm.,20,,,,
+Integer,4,The power of a lens of focal length 50 cm is _____ D.,2,,,,
+Integer,5,The power of a lens of focal length -25 cm is _____ D (write magnitude, so 4).,4,,,,
+Integer,6,If an object is placed at 30 cm from a concave mirror of focal length 15 cm, the image distance is _____ cm (use mirror formula, answer is -30, write magnitude: 30).,30,,,,
+Integer,7,If an object is placed at 60 cm from a convex lens of focal length 20 cm, the image distance is _____ cm (answer is 30, write: 30).,30,,,,
+Integer,8,The magnification produced when object is at 2F of a convex lens is: _____ (write magnitude, so 1).,1,,,,
+Integer,9,The magnification produced by a plane mirror is: _____.,1,,,,
+Integer,10,If the refractive index of glass is 1.5, and speed of light in vacuum is 3 × 10⁸ m/s, the speed in glass is 2 × 10⁸ m/s. Write the coefficient: _____ (so 2).,2,,,,
+Integer,11,The critical angle for glass-air interface (μ = 1.5) is approximately _____ degrees.,42,,,,
+Integer,12,If angle of incidence is 30° and angle of refraction is 20°, the refractive index is approximately _____ (write integer part, 1.46... so 1).,1,,,,
+Integer,13,The focal length of a plane mirror is _____ (infinity, but for integer write a large number, but actually infinity is not an integer. Let's say the question expects a specific answer - plane mirror f is infinite, so we can't write an integer. But if asked for radius of curvature, it's also infinite. Let's skip this or use a different question). Actually, let me use: The number of images formed when two plane mirrors are at 90° is _____.,3,,,,
+Integer,14,The number of images formed when two plane mirrors are at 60° is _____.,5,,,,
+Integer,15,If object distance is -30 cm and image distance is -60 cm, the focal length is _____ cm (magnitude, answer is -20, so 20).,20,,,,
+Integer,16,If object distance is -40 cm and focal length is -20 cm, the image distance is _____ cm (magnitude, answer is -40, so 40).,40,,,,
+Integer,17,The power of a combination of two lenses of powers +2D and -3D is _____ D.,-1,,,,
+Integer,18,If magnification is -2, the image is _____ times the size of object (write magnitude: 2).,2,,,,
+Integer,19,The refractive index of water is approximately 1.33. Write the integer part: _____.,1,,,,
+Integer,20,The refractive index of diamond is 2.42. Write the integer part: _____.,2,,,,
+Integer,21,If focal length is 25 cm, the power is _____ D.,4,,,,
+Integer,22,If power is +5 D, the focal length is _____ cm.,20,,,,
+Integer,23,If radius of curvature is 60 cm, focal length is _____ cm.,30,,,,
+Integer,24,If object is at 40 cm from concave mirror of f = -20 cm, image distance magnitude is _____ cm.,40,,,,
+Integer,25,If object is at 30 cm from convex lens of f = 15 cm, image distance is _____ cm.,30,,,,
+Integer,26,The magnification when image size equals object size is: _____ (magnitude 1).,1,,,,
+Integer,27,If angle of incidence is 45° in a plane mirror, angle of reflection is _____ degrees.,45,,,,
+Integer,28,The number of images when two mirrors are at 120° is _____.,2,,,,
+Integer,29,If refractive index is 1.5, and speed in vacuum is 3 × 10⁸, speed in medium is _____ × 10⁸ m/s (write 2).,2,,,,
+Integer,30,The power of lens with f = 10 cm is _____ D.,10,,,,
+Integer,31,The power of lens with f = -20 cm is _____ D (magnitude 5, but negative, so write 5 for magnitude).,5,,,,
+Integer,32,If R = 40 cm, f = _____ cm.,20,,,,
+Integer,33,If f = 25 cm, R = _____ cm.,50,,,,
+Integer,34,The magnification for plane mirror is always: _____.,1,,,,
+Integer,35,If object distance = -20 cm, image distance = -20 cm, then f = _____ cm (magnitude 10).,10,,,,
+Integer,36,The power of combination of +4D and -2D is _____ D.,2,,,,
+Integer,37,If magnification = -3, image is _____ times larger (magnitude 3).,3,,,,
+Integer,38,The critical angle for water-air (μ = 1.33) is approximately _____ degrees (48.8°, so 49).,49,,,,
+Integer,39,If angle i = 60°, angle r = 35°, then μ ≈ _____ (1.51, so integer part 1).,1,,,,
+Integer,40,The focal length of a lens of power +2.5 D is _____ cm.,40,,,,
+Integer,41,The focal length of a lens of power -4 D is _____ cm (magnitude 25).,25,,,,
+Integer,42,If R = 30 cm, f = _____ cm.,15,,,,
+Integer,43,If f = 20 cm, R = _____ cm.,40,,,,
+Integer,44,The number of images when mirrors at 45° is _____.,7,,,,
+Integer,45,If object at 25 cm, f = -25 cm, then image distance magnitude is _____ cm (infinity, but for calculation purposes... actually using formula: 1/-25 = 1/v + 1/-25, 1/v = 0, v = infinity. Let's use different: if u = -30, f = -15, then v = -30, magnitude 30).,30,,,,
+Integer,46,The power of +3D and -1D combination is _____ D.,2,,,,
+Integer,47,If m = -0.5, image is _____ times size (magnitude 0.5, but as fraction 1/2, so integer approach... let's say: if magnification is -2, size ratio magnitude is 2).,2,,,,
+Integer,48,The refractive index of glass (integer part) is _____.,1,,,,
+Integer,49,The speed of light coefficient in vacuum is 3 × 10⁸. Write the 3: _____.,3,,,,
+Integer,50,If power = +5 D, f = _____ cm.,20,,,,
+Problem,1,An object is placed 30 cm in front of a concave mirror of focal length 15 cm. Find the image distance and nature of image.,"Given: u = -30 cm, f = -15 cm (concave mirror). Using mirror formula: 1/f = 1/v + 1/u, 1/-15 = 1/v + 1/(-30), -1/15 = 1/v - 1/30, 1/v = -1/15 + 1/30 = -2/30 + 1/30 = -1/30, v = -30 cm. Magnification m = -v/u = -(-30)/(-30) = 30/(-30) = -1. Since m is negative and |m| = 1, image is real, inverted, and same size. Answer: Image distance = -30 cm, Real and inverted image",,,,
+Problem,2,An object is placed 20 cm in front of a convex mirror of focal length 30 cm. Find the image distance and nature of image.,"Given: u = -20 cm, f = +30 cm (convex mirror). Using mirror formula: 1/f = 1/v + 1/u, 1/30 = 1/v + 1/(-20), 1/30 = 1/v - 1/20, 1/v = 1/30 + 1/20 = 2/60 + 3/60 = 5/60 = 1/12, v = +12 cm. Magnification m = -v/u = -12/(-20) = 12/20 = +0.6. Since m is positive and v is positive, image is virtual and erect. Answer: Image distance = +12 cm, Virtual and erect image",,,,
+Problem,3,An object 5 cm high is placed 25 cm away from a converging lens of focal length 10 cm. Find the position, size, and nature of the image.,"Given: u = -25 cm, f = +10 cm (convex lens), h₀ = 5 cm. Using lens formula: 1/f = 1/v - 1/u, 1/10 = 1/v - 1/(-25), 1/10 = 1/v + 1/25, 1/v = 1/10 - 1/25 = 5/50 - 2/50 = 3/50, v = 50/3 = 16.67 cm. Magnification m = v/u = (50/3)/(-25) = -50/75 = -2/3. Height of image hᵢ = m × h₀ = (-2/3) × 5 = -10/3 = -3.33 cm. Since m is negative and v is positive, image is real and inverted. Answer: Image distance = 50/3 cm, Height = 10/3 cm, Real and inverted",,,,
+Problem,4,Find the focal length of a convex lens whose power is +2.5 D.,"Power P = 1/f (in meters). +2.5 = 1/f, f = 1/2.5 = 0.4 m = 40 cm. Answer: Focal length = 40 cm",,,,
+Problem,5,Find the power of a concave lens of focal length -25 cm.,"Focal length f = -25 cm = -0.25 m. Power P = 1/f = 1/(-0.25) = -4 D. Answer: Power = -4 D",,,,
+Problem,6,The radius of curvature of a concave mirror is 40 cm. What is its focal length?,"For a spherical mirror, R = 2f. Given R = -40 cm (concave mirror), f = R/2 = -40/2 = -20 cm. Answer: Focal length = -20 cm",,,,
+Problem,7,The focal length of a convex mirror is 20 cm. What is its radius of curvature?,"For a convex mirror, f = +20 cm. R = 2f = 2 × 20 = 40 cm. Answer: Radius of curvature = 40 cm",,,,
+Problem,8,An object is placed at a distance of 40 cm from a concave mirror of focal length 20 cm. Find the magnification.,"Given: u = -40 cm, f = -20 cm. Using mirror formula: 1/f = 1/v + 1/u, 1/-20 = 1/v + 1/(-40), -1/20 = 1/v - 1/40, 1/v = -1/20 + 1/40 = -2/40 + 1/40 = -1/40, v = -40 cm. Magnification m = -v/u = -(-40)/(-40) = 40/(-40) = -1. Answer: Magnification = -1",,,,
+Problem,9,Light travels from air (refractive index = 1) to glass (refractive index = 1.5). If the angle of incidence is 30°, find the angle of refraction.,"Using Snell's law: μ₁ sin i = μ₂ sin r, 1 × sin 30° = 1.5 × sin r, 0.5 = 1.5 sin r, sin r = 0.5/1.5 = 1/3 = 0.333, r = sin⁻¹(0.333) ≈ 19.47°. Answer: Angle of refraction ≈ 19.5°",,,,
+Problem,10,The speed of light in vacuum is 3 × 10⁸ m/s. Find the speed of light in glass of refractive index 1.5.,"Refractive index μ = speed of light in vacuum / speed of light in medium. 1.5 = (3 × 10⁸) / v, v = (3 × 10⁸) / 1.5 = 2 × 10⁸ m/s. Answer: Speed = 2 × 10⁸ m/s",,,,
+Problem,11,An object 4 cm tall is placed 15 cm in front of a convex lens of focal length 10 cm. Find the height of the image.,"Given: u = -15 cm, f = +10 cm, h₀ = 4 cm. Using lens formula: 1/f = 1/v - 1/u, 1/10 = 1/v - 1/(-15), 1/10 = 1/v + 1/15, 1/v = 1/10 - 1/15 = 3/30 - 2/30 = 1/30, v = 30 cm. Magnification m = v/u = 30/(-15) = -2. Height hᵢ = m × h₀ = -2 × 4 = -8 cm. Answer: Height of image = 8 cm (inverted)",,,,
+Problem,12,A concave lens of focal length -20 cm forms an image at a distance of -10 cm. Find the object distance.,"Given: f = -20 cm, v = -10 cm. Using lens formula: 1/f = 1/v - 1/u, 1/(-20) = 1/(-10) - 1/u, -1/20 = -1/10 - 1/u, 1/u = -1/10 + 1/20 = -2/20 + 1/20 = -1/20, u = -20 cm. Answer: Object distance = -20 cm",,,,
+Problem,13,Two lenses of powers +2D and -3D are placed in contact. Find the power of the combination.,"When lenses are in contact, P = P₁ + P₂ = +2 + (-3) = -1 D. Answer: Power of combination = -1 D",,,,
+Problem,14,An object is placed 30 cm from a convex mirror of radius of curvature 60 cm. Find the position of image.,"Given: u = -30 cm, R = +60 cm (convex mirror), f = R/2 = 30 cm. Using mirror formula: 1/f = 1/v + 1/u, 1/30 = 1/v + 1/(-30), 1/30 = 1/v - 1/30, 1/v = 1/30 + 1/30 = 2/30 = 1/15, v = +15 cm. Answer: Image distance = +15 cm",,,,
+Problem,15,Find the critical angle for glass-air interface. Refractive index of glass = 1.5.,"Critical angle is given by: sin C = 1/μ = 1/1.5 = 2/3 = 0.667, C = sin⁻¹(0.667) ≈ 41.8°. Answer: Critical angle ≈ 42°",,,,
+Problem,16,An object is placed 25 cm from a concave mirror. The image is formed 50 cm in front of the mirror. Find the focal length.,"Given: u = -25 cm, v = -50 cm. Using mirror formula: 1/f = 1/v + 1/u, 1/f = 1/(-50) + 1/(-25) = -1/50 - 2/50 = -3/50, f = -50/3 = -16.67 cm. Answer: Focal length = -50/3 cm ≈ -16.7 cm",,,,
+Problem,17,A convex lens forms a real image at a distance of 40 cm when an object is placed at 20 cm. Find the focal length.,"Given: u = -20 cm, v = +40 cm. Using lens formula: 1/f = 1/v - 1/u, 1/f = 1/40 - 1/(-20) = 1/40 + 1/20 = 1/40 + 2/40 = 3/40, f = 40/3 = 13.33 cm. Answer: Focal length = 40/3 cm ≈ 13.3 cm",,,,
+Problem,18,The magnification produced by a mirror is -0.5. If the object is 6 cm tall, find the height of the image.,"Given: m = -0.5, h₀ = 6 cm. Magnification m = hᵢ/h₀, -0.5 = hᵢ/6, hᵢ = -3 cm. Height is 3 cm, and negative sign indicates inverted. Answer: Height of image = 3 cm (inverted)",,,,
+Problem,19,An object is placed 60 cm from a convex lens of focal length 30 cm. Find the magnification.,"Given: u = -60 cm, f = +30 cm. Using lens formula: 1/f = 1/v - 1/u, 1/30 = 1/v - 1/(-60), 1/30 = 1/v + 1/60, 1/v = 1/30 - 1/60 = 2/60 - 1/60 = 1/60, v = 60 cm. Magnification m = v/u = 60/(-60) = -1. Answer: Magnification = -1",,,,
+Problem,20,Light enters from air to water. If the angle of incidence is 45° and refractive index of water is 1.33, find the angle of refraction.,"Using Snell's law: μ₁ sin i = μ₂ sin r, 1 × sin 45° = 1.33 × sin r, 0.707 = 1.33 sin r, sin r = 0.707/1.33 = 0.532, r = sin⁻¹(0.532) ≈ 32.1°. Answer: Angle of refraction ≈ 32°",,,,
+Problem,21,The power of a lens is +5 D. Find its focal length.,"Power P = 1/f (in meters), +5 = 1/f, f = 1/5 = 0.2 m = 20 cm. Answer: Focal length = 20 cm",,,,
+Problem,22,A concave mirror of focal length 20 cm forms an image at infinity. Find the object distance.,"Given: f = -20 cm, v = -∞. Using mirror formula: 1/f = 1/v + 1/u, 1/(-20) = 1/(-∞) + 1/u, -1/20 = 0 + 1/u, u = -20 cm. Answer: Object distance = -20 cm (object at focus)",,,,
+Problem,23,A convex lens of focal length 15 cm forms an image at infinity. Find the object distance.,"Given: f = +15 cm, v = +∞. Using lens formula: 1/f = 1/v - 1/u, 1/15 = 1/(+∞) - 1/u, 1/15 = 0 - 1/u, u = -15 cm. Answer: Object distance = -15 cm (object at focus)",,,,
+Problem,24,An object 2 cm tall is placed 30 cm from a concave mirror of focal length 15 cm. Find the size of the image.,"Given: u = -30 cm, f = -15 cm, h₀ = 2 cm. Using mirror formula: 1/f = 1/v + 1/u, 1/(-15) = 1/v + 1/(-30), -1/15 = 1/v - 1/30, 1/v = -1/15 + 1/30 = -1/30, v = -30 cm. Magnification m = -v/u = -(-30)/(-30) = -1. Height hᵢ = m × h₀ = -1 × 2 = -2 cm. Answer: Size of image = 2 cm (inverted)",,,,
+Problem,25,The radius of curvature of a convex mirror is 40 cm. An object is placed 20 cm in front of it. Find the magnification.,"Given: R = +40 cm, f = R/2 = 20 cm, u = -20 cm. Using mirror formula: 1/f = 1/v + 1/u, 1/20 = 1/v + 1/(-20), 1/20 = 1/v - 1/20, 1/v = 1/20 + 1/20 = 1/10, v = +10 cm. Magnification m = -v/u = -10/(-20) = +0.5. Answer: Magnification = +0.5",,,,
+Problem,26,Find the power of a lens combination of +4D and -6D.,"Power of combination P = P₁ + P₂ = +4 + (-6) = -2 D. Answer: Power = -2 D",,,,
+Problem,27,The speed of light in water is 2.25 × 10⁸ m/s. Find the refractive index of water.,"Refractive index μ = speed in vacuum / speed in medium = (3 × 10⁸) / (2.25 × 10⁸) = 3/2.25 = 1.33. Answer: Refractive index = 1.33",,,,
+Problem,28,A convex lens forms an erect image when object is placed 10 cm from it. If the focal length is 15 cm, find the image distance.,"Given: u = -10 cm, f = +15 cm. For erect image, m is positive. Using lens formula: 1/f = 1/v - 1/u, 1/15 = 1/v - 1/(-10), 1/15 = 1/v + 1/10, 1/v = 1/15 - 1/10 = 2/30 - 3/30 = -1/30, v = -30 cm. Since v is negative, image is virtual. Answer: Image distance = -30 cm (virtual image)",,,,
+Problem,29,An object is placed at 25 cm from a concave mirror. The magnification is -2. Find the image distance.,"Given: u = -25 cm, m = -2. Magnification m = -v/u, -2 = -v/(-25), -2 = v/25, v = -50 cm. Answer: Image distance = -50 cm",,,,
+Problem,30,The focal length of a concave lens is -25 cm. Find its power.,"Given: f = -25 cm = -0.25 m. Power P = 1/f = 1/(-0.25) = -4 D. Answer: Power = -4 D",,,,
+Problem,31,Light travels from glass (μ = 1.5) to air. If the angle of incidence is 30°, find the angle of refraction.,"Using Snell's law: μ₁ sin i = μ₂ sin r, 1.5 × sin 30° = 1 × sin r, 1.5 × 0.5 = sin r, 0.75 = sin r, r = sin⁻¹(0.75) ≈ 48.6°. Answer: Angle of refraction ≈ 49°",,,,
+Problem,32,An object 5 cm high is placed 40 cm from a convex mirror of focal length 20 cm. Find the height of the image.,"Given: u = -40 cm, f = +20 cm, h₀ = 5 cm. Using mirror formula: 1/f = 1/v + 1/u, 1/20 = 1/v + 1/(-40), 1/20 = 1/v - 1/40, 1/v = 1/20 + 1/40 = 3/40, v = 40/3 = 13.33 cm. Magnification m = -v/u = -(40/3)/(-40) = +1/3. Height hᵢ = m × h₀ = (1/3) × 5 = 5/3 = 1.67 cm. Answer: Height of image = 5/3 cm ≈ 1.67 cm",,,,
+Problem,33,A concave mirror produces three times magnified real image. If the object is placed 20 cm in front of it, find the focal length.,"Given: m = -3 (real image), u = -20 cm. Magnification m = -v/u, -3 = -v/(-20), -3 = v/20, v = -60 cm. Using mirror formula: 1/f = 1/v + 1/u, 1/f = 1/(-60) + 1/(-20) = -1/60 - 3/60 = -4/60 = -1/15, f = -15 cm. Answer: Focal length = -15 cm",,,,
+Problem,34,The power of a convex lens is +2.5 D. An object is placed 40 cm from it. Find the image distance.,"Given: P = +2.5 D, f = 1/2.5 = 0.4 m = 40 cm, u = -40 cm. Using lens formula: 1/f = 1/v - 1/u, 1/40 = 1/v - 1/(-40), 1/40 = 1/v + 1/40, 1/v = 1/40 - 1/40 = 0, v = ∞. Answer: Image distance = infinity",,,,
+Problem,35,Find the critical angle for water-air interface. Refractive index of water = 1.33.,"Critical angle: sin C = 1/μ = 1/1.33 = 0.752, C = sin⁻¹(0.752) ≈ 48.8°. Answer: Critical angle ≈ 49°",,,,
+Problem,36,An object is placed 15 cm from a convex lens of focal length 10 cm. Find the nature and position of the image.,"Given: u = -15 cm, f = +10 cm. Using lens formula: 1/f = 1/v - 1/u, 1/10 = 1/v - 1/(-15), 1/10 = 1/v + 1/15, 1/v = 1/10 - 1/15 = 3/30 - 2/30 = 1/30, v = +30 cm. Since v is positive, image is real. Magnification m = v/u = 30/(-15) = -2, so inverted. Answer: Image distance = 30 cm, Real and inverted",,,,
+Problem,37,The magnification produced by a concave mirror is +0.5. If the object distance is -30 cm, find the image distance.,"Given: m = +0.5, u = -30 cm. Magnification m = -v/u, 0.5 = -v/(-30), 0.5 = v/30, v = +15 cm. Answer: Image distance = +15 cm",,,,
+Problem,38,A convex lens of focal length 20 cm forms a virtual image at -40 cm. Find the object distance.,"Given: f = +20 cm, v = -40 cm (virtual). Using lens formula: 1/f = 1/v - 1/u, 1/20 = 1/(-40) - 1/u, 1/20 = -1/40 - 1/u, 1/u = -1/40 - 1/20 = -1/40 - 2/40 = -3/40, u = -40/3 = -13.33 cm. Answer: Object distance = -40/3 cm ≈ -13.3 cm",,,,
+Problem,39,The refractive index of a medium is 2. Find the speed of light in that medium.,"Given: μ = 2. Speed v = c/μ = (3 × 10⁸)/2 = 1.5 × 10⁸ m/s. Answer: Speed = 1.5 × 10⁸ m/s",,,,
+Problem,40,An object 3 cm tall is placed 20 cm from a concave lens of focal length -15 cm. Find the height of the image.,"Given: u = -20 cm, f = -15 cm, h₀ = 3 cm. Using lens formula: 1/f = 1/v - 1/u, 1/(-15) = 1/v - 1/(-20), -1/15 = 1/v + 1/20, 1/v = -1/15 - 1/20 = -4/60 - 3/60 = -7/60, v = -60/7 = -8.57 cm. Magnification m = v/u = (-60/7)/(-20) = 60/140 = 3/7. Height hᵢ = m × h₀ = (3/7) × 3 = 9/7 = 1.29 cm. Answer: Height of image = 9/7 cm ≈ 1.29 cm",,,,
+Problem,41,Two plane mirrors are inclined at 60°. Find the number of images formed.,"Number of images = (360/θ) - 1 = (360/60) - 1 = 6 - 1 = 5. Answer: 5 images",,,,
+Problem,42,Two plane mirrors are placed at 90° to each other. Find the number of images formed.,"Number of images = (360/90) - 1 = 4 - 1 = 3. Answer: 3 images",,,,
+Problem,43,A convex mirror has a radius of curvature of 30 cm. Find its focal length.,"For convex mirror, R = +30 cm, f = R/2 = 30/2 = 15 cm. Answer: Focal length = +15 cm",,,,
+Problem,44,The power of a lens is -2 D. Find its focal length.,"Given: P = -2 D. f = 1/P = 1/(-2) = -0.5 m = -50 cm. Answer: Focal length = -50 cm",,,,
+Problem,45,An object is placed 25 cm from a convex mirror. The image is formed 12.5 cm behind the mirror. Find the focal length.,"Given: u = -25 cm, v = +12.5 cm. Using mirror formula: 1/f = 1/v + 1/u, 1/f = 1/12.5 + 1/(-25) = 1/12.5 - 1/25 = 2/25 - 1/25 = 1/25, f = +25 cm. Answer: Focal length = +25 cm",,,,
+Problem,46,Light enters from diamond (μ = 2.42) to air. If the angle of incidence is 20°, find the angle of refraction.,"Using Snell's law: μ₁ sin i = μ₂ sin r, 2.42 × sin 20° = 1 × sin r, 2.42 × 0.342 = sin r, 0.828 = sin r, r = sin⁻¹(0.828) ≈ 55.9°. Answer: Angle of refraction ≈ 56°",,,,
+Problem,47,A concave mirror forms an image of the same size as the object when the object is placed 30 cm from it. Find the focal length.,"Given: m = -1 (same size, inverted), u = -30 cm. Since m = -1, v = -u = -(-30) = -30 cm. Using mirror formula: 1/f = 1/v + 1/u, 1/f = 1/(-30) + 1/(-30) = -2/30 = -1/15, f = -15 cm. Answer: Focal length = -15 cm",,,,
+Problem,48,The magnification of a lens is +3. If the object distance is -10 cm, find the image distance.,"Given: m = +3, u = -10 cm. For lens, m = v/u, 3 = v/(-10), v = -30 cm. Answer: Image distance = -30 cm (virtual image)",,,,
+Problem,49,A convex lens of power +4 D forms an image at 25 cm. Find the object distance.,"Given: P = +4 D, f = 1/4 = 0.25 m = 25 cm, v = +25 cm. Using lens formula: 1/f = 1/v - 1/u, 1/25 = 1/25 - 1/u, 1/u = 1/25 - 1/25 = 0, u = ∞. Answer: Object distance = infinity",,,,
+Problem,50,Find the focal length of a lens combination of +5D and -3D placed in contact.,"Power of combination P = P₁ + P₂ = +5 + (-3) = +2 D. Focal length f = 1/P = 1/2 = 0.5 m = 50 cm. Answer: Focal length = 50 cm",,,,
+

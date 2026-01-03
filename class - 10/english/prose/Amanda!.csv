@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of the poem Amanda!?,Robin Klein,Carolyn Wells,Leslie Norris,Robert Frost,Robin Klein
+MCQ,2,Amanda! is a,Story,Poem,Play,Essay,Poem
+MCQ,3,What is Amanda mostly doing in the poem?,Listening to advice,Daydreaming,Studying,Playing,Daydreaming
+MCQ,4,Who keeps instructing Amanda?,Teacher,Mother,Father,Friend,Mother
+MCQ,5,Amanda is repeatedly told not to,Bite nails,Watch TV,Talk loudly,Sleep,Bite nails
+MCQ,6,Amanda imagines herself as,Mermaid,Orphan,Rapunzel,Fairy,Mermaid
+MCQ,7,Amanda dreams of living in,A city,A school,A tower,A castle,A tower
+MCQ,8,Amanda imagines freedom like,A bird,A fish,A cloud,A tree,A fish
+MCQ,9,The poem highlights the theme of,Freedom vs control,Love,Nature,Friendship,Freedom vs control
+MCQ,10,Amanda longs for,Discipline,Freedom,Fame,Wealth,Freedom
+MCQ,11,What does Amanda imagine herself as after mermaid?,Princess,Orphan,Rapunzel,Witch,Orphan
+MCQ,12,Amanda’s silence shows,Obedience,Anger,Imagination,Rebellion,Imagination
+MCQ,13,The instructions to Amanda show,Love,Care,Over-control,Indifference,Over-control
+MCQ,14,Amanda imagines Rapunzel to feel,Trapped,Happy,Lonely,Free,Free
+MCQ,15,Amanda does not respond verbally because she is,Afraid,Angry,Lost in thoughts,Disrespectful,Lost in thoughts
+MCQ,16,The poem is written in a,Serious tone,Humorous tone,Reflective tone,Sad tone,Reflective tone
+MCQ,17,Amanda represents,All children,Only girls,Only teenagers,Only students,All children
+MCQ,18,The speaker criticizes,Children,Parents,Teachers,Rules,Parents
+MCQ,19,Amanda’s mother worries about,Health,Discipline,Studies,Future,Discipline
+MCQ,20,Amanda imagines freedom without,Rules,Parents,People,Books,Rules
+MCQ,21,The poem reflects a child’s desire for,Control,Freedom,Power,Success,Freedom
+MCQ,22,Amanda is told to sit,Straight,Cross-legged,Quietly,Still,Straight
+MCQ,23,Amanda imagines herself as a mermaid living,In a pond,In the sea,In a river,In a lake,In the sea
+MCQ,24,Amanda’s mother worries others will think her a,Bad child,Liar,Neglected girl,Disobedient,Neglected girl
+MCQ,25,The poem shows a conflict between,Child and society,Child and parent,Child and school,Child and friends,Child and parent
+MCQ,26,Amanda’s imagination helps her to,Escape rules,Study better,Obey parents,Play games,Escape rules
+MCQ,27,Amanda is warned against,Daydreaming,Slouching,Biting nails,Talking,Slouching
+MCQ,28,Amanda’s fantasies are a form of,Rebellion,Creativity,Disrespect,Discipline,Creativity
+MCQ,29,The poet’s tone towards Amanda is,Critical,Sympathetic,Angry,Humorous,Sympathetic
+MCQ,30,Amanda wants a life of,Discipline,Responsibility,Freedom,Rules,Freedom
+MCQ,31,The poem criticizes excessive,Love,Discipline,Freedom,Care,Discipline
+MCQ,32,Amanda’s mother fears,Amanda’s future,Amanda’s health,Public opinion,Amanda’s safety,Public opinion
+MCQ,33,Amanda’s dreams contrast with,Reality,School,Friends,Studies,Reality
+MCQ,34,Amanda imagines Rapunzel living,Alone,Happily,Sadly,Angrily,Happily
+MCQ,35,The poem suggests children need,Strict rules,Some freedom,More discipline,More work,Some freedom
+MCQ,36,Amanda is silent because she feels,Ignored,Confused,Overburdened,Happy,Overburdened
+MCQ,37,The poem’s message is,Obey parents,Freedom is essential,Discipline is good,Children are careless,Freedom is essential
+MCQ,38,Amanda’s character is,Rebellious,Imaginative,Lazy,Rude,Imaginative
+MCQ,39,The poem is written from the perspective of,Amanda,Mother,Teacher,Observer,Mother
+MCQ,40,Amanda’s mother instructs her continuously to show,Authority,Care,Anger,Hatred,Care
+MCQ,41,Amanda imagines herself free from,Rules,Parents,People,School,Rules
+MCQ,42,The poem ends with a feeling of,Sadness,Hope,Anger,Relief,Sadness
+MCQ,43,Amanda’s dreams suggest children want,Attention,Freedom,Money,Fame,Freedom
+MCQ,44,The poem Amanda! highlights the pressure of,School,Friends,Parents,Society,Parents
+MCQ,45,Amanda’s imagination is a response to,Love,Restrictions,Praise,Joy,Restrictions
+MCQ,46,The poem encourages parents to be,Strict,Understanding,Indifferent,Controlling,Understanding
+MCQ,47,Amanda represents suppressed,Imagination,Freedom,Anger,Joy,Freedom
+MCQ,48,Amanda’s fantasies include life without,Responsibility,Food,People,Nature,Responsibility
+MCQ,49,The poem is relatable because,All parents behave same,Children face restrictions,School is strict,Life is hard,Children face restrictions
+MCQ,50,The central theme of the poem is,Child psychology,Discipline,Freedom vs control,Family life,Freedom vs control
+
+Integer,1,Name of the poet?,Robin Klein,,,,
+Integer,2,Type of poem?,Lyric,,,,
+Integer,3,Main character?,Amanda,,,,
+Integer,4,Amanda imagines herself as?,Mermaid,,,,
+Integer,5,Second fantasy?,Orphan,,,,
+Integer,6,Third fantasy?,Rapunzel,,,,
+Integer,7,Poem theme?,Freedom,,,,
+Integer,8,Amanda’s behaviour?,Imaginative,,,,
+Integer,9,Amanda’s problem?,Over-control,,,,
+Integer,10,Amanda’s desire?,Freedom,,,,
+Integer,11,Amanda’s mother worries about?,Discipline,,,,
+Integer,12,Amanda is silent because?,Daydreaming,,,,
+Integer,13,Poem tone?,Reflective,,,,
+Integer,14,Amanda represents?,Children,,,,
+Integer,15,Poem message?,Balance discipline and freedom,,,,
+Integer,16,Amanda’s fantasies are?,Escape,,,,
+Integer,17,Amanda’s emotion?,Frustration,,,,
+Integer,18,Amanda imagines living alone?,Yes,,,,
+Integer,19,Poem criticizes?,Over-discipline,,,,
+Integer,20,Amanda’s nature?,Sensitive,,,,
+Integer,21,Amanda wants life without?,Rules,,,,
+Integer,22,Poem style?,Free verse,,,,
+Integer,23,Amanda’s silence shows?,Suppression,,,,
+Integer,24,Amanda’s imagination is?,Creative,,,,
+Integer,25,Poem setting?,Home,,,,
+Integer,26,Amanda’s age?,Young child,,,,
+Integer,27,Amanda dreams to escape?,Reality,,,,
+Integer,28,Amanda’s fantasy mood?,Peaceful,,,,
+Integer,29,Amanda is instructed constantly?,Yes,,,,
+Integer,30,Poem focus?,Child psychology,,,,
+Integer,31,Amanda’s dream world?,Ideal,,,,
+Integer,32,Amanda’s mother tone?,Controlling,,,,
+Integer,33,Amanda’s desire for solitude?,Yes,,,,
+Integer,34,Amanda’s character trait?,Imagination,,,,
+Integer,35,Poem conveys need for?,Freedom,,,,
+Integer,36,Amanda imagines freedom in?,Nature,,,,
+Integer,37,Poem message to parents?,Be understanding,,,,
+Integer,38,Amanda escapes through?,Daydreams,,,,
+Integer,39,Amanda’s feelings?,Suppressed,,,,
+Integer,40,Amanda wants peace?,Yes,,,,
+Integer,41,Poem’s ending mood?,Sad,,,,
+Integer,42,Amanda’s dreams contrast with?,Reality,,,,
+Integer,43,Amanda’s inner world?,Free,,,,
+Integer,44,Amanda’s outer world?,Restrictive,,,,
+Integer,45,Amanda’s fantasy symbol?,Freedom,,,,
+Integer,46,Amanda’s silence is?,Meaningful,,,,
+Integer,47,Amanda’s wishes?,Independence,,,,
+Integer,48,Amanda’s escape method?,Imagination,,,,
+Integer,49,Amanda’s conflict?,Internal,,,,
+Integer,50,Central idea?,Children need freedom,,,,
+
+Descriptive,1,What is the central idea of the poem Amanda!?,,,,,Children need freedom along with guidance
+Descriptive,2,Describe Amanda’s character.,,,,,Imaginative and freedom-loving
+Descriptive,3,Why does Amanda daydream?,,,,,To escape restrictions
+Descriptive,4,How does the poem portray parent-child conflict?,,,,,Through constant instructions
+Descriptive,5,Explain Amanda’s fantasy of being a mermaid.,,,,,Symbol of freedom and peace
+Descriptive,6,Why does Amanda imagine being an orphan?,,,,,Freedom from control
+Descriptive,7,How is Rapunzel portrayed differently in the poem?,,,,,As happy and free
+Descriptive,8,What does Amanda’s silence signify?,,,,,Suppressed emotions
+Descriptive,9,How does the poem reflect child psychology?,,,,,Children crave freedom
+Descriptive,10,What message does the poem convey to parents?,,,,,Avoid over-controlling
+Descriptive,11,How does Amanda escape reality?,,,,,Through imagination
+Descriptive,12,Why is Amanda’s mother worried?,,,,,About discipline and society
+Descriptive,13,Explain the theme of freedom in the poem.,,,,,Children need independence
+Descriptive,14,How does the poet use imagination effectively?,,,,,To show contrast
+Descriptive,15,Why is the poem relatable?,,,,,Children face similar pressure
+Descriptive,16,What does Amanda symbolize?,,,,,All children
+Descriptive,17,How does excessive discipline affect children?,,,,,Suppresses freedom
+Descriptive,18,Explain the tone of the poem.,,,,,Sympathetic and reflective
+Descriptive,19,Why does Amanda prefer solitude?,,,,,Peace and freedom
+Descriptive,20,How does the poem criticize parental behaviour?,,,,,Through over-instructions
+Descriptive,21,What role does fantasy play in Amanda’s life?,,,,,Escape from reality
+Descriptive,22,Why is Amanda’s inner world important?,,,,,Shows true feelings
+Descriptive,23,How does the poem end?,,,,,With sadness
+Descriptive,24,Explain the contrast between Amanda’s world and her fantasies.,,,,,Restriction vs freedom
+Descriptive,25,Why does Amanda feel suffocated?,,,,,Too many rules
+Descriptive,26,How does the poem advocate balance?,,,,,Discipline with freedom
+Descriptive,27,Explain Amanda’s desire for peace.,,,,,Freedom from commands
+Descriptive,28,How does the poem appeal to parents?,,,,,Encourages understanding
+Descriptive,29,Why is imagination important for children?,,,,,Emotional relief
+Descriptive,30,How does Amanda react to constant nagging?,,,,,Withdraws mentally
+Descriptive,31,What lesson does the poem teach?,,,,,Respect child’s individuality
+Descriptive,32,Explain the significance of the title Amanda!,,,,,Focuses on child’s voice
+Descriptive,33,How does the poem show suppression?,,,,,Through silence
+Descriptive,34,Why is Amanda unhappy?,,,,,Lack of freedom
+Descriptive,35,How does the poet portray adulthood?,,,,,As controlling
+Descriptive,36,What does Amanda’s fantasy world represent?,,,,,Ideal life
+Descriptive,37,How does the poem address modern parenting?,,,,,Over-discipline
+Descriptive,38,Explain Amanda’s emotional state.,,,,,Frustrated yet imaginative
+Descriptive,39,Why is the poem written in free verse?,,,,,Natural expression
+Descriptive,40,How does the poem balance humour and seriousness?,,,,,Light tone with deep message
+Descriptive,41,Why does Amanda seek isolation?,,,,,Peace of mind
+Descriptive,42,How does imagination help Amanda cope?,,,,,Reduces stress
+Descriptive,43,What is the moral of the poem?,,,,,Children need space
+Descriptive,44,How does the poem reflect childhood struggles?,,,,,Lack of autonomy
+Descriptive,45,Explain the role of parents in a child’s growth.,,,,,Guide without controlling
+Descriptive,46,Why is Amanda silent throughout?,,,,,No voice in decisions
+Descriptive,47,How does the poem criticize social expectations?,,,,,Fear of judgement
+Descriptive,48,What makes the poem universal?,,,,,Common childhood experience
+Descriptive,49,How does the poem show emotional conflict?,,,,,Reality vs dreams
+Descriptive,50,Summarize the poem Amanda!,,,,,A child escapes strict control through imagination and longs for freedom

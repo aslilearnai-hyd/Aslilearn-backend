@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Figures having the same area are called?,Congruent figures,Similar figures,Equivalent figures,Equal figures,Equivalent figures
+MCQ,2,Parallelograms on the same base and between the same parallels have?,Equal perimeter,Equal area,Equal sides,Equal angles,Equal area
+MCQ,3,Triangles on the same base and between the same parallels have?,Equal perimeter,Equal area,Equal sides,Equal angles,Equal area
+MCQ,4,Area of a parallelogram is given by?,1/2 × base × height,base × height,base + height,2 × base × height,base × height
+MCQ,5,Area of a triangle is?,base × height,1/2 × base × height,2 × base × height,base + height,1/2 × base × height
+MCQ,6,If two parallelograms have same base and height, their areas are?,Unequal,Equal,Half,Double,Equal
+MCQ,7,Two triangles having equal bases and equal heights have?,Equal areas,Unequal areas,Half areas,Double areas,Equal areas
+MCQ,8,Area of triangle is how much of parallelogram on same base and height?,Equal,Half,Double,Triple,Half
+MCQ,9,Which figures have equal areas but different shapes?,Congruent,Equivalent,Similar,Identical,Equivalent
+MCQ,10,If base of parallelogram is doubled and height same, area becomes?,Same,Double,Half,Triple,Double
+MCQ,11,If height of triangle is doubled and base same, area becomes?,Same,Double,Half,Triple,Double
+MCQ,12,Parallelograms between same parallels have?,Equal heights,Equal bases,Equal angles,Equal sides,Equal heights
+MCQ,13,Triangles between same parallels have?,Equal heights,Equal bases,Equal angles,Equal sides,Equal heights
+MCQ,14,Which is true?,Equal figures have equal area,Equivalent figures have equal area,Congruent figures may have different area,None,Equivalent figures have equal area
+MCQ,15,If two triangles are on same base and same parallels, then they are?,Congruent,Similar,Equivalent,Equal,Equivalent
+MCQ,16,Area of a parallelogram depends on?,Base only,Height only,Base and height,Sides only,Base and height
+MCQ,17,Area of a triangle depends on?,Sides only,Angles only,Base and height,Perimeter,Base and height
+MCQ,18,If two parallelograms have equal areas and equal bases, their heights are?,Unequal,Equal,Half,Double,Equal
+MCQ,19,If two triangles have equal areas and equal heights, their bases are?,Equal,Unequal,Double,Half,Equal
+MCQ,20,Area of parallelogram with base 10 cm and height 5 cm is?,25 cm²,50 cm²,100 cm²,15 cm²,50 cm²
+MCQ,21,Area of triangle with base 12 cm and height 5 cm is?,60 cm²,30 cm²,25 cm²,120 cm²,30 cm²
+MCQ,22,Two figures having same shape and size are?,Equivalent,Similar,Congruent,None,Congruent
+MCQ,23,Two figures having same area but different shape are?,Congruent,Similar,Equivalent,None,Equivalent
+MCQ,24,If area of parallelogram is 40 cm² and base is 8 cm, height is?,5 cm,4 cm,6 cm,8 cm,5 cm
+MCQ,25,If area of triangle is 20 cm² and base is 8 cm, height is?,5 cm,4 cm,2.5 cm,10 cm,5 cm
+MCQ,26,Triangles on equal bases and equal heights are?,Congruent,Equivalent,Similar,None,Equivalent
+MCQ,27,Area of parallelogram is equal to area of?,Triangle on same base and height,Half of triangle,Double of triangle,None,Double of triangle
+MCQ,28,Which has greater area?,Triangle,Parallelogram,Both equal,Depends,Both equal
+MCQ,29,If base is zero, area is?,Zero,Infinite,Undefined,Constant,Zero
+MCQ,30,Area is measured in?,cm,cm²,cm³,m,cm²
+MCQ,31,If height is zero, area is?,Zero,Infinite,Undefined,Same,Zero
+MCQ,32,Area of parallelogram with height 7 cm and base 9 cm is?,63 cm²,31.5 cm²,16 cm²,49 cm²,63 cm²
+MCQ,33,Area of triangle with base 14 cm and height 6 cm is?,42 cm²,84 cm²,21 cm²,98 cm²,42 cm²
+MCQ,34,Parallelograms on equal bases and between same parallels are?,Equal in area,Equal in perimeter,Congruent,None,Equal in area
+MCQ,35,If two triangles have same area and same base, then?,Heights are equal,Heights differ,Angles equal,None,Heights are equal
+MCQ,36,Area of parallelogram is how many times triangle?,1,2,1/2,3,2
+MCQ,37,Equivalent triangles must have?,Same area,Same shape,Same sides,Same angles,Same area
+MCQ,38,Congruent triangles must have?,Same area,Same shape and size,Same area only,None,Same shape and size
+MCQ,39,Which is not required to find area?,Base,Height,Angle,Unit,Angle
+MCQ,40,Area of triangle is half of?,Rectangle,Square,Parallelogram,Circle,Parallelogram
+MCQ,41,If base is tripled, area becomes?,Tripled,Same,Half,Double,Tripled
+MCQ,42,If height is halved, area becomes?,Half,Double,Same,Triple,Half
+MCQ,43,Which has maximum area for same base and height?,Triangle,Parallelogram,Both equal,Depends,Both equal
+MCQ,44,Two figures having equal areas are always?,Congruent,Similar,Equivalent,None,Equivalent
+MCQ,45,Area of parallelogram is independent of?,Base,Height,Shape,Units,Shape
+MCQ,46,Area of triangle changes with?,Base or height,Only base,Only height,None,Base or height
+MCQ,47,Area of figures is always?,Positive,Negative,Zero,Integer,Positive
+MCQ,48,Equivalent figures may have?,Different shapes,Same shapes,None,Both,Both
+MCQ,49,Parallelogram area formula derived from?,Triangle,Rectangle,Square,Circle,Rectangle
+MCQ,50,Triangle area formula derived from?,Square,Rectangle,Parallelogram,Circle,Parallelogram
+
+Integer,1,Area formula of parallelogram?,base×height,,,,
+Integer,2,Area formula of triangle?,1/2×base×height,,,,
+Integer,3,Area unit?,square unit,,,,
+Integer,4,Area of parallelogram with base 5 cm and height 4 cm?,20 cm²,,,,
+Integer,5,Area of triangle with base 10 cm and height 6 cm?,30 cm²,,,,
+Integer,6,Parallelograms on same base have equal area? (Yes/No),No,,,,
+Integer,7,Parallelograms on same base and same parallels have equal area? (Yes/No),Yes,,,,
+Integer,8,Triangles on same base and same parallels have equal area? (Yes/No),Yes,,,,
+Integer,9,Area of triangle is half of parallelogram? (Yes/No),Yes,,,,
+Integer,10,Area of parallelogram depends on?,base and height,,,,
+Integer,11,Area of triangle depends on?,base and height,,,,
+Integer,12,If base=8 cm, height=5 cm, area of parallelogram?,40 cm²,,,,
+Integer,13,If base=8 cm, height=5 cm, area of triangle?,20 cm²,,,,
+Integer,14,If area=30 cm² and base=6 cm, height of triangle?,10 cm,,,,
+Integer,15,If area=42 cm² and base=7 cm, height of parallelogram?,6 cm,,,,
+Integer,16,Area of parallelogram twice of triangle? (Yes/No),Yes,,,,
+Integer,17,Equivalent figures have equal?,Area,,,,
+Integer,18,Congruent figures have equal?,Shape and size,,,,
+Integer,19,Area measured in?,square units,,,,
+Integer,20,Height is perpendicular to?,Base,,,,
+Integer,21,Area of triangle with height 0?,0,,,,
+Integer,22,If base doubled, area becomes?,Double,,,,
+Integer,23,If height halved, area becomes?,Half,,,,
+Integer,24,Area cannot be?,Negative,,,,
+Integer,25,Area of triangle with base 12 cm height 4 cm?,24 cm²,,,,
+Integer,26,Area of parallelogram with base 9 cm height 3 cm?,27 cm²,,,,
+Integer,27,Area of parallelogram on same base and same height?,Equal,,,,
+Integer,28,Triangle area is half of?,Parallelogram,,,,
+Integer,29,Area of triangle with base 14 cm height 10 cm?,70 cm²,,,,
+Integer,30,Area of parallelogram with base 14 cm height 10 cm?,140 cm²,,,,
+Integer,31,Area of triangle depends on base and height? (Yes/No),Yes,,,,
+Integer,32,Equivalent figures may differ in shape? (Yes/No),Yes,,,,
+Integer,33,Area of triangle with base 20 cm height 5 cm?,50 cm²,,,,
+Integer,34,Area of parallelogram with base 20 cm height 5 cm?,100 cm²,,,,
+Integer,35,Height is shortest distance between?,Base and opposite side,,,,
+Integer,36,Area of parallelogram with base 6 cm height 7 cm?,42 cm²,,,,
+Integer,37,Area of triangle with base 6 cm height 7 cm?,21 cm²,,,,
+Integer,38,Area changes if base changes? (Yes/No),Yes,,,,
+Integer,39,Area changes if height changes? (Yes/No),Yes,,,,
+Integer,40,Area of parallelogram is independent of angle? (Yes/No),Yes,,,,
+Integer,41,Area of triangle is half of rectangle? (Yes/No),Yes,,,,
+Integer,42,If base=15 cm height=4 cm triangle area?,30 cm²,,,,
+Integer,43,If base=15 cm height=4 cm parallelogram area?,60 cm²,,,,
+Integer,44,Equivalent figures always congruent? (Yes/No),No,,,,
+Integer,45,Congruent figures always equivalent? (Yes/No),Yes,,,,
+Integer,46,Area is scalar quantity? (Yes/No),Yes,,,,
+Integer,47,Area of parallelogram same base same parallels?,Equal,,,,
+Integer,48,Area of triangle on same base same parallels?,Equal,,,,
+Integer,49,Height is always inside shape? (Yes/No),No,,,,
+Integer,50,Area depends on orientation? (Yes/No),No,,,,
+
+Problem,1,Find area of parallelogram with base 12 cm and height 8 cm.,,,,,96 cm²
+Problem,2,Find area of triangle with base 12 cm and height 8 cm.,,,,,48 cm²
+Problem,3,Find height if area of parallelogram is 60 cm² and base is 12 cm.,,,,,5 cm
+Problem,4,Find base if area of triangle is 36 cm² and height is 6 cm.,,,,,12 cm
+Problem,5,Find area of parallelogram with base 15 cm and height 4 cm.,,,,,60 cm²
+Problem,6,Find area of triangle with base 15 cm and height 4 cm.,,,,,30 cm²
+Problem,7,Find height if area of triangle is 28 cm² and base is 7 cm.,,,,,8 cm
+Problem,8,Find base if area of parallelogram is 84 cm² and height is 7 cm.,,,,,12 cm
+Problem,9,Find area of parallelogram with base 9 cm and height 11 cm.,,,,,99 cm²
+Problem,10,Find area of triangle with base 9 cm and height 11 cm.,,,,,49.5 cm²
+Problem,11,Find height if area of parallelogram is 72 cm² and base is 8 cm.,,,,,9 cm
+Problem,12,Find base if area of triangle is 45 cm² and height is 9 cm.,,,,,10 cm
+Problem,13,Find area of triangle with base 20 cm and height 6 cm.,,,,,60 cm²
+Problem,14,Find area of parallelogram with base 20 cm and height 6 cm.,,,,,120 cm²
+Problem,15,Find height if area of triangle is 35 cm² and base is 7 cm.,,,,,10 cm
+Problem,16,Find base if area of parallelogram is 96 cm² and height is 8 cm.,,,,,12 cm
+Problem,17,Find area of parallelogram with base 18 cm and height 5 cm.,,,,,90 cm²
+Problem,18,Find area of triangle with base 18 cm and height 5 cm.,,,,,45 cm²
+Problem,19,Find height if area of parallelogram is 150 cm² and base is 15 cm.,,,,,10 cm
+Problem,20,Find base if area of triangle is 25 cm² and height is 5 cm.,,,,,10 cm
+Problem,21,Find area of triangle with base 16 cm and height 7 cm.,,,,,56 cm²
+Problem,22,Find area of parallelogram with base 16 cm and height 7 cm.,,,,,112 cm²
+Problem,23,Find height if area of triangle is 64 cm² and base is 16 cm.,,,,,8 cm
+Problem,24,Find base if area of parallelogram is 140 cm² and height is 10 cm.,,,,,14 cm
+Problem,25,Find area of parallelogram with base 25 cm and height 4 cm.,,,,,100 cm²
+Problem,26,Find area of triangle with base 25 cm and height 4 cm.,,,,,50 cm²
+Problem,27,Find height if area of triangle is 54 cm² and base is 9 cm.,,,,,12 cm
+Problem,28,Find base if area of parallelogram is 135 cm² and height is 9 cm.,,,,,15 cm
+Problem,29,Find area of parallelogram with base 14 cm and height 10 cm.,,,,,140 cm²
+Problem,30,Find area of triangle with base 14 cm and height 10 cm.,,,,,70 cm²
+Problem,31,Find height if area of parallelogram is 48 cm² and base is 6 cm.,,,,,8 cm
+Problem,32,Find base if area of triangle is 40 cm² and height is 5 cm.,,,,,16 cm
+Problem,33,Find area of triangle with base 30 cm and height 6 cm.,,,,,90 cm²
+Problem,34,Find area of parallelogram with base 30 cm and height 6 cm.,,,,,180 cm²
+Problem,35,Find height if area of triangle is 72 cm² and base is 12 cm.,,,,,12 cm
+Problem,36,Find base if area of parallelogram is 110 cm² and height is 10 cm.,,,,,11 cm
+Problem,37,Find area of parallelogram with base 22 cm and height 5 cm.,,,,,110 cm²
+Problem,38,Find area of triangle with base 22 cm and height 5 cm.,,,,,55 cm²
+Problem,39,Find height if area of parallelogram is 200 cm² and base is 20 cm.,,,,,10 cm
+Problem,40,Find base if area of triangle is 75 cm² and height is 5 cm.,,,,,30 cm
+Problem,41,Find area of parallelogram with base 11 cm and height 9 cm.,,,,,99 cm²
+Problem,42,Find area of triangle with base 11 cm and height 9 cm.,,,,,49.5 cm²
+Problem,43,Find height if area of triangle is 90 cm² and base is 15 cm.,,,,,12 cm
+Problem,44,Find base if area of parallelogram is 156 cm² and height is 12 cm.,,,,,13 cm
+Problem,45,Find area of parallelogram with base 40 cm and height 5 cm.,,,,,200 cm²
+Problem,46,Find area of triangle with base 40 cm and height 5 cm.,,,,,100 cm²
+Problem,47,Find height if area of parallelogram is 90 cm² and base is 9 cm.,,,,,10 cm
+Problem,48,Find base if area of triangle is 84 cm² and height is 7 cm.,,,,,24 cm
+Problem,49,Find area of parallelogram with base 28 cm and height 6 cm.,,,,,168 cm²
+Problem,50,Find area of triangle with base 28 cm and height 6 cm.,,,,,84 cm²

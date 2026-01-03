@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,A quadrilateral has how many sides?,2,3,4,5,4
+MCQ,2,Sum of interior angles of a quadrilateral is?,180°,270°,360°,450°,360°
+MCQ,3,A quadrilateral with both pairs of opposite sides parallel is?,Trapezium,Kite,Parallelogram,Rhombus,Parallelogram
+MCQ,4,Opposite sides of a parallelogram are?,Equal and parallel,Unequal,Perpendicular,None,Equal and parallel
+MCQ,5,Opposite angles of a parallelogram are?,Equal,Unequal,Supplementary,Right,Equal
+MCQ,6,Adjacent angles of a parallelogram are?,Equal,Supplementary,Complementary,Right,Supplementary
+MCQ,7,Diagonals of a parallelogram?,Bisect each other,Equal,Perpendicular,None,Bisect each other
+MCQ,8,A parallelogram with all sides equal is?,Rectangle,Square,Rhombus,Trapezium,Rhombus
+MCQ,9,A parallelogram with all angles 90° is?,Rhombus,Square,Rectangle,Kite,Rectangle
+MCQ,10,A quadrilateral with exactly one pair of parallel sides is?,Parallelogram,Rectangle,Trapezium,Rhombus,Trapezium
+MCQ,11,Diagonals of a rectangle are?,Unequal,Perpendicular,Equal,Bisect at right angle,Equal
+MCQ,12,Diagonals of a rhombus are?,Equal,Bisect each other,Perpendicular,Both B and C,Both B and C
+MCQ,13,A square is a?,Rectangle only,Rhombus only,Both rectangle and rhombus,None,Both rectangle and rhombus
+MCQ,14,In a rectangle, adjacent sides are?,Equal,Unequal,Parallel,Perpendicular,Perpendicular
+MCQ,15,All angles of a rectangle are?,60°,90°,120°,180°,90°
+MCQ,16,All sides of a rhombus are?,Equal,Unequal,Parallel,None,Equal
+MCQ,17,Diagonals of a square are?,Equal and perpendicular,Unequal,Parallel,None,Equal and perpendicular
+MCQ,18,A quadrilateral whose diagonals are perpendicular bisectors is?,Rectangle,Rhombus,Trapezium,Parallelogram,Rhombus
+MCQ,19,Which is not a parallelogram?,Rectangle,Rhombus,Square,Kite,Kite
+MCQ,20,Which quadrilateral has only one pair of parallel sides?,Trapezium,Square,Rectangle,Rhombus,Trapezium
+MCQ,21,Sum of angles of any quadrilateral?,180°,270°,360°,540°,360°
+MCQ,22,Opposite sides of a rectangle are?,Equal,Unequal,Not parallel,None,Equal
+MCQ,23,Which quadrilateral has diagonals that bisect at right angles?,Rectangle,Rhombus,Trapezium,Parallelogram,Rhombus
+MCQ,24,Which quadrilateral has all sides equal and angles 90°?,Rhombus,Rectangle,Square,Kite,Square
+MCQ,25,Diagonals of trapezium are?,Always equal,Never equal,May be equal,Perpendicular,May be equal
+MCQ,26,In a parallelogram, diagonals?,Bisect each other,Are equal,Are perpendicular,None,Bisect each other
+MCQ,27,A quadrilateral with two pairs of adjacent equal sides?,Kite,Trapezium,Rectangle,Rhombus,Kite
+MCQ,28,In a kite, diagonals are?,Equal,Parallel,Perpendicular,Bisect each other,Bisect each other
+MCQ,29,In a square, diagonals intersect at?,90°,60°,45°,30°,90°
+MCQ,30,A rectangle is always a?,Parallelogram,Rhombus,Kite,Trapezium,Parallelogram
+MCQ,31,A rhombus is always a?,Parallelogram,Rectangle,Kite,Trapezium,Parallelogram
+MCQ,32,Which quadrilateral has equal diagonals?,Rectangle,Parallelogram,Rhombus,Kite,Rectangle
+MCQ,33,Which is not a property of parallelogram?,Opposite sides equal,Opposite angles equal,Diagonals perpendicular,Diagonals bisect,Diagonals perpendicular
+MCQ,34,Which has diagonals perpendicular?,Rhombus,Rectangle,Trapezium,Parallelogram,Rhombus
+MCQ,35,A quadrilateral with all sides unequal?,Scalene quadrilateral,Rhombus,Square,Rectangle,Scalene quadrilateral
+MCQ,36,Which quadrilateral has one pair of opposite sides parallel?,Trapezium,Square,Rhombus,Rectangle,Trapezium
+MCQ,37,The diagonals of parallelogram bisect each other at?,Right angle,Midpoint,Unequal points,Vertices,Midpoint
+MCQ,38,In a rectangle, diagonals bisect each other?,Yes,No,Sometimes,Never,Yes
+MCQ,39,In a rhombus, diagonals bisect each other?,Yes,No,Sometimes,Never,Yes
+MCQ,40,In a trapezium, non-parallel sides are called?,Bases,Legs,Diagonals,Angles,Legs
+MCQ,41,A parallelogram has how many diagonals?,1,2,3,4,2
+MCQ,42,A quadrilateral has how many diagonals?,1,2,3,4,2
+MCQ,43,Which is always a parallelogram?,Rectangle,Kite,Trapezium,None,Rectangle
+MCQ,44,Which quadrilateral has diagonals equal and perpendicular?,Square,Rectangle,Rhombus,Kite,Square
+MCQ,45,Opposite angles of a rhombus are?,Equal,Unequal,Right,Supplementary,Equal
+MCQ,46,Adjacent angles of rectangle are?,Equal,Supplementary,Complementary,Right,Supplementary
+MCQ,47,Sum of angles of parallelogram?,360°,180°,90°,270°,360°
+MCQ,48,Which quadrilateral has no parallel sides?,Kite,Square,Rectangle,Parallelogram,Kite
+MCQ,49,Which quadrilateral has exactly one pair of equal opposite sides?,Kite,Trapezium,Parallelogram,Rectangle,Kite
+MCQ,50,All sides equal and diagonals perpendicular is?,Rhombus,Rectangle,Square,Trapezium,Rhombus
+
+Integer,1,Sum of angles of quadrilateral?,360°, , , ,
+Integer,2,Number of sides in quadrilateral?,4, , , ,
+Integer,3,Number of diagonals in quadrilateral?,2, , , ,
+Integer,4,Opposite sides of parallelogram are? (Equal/Unequal),Equal, , , ,
+Integer,5,Opposite angles of parallelogram?,Equal, , , ,
+Integer,6,Adjacent angles of parallelogram?,Supplementary, , , ,
+Integer,7,Diagonals of parallelogram bisect? (Yes/No),Yes, , , ,
+Integer,8,All sides equal in rhombus? (Yes/No),Yes, , , ,
+Integer,9,All angles 90° in rectangle? (Yes/No),Yes, , , ,
+Integer,10,Diagonals of rectangle are equal? (Yes/No),Yes, , , ,
+Integer,11,Diagonals of rhombus are perpendicular? (Yes/No),Yes, , , ,
+Integer,12,Square is both rectangle and rhombus? (Yes/No),Yes, , , ,
+Integer,13,Trapezium has how many parallel sides?,2, , , ,
+Integer,14,Kite has how many equal sides?,2 pairs, , , ,
+Integer,15,Number of diagonals in parallelogram?,2, , , ,
+Integer,16,Rectangle is a parallelogram? (Yes/No),Yes, , , ,
+Integer,17,Rhombus is a parallelogram? (Yes/No),Yes, , , ,
+Integer,18,Square has how many sides?,4, , , ,
+Integer,19,Square has how many right angles?,4, , , ,
+Integer,20,Diagonals of square bisect each other? (Yes/No),Yes, , , ,
+Integer,21,Diagonals of square are perpendicular? (Yes/No),Yes, , , ,
+Integer,22,Opposite sides of rectangle are parallel? (Yes/No),Yes, , , ,
+Integer,23,Opposite sides of rhombus are parallel? (Yes/No),Yes, , , ,
+Integer,24,Sum of angles of parallelogram?,360°, , , ,
+Integer,25,Kite has diagonals perpendicular? (Yes/No),Yes, , , ,
+Integer,26,Trapezium has exactly one pair of parallel sides? (Yes/No),Yes, , , ,
+Integer,27,All sides of rectangle equal? (Yes/No),No, , , ,
+Integer,28,All angles of rhombus equal? (Yes/No),No, , , ,
+Integer,29,Diagonals of kite bisect each other? (Yes/No),Yes, , , ,
+Integer,30,Quadrilateral is polygon? (Yes/No),Yes, , , ,
+Integer,31,Minimum number of sides for quadrilateral?,4, , , ,
+Integer,32,Rectangle has how many diagonals?,2, , , ,
+Integer,33,Rhombus has how many diagonals?,2, , , ,
+Integer,34,Square has how many diagonals?,2, , , ,
+Integer,35,Trapezium has how many diagonals?,2, , , ,
+Integer,36,Opposite angles of rectangle?,Equal, , , ,
+Integer,37,Adjacent angles of rectangle?,Supplementary, , , ,
+Integer,38,Diagonals of parallelogram equal? (Yes/No),No, , , ,
+Integer,39,Diagonals of trapezium equal always? (Yes/No),No, , , ,
+Integer,40,Kite has how many diagonals?,2, , , ,
+Integer,41,Parallelogram has how many sides?,4, , , ,
+Integer,42,Square has equal diagonals? (Yes/No),Yes, , , ,
+Integer,43,Which has all sides equal?,Rhombus, , , ,
+Integer,44,Which has all angles 90°?,Rectangle, , , ,
+Integer,45,Which has one pair of parallel sides?,Trapezium, , , ,
+Integer,46,Which has diagonals perpendicular?,Rhombus, , , ,
+Integer,47,Which has equal diagonals?,Rectangle, , , ,
+Integer,48,Quadrilateral has interior angles sum?,360°, , , ,
+Integer,49,Parallelogram has opposite sides equal? (Yes/No),Yes, , , ,
+Integer,50,Square is a quadrilateral? (Yes/No),Yes, , , ,
+
+Problem,1,Find the sum of angles of a quadrilateral.,,,,,360°
+Problem,2,Find the fourth angle if three angles are 90°, 80°, 70°.,,,,,120°
+Problem,3,Find the fourth angle if three angles are 100°, 80°, 90°.,,,,,90°
+Problem,4,Find each angle of a rectangle.,,,,,90°
+Problem,5,Find each angle of a square.,,,,,90°
+Problem,6,Find the sum of angles of a parallelogram.,,,,,360°
+Problem,7,Find the adjacent angle if one angle of parallelogram is 70°.,,,,,110°
+Problem,8,Find the opposite angle if one angle of parallelogram is 60°.,,,,,60°
+Problem,9,Find the adjacent angle of rectangle.,,,,,90°
+Problem,10,Find the number of diagonals in a quadrilateral.,,,,,2
+Problem,11,Find the number of diagonals in a parallelogram.,,,,,2
+Problem,12,Find the number of diagonals in a square.,,,,,2
+Problem,13,Find the number of diagonals in a rectangle.,,,,,2
+Problem,14,Find the fourth angle of a quadrilateral if others are 90°, 90°, 90°.,,,,,90°
+Problem,15,Find if angles 90°, 60°, 110°, 100° form quadrilateral.,,,,,Yes
+Problem,16,Find if angles 90°, 90°, 90°, 100° form quadrilateral.,,,,,No
+Problem,17,Find the type of quadrilateral with one pair of parallel sides.,,,,,Trapezium
+Problem,18,Find the type of quadrilateral with all sides equal.,,,,,Rhombus
+Problem,19,Find the type of quadrilateral with all angles 90°.,,,,,Rectangle
+Problem,20,Find the type of quadrilateral with all sides equal and angles 90°.,,,,,Square
+Problem,21,Find the sum of interior angles.,,,,,360°
+Problem,22,Find the opposite angle if one angle is 120° in parallelogram.,,,,,120°
+Problem,23,Find the adjacent angle if one angle is 120° in parallelogram.,,,,,60°
+Problem,24,Find the number of sides in quadrilateral.,,,,,4
+Problem,25,Find the number of vertices in quadrilateral.,,,,,4
+Problem,26,Find if diagonals of rectangle are equal.,,,,,Yes
+Problem,27,Find if diagonals of rhombus are equal.,,,,,No
+Problem,28,Find if diagonals of square are equal.,,,,,Yes
+Problem,29,Find if diagonals of parallelogram are perpendicular.,,,,,No
+Problem,30,Find if diagonals of kite are perpendicular.,,,,,Yes
+Problem,31,Find the sum of angles of square.,,,,,360°
+Problem,32,Find the sum of angles of rectangle.,,,,,360°
+Problem,33,Find the sum of angles of rhombus.,,,,,360°
+Problem,34,Find the sum of angles of trapezium.,,,,,360°
+Problem,35,Find if parallelogram has equal diagonals.,,,,,No
+Problem,36,Find if rectangle has perpendicular diagonals.,,,,,No
+Problem,37,Find if square has perpendicular diagonals.,,,,,Yes
+Problem,38,Find if kite has one pair of equal sides.,,,,,Yes
+Problem,39,Find if rhombus has equal sides.,,,,,Yes
+Problem,40,Find the fourth angle if three angles are 80°, 100°, 90°.,,,,,90°
+Problem,41,Find the adjacent angle if one angle of rectangle is 90°.,,,,,90°
+Problem,42,Find the opposite angle if one angle of square is 90°.,,,,,90°
+Problem,43,Find the angle between diagonals of square.,,,,,90°
+Problem,44,Find the number of diagonals of trapezium.,,,,,2
+Problem,45,Find the type of quadrilateral with diagonals equal and perpendicular.,,,,,Square
+Problem,46,Find if quadrilateral can have sum of angles 300°.,,,,,No
+Problem,47,Find the sum of angles of any quadrilateral.,,,,,360°
+Problem,48,Find if quadrilateral is closed figure.,,,,,Yes
+Problem,49,Find the sum of two adjacent angles of parallelogram if one is 65°.,,,,,180°
+Problem,50,Find the fourth angle if three angles are 120°, 90°, 60°.,,,,,90°

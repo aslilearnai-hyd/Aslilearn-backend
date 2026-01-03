@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Democracy means rule by,Army,King,People,Elites,People
+MCQ,2,Diversity refers to differences among people based on,Culture,Language,Religion,All of these,All of these
+MCQ,3,Which country faced racial discrimination?,India,USA,Belgium,Sri Lanka,USA
+MCQ,4,The Civil Rights Movement took place in,India,South Africa,USA,UK,USA
+MCQ,5,Who led the Civil Rights Movement?,Nelson Mandela,Martin Luther King Jr.,Abraham Lincoln,Mahatma Gandhi,Martin Luther King Jr.
+MCQ,6,Which amendment ended racial discrimination in USA?,13th,14th,15th,19th,14th
+MCQ,7,The struggle of blacks in USA was against,Racial discrimination,Economic crisis,Political instability,Colonial rule,Racial discrimination
+MCQ,8,Which social group was discriminated in USA?,Whites,Blacks,Hispanics,Asians,Blacks
+MCQ,9,Diversity strengthens democracy by,Creating conflict,Encouraging competition,Promoting unity through tolerance,Dividing people,Promoting unity through tolerance
+MCQ,10,Which term means respect for differences?,Unity,Homogeneity,Tolerance,Conflict,Tolerance
+MCQ,11,Which country shows unity in diversity?,Sri Lanka,India,USA,China,India
+MCQ,12,Which factor causes social divisions?,Occupation,Religion,Language,All of these,All of these
+MCQ,13,Social divisions are harmful when they are,Political,Peaceful,Exploitative,Natural,Exploitative
+MCQ,14,Which social division is permanent?,Caste,Religion,Language,None,None
+MCQ,15,Which country is an example of democracy accommodating diversity?,India,Sri Lanka,China,Myanmar,India
+MCQ,16,Which struggle united blacks and whites in USA?,Civil Rights Movement,Freedom struggle,Anti-apartheid movement,Swadeshi movement,Civil Rights Movement
+MCQ,17,Which slogan was popular during Civil Rights Movement?,Jai Hind,Black Power,We Shall Overcome,Inquilab Zindabad,We Shall Overcome
+MCQ,18,Diversity can be a source of,Conflict only,Weakness,Strength in democracy,Division,Strength in democracy
+MCQ,19,Which movement fought for equal rights?,Civil Rights Movement,Chipko Movement,Appiko Movement,Narmada Bachao,Civil Rights Movement
+MCQ,20,Which leader advocated non-violence in USA?,Martin Luther King Jr.,Malcolm X,Obama,Lincoln,Martin Luther King Jr.
+MCQ,21,Which social division is based on birth?,Economic,Caste,Religious,Linguistic,Caste
+MCQ,22,Which division is universal?,Social,Political,Economic,Cultural,Social
+MCQ,23,Which division can lead to violence?,Peaceful,Political manipulation,Natural differences,Cultural diversity,Political manipulation
+MCQ,24,Democracy accommodates diversity by,Suppressing differences,Ignoring minorities,Power sharing,Dictatorship,Power sharing
+MCQ,25,Which country failed to accommodate diversity?,India,Belgium,Sri Lanka,Canada,Sri Lanka
+MCQ,26,Which term means same culture?,Pluralism,Diversity,Homogeneity,Secularism,Homogeneity
+MCQ,27,Which movement ended segregation in USA?,Civil Rights Movement,Green Movement,Labour Movement,Feminist Movement,Civil Rights Movement
+MCQ,28,Which diversity exists in India?,Linguistic,Religious,Cultural,All of these,All of these
+MCQ,29,Which system best manages diversity?,Dictatorship,Monarchy,Democracy,Military rule,Democracy
+MCQ,30,Which group faced discrimination in Sri Lanka?,Sinhala,Tamils,Burghers,Dutch,Tamils
+MCQ,31,Which social difference becomes social division?,When politicised,When natural,When ignored,When accepted,When politicised
+MCQ,32,Which idea promotes peaceful coexistence?,Intolerance,Discrimination,Tolerance,Segregation,Tolerance
+MCQ,33,Which country has multiple languages?,China,India,Sri Lanka,Japan,India
+MCQ,34,Which movement was inspired by Gandhian ideas?,Civil Rights Movement,Green Revolution,Industrial movement,Peasant movement,Civil Rights Movement
+MCQ,35,Which value is essential for democracy?,Intolerance,Uniformity,Respect for diversity,Conflict,Respect for diversity
+MCQ,36,Which society is more stable?,Homogeneous,Intolerant,Diverse and democratic,Dictatorial,Diverse and democratic
+MCQ,37,Which leader opposed racial segregation?,Martin Luther King Jr.,Hitler,Stalin,Mussolini,Martin Luther King Jr.
+MCQ,38,Diversity becomes a problem when,Respected,Accepted,Politicised,Managed well,Politicised
+MCQ,39,Which form of democracy supports diversity?,Direct,Authoritarian,Representative,Military,Representative
+MCQ,40,Which country shows ethnic conflict due to lack of democracy?,India,Belgium,Sri Lanka,Canada,Sri Lanka
+MCQ,41,Which value binds people together?,Hatred,Tolerance,Discrimination,Violence,Tolerance
+MCQ,42,Which movement gave voting rights to blacks?,Civil Rights Movement,Labour Movement,Women's Movement,Green Movement,Civil Rights Movement
+MCQ,43,Which division is based on culture?,Economic,Linguistic,Political,Occupational,Linguistic
+MCQ,44,Which system allows peaceful resolution of conflicts?,Democracy,Dictatorship,Monarchy,Military rule,Democracy
+MCQ,45,Which country practised racial segregation?,USA,India,Japan,China,USA
+MCQ,46,Which factor strengthens democracy?,Uniformity,Diversity management,Suppression,Centralisation,Diversity management
+MCQ,47,Which group suffered discrimination due to skin colour?,Whites,Blacks,Asians,Europeans,Blacks
+MCQ,48,Which slogan symbolised unity?,Black Power,We Shall Overcome,Divide and Rule,White Supremacy,We Shall Overcome
+MCQ,49,Which idea supports equality?,Discrimination,Segregation,Democracy,Dictatorship,Democracy
+MCQ,50,Democracy and diversity together promote,Unity,Conflict,Instability,Division,Unity
+
+Integer,1,Rule by people?,Democracy,,,,
+Integer,2,Differences among people?,Diversity,,,,
+Integer,3,Movement against racism?,Civil Rights Movement,,,,
+Integer,4,Leader of civil rights?,Martin Luther King Jr.,,,,
+Integer,5,Country with racial struggle?,USA,,,,
+Integer,6,Discriminated group in USA?,Blacks,,,,
+Integer,7,Slogan of civil rights?,We Shall Overcome,,,,
+Integer,8,Respect for differences?,Tolerance,,,,
+Integer,9,Country showing unity in diversity?,India,,,,
+Integer,10,Diversity strengthens?,Democracy,,,,
+Integer,11,Discrimination based on birth?,Caste,,,,
+Integer,12,Social difference becomes division when?,Politicised,,,,
+Integer,13,Ethnic conflict country?,Sri Lanka,,,,
+Integer,14,Peaceful coexistence value?,Tolerance,,,,
+Integer,15,Democratic system manages?,Diversity,,,,
+Integer,16,Racial segregation based on?,Skin colour,,,,
+Integer,17,Civil rights movement aim?,Equality,,,,
+Integer,18,Indian diversity type?,Linguistic,,,,
+Integer,19,Social division example?,Religion,,,,
+Integer,20,Democracy promotes?,Equality,,,,
+Integer,21,Discrimination opposite?,Equality,,,,
+Integer,22,Movement inspired by Gandhi?,Civil Rights Movement,,,,
+Integer,23,Unity in diversity country?,India,,,,
+Integer,24,Division causing violence?,Political,,,,
+Integer,25,Group discriminated in Sri Lanka?,Tamils,,,,
+Integer,26,Democracy needs?,Tolerance,,,,
+Integer,27,Social division type?,Cultural,,,,
+Integer,28,Ethnic problem solution?,Democracy,,,,
+Integer,29,Segregation ended by?,Law,,,,
+Integer,30,Democracy supports?,Participation,,,,
+Integer,31,Major civil rights leader?,King,,,,
+Integer,32,Conflict reduced by?,Accommodation,,,,
+Integer,33,Diverse society strength?,Unity,,,,
+Integer,34,Democracy opposite?,Dictatorship,,,,
+Integer,35,Social harmony value?,Respect,,,,
+Integer,36,Movement for equal rights?,Civil Rights,,,,
+Integer,37,Diversity unmanaged leads to?,Conflict,,,,
+Integer,38,Peaceful society needs?,Tolerance,,,,
+Integer,39,Democracy ensures?,Justice,,,,
+Integer,40,Social division universal?,Yes,,,,
+Integer,41,Democratic ideal?,Equality,,,,
+Integer,42,Value opposing racism?,Equality,,,,
+Integer,43,Democracy and diversity relation?,Complementary,,,,
+Integer,44,Discrimination causes?,Conflict,,,,
+Integer,45,India’s strength?,Diversity,,,,
+Integer,46,Democracy accommodates?,Differences,,,,
+Integer,47,Ethnic diversity example?,India,,,,
+Integer,48,Peace through democracy?,Yes,,,,
+Integer,49,Chapter focus?,Democracy and diversity,,,,
+Integer,50,Key message?,Unity in diversity,,,,
+
+Descriptive,1,What is democracy?,,,,,Democracy is a form of government where people rule
+Descriptive,2,What is diversity?,,,,,Diversity refers to differences among people
+Descriptive,3,Explain democracy and diversity.,,,,,Democracy accommodates social differences peacefully
+Descriptive,4,Describe the Civil Rights Movement.,,,,,Movement against racial discrimination in USA
+Descriptive,5,Who was Martin Luther King Jr.?,,,,,Leader of Civil Rights Movement
+Descriptive,6,Explain racial discrimination.,,,,,Unfair treatment based on race
+Descriptive,7,Describe struggle of blacks in USA.,,,,,Fight for equality and voting rights
+Descriptive,8,Explain slogan “We Shall Overcome”.,,,,,Symbol of hope and unity
+Descriptive,9,Explain unity in diversity.,,,,,Different groups living together peacefully
+Descriptive,10,Why is diversity important?,,,,,It enriches society
+Descriptive,11,How does democracy accommodate diversity?,,,,,Through power sharing and equality
+Descriptive,12,Explain social differences.,,,,,Differences based on culture, language etc
+Descriptive,13,Explain social divisions.,,,,,When differences turn into conflict
+Descriptive,14,What makes social divisions harmful?,,,,,Political manipulation
+Descriptive,15,Explain case of Sri Lanka.,,,,,Failure to accommodate diversity
+Descriptive,16,Explain caste based division.,,,,,Division based on birth
+Descriptive,17,Explain religious diversity.,,,,,Multiple religions coexisting
+Descriptive,18,Explain linguistic diversity.,,,,,Multiple languages in society
+Descriptive,19,Explain ethnic diversity.,,,,,Different ethnic groups
+Descriptive,20,Why is tolerance important?,,,,,Ensures peaceful coexistence
+Descriptive,21,Explain discrimination.,,,,,Unfair treatment of groups
+Descriptive,22,Explain equality.,,,,,Equal rights to all
+Descriptive,23,Explain role of democracy.,,,,,Manages differences peacefully
+Descriptive,24,Explain majority and minority.,,,,,Groups based on numbers
+Descriptive,25,Explain accommodation.,,,,,Respecting others’ views
+Descriptive,26,Explain peaceful conflict resolution.,,,,,Solving disputes democratically
+Descriptive,27,Explain democracy vs dictatorship.,,,,,Freedom vs oppression
+Descriptive,28,Explain role of law in equality.,,,,,Protects rights
+Descriptive,29,Explain social harmony.,,,,,Peace among groups
+Descriptive,30,Explain integration.,,,,,Bringing groups together
+Descriptive,31,Explain impact of racism.,,,,,Creates inequality and conflict
+Descriptive,32,Explain democracy in India.,,,,,Respects diversity
+Descriptive,33,Explain cultural diversity.,,,,,Different traditions and customs
+Descriptive,34,Explain political manipulation of differences.,,,,,Leads to conflict
+Descriptive,35,Explain values of democracy.,,,,,Liberty, equality, fraternity
+Descriptive,36,Explain inclusive democracy.,,,,,Includes all groups
+Descriptive,37,Explain importance of equal rights.,,,,,Ensures justice
+Descriptive,38,Explain democratic participation.,,,,,People’s involvement
+Descriptive,39,Explain civil rights.,,,,,Rights ensuring equality
+Descriptive,40,Explain social justice.,,,,,Fair treatment
+Descriptive,41,Explain democratic accommodation.,,,,,Respecting diversity
+Descriptive,42,Explain unity through diversity.,,,,,Strength of democracy
+Descriptive,43,Explain identity politics.,,,,,Politics based on identity
+Descriptive,44,Explain peaceful protest.,,,,,Non-violent opposition
+Descriptive,45,Explain Gandhian influence.,,,,,Inspired non-violence
+Descriptive,46,Explain pluralism.,,,,,Acceptance of diversity
+Descriptive,47,Explain diversity in India.,,,,,Religion, language, culture
+Descriptive,48,Explain democracy’s success.,,,,,Handling diversity
+Descriptive,49,Explain long-term benefits of diversity.,,,,,Social strength
+Descriptive,50,Summarize Democracy and Diversity.,,,,,Chapter explains how democracy accommodates diversity

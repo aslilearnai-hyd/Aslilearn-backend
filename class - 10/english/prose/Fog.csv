@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of the poem Fog?,Carl Sandburg,Robert Frost,John Keats,Adrienne Rich,Carl Sandburg
+MCQ,2,Fog is a,Story,Poem,Play,Essay,Poem
+MCQ,3,The fog comes on,Little cat feet,Big waves,Strong wind,Heavy rain,Little cat feet
+MCQ,4,The poet compares fog to a,Dog,Cat,Tiger,Cloud,Cat
+MCQ,5,The poem Fog is an example of,Humorous poem,Narrative poem,Imagist poem,Lyric poem,Imagist poem
+MCQ,6,The fog sits looking over,City and harbour,Forest and hills,Fields and farms,Houses and roads,City and harbour
+MCQ,7,The fog comes silently like a,Storm,Breeze,Cat,Wave,Cat
+MCQ,8,The fog then moves on,Quickly,Suddenly,Silently,Noisily,Silently
+MCQ,9,The poem uses which literary device mainly?,Simile,Metaphor,Personification,Alliteration,Simile
+MCQ,10,The mood of the poem is,Angry,Calm,Mysterious,Joyful,Calm
+MCQ,11,The fog is described as,Sudden and loud,Slow and silent,Fast and violent,Bright and clear,Slow and silent
+MCQ,12,The poem has,Many stanzas,Two stanzas,One stanza,Four stanzas,One stanza
+MCQ,13,The poem has how many lines?,4,5,6,7,6
+MCQ,14,The fog stays for a,Long time,Short time,Whole day,Night only,Short time
+MCQ,15,The poem Fog is written in,Free verse,Rhyming couplets,Sonnet,Ballad,Free verse
+MCQ,16,The fog’s movement is compared to,Running,Jumping,Sitting and moving,Roaring,Sitting and moving
+MCQ,17,The fog is personified as an,Animal,Human,Bird,Insect,Animal
+MCQ,18,The fog watches over the city like a,Guard,Cat,Dog,King,Cat
+MCQ,19,The poet uses simple language to create,Confusion,Imagery,Fear,Noise,Imagery
+MCQ,20,The fog’s arrival is,Noisy and sudden,Gentle and quiet,Dangerous and fast,Bright and sharp,Gentle and quiet
+MCQ,21,The poem describes fog as,Powerful,Playful,Mysterious,Scary,Mysterious
+MCQ,22,The fog comes and goes,Quickly,Slowly,Violently,Permanently,Slowly
+MCQ,23,The fog is compared to a cat because it is,Wild,Silent and soft,Dangerous,Playful,Silent and soft
+MCQ,24,The setting of the poem is,Nature only,City and harbour,Forest,Rural area,City and harbour
+MCQ,25,The poet focuses on fog’s,Sound,Smell,Movement,Color,Movement
+MCQ,26,The fog’s behavior shows,Strength,Gentleness,Aggression,Anger,Gentleness
+MCQ,27,The poem Fog belongs to which movement?,Romanticism,Modernism,Imagism,Classicism,Imagism
+MCQ,28,The poet captures fog through,Long description,Short vivid images,Dialogue,Storytelling,Short vivid images
+MCQ,29,The poem has a,A sad ending,A happy ending,A calm ending,A dramatic ending,A calm ending
+MCQ,30,The fog leaves as quietly as it,Arrived,Roared,Formed,Settled,Arrived
+MCQ,31,The poet observes fog from a,Dream,Distance,Room,Close view,Close view
+MCQ,32,The fog’s presence creates a feeling of,Fear,Peace,Noise,Chaos,Peace
+MCQ,33,The poem does not mention,Fog,Cat,City,Rain,Rain
+MCQ,34,The fog sits on its,Feet,Back,Paws,Legs,Paws
+MCQ,35,The fog looks over the harbour,Quietly,Angrily,Noisily,Brightly,Quietly
+MCQ,36,The fog represents nature’s,Gentle power,Violence,Beauty only,Danger,Gentle power
+MCQ,37,The poem shows nature as,Destructive,Calm and quiet,Angry,Fearful,Calm and quiet
+MCQ,38,The poet’s attitude towards fog is,Fearful,Admiring,Angry,Indifferent,Admiring
+MCQ,39,The fog’s movement is,Mechanical,Natural,Forced,Fast,Natural
+MCQ,40,The poem appeals mainly to our sense of,Sight and imagination,Hearing,Taste,Touch,Sight and imagination
+MCQ,41,The fog comes in a,Human way,Animal way,Mechanical way,Magical way,Animal way
+MCQ,42,The fog’s sitting posture suggests,Restlessness,Calmness,Anger,Speed,Calmness
+MCQ,43,The fog leaves without,A trace,A sound,A warning,A storm,A sound
+MCQ,44,The poem uses imagery to show,Movement and silence,Noise and action,Speed and danger,Fear and panic,Movement and silence
+MCQ,45,The poem Fog is an example of,Long narrative,Short descriptive poem,Dramatic monologue,Sonnet,Short descriptive poem
+MCQ,46,The fog is described as curious because it,Looks around,Sleeps,Roars,Attacks,Looks around
+MCQ,47,The poet’s style is,Complex,Simple and vivid,Old-fashioned,Technical,Simple and vivid
+MCQ,48,The poem reflects the beauty of,Nature,City life,Animals,Humans,Nature
+MCQ,49,The fog’s movement is compared to an animal to show,Speed,Silence and grace,Violence,Size,Silence and grace
+MCQ,50,The central idea of the poem is,Power of storms,Silent beauty of nature,Danger of fog,Urban life,Silent beauty of nature
+
+Integer,1,Name of the poet?,Carl Sandburg,,,,
+Integer,2,Type of poem?,Free verse,,,,
+Integer,3,Number of lines?,6,,,,
+Integer,4,Main subject?,Fog,,,,
+Integer,5,Fog compared to?,Cat,,,,
+Integer,6,Fog comes on?,Little cat feet,,,,
+Integer,7,Setting?,City and harbour,,,,
+Integer,8,Literary device used?,Simile,,,,
+Integer,9,Poem tone?,Calm,,,,
+Integer,10,Poem movement?,Imagism,,,,
+Integer,11,Fog sits on?,Harbour and city,,,,
+Integer,12,Fog’s movement?,Silent,,,,
+Integer,13,Fog leaves?,Quietly,,,,
+Integer,14,Poem style?,Simple,,,,
+Integer,15,Poem length?,Short,,,,
+Integer,16,Fog symbolizes?,Gentle nature,,,,
+Integer,17,Fog behaves like?,Animal,,,,
+Integer,18,Fog’s arrival?,Quiet,,,,
+Integer,19,Fog’s departure?,Silent,,,,
+Integer,20,Poem theme?,Nature’s calm power,,,,
+Integer,21,The fog is?,Mysterious,,,,
+Integer,22,Poet nationality?,American,,,,
+Integer,23,Fog sits on its?,Paws,,,,
+Integer,24,Poem setting type?,Urban,,,,
+Integer,25,Poem has rhyme?,No,,,,
+Integer,26,Poem mood?,Peaceful,,,,
+Integer,27,Poem describes?,Movement,,,,
+Integer,28,Fog’s behavior?,Gentle,,,,
+Integer,29,Poem imagery?,Visual,,,,
+Integer,30,Fog compared using?,Simile,,,,
+Integer,31,Poem type?,Imagist,,,,
+Integer,32,Fog arrives?,Gradually,,,,
+Integer,33,Fog departs?,Gradually,,,,
+Integer,34,Poem focus?,Observation,,,,
+Integer,35,Fog watches?,City,,,,
+Integer,36,Fog sits?,Quietly,,,,
+Integer,37,Poem appeal?,Imagination,,,,
+Integer,38,Fog described as?,Silent,,,,
+Integer,39,Poem uses personification?,Yes,,,,
+Integer,40,Fog’s action?,Sitting,,,,
+Integer,41,Poem has stanza?,Single,,,,
+Integer,42,Fog’s nature?,Calm,,,,
+Integer,43,Poem language?,Simple,,,,
+Integer,44,Poem imagery type?,Nature,,,,
+Integer,45,Fog’s movement speed?,Slow,,,,
+Integer,46,Fog’s sound?,None,,,,
+Integer,47,Poem’s ending?,Quiet,,,,
+Integer,48,Poem meaning?,Nature’s beauty,,,,
+Integer,49,Poem atmosphere?,Mysterious,,,,
+Integer,50,Central message?,Nature moves silently,,,,
+
+Descriptive,1,What is the central idea of the poem Fog?,,,,,The poem shows the silent and gentle power of nature
+Descriptive,2,How does Carl Sandburg describe the fog?,,,,,As a silent cat
+Descriptive,3,Why is the fog compared to a cat?,,,,,Because it moves silently and softly
+Descriptive,4,What literary device is used in the poem?,,,,,Simile
+Descriptive,5,Describe the movement of fog in the poem.,,,,,Slow, silent and graceful
+Descriptive,6,What effect does the fog create?,,,,,Calm and mystery
+Descriptive,7,Explain the imagery used in the poem.,,,,,Visual imagery of fog
+Descriptive,8,Why is the poem called an imagist poem?,,,,,It uses clear images
+Descriptive,9,What does the fog symbolize?,,,,,Nature’s gentle power
+Descriptive,10,How does the poem begin?,,,,,With fog coming silently
+Descriptive,11,How does the poem end?,,,,,Fog moves away quietly
+Descriptive,12,Explain the tone of the poem.,,,,,Calm and peaceful
+Descriptive,13,Why is the poem short?,,,,,To create sharp imagery
+Descriptive,14,How does the poet personify fog?,,,,,As a cat
+Descriptive,15,What is the significance of “little cat feet”?,,,,,Shows softness and silence
+Descriptive,16,How does fog affect the city?,,,,,Covers it quietly
+Descriptive,17,What is the setting of the poem?,,,,,City and harbour
+Descriptive,18,Why does the fog sit and look?,,,,,Like a curious cat
+Descriptive,19,How does the poem reflect nature?,,,,,As calm and mysterious
+Descriptive,20,Why does the poet choose a cat for comparison?,,,,,Cats move silently
+Descriptive,21,How does the poem appeal to imagination?,,,,,Through vivid images
+Descriptive,22,Explain the calmness in the poem.,,,,,Fog’s silent movement
+Descriptive,23,What makes the poem unique?,,,,,Simple yet vivid imagery
+Descriptive,24,How does the poem show movement?,,,,,Fog’s arrival and departure
+Descriptive,25,Why is fog described as silent?,,,,,It has no sound
+Descriptive,26,How does the poem describe nature’s power?,,,,,Gentle but effective
+Descriptive,27,Explain the poet’s style.,,,,,Simple and imagistic
+Descriptive,28,Why is the poem effective despite its brevity?,,,,,Strong imagery
+Descriptive,29,How does the poem differ from traditional poems?,,,,,No rhyme scheme
+Descriptive,30,What feelings does the poem evoke?,,,,,Peace and mystery
+Descriptive,31,Explain the role of imagery in Fog.,,,,,Creates vivid mental picture
+Descriptive,32,How does the fog behave like a living being?,,,,,It sits and looks
+Descriptive,33,Why is the poem written in free verse?,,,,,To reflect natural movement
+Descriptive,34,What message does the poem convey?,,,,,Nature moves quietly
+Descriptive,35,How does the poem portray silence?,,,,,Through fog’s movement
+Descriptive,36,Explain the poet’s observation of fog.,,,,,Careful and detailed
+Descriptive,37,Why does the fog leave quietly?,,,,,Nature is gentle
+Descriptive,38,What aspect of nature does the poem focus on?,,,,,Movement and calmness
+Descriptive,39,How does the poem appeal to senses?,,,,,Sight and imagination
+Descriptive,40,Explain the significance of harbour.,,,,,Urban setting
+Descriptive,41,How does the poem create mystery?,,,,,Fog’s silent arrival
+Descriptive,42,What is the poet’s attitude towards nature?,,,,,Admiring
+Descriptive,43,Why is fog described as curious?,,,,,It looks around
+Descriptive,44,How does the poem show nature’s grace?,,,,,Smooth movement
+Descriptive,45,What is the moral of the poem?,,,,,Nature has silent power
+Descriptive,46,How does the poem reflect modern poetry?,,,,,Imagist style
+Descriptive,47,Explain the simplicity of the poem.,,,,,Few words, strong meaning
+Descriptive,48,How does the poem make readers observe nature?,,,,,Encourages attention
+Descriptive,49,Why is Fog considered memorable?,,,,,Unique comparison
+Descriptive,50,Summarize the poem Fog.,,,,,Fog comes silently like a cat, sits briefly, and leaves quietly

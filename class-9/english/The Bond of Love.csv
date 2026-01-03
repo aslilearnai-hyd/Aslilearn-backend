@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of "The Bond of Love"?,Ruskin Bond,Kenneth Anderson,Jerome K Jerome,R K Narayan,Kenneth Anderson
+MCQ,2,What kind of animal is Bruno?,Dog,Bear,Monkey,Tiger,Bear
+MCQ,3,What was Bruno also called?,Baba,Tommy,Raja,Sheru,Baba
+MCQ,4,Who found Bruno?,Author,Author’s wife,Farmer,Hunter,Author
+MCQ,5,Where was Bruno found?,Forest,Zoo,Field,River bank,Forest
+MCQ,6,What had happened to Bruno’s mother?,Alive,Captured,Shot,Died naturally,Shot
+MCQ,7,What did Bruno eat initially?,Milk,Fruits,Bread,All of these,All of these
+MCQ,8,Where was Bruno kept at first?,House,Garden,Backyard,Garage,Garden
+MCQ,9,Why was Bruno sent to the zoo?,He was sick,He was dangerous,No space,He escaped,He was dangerous
+MCQ,10,Which zoo was Bruno sent to?,Delhi Zoo,Mysore Zoo,Bangalore Zoo,Madras Zoo,Mysore Zoo
+MCQ,11,Who missed Bruno the most?,Author,Son,Wife,Neighbours,Wife
+MCQ,12,What did the author’s wife do to get Bruno back?,Cried,Wrote letters,Visited zoo daily,Fell ill,Visited zoo daily
+MCQ,13,Who helped in bringing Bruno back?,Zoo keeper,Superintendent,Minister,Friend,Superintendent
+MCQ,14,Where was Bruno kept after returning?,House,Cage,Garden,Room,Cage
+MCQ,15,What was the new enclosure called?,Zoo,Den,Island,Cave,Island
+MCQ,16,How did Bruno react on seeing the author’s wife?,Angry,Indifferent,Joyful,Scared,Joyful
+MCQ,17,What does the story mainly highlight?,Adventure,Animal cruelty,Love between humans and animals,Wildlife hunting,Love between humans and animals
+MCQ,18,What quality of the author’s wife is shown?,Fear,Compassion,Anger,Laziness,Compassion
+MCQ,19,Why was Bruno dangerous at home?,He bit people,He grew large,He was ill,He escaped,He grew large
+MCQ,20,What type of bear was Bruno?,Polar bear,Sloth bear,Black bear,Panda,Sloth bear
+MCQ,21,What game did Bruno like?,Chasing,Swimming,Playing ball,Climbing,Swimming
+MCQ,22,What happened when Bruno was in the zoo?,He was sad,He forgot family,He died,He escaped,He was sad
+MCQ,23,What did Bruno do when reunited?,Ignored,Ran away,Hugged author’s wife,Slept,Hugged author’s wife
+MCQ,24,What lesson does the story teach?,Animals are dangerous,Animals need cages,Love creates strong bonds,Humans are superior,Love creates strong bonds
+MCQ,25,What was Bruno’s favourite food?,Meat,Fruits,Milk,Porridge,Porridge
+MCQ,26,What was used to keep Bruno safe?,Chain,Cage,Wall,Rope,Cage
+MCQ,27,What made Bruno calm?,Food,Music,Author’s wife,Water,Author’s wife
+MCQ,28,What emotion dominates the story?,Fear,Humour,Love,Sadness,Love
+MCQ,29,Why did the author agree to bring Bruno back?,Pressure,Money,Wife’s love,Pity,Wife’s love
+MCQ,30,What does Bruno symbolise?,Danger,Wildlife,Innocence,Loyalty,Loyalty
+MCQ,31,What kind of relationship is shown?,Owner-pet,Human-animal bond,Friendship,Rivalry,Human-animal bond
+MCQ,32,Why did neighbours fear Bruno?,Noise,Size,Attacks,Wild behaviour,Size
+MCQ,33,What was Bruno’s reaction to captivity?,Happy,Sad,Neutral,Angry,Sad
+MCQ,34,What is the tone of the story?,Comic,Serious,Emotional,Tragic,Emotional
+MCQ,35,Who narrated the story?,Zoo keeper,Author’s wife,Author,Friend,Author
+MCQ,36,What happened to Bruno at the zoo?,He thrived,He was lonely,He became wild,He escaped,He was lonely
+MCQ,37,Why was the enclosure called an island?,Surrounded by water,On hill,In forest,In zoo,Surrounded by water
+MCQ,38,What did Bruno do on the island?,Roamed freely,Slept all day,Fought animals,Escaped,Roamed freely
+MCQ,39,How long did Bruno live with the family?,Few days,Few months,Many years,One year,Many years
+MCQ,40,Why was Bruno dangerous to keep?,Wild instincts,Illness,Hunger,Noise,Wild instincts
+MCQ,41,What is the central conflict?,Fear vs love,Man vs animal,Zoo vs home,Wild vs tame,Fear vs love
+MCQ,42,How is Bruno treated by the author?,Cruelly,Casually,Lovingly,Indifferently,Lovingly
+MCQ,43,What quality of animals is highlighted?,Cruelty,Faithfulness,Cunning,Laziness,Faithfulness
+MCQ,44,What does the reunion scene show?,Anger,Indifference,Strong bond,Fear,Strong bond
+MCQ,45,Why is the title appropriate?,Bear story,Animal cruelty,Emotional bond,Zoo life,Emotional bond
+MCQ,46,What changed author’s decision?,Money,Threats,Wife’s affection,Advice,Wife’s affection
+MCQ,47,What does the story promote?,Animal hunting,Animal care,Captivity,Entertainment,Animal care
+MCQ,48,What is Bruno’s other name?,Raja,Baba,Sheru,Tommy,Baba
+MCQ,49,What makes the story touching?,Bear’s size,Love shown,Adventure,Humour,Love shown
+MCQ,50,Overall theme of the story?,Wildlife,Compassion and love,Adventure,Danger,Compassion and love
+
+Integer,1,Author?,Kenneth Anderson,,,,
+Integer,2,Animal?,Bear,,,,
+Integer,3,Bruno also called?,Baba,,,,
+Integer,4,Bear type?,Sloth bear,,,,
+Integer,5,Finder?,Author,,,,
+Integer,6,Mother’s fate?,Shot,,,,
+Integer,7,Zoo?,Mysore Zoo,,,,
+Integer,8,Who loved Bruno most?,Author’s wife,,,,
+Integer,9,Bruno game?,Swimming,,,,
+Integer,10,Bruno food?,Porridge,,,,
+Integer,11,Initial place?,Garden,,,,
+Integer,12,Reason sent to zoo?,Dangerous,,,,
+Integer,13,Island surrounded by?,Water,,,,
+Integer,14,Emotion?,Love,,,,
+Integer,15,Story tone?,Emotional,,,,
+Integer,16,Bruno reaction reunion?,Joyful,,,,
+Integer,17,Keeper helped?,Superintendent,,,,
+Integer,18,Relationship?,Human-animal,,,,
+Integer,19,Bruno symbol?,Loyalty,,,,
+Integer,20,Author role?,Narrator,,,,
+Integer,21,Bruno captivity feeling?,Sad,,,,
+Integer,22,Wife visited zoo?,Daily,,,,
+Integer,23,Enclosure name?,Island,,,,
+Integer,24,Neighbour fear?,Size,,,,
+Integer,25,Bruno instinct?,Wild,,,,
+Integer,26,Theme?,Compassion,,,,
+Integer,27,Bruno favourite?,Swimming,,,,
+Integer,28,Animal bond?,Strong,,,,
+Integer,29,Author decision change?,Wife,,,,
+Integer,30,Story focus?,Love,,,,
+Integer,31,Bruno nature?,Affectionate,,,,
+Integer,32,Setting?,Home and zoo,,,,
+Integer,33,Conflict?,Fear vs love,,,,
+Integer,34,Title meaning?,Emotional bond,,,,
+Integer,35,Bruno response zoo?,Lonely,,,,
+Integer,36,Bruno kept safely?,Cage,,,,
+Integer,37,Wife quality?,Compassion,,,,
+Integer,38,Animal care theme?,Yes,,,,
+Integer,39,Bruno free space?,Island,,,,
+Integer,40,Story message?,Kindness,,,,
+Integer,41,Author attitude?,Caring,,,,
+Integer,42,Bruno reunion action?,Hug,,,,
+Integer,43,Story genre?,Narrative,,,,
+Integer,44,Bruno age?,Young cub,,,,
+Integer,45,Lesson?,Love wins,,,,
+Integer,46,Bruno danger reason?,Size,,,,
+Integer,47,Island benefit?,Freedom,,,,
+Integer,48,Story ending?,Happy,,,,
+Integer,49,Animal emotion?,Affection,,,,
+Integer,50,Chapter name?,The Bond of Love,,,,
+
+Descriptive,1,Who is Bruno?,,,,,Bruno is a sloth bear cub adopted by the author
+Descriptive,2,How was Bruno found?,,,,,He was found alone after his mother was shot
+Descriptive,3,Why was Bruno named Baba?,,,,,It was an affectionate name given by the family
+Descriptive,4,Describe Bruno’s early life.,,,,,He lived lovingly with the author’s family
+Descriptive,5,Why was Bruno sent to the zoo?,,,,,He became too large and dangerous
+Descriptive,6,How did the author’s wife react to Bruno’s absence?,,,,,She missed him deeply and visited daily
+Descriptive,7,Describe Bruno’s life in the zoo.,,,,,He felt lonely and unhappy
+Descriptive,8,How was Bruno brought back?,,,,,With permission from zoo authorities
+Descriptive,9,Describe the reunion scene.,,,,,It showed deep affection and joy
+Descriptive,10,What does the island enclosure signify?,,,,,Safety with freedom
+Descriptive,11,What qualities of Bruno are shown?,,,,,Affection and loyalty
+Descriptive,12,Describe the bond between Bruno and the wife.,,,,,It was deep and emotional
+Descriptive,13,Why is the story emotional?,,,,,It shows pure love between human and animal
+Descriptive,14,What lesson does the story teach?,,,,,Love and compassion create strong bonds
+Descriptive,15,How does the author portray animals?,,,,,As sensitive beings
+Descriptive,16,Explain the title "The Bond of Love".,,,,,It refers to strong emotional attachment
+Descriptive,17,What role does compassion play?,,,,,It guides human actions
+Descriptive,18,How does Bruno show recognition?,,,,,By hugging and reacting joyfully
+Descriptive,19,Why was keeping Bruno risky?,,,,,He was a wild animal
+Descriptive,20,How did the author ensure Bruno’s safety?,,,,,By building an island enclosure
+Descriptive,21,What does Bruno’s sadness in zoo show?,,,,,Animals feel emotions
+Descriptive,22,Why did the wife insist on Bruno’s return?,,,,,Because of emotional attachment
+Descriptive,23,Describe the author’s wife.,,,,,She is loving and compassionate
+Descriptive,24,How is animal care highlighted?,,,,,Through responsible treatment
+Descriptive,25,What makes the story inspiring?,,,,,Unconditional love
+Descriptive,26,Explain the conflict in the story.,,,,,Fear of danger versus love
+Descriptive,27,How does the author balance safety and love?,,,,,By creating the island
+Descriptive,28,What does the story say about captivity?,,,,,It affects animals emotionally
+Descriptive,29,Why is Bruno called loyal?,,,,,He recognises and loves his caretakers
+Descriptive,30,What values does the story promote?,,,,,Kindness and empathy
+Descriptive,31,How does Bruno behave like a family member?,,,,,He plays and shows affection
+Descriptive,32,Why did neighbours fear Bruno?,,,,,Due to his size and strength
+Descriptive,33,How does the story end?,,,,,With Bruno living safely near family
+Descriptive,34,What role does patience play?,,,,,In handling animals
+Descriptive,35,How is trust built between human and animal?,,,,,Through care and affection
+Descriptive,36,Why is the story realistic?,,,,,Based on real experiences
+Descriptive,37,What message does the author convey?,,,,,Animals deserve love and care
+Descriptive,38,How does Bruno react to love?,,,,,With loyalty and affection
+Descriptive,39,Why is animal-human bond special?,,,,,It is unconditional
+Descriptive,40,Explain Bruno’s transformation.,,,,,From wild cub to affectionate pet
+Descriptive,41,What makes Bruno’s story memorable?,,,,,Emotional bonding
+Descriptive,42,How does the author show responsibility?,,,,,By ensuring safety measures
+Descriptive,43,Why is love stronger than fear in the story?,,,,,It overcomes danger
+Descriptive,44,Explain the emotional appeal of the story.,,,,,It touches readers’ hearts
+Descriptive,45,What does the story teach about wildlife?,,,,,Respect and care are essential
+Descriptive,46,How does the wife influence the story?,,,,,Her love drives decisions
+Descriptive,47,What role does the zoo play?,,,,,Shows contrast between captivity and care
+Descriptive,48,Why is Bruno happy on the island?,,,,,He has freedom and love
+Descriptive,49,How does the author view animals?,,,,,As emotional beings
+Descriptive,50,Summarize "The Bond of Love".,,,,,The story highlights deep emotional bonding between humans and animals, showing how love, care and compassion create lifelong connections

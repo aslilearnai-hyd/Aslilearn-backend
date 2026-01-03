@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,The point (0,0) is called?,Origin,X-axis,Y-axis,Quadrant,Origin
+MCQ,2,The x-coordinate of a point is also called?,Abscissa,Ordinate,Axis,Origin,Abscissa
+MCQ,3,The y-coordinate of a point is also called?,Abscissa,Ordinate,Axis,Origin,Ordinate
+MCQ,4,Which point lies on x-axis?,(3,0),(0,4),(2,3),(−1,5),(3,0)
+MCQ,5,Which point lies on y-axis?,(0,−3),(4,0),(2,1),(3,3),(0,−3)
+MCQ,6,In which quadrant does (2,3) lie?,I,II,III,IV,I
+MCQ,7,In which quadrant does (−4,5) lie?,I,II,III,IV,II
+MCQ,8,In which quadrant does (−3,−2) lie?,I,II,III,IV,III
+MCQ,9,In which quadrant does (4,−6) lie?,I,II,III,IV,IV
+MCQ,10,The coordinates of origin are?,(1,1),(0,1),(1,0),(0,0),(0,0)
+MCQ,11,How many quadrants are there?,2,3,4,5,4
+MCQ,12,The point (0,5) lies on?,X-axis,Y-axis,Origin,Quadrant,Y-axis
+MCQ,13,The point (−6,0) lies on?,X-axis,Y-axis,Origin,Quadrant,X-axis
+MCQ,14,Which coordinate is positive in III quadrant?,x only,y only,both,none,none
+MCQ,15,Which coordinate is negative in II quadrant?,x only,y only,both,none,x only
+MCQ,16,Which quadrant has both coordinates positive?,I,II,III,IV,I
+MCQ,17,Which quadrant has x positive and y negative?,I,II,III,IV,IV
+MCQ,18,The graph paper is divided into?,2 parts,3 parts,4 parts,5 parts,4 parts
+MCQ,19,The horizontal line is called?,Y-axis,X-axis,Origin,Graph,X-axis
+MCQ,20,The vertical line is called?,X-axis,Y-axis,Origin,Graph,Y-axis
+MCQ,21,Point (−2,4) lies in?,I,II,III,IV,II
+MCQ,22,Point (5,−7) lies in?,I,II,III,IV,IV
+MCQ,23,Point (−6,−8) lies in?,I,II,III,IV,III
+MCQ,24,Point (0,0) lies in?,I quadrant,II quadrant,III quadrant,None,None
+MCQ,25,Which is the abscissa of (4,−3)?,4,−3,7,1,4
+MCQ,26,Which is the ordinate of (4,−3)?,4,−3,7,1,−3
+MCQ,27,The point (0,0) divides axes into?,Two equal parts,Four quadrants,Two quadrants,Lines only,Four quadrants
+MCQ,28,Coordinates of a point on y-axis are?,(x,0),(0,y),(x,y),(0,0),(0,y)
+MCQ,29,Coordinates of a point on x-axis are?, (x,y),(0,y),(x,0),(0,0),(x,0)
+MCQ,30,Which quadrant contains (−1,6)?,I,II,III,IV,II
+MCQ,31,Which quadrant contains (7,−2)?,I,II,III,IV,IV
+MCQ,32,Which point lies in III quadrant?,(−2,−3),(2,−3),(−2,3),(3,2),(−2,−3)
+MCQ,33,Which point lies in I quadrant?,(−2,3),(2,−3),(−2,−3),(3,4),(3,4)
+MCQ,34,Which coordinate represents distance from y-axis?,y,x,z,origin,x
+MCQ,35,Which coordinate represents distance from x-axis?,x,y,z,origin,y
+MCQ,36,The point (5,0) lies on?,X-axis,Y-axis,Origin,Quadrant,X-axis
+MCQ,37,The point (0,−9) lies on?,X-axis,Y-axis,Origin,Quadrant,Y-axis
+MCQ,38,Which is correct for II quadrant?,x+,y−,x−,y+,x−,y+
+MCQ,39,Which is correct for IV quadrant?,x+,y−,x−,y+,x−,y−,x+,y−
+MCQ,40,Which point has ordinate zero?,(0,4),(3,0),(−2,5),(1,2),(3,0)
+MCQ,41,Which point has abscissa zero?,(0,4),(3,0),(−2,5),(1,2),(0,4)
+MCQ,42,The axes intersect at?,(1,1),(0,1),(1,0),(0,0),(0,0)
+MCQ,43,Point (−8,0) lies?,On x-axis,On y-axis,In III quadrant,In II quadrant,On x-axis
+MCQ,44,Point (0,9) lies?,On x-axis,On y-axis,In I quadrant,In II quadrant,On y-axis
+MCQ,45,Which has both coordinates negative?,(−3,−4),(3,−4),(−3,4),(3,4),(−3,−4)
+MCQ,46,Which has both coordinates positive?,(−3,−4),(3,−4),(−3,4),(3,4),(3,4)
+MCQ,47,Point (−5,6) lies in?,I,II,III,IV,II
+MCQ,48,Point (6,−5) lies in?,I,II,III,IV,IV
+MCQ,49,The origin divides the plane into?,2 regions,3 regions,4 regions,5 regions,4 regions
+MCQ,50,Coordinates are written as?,[x,y],(x,y),{x,y},<x,y>,(x,y)
+
+Integer,1,Coordinates of origin?,0,0,,,
+Integer,2,Abscissa of (7,−2)?,7,,,,
+Integer,3,Ordinate of (7,−2)?,-2,,,,
+Integer,4,Quadrant of (3,4)?,I,,,,
+Integer,5,Quadrant of (−3,5)?,II,,,,
+Integer,6,Quadrant of (−4,−6)?,III,,,,
+Integer,7,Quadrant of (5,−7)?,IV,,,,
+Integer,8,Coordinates of point on x-axis?,y=0,,,,
+Integer,9,Coordinates of point on y-axis?,x=0,,,,
+Integer,10,Number of quadrants?,4,,,,
+Integer,11,Abscissa of (−9,8)?,-9,,,,
+Integer,12,Ordinate of (−9,8)?,8,,,,
+Integer,13,Coordinates of origin lie on axes? (Yes/No),Yes,,,,
+Integer,14,Quadrant of (−6,3)?,II,,,,
+Integer,15,Quadrant of (4,−8)?,IV,,,,
+Integer,16,Coordinates of point on y-axis?,x=0,,,,
+Integer,17,Coordinates of point on x-axis?,y=0,,,,
+Integer,18,Abscissa of (0,5)?,0,,,,
+Integer,19,Ordinate of (5,0)?,0,,,,
+Integer,20,Quadrant of (0,−4)?,None,,,,
+Integer,21,Distance from y-axis is given by?,x,,,,
+Integer,22,Distance from x-axis is given by?,y,,,,
+Integer,23,Quadrant of (−2,7)?,II,,,,
+Integer,24,Quadrant of (8,−3)?,IV,,,,
+Integer,25,Quadrant of (0,0)?,None,,,,
+Integer,26,Point (3,0) lies on?,X-axis,,,,
+Integer,27,Point (0,3) lies on?,Y-axis,,,,
+Integer,28,Abscissa of (1,1)?,1,,,,
+Integer,29,Ordinate of (1,1)?,1,,,,
+Integer,30,Point with both coordinates negative lies in?,III,,,,
+Integer,31,Point with x negative and y positive lies in?,II,,,,
+Integer,32,Point with x positive and y negative lies in?,IV,,,,
+Integer,33,Point with both coordinates positive lies in?,I,,,,
+Integer,34,Coordinates are ordered pairs? (Yes/No),Yes,,,,
+Integer,35,Number of axes?,2,,,,
+Integer,36,Axes intersect at?,Origin,,,,
+Integer,37,Coordinates of point on x-axis have y=?,0,,,,
+Integer,38,Coordinates of point on y-axis have x=?,0,,,,
+Integer,39,Abscissa of (−5,0)?,-5,,,,
+Integer,40,Ordinate of (0,−6)?,-6,,,,
+Integer,41,Quadrant of (2,−1)?,IV,,,,
+Integer,42,Quadrant of (−1,2)?,II,,,,
+Integer,43,Quadrant of (1,−2)?,IV,,,,
+Integer,44,Quadrant of (−2,−1)?,III,,,,
+Integer,45,Coordinates of point on axes are called?,Intercepts,,,,
+Integer,46,Coordinates of origin are integers? (Yes/No),Yes,,,,
+Integer,47,Which axis is horizontal?,X-axis,,,,
+Integer,48,Which axis is vertical?,Y-axis,,,,
+Integer,49,Coordinates of point are written in brackets? (Yes/No),Yes,,,,
+Integer,50,Graph is drawn on?,Cartesian plane,,,,
+
+Problem,1,Write the coordinates of the origin.,,,,,(0,0)
+Problem,2,Find the quadrant of point (3,−5).,,,,,IV
+Problem,3,Find the quadrant of point (−4,6).,,,,,II
+Problem,4,Find the quadrant of point (−7,−8).,,,,,III
+Problem,5,Find the quadrant of point (5,9).,,,,,I
+Problem,6,Write coordinates of a point on x-axis with x=4.,,,,,(4,0)
+Problem,7,Write coordinates of a point on y-axis with y=−6.,,,,,(0,−6)
+Problem,8,Find the abscissa of point (−3,7).,,,,,-3
+Problem,9,Find the ordinate of point (5,−4).,,,,,-4
+Problem,10,State whether point (0,5) lies on x-axis or y-axis.,,,,,Y-axis
+Problem,11,State whether point (7,0) lies on x-axis or y-axis.,,,,,X-axis
+Problem,12,Find the quadrant of point (−9,4).,,,,,II
+Problem,13,Find the quadrant of point (6,−3).,,,,,IV
+Problem,14,Write coordinates of a point 3 units right of origin.,,,,,(3,0)
+Problem,15,Write coordinates of a point 5 units above origin.,,,,,(0,5)
+Problem,16,Find the quadrant of (−2,−5).,,,,,III
+Problem,17,Find the abscissa of (8,−1).,,,,,8
+Problem,18,Find the ordinate of (−6,9).,,,,,9
+Problem,19,Write coordinates of a point 4 units left of origin.,,,,,(−4,0)
+Problem,20,Write coordinates of a point 7 units below origin.,,,,,(0,−7)
+Problem,21,Find the quadrant of (1,1).,,,,,I
+Problem,22,Find the quadrant of (−1,1).,,,,,II
+Problem,23,Find the quadrant of (−1,−1).,,,,,III
+Problem,24,Find the quadrant of (1,−1).,,,,,IV
+Problem,25,Find the coordinates of a point on y-axis 3 units above origin.,,,,,(0,3)
+Problem,26,Find the coordinates of a point on x-axis 6 units right of origin.,,,,,(6,0)
+Problem,27,Find the quadrant of point (0,−4).,,,,,None
+Problem,28,Find the quadrant of point (−5,0).,,,,,None
+Problem,29,Find abscissa of point (−10,2).,,,,,-10
+Problem,30,Find ordinate of point (4,−12).,,,,,-12
+Problem,31,Write coordinates of a point in II quadrant with x=−3 and y=4.,,,,,(−3,4)
+Problem,32,Write coordinates of a point in IV quadrant with x=5 and y=−6.,,,,,(5,−6)
+Problem,33,State the quadrant of point (9,−9).,,,,,IV
+Problem,34,State the quadrant of point (−9,9).,,,,,II
+Problem,35,Write coordinates of a point equidistant from both axes.,,,,,(3,3)
+Problem,36,Find the quadrant of (2,−8).,,,,,IV
+Problem,37,Find the quadrant of (−8,2).,,,,,II
+Problem,38,Find the quadrant of (−6,−4).,,,,,III
+Problem,39,Write coordinates of a point 5 units from origin on x-axis.,,,,,(5,0)
+Problem,40,Write coordinates of a point 5 units from origin on y-axis.,,,,,(0,5)
+Problem,41,Find abscissa of (0,−3).,,,,,0
+Problem,42,Find ordinate of (−7,0).,,,,,0
+Problem,43,Find the quadrant of (4,0).,,,,,None
+Problem,44,Find the quadrant of (0,4).,,,,,None
+Problem,45,Write coordinates of a point in I quadrant.,,,,,(2,3)
+Problem,46,Write coordinates of a point in II quadrant.,,,,,(−2,3)
+Problem,47,Write coordinates of a point in III quadrant.,,,,,(−2,−3)
+Problem,48,Write coordinates of a point in IV quadrant.,,,,,(2,−3)
+Problem,49,Find the quadrant of (−1,−9).,,,,,III
+Problem,50,Find the quadrant of (8,3).,,,,,I

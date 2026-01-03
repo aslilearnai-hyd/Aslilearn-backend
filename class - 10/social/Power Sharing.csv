@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Power sharing refers to the distribution of power among,Political parties,Government organs,Social groups,All of these,All of these
+MCQ,2,Which country faced a major power sharing crisis in Europe?,Germany,Belgium,France,Italy,Belgium
+MCQ,3,Power sharing is desirable because it,Delays decisions,Reduces conflict,Weakens government,Creates instability,Reduces conflict
+MCQ,4,Which community was economically dominant in Sri Lanka?,Tamils,Sinhala,Burghers,Christians,Sinhala
+MCQ,5,Which language was made official in Sri Lanka in 1956?,Tamil,Sinhala,English,French,Sinhala
+MCQ,6,Which community felt alienated in Sri Lanka?,Sinhala,Tamils,Buddhists,Christians,Tamils
+MCQ,7,Power sharing helps in maintaining,Dictatorship,Unity,Conflict,Instability,Unity
+MCQ,8,Which country adopted power sharing to solve ethnic problem?,India,Belgium,Sri Lanka,China,Belgium
+MCQ,9,Which organ of government makes laws?,Executive,Legislature,Judiciary,Bureaucracy,Legislature
+MCQ,10,Which organ implements laws?,Judiciary,Legislature,Executive,Media,Executive
+MCQ,11,Which organ interprets laws?,Legislature,Executive,Judiciary,President,Judiciary
+MCQ,12,Sharing of power among organs is called,Vertical sharing,Horizontal sharing,Community sharing,Federal sharing,Horizontal sharing
+MCQ,13,Sharing of power among different levels is called,Horizontal sharing,Community sharing,Vertical sharing,Ethnic sharing,Vertical sharing
+MCQ,14,Power sharing among social groups is known as,Community sharing,Vertical sharing,Horizontal sharing,Political sharing,Community sharing
+MCQ,15,Which form of power sharing exists in India?,Horizontal only,Vertical only,Both horizontal and vertical,None,Both horizontal and vertical
+MCQ,16,Which level comes under vertical power sharing?,Union government,State government,Local government,All of these,All of these
+MCQ,17,Which body ensures no organ misuses power?,Executive,Judiciary,Legislature,Police,Judiciary
+MCQ,18,Power sharing is essential in a,Dictatorship,Monarchy,Democracy,Military rule,Democracy
+MCQ,19,Which city is the capital of Belgium?,Paris,Brussels,Berlin,Amsterdam,Brussels
+MCQ,20,Which group was in minority in Belgium?,Dutch speakers,French speakers,Germans,British,French speakers
+MCQ,21,Which community was majority in Brussels?,Dutch,French,German,Mixed,Mixed
+MCQ,22,Power sharing prevents,Conflict,Democracy,Equality,Participation,Conflict
+MCQ,23,Which country experienced civil war due to lack of power sharing?,Belgium,Sri Lanka,India,USA,Sri Lanka
+MCQ,24,Which system divides power between central and state governments?,Unitary,Federal,Monarchy,Dictatorship,Federal
+MCQ,25,Which form of government promotes power sharing?,Autocracy,Monarchy,Democracy,Military rule,Democracy
+MCQ,26,Which group demanded recognition in Sri Lanka?,Sinhala,Tamils,Burghers,Dutch,Tamils
+MCQ,27,Which amendment strengthened local government in India?,42nd,44th,73rd,86th,73rd
+MCQ,28,Which level includes Panchayats and Municipalities?,Union,State,Local,Central,Local
+MCQ,29,Which power sharing arrangement includes coalition governments?,Community sharing,Political sharing,Horizontal sharing,Vertical sharing,Political sharing
+MCQ,30,Power sharing is a part of,Autocracy,Democratic principle,Dictatorship,Military rule,Democratic principle
+MCQ,31,Which country has community government?,Belgium,India,Sri Lanka,Nepal,Belgium
+MCQ,32,Which language group dominates in northern Belgium?,French,Dutch,German,English,Dutch
+MCQ,33,Which body checks executive actions?,Legislature,Judiciary,Police,Media,Judiciary
+MCQ,34,Which form of power sharing reduces chances of conflict?,Community sharing,Political sharing,All forms,None,All forms
+MCQ,35,Which system concentrates power in one hand?,Democracy,Federalism,Dictatorship,Power sharing,Dictatorship
+MCQ,36,Which example shows failure of power sharing?,Belgium,India,Sri Lanka,USA,Sri Lanka
+MCQ,37,Which feature ensures minority protection?,Power concentration,Power sharing,Majority rule,Autocracy,Power sharing
+MCQ,38,Which principle states power should not be concentrated?,Separation of power,Centralisation,Dictatorship,Monarchy,Separation of power
+MCQ,39,Which institution represents people?,Judiciary,Executive,Legislature,Army,Legislature
+MCQ,40,Which power sharing arrangement exists among parties?,Community sharing,Political sharing,Vertical sharing,Horizontal sharing,Political sharing
+MCQ,41,Power sharing strengthens,Democracy,Dictatorship,Autocracy,Military rule,Democracy
+MCQ,42,Which community dominated politics in Sri Lanka?,Tamil,Sinhala,Dutch,Christian,Sinhala
+MCQ,43,Which city has mixed population in Belgium?,Antwerp,Brussels,Ghent,Liege,Brussels
+MCQ,44,Power sharing is also known as,Power concentration,Power distribution,Power monopoly,Power seizure,Power distribution
+MCQ,45,Which level is highest in vertical sharing?,Local,State,Union,None,Union
+MCQ,46,Which country avoided civil war due to power sharing?,Sri Lanka,Belgium,Myanmar,Nepal,Belgium
+MCQ,47,Which government system divides power constitutionally?,Unitary,Federal,Dictatorship,Monarchy,Federal
+MCQ,48,Which form of power sharing involves social groups?,Horizontal,Vertical,Community,Political,Community
+MCQ,49,Which system promotes participation?,Dictatorship,Democracy,Monarchy,Military rule,Democracy
+MCQ,50,Power sharing is important for,Stability,Democracy,Unity,All of these,All of these
+
+Integer,1,Sharing power among organs?,Horizontal,,,,
+Integer,2,Sharing power among levels?,Vertical,,,,
+Integer,3,Sharing power among social groups?,Community,,,,
+Integer,4,Country with ethnic conflict example?,Sri Lanka,,,,
+Integer,5,Country successful in power sharing?,Belgium,,,,
+Integer,6,Capital of Belgium?,Brussels,,,,
+Integer,7,Majority community in Sri Lanka?,Sinhala,,,,
+Integer,8,Minority community in Sri Lanka?,Tamils,,,,
+Integer,9,Organ making laws?,Legislature,,,,
+Integer,10,Organ executing laws?,Executive,,,,
+Integer,11,Organ interpreting laws?,Judiciary,,,,
+Integer,12,Power sharing system?,Democracy,,,,
+Integer,13,Division of power among parties?,Political,,,,
+Integer,14,Local government amendment?,73rd,,,,
+Integer,15,Lowest level of government?,Local,,,,
+Integer,16,Form of government with power sharing?,Democratic,,,,
+Integer,17,Country with community government?,Belgium,,,,
+Integer,18,Language official in Sri Lanka?,Sinhala,,,,
+Integer,19,City with mixed population?,Brussels,,,,
+Integer,20,Power sharing prevents?,Conflict,,,,
+Integer,21,Power concentration leads to?,Dictatorship,,,,
+Integer,22,Sharing among parties leads to?,Coalition,,,,
+Integer,23,Federal system divides power between?,Centre and states,,,,
+Integer,24,Protection of minorities ensured by?,Power sharing,,,,
+Integer,25,Political system of India?,Democracy,,,,
+Integer,26,Institution checking executive?,Judiciary,,,,
+Integer,27,Ethnic problem country?,Sri Lanka,,,,
+Integer,28,Power sharing strengthens?,Unity,,,,
+Integer,29,Form of power sharing in India?,Federal,,,,
+Integer,30,Level between union and local?,State,,,,
+Integer,31,Power sharing promotes?,Participation,,,,
+Integer,32,Failure of power sharing causes?,Civil war,,,,
+Integer,33,Constitution divides power?,Yes,,,,
+Integer,34,Power sharing principle?,Equality,,,,
+Integer,35,Government by people?,Democracy,,,,
+Integer,36,Separation of powers refers to?,Organs,,,,
+Integer,37,Sharing power among parties?,Political,,,,
+Integer,38,Power sharing reduces?,Conflict,,,,
+Integer,39,Democracy needs?,Power sharing,,,,
+Integer,40,Community government country?,Belgium,,,,
+Integer,41,Central government level?,Union,,,,
+Integer,42,Minority protection method?,Power sharing,,,,
+Integer,43,Ethnic diversity solution?,Power sharing,,,,
+Integer,44,Highest authority in democracy?,People,,,,
+Integer,45,Local government includes?,Panchayat,,,,
+Integer,46,Power sharing encourages?,Stability,,,,
+Integer,47,Power sharing opposes?,Autocracy,,,,
+Integer,48,Representative body?,Legislature,,,,
+Integer,49,Power sharing goal?,Harmony,,,,
+Integer,50,Chapter focus?,Power sharing,,,,
+
+Descriptive,1,What is power sharing?,,,,,Power sharing means distribution of power among organs, levels and groups
+Descriptive,2,Why is power sharing desirable?,,,,,It reduces conflict and strengthens democracy
+Descriptive,3,Explain power sharing in Belgium.,,,,,Belgium adopted community and regional power sharing
+Descriptive,4,Describe ethnic composition of Belgium.,,,,,Dutch, French and German speakers
+Descriptive,5,Explain Sri Lankan ethnic problem.,,,,,Sinhala dominance led to Tamil alienation
+Descriptive,6,Why did Sri Lanka face civil war?,,,,,Lack of power sharing
+Descriptive,7,Explain horizontal power sharing.,,,,,Power shared among legislature, executive and judiciary
+Descriptive,8,Explain vertical power sharing.,,,,,Power shared among central, state and local governments
+Descriptive,9,What is community power sharing?,,,,,Power shared among social groups
+Descriptive,10,Explain political power sharing.,,,,,Power shared among political parties
+Descriptive,11,Explain separation of powers.,,,,,Each organ checks the other
+Descriptive,12,Why is judiciary important?,,,,,Prevents misuse of power
+Descriptive,13,Explain federal system.,,,,,Power divided constitutionally
+Descriptive,14,How does power sharing promote unity?,,,,,By accommodating diversity
+Descriptive,15,Explain power sharing in India.,,,,,Federal and democratic structure
+Descriptive,16,What is a community government?,,,,,Government representing linguistic groups
+Descriptive,17,Explain majority rule problem.,,,,,Can suppress minorities
+Descriptive,18,How does power sharing protect minorities?,,,,,Ensures representation
+Descriptive,19,Explain role of constitution.,,,,,Defines power distribution
+Descriptive,20,What is democratic principle of power sharing?,,,,,No concentration of power
+Descriptive,21,Explain local self government.,,,,,Grassroot democracy
+Descriptive,22,Explain coalition government.,,,,,Multiple parties share power
+Descriptive,23,Explain benefits of power sharing.,,,,,Stability and participation
+Descriptive,24,Explain drawbacks of power concentration.,,,,,Leads to dictatorship
+Descriptive,25,Explain ethnic diversity.,,,,,Presence of multiple communities
+Descriptive,26,Explain role of legislature.,,,,,Law making
+Descriptive,27,Explain role of executive.,,,,,Policy implementation
+Descriptive,28,Explain role of judiciary.,,,,,Law interpretation
+Descriptive,29,Why power sharing is essential in democracy?,,,,,Ensures equality
+Descriptive,30,Explain Belgian model of power sharing.,,,,,Balanced regional and community powers
+Descriptive,31,Explain Sri Lankan model failure.,,,,,Majoritarian dominance
+Descriptive,32,Explain federalism as power sharing.,,,,,Centre-state division
+Descriptive,33,Explain decentralisation.,,,,,Power to local bodies
+Descriptive,34,Explain political party role.,,,,,Represents people
+Descriptive,35,Explain power sharing and peace.,,,,,Reduces violence
+Descriptive,36,Explain importance of accommodation.,,,,,Respect for diversity
+Descriptive,37,Explain constitutional safeguards.,,,,,Protect minority rights
+Descriptive,38,Explain social harmony.,,,,,Peaceful coexistence
+Descriptive,39,Explain democratic stability.,,,,,Through power sharing
+Descriptive,40,Explain power sharing examples.,,,,,India and Belgium
+Descriptive,41,Explain failure of power sharing.,,,,,Sri Lanka
+Descriptive,42,Explain role of people.,,,,,Source of power
+Descriptive,43,Explain representative democracy.,,,,,Elected representatives
+Descriptive,44,Explain importance of participation.,,,,,Increases legitimacy
+Descriptive,45,Explain power sharing and equality.,,,,,Fair distribution
+Descriptive,46,Explain constitutional democracy.,,,,,Rule by constitution
+Descriptive,47,Explain unity in diversity.,,,,,Respect differences
+Descriptive,48,Explain need for tolerance.,,,,,Peaceful society
+Descriptive,49,Explain long-term benefits of power sharing.,,,,,Stability and development
+Descriptive,50,Summarize Power Sharing.,,,,,Chapter explains need, forms and importance of power sharing

@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of "Kathmandu"?,Ruskin Bond,Vikram Seth,Jerome K Jerome,R K Narayan,Vikram Seth
+MCQ,2,"Kathmandu" is a part of which book?,Three Men in a Boat,Heaven Lake,My Experiments with Truth,Wings of Fire,Heaven Lake
+MCQ,3,Which country is Kathmandu the capital of?,India,Bhutan,Nepal,Sri Lanka,Nepal
+MCQ,4,Which two religious places are described?,Temple and mosque,Pashupatinath and Boudhanath,Church and temple,Gurudwara and mosque,Pashupatinath and Boudhanath
+MCQ,5,Pashupatinath temple is sacred to?,Buddhists,Jains,Hindus,Christians,Hindus
+MCQ,6,Boudhanath stupa is sacred to?,Hindus,Buddhists,Jains,Sikhs,Buddhists
+MCQ,7,Where is Pashupatinath located?,India,Nepal,Bhutan,Tibet,Nepal
+MCQ,8,What river flows near Pashupatinath?,Yamuna,Ganga,Bagmati,Kosi,Bagmati
+MCQ,9,What happens at Pashupatinath?,Weddings,Funerals,Markets,Festivals,Funerals
+MCQ,10,What is burnt at the temple?,Food,Dead bodies,Clothes,Flowers,Dead bodies
+MCQ,11,Boudhanath is known for?,Chaos,Peace,Noise,Crowds,Peace
+MCQ,12,What surrounds the Boudhanath stupa?,Shops,Monks,Houses,Prayer wheels,Prayer wheels
+MCQ,13,What kind of place is Pashupatinath?,Peaceful,Silent,Chaotic,Empty,Chaotic
+MCQ,14,What kind of place is Boudhanath?,Noisy,Chaotic,Calm and quiet,Crowded,Calm and quiet
+MCQ,15,What do Buddhist monks do at Boudhanath?,Dance,Pray,Trade,Sing,Pray
+MCQ,16,Who are allowed inside Pashupatinath?,Everyone,Only Hindus,Only priests,Only locals,Only Hindus
+MCQ,17,What is the mood at Pashupatinath?,Joyful,Calm,Busy and noisy,Sad,Busy and noisy
+MCQ,18,What is the mood at Boudhanath?,Disturbing,Peaceful,Chaotic,Confusing,Peaceful
+MCQ,19,What animal is seen near the temple?,Cow,Monkey,Dog,Horse,Monkey
+MCQ,20,What is common in Kathmandu streets?,Silence,Modern malls,Chaos and crowd,Orderliness,Chaos and crowd
+MCQ,21,What sound dominates Kathmandu streets?,Music,Traffic horns,Silence,Wind,Traffic horns
+MCQ,22,What kind of shops are found?,Modern,Empty,Curio shops,Bookstores,Curio shops
+MCQ,23,What does the author buy?,Books,Records,Clothes,Souvenirs,Records
+MCQ,24,Which music does the author search for?,Western,Classical,Flute music,Rock,Flute music
+MCQ,25,What instrument’s music attracts the author?,Drum,Guitar,Flute,Piano,Flute
+MCQ,26,What is the flute seller doing?,Selling silently,Playing flute,Shouting,Sleeping,Playing flute
+MCQ,27,What does the author feel while listening?,Anger,Peace,Confusion,Fear,Peace
+MCQ,28,What does the flute symbolise?,Noise,Chaos,Universal music,Trade,Universal music
+MCQ,29,What contrasts are shown in the chapter?,Rich and poor,Noise and silence,Day and night,Old and new,Noise and silence
+MCQ,30,What is the author’s tone?,Angry,Humorous,Observational,Tragic,Observational
+MCQ,31,What kind of essay is "Kathmandu"?,Narrative,Descriptive,Autobiographical,Historical,Descriptive
+MCQ,32,What dominates Pashupatinath?,Spiritual calm,Noise and crowd,Silence,Joy,Noise and crowd
+MCQ,33,What dominates Boudhanath?,Trade,Peace and prayer,Noise,Markets,Peace and prayer
+MCQ,34,What does the chapter focus on?,History,Travel experience,Politics,Economy,Travel experience
+MCQ,35,What lesson does the chapter convey?,Religious hatred,Spiritual harmony,Modernisation only,Adventure,Spiritual harmony
+MCQ,36,What religion practices coexist?,Only Hinduism,Hinduism and Buddhism,Hinduism only,Buddhism only,Hinduism and Buddhism
+MCQ,37,What does the author admire?,Noise,Crowd,Spiritual diversity,Shopping,Spiritual diversity
+MCQ,38,What is the Bagmati river associated with?,Bathing,Fishing,Funeral rites,Travel,Funeral rites
+MCQ,39,What type of people gather at Pashupatinath?,Tourists,Monks,Priests and mourners,Dancers,Priests and mourners
+MCQ,40,What do prayer wheels represent?,Decoration,Trade,Religious chanting,Noise,Religious chanting
+MCQ,41,What feeling does Boudhanath give?,Fear,Calmness,Confusion,Noise,Calmness
+MCQ,42,What distracts the author in the streets?,Beauty,Silence,Chaos and noise,Peace,Chaos and noise
+MCQ,43,What makes Kathmandu lively?,Silence,People and sounds,Empty streets,Nature,People and sounds
+MCQ,44,What contrast is central to the chapter?,Life and death,Sound and silence,Rich and poor,Old and new,Sound and silence
+MCQ,45,What does the author compare?,Temples,Religions,Moods of places,People, Moods of places
+MCQ,46,What does the flute seller represent?,Trade,Art and culture,Religion,Silence,Art and culture
+MCQ,47,What is the pace of Kathmandu?,Slow,Silent,Hurried and busy,Lazy,Hurried and busy
+MCQ,48,What feeling dominates the ending?,Confusion,Peace,Anger,Sadness,Peace
+MCQ,49,What does the chapter show about cities?,They are silent,They are chaotic,They have contrasts,They are boring,They have contrasts
+MCQ,50,Main theme of the chapter?,Tourism,Religious contrast,Spiritual diversity and contrast,Adventure,Spiritual diversity and contrast
+
+Integer,1,Author?,Vikram Seth,,,,
+Integer,2,Book?,Heaven Lake,,,,
+Integer,3,Capital?,Kathmandu,,,,
+Integer,4,Country?,Nepal,,,,
+Integer,5,Hindu temple?,Pashupatinath,,,,
+Integer,6,Buddhist shrine?,Boudhanath,,,,
+Integer,7,Temple river?,Bagmati,,,,
+Integer,8,Temple activity?,Funerals,,,,
+Integer,9,Temple mood?,Chaotic,,,,
+Integer,10,Stupa mood?,Peaceful,,,,
+Integer,11,Animal seen?,Monkey,,,,
+Integer,12,Street sound?,Horns,,,,
+Integer,13,Shop type?,Curio,,,,
+Integer,14,Music liked?,Flute,,,,
+Integer,15,Instrument?,Flute,,,,
+Integer,16,Music effect?,Calm,,,,
+Integer,17,Essay type?,Descriptive,,,,
+Integer,18,Religion shown?,Hinduism & Buddhism,,,,
+Integer,19,Prayer object?,Wheel,,,,
+Integer,20,Ending mood?,Peace,,,,
+Integer,21,Author tone?,Observational,,,,
+Integer,22,Temple crowd?,Large,,,,
+Integer,23,Stupa activity?,Prayer,,,,
+Integer,24,Street nature?,Busy,,,,
+Integer,25,Central contrast?,Noise vs silence,,,,
+Integer,26,Animal symbol?,Chaos,,,,
+Integer,27,Flute symbol?,Universal music,,,,
+Integer,28,Temple access?,Hindus,,,,
+Integer,29,Stupa feeling?,Serenity,,,,
+Integer,30,Market type?,Traditional,,,,
+Integer,31,Temple religion?,Hindu,,,,
+Integer,32,Stupa religion?,Buddhist,,,,
+Integer,33,Author activity?,Travel,,,,
+Integer,34,City mood?,Lively,,,,
+Integer,35,River role?,Cremation,,,,
+Integer,36,Stupa sound?,Silence,,,,
+Integer,37,Temple sound?,Noise,,,,
+Integer,38,Street feature?,Crowds,,,,
+Integer,39,Chapter focus?,Travel impressions,,,,
+Integer,40,Flute seller action?,Playing,,,,
+Integer,41,City contrast?,Yes,,,,
+Integer,42,Religious harmony?,Yes,,,,
+Integer,43,Author feeling end?,Peaceful,,,,
+Integer,44,Place described?,Kathmandu,,,,
+Integer,45,Main symbol?,Flute,,,,
+Integer,46,Temple atmosphere?,Confusing,,,,
+Integer,47,Stupa atmosphere?,Calm,,,,
+Integer,48,Music impact?,Soothing,,,,
+Integer,49,Chapter theme?,Spiritual contrast,,,,
+Integer,50,Chapter name?,Kathmandu,,,,
+
+Descriptive,1,Who wrote "Kathmandu"?,,,,,It was written by Vikram Seth
+Descriptive,2,What kind of text is "Kathmandu"?,,,,,It is a descriptive travelogue
+Descriptive,3,Which two religious places are described?,,,,,Pashupatinath and Boudhanath
+Descriptive,4,Describe Pashupatinath temple.,,,,,It is a crowded Hindu temple with funeral rites
+Descriptive,5,Describe the atmosphere at Pashupatinath.,,,,,It is chaotic, noisy and crowded
+Descriptive,6,What rituals take place at Pashupatinath?,,,,,Cremation of dead bodies
+Descriptive,7,Describe Boudhanath stupa.,,,,,It is a peaceful Buddhist shrine
+Descriptive,8,What atmosphere does Boudhanath offer?,,,,,Calm, silence and spirituality
+Descriptive,9,How are the two shrines different?,,,,,One is chaotic, the other peaceful
+Descriptive,10,What role does the Bagmati river play?,,,,,It is used for funeral rites
+Descriptive,11,Describe the streets of Kathmandu.,,,,,They are noisy, crowded and lively
+Descriptive,12,What kind of shops line the streets?,,,,,Curio and souvenir shops
+Descriptive,13,Why is the flute seller important?,,,,,He brings calm through music
+Descriptive,14,What does the flute symbolise?,,,,,Universal peace and harmony
+Descriptive,15,How does music affect the author?,,,,,It gives him peace
+Descriptive,16,What contrasts are highlighted in the chapter?,,,,,Noise and silence, chaos and peace
+Descriptive,17,How does the author present religious harmony?,,,,,By showing coexistence of faiths
+Descriptive,18,Why is Boudhanath calming?,,,,,Because of prayers and silence
+Descriptive,19,What does the author observe about life?,,,,,It has constant contrasts
+Descriptive,20,How is chaos shown?,,,,,Through crowds and noise
+Descriptive,21,How is peace shown?,,,,,Through meditation and prayer
+Descriptive,22,What impression does Kathmandu leave?,,,,,A mix of chaos and calm
+Descriptive,23,Why is the chapter called "Kathmandu"?,,,,,It captures the city’s spirit
+Descriptive,24,Explain the author’s tone.,,,,,It is calm and observant
+Descriptive,25,What does the chapter teach us?,,,,,To appreciate cultural diversity
+Descriptive,26,How does religion shape Kathmandu?,,,,,Through rituals and prayers
+Descriptive,27,Why is the flute seller unforgettable?,,,,,His music creates serenity
+Descriptive,28,How does the author react to noise?,,,,,He feels disturbed
+Descriptive,29,How does the author find peace?,,,,,By listening to flute music
+Descriptive,30,What values are reflected?,,,,,Tolerance and harmony
+Descriptive,31,Explain the contrast of sound.,,,,,Temple noise vs stupa silence
+Descriptive,32,How is daily life shown?,,,,,Busy and crowded
+Descriptive,33,Why is Kathmandu lively?,,,,,Due to people and activity
+Descriptive,34,What message does the chapter convey?,,,,,Spiritual coexistence
+Descriptive,35,How does the author describe crowds?,,,,,As overwhelming
+Descriptive,36,What does the stupa symbolise?,,,,,Inner peace
+Descriptive,37,How does the chapter end?,,,,,On a peaceful note
+Descriptive,38,Why is the essay engaging?,,,,,Vivid descriptions
+Descriptive,39,What does the author admire?,,,,,Cultural diversity
+Descriptive,40,Explain the role of travel writing.,,,,,It shares experiences and cultures
+Descriptive,41,What makes the chapter unique?,,,,,Sharp contrasts
+Descriptive,42,How does the author balance description?,,,,,By comparing places
+Descriptive,43,What does the flute seller represent?,,,,,Art over chaos
+Descriptive,44,Why is silence important?,,,,,It brings peace
+Descriptive,45,How does sound affect mood?,,,,,It creates tension or calm
+Descriptive,46,What does the chapter say about cities?,,,,,They are full of contrasts
+Descriptive,47,Why is spiritual diversity important?,,,,,It promotes harmony
+Descriptive,48,What lesson can students learn?,,,,,Respect all cultures
+Descriptive,49,How does the author observe details?,,,,,Closely and thoughtfully
+Descriptive,50,Summarize "Kathmandu".,,,,,The chapter describes Kathmandu through its religious places, busy streets and contrasts between chaos and peace, highlighting spiritual harmony and cultural diversity

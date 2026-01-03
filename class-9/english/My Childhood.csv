@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of "My Childhood"?,Jawaharlal Nehru,A. P. J. Abdul Kalam,Mahatma Gandhi,Rabindranath Tagore,A. P. J. Abdul Kalam
+MCQ,2,"My Childhood" is an extract from which book?,Wings of Fire,Ignited Minds,India 2020,Turning Points,Wings of Fire
+MCQ,3,Where was Abdul Kalam born?,Chennai,Rameswaram,Delhi,Hyderabad,Rameswaram
+MCQ,4,Abdul Kalam was born in which state?,Kerala,Tamil Nadu,Andhra Pradesh,Karnataka,Tamil Nadu
+MCQ,5,What was Abdul Kalam’s father’s name?,Abdul Kareem,Jainulabdeen,Mustafa Kalam,Suleiman,Jainulabdeen
+MCQ,6,What was Abdul Kalam’s father by profession?,Teacher,Farmer,Boat owner,Trader,Boat owner
+MCQ,7,What quality best describes Kalam’s father?,Wealthy,Strict,Honest and wise,Lazy,Honest and wise
+MCQ,8,What was Abdul Kalam’s mother’s name?,Ayesha,Ashiamma,Zulekha,Fatima,Ashiamma
+MCQ,9,What did Kalam’s mother do?,Teacher,Cook,Homemaker,Doctor,Homemaker
+MCQ,10,How many members were there in Kalam’s family?,3,4,5,Many,Many
+MCQ,11,What kind of locality did Kalam grow up in?,Rich area,Poor area,Orthodox area,Peaceful mixed community,Peaceful mixed community
+MCQ,12,Who was Kalam’s close Hindu friend?,Ramanathan,Sivaprakasan,Ravi,Kannan,Sivaprakasan
+MCQ,13,Sivaprakasan’s father was a?,Priest,Teacher,Shopkeeper,Doctor,Priest
+MCQ,14,What does the story highlight?,Childhood fear,Communal harmony,Poverty only,Education only,Communal harmony
+MCQ,15,What did Kalam sell to earn money?,Vegetables,Newspapers,Milk,Books,Newspapers
+MCQ,16,Why did Kalam start earning early?,To help family,For pocket money,For fun,For school fees,To help family
+MCQ,17,Which war affected Kalam’s childhood?,World War I,World War II,Indo-Pak War,None,World War II
+MCQ,18,What effect did the war have?,Food shortage,School closure,Unemployment only,No effect,Food shortage
+MCQ,19,Who was Kalam’s science teacher?,Iyer,Sharma,Lakshmana Sastry,Sivaprakasan,Iyer
+MCQ,20,Which teacher discriminated against Kalam?,Science teacher,English teacher,Maths teacher,None,English teacher
+MCQ,21,Why was Kalam asked to sit at the back?,Poor marks,Caste prejudice,Talking in class,Late arrival,Caste prejudice
+MCQ,22,Who protested against this discrimination?,Kalam himself,His father,His friend,His teacher,His teacher
+MCQ,23,What lesson did Kalam learn from this incident?,Hatred,Revenge,Equality and justice,Fear,Equality and justice
+MCQ,24,Who was Lakshmana Sastry?,Teacher,Priest,Scientist,Doctor,Priest
+MCQ,25,What was Kalam’s father’s belief?,Religion divides,Science over religion,Universal brotherhood,Superstition,Universal brotherhood
+MCQ,26,Kalam’s father avoided which things?,Work,Science,Luxuries,Religious practices,Luxuries
+MCQ,27,What quality did Kalam inherit?,Anger,Honesty and discipline,Laziness,Arrogance,Honesty and discipline
+MCQ,28,What does the chapter mainly focus on?,Science career,Childhood memories,Moral values only,Politics,Childhood memories
+MCQ,29,How was Kalam’s family financially?,Very rich,Comfortable,Poor but content,Wealthy,Poor but content
+MCQ,30,What did Kalam learn from his parents?,Hatred,Faith and discipline,Greed,Competition,Faith and discipline
+MCQ,31,What role did education play?,Ignored,Important,Optional,Useless,Important
+MCQ,32,What does Kalam say about religion?,It divides,It teaches hatred,It promotes unity,It is useless,It promotes unity
+MCQ,33,What was Kalam’s early dream?,Doctor,Scientist,Pilot,Teacher,Pilot
+MCQ,34,What quality made Kalam successful?,Luck only,Hard work and discipline,Wealth,Connections,Hard work and discipline
+MCQ,35,Who influenced Kalam the most?,Teachers and parents,Friends,Politicians,Relatives,Teachers and parents
+MCQ,36,What kind of child was Kalam?,Lazy,Average,Hard-working,Naughty,Hard-working
+MCQ,37,What message does the story convey?,Hatred,Communal harmony,Violence only,Power,Communal harmony
+MCQ,38,What was Kalam’s attitude towards hardship?,Complaint,Acceptance and learning,Fear,Anger,Acceptance and learning
+MCQ,39,Which value is highlighted?,Ego,Unity,Selfishness,Pride,Unity
+MCQ,40,What did Kalam believe education should do?,Create fear,Create division,Build character,Only give jobs,Build character
+MCQ,41,What incident shows discrimination?,School seating,Food sharing,Temple visit,Prayer,School seating
+MCQ,42,How was the discrimination resolved?,Fight,Teacher apology,Community intervention,Teacher realisation,Teacher realisation
+MCQ,43,What did Kalam’s father teach about prayer?,Magic solution,Blind faith,Self-discipline,Escape from work,Self-discipline
+MCQ,44,What kind of teacher was Iyer?,Prejudiced,Strict,Progressive,Lazy,Progressive
+MCQ,45,What made Kalam’s childhood special?,Wealth,Strict rules,Strong values,Technology,Strong values
+MCQ,46,What does the title suggest?,Only childhood fun,Formative years,School life only,Games,Formative years
+MCQ,47,What was Kalam’s view on caste?,Very important,Irrelevant,Dividing society,Promotes peace,Irrelevant
+MCQ,48,What shaped Kalam’s personality?,Parents and teachers,Friends,Books alone,Money,Parents and teachers
+MCQ,49,The tone of the chapter is?,Angry,Reflective,Humorous,Tragic,Reflective
+MCQ,50,What is the central theme?,Science,Religion,Unity and values,Politics,Unity and values
+
+Integer,1,Author?,A. P. J. Abdul Kalam,,,,
+Integer,2,Book?,Wings of Fire,,,,
+Integer,3,Birthplace?,Rameswaram,,,,
+Integer,4,State?,Tamil Nadu,,,,
+Integer,5,Father’s name?,Jainulabdeen,,,,
+Integer,6,Mother’s name?,Ashiamma,,,,
+Integer,7,Father’s profession?,Boat owner,,,,
+Integer,8,Religion of Kalam?,Islam,,,,
+Integer,9,Close friend?,Sivaprakasan,,,,
+Integer,10,Friend’s father?,Priest,,,,
+Integer,11,Part-time job?,Newspaper seller,,,,
+Integer,12,War mentioned?,World War II,,,,
+Integer,13,Teacher who discriminated?,English teacher,,,,
+Integer,14,Teacher who corrected it?,Lakshmana Sastry,,,,
+Integer,15,Key value?,Unity,,,,
+Integer,16,Family condition?,Poor but content,,,,
+Integer,17,Locality?,Mixed community,,,,
+Integer,18,Lesson from parents?,Discipline,,,,
+Integer,19,Early dream?,Pilot,,,,
+Integer,20,Religion view?,Unity,,,,
+Integer,21,Occupation learned?,Responsibility,,,,
+Integer,22,Discrimination type?,Caste,,,,
+Integer,23,Reaction to hardship?,Acceptance,,,,
+Integer,24,Important influence?,Parents,,,,
+Integer,25,Education role?,Character building,,,,
+Integer,26,Childhood nature?,Hard-working,,,,
+Integer,27,Faith meaning?,Inner strength,,,,
+Integer,28,Friendship type?,Inter-religious,,,,
+Integer,29,Main theme?,Communal harmony,,,,
+Integer,30,Father avoided?,Luxuries,,,,
+Integer,31,Income source?,Newspapers,,,,
+Integer,32,Teacher Iyer subject?,Science,,,,
+Integer,33,Community lesson?,Brotherhood,,,,
+Integer,34,Tone?,Reflective,,,,
+Integer,35,Title meaning?,Formative years,,,,
+Integer,36,Family value?,Simplicity,,,,
+Integer,37,Kalam belief?,Equality,,,,
+Integer,38,School incident?,Seating,,,,
+Integer,39,Life lesson?,Tolerance,,,,
+Integer,40,Education aim?,Character,,,,
+Integer,41,Parents role?,Guidance,,,,
+Integer,42,Hardship result?,Learning,,,,
+Integer,43,Religion practice?,Tolerance,,,,
+Integer,44,Friendship value?,Respect,,,,
+Integer,45,Character trait?,Honesty,,,,
+Integer,46,Discipline source?,Father,,,,
+Integer,47,Chapter focus?,Values,,,,
+Integer,48,Life philosophy?,Unity,,,,
+Integer,49,Personality shaped by?,Parents and teachers,,,,
+Integer,50,Chapter name?,My Childhood,,,,
+
+Descriptive,1,Who is the author of "My Childhood"?,,,,,A. P. J. Abdul Kalam is the author
+Descriptive,2,Describe Kalam’s family background.,,,,,He came from a poor but honest family
+Descriptive,3,What values did Kalam’s father teach him?,,,,,Honesty, discipline and simplicity
+Descriptive,4,Describe Kalam’s mother.,,,,,She was loving, kind and supportive
+Descriptive,5,How did Kalam earn money as a child?,,,,,By selling newspapers
+Descriptive,6,What does the chapter say about religion?,,,,,Religion teaches unity and tolerance
+Descriptive,7,Explain communal harmony in Kalam’s childhood.,,,,,Different religions lived peacefully
+Descriptive,8,Describe Kalam’s friendship with Sivaprakasan.,,,,,It was based on mutual respect
+Descriptive,9,What incident shows caste discrimination?,,,,,The classroom seating incident
+Descriptive,10,How was discrimination resolved?,,,,,By the teacher’s realisation
+Descriptive,11,What lesson did Kalam learn from discrimination?,,,,,Equality and justice
+Descriptive,12,Describe the role of teachers in Kalam’s life.,,,,,They shaped his values
+Descriptive,13,What was the impact of World War II?,,,,,Food shortages occurred
+Descriptive,14,How did hardships shape Kalam?,,,,,They made him strong and disciplined
+Descriptive,15,Explain Kalam’s father’s philosophy of prayer.,,,,,Prayer builds self-discipline
+Descriptive,16,What kind of student was Kalam?,,,,,Hard-working and sincere
+Descriptive,17,What does the title "My Childhood" suggest?,,,,,Formative experiences of life
+Descriptive,18,What message does the chapter convey?,,,,,Unity beyond religion and caste
+Descriptive,19,How did Kalam view education?,,,,,As a tool for character building
+Descriptive,20,Describe the locality Kalam grew up in.,,,,,A peaceful mixed community
+Descriptive,21,What role did parents play in Kalam’s life?,,,,,They instilled strong values
+Descriptive,22,Explain Kalam’s views on caste.,,,,,He considered it irrelevant
+Descriptive,23,How did Kalam react to poverty?,,,,,With acceptance and learning
+Descriptive,24,Why was Kalam’s childhood unique?,,,,,Because of strong moral values
+Descriptive,25,What qualities did Kalam inherit from his parents?,,,,,Honesty and discipline
+Descriptive,26,Explain the importance of tolerance.,,,,,It promotes harmony
+Descriptive,27,What lesson does the story give students?,,,,,Hard work and values lead to success
+Descriptive,28,How did Kalam’s childhood influence his future?,,,,,It shaped his personality
+Descriptive,29,Describe Kalam’s early ambition.,,,,,He wanted to become a pilot
+Descriptive,30,What does the story say about friendship?,,,,,True friendship crosses religion
+Descriptive,31,Explain the role of faith in Kalam’s life.,,,,,It gave inner strength
+Descriptive,32,How does Kalam define success?,,,,,Success with values
+Descriptive,33,What does the chapter reveal about society?,,,,,Discrimination exists but can be corrected
+Descriptive,34,How did teachers encourage Kalam?,,,,,By supporting equality
+Descriptive,35,What did Kalam learn from hardships?,,,,,Resilience
+Descriptive,36,Why is Kalam’s father admired?,,,,,For wisdom and honesty
+Descriptive,37,Explain simplicity in Kalam’s life.,,,,,Simple living and high thinking
+Descriptive,38,What role did education play in social reform?,,,,,Removed prejudice
+Descriptive,39,Why is this chapter inspirational?,,,,,It promotes unity and discipline
+Descriptive,40,Explain Kalam’s moral development.,,,,,Shaped by parents and teachers
+Descriptive,41,What does the story teach about religion?,,,,,Religion unites, not divides
+Descriptive,42,How did Kalam handle injustice?,,,,,With patience and understanding
+Descriptive,43,Why is tolerance important?,,,,,For peaceful coexistence
+Descriptive,44,What makes Kalam a role model?,,,,,Values and perseverance
+Descriptive,45,Explain the impact of childhood experiences.,,,,,They shape character
+Descriptive,46,How did Kalam respect other religions?,,,,,Through friendship and understanding
+Descriptive,47,What lesson does the classroom incident teach?,,,,,Prejudice must be challenged
+Descriptive,48,How is humility shown in the chapter?,,,,,Through simple living
+Descriptive,49,Why is the chapter relevant today?,,,,,It promotes social harmony
+Descriptive,50,Summarize "My Childhood".,,,,,The chapter narrates Kalam’s early life and the values of unity, discipline and tolerance that shaped his personality

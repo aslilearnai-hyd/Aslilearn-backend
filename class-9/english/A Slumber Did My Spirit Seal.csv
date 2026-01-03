@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who wrote the poem "A Slumber Did My Spirit Seal"?,John Keats,William Wordsworth,Percy Shelley,Robert Frost,William Wordsworth
+MCQ,2,The poem expresses?,Joy,Love,Grief and loss,Anger,Grief and loss
+MCQ,3,The poem is about the death of?,A friend,A sister,A beloved woman,A child,A beloved woman
+MCQ,4,What does "slumber" refer to?,Sleep,Ignorance,Peace,Death,Ignorance
+MCQ,5,The poet felt secure because?,He was strong,He feared nothing,He was unaware of death,He was asleep,He was unaware of death
+MCQ,6,The woman is now?,Alive,Asleep,Dead,Travelling,Dead
+MCQ,7,What can the woman no longer feel?,Love,Pain,Earthly touch,Cold,Earthly touch
+MCQ,8,The woman has become part of?,Heaven,Nature,Stars,Poet’s heart,Nature
+MCQ,9,The tone of the poem is?,Joyful,Calm and sad,Angry,Humorous,Calm and sad
+MCQ,10,The poem has how many stanzas?,One,Two,Three,Four,Two
+MCQ,11,Each stanza has how many lines?,Two,Three,Four,Six,Four
+MCQ,12,The poem belongs to?,Romantic poetry,War poetry,Nonsense poetry,Modern poetry,Romantic poetry
+MCQ,13,What does "human fears" mean?,Fear of animals,Fear of death,Fear of loss,Fear of darkness,Fear of death
+MCQ,14,The woman is described as?,Fragile,Immortal,Eternal part of nature,Weak,Eternal part of nature
+MCQ,15,What moves the woman now?,Wind,Earth’s motion,Poet’s love,Time,Earth’s motion
+MCQ,16,The poet’s feeling changes from?,Joy to anger,Love to hatred,Ignorance to realization,Fear to joy,Ignorance to realization
+MCQ,17,The poem is written in?,Free verse,Rhyming quatrains,Prose,Blank verse,Rhyming quatrains
+MCQ,18,The poet initially thought death?,Was impossible,Would not affect her,Was painful,Was welcome,Would not affect her
+MCQ,19,The second stanza shows?,Dream,Reality,Nature’s beauty,Hope,Reality
+MCQ,20,The poem’s theme is?,Love and adventure,Life and joy,Death and nature,War and peace,Death and nature
+MCQ,21,What does the woman lack now?,Life,Movement,Senses,Memory,Senses
+MCQ,22,The poem suggests death is?,Cruel,Peaceful,Natural,Violent,Natural
+MCQ,23,The woman is now beyond?,Pain and fear,Life,Earth,Time,Pain and fear
+MCQ,24,What does the poet mourn?,Nature,Love,Loss of beloved,Youth,Loss of beloved
+MCQ,25,The poem’s mood is?,Optimistic,Playful,Melancholic,Cheerful,Melancholic
+MCQ,26,The woman is described as part of?,Heavenly angels,Mountains and stones,Poet’s dreams,Sea,Mountains and stones
+MCQ,27,What does "rolled round" suggest?,Sleep,Rest,Movement with earth,Isolation,Movement with earth
+MCQ,28,The poem reflects which philosophy?,Humanism,Naturalism,Romanticism,Realism,Romanticism
+MCQ,29,The poet no longer feels?,Fear,Sorrow,Shock,Love,Fear
+MCQ,30,The poem talks about?,Physical death only,Emotional loss,Spiritual unity with nature,Both B and C,Both B and C
+MCQ,31,The woman is immune to?,Joy,Pain,Movement,Time,Pain
+MCQ,32,The poet’s earlier belief was?,Wrong,Correct,Logical,Scientific,Wrong
+MCQ,33,The poem is deeply?,Personal,Political,Historical,Scientific,Personal
+MCQ,34,The poet accepts death as?,Cruel fate,Divine punishment,Natural process,Accident,Natural process
+MCQ,35,The imagery used relates to?,City,Nature,War,Love,Nature
+MCQ,36,What is sealed by slumber?,Eyes,Spirit,Body,Heart,Spirit
+MCQ,37,The woman’s identity is?,Named,Unknown,Public,Famous,Unknown
+MCQ,38,The poet feels sorrow but also?,Fear,Peace,Anger,Hatred,Peace
+MCQ,39,The poem ends on a?,Joyful note,Tragic note,Calm acceptance,Mysterious note,Calm acceptance
+MCQ,40,The woman is now one with?,Poet,Nature,God,Angels,Nature
+MCQ,41,The poem shows death as?,Terrifying,Violent,Quiet and natural,Painful,Quiet and natural
+MCQ,42,What does "rocks and stones" symbolize?,Life,Strength,Timeless nature,Coldness,Timeless nature
+MCQ,43,The poet’s realization comes?,Suddenly,Gradually,After death,Before sleep,After death
+MCQ,44,The poem is short but?,Complex,Simple,Meaningless,Funny,Complex
+MCQ,45,The poet’s earlier state was?,Awake,Asleep,Ignorant,Alert,Ignorant
+MCQ,46,The woman has no?,Movement,Life,Senses,All of these,All of these
+MCQ,47,The poem is about transition from?,Dream to action,Love to hate,Illusion to reality,Life to joy,Illusion to reality
+MCQ,48,The poet’s grief is?,Loud,Violent,Quiet and reflective,Angry,Quiet and reflective
+MCQ,49,What dominates the poem?,Action,Emotion,Dialogue,Humor,Emotion
+MCQ,50,Central message of poem?,Fear death,Accept death as natural,Ignore love,Reject nature,Accept death as natural
+
+Integer,1,Poet?,William Wordsworth,,,,
+Integer,2,Poem title?,A Slumber Did My Spirit Seal,,,,
+Integer,3,Poem type?,Lyric,,,,
+Integer,4,Theme?,Death,,,,
+Integer,5,Stanzas?,2,,,,
+Integer,6,Lines per stanza?,4,,,,
+Integer,7,Poem mood?,Sad,,,,
+Integer,8,Slumber meaning?,Ignorance,,,,
+Integer,9,Central idea?,Loss,,,,
+Integer,10,Poem era?,Romantic,,,,
+Integer,11,Poet emotion?,Grief,,,,
+Integer,12,Woman state?,Dead,,,,
+Integer,13,Nature role?,Eternal,,,,
+Integer,14,Poem tone?,Reflective,,,,
+Integer,15,Poem style?,Rhyming,,,,
+Integer,16,Focus?,Beloved,,,,
+Integer,17,Human fear?,Death,,,,
+Integer,18,Poem message?,Acceptance,,,,
+Integer,19,Poem imagery?,Nature,,,,
+Integer,20,Woman now part of?,Nature,,,,
+Integer,21,Poet realization?,Late,,,,
+Integer,22,Poem length?,Short,,,,
+Integer,23,Emotion type?,Quiet sorrow,,,,
+Integer,24,Poem ending?,Acceptance,,,,
+Integer,25,Movement described?,Earth,,,,
+Integer,26,Poem voice?,First person,,,,
+Integer,27,Poem focus shift?,Yes,,,,
+Integer,28,Slumber sealed?,Spirit,,,,
+Integer,29,Poem relevance?,Universal,,,,
+Integer,30,Central contrast?,Life and death,,,,
+Integer,31,Poem subject?,Loss,,,,
+Integer,32,Poem feeling?,Melancholy,,,,
+Integer,33,Nature elements?,Rocks,,,,
+Integer,34,Poem depth?,Philosophical,,,,
+Integer,35,Poet belief changed?,Yes,,,,
+Integer,36,Poem theme idea?,Mortality,,,,
+Integer,37,Poem emotion?,Peaceful grief,,,,
+Integer,38,Woman identity?,Unnamed,,,,
+Integer,39,Poem imagery type?,Natural,,,,
+Integer,40,Poem ending tone?,Calm,,,,
+Integer,41,Poem message type?,Philosophical,,,,
+Integer,42,Poem significance?,Emotional,,,,
+Integer,43,Poem voice tone?,Soft,,,,
+Integer,44,Poem appeal?,Universal,,,,
+Integer,45,Poem focus?,Death acceptance,,,,
+Integer,46,Poem conflict?,Inner,,,,
+Integer,47,Poem structure?,Two stanzas,,,,
+Integer,48,Poem subject emotion?,Loss,,,,
+Integer,49,Poem learning?,Reality of death,,,,
+Integer,50,Poem essence?,Acceptance of mortality,,,,
+
+Descriptive,1,Who wrote "A Slumber Did My Spirit Seal"?,,,,,The poem was written by William Wordsworth
+Descriptive,2,What is the central theme of the poem?,,,,,The poem deals with death, loss and acceptance
+Descriptive,3,Explain the meaning of the title.,,,,,It suggests ignorance that hid the reality of death
+Descriptive,4,What does the poet mean by "slumber"?,,,,,It means emotional ignorance
+Descriptive,5,Why did the poet feel secure earlier?,,,,,He believed death would not affect his beloved
+Descriptive,6,What realization comes to the poet later?,,,,,That his beloved has died
+Descriptive,7,How is the woman described in the second stanza?,,,,,As part of nature
+Descriptive,8,What does the poem say about death?,,,,,Death is natural and inevitable
+Descriptive,9,Describe the tone of the poem.,,,,,Calm, sad and reflective
+Descriptive,10,How does nature play a role in the poem?,,,,,It absorbs the woman into eternity
+Descriptive,11,What is meant by “human fears”?,,,,,Fear of death and loss
+Descriptive,12,Why is the poem considered philosophical?,,,,,It reflects on life and death
+Descriptive,13,How does the poet’s attitude change?,,,,,From ignorance to acceptance
+Descriptive,14,What emotions does the poem evoke?,,,,,Quiet sorrow and peace
+Descriptive,15,Explain the second stanza in your own words.,,,,,The beloved is now one with nature
+Descriptive,16,Why is the woman unnamed?,,,,,She represents universal loss
+Descriptive,17,How does the poem show acceptance?,,,,,The poet calmly accepts death
+Descriptive,18,What is the significance of rocks and stones?,,,,,They symbolize timeless nature
+Descriptive,19,How is death portrayed differently?,,,,,As peaceful and natural
+Descriptive,20,What kind of love is shown?,,,,,Deep and silent love
+Descriptive,21,Why is the poem short yet powerful?,,,,,It conveys deep emotions briefly
+Descriptive,22,How does imagery enhance the poem?,,,,,It connects death with nature
+Descriptive,23,What lesson does the poem teach?,,,,,Accept death as part of life
+Descriptive,24,How does the poem differ from dramatic elegies?,,,,,It is calm and restrained
+Descriptive,25,What does “rolled round” suggest?,,,,,The movement of earth
+Descriptive,26,Why does the poet no longer fear death?,,,,,His beloved is beyond pain
+Descriptive,27,Explain the contrast between the two stanzas.,,,,,Illusion vs reality
+Descriptive,28,How does the poem reflect romantic ideals?,,,,,By linking nature and emotion
+Descriptive,29,Why is the poem emotionally intense?,,,,,It deals with personal loss
+Descriptive,30,How does the poem end?,,,,,With calm acceptance of death
+Descriptive,31,What does the poem suggest about immortality?,,,,,Nature is eternal
+Descriptive,32,How does Wordsworth treat grief?,,,,,With quiet reflection
+Descriptive,33,Why is ignorance compared to sleep?,,,,,Both hide reality
+Descriptive,34,What universal truth does the poem convey?,,,,,Death is inevitable
+Descriptive,35,How does the poet remember the beloved?,,,,,As part of nature
+Descriptive,36,Why is the poem relevant today?,,,,,Loss is universal
+Descriptive,37,What makes the poem timeless?,,,,,Its universal theme
+Descriptive,38,How does the poem express love?,,,,,Through silent mourning
+Descriptive,39,Why does the poem avoid dramatic language?,,,,,To show calm acceptance
+Descriptive,40,How does the poem deal with fear?,,,,,It removes fear through acceptance
+Descriptive,41,What does the poem reveal about human emotions?,,,,,They evolve with realization
+Descriptive,42,Why is the poem suitable for Class 9?,,,,,It teaches emotional maturity
+Descriptive,43,How does the poet use simplicity?,,,,,To convey deep meaning
+Descriptive,44,Explain the philosophical aspect of the poem.,,,,,It reflects on mortality
+Descriptive,45,How does nature provide consolation?,,,,,By giving eternal existence
+Descriptive,46,What is the poet’s final state of mind?,,,,,Peaceful acceptance
+Descriptive,47,Why is the poem moving?,,,,,It expresses silent grief
+Descriptive,48,How does the poem portray reality?,,,,,As unavoidable truth
+Descriptive,49,What is the message in one sentence?,,,,,Accept death as a natural part of life
+Descriptive,50,Summarize "A Slumber Did My Spirit Seal".,,,,,The poem reflects the poet’s realization of the death of his beloved. Initially ignorant of mortality, he later accepts her union with nature and views death as a natural and peaceful process

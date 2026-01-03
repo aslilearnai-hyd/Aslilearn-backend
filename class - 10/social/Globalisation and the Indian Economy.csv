@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Globalisation refers to,Restriction of trade,Integration of economies,Local trade only,Government control,Integration of economies
+MCQ,2,Which factor has enabled globalisation?,Transport and communication,Closed borders,High tariffs,Local markets,Transport and communication
+MCQ,3,Which organisation promotes free trade?,IMF,World Bank,WTO,UNDP,WTO
+MCQ,4,Which term refers to companies operating in many countries?,Local firms,National firms,MNCs,Public sector,MNCs
+MCQ,5,Which country is the largest producer of software services?,USA,India,China,Japan,India
+MCQ,6,Foreign trade creates,Isolation,Competition,Monopoly,Unemployment,Competition
+MCQ,7,Which is an example of foreign investment?,Local loan,FDI,Subsidy,Tax,FDI
+MCQ,8,MNCs set up production where,Laws are strict,Labour is cheap,Taxes are high,Markets are closed,Labour is cheap
+MCQ,9,Which sector benefited most from globalisation?,Agriculture,IT sector,Mining,Handicrafts,IT sector
+MCQ,10,Which Indian industry suffered due to globalisation?,IT,Cotton textiles,Handloom industry,Software,Handloom industry
+MCQ,11,Which policy reduced trade barriers in India?,Protectionism,Liberalisation,Nationalisation,Socialism,Liberalisation
+MCQ,12,Trade barriers are,Restrictions on trade,Encouragement to trade,Loans,Subsidies,Restrictions on trade
+MCQ,13,Which year did India adopt liberalisation policies?,1980,1991,2000,1975,1991
+MCQ,14,Which organisation regulates international trade?,IMF,UNDP,WTO,WHO,WTO
+MCQ,15,Which is a benefit of globalisation?,Higher prices,More choices,Unemployment,Isolation,More choices
+MCQ,16,Which group is worst affected by globalisation?,Consumers,Skilled workers,Unskilled workers,MNCs,Unskilled workers
+MCQ,17,Which Indian company is an MNC?,Infosys,Local shop,Government school,Farmers group,Infosys
+MCQ,18,Which factor attracts MNCs?,High wages,Cheap labour,Strict laws,Closed markets,Cheap labour
+MCQ,19,Which policy allows foreign companies to invest?,Nationalisation,Liberalisation,Protectionism,Socialism,Liberalisation
+MCQ,20,Which sector saw job loss due to imports?,IT,Automobile,Small producers,Service sector,Small producers
+MCQ,21,Which is NOT a benefit of globalisation?,Technology transfer,Competition,Monopoly of MNCs,Consumer choice,Monopoly of MNCs
+MCQ,22,Which Indian product faces global competition?,Handicrafts,Software,Cement,Railways,Handicrafts
+MCQ,23,Which factor links producers globally?,Transport,Communication,Trade,All of these,All of these
+MCQ,24,Which country dominates world trade?,India,USA,China,Nigeria,USA
+MCQ,25,Which is an impact of globalisation on consumers?,Limited choice,Lower quality,More choice,Higher prices,More choice
+MCQ,26,Which sector is protected by government?,MNCs,Small farmers,Consumers,Exporters,Small farmers
+MCQ,27,Which policy removes trade restrictions?,Protectionism,Liberalisation,Nationalisation,Socialism,Liberalisation
+MCQ,28,Which institution provides loans to countries?,IMF,WTO,WHO,UNESCO,IMF
+MCQ,29,Which is a negative impact of globalisation?,Employment growth,Technology transfer,Environmental damage,Competition,Environmental damage
+MCQ,30,Which Indian city is an IT hub?,Mumbai,Bengaluru,Kolkata,Patna,Bengaluru
+MCQ,31,Which sector benefits from export growth?,Producers,Consumers,Government,None,Producers
+MCQ,32,Which is a form of investment by MNCs?,FDI,Tax,Subsidy,Grant,FDI
+MCQ,33,Which policy aimed at integrating India with world economy?,Liberalisation,Socialism,Protectionism,Isolation,Liberalisation
+MCQ,34,Which sector faced closure due to cheap imports?,IT,Handloom,Software,Banking,Handloom
+MCQ,35,Which factor ensures faster globalisation?,Internet,Roads,Ships,All of these,All of these
+MCQ,36,Which country gained most from globalisation?,Developed countries,Developing countries,Least developed,None,Developed countries
+MCQ,37,Which group benefits least from globalisation?,Consumers,Skilled workers,Unskilled workers,MNCs,Unskilled workers
+MCQ,38,Which is a social impact of globalisation?,Cultural exchange,Isolation,No change,Monopoly,Cultural exchange
+MCQ,39,Which policy encourages foreign trade?,Liberalisation,Protectionism,Nationalisation,Socialism,Liberalisation
+MCQ,40,Which organisation sets trade rules?,IMF,WTO,WHO,UNDP,WTO
+MCQ,41,Which Indian sector expanded due to globalisation?,IT,Handloom,Agriculture,Mining,IT
+MCQ,42,Which country is a major exporter of services?,India,Nigeria,Bangladesh,Nepal,India
+MCQ,43,Which group faces job insecurity?,MNC owners,Skilled workers,Unskilled workers,Consumers,Unskilled workers
+MCQ,44,Which factor reduces cost of production?,High wages,Cheap labour,High taxes,Strict laws,Cheap labour
+MCQ,45,Which policy protects domestic industries?,Liberalisation,Protectionism,Globalisation,Privatisation,Protectionism
+MCQ,46,Which Indian company operates globally?,Tata Motors,Local shop,School,Farm,Tata Motors
+MCQ,47,Which is a challenge of globalisation?,Increased choice,Environmental harm,Lower prices,Better quality,Environmental harm
+MCQ,48,Which policy increases imports?,Protectionism,Liberalisation,Nationalisation,Isolation,Liberalisation
+MCQ,49,Which sector is linked globally?,Primary only,Secondary only,Tertiary only,All sectors,All sectors
+MCQ,50,Globalisation leads to,Isolation,Integration,Monopoly only,Backwardness,Integration
+
+Integer,1,Integration of world economy?,Globalisation,,,,
+Integer,2,Multi-country company?,MNC,,,,
+Integer,3,Organisation for trade rules?,WTO,,,,
+Integer,4,Foreign investment?,FDI,,,,
+Integer,5,Cheap labour attracts?,MNCs,,,,
+Integer,6,Policy of free trade?,Liberalisation,,,,
+Integer,7,Year of Indian reforms?,1991,,,,
+Integer,8,Trade restriction?,Tariff,,,,
+Integer,9,IT hub of India?,Bengaluru,,,,
+Integer,10,Investment by MNCs?,FDI,,,,
+Integer,11,Indian IT company?,Infosys,,,,
+Integer,12,Group least benefited?,Unskilled workers,,,,
+Integer,13,Fast communication?,Internet,,,,
+Integer,14,Indian export service?,Software,,,,
+Integer,15,Protection policy?,Protectionism,,,,
+Integer,16,Organisation giving loans?,IMF,,,,
+Integer,17,Integration factor?,Trade,,,,
+Integer,18,Cheap imports affect?,Small producers,,,,
+Integer,19,Global competition increases?,Quality,,,,
+Integer,20,Indian sector grown?,IT,,,,
+Integer,21,Foreign trade creates?,Competition,,,,
+Integer,22,Trade barrier example?,Tariff,,,,
+Integer,23,Global rule maker?,WTO,,,,
+Integer,24,Foreign company?,MNC,,,,
+Integer,25,Technology transfer through?,Globalisation,,,,
+Integer,26,Labour intensive country?,India,,,,
+Integer,27,Indian reform policy?,Liberalisation,,,,
+Integer,28,Indian export hub?,Bengaluru,,,,
+Integer,29,Environmental impact?,Pollution,,,,
+Integer,30,Small producers face?,Loss,,,,
+Integer,31,Cheap goods benefit?,Consumers,,,,
+Integer,32,Import increase policy?,Liberalisation,,,,
+Integer,33,Domestic industry protection?,Protectionism,,,,
+Integer,34,Global market linkage?,Trade,,,,
+Integer,35,Indian service export?,IT,,,,
+Integer,36,Job insecurity group?,Unskilled,,,,
+Integer,37,Trade agreement body?,WTO,,,,
+Integer,38,Global cultural impact?,Exchange,,,,
+Integer,39,Indian economy integration?,Globalisation,,,,
+Integer,40,Indian MNC?,Tata,,,,
+Integer,41,Fast transport?,Container ships,,,,
+Integer,42,Indian reform decade?,1990s,,,,
+Integer,43,Investment type?,FDI,,,,
+Integer,44,Foreign companies invest for?,Profit,,,,
+Integer,45,Globalisation benefit?,Choice,,,,
+Integer,46,Globalisation harm?,Inequality,,,,
+Integer,47,Trade policy type?,Liberalisation,,,,
+Integer,48,World trade growth?,Increased,,,,
+Integer,49,Chapter theme?,Globalisation,,,,
+Integer,50,Indian economy type?,Open,,,,
+
+Descriptive,1,What is globalisation?,,,,,Globalisation is the integration of countries through trade and investment
+Descriptive,2,Explain factors that enabled globalisation.,,,,,Transport, communication and technology
+Descriptive,3,What are MNCs?,,,,,Companies operating in multiple countries
+Descriptive,4,Explain role of MNCs.,,,,,Increase investment and production
+Descriptive,5,Explain foreign trade.,,,,,Exchange of goods between countries
+Descriptive,6,What is liberalisation?,,,,,Removal of trade barriers
+Descriptive,7,Explain impact of globalisation on India.,,,,,Growth in services and competition
+Descriptive,8,Explain benefits of globalisation.,,,,,More choice and better quality
+Descriptive,9,Explain negative impacts of globalisation.,,,,,Job insecurity and inequality
+Descriptive,10,Explain impact on consumers.,,,,,Lower prices and more options
+Descriptive,11,Explain impact on producers.,,,,,Competition and pressure
+Descriptive,12,Explain impact on small producers.,,,,,Loss due to cheap imports
+Descriptive,13,Explain role of WTO.,,,,,Regulates global trade
+Descriptive,14,Explain foreign direct investment.,,,,,Investment by foreign companies
+Descriptive,15,Explain trade barriers.,,,,,Restrictions on imports
+Descriptive,16,Why was liberalisation introduced in India?,,,,,To integrate with world economy
+Descriptive,17,Explain IT sector growth.,,,,,Global demand for services
+Descriptive,18,Explain outsourcing.,,,,,Hiring services from other countries
+Descriptive,19,Explain cultural impact of globalisation.,,,,,Exchange of cultures
+Descriptive,20,Explain environmental impact.,,,,,Increased pollution
+Descriptive,21,Explain global competition.,,,,,Firms compete internationally
+Descriptive,22,Explain employment effects.,,,,,Job creation and loss
+Descriptive,23,Explain role of technology.,,,,,Faster communication
+Descriptive,24,Explain transport role.,,,,,Movement of goods
+Descriptive,25,Explain global market.,,,,,Worldwide trade
+Descriptive,26,Explain protectionism.,,,,,Policy to protect domestic industry
+Descriptive,27,Explain inequality due to globalisation.,,,,,Uneven benefits
+Descriptive,28,Explain impact on farmers.,,,,,Price fluctuation
+Descriptive,29,Explain fair globalisation.,,,,,Benefits all sections
+Descriptive,30,Explain government role.,,,,,Regulation and support
+Descriptive,31,Explain Make in India.,,,,,Promotes domestic manufacturing
+Descriptive,32,Explain digital globalisation.,,,,,Online trade
+Descriptive,33,Explain service exports.,,,,,IT and BPO
+Descriptive,34,Explain global supply chains.,,,,,Production across countries
+Descriptive,35,Explain trade liberalisation.,,,,,Open markets
+Descriptive,36,Explain skill requirement.,,,,,Need skilled workers
+Descriptive,37,Explain job insecurity.,,,,,Contract jobs
+Descriptive,38,Explain consumer awareness.,,,,,Better choices
+Descriptive,39,Explain role of IMF.,,,,,Financial support
+Descriptive,40,Explain impact on culture.,,,,,Lifestyle changes
+Descriptive,41,Explain Indian economy reforms.,,,,,1991 policies
+Descriptive,42,Explain export promotion.,,,,,Increase foreign earnings
+Descriptive,43,Explain import dependence.,,,,,Foreign goods reliance
+Descriptive,44,Explain global brands.,,,,,International products
+Descriptive,45,Explain MNC advantages.,,,,,Capital and technology
+Descriptive,46,Explain local companies challenges.,,,,,Competition
+Descriptive,47,Explain sustainable globalisation.,,,,,Environment friendly growth
+Descriptive,48,Explain future of globalisation.,,,,,More integration
+Descriptive,49,Explain inclusive globalisation.,,,,,Benefits for poor
+Descriptive,50,Summarize Globalisation and Indian Economy.,,,,,Chapter explains global integration and impacts

@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Food security means?,Availability of food,Access to food,Affordability of food,All of these,All of these
+MCQ,2,Which element ensures enough food for all?,Availability,Accessibility,Affordability,None,Availability
+MCQ,3,Which element ensures people can buy food?,Availability,Accessibility,Affordability,None,Affordability
+MCQ,4,Which element ensures food reaches people?,Availability,Accessibility,Affordability,None,Accessibility
+MCQ,5,Which group is most food insecure?,Urban rich,Rural poor,Industrialists,None,Rural poor
+MCQ,6,Which state has high food insecurity?,Punjab,Haryana,Bihar,Kerala,Bihar
+MCQ,7,Which natural disaster causes food insecurity?,Earthquake,Drought,Cyclone,All,All
+MCQ,8,Which crop failure affects food security?,Cash crop,Food crop,None,None,Food crop
+MCQ,9,Which organisation maintains buffer stock?,FSSAI,FCI,RBI,None,FCI
+MCQ,10,Buffer stock consists of?,Food grains,Vegetables,Milk,None,Food grains
+MCQ,11,Which grains are stored as buffer stock?,Rice and wheat,Pulses,Fruits,None,Rice and wheat
+MCQ,12,Which system distributes food grains?,PDS,MGNREGA,ICDS,None,PDS
+MCQ,13,Full form of PDS?,Public Distribution System,Private Distribution System,Primary Distribution System,None,Public Distribution System
+MCQ,14,Which shops sell rationed food?,Fair price shops,Markets,Malls,None,Fair price shops
+MCQ,15,Who issues ration cards?,Banks,Government,FCI,None,Government
+MCQ,16,Which card is for poorest?,APL,BPL,Antyodaya,None,Antyodaya
+MCQ,17,Antyodaya Anna Yojana started in?,1997,2000,2005,None,2000
+MCQ,18,Which programme targets poorest of poor?,APL,BPL,AAY,None,AAY
+MCQ,19,Which programme provides food to children?,PDS,ICDS,MGNREGA,None,ICDS
+MCQ,20,ICDS stands for?,Integrated Child Development Services,Indian Child Development Scheme,None,None,Integrated Child Development Services
+MCQ,21,Which programme provides mid-day meals?,ICDS,Mid-Day Meal Scheme,PDS,None,Mid-Day Meal Scheme
+MCQ,22,Which age group benefits from ICDS?,Children below 6 years,Adults,Elderly,None,Children below 6 years
+MCQ,23,Which improves nutritional status?,Mid-Day Meal,PDS,None,None,Mid-Day Meal
+MCQ,24,Which group suffers seasonal hunger?,Farm labourers,Industrial workers,None,None,Farm labourers
+MCQ,25,Which hunger is long term?,Seasonal,Chronic,None,None,Chronic
+MCQ,26,Which hunger occurs during off-season?,Seasonal,Chronic,None,None,Seasonal
+MCQ,27,Which causes chronic hunger?,Low income,High income,None,None,Low income
+MCQ,28,Which scheme provides subsidised food?,PDS,MGNREGA,None,None,PDS
+MCQ,29,Which agency procures food grains?,FCI,RBI,None,None,FCI
+MCQ,30,Which price is fixed for farmers?,Market price,Minimum Support Price,None,None,Minimum Support Price
+MCQ,31,MSP announced by?,Government,FCI,RBI,None,Government
+MCQ,32,Which helps during calamities?,Buffer stock,PDS,None,None,Buffer stock
+MCQ,33,Which state improved food security?,Kerala,Bihar,None,None,Kerala
+MCQ,34,Which crop ensures food security?,Wheat and rice,Cotton,None,None,Wheat and rice
+MCQ,35,Which group is food secure?,Rich households,Landless labourers,None,None,Rich households
+MCQ,36,Which problem affects PDS?,Leakage,Efficiency,None,None,Leakage
+MCQ,37,Which ensures food to school children?,Mid-Day Meal,ICDS,None,None,Mid-Day Meal
+MCQ,38,Which programme ensures nutrition for women?,ICDS,PDS,None,None,ICDS
+MCQ,39,Which element fails during famine?,Availability,Accessibility,Affordability,All,All
+MCQ,40,Which disaster causes famine?,Drought,Flood,None,None,Drought
+MCQ,41,Which region faces food insecurity?,Tribal areas,Urban rich,None,None,Tribal areas
+MCQ,42,Which hunger affects poor daily?,Chronic,Seasonal,None,None,Chronic
+MCQ,43,Which system stabilises food prices?,Buffer stock,PDS,None,None,Buffer stock
+MCQ,44,Which scheme replaced TPDS?,NFSA,PDS,None,None,NFSA
+MCQ,45,Which law ensures right to food?,NFSA,RBI Act,None,None,NFSA
+MCQ,46,Food security depends on?,Production distribution purchasing power,Only production,None,None,Production distribution purchasing power
+MCQ,47,Which sector affects food security most?,Agriculture,Industry,None,None,Agriculture
+MCQ,48,Which increases food availability?,High yield crops,Imports,None,None,High yield crops
+MCQ,49,Which improves access to food?,PDS,MGNREGA,None,None,PDS
+MCQ,50,Food security ensures?,Healthy life,Poverty,None,None,Healthy life
+
+Integer,1,Meaning of food security?,All people have food,,,,
+Integer,2,Three components?,Availability access affordability,,,,
+Integer,3,Food insecure group?,Rural poor,,,,
+Integer,4,Long term hunger?,Chronic,,,,
+Integer,5,Seasonal hunger occurs in?,Agriculture,,,,
+Integer,6,Buffer stock managed by?,FCI,,,,
+Integer,7,Buffer stock grains?,Rice wheat,,,,
+Integer,8,PDS full form?,Public Distribution System,,,,
+Integer,9,Ration shops called?,Fair price shops,,,,
+Integer,10,Poorest ration card?,Antyodaya,,,,
+Integer,11,AAY started in?,2000,,,,
+Integer,12,Child nutrition scheme?,ICDS,,,,
+Integer,13,School food scheme?,Mid-Day Meal,,,,
+Integer,14,Minimum price for crops?,MSP,,,,
+Integer,15,MSP announced by?,Government,,,,
+Integer,16,Food grain procurement agency?,FCI,,,,
+Integer,17,Food insecurity state?,Bihar,,,,
+Integer,18,Seasonal hunger cause?,Unemployment,,,,
+Integer,19,Chronic hunger cause?,Low income,,,,
+Integer,20,Urban food insecure?,Slum dwellers,,,,
+Integer,21,Tribal food insecurity?,High,,,,
+Integer,22,Food grain storage?,Buffer stock,,,,
+Integer,23,Food distribution system?,PDS,,,,
+Integer,24,Nutrition scheme for women?,ICDS,,,,
+Integer,25,Food law?,NFSA,,,,
+Integer,26,Price stability ensured by?,Buffer stock,,,,
+Integer,27,PDS problem?,Leakage,,,,
+Integer,28,Food secure crop?,Rice wheat,,,,
+Integer,29,Disaster causing famine?,Drought,,,,
+Integer,30,Food insecurity region?,Tribal areas,,,,
+Integer,31,Food security element?,Availability,,,,
+Integer,32,Food affordability depends on?,Income,,,,
+Integer,33,Food accessibility depends on?,Distribution,,,,
+Integer,34,Food grain subsidy?,PDS,,,,
+Integer,35,School attendance improves by?,Mid-Day Meal,,,,
+Integer,36,Children below age?,6,,,,
+Integer,37,Food production sector?,Agriculture,,,,
+Integer,38,Procurement price?,MSP,,,,
+Integer,39,Famine occurs when?,All elements fail,,,,
+Integer,40,Food security goal?,Healthy population,,,,
+Integer,41,Food security chapter?,Economics,,,,
+Integer,42,Government food policy?,PDS,,,,
+Integer,43,Food insecurity cause?,Poverty,,,,
+Integer,44,Food secure group?,Rich households,,,,
+Integer,45,Seasonal hunger months?,Off season,,,,
+Integer,46,Food security law year?,2013,,,,
+Integer,47,Distribution outlet?,Fair price shop,,,,
+Integer,48,Food support for poor?,AAY,,,,
+Integer,49,Food security measure?,Buffer stock,,,,
+Integer,50,Food security ensures?,Nutrition,,,,
+
+Descriptive,1,What is food security?,,,,,Ensuring food for all at all times
+Descriptive,2,Explain components of food security.,,,,,Availability accessibility affordability
+Descriptive,3,Who are food insecure people?,,,,,Poor vulnerable groups
+Descriptive,4,What causes food insecurity?,,,,,Poverty disasters unemployment
+Descriptive,5,Explain seasonal hunger.,,,,,Occurs during off-season
+Descriptive,6,Explain chronic hunger.,,,,,Long term hunger
+Descriptive,7,What is buffer stock?,,,,,Stored food grains
+Descriptive,8,Role of FCI.,,,,,Procurement and storage
+Descriptive,9,What is PDS?,,,,,System to distribute food
+Descriptive,10,Role of fair price shops.,,,,,Sell subsidised food
+Descriptive,11,What is Antyodaya Anna Yojana?,,,,,Food for poorest
+Descriptive,12,Explain ICDS.,,,,,Nutrition for children and women
+Descriptive,13,Explain Mid-Day Meal Scheme.,,,,,School nutrition programme
+Descriptive,14,What is MSP?,,,,,Minimum price for farmers
+Descriptive,15,Why buffer stock needed?,,,,,Emergency and price stability
+Descriptive,16,Food insecurity during disasters.,,,,,Crop failure
+Descriptive,17,Who are vulnerable groups?,,,,,SC ST landless labourers
+Descriptive,18,Food insecurity in rural areas.,,,,,Seasonal unemployment
+Descriptive,19,Food insecurity in urban areas.,,,,,Slums joblessness
+Descriptive,20,How does poverty cause hunger?,,,,,Low purchasing power
+Descriptive,21,Explain role of government.,,,,,Food policies schemes
+Descriptive,22,Problems of PDS.,,,,,Leakage corruption
+Descriptive,23,How food security ensures health?,,,,,Prevents malnutrition
+Descriptive,24,Why food security important?,,,,,Basic survival
+Descriptive,25,How employment improves food security?,,,,,Income generation
+Descriptive,26,Role of agriculture.,,,,,Food production
+Descriptive,27,Explain famine.,,,,,Extreme food shortage
+Descriptive,28,Food security in India.,,,,,Government schemes
+Descriptive,29,How Mid-Day Meal helps?,,,,,Nutrition attendance
+Descriptive,30,Role of ICDS.,,,,,Child development
+Descriptive,31,What is NFSA?,,,,,Legal right to food
+Descriptive,32,How buffer stock stabilises prices?,,,,,Controls supply
+Descriptive,33,Why tribals food insecure?,,,,,Isolation poverty
+Descriptive,34,Explain food availability.,,,,,Sufficient production
+Descriptive,35,Explain food accessibility.,,,,,Distribution network
+Descriptive,36,Explain food affordability.,,,,,Purchasing power
+Descriptive,37,What is public intervention?,,,,,Government action
+Descriptive,38,Why hunger persists?,,,,,Inequality poverty
+Descriptive,39,Food security challenges.,,,,,Population disasters
+Descriptive,40,Role of ration cards.,,,,,Identify beneficiaries
+Descriptive,41,Food security for children.,,,,,Nutrition schemes
+Descriptive,42,Food security for women.,,,,,ICDS
+Descriptive,43,Importance of MSP.,,,,,Farmer protection
+Descriptive,44,Why buffer stock criticized?,,,,,Excess storage
+Descriptive,45,Explain seasonal food insecurity.,,,,,Agricultural cycles
+Descriptive,46,How climate affects food security?,,,,,Crop failure
+Descriptive,47,Role of PDS in India.,,,,,Access to food
+Descriptive,48,Food security and nutrition.,,,,,Healthy society
+Descriptive,49,Long-term food security measures.,,,,,Growth distribution
+Descriptive,50,Summarise Food Security in India.,,,,,Ensuring food through government measures

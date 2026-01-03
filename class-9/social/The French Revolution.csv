@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,The French Revolution began in?,1774,1789,1799,1815,1789
+MCQ,2,Which ruler was overthrown during the French Revolution?,Louis XIV,Louis XV,Louis XVI,Napoleon, Louis XVI
+MCQ,3,The French society was divided into how many estates?,2,3,4,5,3
+MCQ,4,Which estate paid taxes?,First,Second,Third,None,Third
+MCQ,5,Which estate consisted of clergy?,First,Second,Third,None,First
+MCQ,6,Which estate consisted of nobles?,First,Second,Third,None,Second
+MCQ,7,Which estate formed the majority of population?,First,Second,Third,None,Third
+MCQ,8,What was the Estates-General?,Parliament,Court,Assembly of estates,Army,Assembly of estates
+MCQ,9,Who called the Estates-General meeting in 1789?,Louis XIV,Louis XV,Louis XVI,Napoleon,Louis XVI
+MCQ,10,What was the Bastille?,Palace,Prison,Fort,Church,Prison
+MCQ,11,Storming of Bastille occurred on?,4 July 1776,14 July 1789,5 May 1789,21 Sept 1792,14 July 1789
+MCQ,12,Who formed the National Assembly?,First Estate,Second Estate,Third Estate,Clergy,Third Estate
+MCQ,13,Tennis Court Oath was taken by?,Nobles,Clergy,Third Estate,King,Third Estate
+MCQ,14,The Tennis Court Oath pledged to?,Overthrow king,Write constitution,Start war,None,Write constitution
+MCQ,15,Which document proclaimed freedom and equality?,Magna Carta,Bill of Rights,Declaration of Rights of Man,None,Declaration of Rights of Man
+MCQ,16,Declaration of Rights was adopted in?,1789,1791,1792,1794,1789
+MCQ,17,Who led the Jacobins?,Robespierre,Napoleon,Marat,Lafayette,Robespierre
+MCQ,18,Which group represented small shopkeepers?,Girondins,Jacobins,Sans-culottes,Nobles,Sans-culottes
+MCQ,19,What was the Guillotine?,Sword,Gun,Execution device,Prison,Execution device
+MCQ,20,Reign of Terror lasted from?,1789-90,1791-92,1793-94,1795-96,1793-94
+MCQ,21,Who was executed during Reign of Terror?,Louis XVI,Napoleon,Lafayette,Both A and Queen,Both A and Queen
+MCQ,22,Who was the queen of France?,Marie Antoinette,Victoria,Elizabeth,None,Marie Antoinette
+MCQ,23,Which political club was most radical?,Girondins,Jacobins,Feuillants,Nobles,Jacobins
+MCQ,24,Who introduced the policy of Terror?,Napoleon,Robespierre,Louis XVI,None,Robespierre
+MCQ,25,Which class benefited most after revolution?,Clergy,Nobility,Bourgeoisie,Peasants,Bourgeoisie
+MCQ,26,Which new constitution was framed in 1791?,Monarchy,Republic,Absolute monarchy,None,Monarchy
+MCQ,27,France became a republic in?,1789,1791,1792,1794,1792
+MCQ,28,Who abolished monarchy?,National Assembly,Convention,Directory,Jacobins,Convention
+MCQ,29,Who introduced metric system?,Louis XVI,Jacobins,Napoleon,None,Jacobins
+MCQ,30,What was the motto of French Revolution?,Liberty Equality Fraternity,Justice Peace Power,None,None,Liberty Equality Fraternity
+MCQ,31,Which tax was paid to church?,Taille,Tithe,Gabelle,None,Tithe
+MCQ,32,Gabelle was a tax on?,Land,Salt,Bread,Wine,Salt
+MCQ,33,Which idea inspired revolution?,Socialism,Democracy,Enlightenment,None,Enlightenment
+MCQ,34,Who wrote The Social Contract?,Locke,Voltaire,Rousseau,Montesquieu,Rousseau
+MCQ,35,Who proposed separation of powers?,Rousseau,Montesquieu,Voltaire,Locke,Montesquieu
+MCQ,36,Which book criticised monarchy?,Spirit of Laws,Social Contract,Two Treatises,None,Social Contract
+MCQ,37,Who emerged as ruler after revolution?,Louis XVI,Robespierre,Napoleon,None,Napoleon
+MCQ,38,Directory was a?,Monarchy,Five-member executive,Parliament,None,Five-member executive
+MCQ,39,Which year Napoleon became emperor?,1799,1802,1804,1815,1804
+MCQ,40,Which right was natural?,Equality,Taxation,Slavery,None,Equality
+MCQ,41,Which group opposed Jacobins?,Sans-culottes,Girondins,Peasants,None,Girondins
+MCQ,42,Which symbol represented freedom?,Crown,Red cap,Chain,None,Red cap
+MCQ,43,Which symbol stood for unity?,Broken chain,Bundle of rods,Crown,None,Bundle of rods
+MCQ,44,Who controlled prices during Terror?,Merchants,Jacobins,King,None,Jacobins
+MCQ,45,Which law abolished slavery?,1791 law,1792 law,1794 law,None,1794 law
+MCQ,46,Who were passive citizens?,Rich men,Poor men,Women,None,Poor men
+MCQ,47,Who got voting rights initially?,All citizens,Women,Property owners,None,Property owners
+MCQ,48,Which event inspired people worldwide?,American War,French Revolution,Russian Revolution,None,French Revolution
+MCQ,49,Which country helped American Revolution?,France,Spain,Britain,None,France
+MCQ,50,Main cause of revolution?,Economic crisis,Religion,War,None,Economic crisis
+
+Integer,1,Year French Revolution began?,1789,,,,
+Integer,2,Number of estates?,3,,,,
+Integer,3,King executed in?,1793,,,,
+Integer,4,Storming of Bastille date?,14 July 1789,,,,
+Integer,5,Assembly formed by Third Estate?,National Assembly,,,,
+Integer,6,Oath taken at?,Tennis Court,,,,
+Integer,7,Document of rights?,Declaration of Rights,,,,
+Integer,8,Leader of Jacobins?,Robespierre,,,,
+Integer,9,Execution device?,Guillotine,,,,
+Integer,10,Period of Terror?,1793-1794,,,,
+Integer,11,Queen executed?,Marie Antoinette,,,,
+Integer,12,Radical club?,Jacobins,,,,
+Integer,13,France became republic in?,1792,,,,
+Integer,14,Tax on salt?,Gabelle,,,,
+Integer,15,Church tax?,Tithe,,,,
+Integer,16,Enlightenment thinker?,Rousseau,,,,
+Integer,17,Separation of powers by?,Montesquieu,,,,
+Integer,18,Executive after convention?,Directory,,,,
+Integer,19,Metric system introduced by?,Jacobins,,,,
+Integer,20,Revolution slogan?,Liberty Equality Fraternity,,,,
+Integer,21,Book by Rousseau?,Social Contract,,,,
+Integer,22,First estate?,Clergy,,,,
+Integer,23,Second estate?,Nobility,,,,
+Integer,24,Third estate majority?,Yes,,,,
+Integer,25,Prison attacked?,Bastille,,,,
+Integer,26,Republic established?,1792,,,,
+Integer,27,Slavery abolished?,1794,,,,
+Integer,28,Emperor crowned?,Napoleon,,,,
+Integer,29,Monarchy ended?,1792,,,,
+Integer,30,Five-member executive?,Directory,,,,
+Integer,31,Symbol of freedom?,Red cap,,,,
+Integer,32,Symbol of unity?,Bundle of rods,,,,
+Integer,33,Leader executed in 1794?,Robespierre,,,,
+Integer,34,Tax paid by Third Estate?,Taille,,,,
+Integer,35,Natural right?,Equality,,,,
+Integer,36,Passive citizens?,Poor men,,,,
+Integer,37,Voting right based on?,Property,,,,
+Integer,38,American Revolution supporter?,France,,,,
+Integer,39,New constitution year?,1791,,,,
+Integer,40,Terror policy leader?,Robespierre,,,,
+Integer,41,Bourgeoisie belonged to?,Third Estate,,,,
+Integer,42,Absolute ruler before revolution?,King,,,,
+Integer,43,Legislative body?,National Assembly,,,,
+Integer,44,End of monarchy?,Convention,,,,
+Integer,45,Execution method?,Beheading,,,,
+Integer,46,French flag colours?,Blue White Red,,,,
+Integer,47,Revolution inspired?,Democracy,,,,
+Integer,48,Napoleon crowned emperor?,1804,,,,
+Integer,49,Main burden of taxes?,Third Estate,,,,
+Integer,50,Revolution end ruler?,Napoleon,,,,
+
+Descriptive,1,What was the French Revolution?,,,,,A mass uprising against monarchy and inequality
+Descriptive,2,Describe French society before 1789.,,,,,Divided into three unequal estates
+Descriptive,3,Explain the role of the Third Estate.,,,,,Paid taxes and led revolution
+Descriptive,4,What was the Estates-General?,,,,,Assembly of three estates
+Descriptive,5,Why was Bastille attacked?,,,,,Symbol of tyranny
+Descriptive,6,What was the Tennis Court Oath?,,,,,Pledge to frame constitution
+Descriptive,7,Explain the Declaration of Rights.,,,,,Guaranteed equality and freedom
+Descriptive,8,Who were Jacobins?,,,,,Radical revolutionary group
+Descriptive,9,Explain the Reign of Terror.,,,,,Period of mass executions
+Descriptive,10,Role of Robespierre.,,,,,Leader of Jacobins
+Descriptive,11,Why was Louis XVI executed?,,,,,For treason
+Descriptive,12,What changes did revolution bring?,,,,,End of feudal privileges
+Descriptive,13,Explain economic causes of revolution.,,,,,Debt food shortage taxes
+Descriptive,14,Role of philosophers.,,,,,Spread ideas of equality
+Descriptive,15,What was the guillotine?,,,,,Execution machine
+Descriptive,16,Who were Sans-culottes?,,,,,Poor revolutionary people
+Descriptive,17,How did women participate?,,,,,Marches protests clubs
+Descriptive,18,Why did monarchy fall?,,,,,Failure to reform
+Descriptive,19,What was the Directory?,,,,,Five member executive
+Descriptive,20,Rise of Napoleon.,,,,,Came to power in 1799
+Descriptive,21,Impact on Europe.,,,,,Spread democratic ideas
+Descriptive,22,Why peasants revolted?,,,,,Heavy taxes and feudal dues
+Descriptive,23,What was feudal system?,,,,,System of privileges
+Descriptive,24,Why Enlightenment important?,,,,,Inspired revolution
+Descriptive,25,Explain slogan of revolution.,,,,,Liberty equality fraternity
+Descriptive,26,What rights were given?,,,,,Freedom equality
+Descriptive,27,Why constitution of 1791 failed?,,,,,Limited voting
+Descriptive,28,How slavery was abolished?,,,,,1794 law
+Descriptive,29,What symbols represented revolution?,,,,,Red cap tricolour
+Descriptive,30,Role of National Assembly.,,,,,Made laws
+Descriptive,31,Why terror ended?,,,,,Excess violence
+Descriptive,32,Why Robespierre executed?,,,,,Abuse of power
+Descriptive,33,What lessons from revolution?,,,,,Equality democracy
+Descriptive,34,Effect on common people.,,,,,End of exploitation
+Descriptive,35,Why taxes were unfair?,,,,,Only third estate paid
+Descriptive,36,What was old regime?,,,,,Pre-revolution system
+Descriptive,37,Role of women.,,,,,Political awareness
+Descriptive,38,Why food shortage occurred?,,,,,Bad harvests
+Descriptive,39,Role of bourgeoisie.,,,,,Led revolution
+Descriptive,40,What was absolute monarchy?,,,,,Unlimited king power
+Descriptive,41,What was constitutional monarchy?,,,,,King with constitution
+Descriptive,42,Why revolution important?,,,,,Birth of democracy
+Descriptive,43,How revolution ended?,,,,,Rise of Napoleon
+Descriptive,44,Why voting rights limited?,,,,,Property qualification
+Descriptive,45,Impact on world.,,,,,Inspired revolutions
+Descriptive,46,Why church lost power?,,,,,Privileges abolished
+Descriptive,47,What reforms were made?,,,,,Uniform laws
+Descriptive,48,Explain equality before law.,,,,,Same law for all
+Descriptive,49,What was national convention?,,,,,Elected assembly
+Descriptive,50,How did revolution change France?,,,,,End of monarchy

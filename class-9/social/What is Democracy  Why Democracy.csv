@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Democracy is a form of government in which power is vested in?,King,Army,People,Judiciary,People
+MCQ,2,Which country is considered the birthplace of democracy?,India,Greece,USA,France,Greece
+MCQ,3,In a democracy, rulers are elected by?,Nomination,Hereditary rule,Elections,Army,Elections
+MCQ,4,Which of the following is a democratic feature?,Rule by one person,Free elections,Military rule,None,Free elections
+MCQ,5,Who elects the government in a democracy?,Judges,Army,People,King,People
+MCQ,6,Which is NOT a democratic government?,India,UK,China,Pakistan,China
+MCQ,7,Which country follows a one-party system?,USA,India,China,UK,China
+MCQ,8,Democracy allows which right?,No criticism,Right to criticise,No opposition,None,Right to criticise
+MCQ,9,Which is an example of democratic decision?,By ruler,By army,By majority vote,None,By majority vote
+MCQ,10,Which feature ensures accountability?,Dictatorship,Free elections,Monarchy,None,Free elections
+MCQ,11,Who makes laws in a democracy?,King,People’s representatives,Army,None,People’s representatives
+MCQ,12,Which of these is a non-democratic government?,India,USA,Myanmar,France,Myanmar
+MCQ,13,What is universal adult franchise?,Vote by rich only,Vote by adults,Vote by men only,None,Vote by adults
+MCQ,14,Minimum age to vote in India is?,16,18,21,25,18
+MCQ,15,Which is a democratic outcome?,Oppression,Equality,Dictatorship,None,Equality
+MCQ,16,Which institution conducts elections in India?,Supreme Court,Parliament,Election Commission,None,Election Commission
+MCQ,17,Democracy is based on?,Force,Consent of people,Army,None,Consent of people
+MCQ,18,Which country practices direct democracy?,India,USA,Switzerland,China,Switzerland
+MCQ,19,Which of these supports democracy?,Censorship,Free press,One-party rule,None,Free press
+MCQ,20,Which is a merit of democracy?,Slow decisions,Instability,Better decisions,None,Better decisions
+MCQ,21,Which is a demerit of democracy?,Equal rights,Accountability,Delay in decisions,None,Delay in decisions
+MCQ,22,Democracy improves decision making because?,Decisions by ruler,Collective wisdom,Force,None,Collective wisdom
+MCQ,23,Which government allows opposition?,Democracy,Dictatorship,Monarchy,None,Democracy
+MCQ,24,Which is a key principle of democracy?,Inequality,Majority rule,Minority rule,None,Majority rule
+MCQ,25,Democracy promotes which value?,Fear,Liberty,Suppression,None,Liberty
+MCQ,26,Which is an example of democracy?,Military rule,Hereditary rule,India,None,India
+MCQ,27,Democracy ensures dignity of?,Rulers,Army,Individuals,None,Individuals
+MCQ,28,Which right allows people to choose leaders?,Right to property,Right to vote,Right to religion,None,Right to vote
+MCQ,29,Which is essential for democracy?,Free elections,Censorship,Single party,None,Free elections
+MCQ,30,Which system has no opposition?,Democracy,Dictatorship,Republic,None,Dictatorship
+MCQ,31,Which of these is democratic?,Rule of law,Rule of king,Rule of army,None,Rule of law
+MCQ,32,Democracy allows peaceful change of?,Climate,Government,Population,None,Government
+MCQ,33,Which country is democratic?,India,China,Saudi Arabia,None,India
+MCQ,34,Which form of government is accountable?,Dictatorship,Monarchy,Democracy,None,Democracy
+MCQ,35,Which feature prevents misuse of power?,Free media,Army rule,None,None,Free media
+MCQ,36,Which is a democratic value?,Equality,Discrimination,Suppression,None,Equality
+MCQ,37,Which government respects minority rights?,Dictatorship,Democracy,Monarchy,None,Democracy
+MCQ,38,Which is NOT a feature of democracy?,Elections,Equality,Censorship,None,Censorship
+MCQ,39,Democracy leads to?,Conflict only,Better society,No development,None,Better society
+MCQ,40,Which right protects citizens?,Fundamental Rights,Army law,None,None,Fundamental Rights
+MCQ,41,Which type of democracy exists in India?,Direct,Indirect,Monarchy,None,Indirect
+MCQ,42,Which organ makes laws?,Judiciary,Legislature,Executive,None,Legislature
+MCQ,43,Which organ implements laws?,Legislature,Executive,Judiciary,None,Executive
+MCQ,44,Which organ interprets laws?,Executive,Judiciary,Legislature,None,Judiciary
+MCQ,45,Democracy allows which freedom?,Speech,No speech,None,None,Speech
+MCQ,46,Which system has regular elections?,Dictatorship,Democracy,None,None,Democracy
+MCQ,47,Which country has longest democracy?,USA,UK,India,None,USA
+MCQ,48,Which value is central to democracy?,Equality,Force,None,None,Equality
+MCQ,49,Democracy stands for?,Rule of few,Rule of people,None,None,Rule of people
+MCQ,50,Which government can be removed peacefully?,Dictatorship,Democracy,None,None,Democracy
+
+Integer,1,Form of government by people?,Democracy,,,,
+Integer,2,Birthplace of democracy?,Greece,,,,
+Integer,3,Minimum voting age?,18,,,,
+Integer,4,Vote right name?,Universal adult franchise,,,,
+Integer,5,Indian democracy type?,Indirect,,,,
+Integer,6,Election body in India?,Election Commission,,,,
+Integer,7,Law making organ?,Legislature,,,,
+Integer,8,Law executing organ?,Executive,,,,
+Integer,9,Law interpreting organ?,Judiciary,,,,
+Integer,10,One-party country?,China,,,,
+Integer,11,Democratic country?,India,,,,
+Integer,12,Rule by people?,Democracy,,,,
+Integer,13,Power source in democracy?,People,,,,
+Integer,14,Peaceful change of?,Government,,,,
+Integer,15,Decision by?,Majority,,,,
+Integer,16,Opposition allowed in?,Democracy,,,,
+Integer,17,Right to choose leaders?,Vote,,,,
+Integer,18,Free media supports?,Democracy,,,,
+Integer,19,Accountable government?,Democracy,,,,
+Integer,20,Equality ensured by?,Democracy,,,,
+Integer,21,Merit of democracy?,Better decisions,,,,
+Integer,22,Demerit of democracy?,Delay,,,,
+Integer,23,Freedom of speech exists in?,Democracy,,,,
+Integer,24,Country with direct democracy?,Switzerland,,,,
+Integer,25,Non-democratic government?,Dictatorship,,,,
+Integer,26,Rule of law exists in?,Democracy,,,,
+Integer,27,Individual dignity ensured?,Yes,,,,
+Integer,28,Fundamental rights protect?,Citizens,,,,
+Integer,29,Democracy based on?,Consent,,,,
+Integer,30,Government answerable to?,People,,,,
+Integer,31,Free elections ensure?,Accountability,,,,
+Integer,32,Democracy respects?,Minorities,,,,
+Integer,33,Public opinion matters in?,Democracy,,,,
+Integer,34,Regular elections period?,5 years,,,,
+Integer,35,Power misuse checked by?,Media,,,,
+Integer,36,Democratic value?,Liberty,,,,
+Integer,37,Decision making improves due to?,Collective wisdom,,,,
+Integer,38,Democracy promotes?,Equality,,,,
+Integer,39,Government can be removed?,Peacefully,,,,
+Integer,40,Right to criticise exists?,Yes,,,,
+Integer,41,Authority comes from?,People,,,,
+Integer,42,Representative chosen by?,Election,,,,
+Integer,43,Democracy allows?,Opposition,,,,
+Integer,44,One ruler system?,Dictatorship,,,,
+Integer,45,Democratic society is?,Inclusive,,,,
+Integer,46,Rule by majority with?,Minority rights,,,,
+Integer,47,Power separation?,Three organs,,,,
+Integer,48,Democracy encourages?,Participation,,,,
+Integer,49,Final authority?,People,,,,
+Integer,50,Best form of government?,Democracy,,,,
+
+Descriptive,1,What is democracy?,,,,,Government by elected representatives of the people
+Descriptive,2,Define democracy.,,,,,Rule of the people
+Descriptive,3,Why democracy is called people’s government?,,,,,People elect rulers
+Descriptive,4,What are the key features of democracy?,,,,,Elections equality rule of law
+Descriptive,5,Explain universal adult franchise.,,,,,Right of all adults to vote
+Descriptive,6,Why democracy is better than dictatorship?,,,,,Ensures freedom and equality
+Descriptive,7,Explain merits of democracy.,,,,,Better decisions accountability dignity
+Descriptive,8,Explain demerits of democracy.,,,,,Delay instability
+Descriptive,9,Why democracy improves decision making?,,,,,Collective wisdom
+Descriptive,10,How democracy ensures accountability?,,,,,Through elections
+Descriptive,11,Why democracy enhances dignity?,,,,,Equal status to citizens
+Descriptive,12,What is direct democracy?,,,,,People decide directly
+Descriptive,13,What is indirect democracy?,,,,,Elected representatives decide
+Descriptive,14,Why India follows indirect democracy?,,,,,Large population
+Descriptive,15,What is rule of law?,,,,,Law above all
+Descriptive,16,Why free elections are important?,,,,,Fair representation
+Descriptive,17,Role of opposition in democracy.,,,,,Checks government
+Descriptive,18,Why free media is necessary?,,,,,Informs people
+Descriptive,19,Explain separation of powers.,,,,,Legislature executive judiciary
+Descriptive,20,Why democracy needs education?,,,,,Informed voters
+Descriptive,21,How democracy allows peaceful change?,,,,,Elections
+Descriptive,22,What are fundamental rights?,,,,,Basic citizen rights
+Descriptive,23,Why democracy protects minorities?,,,,,Prevents majority rule misuse
+Descriptive,24,Explain accountability in democracy.,,,,,Government answerable to people
+Descriptive,25,Why democracy is preferred worldwide?,,,,,Fair and just system
+Descriptive,26,What is majority rule?,,,,,Decision by majority
+Descriptive,27,Why minority rights important?,,,,,Prevent oppression
+Descriptive,28,How democracy promotes equality?,,,,,Equal rights
+Descriptive,29,What is political equality?,,,,,One person one vote
+Descriptive,30,Why criticism is allowed?,,,,,Improves governance
+Descriptive,31,Explain people’s participation.,,,,,Voting debate
+Descriptive,32,How democracy corrects mistakes?,,,,,Elections and criticism
+Descriptive,33,Why democracy is slow?,,,,,Consultation process
+Descriptive,34,Explain democratic outcomes.,,,,,Equality dignity development
+Descriptive,35,Why democracy is accountable?,,,,,Public scrutiny
+Descriptive,36,Explain consent of the governed.,,,,,Power from people
+Descriptive,37,Why democracy is inclusive?,,,,,All groups represented
+Descriptive,38,Explain importance of elections.,,,,,Choice of leaders
+Descriptive,39,Why dictatorship is risky?,,,,,Power misuse
+Descriptive,40,How democracy promotes justice?,,,,,Rule of law
+Descriptive,41,Explain dignity of citizens.,,,,,Respect and rights
+Descriptive,42,What is democratic government?,,,,,Elected government
+Descriptive,43,Why democracy allows opposition?,,,,,Alternative views
+Descriptive,44,Explain liberty in democracy.,,,,,Freedom of speech
+Descriptive,45,Why democracy is transparent?,,,,,Open governance
+Descriptive,46,How democracy handles conflicts?,,,,,Dialogue
+Descriptive,47,Explain accountability mechanisms.,,,,,Media elections
+Descriptive,48,Why democracy is dynamic?,,,,,Can reform
+Descriptive,49,What is the essence of democracy?,,,,,People’s participation
+Descriptive,50,Why democracy is the best form of government?,,,,,Ensures freedom equality accountability

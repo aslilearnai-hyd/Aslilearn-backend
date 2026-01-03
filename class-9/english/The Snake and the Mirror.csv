@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of "The Snake and the Mirror"?,R.K. Narayan,Vaikom Muhammad Basheer,Premchand,Ruskin Bond,Vaikom Muhammad Basheer
+MCQ,2,What was the profession of the narrator?,Teacher,Doctor,Farmer,Lawyer,Doctor
+MCQ,3,Where did the narrator live?,Village hut,Town house,Hostel,Hospital,Village hut
+MCQ,4,What did the narrator earn?,High salary,Little money,Nothing,Inheritance,Little money
+MCQ,5,What animal entered the room?,Dog,Cat,Snake,Rat,Snake
+MCQ,6,Where did the snake sit?,Floor,Bed,Table,Shoulder,Shoulder
+MCQ,7,What object attracted the snake?,Food,Light,Mirror,Sound,Mirror
+MCQ,8,What was the narrator looking at before the snake came?,Book,Mirror,Window,Snake,Mirror
+MCQ,9,What was the narrator thinking about?,Marriage,Money,Job,Food,Marriage
+MCQ,10,What did the narrator plan to buy?,Car,House,Mirror,Clothes,Clothes
+MCQ,11,How did the narrator describe himself?,Handsome,Poor,Ugly,Rich,Handsome
+MCQ,12,What quality of the narrator is highlighted?,Bravery,Vanity,Anger,Fear,Vanity
+MCQ,13,What type of snake was it?,Cobra,Viper,Python,Unknown,Cobra
+MCQ,14,What saved the narrator’s life?,Luck,Prayer,Mirror,Snake mercy,Mirror
+MCQ,15,What was the snake doing?,Sleeping,Watching narrator,Admiring itself,Attacking,Admiring itself
+MCQ,16,What did the narrator do when snake moved?,Ran away,Shouted,Fainted,Stood still,Ran away
+MCQ,17,Where did the narrator hide?,Bathroom,Roof,Neighbour’s house,Tree,Neighbour’s house
+MCQ,18,How long did narrator stay away?,Few minutes,One hour,Whole night,Two days,Whole night
+MCQ,19,What happened to narrator’s belongings?,Safe,Stolen,Broken,Burnt,Stolen
+MCQ,20,Who stole his belongings?,Snake,Neighbours,Thieves,Animals,Thieves
+MCQ,21,What was left behind?,Money,Clothes,Box,Dirty vest,Dirty vest
+MCQ,22,What tone does the story have?,Tragic,Serious,Humorous,Horror,Humorous
+MCQ,23,The story is an example of?,Tragedy,Comedy,Autobiography,Fantasy,Autobiography
+MCQ,24,What theme is central to the story?,Fear and humour,War,Love,Adventure,Fear and humour
+MCQ,25,What quality of snake is shown?,Cruelty,Intelligence,Vanity,Anger,Vanity
+MCQ,26,Why didn’t the snake bite?,No venom,It was sleepy,Mirror distracted,It was friendly,Mirror distracted
+MCQ,27,What did narrator fear the most?,Snake bite,Darkness,Loneliness,Poverty,Snake bite
+MCQ,28,What did narrator think snake would do?,Sleep,Bite,Leave,Dance,Bite
+MCQ,29,How did narrator escape?,Slowly,Silently,Running,Climbing,SIlently
+MCQ,30,What did narrator realise later?,Fear useless,Luck saved him,Snake kind,Mirror magic,Luck saved him
+MCQ,31,What did mirror symbolise?,Beauty,Vanity,Light,Hope,Vanity
+MCQ,32,What kind of house was it?,Well built,New,Old and poor,Luxurious,Old and poor
+MCQ,33,What did narrator lose?,Everything,Money only,Clothes only,Nothing,Everything
+MCQ,34,What lesson does the story teach?,Bravery,Pride,Humility,Fearlessness,Humility
+MCQ,35,How is fear portrayed?,Seriously,Lightly,Dramatically,Angrily,Lightly
+MCQ,36,What kind of person was narrator?,Proud,Greedy,Simple,Lazy,Proud
+MCQ,37,Why is story amusing?,Snake behaviour,Narrator thoughts,Unexpected events,All of these,All of these
+MCQ,38,What was narrator’s age?,Young,Middle-aged,Old,Teenager,Young
+MCQ,39,What saved narrator from snake bite?,Mirror reflection,Luck,Prayer,Speed,Mirror reflection
+MCQ,40,What happened after narrator returned?,House empty,Snake dead,Police came,Fire,House empty
+MCQ,41,What did narrator learn about life?,Fear is useless,Pride dangerous,Humility needed,All of these,All of these
+MCQ,42,Snake’s action shows?,Intelligence,Vanity,Kindness,Fear,Vanity
+MCQ,43,What literary device is used?,Irony,Simile,Metaphor,Alliteration,Irony
+MCQ,44,What was narrator’s reaction to snake?,Anger,Fear,Curiosity,Joy,Fear
+MCQ,45,What made the situation comic?,Narrator thoughts,Snake vanity,Mirror,All,All
+MCQ,46,How did narrator describe the snake?,Dangerous,Beautiful,Big,Silent,Beautiful
+MCQ,47,Why didn’t narrator scream?,Fear,Shock,Wisdom,Snake threat,Fear
+MCQ,48,What does mirror represent?,Reality,Pride,Wealth,Time,Pride
+MCQ,49,The story ends on a note of?,Fear,Loss,Humour,Tragedy,Humour
+MCQ,50,Main message of story?,Luck matters,Pride foolish,Life unpredictable,All of these,All of these
+
+Integer,1,Author?,Basheer,,,,
+Integer,2,Profession?,Doctor,,,,
+Integer,3,Animal?,Snake,,,,
+Integer,4,Snake type?,Cobra,,,,
+Integer,5,Object attracted?,Mirror,,,,
+Integer,6,Narrator quality?,Vanity,,,,
+Integer,7,House type?,Poor,,,,
+Integer,8,Snake position?,Shoulder,,,,
+Integer,9,Narrator escape?,Run,,,,
+Integer,10,Hide place?,Neighbour,,,,
+Integer,11,Story tone?,Humorous,,,,
+Integer,12,Snake action?,Admire,,,,
+Integer,13,Narrator fear?,Bite,,,,
+Integer,14,Object symbol?,Vanity,,,,
+Integer,15,Snake distracted by?,Reflection,,,,
+Integer,16,Narrator loss?,Belongings,,,,
+Integer,17,Item left?,Vest,,,,
+Integer,18,Story type?,Autobiographical,,,,
+Integer,19,Theme?,Fear and humour,,,,
+Integer,20,Snake behaviour?,Vain,,,,
+Integer,21,Narrator saved by?,Luck,,,,
+Integer,22,House condition?,Leaky,,,,
+Integer,23,Mirror role?,Distraction,,,,
+Integer,24,Narrator plan?,Marriage,,,,
+Integer,25,Snake focus?,Self,,,,
+Integer,26,Narrator reaction?,Fear,,,,
+Integer,27,Story mood?,Comic,,,,
+Integer,28,Time of incident?,Night,,,,
+Integer,29,Narrator age?,Young,,,,
+Integer,30,Snake bite?,No,,,,
+Integer,31,Narrator return?,Morning,,,,
+Integer,32,House state?,Empty,,,,
+Integer,33,Snake interest?,Mirror,,,,
+Integer,34,Narrator nature?,Proud,,,,
+Integer,35,Snake movement?,Slow,,,,
+Integer,36,Narrator lesson?,Humility,,,,
+Integer,37,Story setting?,Village,,,,
+Integer,38,Narrator emotion?,Fear,,,,
+Integer,39,Snake symbol?,Vanity,,,,
+Integer,40,Ending tone?,Humorous,,,,
+Integer,41,Narrator safety?,Luck,,,,
+Integer,42,Snake action result?,Escape,,,,
+Integer,43,Mirror theme?,Pride,,,,
+Integer,44,Narrator loss cause?,Theft,,,,
+Integer,45,Snake threat?,Deadly,,,,
+Integer,46,Story style?,Humour,,,,
+Integer,47,Narrator survival?,Accidental,,,,
+Integer,48,Snake interest shift?,Self-love,,,,
+Integer,49,Story message?,Life unpredictable,,,,
+Integer,50,Chapter name?,The Snake and the Mirror,,,,
+
+Descriptive,1,Who wrote "The Snake and the Mirror"?,,,,,It was written by Vaikom Muhammad Basheer
+Descriptive,2,Describe the narrator.,,,,,He is a young, poor doctor with vanity
+Descriptive,3,Describe the setting of the story.,,,,,A small poor room in a village
+Descriptive,4,How did the snake enter the room?,,,,,Through the roof
+Descriptive,5,What was the narrator doing before snake came?,,,,,Looking at himself in the mirror
+Descriptive,6,Why is the mirror important?,,,,,It distracts the snake
+Descriptive,7,How did vanity affect the narrator?,,,,,He admired his appearance
+Descriptive,8,Describe the snake’s behaviour.,,,,,It admired itself in the mirror
+Descriptive,9,How did the narrator escape?,,,,,By quietly running away
+Descriptive,10,What happened after narrator returned?,,,,,All belongings were stolen
+Descriptive,11,Why didn’t the snake bite the narrator?,,,,,It was distracted by mirror
+Descriptive,12,What makes the story humorous?,,,,,Irony and unexpected events
+Descriptive,13,Explain the theme of the story.,,,,,Fear mixed with humour
+Descriptive,14,What lesson does the story teach?,,,,,Humility and unpredictability of life
+Descriptive,15,How is fear portrayed?,,,,,In a light-hearted manner
+Descriptive,16,Explain irony in the story.,,,,,Snake more vain than narrator
+Descriptive,17,What does the mirror symbolise?,,,,,Human vanity
+Descriptive,18,Why is the story autobiographical?,,,,,Based on author’s experience
+Descriptive,19,How does the author create humour?,,,,,Through thoughts and situation
+Descriptive,20,Describe narrator’s thoughts.,,,,,Fearful yet vain
+Descriptive,21,What role does luck play?,,,,,It saves narrator’s life
+Descriptive,22,How is snake personified?,,,,,It shows vanity
+Descriptive,23,Why is the ending amusing?,,,,,Only vest was left
+Descriptive,24,What message does story give?,,,,,Life is unpredictable
+Descriptive,25,How is danger shown humorously?,,,,,Through irony
+Descriptive,26,Describe narrator’s house.,,,,,Old and poorly built
+Descriptive,27,Why did narrator think of marriage?,,,,,He admired himself
+Descriptive,28,What does snake’s action reveal?,,,,,Self-love
+Descriptive,29,How does humour reduce fear?,,,,,Makes situation lighter
+Descriptive,30,Why is narrator lucky?,,,,,He escaped unharmed
+Descriptive,31,Explain contrast between fear and humour.,,,,,Deadly danger shown comically
+Descriptive,32,Why is the mirror central?,,,,,It changes outcome
+Descriptive,33,What kind of person is narrator?,,,,,Proud yet helpless
+Descriptive,34,What lesson about pride is shown?,,,,,Pride can be foolish
+Descriptive,35,How is irony used?,,,,,Snake ignores human
+Descriptive,36,Explain narrator’s transformation.,,,,,From pride to humility
+Descriptive,37,Why is story memorable?,,,,,Unique humour
+Descriptive,38,Explain author’s writing style.,,,,,Simple and humorous
+Descriptive,39,What makes snake unusual?,,,,,It behaves vainly
+Descriptive,40,How does fear affect thinking?,,,,,Narrator imagines death
+Descriptive,41,Explain symbolic meaning of snake.,,,,,Represents danger
+Descriptive,42,How does humour save story from horror?,,,,,Balances fear
+Descriptive,43,Why is mirror a turning point?,,,,,Distracts snake
+Descriptive,44,Explain narrator’s relief.,,,,,After escaping safely
+Descriptive,45,What values are highlighted?,,,,,Humility and presence of mind
+Descriptive,46,Why didn’t narrator fight?,,,,,He was paralysed with fear
+Descriptive,47,How does story reflect real life?,,,,,Unexpected dangers
+Descriptive,48,Why is title appropriate?,,,,,Snake and mirror are central
+Descriptive,49,What does story say about vanity?,,,,,It can distract even danger
+Descriptive,50,Summarize "The Snake and the Mirror".,,,,,The story humorously shows how vanity and luck save a man from a deadly snake

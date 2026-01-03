@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Manufacturing is the process of,Growing crops,Extracting minerals,Converting raw materials into finished goods,Trading goods,Converting raw materials into finished goods
+MCQ,2,Which industry is known as the backbone of modern industry?,Cotton textile,Iron and steel,IT,Cement,Iron and steel
+MCQ,3,Which industry provides raw material for many industries?,Iron and steel,Cement,Cotton textile,IT,Iron and steel
+MCQ,4,Which industry is a consumer goods industry?,Iron and steel,Cement,Cotton textile,Machine tools,Cotton textile
+MCQ,5,Which industry uses limestone as raw material?,Iron and steel,Cement,Cotton textile,IT,Cement
+MCQ,6,Which factor does NOT affect industrial location?,Raw material,Labour,Capital,Religion,Religion
+MCQ,7,Which industry is agro-based?,Iron and steel,Cement,Cotton textile,Aluminium,Cotton textile
+MCQ,8,Which industry is mineral-based?,Cotton textile,Jute,Iron and steel,Sugar,Iron and steel
+MCQ,9,Which city is called the Manchester of India?,Mumbai,Ahmedabad,Surat,Kanpur,Ahmedabad
+MCQ,10,Which industry uses bauxite as raw material?,Iron and steel,Copper,Aluminium,Cement,Aluminium
+MCQ,11,Which state leads in cotton textile industry?,Punjab,Maharashtra,Kerala,Odisha,Maharashtra
+MCQ,12,Which industry depends heavily on power?,Cottage industry,Handloom,Iron and steel,Agro-based,Iron and steel
+MCQ,13,Which industry produces sugar?,Cement,Textile,Sugar industry,Iron,Sugar industry
+MCQ,14,Which industry is seasonal?,Iron and steel,Cement,Sugar,IT,Sugar
+MCQ,15,Which industry uses coal as fuel?,IT,Cement,Iron and steel,Handloom,Iron and steel
+MCQ,16,Which is a public sector steel plant?,Tata Steel,Bhilai Steel Plant,Jindal Steel,Essar Steel,Bhilai Steel Plant
+MCQ,17,Which industry uses petrochemicals?,Textile,Chemical industry,Cement,Iron,Chemical industry
+MCQ,18,Which industry is the largest in India?,Iron and steel,Cotton textile,Cement,IT,Cotton textile
+MCQ,19,Which industry produces fertilizers?,Textile,Chemical,Cement,Iron,Chemical
+MCQ,20,Which city is an iron and steel centre?,Ahmedabad,Bhilai,Coimbatore,Surat,Bhilai
+MCQ,21,Which industry depends on forests?,Iron and steel,Paper industry,IT,Cement,Paper industry
+MCQ,22,Which industry produces newsprint?,Paper,Cement,Textile,Iron,Paper
+MCQ,23,Which industry causes maximum pollution?,IT,Cottage,Chemical,Iron and steel,Iron and steel
+MCQ,24,Which industry is labour intensive?,Iron and steel,Cotton textile,Cement,Aluminium,Cotton textile
+MCQ,25,Which industry uses iron ore?,Aluminium,Cement,Iron and steel,Textile,Iron and steel
+MCQ,26,Which industry uses limestone and gypsum?,Iron and steel,Cement,Textile,IT,Cement
+MCQ,27,Which city is a major cotton textile centre?,Bengaluru,Ahmedabad,Patna,Shimla,Ahmedabad
+MCQ,28,Which industry uses molasses?,Sugar,Cement,Iron,Textile,Sugar
+MCQ,29,Which industry is capital intensive?,Cotton textile,Cottage,Iron and steel,Handloom,Iron and steel
+MCQ,30,Which industry produces synthetic fibres?,Textile,Chemical,Cement,Iron,Chemical
+MCQ,31,Which industry supports automobile industry?,Textile,Cement,Iron and steel,Paper,Iron and steel
+MCQ,32,Which industry is located near raw material?,Cotton textile,Iron and steel,IT,Software,Iron and steel
+MCQ,33,Which industry uses water transport?,Iron and steel,Cotton textile,Shipbuilding,IT,Shipbuilding
+MCQ,34,Which industry produces aluminium?,Iron and steel,Aluminium industry,Cement,Textile,Aluminium industry
+MCQ,35,Which industry is known for exports?,Cottage,Cotton textile,Iron and steel,Cement,Cotton textile
+MCQ,36,Which industry is environment friendly?,Chemical,Iron and steel,IT,Cement,IT
+MCQ,37,Which industry is located in Coimbatore?,Iron and steel,Cotton textile,Cement,IT,Cotton textile
+MCQ,38,Which industry uses jute?,Cotton textile,Jute textile,Cement,Iron,Jute textile
+MCQ,39,Which industry provides employment to maximum people?,IT,Cotton textile,Iron and steel,Cement,Cotton textile
+MCQ,40,Which industry produces tyres?,Textile,Chemical,Cement,Iron,Chemical
+MCQ,41,Which industry is concentrated in eastern India?,IT,Cotton textile,Iron and steel,Cement,Iron and steel
+MCQ,42,Which industry is dependent on agriculture?,Sugar,Iron and steel,Cement,Aluminium,Sugar
+MCQ,43,Which industry requires skilled labour?,Cottage,IT,Cement,Iron,IT
+MCQ,44,Which industry uses pulp?,Paper,Cement,Iron,Textile,Paper
+MCQ,45,Which industry pollutes water heavily?,IT,Cement,Chemical,Handloom,Chemical
+MCQ,46,Which industry produces plastics?,Textile,Chemical,Cement,Iron,Chemical
+MCQ,47,Which industry uses iron scrap?,Iron and steel,Cement,Textile,IT,Iron and steel
+MCQ,48,Which industry is export oriented?,IT,Cotton textile,Cement,Iron,IT
+MCQ,49,Which industry depends on electricity?,Iron and steel,Aluminium,Textile,Paper,Aluminium
+MCQ,50,Manufacturing industries help in,Employment,Development,Export,All of these,All of these
+
+Integer,1,Backbone industry?,Iron and steel,,,,
+Integer,2,Agro-based industry?,Cotton textile,,,,
+Integer,3,Mineral-based industry?,Iron and steel,,,,
+Integer,4,Manchester of India?,Ahmedabad,,,,
+Integer,5,Seasonal industry?,Sugar,,,,
+Integer,6,Industry using limestone?,Cement,,,,
+Integer,7,Public sector steel plant?,Bhilai,,,,
+Integer,8,Labour intensive industry?,Cotton textile,,,,
+Integer,9,Capital intensive industry?,Iron and steel,,,,
+Integer,10,Industry using bauxite?,Aluminium,,,,
+Integer,11,Industry using pulp?,Paper,,,,
+Integer,12,Industry using forests?,Paper,,,,
+Integer,13,Industry using molasses?,Sugar,,,,
+Integer,14,Industry producing fertilizers?,Chemical,,,,
+Integer,15,Industry causing pollution?,Iron and steel,,,,
+Integer,16,City steel centre?,Bhilai,,,,
+Integer,17,Industry producing tyres?,Chemical,,,,
+Integer,18,Industry producing cement?,Cement industry,,,,
+Integer,19,Industry producing cloth?,Textile,,,,
+Integer,20,Industry using jute?,Jute textile,,,,
+Integer,21,Industry near raw material?,Iron and steel,,,,
+Integer,22,Industry needing skilled labour?,IT,,,,
+Integer,23,Industry using iron ore?,Iron and steel,,,,
+Integer,24,Industry producing aluminium?,Aluminium industry,,,,
+Integer,25,Industry supporting automobiles?,Iron and steel,,,,
+Integer,26,Industry producing plastics?,Chemical,,,,
+Integer,27,Industry using water transport?,Shipbuilding,,,,
+Integer,28,Industry providing max jobs?,Cotton textile,,,,
+Integer,29,Industry in Coimbatore?,Textile,,,,
+Integer,30,Industry using coal?,Iron and steel,,,,
+Integer,31,Industry producing paper?,Paper,,,,
+Integer,32,Industry using electricity?,Aluminium,,,,
+Integer,33,Industry export oriented?,IT,,,,
+Integer,34,Industry dependent on agriculture?,Sugar,,,,
+Integer,35,Industry producing newsprint?,Paper,,,,
+Integer,36,Industry environment friendly?,IT,,,,
+Integer,37,Industry using limestone and gypsum?,Cement,,,,
+Integer,38,Industry producing sugar?,Sugar,,,,
+Integer,39,Industry producing synthetic fibres?,Chemical,,,,
+Integer,40,Industry using iron scrap?,Iron and steel,,,,
+Integer,41,Industry producing cement bags?,Cement,,,,
+Integer,42,Industry using cotton?,Cotton textile,,,,
+Integer,43,Industry using chemicals?,Chemical,,,,
+Integer,44,Industry causing water pollution?,Chemical,,,,
+Integer,45,Industry producing machines?,Iron and steel,,,,
+Integer,46,Industry using wood?,Paper,,,,
+Integer,47,Industry producing steel?,Iron and steel,,,,
+Integer,48,Industry producing cloth exports?,Textile,,,,
+Integer,49,Industry helping development?,Manufacturing,,,,
+Integer,50,Chapter focus?,Manufacturing industries,,,,
+
+Descriptive,1,What is manufacturing?,,,,,Manufacturing is conversion of raw materials into finished goods
+Descriptive,2,Explain the importance of manufacturing industries.,,,,,They promote economic development and employment
+Descriptive,3,Describe factors affecting industrial location.,,,,,Raw material, labour, power, capital and market
+Descriptive,4,What are agro-based industries?,,,,,Industries based on agricultural raw materials
+Descriptive,5,What are mineral-based industries?,,,,,Industries using minerals as raw materials
+Descriptive,6,Explain iron and steel industry.,,,,,Backbone of modern industry
+Descriptive,7,Describe cotton textile industry.,,,,,Largest industry in India
+Descriptive,8,Explain cement industry.,,,,,Uses limestone and gypsum
+Descriptive,9,Describe sugar industry.,,,,,Seasonal agro-based industry
+Descriptive,10,Explain aluminium industry.,,,,,Uses bauxite and electricity
+Descriptive,11,Describe chemical industry.,,,,,Produces fertilizers and plastics
+Descriptive,12,Explain paper industry.,,,,,Uses wood pulp and bamboo
+Descriptive,13,Explain industrial pollution.,,,,,Caused by waste and emissions
+Descriptive,14,Types of industrial pollution.,,,,,Air, water, land and noise
+Descriptive,15,Measures to control industrial pollution.,,,,,Treatment and recycling
+Descriptive,16,Explain role of manufacturing in economy.,,,,,Employment and GDP growth
+Descriptive,17,Explain public sector industries.,,,,,Owned by government
+Descriptive,18,Explain private sector industries.,,,,,Owned by individuals
+Descriptive,19,Describe industrial regions of India.,,,,,Mumbai, Chotanagpur belt
+Descriptive,20,Explain importance of iron and steel.,,,,,Supports other industries
+Descriptive,21,Explain cottage industries.,,,,,Small scale home based industries
+Descriptive,22,Explain small scale industries.,,,,,Low capital industries
+Descriptive,23,Explain large scale industries.,,,,,High capital industries
+Descriptive,24,Explain seasonal industries.,,,,,Operate part of year
+Descriptive,25,Explain labour intensive industries.,,,,,Require more labour
+Descriptive,26,Explain capital intensive industries.,,,,,Require heavy investment
+Descriptive,27,Explain export oriented industries.,,,,,Produce for foreign markets
+Descriptive,28,Explain industrialisation.,,,,,Growth of industries
+Descriptive,29,Explain use of technology in industries.,,,,,Improves productivity
+Descriptive,30,Explain environmental impact of industries.,,,,,Pollution and degradation
+Descriptive,31,Explain importance of power for industries.,,,,,Essential for operation
+Descriptive,32,Explain industrial waste management.,,,,,Treatment and disposal
+Descriptive,33,Explain role of government in industries.,,,,,Policies and regulation
+Descriptive,34,Explain location of cotton textile industry.,,,,,Near raw material and market
+Descriptive,35,Explain challenges of manufacturing sector.,,,,,Competition and pollution
+Descriptive,36,Explain industrial corridors.,,,,,Planned industrial zones
+Descriptive,37,Explain role of transport.,,,,,Movement of goods
+Descriptive,38,Explain role of skilled labour.,,,,,Quality production
+Descriptive,39,Explain sustainable industrial development.,,,,,Eco-friendly growth
+Descriptive,40,Explain globalisation impact on industries.,,,,,Competition and exports
+Descriptive,41,Explain industrial safety.,,,,,Worker protection
+Descriptive,42,Explain role of MSMEs.,,,,,Employment generation
+Descriptive,43,Explain Make in India.,,,,,Boost manufacturing
+Descriptive,44,Explain industrial diversification.,,,,,Variety of industries
+Descriptive,45,Explain industrial growth in India.,,,,,Post-independence development
+Descriptive,46,Explain pollution control laws.,,,,,Environmental protection
+Descriptive,47,Explain future of manufacturing.,,,,,Technology driven growth
+Descriptive,48,Explain industrial employment.,,,,,Job creation
+Descriptive,49,Explain link between agriculture and industry.,,,,,Mutual dependence
+Descriptive,50,Summarize Manufacturing Industries.,,,,,Chapter explains types, importance and impact of industries

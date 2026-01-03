@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,What is a constitution?,Set of laws,Religious book,Political party rules,Army rules,Set of laws
+MCQ,2,Which country inspired India’s constitutional design?,USA,UK,South Africa,France,South Africa
+MCQ,3,Who was the Chairman of the Drafting Committee?,Jawaharlal Nehru,B.R. Ambedkar,Rajendra Prasad,Sardar Patel,B.R. Ambedkar
+MCQ,4,Which year was Indian Constitution adopted?,1947,1949,1950,1952,1949
+MCQ,5,Indian Constitution came into force on?,15 August 1947,26 January 1950,26 November 1949,2 October 1950,26 January 1950
+MCQ,6,What does constitution define?,Only laws,Government structure,Rights only,None,Government structure
+MCQ,7,Which struggle influenced South African constitution?,Freedom struggle,Apartheid,Cold war,None,Apartheid
+MCQ,8,Apartheid was practiced in?,India,USA,South Africa,Australia,South Africa
+MCQ,9,Apartheid means?,Equality,Racial discrimination,Freedom,None,Racial discrimination
+MCQ,10,Which leader fought apartheid?,Mandela,Lincoln,Lenin,Gandhi,Mandela
+MCQ,11,Which body makes constitution?,Parliament,Constituent Assembly,Judiciary,None,Constituent Assembly
+MCQ,12,Indian Constituent Assembly was elected in?,1946,1947,1948,1949,1946
+MCQ,13,How long did it take to make Indian Constitution?,1 year,2 years,3 years,Nearly 3 years,Nearly 3 years
+MCQ,14,Which constitution is the lengthiest?,USA,UK,India,France,India
+MCQ,15,Which feature ensures equality?,Fundamental Rights,DPSP,Preamble,None,Fundamental Rights
+MCQ,16,Which part of constitution deals with rights?,Part II,Part III,Part IV,Part V,Part III
+MCQ,17,Which term means rule of law?,Democracy,Republic,Constitutionalism,None,Constitutionalism
+MCQ,18,What does secular mean?,Religious state,No religion,Equal respect to all religions,None,Equal respect to all religions
+MCQ,19,Which word was added by 42nd Amendment?,Republic,Socialist,Democratic,None,Socialist
+MCQ,20,Indian Constitution is ?,Rigid,Flexible,Both rigid and flexible,None,Both rigid and flexible
+MCQ,21,Which feature borrowed from UK?,Judicial review,Parliamentary system,Federalism,None,Parliamentary system
+MCQ,22,Which feature borrowed from USA?,Fundamental Rights,Parliamentary system,Directive Principles,None,Fundamental Rights
+MCQ,23,Which feature borrowed from Ireland?,Fundamental Duties,DPSP,Judicial review,None,DPSP
+MCQ,24,Which term means power of courts?,Judicial review,Separation of powers,Rule of law,None,Judicial review
+MCQ,25,Who is known as Father of Indian Constitution?,Nehru,Ambedkar,Gandhi,None,Ambedkar
+MCQ,26,Which country has unwritten constitution?,India,USA,UK,France,UK
+MCQ,27,Which value ensures social justice?,Liberty,Equality,Socialism,None,Socialism
+MCQ,28,Which part deals with DPSP?,Part III,Part IV,Part V,Part VI,Part IV
+MCQ,29,Which value ensures freedom?,Liberty,Equality,Fraternity,None,Liberty
+MCQ,30,Which term means brotherhood?,Liberty,Equality,Fraternity,None,Fraternity
+MCQ,31,Which constitution influenced India most?,USA,UK,South Africa,None,UK
+MCQ,32,Which right is against exploitation?,Right to Equality,Right to Freedom,Right against Exploitation,None,Right against Exploitation
+MCQ,33,Which body interprets constitution?,Parliament,Judiciary,Executive,None,Judiciary
+MCQ,34,Which constitution inspired racial equality?,South Africa,USA,UK,None,South Africa
+MCQ,35,What ensures power distribution?,Federalism,Unitary system,None,None,Federalism
+MCQ,36,Which system divides power?,Dictatorship,Federalism,Monarchy,None,Federalism
+MCQ,37,Which organ executes laws?,Legislature,Executive,Judiciary,None,Executive
+MCQ,38,Which organ makes laws?,Judiciary,Executive,Legislature,None,Legislature
+MCQ,39,Which organ interprets laws?,Legislature,Executive,Judiciary,None,Judiciary
+MCQ,40,Which amendment added Fundamental Duties?,42nd,44th,52nd,None,42nd
+MCQ,41,Which feature ensures unity?,Federalism,Fraternity,None,None,Fraternity
+MCQ,42,Which constitution is supreme?,Parliament,Judiciary,Constitution,None,Constitution
+MCQ,43,Which principle limits government power?,Rule of law,Dictatorship,None,None,Rule of law
+MCQ,44,Which country had racial segregation?,India,South Africa,France,None,South Africa
+MCQ,45,Which value promotes harmony?,Liberty,Equality,Fraternity,None,Fraternity
+MCQ,46,Indian Constitution guarantees?,Only rights,Only duties,Rights and duties,None,Rights and duties
+MCQ,47,Which part deals with citizenship?,Part I,Part II,Part III,None,Part II
+MCQ,48,Which body adopted constitution?,Parliament,Constituent Assembly,President,None,Constituent Assembly
+MCQ,49,Which principle gives voting rights?,Equality,Liberty,Justice,None,Equality
+MCQ,50,Which constitution value means fairness?,Justice,Liberty,Equality,None,Justice
+
+Integer,1,Chairman of Drafting Committee?,B.R. Ambedkar,,,,
+Integer,2,Indian Constitution adopted in?,1949,,,,
+Integer,3,Indian Constitution enforced in?,1950,,,,
+Integer,4,Constitution making body?,Constituent Assembly,,,,
+Integer,5,Constituent Assembly elected in?,1946,,,,
+Integer,6,Years to make constitution?,3,,,,
+Integer,7,Father of Indian Constitution?,Ambedkar,,,,
+Integer,8,Country with apartheid?,South Africa,,,,
+Integer,9,Racial discrimination called?,Apartheid,,,,
+Integer,10,Anti-apartheid leader?,Mandela,,,,
+Integer,11,Longest constitution?,India,,,,
+Integer,12,Unwritten constitution country?,UK,,,,
+Integer,13,Part for Fundamental Rights?,Part III,,,,
+Integer,14,Part for DPSP?,Part IV,,,,
+Integer,15,Judicial power called?,Judicial review,,,,
+Integer,16,Power division system?,Federalism,,,,
+Integer,17,UK feature adopted?,Parliamentary system,,,,
+Integer,18,USA feature adopted?,Fundamental Rights,,,,
+Integer,19,Ireland feature adopted?,DPSP,,,,
+Integer,20,Constitution means?,Supreme law,,,,
+Integer,21,Equal respect to religions?,Secularism,,,,
+Integer,22,Brotherhood term?,Fraternity,,,,
+Integer,23,Freedom term?,Liberty,,,,
+Integer,24,Fairness term?,Justice,,,,
+Integer,25,Equality ensured by?,Rights,,,,
+Integer,26,Courts interpret?,Constitution,,,,
+Integer,27,42nd amendment added?,Duties,,,,
+Integer,28,Power limited by?,Rule of law,,,,
+Integer,29,Law making organ?,Legislature,,,,
+Integer,30,Law executing organ?,Executive,,,,
+Integer,31,Law interpreting organ?,Judiciary,,,,
+Integer,32,Constitution supremacy?,Yes,,,,
+Integer,33,Rights protect?,Citizens,,,,
+Integer,34,Duties added year?,1976,,,,
+Integer,35,Constitution source?,People,,,,
+Integer,36,Racial equality constitution?,South Africa,,,,
+Integer,37,Indian system?,Federal,,,,
+Integer,38,Constitution amendment?,Flexible and rigid,,,,
+Integer,39,Anti-discrimination value?,Equality,,,,
+Integer,40,Government form?,Democratic,,,,
+Integer,41,Rights enforceable by?,Courts,,,,
+Integer,42,DPSP enforceable?,No,,,,
+Integer,43,Citizenship part?,Part II,,,,
+Integer,44,Preamble value?,Justice,,,,
+Integer,45,Parliamentary democracy source?,UK,,,,
+Integer,46,Indian Constitution length?,Longest,,,,
+Integer,47,Constitution date?,26 Jan 1950,,,,
+Integer,48,People power term?,Sovereignty,,,,
+Integer,49,Equality before law?,Rule of law,,,,
+Integer,50,Indian Constitution type?,Written,,,,
+
+Descriptive,1,What is a constitution?,,,,,Supreme set of rules guiding government
+Descriptive,2,Why do we need a constitution?,,,,,Limits power and protects rights
+Descriptive,3,What is constitutional design?,,,,,Process of making constitution
+Descriptive,4,Explain apartheid.,,,,,System of racial discrimination
+Descriptive,5,How did South Africa end apartheid?,,,,,Through constitution and democracy
+Descriptive,6,Role of Nelson Mandela.,,,,,Leader against apartheid
+Descriptive,7,What is Constituent Assembly?,,,,,Body that drafted constitution
+Descriptive,8,Formation of Indian Constituent Assembly.,,,,,Elected in 1946
+Descriptive,9,Why Indian Constitution is lengthy?,,,,,Diverse country needs details
+Descriptive,10,Who was B.R. Ambedkar?,,,,,Chief architect of constitution
+Descriptive,11,Why constitution is supreme?,,,,,All laws derive from it
+Descriptive,12,What is rule of law?,,,,,Law above all
+Descriptive,13,Explain secularism.,,,,,Equal respect to all religions
+Descriptive,14,What is federalism?,,,,,Division of power
+Descriptive,15,What are Fundamental Rights?,,,,,Basic rights of citizens
+Descriptive,16,Importance of Fundamental Rights.,,,,,Protect freedom and equality
+Descriptive,17,What are DPSP?,,,,,Guidelines for government
+Descriptive,18,Why DPSP not enforceable?,,,,,Moral obligations
+Descriptive,19,What are Fundamental Duties?,,,,,Duties of citizens
+Descriptive,20,Why duties important?,,,,,Responsible citizenship
+Descriptive,21,Explain separation of powers.,,,,,Three organs of government
+Descriptive,22,What is judicial review?,,,,,Courts check laws
+Descriptive,23,Why judiciary important?,,,,,Protects constitution
+Descriptive,24,Values in Indian Constitution.,,,,,Justice liberty equality fraternity
+Descriptive,25,Explain justice.,,,,,Fairness to all
+Descriptive,26,Explain liberty.,,,,,Freedom of expression
+Descriptive,27,Explain equality.,,,,,Equal status before law
+Descriptive,28,Explain fraternity.,,,,,Sense of brotherhood
+Descriptive,29,Why Indian Constitution borrowed features?,,,,,Global best practices
+Descriptive,30,Features borrowed from UK.,,,,,Parliamentary system
+Descriptive,31,Features borrowed from USA.,,,,,Fundamental Rights
+Descriptive,32,Features borrowed from Ireland.,,,,,Directive Principles
+Descriptive,33,How constitution limits power?,,,,,Checks and balances
+Descriptive,34,Why constitution protects minorities?,,,,,Prevent misuse of power
+Descriptive,35,Importance of Preamble.,,,,,Shows goals of constitution
+Descriptive,36,What is sovereignty?,,,,,Supreme authority of people
+Descriptive,37,Why constitution is dynamic?,,,,,Can be amended
+Descriptive,38,Explain amendment process.,,,,,Change in constitution
+Descriptive,39,Why constitution is written?,,,,,Clarity and stability
+Descriptive,40,Difference between written and unwritten constitution.,,,,,Codified vs uncodified
+Descriptive,41,Why India adopted federalism?,,,,,Large diverse country
+Descriptive,42,Role of constitution in democracy.,,,,,Ensures rights and limits power
+Descriptive,43,How constitution ensures equality?,,,,,Fundamental Rights
+Descriptive,44,Why apartheid constitution important?,,,,,Ensured equality
+Descriptive,45,Lessons from South Africa.,,,,,Peaceful transformation
+Descriptive,46,Why constitution important for citizens?,,,,,Protects rights
+Descriptive,47,How constitution promotes unity?,,,,,Common values
+Descriptive,48,Why constitution is people’s document?,,,,,Made by representatives
+Descriptive,49,Explain constitutional morality.,,,,,Respect for values
+Descriptive,50,Why constitutional design matters?,,,,,Foundation of democracy

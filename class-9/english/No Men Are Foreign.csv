@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who wrote the poem "No Men Are Foreign"?,Robert Frost,James Kirkup,W B Yeats,John Keats,James Kirkup
+MCQ,2,The poem promotes?,Nationalism only,Hatred,Universal brotherhood,War,Universal brotherhood
+MCQ,3,What does the poet say about men?,They are enemies,They are strangers,They are alike,They are weak,They are alike
+MCQ,4,The poem argues against?,Peace,Human unity,War and hatred,Equality,War and hatred
+MCQ,5,What do all humans share?,Different blood,Same earth,Same nation,Same language,Same earth
+MCQ,6,The phrase “no men are foreign” means?,No foreigners exist,All humans are enemies,All humans are brothers,Nations don’t exist,All humans are brothers
+MCQ,7,What does the poet warn against?,Unity,Peace,Dividing people,Love,Dividing people
+MCQ,8,Who suffers in wars?,Only soldiers,Only civilians,Humanity,No one,Humanity
+MCQ,9,What does “our hells of fire and dust” refer to?,Volcanoes,Pollution,War destruction,Deserts,War destruction
+MCQ,10,The poem’s tone is?,Angry,Didactic and persuasive,Humorous,Sarcastic,Didactic and persuasive
+MCQ,11,What do hands symbolize?,Weapons,Power,Human labor and creation,Violence,Human labor and creation
+MCQ,12,What is meant by “uniforms”?,Clothes,Army identity,Equality,Traditions,Army identity
+MCQ,13,The poet appeals to?,Soldiers only,Leaders only,All humans,Children only,All humans
+MCQ,14,The poem suggests borders are?,Natural,Essential,Artificial,God-given,Artificial
+MCQ,15,What does the poet emphasize?,Differences,Superiority,Shared humanity,Hatred,Shared humanity
+MCQ,16,The poem condemns?,Peace talks,War propaganda,Human unity,Nature,War propaganda
+MCQ,17,Which value is highlighted?,Greed,Compassion and empathy,Pride,Revenge,Compassion and empathy
+MCQ,18,The poet uses repetition to?,Confuse readers,Emphasize unity,Add humor,Describe nature,Emphasize unity
+MCQ,19,What is the central idea?,National pride,Human equality,Military power,History,Human equality
+MCQ,20,What does “beneath all uniforms” imply?,Different hearts,Same human heart,Empty hearts,Cold hearts,Same human heart
+MCQ,21,The poem belongs to which genre?,Narrative,Lyric,Didactic lyric,Sonnet,Didactic lyric
+MCQ,22,The poet urges us to?,Hate enemies,Recognize common humanity,Build weapons,Ignore others,Recognize common humanity
+MCQ,23,What causes divisions?,Nature,God,Man-made borders,Time,Man-made borders
+MCQ,24,What do wars destroy?,Only cities,Only lives,Both lives and humanity,Only property,Both lives and humanity
+MCQ,25,The poem’s message is?,Violence wins,Peace through unity,Power matters,Fear others,Peace through unity
+MCQ,26,What is common in all humans?,Different blood,Same blood color,No blood,Blue blood,Same blood color
+MCQ,27,The poet calls enemies?,Foreigners,Brothers,Aliens,Strangers,Brothers
+MCQ,28,What does “harvests” symbolize?,Farming,Food,Human labor and livelihood,Weather,Human labor and livelihood
+MCQ,29,The poem discourages?,Empathy,Cooperation,Hatred,Peace,Hatred
+MCQ,30,What feeling does the poem evoke?,Fear,Anger,Empathy,Indifference,Empathy
+MCQ,31,The poet believes wars are?,Inevitable,Glorious,Self-destructive,Necessary,Self-destructive
+MCQ,32,What is the role of education?,Divide people,Create hatred,Promote unity,Ignore history,Promote unity
+MCQ,33,The poem uses which device often?,Irony,Imagery,Repetition,Hyperbole,Repetition
+MCQ,34,What is meant by “earth is one”?,Single planet,Shared home,Flat earth,Small world,Shared home
+MCQ,35,The poet’s attitude to nationalism?,Supportive,Critical,Neutral,Unclear,Critical
+MCQ,36,Who is responsible for wars?,Nature,Animals,Humans,Fate,Humans
+MCQ,37,The poem ends with a call for?,Revenge,Peace and unity,Isolation,Power,Peace and unity
+MCQ,38,What does “same sky” suggest?,Weather,Unity under nature,Travel,Time,Unity under nature
+MCQ,39,The poem challenges the idea of?,Human similarity,National borders,Peace,Equality,National borders
+MCQ,40,What should we remember?,Differences,Shared humanity,Old wars,Hatred,Shared humanity
+MCQ,41,The poem is relevant today because?,Wars still exist,Poetry is old,Borders changed,Nations grew,Wars still exist
+MCQ,42,The poet’s purpose is to?,Entertain only,Inform history,Persuade for peace,Describe nature,Persuade for peace
+MCQ,43,What does “remember” emphasize?,Forgetting,Awareness,Ignorance,Delay,Awareness
+MCQ,44,The poem’s language is?,Complex,Technical,Simple and direct,Archaic,Simple and direct
+MCQ,45,What do “arms” refer to?,Weapons,Hands,Uniforms,Flags,Hands
+MCQ,46,The poet’s message opposes?,Unity,Peace,Hatred and war,Empathy,Hatred and war
+MCQ,47,The poem stresses?,Differences,Unity in diversity,Superiority,Isolation,Unity in diversity
+MCQ,48,What does “common breath” imply?,Different air,Shared life force,Pollution,Weather,Shared life force
+MCQ,49,Who should follow the poem’s message?,Leaders only,Students only,Soldiers only,Everyone,Everyone
+MCQ,50,Overall theme?,Nationalism,Humanism,Romanticism,Adventure,Humanism
+
+Integer,1,Poet?,James Kirkup,,,,
+Integer,2,Poem type?,Didactic lyric,,,,
+Integer,3,Theme?,Universal brotherhood,,,,
+Integer,4,Key message?,Human unity,,,,
+Integer,5,Opposes?,War,,,,
+Integer,6,Promotes?,Peace,,,,
+Integer,7,Humans share?,Same earth,,,,
+Integer,8,Borders are?,Man-made,,,,
+Integer,9,Enemies called?,Brothers,,,,
+Integer,10,Blood color?,Red,,,,
+Integer,11,Hands symbolize?,Labor,,,,
+Integer,12,Uniforms hide?,Same hearts,,,,
+Integer,13,Harvests mean?,Livelihood,,,,
+Integer,14,Final appeal?,Unity,,,,
+Integer,15,Poem tone?,Persuasive,,,,
+Integer,16,Central value?,Empathy,,,,
+Integer,17,Earth is?,Shared home,,,,
+Integer,18,Wars cause?,Destruction,,,,
+Integer,19,Common sky?,Unity,,,,
+Integer,20,Poem aim?,Peaceful coexistence,,,,
+Integer,21,Language?,Simple,,,,
+Integer,22,Human nature?,Same,,,,
+Integer,23,Divisions cause?,Borders,,,,
+Integer,24,Poem genre?,Lyric,,,,
+Integer,25,Main device?,Repetition,,,,
+Integer,26,Poet warns?,Hatred,,,,
+Integer,27,Shared breath?,Life,,,,
+Integer,28,Opposes propaganda?,Yes,,,,
+Integer,29,Audience?,All humans,,,,
+Integer,30,Message type?,Humanistic,,,,
+Integer,31,Relevance?,Contemporary,,,,
+Integer,32,Poem focus?,Equality,,,,
+Integer,33,Uniform meaning?,Identity,,,,
+Integer,34,Hands build?,World,,,,
+Integer,35,Poem call?,Remember humanity,,,,
+Integer,36,Conflict source?,Humans,,,,
+Integer,37,Poem mood?,Serious,,,,
+Integer,38,Earth harvests?,Shared,,,,
+Integer,39,Key word?,Remember,,,,
+Integer,40,Opposed idea?,National hatred,,,,
+Integer,41,Poet stance?,Anti-war,,,,
+Integer,42,Unity basis?,Humanity,,,,
+Integer,43,Poem message?,Peace,,,,
+Integer,44,Human bond?,Brotherhood,,,,
+Integer,45,Poem setting?,Global,,,,
+Integer,46,Poem relevance?,High,,,,
+Integer,47,Central symbol?,Earth,,,,
+Integer,48,Poem impact?,Awareness,,,,
+Integer,49,Ethical value?,Compassion,,,,
+Integer,50,Poem title?,No Men Are Foreign,,,,
+
+Descriptive,1,Who wrote "No Men Are Foreign"?,,,,,The poem was written by James Kirkup
+Descriptive,2,What is the central theme of the poem?,,,,,It promotes universal brotherhood and peace
+Descriptive,3,Explain the title of the poem.,,,,,It means all humans belong to one family
+Descriptive,4,How does the poet define humanity?,,,,,By shared life, earth, and emotions
+Descriptive,5,What does the poet say about borders?,,,,,They are artificial divisions
+Descriptive,6,How does the poem condemn war?,,,,,By showing its destruction of humanity
+Descriptive,7,What do “hands” symbolize?,,,,,Human labor and creation
+Descriptive,8,Explain “beneath all uniforms”.,,,,,All humans share the same heart
+Descriptive,9,What lesson does the poem teach?,,,,,To love all humans and reject hatred
+Descriptive,10,Why is the poem relevant today?,,,,,Conflicts still exist worldwide
+Descriptive,11,How does repetition strengthen the message?,,,,,It emphasizes unity
+Descriptive,12,What is meant by “common breath”?,,,,,Shared life force
+Descriptive,13,How does the poet appeal to readers?,,,,,Through logic and empathy
+Descriptive,14,What values are highlighted?,,,,,Compassion, equality, peace
+Descriptive,15,How does war harm both sides?,,,,,It destroys lives and morals
+Descriptive,16,Why should we not hate others?,,,,,They are like us
+Descriptive,17,What role does education play?,,,,,Promoting understanding and unity
+Descriptive,18,Explain the imagery of earth and sky.,,,,,They unite all humans
+Descriptive,19,How does the poem promote humanism?,,,,,By stressing equality
+Descriptive,20,What is the poet’s attitude to nationalism?,,,,,Critical of blind nationalism
+Descriptive,21,How are enemies portrayed?,,,,,As brothers
+Descriptive,22,Why does the poet use simple language?,,,,,To reach everyone
+Descriptive,23,What does “harvests” represent?,,,,,Shared livelihood
+Descriptive,24,How does the poem end?,,,,,With a call for unity
+Descriptive,25,What message should students learn?,,,,,Respect all humans
+Descriptive,26,How does the poem oppose propaganda?,,,,,By urging independent thinking
+Descriptive,27,What is the moral of the poem?,,,,,Peace through unity
+Descriptive,28,Why are wars self-destructive?,,,,,They harm all humanity
+Descriptive,29,Explain the poet’s use of contrasts.,,,,,Differences vs shared humanity
+Descriptive,30,How does the poem inspire empathy?,,,,,By highlighting sameness
+Descriptive,31,What does “remember” emphasize?,,,,,Awareness and responsibility
+Descriptive,32,Why is hatred dangerous?,,,,,It leads to violence
+Descriptive,33,How does the poem view enemies?,,,,,As fellow humans
+Descriptive,34,What does the poem say about identity?,,,,,Human identity is primary
+Descriptive,35,Why is peace necessary?,,,,,For survival of humanity
+Descriptive,36,How does the poem challenge stereotypes?,,,,,By stressing equality
+Descriptive,37,What is the poet’s final appeal?,,,,,Choose peace over war
+Descriptive,38,How does nature unite humans?,,,,,Through shared earth and sky
+Descriptive,39,What is the significance of blood imagery?,,,,,Shows sameness
+Descriptive,40,How does the poem affect readers?,,,,,It creates awareness
+Descriptive,41,Explain human responsibility in conflicts.,,,,,Humans cause and must end wars
+Descriptive,42,What makes the poem powerful?,,,,,Its universal message
+Descriptive,43,How does the poem encourage coexistence?,,,,,By promoting empathy
+Descriptive,44,Why is equality important?,,,,,It prevents conflict
+Descriptive,45,How does the poem reject hatred?,,,,,By redefining enemies as brothers
+Descriptive,46,What is the role of memory?,,,,,To remember shared humanity
+Descriptive,47,Why should we reject divisions?,,,,,They cause suffering
+Descriptive,48,How does the poem reflect global unity?,,,,,All humans share one world
+Descriptive,49,Why is the poem timeless?,,,,,Its message is universal
+Descriptive,50,Summarize "No Men Are Foreign".,,,,,The poem urges readers to reject hatred and war, recognize shared humanity beyond borders, and work for peace through empathy and unity

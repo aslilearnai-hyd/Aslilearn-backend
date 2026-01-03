@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Which of the following is a linear equation in two variables?,x² + y = 5,x + y = 5,xy + 5 = 0,x/y + 5 = 0,x + y = 5
+MCQ,2,How many solutions does the pair of equations x + y = 5 and 2x + 2y = 10 have?,One,Two,Infinitely many,No solution,Infinitely many
+MCQ,3,The pair of equations x = 0 and y = 0 has:,One solution,Two solutions,Infinitely many solutions,No solution,One solution
+MCQ,4,If the lines representing the pair of linear equations are parallel, then the system has:,One solution,Two solutions,Infinitely many solutions,No solution,No solution
+MCQ,5,If the lines representing the pair of linear equations are coincident, then the system has:,One solution,Two solutions,Infinitely many solutions,No solution,Infinitely many solutions
+MCQ,6,If the lines representing the pair of linear equations intersect at a point, then the system has:,One solution,Two solutions,Infinitely many solutions,No solution,One solution
+MCQ,7,The pair of equations y = 0 and y = -7 has:,One solution,Two solutions,Infinitely many solutions,No solution,No solution
+MCQ,8,For what value of k, do the equations 3x - y + 8 = 0 and 6x - ky + 16 = 0 represent coincident lines?,2,4,6,8,2
+MCQ,9,The value of k for which the pair of linear equations 4x + 6y - 1 = 0 and 2x + ky - 7 = 0 represent parallel lines is:,2,3,4,6,3
+MCQ,10,If x = a and y = b is the solution of the equations x - y = 2 and x + y = 4, then the values of a and b are:,a = 3, b = 1,a = 2, b = 2,a = 1, b = 3,a = 4, b = 0,a = 3, b = 1
+MCQ,11,The pair of equations x + 2y - 4 = 0 and 2x + 4y - 12 = 0 has:,One solution,Two solutions,Infinitely many solutions,No solution,No solution
+MCQ,12,For the pair of equations 2x + 3y = 5 and 4x + 6y = 10, the value of a₁/a₂, b₁/b₂, c₁/c₂ are respectively:,2, 2, 2,1/2, 1/2, 1/2,2, 2, 1/2,1/2, 1/2, 2,1/2, 1/2, 1/2
+MCQ,13,The pair of linear equations 3x + 2y = 5 and 2x - 3y = 7 has:,One solution,Two solutions,Infinitely many solutions,No solution,One solution
+MCQ,14,If 2x + 3y = 7 and (a + b)x + (2a - b)y = 21 has infinitely many solutions, then:,a = 5, b = 1,a = 1, b = 5,a = 2, b = 3,a = 3, b = 2,a = 5, b = 1
+MCQ,15,The sum of the numerator and denominator of a fraction is 12. If the denominator is increased by 3, the fraction becomes 1/2. The fraction is:,5/7,4/8,3/9,2/10,3/9
+MCQ,16,If the pair of equations 2x + 3y = 7 and 2ax + (a + b)y = 28 has infinitely many solutions, then:,a = 2, b = 1,a = 4, b = 2,a = 6, b = 4,a = 8, b = 6,a = 4, b = 2
+MCQ,17,The value of k for which the system of equations x + 2y = 5 and 3x + ky + 15 = 0 has no solution, is:,6,2,3,4,6
+MCQ,18,One equation of a pair of dependent linear equations is -5x + 7y = 2. The second equation can be:,-10x + 14y = 4,-10x + 7y = 4,-10x - 14y = 4,10x + 14y = 4,-10x + 14y = 4
+MCQ,19,If x = a and y = b is the solution of the equations x + y = 3 and 3x - 5y = 4, then the values of a and b are:,a = 19/8, b = 5/8,a = 5/8, b = 19/8,a = 3, b = 0,a = 0, b = 3,a = 19/8, b = 5/8
+MCQ,20,Aruna has only Re 1 and Rs 2 coins with her. If the total number of coins that she has is 50 and the amount of money with her is Rs 75, then the number of Re 1 and Rs 2 coins are respectively:,35 and 15,35 and 20,15 and 35,25 and 25,25 and 25
+MCQ,21,The father's age is six times his son's age. Four years hence, the age of the father will be four times his son's age. The present ages (in years) of the son and the father are, respectively:,4 and 24,5 and 30,6 and 36,3 and 18,4 and 24
+MCQ,22,If the pair of equations 3x + y = 1 and (2k - 1)x + (k - 1)y = 2k + 1 has no solution, then k is:,2,3,4,5,2
+MCQ,23,The pair of equations 5x - 15y = 8 and 3x - 9y = 24/5 has:,One solution,Two solutions,Infinitely many solutions,No solution,Infinitely many solutions
+MCQ,24,The value of k for which the pair of equations kx - y = 2 and 6x - 2y = 3 has a unique solution, is:,k = 3,k = 2,k ≠ 3,k ≠ 2,k ≠ 3
+MCQ,25,If x = a, y = b is the solution of the equations x + y = 5 and 2x - 3y = 4, then the values of a and b are:,a = 19/5, b = 6/5,a = 6/5, b = 19/5,a = 5, b = 0,a = 0, b = 5,a = 19/5, b = 6/5
+MCQ,26,The pair of equations y = 0 and y = -5 has:,One solution,Two solutions,Infinitely many solutions,No solution,No solution
+MCQ,27,The pair of equations x = 2 and y = 3 graphically represents lines which are:,Parallel,Intersecting at (2, 3),Coincident,Intersecting at (3, 2),Intersecting at (2, 3)
+MCQ,28,If am ≠ bl, then the system of equations ax + by = c, lx + my = n has:,One solution,Two solutions,Infinitely many solutions,No solution,One solution
+MCQ,29,If a₁/a₂ = b₁/b₂ = c₁/c₂, then the pair of linear equations has:,One solution,Two solutions,Infinitely many solutions,No solution,Infinitely many solutions
+MCQ,30,If a₁/a₂ = b₁/b₂ ≠ c₁/c₂, then the pair of linear equations has:,One solution,Two solutions,Infinitely many solutions,No solution,No solution
+MCQ,31,The pair of equations x + 2y = 3 and 4x + 8y = 12 has:,One solution,Two solutions,Infinitely many solutions,No solution,Infinitely many solutions
+MCQ,32,If 3x + 2y = 5 and 2x + 3y = 5, then x = y =:,0,1,2,3,1
+MCQ,33,For which value of p will the following pair of linear equations have infinitely many solutions: (p - 3)x + 3y = p and px + py = 12?,6,4,2,1,6
+MCQ,34,Two numbers are in the ratio 5:6. If 8 is subtracted from each of the numbers, the ratio becomes 4:5. Then the numbers are:,40 and 48,30 and 36,20 and 24,10 and 12,40 and 48
+MCQ,35,The solution of the pair of equations 2x + 3y = 11 and 2x - 4y = -24 is:,x = -2, y = 5,x = 2, y = 5,x = -2, y = -5,x = 2, y = -5,x = -2, y = 5
+MCQ,36,If 3x + 4y = 12 and 4x + 3y = 12, then x + y =:,0,12/7,24/7,3,24/7
+MCQ,37,The pair of equations x = 0 and x = -4 has:,One solution,Two solutions,Infinitely many solutions,No solution,No solution
+MCQ,38,If x/3 + y/4 = 5 and x/2 - y/4 = 1, then x =:,4,5,6,7,6
+MCQ,39,The pair of equations 2x + 5y = 3 and 6x + 15y = 12 represents:,Parallel lines,Intersecting lines,Coincident lines,None of these,Parallel lines
+MCQ,40,If 2x + 3y = 7 and (k + 2)x - 2(k - 1)y = 3k + 4 represent coincident lines, then k =:,5,6,7,8,6
+MCQ,41,The value of k for which the pair of equations kx + 3y = k - 3 and 12x + ky = k has no solution, is:,-6,6,-4,4,-6
+MCQ,42,If the pair of equations 2x + 3y = 11 and (m + n)x + (2m - n)y = 33 has infinitely many solutions, then:,m = 5, n = 1,m = 1, n = 5,m = 2, n = 3,m = 3, n = 2,m = 5, n = 1
+MCQ,43,The graphical representation of the pair of equations x + 2y - 4 = 0 and 2x + 4y - 12 = 0 will be:,Intersecting lines,Parallel lines,Coincident lines,All of these,Parallel lines
+MCQ,44,If x + y = 5 and 2x + 2y = 10, then the lines are:,Intersecting,Parallel,Coincident,None,Coincident
+MCQ,45,The solution of the pair of equations x/2 + y/3 = 2 and x + y = 1 is:,x = 10, y = -9,x = -10, y = 9,x = 10, y = 9,x = -10, y = -9,x = 10, y = -9
+MCQ,46,If the system of equations 2x + 3y = 7 and 2ax + (a + b)y = 28 has infinitely many solutions, then:,a = 2, b = 1,a = 4, b = 2,a = 6, b = 4,a = 8, b = 6,a = 4, b = 2
+MCQ,47,The pair of equations x = a and y = b graphically represents lines which are:,Parallel,Intersecting at (a, b),Coincident,Parallel to coordinate axes,Intersecting at (a, b)
+MCQ,48,If 2x + 3y = 7 and (a + b)x + (2a - b)y = 21 has infinitely many solutions, then:,a = 5, b = 1,a = 1, b = 5,a = 2, b = 3,a = 3, b = 2,a = 5, b = 1
+MCQ,49,The pair of equations y = 2 and y = 7 has:,One solution,Two solutions,Infinitely many solutions,No solution,No solution
+MCQ,50,If x = 1 and y = 2 is a solution of the equation 3x + 5y = k, then the value of k is:,11,12,13,14,13
+Integer,1,If x = 3 and y = 4 is a solution of the equation 3x - 2y = k, then the value of k is:.,1,,,,
+Integer,2,If the pair of equations 2x + 3y = 7 and 4x + 6y = 14 has infinitely many solutions, then the value of a₁/a₂ is: (Answer as fraction in simplest form - enter numerator),1,,,,
+Integer,3,Find the value of x if 2x + 3y = 7 and x - y = 1. (x =),2,,,,
+Integer,4,Find the value of y if 2x + 3y = 7 and x - y = 1. (y =),1,,,,
+Integer,5,If x/2 + y/3 = 1 and x/3 + y/2 = 1, then the value of x is:.,6,,,,
+Integer,6,If x/2 + y/3 = 1 and x/3 + y/2 = 1, then the value of y is:.,6,,,,
+Integer,7,For what value of k, will the pair of equations x + 2y = 3 and 5x + ky = -7 have a unique solution? (k ≠),10,,,,
+Integer,8,If 3x + 2y = 12 and xy = 6, then the value of 9x² + 4y² is:.,72,,,,
+Integer,9,The age of the father is three times the age of the son. If the age of the son is 15 years, then the age of the father is:.,45,,,,
+Integer,10,If 2x + 3y = 7 and 4x + 5y = 13, then the value of x is:.,2,,,,
+Integer,11,If 2x + 3y = 7 and 4x + 5y = 13, then the value of y is:.,1,,,,
+Integer,12,The sum of two numbers is 35 and their difference is 5. The larger number is:.,20,,,,
+Integer,13,The sum of two numbers is 35 and their difference is 5. The smaller number is:.,15,,,,
+Integer,14,If x = 1, y = 2 is a solution of the equation 2x + 3y = k, then the value of k is:.,8,,,,
+Integer,15,If the pair of equations 3x + 5y = 9 and 6x + 10y = 18 has infinitely many solutions, then the value of a₁/a₂ is: (Answer as fraction - enter numerator),1,,,,
+Integer,16,If x + y = 10 and x - y = 2, then the value of x is:.,6,,,,
+Integer,17,If x + y = 10 and x - y = 2, then the value of y is:.,4,,,,
+Integer,18,The cost of 5 pencils and 7 pens is Rs 50, whereas the cost of 7 pencils and 5 pens is Rs 46. The cost of one pencil is Rs:.,3,,,,
+Integer,19,The cost of 5 pencils and 7 pens is Rs 50, whereas the cost of 7 pencils and 5 pens is Rs 46. The cost of one pen is Rs:.,5,,,,
+Integer,20,If 2x + y = 6 and x + 2y = 6, then x + y =:.,4,,,,
+Integer,21,If 5x - 3y = 8 and 2x + 5y = 1, then the value of x is:.,1,,,,
+Integer,22,If 5x - 3y = 8 and 2x + 5y = 1, then the value of y is:.,-1,,,,
+Integer,23,The numerator of a fraction is 4 less than the denominator. If 1 is added to both numerator and denominator, it becomes 1/2. The denominator is:.,7,,,,
+Integer,24,The numerator of a fraction is 4 less than the denominator. If 1 is added to both numerator and denominator, it becomes 1/2. The numerator is:.,3,,,,
+Integer,25,If the pair of equations x + 2y = 3 and 5x + ky = -7 has no solution, then k =:.,10,,,,
+Integer,26,The difference between two numbers is 26 and one number is three times the other. The smaller number is:.,13,,,,
+Integer,27,The difference between two numbers is 26 and one number is three times the other. The larger number is:.,39,,,,
+Integer,28,If 3x + 4y = 10 and 2x - 2y = 2, then the value of x is:.,2,,,,
+Integer,29,If 3x + 4y = 10 and 2x - 2y = 2, then the value of y is:.,1,,,,
+Integer,30,The value of k for which the pair of equations kx + 2y = 5 and 3x + y = 1 has unique solution is: (k ≠),6,,,,
+Integer,31,If x/3 + y/4 = 4 and x/2 - y/4 = 1, then x =:.,6,,,,
+Integer,32,If x/3 + y/4 = 4 and x/2 - y/4 = 1, then y =:.,8,,,,
+Integer,33,The sum of the digits of a two-digit number is 9. If 27 is added to it, the digits are reversed. The number is:.,36,,,,
+Integer,34,If 2x + 3y = 11 and 2x - 4y = -24, then x =:.,-2,,,,
+Integer,35,If 2x + 3y = 11 and 2x - 4y = -24, then y =:.,5,,,,
+Integer,36,The value of k for which the pair of equations x + y - 4 = 0 and 2x + ky - 3 = 0 has no solution, is:.,2,,,,
+Integer,37,If the pair of equations 2x + 3y = 7 and (k + 1)x + (2k - 1)y = 4k + 1 has infinitely many solutions, then k =:.,5,,,,
+Integer,38,The cost of 2 tables and 3 chairs is Rs 2000. If the table costs Rs 100 more than a chair, the cost of one table is Rs:.,460,,,,
+Integer,39,The cost of 2 tables and 3 chairs is Rs 2000. If the table costs Rs 100 more than a chair, the cost of one chair is Rs:.,360,,,,
+Integer,40,If x = 2 and y = 3 is a solution of the equation 5x + 3y = k, then k =:.,19,,,,
+Integer,41,The ratio of the income of two persons is 9:7 and the ratio of their expenditures is 4:3. If each saves Rs 200 per month, the monthly income of the first person is Rs:.,1800,,,,
+Integer,42,The ratio of the income of two persons is 9:7 and the ratio of their expenditures is 4:3. If each saves Rs 200 per month, the monthly income of the second person is Rs:.,1400,,,,
+Integer,43,If 3x - 2y = 5 and 3y - 2x = 3, then x + y =:.,8,,,,
+Integer,44,If 3x - 2y = 5 and 3y - 2x = 3, then x - y =:.,2,,,,
+Integer,45,The value of k for which the pair of equations kx + 3y = k - 3 and 12x + ky = k has no solution, is:.,-6,,,,
+Integer,46,If the pair of equations 4x - 3y = 7 and kx + 9y = 4 have no solution, then k =:.,-12,,,,
+Integer,47,If x + y = 14 and x - y = 4, then x =:.,9,,,,
+Integer,48,If x + y = 14 and x - y = 4, then y =:.,5,,,,
+Integer,49,The value of p for which the pair of equations 3x + 5y = 7 and px + 10y = 14 has infinitely many solutions, is:.,6,,,,
+Integer,50,If 2x + y = 5 and 3x + 2y = 8, then x =:.,2,,,,
+Problem,1,Solve the following pair of linear equations by substitution method: x + y = 14 and x - y = 4.,"From x - y = 4, we get x = y + 4. Substituting in x + y = 14: (y + 4) + y = 14, 2y + 4 = 14, 2y = 10, y = 5. Then x = 5 + 4 = 9. Answer: x = 9, y = 5",,,,
+Problem,2,Solve the following pair of linear equations by elimination method: 3x + 4y = 10 and 2x - 2y = 2.,"Multiplying second equation by 2: 4x - 4y = 4. Adding to first: 3x + 4y + 4x - 4y = 10 + 4, 7x = 14, x = 2. Substituting: 3(2) + 4y = 10, 6 + 4y = 10, 4y = 4, y = 1. Answer: x = 2, y = 1",,,,
+Problem,3,Solve: 2x + 3y = 11 and 2x - 4y = -24. Hence, find the value of 'm' for which y = mx + 3.,"Subtracting second from first: (2x + 3y) - (2x - 4y) = 11 - (-24), 7y = 35, y = 5. Then 2x + 3(5) = 11, 2x + 15 = 11, 2x = -4, x = -2. For y = mx + 3: 5 = m(-2) + 3, 5 - 3 = -2m, m = -1. Answer: x = -2, y = 5, m = -1",,,,
+Problem,4,Form the pair of linear equations for the following problems and find their solution by substitution method: The difference between two numbers is 26 and one number is three times the other. Find them.,"Let the numbers be x and y. Then x - y = 26 and x = 3y. Substituting: 3y - y = 26, 2y = 26, y = 13. Then x = 3(13) = 39. Answer: The numbers are 39 and 13",,,,
+Problem,5,Solve: s - t = 3 and s/3 + t/2 = 6.,"From s - t = 3, we get s = t + 3. Substituting in s/3 + t/2 = 6: (t + 3)/3 + t/2 = 6, (2t + 6 + 3t)/6 = 6, 5t + 6 = 36, 5t = 30, t = 6. Then s = 6 + 3 = 9. Answer: s = 9, t = 6",,,,
+Problem,6,Solve: 3x - 5y = 4 and 9x - 2y = 7.,"From first equation: 3x = 4 + 5y, x = (4 + 5y)/3. Substituting in second: 9((4 + 5y)/3) - 2y = 7, 3(4 + 5y) - 2y = 7, 12 + 15y - 2y = 7, 13y = -5, y = -5/13. Then x = (4 + 5(-5/13))/3 = (4 - 25/13)/3 = (27/13)/3 = 9/13. Answer: x = 9/13, y = -5/13",,,,
+Problem,7,The cost of 5 oranges and 3 apples is Rs 35 and the cost of 2 oranges and 4 apples is Rs 28. Find the cost of an orange and an apple.,"Let cost of orange = x, apple = y. Then 5x + 3y = 35 and 2x + 4y = 28. From second: x + 2y = 14, so x = 14 - 2y. Substituting: 5(14 - 2y) + 3y = 35, 70 - 10y + 3y = 35, -7y = -35, y = 5. Then x = 14 - 2(5) = 4. Answer: Orange = Rs 4, Apple = Rs 5",,,,
+Problem,8,Solve: 2x + 3y = 11 and 2x - 4y = -24 by elimination method.,"Subtracting second from first: (2x + 3y) - (2x - 4y) = 11 - (-24), 7y = 35, y = 5. Substituting: 2x + 3(5) = 11, 2x + 15 = 11, 2x = -4, x = -2. Answer: x = -2, y = 5",,,,
+Problem,9,A fraction becomes 9/11, if 2 is added to both the numerator and the denominator. If 3 is added to both the numerator and the denominator it becomes 5/6. Find the fraction.,"Let fraction be x/y. Then (x + 2)/(y + 2) = 9/11, so 11x + 22 = 9y + 18, 11x - 9y = -4. Also (x + 3)/(y + 3) = 5/6, so 6x + 18 = 5y + 15, 6x - 5y = -3. Solving: x = 7, y = 9. Answer: 7/9",,,,
+Problem,10,Five years hence, the age of Jacob will be three times that of his son. Five years ago, Jacob's age was seven times that of his son. What are their present ages?,"Let Jacob's age = x, son's age = y. Then x + 5 = 3(y + 5), so x - 3y = 10. Also x - 5 = 7(y - 5), so x - 7y = -30. Subtracting: 4y = 40, y = 10. Then x = 3(10) + 10 = 40. Answer: Jacob = 40 years, Son = 10 years",,,,
+Problem,11,Solve: x/2 + 2y/3 = -1 and x - y/3 = 3.,"From second: x = 3 + y/3. Substituting in first: (3 + y/3)/2 + 2y/3 = -1, 3/2 + y/6 + 2y/3 = -1, (9 + y + 4y)/6 = -1, 5y + 9 = -6, 5y = -15, y = -3. Then x = 3 + (-3)/3 = 2. Answer: x = 2, y = -3",,,,
+Problem,12,Solve: 3x/2 - 5y/3 = -2 and x/3 + y/2 = 13/6.,"Multiplying first by 6: 9x - 10y = -12. Multiplying second by 6: 2x + 3y = 13. From second: x = (13 - 3y)/2. Substituting: 9(13 - 3y)/2 - 10y = -12, (117 - 27y - 20y)/2 = -12, 117 - 47y = -24, 47y = 141, y = 3. Then x = (13 - 9)/2 = 2. Answer: x = 2, y = 3",,,,
+Problem,13,Solve: 2x + 3y = 11 and 2x - 4y = -24 and hence find the value of m for which y = mx + 3.,"Subtracting: 7y = 35, y = 5. Then 2x = 11 - 15 = -4, x = -2. For y = mx + 3: 5 = m(-2) + 3, m = -1. Answer: x = -2, y = 5, m = -1",,,,
+Problem,14,For which values of a and b does the following pair of linear equations have an infinite number of solutions: 2x + 3y = 7 and (a - b)x + (a + b)y = 3a + b - 2?,"For infinite solutions: 2/(a - b) = 3/(a + b) = 7/(3a + b - 2). From first two: 2(a + b) = 3(a - b), 2a + 2b = 3a - 3b, a = 5b. From 2/(a - b) = 7/(3a + b - 2): 2(3a + b - 2) = 7(a - b), 6a + 2b - 4 = 7a - 7b, a = 9b - 4. Equating: 5b = 9b - 4, b = 1, then a = 5. Answer: a = 5, b = 1",,,,
+Problem,15,Solve the following pair of equations by reducing them to a pair of linear equations: 1/(2x) + 1/(3y) = 2 and 1/(3x) + 1/(2y) = 13/6.,"Let u = 1/x, v = 1/y. Then u/2 + v/3 = 2, so 3u + 2v = 12. Also u/3 + v/2 = 13/6, so 2u + 3v = 13. Solving: u = 2, v = 3. So x = 1/2, y = 1/3. Answer: x = 1/2, y = 1/3",,,,
+Problem,16,Solve: 4/x + 3y = 14 and 3/x - 4y = 23.,"Let u = 1/x. Then 4u + 3y = 14 and 3u - 4y = 23. From first: u = (14 - 3y)/4. Substituting: 3(14 - 3y)/4 - 4y = 23, (42 - 9y - 16y)/4 = 23, 42 - 25y = 92, y = -2. Then u = (14 + 6)/4 = 5, so x = 1/5. Answer: x = 1/5, y = -2",,,,
+Problem,17,Solve: 5/(x-1) + 1/(y-2) = 2 and 6/(x-1) - 3/(y-2) = 1.,"Let u = 1/(x-1), v = 1/(y-2). Then 5u + v = 2 and 6u - 3v = 1. From first: v = 2 - 5u. Substituting: 6u - 3(2 - 5u) = 1, 6u - 6 + 15u = 1, 21u = 7, u = 1/3. Then v = 2 - 5/3 = 1/3. So x - 1 = 3, x = 4; y - 2 = 3, y = 5. Answer: x = 4, y = 5",,,,
+Problem,18,A boat goes 30 km upstream and 44 km downstream in 10 hours. In 13 hours, it can go 40 km upstream and 55 km downstream. Determine the speed of the stream and that of the boat in still water.,"Let boat speed = x km/h, stream speed = y km/h. Upstream = x - y, downstream = x + y. Then 30/(x-y) + 44/(x+y) = 10 and 40/(x-y) + 55/(x+y) = 13. Let u = 1/(x-y), v = 1/(x+y). Then 30u + 44v = 10 and 40u + 55v = 13. Solving: u = 1/5, v = 1/11. So x - y = 5, x + y = 11. Therefore x = 8, y = 3. Answer: Boat = 8 km/h, Stream = 3 km/h",,,,
+Problem,19,A train covered a certain distance at a uniform speed. If the train would have been 10 km/h faster, it would have taken 2 hours less than the scheduled time. And if the train were slower by 10 km/h, it would have taken 3 hours more than the scheduled time. Find the distance covered.,"Let speed = x km/h, time = y hours, distance = xy. Then xy/(x+10) = y - 2, so xy = (x+10)(y-2) = xy - 2x + 10y - 20, so 2x - 10y = -20, x - 5y = -10. Also xy/(x-10) = y + 3, so xy = (x-10)(y+3) = xy + 3x - 10y - 30, so -3x + 10y = -30, 3x - 10y = 30. Solving: x = 50, y = 12. Distance = 600 km. Answer: 600 km",,,,
+Problem,20,The students of a class are made to stand in rows. If 3 students are extra in a row, there would be 1 row less. If 3 students are less in a row, there would be 2 rows more. Find the number of students in the class.,"Let rows = x, students per row = y, total = xy. Then (y+3)(x-1) = xy, so xy - y + 3x - 3 = xy, 3x - y = 3. Also (y-3)(x+2) = xy, so xy + 2y - 3x - 6 = xy, 2y - 3x = 6. Solving: x = 4, y = 9. Total = 36. Answer: 36 students",,,,
+Problem,21,Solve: x + y = 5 and 2x - 3y = 4.,"From first: x = 5 - y. Substituting: 2(5 - y) - 3y = 4, 10 - 2y - 3y = 4, -5y = -6, y = 6/5. Then x = 5 - 6/5 = 19/5. Answer: x = 19/5, y = 6/5",,,,
+Problem,22,Solve: 3x - 5y = 4 and 9x - 2y = 7.,"From first: 3x = 4 + 5y, so x = (4 + 5y)/3. Substituting: 9((4 + 5y)/3) - 2y = 7, 3(4 + 5y) - 2y = 7, 12 + 15y - 2y = 7, 13y = -5, y = -5/13. Then x = (4 - 25/13)/3 = (27/13)/3 = 9/13. Answer: x = 9/13, y = -5/13",,,,
+Problem,23,Solve: x/2 + 2y/3 = -1 and x - y/3 = 3.,"From second: x = 3 + y/3. Substituting in first: (3 + y/3)/2 + 2y/3 = -1, 3/2 + y/6 + 2y/3 = -1, (9 + y + 4y)/6 = -1, 5y = -15, y = -3. Then x = 3 + (-3)/3 = 2. Answer: x = 2, y = -3",,,,
+Problem,24,Solve: 8x + 5y = 9 and 3x + 2y = 4.,"From second: x = (4 - 2y)/3. Substituting: 8(4 - 2y)/3 + 5y = 9, (32 - 16y + 15y)/3 = 9, 32 - y = 27, y = 5. Then x = (4 - 10)/3 = -2. Answer: x = -2, y = 5",,,,
+Problem,25,Solve: 2x + y = 8 and x + 2y = 10.,"From first: y = 8 - 2x. Substituting: x + 2(8 - 2x) = 10, x + 16 - 4x = 10, -3x = -6, x = 2. Then y = 8 - 4 = 4. Answer: x = 2, y = 4",,,,
+Problem,26,Solve: 3x + 2y = 11 and 2x + 3y = 4.,"Multiplying first by 2: 6x + 4y = 22. Multiplying second by 3: 6x + 9y = 12. Subtracting: -5y = 10, y = -2. Then 3x + 2(-2) = 11, 3x = 15, x = 5. Answer: x = 5, y = -2",,,,
+Problem,27,Solve: 2x - 3y = 7 and 5x + y = 9.,"From second: y = 9 - 5x. Substituting: 2x - 3(9 - 5x) = 7, 2x - 27 + 15x = 7, 17x = 34, x = 2. Then y = 9 - 10 = -1. Answer: x = 2, y = -1",,,,
+Problem,28,Solve: x/4 + y/4 = 4 and x/2 - y/4 = 1.,"From second: x/2 = 1 + y/4, so x = 2 + y/2. Substituting in first: (2 + y/2)/4 + y/4 = 4, (2 + y/2 + y)/4 = 4, 2 + 3y/2 = 16, 3y/2 = 14, y = 28/3. Then x = 2 + 14 = 16. Answer: x = 16, y = 28/3",,,,
+Problem,29,Solve: 5x - 3y = 8 and 2x + 5y = 1.,"From first: x = (8 + 3y)/5. Substituting: 2(8 + 3y)/5 + 5y = 1, (16 + 6y + 25y)/5 = 1, 16 + 31y = 5, 31y = -11, y = -11/31. Then x = (8 - 33/31)/5 = (215/31)/5 = 43/31. Answer: x = 43/31, y = -11/31",,,,
+Problem,30,Solve: x + y = 5 and 2x + 3y = 12.,"From first: x = 5 - y. Substituting: 2(5 - y) + 3y = 12, 10 - 2y + 3y = 12, y = 2. Then x = 5 - 2 = 3. Answer: x = 3, y = 2",,,,
+Problem,31,The ratio of incomes of two persons is 9:7 and the ratio of their expenditures is 4:3. If each of them saves Rs 200 per month, find their monthly incomes.,"Let incomes be 9x and 7x, expenditures be 4y and 3y. Then 9x - 4y = 200 and 7x - 3y = 200. From first: y = (9x - 200)/4. Substituting: 7x - 3(9x - 200)/4 = 200, (28x - 27x + 600)/4 = 200, x + 600 = 800, x = 200. So incomes: 1800 and 1400. Answer: Rs 1800 and Rs 1400",,,,
+Problem,32,The sum of a two-digit number and the number obtained by reversing the digits is 66. If the digits of the number differ by 2, find the number.,"Let tens digit = x, ones digit = y. Then 10x + y + 10y + x = 66, so 11x + 11y = 66, x + y = 6. Also |x - y| = 2. If x - y = 2: x = 4, y = 2. If y - x = 2: x = 2, y = 4. So numbers: 42 or 24. Answer: 42 or 24",,,,
+Problem,33,Solve: 6x + 3y = 6xy and 2x + 4y = 5xy.,"Dividing first by 3xy: 2/y + 1/x = 2. Dividing second by xy: 2/y + 4/x = 5. Let u = 1/x, v = 1/y. Then v + u = 2 and 2v + 4u = 5. From first: v = 2 - u. Substituting: 2(2 - u) + 4u = 5, 4 + 2u = 5, u = 1/2, so x = 2. Then v = 3/2, so y = 2/3. Answer: x = 2, y = 2/3",,,,
+Problem,34,Solve: 10/(x+y) + 2/(x-y) = 4 and 15/(x+y) - 5/(x-y) = -2.,"Let u = 1/(x+y), v = 1/(x-y). Then 10u + 2v = 4, so 5u + v = 2, v = 2 - 5u. Also 15u - 5v = -2, so 15u - 5(2 - 5u) = -2, 15u - 10 + 25u = -2, 40u = 8, u = 1/5. Then v = 2 - 1 = 1. So x + y = 5, x - y = 1. Therefore x = 3, y = 2. Answer: x = 3, y = 2",,,,
+Problem,35,Solve: 1/(2x) + 1/(3y) = 2 and 1/(3x) + 1/(2y) = 13/6.,"Let u = 1/x, v = 1/y. Then u/2 + v/3 = 2, so 3u + 2v = 12. Also u/3 + v/2 = 13/6, so 2u + 3v = 13. Multiplying first by 2: 6u + 4v = 24. Multiplying second by 3: 6u + 9v = 39. Subtracting: -5v = -15, v = 3. Then 3u + 6 = 12, u = 2. So x = 1/2, y = 1/3. Answer: x = 1/2, y = 1/3",,,,
+Problem,36,Solve: 4/x + 5y = 7 and 3/x + 4y = 5.,"Let u = 1/x. Then 4u + 5y = 7 and 3u + 4y = 5. From second: u = (5 - 4y)/3. Substituting: 4(5 - 4y)/3 + 5y = 7, (20 - 16y + 15y)/3 = 7, 20 - y = 21, y = -1. Then u = (5 + 4)/3 = 3, so x = 1/3. Answer: x = 1/3, y = -1",,,,
+Problem,37,Solve: x/a + y/b = 2 and ax - by = a² - b².,"From first: x = a(2 - y/b) = 2a - ay/b. Substituting in second: a(2a - ay/b) - by = a² - b², 2a² - a²y/b - by = a² - b², -y(a²/b + b) = -a² - b², y(a² + b²)/b = a² + b², y = b. Then x/a + 1 = 2, x = a. Answer: x = a, y = b",,,,
+Problem,38,Solve: ax + by = c and bx + ay = 1 + c.,"Adding: (a+b)(x+y) = 2c + 1, so x + y = (2c+1)/(a+b). Subtracting: (a-b)(x-y) = c - 1, so x - y = (c-1)/(a-b). Therefore x = 1/2[(2c+1)/(a+b) + (c-1)/(a-b)], y = 1/2[(2c+1)/(a+b) - (c-1)/(a-b)]. Answer: x and y as above",,,,
+Problem,39,Solve: x + y = a + b and ax - by = a² - b².,"From first: x = a + b - y. Substituting: a(a + b - y) - by = a² - b², a² + ab - ay - by = a² - b², -y(a + b) = -ab - b², y(a + b) = b(a + b), y = b. Then x = a + b - b = a. Answer: x = a, y = b",,,,
+Problem,40,Solve: (a - b)x + (a + b)y = a² - 2ab - b² and (a + b)(x + y) = a² + b².,"From second: x + y = (a² + b²)/(a + b). From first: (a - b)x + (a + b)y = a² - 2ab - b² = (a - b)². Let u = x + y = (a² + b²)/(a + b). Then (a - b)x + (a + b)(u - x) = (a - b)², (a - b - a - b)x = (a - b)² - (a + b)u, -2bx = (a - b)² - (a² + b²), x = (a² + b² - (a - b)²)/(2b) = (2ab)/(2b) = a. Then y = u - a. Answer: x = a, y = (a² + b²)/(a + b) - a",,,,
+Problem,41,Draw the graphs of the equations x - y + 1 = 0 and 3x + 2y - 12 = 0. Determine the coordinates of the vertices of the triangle formed by these lines and the x-axis, and shade the triangular region.,"Graph of x - y + 1 = 0: passes through (-1, 0) and (0, 1). Graph of 3x + 2y - 12 = 0: passes through (4, 0) and (0, 6). Intersection: Solving, x = 2, y = 3. Vertices: (-1, 0), (4, 0), (2, 3). Answer: Vertices at (-1, 0), (4, 0), (2, 3)",,,,
+Problem,42,Solve the following pair of equations graphically: x + y = 5 and 2x + 2y = 10.,"The second equation is 2(x + y) = 10, so x + y = 5, which is same as first. The lines are coincident. Answer: Infinitely many solutions (coincident lines)",,,,
+Problem,43,Solve graphically: x + 2y = 3 and 2x + 4y = 6.,"Dividing second by 2: x + 2y = 3, same as first. Lines are coincident. Answer: Infinitely many solutions",,,,
+Problem,44,Solve graphically: x + y = 8 and 2x + 3y = 20.,"Graph of x + y = 8: passes through (0, 8) and (8, 0). Graph of 2x + 3y = 20: passes through (0, 20/3) and (10, 0). Intersection: Solving, x = 4, y = 4. Answer: x = 4, y = 4",,,,
+Problem,45,Solve graphically: 2x + y = 6 and x - 2y = -2.,"Graph of 2x + y = 6: passes through (0, 6) and (3, 0). Graph of x - 2y = -2: passes through (-2, 0) and (0, 1). Intersection: Solving, x = 2, y = 2. Answer: x = 2, y = 2",,,,
+Problem,46,For what value of k will the following pair of linear equations have infinitely many solutions: kx + 3y - (k - 3) = 0 and 12x + ky - k = 0?,"For infinite solutions: k/12 = 3/k = -(k-3)/(-k). From k/12 = 3/k: k² = 36, k = ±6. From 3/k = (k-3)/k: 3 = k - 3, k = 6. Answer: k = 6",,,,
+Problem,47,For what value of k will the following pair of linear equations have no solution: 3x + y = 1 and (2k - 1)x + (k - 1)y = 2k + 1?,"For no solution: 3/(2k-1) = 1/(k-1) ≠ 1/(2k+1). From 3/(2k-1) = 1/(k-1): 3(k-1) = 2k-1, 3k-3 = 2k-1, k = 2. Checking: 3/3 = 1/1 = 1, but 1/(2k+1) = 1/5 ≠ 1. Answer: k = 2",,,,
+Problem,48,Find the value of k for which the pair of equations kx + 2y = 5 and 3x + y = 1 has a unique solution.,"For unique solution: k/3 ≠ 2/1, so k ≠ 6. Answer: k can be any real number except 6",,,,
+Problem,49,If x = 1 and y = 2 is a solution of the equation 3x + 5y = k, find the value of k. Also find two more solutions of this equation.,"3(1) + 5(2) = 3 + 10 = 13 = k. So equation: 3x + 5y = 13. Two more solutions: x = 6, y = -1 and x = -4, y = 5. Answer: k = 13, other solutions: (6, -1), (-4, 5)",,,,
+Problem,50,The sum of the numerator and denominator of a fraction is 8. If 3 is added to both the numerator and denominator, the fraction becomes 3/4. Find the fraction.,"Let fraction be x/y. Then x + y = 8, so x = 8 - y. Also (x + 3)/(y + 3) = 3/4, so 4(x + 3) = 3(y + 3), 4x + 12 = 3y + 9, 4x - 3y = -3. Substituting: 4(8 - y) - 3y = -3, 32 - 4y - 3y = -3, 7y = 35, y = 5. Then x = 3. Answer: 3/5",,,,
+
+

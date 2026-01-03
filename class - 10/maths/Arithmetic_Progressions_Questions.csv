@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Which of the following sequences is an Arithmetic Progression?,2, 4, 8, 16, 32,2, 4, 6, 8, 10,1, 3, 9, 27, 81,1, 4, 9, 16, 25,2, 4, 6, 8, 10
+MCQ,2,The common difference of the AP: 3, 5, 7, 9, 11, ... is:,1,2,3,4,2
+MCQ,3,The nth term of an AP is given by:,a + (n-1)d,a + nd,a - (n-1)d,an + d,a + (n-1)d
+MCQ,4,The sum of first n terms of an AP is given by:,n/2[2a + (n-1)d],n[2a + (n-1)d],n/2[a + (n-1)d],n[a + d],n/2[2a + (n-1)d]
+MCQ,5,If the first term of an AP is 5 and the common difference is 3, then the 10th term is:,32,35,28,30,32
+MCQ,6,The common difference of the AP: 10, 7, 4, 1, -2, ... is:,-3,3,-2,2,-3
+MCQ,7,If a = 2 and d = 3, then the 5th term of the AP is:,14,11,8,17,14
+MCQ,8,The sum of first 10 natural numbers is:,45,50,55,60,55
+MCQ,9,If the 5th term of an AP is 17 and the 9th term is 33, then the common difference is:,3,4,5,6,4
+MCQ,10,The first term of an AP is 3 and the common difference is 4. The 7th term is:,27,23,31,19,27
+MCQ,11,The sum of first 20 natural numbers is:,190,200,210,220,210
+MCQ,12,If the nth term of an AP is 3n + 2, then the common difference is:,2,3,4,5,3
+MCQ,13,The number of terms in the AP: 3, 6, 9, ..., 99 is:,31,32,33,34,33
+MCQ,14,If the sum of first n terms of an AP is n², then the nth term is:,2n - 1,2n + 1,n - 1,n + 1,2n - 1
+MCQ,15,The sum of first 15 terms of the AP: 2, 5, 8, 11, ... is:,345,350,355,360,345
+MCQ,16,If the 2nd term of an AP is 13 and the 5th term is 25, then the 8th term is:,37,39,41,43,37
+MCQ,17,The common difference of an AP whose nth term is 5n - 3 is:,5,3,2,1,5
+MCQ,18,If a = -1 and d = 4, then the first four terms of the AP are:,-1, 3, 7, 11,-1, 5, 9, 13,-1, 4, 8, 12,-1, 2, 6, 10,-1, 3, 7, 11
+MCQ,19,The sum of first 25 odd numbers is:,625,650,675,700,625
+MCQ,20,If the sum of first n terms is 3n² + 2n, then the common difference is:,4,5,6,7,6
+MCQ,21,The 15th term of the AP: 7, 10, 13, 16, ... is:,49,52,55,58,49
+MCQ,22,If the first term is 10 and the common difference is -3, then the 6th term is:,-5,-8,-11,-14,-5
+MCQ,23,The sum of first 12 terms of the AP: 5, 8, 11, 14, ... is:,258,260,262,264,258
+MCQ,24,If the nth term of an AP is 4n + 1, then the first term is:,4,5,1,3,5
+MCQ,25,The number of two-digit numbers divisible by 3 is:,30,31,32,33,30
+MCQ,26,If the sum of first 10 terms of an AP is 175 and the first term is 4, then the common difference is:,2,3,4,5,3
+MCQ,27,The 20th term of the AP: 1, 4, 7, 10, ... is:,58,61,64,67,58
+MCQ,28,If the 3rd term is 12 and the 7th term is 28, then the 10th term is:,40,42,44,46,40
+MCQ,29,The sum of first 30 even numbers is:,900,930,960,990,930
+MCQ,30,If a = 6 and d = -2, then the 8th term is:,-8,-10,-12,-14,-8
+MCQ,31,The common difference of the AP: -5, -2, 1, 4, 7, ... is:,3,-3,2,-2,3
+MCQ,32,If the sum of first n terms is n(3n + 1), then the nth term is:,6n - 2,6n + 2,6n - 4,6n + 4,6n - 2
+MCQ,33,The number of terms in the AP: 5, 9, 13, ..., 41 is:,9,10,11,12,10
+MCQ,34,The sum of first 100 natural numbers is:,4950,5000,5050,5100,5050
+MCQ,35,If the 4th term is 19 and the 9th term is 44, then the 15th term is:,74,76,78,80,74
+MCQ,36,The 11th term of the AP: 8, 13, 18, 23, ... is:,58,63,68,73,58
+MCQ,37,If the first term is 1 and the common difference is 0.5, then the 6th term is:,3.0,3.5,4.0,4.5,3.5
+MCQ,38,The sum of first 50 odd numbers is:,2500,2550,2600,2650,2500
+MCQ,39,If a = 11 and d = -4, then the 7th term is:,-13,-17,-21,-25,-13
+MCQ,40,The common difference of an AP whose nth term is 7n - 5 is:,5,6,7,8,7
+MCQ,41,If the sum of first 8 terms is 88 and the first term is 2, then the common difference is:,2,3,4,5,3
+MCQ,42,The number of three-digit numbers divisible by 7 is:,128,129,130,131,128
+MCQ,43,If the 6th term is 23 and the 10th term is 39, then the 14th term is:,55,57,59,61,55
+MCQ,44,The sum of first 40 terms of the AP: 1, 4, 7, 10, ... is:,2380,2400,2420,2440,2380
+MCQ,45,If the nth term is 9n - 4, then the sum of first 5 terms is:,95,100,105,110,105
+MCQ,46,The 18th term of the AP: 6, 11, 16, 21, ... is:,91,96,101,106,91
+MCQ,47,If the sum of first n terms is 2n² + 3n, then the common difference is:,2,3,4,5,4
+MCQ,48,The number of terms in the AP: 7, 13, 19, ..., 97 is:,15,16,17,18,16
+MCQ,49,If the first term is -5 and the common difference is 3, then the 12th term is:,28,31,34,37,28
+MCQ,50,The sum of first 21 terms of the AP: 3, 7, 11, 15, ... is:,903,910,917,924,903
+Integer,1,The common difference of the AP: 5, 8, 11, 14, ... is:.,3,,,,
+Integer,2,The 10th term of the AP: 2, 5, 8, 11, ... is:.,29,,,,
+Integer,3,The sum of first 10 natural numbers is:.,55,,,,
+Integer,4,The common difference of the AP: 10, 7, 4, 1, ... is:.,-3,,,,
+Integer,5,If a = 4 and d = 3, then the 7th term is:.,22,,,,
+Integer,6,The sum of first 15 natural numbers is:.,120,,,,
+Integer,7,The 15th term of the AP: 3, 6, 9, 12, ... is:.,45,,,,
+Integer,8,If the first term is 5 and common difference is 4, then the 8th term is:.,33,,,,
+Integer,9,The sum of first 20 natural numbers is:.,210,,,,
+Integer,10,The number of terms in the AP: 4, 7, 10, ..., 40 is:.,13,,,,
+Integer,11,The common difference of the AP: -3, 0, 3, 6, ... is:.,3,,,,
+Integer,12,The 12th term of the AP: 7, 11, 15, 19, ... is:.,51,,,,
+Integer,13,The sum of first 25 natural numbers is:.,325,,,,
+Integer,14,If a = 6 and d = -2, then the 5th term is:.,-2,,,,
+Integer,15,The sum of first 30 natural numbers is:.,465,,,,
+Integer,16,The 20th term of the AP: 1, 4, 7, 10, ... is:.,58,,,,
+Integer,17,The number of terms in the AP: 5, 9, 13, ..., 45 is:.,11,,,,
+Integer,18,If the 3rd term is 14 and the 5th term is 20, then the common difference is:.,3,,,,
+Integer,19,The sum of first 12 terms of the AP: 5, 8, 11, 14, ... is:.,258,,,,
+Integer,20,The common difference of an AP whose nth term is 5n - 2 is:.,5,,,,
+Integer,21,The 8th term of the AP: 9, 14, 19, 24, ... is:.,44,,,,
+Integer,22,The sum of first 50 natural numbers is:.,1275,,,,
+Integer,23,If the first term is 11 and common difference is 4, then the 10th term is:.,47,,,,
+Integer,24,The number of two-digit numbers divisible by 4 is:.,22,,,,
+Integer,25,The sum of first 18 terms of the AP: 2, 5, 8, 11, ... is:.,477,,,,
+Integer,26,If the 4th term is 19 and the 7th term is 31, then the common difference is:.,4,,,,
+Integer,27,The 11th term of the AP: 8, 13, 18, 23, ... is:.,58,,,,
+Integer,28,The sum of first 100 natural numbers is:.,5050,,,,
+Integer,29,If a = -2 and d = 5, then the 6th term is:.,23,,,,
+Integer,30,The number of terms in the AP: 7, 12, 17, ..., 62 is:.,12,,,,
+Integer,31,The common difference of the AP: 15, 11, 7, 3, ... is:.,-4,,,,
+Integer,32,The 14th term of the AP: 6, 10, 14, 18, ... is:.,58,,,,
+Integer,33,The sum of first 35 natural numbers is:.,630,,,,
+Integer,34,If the sum of first 10 terms is 145 and first term is 1, then the common difference is:.,3,,,,
+Integer,35,The 16th term of the AP: 4, 9, 14, 19, ... is:.,79,,,,
+Integer,36,The number of three-digit numbers divisible by 5 is:.,180,,,,
+Integer,37,The sum of first 22 terms of the AP: 3, 7, 11, 15, ... is:.,990,,,,
+Integer,38,If the 5th term is 23 and the 9th term is 39, then the common difference is:.,4,,,,
+Integer,39,The 13th term of the AP: 10, 15, 20, 25, ... is:.,70,,,,
+Integer,40,The sum of first 45 natural numbers is:.,1035,,,,
+Integer,41,If a = 8 and d = -3, then the 7th term is:.,-10,,,,
+Integer,42,The number of terms in the AP: 11, 16, 21, ..., 91 is:.,17,,,,
+Integer,43,The common difference of an AP whose nth term is 6n + 1 is:.,6,,,,
+Integer,44,The 9th term of the AP: 12, 18, 24, 30, ... is:.,60,,,,
+Integer,45,The sum of first 28 terms of the AP: 1, 5, 9, 13, ... is:.,1540,,,,
+Integer,46,If the sum of first 12 terms is 222 and first term is 3, then the common difference is:.,3,,,,
+Integer,47,The 17th term of the AP: 5, 11, 17, 23, ... is:.,101,,,,
+Integer,48,The number of two-digit numbers divisible by 6 is:.,15,,,,
+Integer,49,The sum of first 60 natural numbers is:.,1830,,,,
+Integer,50,If the 6th term is 26 and the 10th term is 42, then the common difference is:.,4,,,,
+Problem,1,Find the 10th term of the AP: 2, 7, 12, 17, ...,"Given: a = 2, d = 7 - 2 = 5. Using formula: aₙ = a + (n-1)d. a₁₀ = 2 + (10-1)×5 = 2 + 45 = 47. Answer: 47",,,,
+Problem,2,Find the sum of first 20 terms of the AP: 5, 8, 11, 14, ...,"Given: a = 5, d = 8 - 5 = 3, n = 20. Using formula: Sₙ = n/2[2a + (n-1)d]. S₂₀ = 20/2[2×5 + (20-1)×3] = 10[10 + 57] = 10×67 = 670. Answer: 670",,,,
+Problem,3,How many terms of the AP: 9, 17, 25, ... must be taken to give a sum of 636?,"Given: a = 9, d = 17 - 9 = 8, Sₙ = 636. Using: Sₙ = n/2[2a + (n-1)d]. 636 = n/2[18 + (n-1)×8], 636 = n/2[18 + 8n - 8], 636 = n/2[10 + 8n], 1272 = n(10 + 8n), 1272 = 10n + 8n², 8n² + 10n - 1272 = 0, 4n² + 5n - 636 = 0. Solving: n = 12 (taking positive value). Answer: 12 terms",,,,
+Problem,4,If the 3rd and 9th terms of an AP are 4 and -8 respectively, which term is zero?,"Given: a₃ = 4, a₉ = -8. a₃ = a + 2d = 4, a₉ = a + 8d = -8. Subtracting: 6d = -12, d = -2. Then a = 4 - 2(-2) = 8. For zero term: a + (n-1)d = 0, 8 + (n-1)(-2) = 0, 8 - 2n + 2 = 0, 2n = 10, n = 5. Answer: 5th term is zero",,,,
+Problem,5,The first term of an AP is 5, the last term is 45 and the sum is 400. Find the number of terms and the common difference.,"Given: a = 5, l = 45, Sₙ = 400. Using: Sₙ = n/2(a + l), 400 = n/2(5 + 45), 400 = n/2 × 50, 400 = 25n, n = 16. Also, l = a + (n-1)d, 45 = 5 + (16-1)d, 45 = 5 + 15d, 40 = 15d, d = 40/15 = 8/3. Answer: n = 16, d = 8/3",,,,
+Problem,6,Find the sum of first 24 terms of the AP: 0.6, 1.7, 2.8, 3.9, ...,"Given: a = 0.6, d = 1.7 - 0.6 = 1.1, n = 24. S₂₄ = 24/2[2×0.6 + (24-1)×1.1] = 12[1.2 + 25.3] = 12×26.5 = 318. Answer: 318",,,,
+Problem,7,If the sum of first 7 terms of an AP is 49 and that of 17 terms is 289, find the sum of first n terms.,"Given: S₇ = 49, S₁₇ = 289. S₇ = 7/2[2a + 6d] = 49, 2a + 6d = 14, a + 3d = 7. S₁₇ = 17/2[2a + 16d] = 289, 2a + 16d = 34, a + 8d = 17. Solving: 5d = 10, d = 2, a = 1. Sₙ = n/2[2×1 + (n-1)×2] = n/2[2 + 2n - 2] = n/2 × 2n = n². Answer: Sₙ = n²",,,,
+Problem,8,Find the sum of first 51 terms of an AP whose second and third terms are 14 and 18 respectively.,"Given: a₂ = 14, a₃ = 18. a₂ = a + d = 14, a₃ = a + 2d = 18. Subtracting: d = 4, then a = 10. S₅₁ = 51/2[2×10 + (51-1)×4] = 51/2[20 + 200] = 51/2 × 220 = 5610. Answer: 5610",,,,
+Problem,9,If the sum of first 14 terms of an AP is 1050 and its first term is 10, find the 20th term.,"Given: S₁₄ = 1050, a = 10. S₁₄ = 14/2[20 + 13d] = 1050, 7[20 + 13d] = 1050, 20 + 13d = 150, 13d = 130, d = 10. a₂₀ = 10 + 19×10 = 10 + 190 = 200. Answer: 200",,,,
+Problem,10,How many multiples of 4 lie between 10 and 250?,"Multiples of 4: 12, 16, 20, ..., 248. This forms an AP with a = 12, d = 4, l = 248. l = a + (n-1)d, 248 = 12 + (n-1)×4, 236 = (n-1)×4, n-1 = 59, n = 60. Answer: 60 multiples",,,,
+Problem,11,Determine the AP whose third term is 16 and the 7th term exceeds the 5th term by 12.,"Given: a₃ = 16, a₇ = a₅ + 12. a₃ = a + 2d = 16, a₇ - a₅ = 2d = 12, so d = 6. Then a = 16 - 12 = 4. The AP is: 4, 10, 16, 22, 28, ... Answer: 4, 10, 16, 22, 28, ...",,,,
+Problem,12,Find the 31st term of an AP whose 11th term is 38 and the 16th term is 73.,"Given: a₁₁ = 38, a₁₆ = 73. a₁₁ = a + 10d = 38, a₁₆ = a + 15d = 73. Subtracting: 5d = 35, d = 7. Then a = 38 - 70 = -32. a₃₁ = -32 + 30×7 = -32 + 210 = 178. Answer: 178",,,,
+Problem,13,An AP consists of 50 terms of which 3rd term is 12 and the last term is 106. Find the 29th term.,"Given: a₃ = 12, a₅₀ = 106. a₃ = a + 2d = 12, a₅₀ = a + 49d = 106. Subtracting: 47d = 94, d = 2. Then a = 12 - 4 = 8. a₂₉ = 8 + 28×2 = 8 + 56 = 64. Answer: 64",,,,
+Problem,14,If the 3rd and the 9th terms of an AP are 4 and -8 respectively, which term of this AP is zero?,"Given: a₃ = 4, a₉ = -8. a₃ = a + 2d = 4, a₉ = a + 8d = -8. Subtracting: 6d = -12, d = -2. Then a = 4 - 2(-2) = 8. For zero term: 8 + (n-1)(-2) = 0, 8 - 2n + 2 = 0, 2n = 10, n = 5. Answer: 5th term",,,,
+Problem,15,The 17th term of an AP exceeds its 10th term by 7. Find the common difference.,"Given: a₁₇ = a₁₀ + 7. a₁₇ - a₁₀ = 7d = 7, so d = 1. Answer: d = 1",,,,
+Problem,16,Which term of the AP: 3, 15, 27, 39, ... will be 132 more than its 54th term?,"Given: a = 3, d = 12. a₅₄ = 3 + 53×12 = 3 + 636 = 639. Required term = 639 + 132 = 771. 771 = 3 + (n-1)×12, 768 = (n-1)×12, n-1 = 64, n = 65. Answer: 65th term",,,,
+Problem,17,Two APs have the same common difference. The difference between their 100th terms is 100, what is the difference between their 1000th terms?,"Let first AP: a, a+d, a+2d, ... and second AP: A, A+d, A+2d, ... Given: (A+99d) - (a+99d) = 100, so A - a = 100. Difference in 1000th terms: (A+999d) - (a+999d) = A - a = 100. Answer: 100",,,,
+Problem,18,How many three-digit numbers are divisible by 7?,"Three-digit numbers divisible by 7: 105, 112, 119, ..., 994. This forms an AP with a = 105, d = 7, l = 994. l = a + (n-1)d, 994 = 105 + (n-1)×7, 889 = (n-1)×7, n-1 = 127, n = 128. Answer: 128 numbers",,,,
+Problem,19,How many multiples of 4 lie between 10 and 250?,"Multiples of 4: 12, 16, 20, ..., 248. a = 12, d = 4, l = 248. l = a + (n-1)d, 248 = 12 + (n-1)×4, 236 = (n-1)×4, n-1 = 59, n = 60. Answer: 60 multiples",,,,
+Problem,20,For what value of n, are the nth terms of two APs: 63, 65, 67, ... and 3, 10, 17, ... equal?,"First AP: a₁ = 63, d₁ = 2, nth term = 63 + (n-1)×2 = 61 + 2n. Second AP: a₂ = 3, d₂ = 7, nth term = 3 + (n-1)×7 = -4 + 7n. Equating: 61 + 2n = -4 + 7n, 65 = 5n, n = 13. Answer: n = 13",,,,
+Problem,21,Find the sum: (-5) + (-8) + (-11) + ... + (-230).,"This is an AP with a = -5, d = -3, l = -230. l = a + (n-1)d, -230 = -5 + (n-1)(-3), -225 = (n-1)(-3), n-1 = 75, n = 76. S₇₆ = 76/2(-5 + (-230)) = 38×(-235) = -8930. Answer: -8930",,,,
+Problem,22,In an AP: given a = 5, d = 3, aₙ = 50, find n and Sₙ.,"Given: a = 5, d = 3, aₙ = 50. aₙ = a + (n-1)d, 50 = 5 + (n-1)×3, 45 = (n-1)×3, n-1 = 15, n = 16. S₁₆ = 16/2(5 + 50) = 8×55 = 440. Answer: n = 16, Sₙ = 440",,,,
+Problem,23,In an AP: given a = 3, n = 8, S = 192, find d.,"Given: a = 3, n = 8, S₈ = 192. S₈ = 8/2[2×3 + 7d] = 192, 4[6 + 7d] = 192, 6 + 7d = 48, 7d = 42, d = 6. Answer: d = 6",,,,
+Problem,24,In an AP: given l = 28, S = 144, and there are total 9 terms. Find a.,"Given: l = 28, S₉ = 144, n = 9. S₉ = 9/2(a + 28) = 144, 9(a + 28) = 288, a + 28 = 32, a = 4. Answer: a = 4",,,,
+Problem,25,Find the sum of first 22 terms of an AP in which d = 7 and 22nd term is 149.,"Given: d = 7, a₂₂ = 149, n = 22. a₂₂ = a + 21d = 149, a + 21×7 = 149, a = 149 - 147 = 2. S₂₂ = 22/2(2 + 149) = 11×151 = 1661. Answer: 1661",,,,
+Problem,26,Find the sum of first 51 terms of an AP whose second and third terms are 14 and 18 respectively.,"Given: a₂ = 14, a₃ = 18. a₂ = a + d = 14, a₃ = a + 2d = 18. Subtracting: d = 4, then a = 10. S₅₁ = 51/2[2×10 + 50×4] = 51/2[20 + 200] = 51/2 × 220 = 5610. Answer: 5610",,,,
+Problem,27,If the sum of first 7 terms of an AP is 49 and that of 17 terms is 289, find the sum of first n terms.,"Given: S₇ = 49, S₁₇ = 289. S₇ = 7/2[2a + 6d] = 49, 2a + 6d = 14, a + 3d = 7. S₁₇ = 17/2[2a + 16d] = 289, 2a + 16d = 34, a + 8d = 17. Solving: 5d = 10, d = 2, a = 1. Sₙ = n/2[2×1 + (n-1)×2] = n/2[2 + 2n - 2] = n². Answer: Sₙ = n²",,,,
+Problem,28,Show that a₁, a₂, ..., aₙ, ... form an AP where aₙ is defined as: aₙ = 3 + 4n.,"aₙ = 3 + 4n. a₁ = 7, a₂ = 11, a₃ = 15, a₄ = 19. Common difference: a₂ - a₁ = 11 - 7 = 4, a₃ - a₂ = 15 - 11 = 4. Since the difference between consecutive terms is constant (4), it forms an AP with a = 7, d = 4. Answer: Yes, it forms an AP with a = 7, d = 4",,,,
+Problem,29,Find the sum of first 24 terms of the list of numbers whose nth term is given by aₙ = 3 + 2n.,"aₙ = 3 + 2n. a₁ = 5, a₂ = 7, d = 2. S₂₄ = 24/2[2×5 + 23×2] = 12[10 + 46] = 12×56 = 672. Answer: 672",,,,
+Problem,30,A contract on construction job specifies a penalty for delay of completion beyond a certain date as follows: Rs 200 for the first day, Rs 250 for the second day, Rs 300 for the third day, etc., the penalty for each succeeding day being Rs 50 more than for the preceding day. How much money the contractor has to pay as penalty, if he has delayed the work by 30 days?,"Penalty forms an AP: 200, 250, 300, ... with a = 200, d = 50, n = 30. S₃₀ = 30/2[2×200 + 29×50] = 15[400 + 1450] = 15×1850 = 27750. Answer: Rs 27,750",,,,
+Problem,31,A sum of Rs 700 is to be used to give seven cash prizes to students of a school for their overall academic performance. If each prize is Rs 20 less than its preceding prize, find the value of each of the prizes.,"Let first prize = Rs a, then prizes form an AP: a, a-20, a-40, ... with d = -20, n = 7, S₇ = 700. S₇ = 7/2[2a + 6(-20)] = 700, 7/2[2a - 120] = 700, 2a - 120 = 200, 2a = 320, a = 160. Prizes: 160, 140, 120, 100, 80, 60, 40. Answer: Rs 160, Rs 140, Rs 120, Rs 100, Rs 80, Rs 60, Rs 40",,,,
+Problem,32,In a school, students thought of planting trees in and around the school to reduce air pollution. It was decided that the number of trees that each section of each class will plant, will be the same as the class, in which they are studying, e.g., a section of Class I will plant 1 tree, a section of Class II will plant 2 trees and so on till Class XII. There are three sections of each class. How many trees will be planted by the students?,"Trees planted by each class: Class 1: 3 sections × 1 = 3, Class 2: 3 sections × 2 = 6, ..., Class 12: 3 sections × 12 = 36. This forms an AP: 3, 6, 9, ..., 36 with a = 3, d = 3, n = 12. S₁₂ = 12/2[2×3 + 11×3] = 6[6 + 33] = 6×39 = 234. Answer: 234 trees",,,,
+Problem,33,A spiral is made up of successive semicircles, with centres alternately at A and B, starting with centre at A, of radii 0.5 cm, 1.0 cm, 1.5 cm, 2.0 cm, ... as shown. What is the total length of such a spiral made up of thirteen consecutive semicircles? (Take π = 22/7),"Lengths of semicircles: π×0.5, π×1.0, π×1.5, π×2.0, ... = 0.5π, π, 1.5π, 2π, ... This forms an AP: 0.5π, π, 1.5π, 2π, ... with a = 0.5π, d = 0.5π, n = 13. S₁₃ = 13/2[2×0.5π + 12×0.5π] = 13/2[π + 6π] = 13/2 × 7π = 91π/2 = 91×22/(2×7) = 143 cm. Answer: 143 cm",,,,
+Problem,34,200 logs are stacked in the following manner: 20 logs in the bottom row, 19 in the next row, 18 in the row next to it and so on. In how many rows are the 200 logs placed and how many logs are in the top row?,"Logs in rows form an AP: 20, 19, 18, ... with a = 20, d = -1, Sₙ = 200. Sₙ = n/2[2×20 + (n-1)(-1)] = 200, n/2[40 - n + 1] = 200, n(41 - n) = 400, 41n - n² = 400, n² - 41n + 400 = 0, (n-16)(n-25) = 0, n = 16 (taking smaller value). Top row: a₁₆ = 20 + 15(-1) = 5. Answer: 16 rows, 5 logs in top row",,,,
+Problem,35,In a potato race, a bucket is placed at the starting point, which is 5 m from the first potato, and the other potatoes are placed 3 m apart in a straight line. There are ten potatoes in the line. A competitor starts from the bucket, picks up the nearest potato, runs back with it, drops it in the bucket, runs back to pick up the next potato, runs to the bucket to drop it in, and she continues in the same way until all the potatoes are in the bucket. What is the total distance the competitor has to run?,"Distance to first potato and back: 2×5 = 10 m. Distance to second potato and back: 2×(5+3) = 16 m. Distance to third potato and back: 2×(5+6) = 22 m. ... This forms an AP: 10, 16, 22, ..., 10th term with a = 10, d = 6, n = 10. S₁₀ = 10/2[2×10 + 9×6] = 5[20 + 54] = 5×74 = 370 m. Answer: 370 m",,,,
+Problem,36,Find the sum of the odd numbers between 0 and 50.,"Odd numbers: 1, 3, 5, 7, ..., 49. This forms an AP with a = 1, d = 2, l = 49. l = a + (n-1)d, 49 = 1 + (n-1)×2, 48 = (n-1)×2, n = 25. S₂₅ = 25/2(1 + 49) = 25/2 × 50 = 625. Answer: 625",,,,
+Problem,37,A ladder has rungs 25 cm apart. The rungs decrease uniformly in length from 45 cm at the bottom to 25 cm at the top. If the top and the bottom rungs are 2.5 m apart, what is the length of the wood required for the rungs?,"Distance between rungs = 25 cm = 0.25 m. Number of gaps = 2.5/0.25 = 10, so number of rungs = 11. Lengths form an AP: 45, 45-d, 45-2d, ..., 25 with a = 45, l = 25, n = 11. l = a + (n-1)d, 25 = 45 + 10d, d = -2. S₁₁ = 11/2(45 + 25) = 11/2 × 70 = 385 cm = 3.85 m. Answer: 3.85 m",,,,
+Problem,38,The houses of a row are numbered consecutively from 1 to 49. Show that there is a value of x such that the sum of the numbers of the houses preceding the house numbered x is equal to the sum of the numbers of the houses following it. Find this value of x.,"Sum of houses before x = 1 + 2 + ... + (x-1) = (x-1)x/2. Sum of houses after x = (x+1) + (x+2) + ... + 49 = (x+1+49)(49-x)/2 = (50+x)(49-x)/2. Equating: (x-1)x/2 = (50+x)(49-x)/2, x² - x = 2450 + 49x - 50x - x², x² - x = 2450 - x - x², 2x² = 2450, x² = 1225, x = 35. Answer: x = 35",,,,
+Problem,39,A small terrace at a football ground comprises of 15 steps each of which is 50 m long and built of solid concrete. Each step has a rise of 1/4 m and a tread of 1/2 m. Calculate the total volume of concrete required to build the terrace.,"Volume of each step: length × width × height. Step 1: 50 × 1/2 × 1/4 = 50/8 = 6.25 m³. Step 2: 50 × 1/2 × 2/4 = 12.5 m³. Step 3: 50 × 1/2 × 3/4 = 18.75 m³. ... This forms an AP: 6.25, 12.5, 18.75, ... with a = 6.25, d = 6.25, n = 15. S₁₅ = 15/2[2×6.25 + 14×6.25] = 15/2[12.5 + 87.5] = 15/2 × 100 = 750 m³. Answer: 750 m³",,,,
+Problem,40,Find the sum of first 15 multiples of 8.,"Multiples of 8: 8, 16, 24, 32, ... This forms an AP with a = 8, d = 8, n = 15. S₁₅ = 15/2[2×8 + 14×8] = 15/2[16 + 112] = 15/2 × 128 = 960. Answer: 960",,,,
+Problem,41,Find the sum of the odd numbers between 0 and 50.,"Odd numbers: 1, 3, 5, ..., 49. a = 1, d = 2, l = 49. 49 = 1 + (n-1)×2, n = 25. S₂₅ = 25/2(1 + 49) = 625. Answer: 625",,,,
+Problem,42,A contract on construction job specifies a penalty for delay of completion beyond a certain date as follows: Rs 200 for the first day, Rs 250 for the second day, Rs 300 for the third day, etc., the penalty for each succeeding day being Rs 50 more than for the preceding day. How much money the contractor has to pay as penalty, if he has delayed the work by 30 days?,"Penalty: 200, 250, 300, ... forms an AP with a = 200, d = 50, n = 30. S₃₀ = 30/2[2×200 + 29×50] = 15[400 + 1450] = 27750. Answer: Rs 27,750",,,,
+Problem,43,Find the sum of the first 40 positive integers divisible by 6.,"Numbers divisible by 6: 6, 12, 18, 24, ... forms an AP with a = 6, d = 6, n = 40. S₄₀ = 40/2[2×6 + 39×6] = 20[12 + 234] = 20×246 = 4920. Answer: 4920",,,,
+Problem,44,Find the sum of the first 15 multiples of 8.,"Multiples of 8: 8, 16, 24, ... forms an AP with a = 8, d = 8, n = 15. S₁₅ = 15/2[2×8 + 14×8] = 15/2 × 128 = 960. Answer: 960",,,,
+Problem,45,How many terms of the AP: 9, 17, 25, ... must be taken to give a sum of 636?,"Given: a = 9, d = 8, Sₙ = 636. 636 = n/2[18 + (n-1)×8], 1272 = n[18 + 8n - 8], 1272 = n(10 + 8n), 1272 = 10n + 8n², 8n² + 10n - 1272 = 0, 4n² + 5n - 636 = 0, (n-12)(4n+53) = 0, n = 12. Answer: 12 terms",,,,
+Problem,46,The first term of an AP is 5, the last term is 45 and the sum is 400. Find the number of terms and the common difference.,"Given: a = 5, l = 45, Sₙ = 400. 400 = n/2(5 + 45), 400 = 25n, n = 16. Also, 45 = 5 + 15d, d = 40/15 = 8/3. Answer: n = 16, d = 8/3",,,,
+Problem,47,Find the sum of first 22 terms of an AP in which d = 7 and 22nd term is 149.,"Given: d = 7, a₂₂ = 149. a₂₂ = a + 21×7 = 149, a = 2. S₂₂ = 22/2(2 + 149) = 11×151 = 1661. Answer: 1661",,,,
+Problem,48,Find the sum of first 51 terms of an AP whose second and third terms are 14 and 18 respectively.,"Given: a₂ = 14, a₃ = 18. a + d = 14, a + 2d = 18, so d = 4, a = 10. S₅₁ = 51/2[2×10 + 50×4] = 51/2 × 220 = 5610. Answer: 5610",,,,
+Problem,49,If the sum of first 7 terms of an AP is 49 and that of 17 terms is 289, find the sum of first n terms.,"Given: S₇ = 49, S₁₇ = 289. From S₇: a + 3d = 7. From S₁₇: a + 8d = 17. Solving: d = 2, a = 1. Sₙ = n/2[2 + (n-1)×2] = n/2 × 2n = n². Answer: Sₙ = n²",,,,
+Problem,50,Show that a₁, a₂, ..., aₙ, ... form an AP where aₙ is defined as: aₙ = 9 - 5n.,"aₙ = 9 - 5n. a₁ = 4, a₂ = -1, a₃ = -6, a₄ = -11. Common difference: -1 - 4 = -5, -6 - (-1) = -5. Since the difference is constant (-5), it forms an AP with a = 4, d = -5. Answer: Yes, it forms an AP with a = 4, d = -5",,,,
+

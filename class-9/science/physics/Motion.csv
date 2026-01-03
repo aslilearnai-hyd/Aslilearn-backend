@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Motion is defined as?,Change in speed,Change in position with time,Change in direction,Change in shape,Change in position with time
+MCQ,2,Which is a scalar quantity?,Velocity,Acceleration,Speed,Displacement,Speed
+MCQ,3,Which is a vector quantity?,Speed,Distance,Displacement,Time,Displacement
+MCQ,4,SI unit of speed is?,m,m/s,m/s²,km/h,m/s
+MCQ,5,SI unit of acceleration is?,m/s,m/s²,km/h,s,m/s²
+MCQ,6,Distance travelled can be?,Zero,Negative,Positive,Both positive and zero,Both positive and zero
+MCQ,7,Displacement can be?,Only positive,Only negative,Zero,All of these,All of these
+MCQ,8,Speed is distance divided by?,Time,Acceleration,Velocity,Displacement,Time
+MCQ,9,Velocity is displacement divided by?,Distance,Time,Acceleration,Speed,Time
+MCQ,10,Which motion is along a straight line?,Circular motion,Rotational motion,Rectilinear motion,Periodic motion,Rectilinear motion
+MCQ,11,Uniform motion means?,Constant speed,Constant velocity,Equal distances in equal intervals,Both A and C,Equal distances in equal intervals
+MCQ,12,Non-uniform motion means?,Constant speed,Unequal distances in equal intervals,Zero acceleration,Constant velocity,Unequal distances in equal intervals
+MCQ,13,Acceleration is defined as?,Change in speed,Change in velocity per unit time,Change in distance,Change in displacement,Change in velocity per unit time
+MCQ,14,If velocity is constant, acceleration is?,Zero,Maximum,Minimum,Infinite,Zero
+MCQ,15,Area under velocity-time graph gives?,Speed,Acceleration,Distance,Displacement,Displacement
+MCQ,16,Slope of velocity-time graph gives?,Speed,Acceleration,Distance,Displacement,Acceleration
+MCQ,17,Slope of distance-time graph gives?,Speed,Velocity,Acceleration,Displacement,Speed
+MCQ,18,Which graph is a straight line for uniform motion?,Distance-time,Velocity-time,Acceleration-time,None,Distance-time
+MCQ,19,Uniform circular motion has?,Constant speed,Constant velocity,Zero acceleration,Both A and B,Constant speed
+MCQ,20,In uniform circular motion acceleration is?,Zero,Constant,Changing,Infinite,Changing
+MCQ,21,Which has greater value?,Speed,Velocity,Both equal,Depends,Depends
+MCQ,22,If object returns to starting point, displacement is?,Distance,Zero,Maximum,Negative,Zero
+MCQ,23,Which law gives v = u + at?,First law,Second law,Third law,Equation of motion,Equation of motion
+MCQ,24,Which equation gives s = ut + ½at²?,First equation,Second equation,Third equation,None,Second equation
+MCQ,25,Which equation gives v² − u² = 2as?,First,Second,Third,None,Third
+MCQ,26,Unit of displacement?,m,m/s,m/s²,km/h,m
+MCQ,27,Average speed is?,Total distance/Total time,Total displacement/Total time,Speed/time,None,Total distance/Total time
+MCQ,28,Average velocity is?,Total distance/Total time,Total displacement/Total time,Velocity/time,None,Total displacement/Total time
+MCQ,29,Which motion repeats itself?,Linear,Random,Periodic,Circular,Periodic
+MCQ,30,Which graph area gives distance?,Distance-time,Velocity-time,Acceleration-time,None,Velocity-time
+MCQ,31,Which motion has constant speed but changing velocity?,Linear,Rectilinear,Circular,None,Circular
+MCQ,32,Velocity-time graph slope negative means?,Acceleration positive,Acceleration zero,Acceleration negative,No motion,Acceleration negative
+MCQ,33,Rest is a state of?,No motion,Motion,Relative concept,Absolute concept,Relative concept
+MCQ,34,Motion is always?,Absolute,Relative,Random,None,Relative
+MCQ,35,Which quantity has magnitude only?,Velocity,Acceleration,Speed,Displacement,Speed
+MCQ,36,Which quantity has magnitude and direction?,Speed,Distance,Time,Velocity,Velocity
+MCQ,37,SI unit of time?,Second,Minute,Hour,Day,Second
+MCQ,38,Distance-time graph parallel to time axis shows?,Uniform motion,No motion,Accelerated motion,Decelerated motion,No motion
+MCQ,39,Velocity-time graph parallel to time axis shows?,Zero velocity,Uniform velocity,Uniform acceleration,None,Uniform velocity
+MCQ,40,Acceleration opposite to velocity is?,Positive acceleration,Negative acceleration,Uniform acceleration,Zero acceleration,Negative acceleration
+MCQ,41,Deceleration means?,Increase in speed,Decrease in speed,Constant speed,Zero speed,Decrease in speed
+MCQ,42,Which is correct for uniform motion?,a=0,v=0,s=0,t=0,a=0
+MCQ,43,Which motion has zero displacement?,Circular motion,Round trip,Linear motion,None,Round trip
+MCQ,44,Which graph represents rest?,Horizontal distance-time line,Straight sloping line,Curve,None,Horizontal distance-time line
+MCQ,45,Unit of acceleration?,m/s,m/s²,km/h,s,m/s²
+MCQ,46,Which equation is third equation of motion?,v=u+at,s=ut+½at²,v²−u²=2as,None,v²−u²=2as
+MCQ,47,If speed increases uniformly, motion is?,Uniform,Non-uniform,Accelerated,Decelerated,Accelerated
+MCQ,48,Which quantity cannot be negative?,Velocity,Displacement,Distance,Acceleration,Distance
+MCQ,49,Speedometer measures?,Speed,Velocity,Acceleration,Distance,Speed
+MCQ,50,Odometer measures?,Speed,Velocity,Distance,Acceleration,Distance
+
+Integer,1,SI unit of speed?,m/s,,,,
+Integer,2,SI unit of acceleration?,m/s²,,,,
+Integer,3,SI unit of displacement?,m,,,,
+Integer,4,Formula for speed?,distance/time,,,,
+Integer,5,Formula for velocity?,displacement/time,,,,
+Integer,6,Formula for acceleration?,(v−u)/t,,,,
+Integer,7,First equation of motion?,v=u+at,,,,
+Integer,8,Second equation of motion?,s=ut+½at²,,,,
+Integer,9,Third equation of motion?,v²−u²=2as,,,,
+Integer,10,Speed is scalar or vector?,Scalar,,,,
+Integer,11,Velocity is scalar or vector?,Vector,,,,
+Integer,12,Acceleration is scalar or vector?,Vector,,,,
+Integer,13,Distance can be negative? (Yes/No),No,,,,
+Integer,14,Displacement can be zero? (Yes/No),Yes,,,,
+Integer,15,Average speed formula?,Total distance/Total time,,,,
+Integer,16,Average velocity formula?,Total displacement/Total time,,,,
+Integer,17,Slope of v-t graph gives?,Acceleration,,,,
+Integer,18,Area under v-t graph gives?,Displacement,,,,
+Integer,19,Slope of s-t graph gives?,Speed,,,,
+Integer,20,Uniform motion has constant?,Speed,,,,
+Integer,21,Uniform circular motion acceleration?,Non-zero,,,,
+Integer,22,Rest and motion are?,Relative,,,,
+Integer,23,Deceleration means?,Negative acceleration,,,,
+Integer,24,If velocity constant acceleration?,Zero,,,,
+Integer,25,Speedometer measures?,Speed,,,,
+Integer,26,Odometer measures?,Distance,,,,
+Integer,27,Distance travelled in round trip?,Non-zero,,,,
+Integer,28,Displacement in round trip?,Zero,,,,
+Integer,29,Unit of time?,Second,,,,
+Integer,30,Equation v=u when a=?,0,,,,
+Integer,31,Distance-time graph horizontal line means?,Rest,,,,
+Integer,32,Velocity-time graph straight line means?,Uniform acceleration,,,,
+Integer,33,Acceleration unit derived from?,Velocity and time,,,,
+Integer,34,Speed depends on?,Distance and time,,,,
+Integer,35,Velocity depends on?,Displacement and time,,,,
+Integer,36,Acceleration depends on?,Change in velocity,,,,
+Integer,37,Which is faster 36 km/h or 10 m/s?,Equal,,,,
+Integer,38,If u=0 then motion starts from?,Rest,,,,
+Integer,39,Uniform motion distance-time graph?,Straight line,,,,
+Integer,40,Negative acceleration called?,Retardation,,,,
+Integer,41,Velocity-time graph area unit?,m,,,,
+Integer,42,SI unit of velocity?,m/s,,,,
+Integer,43,Change in velocity per second?,Acceleration,,,,
+Integer,44,If displacement zero, motion possible? (Yes/No),Yes,,,,
+Integer,45,Uniform speed but changing direction?,Circular motion,,,,
+Integer,46,Which quantity is always positive?,Distance,,,,
+Integer,47,Motion along straight line?,Rectilinear,,,,
+Integer,48,Time taken SI unit?,Second,,,,
+Integer,49,Acceleration in circular motion direction?,Towards centre,,,,
+Integer,50,Uniform motion acceleration value?,Zero,,,,
+
+Problem,1,Find speed if distance is 100 m and time is 20 s.,,,,,5 m/s
+Problem,2,Find velocity if displacement is 200 m in 40 s.,,,,,5 m/s
+Problem,3,Find acceleration if velocity changes from 10 m/s to 20 m/s in 5 s.,,,,,2 m/s²
+Problem,4,Find distance travelled in 10 s at speed 5 m/s.,,,,,50 m
+Problem,5,Find final velocity if u=0,a=2 m/s²,t=5 s.,,,,,10 m/s
+Problem,6,Find distance if u=0,a=2 m/s²,t=5 s.,,,,,25 m
+Problem,7,Find final velocity if u=10 m/s,a=2 m/s²,t=5 s.,,,,,20 m/s
+Problem,8,Find acceleration if u=20 m/s,v=10 m/s,t=5 s.,,,,,−2 m/s²
+Problem,9,Find displacement if u=5 m/s,a=2 m/s²,t=10 s.,,,,,150 m
+Problem,10,Find time if distance=100 m and speed=10 m/s.,,,,,10 s
+Problem,11,Find average speed if total distance=300 m,time=60 s.,,,,,5 m/s
+Problem,12,Find displacement if velocity=4 m/s,time=25 s.,,,,,100 m
+Problem,13,Find final velocity using v²−u²=2as (u=0,a=2,s=50).,,,,,14.14 m/s
+Problem,14,Find distance covered in uniform motion of 3 m/s for 20 s.,,,,,60 m
+Problem,15,Find acceleration if velocity increases from 5 to 15 m/s in 10 s.,,,,,1 m/s²
+Problem,16,Find speed in km/h if speed is 10 m/s.,,,,,36 km/h
+Problem,17,Convert 72 km/h to m/s.,,,,,20 m/s
+Problem,18,Find time if u=0,a=4 m/s²,v=20 m/s.,,,,,5 s
+Problem,19,Find distance travelled in 5 s with speed 8 m/s.,,,,,40 m
+Problem,20,Find velocity if displacement is zero and time is 10 s.,,,,,0 m/s
+Problem,21,Find acceleration if v=0,u=20 m/s,t=4 s.,,,,,−5 m/s²
+Problem,22,Find distance if u=10 m/s,a=0,t=5 s.,,,,,50 m
+Problem,23,Find average velocity if displacement=0,time=10 s.,,,,,0 m/s
+Problem,24,Find speed if car covers 180 km in 3 h.,,,,,60 km/h
+Problem,25,Find distance travelled in circular motion after one round (r=7 m).,,,,,44 m
+Problem,26,Find displacement after one round in circular path.,,,,,0 m
+Problem,27,Find final velocity if u=15 m/s,a=−3 m/s²,t=5 s.,,,,,0 m/s
+Problem,28,Find distance if u=15 m/s,a=−3 m/s²,t=5 s.,,,,,37.5 m
+Problem,29,Find acceleration if slope of v-t graph is 4.,,,,,4 m/s²
+Problem,30,Find displacement if area under v-t graph is 60.,,,,,60 m
+Problem,31,Find time if v=20 m/s,u=0,a=4 m/s².,,,,,5 s
+Problem,32,Find distance covered by uniform speed of 12 m/s in 15 s.,,,,,180 m
+Problem,33,Find acceleration if speed decreases from 20 to 10 m/s in 5 s.,,,,,−2 m/s²
+Problem,34,Find speed if distance=500 m,time=100 s.,,,,,5 m/s
+Problem,35,Find displacement if velocity=6 m/s,time=30 s.,,,,,180 m
+Problem,36,Find final velocity if u=5 m/s,a=3 m/s²,t=5 s.,,,,,20 m/s
+Problem,37,Find distance if u=5 m/s,a=3 m/s²,t=5 s.,,,,,62.5 m
+Problem,38,Find time if distance=150 m and speed=5 m/s.,,,,,30 s
+Problem,39,Find speed if 360 m is covered in 2 minutes.,,,,,3 m/s
+Problem,40,Find acceleration if v=30 m/s,u=10 m/s,t=10 s.,,,,,2 m/s²
+Problem,41,Find distance if v=20 m/s,t=5 s.,,,,,100 m
+Problem,42,Find speed in m/s if speed=54 km/h.,,,,,15 m/s
+Problem,43,Find displacement if velocity=0 for 10 s.,,,,,0 m
+Problem,44,Find distance covered by car moving at 72 km/h in 30 min.,,,,,36 km
+Problem,45,Find acceleration if object comes to rest from 20 m/s in 4 s.,,,,,−5 m/s²
+Problem,46,Find distance if object comes to rest from 20 m/s in 4 s.,,,,,40 m
+Problem,47,Find speed if object covers 1 km in 200 s.,,,,,5 m/s
+Problem,48,Find final velocity if u=0,a=10 m/s²,t=3 s.,,,,,30 m/s
+Problem,49,Find distance if u=0,a=10 m/s²,t=3 s.,,,,,45 m
+Problem,50,Find time if speed=20 m/s,distance=400 m.,,,,,20 s

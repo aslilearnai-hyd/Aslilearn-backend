@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who wrote the poem "Rain on the Roof"?,Robert Frost,Coates Kinney,John Keats,William Wordsworth,Coates Kinney
+MCQ,2,The poem describes?,Storm,Rainfall,Thunder,River,Rainfall
+MCQ,3,What is the poet doing in the poem?,Running,Sleeping,Listening to rain,Walking,Listening to rain
+MCQ,4,Where does the poet lie?,Garden,Roof,Bed,Street,Bed
+MCQ,5,The sound of rain creates?,Fear,Music,Memories,Sadness,Memories
+MCQ,6,The rain brings memories of?,Friends,Mother,Teacher,Childhood,Mother
+MCQ,7,What time of day is suggested?,Morning,Afternoon,Night,Noon,Night
+MCQ,8,What does the poet call the rain?,Soft music,Drums,Noise,Silence,Soft music
+MCQ,9,The poet’s mother is?,Alive,Dead,Ill,Absent,Dead
+MCQ,10,The rain sound is described as?,Loud,Gentle,Harsh,Painful,Gentle
+MCQ,11,The poet feels?,Fearful,Joyful,Comforted,Angry,Comforted
+MCQ,12,The rain creates a feeling of?,Loneliness,Nostalgia,Anger,Hatred,Nostalgia
+MCQ,13,What is meant by "humid shadows"?,Dark clouds,Damp darkness,Bright light,Dry heat,Damp darkness
+MCQ,14,What happens to the poet’s heart?,Becomes heavy,Fills with joy,Becomes angry,Becomes cold,Fills with joy
+MCQ,15,What does the rain tap?,Windows,Rooftop,Door,Floor,Rooftop
+MCQ,16,The poem is mainly about?,Nature only,Memories and emotions,Rain science,Weather forecast,Memories and emotions
+MCQ,17,The tone of the poem is?,Sad,Joyful,Reflective,Angry,Reflective
+MCQ,18,The poet remembers his?,Father,Mother,Friends,Teacher,Mother
+MCQ,19,What emotion dominates the poem?,Fear,Anger,Love,Calmness,Love
+MCQ,20,The rain sound is compared to?,Song,Drum,Music,Thunder,Music
+MCQ,21,What does the poet close?,Door,Book,Windows,Eyes,Eyes
+MCQ,22,Why does the poet close his eyes?,To sleep,To imagine,To pray,To cry,To imagine
+MCQ,23,What kind of memories are recalled?,Sad,Painful,Sweet,Bitter,Sweet
+MCQ,24,The poem highlights?,Nature beauty,Childhood memories,Storm effects,Rain damage,Childhood memories
+MCQ,25,What literary device is used for rain?,Simile,Metaphor,Personification,Alliteration,Personification
+MCQ,26,What does the rain symbolize?,Problems,Memories,Destruction,Anger,Memories
+MCQ,27,The poet’s mood is?,Restless,Peaceful,Angry,Fearful,Peaceful
+MCQ,28,The mother’s presence is felt through?,Dreams,Memories,Voices,Photos,Memories
+MCQ,29,What does "tinkle" suggest?,Loud noise,Harsh sound,Soft sound,Painful sound,Soft sound
+MCQ,30,The poem is written in?,Free verse,Blank verse,Rhyming scheme,Prose,Rhyming scheme
+MCQ,31,What does rain bring to poet’s mind?,Fear,Sorrow,Memories,Anger,Memories
+MCQ,32,The poet feels secure because?,Rain stopped,He is indoors,He remembers mother,He sleeps,He is indoors
+MCQ,33,The rain is associated with?,Storms,Comfort,Destruction,Fear,Comfort
+MCQ,34,The poem reflects which theme?,Fear of rain,Nostalgia and love,Adventure,Nature power,Nostalgia and love
+MCQ,35,The poet hears rain on?,Trees,Roof,Road,Leaves,Roof
+MCQ,36,What is the setting of the poem?,Forest,House interior,Street,Field,House interior
+MCQ,37,The poet’s mother is remembered as?,Strict,Loving,Cruel,Silent,Loving
+MCQ,38,What feeling does rain evoke?,Anger,Peace,Sadness,Hatred,Peace
+MCQ,39,The poem is subjective because?,It shows emotions,It explains science,It narrates history,It gives facts,It shows emotions
+MCQ,40,What does the poet do while listening?,Cries,Sleeps,Remembers,Shouts,Remembers
+MCQ,41,What does the rain's patter do?,Irritate,Soothing effect,Frighten,Annoy,Soothing effect
+MCQ,42,What kind of poem is this?,Narrative,Lyric,Dramatic,Sonnet,Lyric
+MCQ,43,What does the rain revive?,Pain,Fear,Old memories,Anger,Old memories
+MCQ,44,The poem shows bond between?,Nature and humans,Friends,Teacher-student,Animals,Nature and humans
+MCQ,45,What kind of rain is described?,Stormy,Gentle,Violent,Heavy,Gentle
+MCQ,46,The rain falls on?,Roof,Tree,Street,River,Roof
+MCQ,47,What does the poet cherish?,Rain sound,House,Mother’s love,Storm,Mother’s love
+MCQ,48,The poem’s message?,Fear rain,Nature harms,Memories comfort us,Rain destroys,Memories comfort us
+MCQ,49,What time enhances memory?,Daytime,Evening,Night,Morning,Night
+MCQ,50,Central idea of poem?,Rainfall,Weather,Emotional bonding,Storm,Emotional bonding
+
+Integer,1,Poet?,Coates Kinney,,,,
+Integer,2,Poem title?,Rain on the Roof,,,,
+Integer,3,Theme?,Memories,,,,
+Integer,4,Rain sound?,Music,,,,
+Integer,5,Poet position?,Bed,,,,
+Integer,6,Setting?,House,,,,
+Integer,7,Mother status?,Dead,,,,
+Integer,8,Memory type?,Sweet,,,,
+Integer,9,Time?,Night,,,,
+Integer,10,Rain place?,Roof,,,,
+Integer,11,Mood?,Peaceful,,,,
+Integer,12,Tone?,Reflective,,,,
+Integer,13,Device?,Personification,,,,
+Integer,14,Emotion?,Love,,,,
+Integer,15,Rain symbol?,Memories,,,,
+Integer,16,Poem type?,Lyric,,,,
+Integer,17,Sound word?,Tinkle,,,,
+Integer,18,Feeling?,Comfort,,,,
+Integer,19,Poet action?,Listening,,,,
+Integer,20,Heart fills?,Joy,,,,
+Integer,21,Mother role?,Comfort,,,,
+Integer,22,Rain effect?,Soothing,,,,
+Integer,23,Poem style?,Rhyming,,,,
+Integer,24,Central focus?,Nostalgia,,,,
+Integer,25,Rain mood?,Gentle,,,,
+Integer,26,Poet reaction?,Reminiscence,,,,
+Integer,27,Memory trigger?,Rain,,,,
+Integer,28,Rain association?,Comfort,,,,
+Integer,29,Poet state?,Relaxed,,,,
+Integer,30,Mother image?,Loving,,,,
+Integer,31,Rain taps?,Roof,,,,
+Integer,32,Poem setting time?,Night,,,,
+Integer,33,Heart response?,Warmth,,,,
+Integer,34,Rain sound effect?,Calming,,,,
+Integer,35,Poet feeling?,Secure,,,,
+Integer,36,Poem theme?,Love,,,,
+Integer,37,Poet activity?,Remembering,,,,
+Integer,38,Memory tone?,Positive,,,,
+Integer,39,Poem mood?,Calm,,,,
+Integer,40,Poet eyes?,Closed,,,,
+Integer,41,Rain evokes?,Past,,,,
+Integer,42,Poet comfort?,Mother,,,,
+Integer,43,Main symbol?,Rain,,,,
+Integer,44,Rain type?,Soft,,,,
+Integer,45,Emotion shown?,Affection,,,,
+Integer,46,Poem message?,Comfort of memories,,,,
+Integer,47,Rain intensity?,Light,,,,
+Integer,48,Poet’s thought?,Mother,,,,
+Integer,49,Theme emotion?,Nostalgia,,,,
+Integer,50,Poem focus?,Emotions,,,,
+
+Descriptive,1,Who wrote the poem "Rain on the Roof"?,,,,,The poem was written by Coates Kinney
+Descriptive,2,What is the theme of the poem?,,,,,The theme is nostalgia and emotional comfort
+Descriptive,3,What effect does rain have on the poet?,,,,,It brings back sweet memories of his mother
+Descriptive,4,Describe the setting of the poem.,,,,,The poet lies indoors listening to rain at night
+Descriptive,5,Why does the poet remember his mother?,,,,,The rain sound triggers childhood memories
+Descriptive,6,How is the rain described?,,,,,As soft, musical and comforting
+Descriptive,7,What does the rain symbolize?,,,,,Memories and emotional comfort
+Descriptive,8,What mood is created in the poem?,,,,,A peaceful and reflective mood
+Descriptive,9,Why is the poem nostalgic?,,,,,It recalls past love and warmth
+Descriptive,10,Explain the title of the poem.,,,,,It focuses on the rain heard on the roof
+Descriptive,11,How does rain connect past and present?,,,,,It revives old memories
+Descriptive,12,What role does the mother play?,,,,,She represents love and protection
+Descriptive,13,What literary device is used for rain?,,,,,Personification
+Descriptive,14,Why is the rain soothing?,,,,,Its gentle sound calms the mind
+Descriptive,15,How does the poet feel during the rain?,,,,,He feels comforted and peaceful
+Descriptive,16,What kind of memories are revived?,,,,,Sweet childhood memories
+Descriptive,17,Why is the poem emotional?,,,,,It shows deep love for mother
+Descriptive,18,How does the poem show love?,,,,,Through memories of mother
+Descriptive,19,Explain the line “humid shadows.”,,,,,It refers to damp darkness created by rain
+Descriptive,20,What message does the poem convey?,,,,,Memories provide comfort
+Descriptive,21,How does nature influence emotions?,,,,,It triggers memories and feelings
+Descriptive,22,Why is the poem lyrical?,,,,,It expresses personal emotions
+Descriptive,23,What contrast is shown?,,,,,Outer rain and inner warmth
+Descriptive,24,How does the poet react physically?,,,,,He lies quietly listening
+Descriptive,25,Why is rain associated with comfort?,,,,,It reminds poet of mother’s care
+Descriptive,26,Explain the tone of the poem.,,,,,It is calm and reflective
+Descriptive,27,Why does the poet close his eyes?,,,,,To relive memories
+Descriptive,28,How does the poem appeal to readers?,,,,,Through universal emotions
+Descriptive,29,What role does sound play?,,,,,It triggers memory
+Descriptive,30,How does the poem end?,,,,,With comfort and warmth
+Descriptive,31,Why is the poem relatable?,,,,,Everyone has comforting memories
+Descriptive,32,How is childhood portrayed?,,,,,As loving and safe
+Descriptive,33,Why is rain a powerful symbol?,,,,,It connects emotions
+Descriptive,34,Explain nostalgia in the poem.,,,,,Past happiness is remembered
+Descriptive,35,What is the poet’s state of mind?,,,,,Relaxed and reflective
+Descriptive,36,How does memory comfort the poet?,,,,,It replaces loneliness
+Descriptive,37,Why is night important?,,,,,It deepens reflection
+Descriptive,38,How does the poet describe sound?,,,,,As soft music
+Descriptive,39,What makes the poem soothing?,,,,,Gentle imagery and tone
+Descriptive,40,Explain emotional bonding in the poem.,,,,,Bond between poet and mother
+Descriptive,41,How does the poem show mother’s love?,,,,,Through lasting memories
+Descriptive,42,Why is rain a trigger for memories?,,,,,Its rhythm resembles lullaby
+Descriptive,43,How does the poem balance sadness?,,,,,With warmth of memories
+Descriptive,44,Explain the poet’s comfort.,,,,,He feels protected by memories
+Descriptive,45,Why is the poem timeless?,,,,,Emotions are universal
+Descriptive,46,What lesson can students learn?,,,,,Cherish memories
+Descriptive,47,How does the poet express gratitude?,,,,,By remembering mother
+Descriptive,48,What makes rain special here?,,,,,Its emotional impact
+Descriptive,49,How does nature act as healer?,,,,,By calming the mind
+Descriptive,50,Summarize "Rain on the Roof".,,,,,The poem describes how the gentle sound of rain at night comforts the poet by reviving sweet memories of his mother, filling his heart with peace and love

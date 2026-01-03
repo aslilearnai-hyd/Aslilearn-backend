@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the central figure in "A Truly Beautiful Mind"?,Newton,Einstein,Galileo,Curie,Einstein
+MCQ,2,Albert Einstein was born in which country?,USA,Germany,France,Austria,Germany
+MCQ,3,In which year was Albert Einstein born?,1870,1875,1879,1885,1879
+MCQ,4,Albert Einstein was weak in which subject during childhood?,Science,Mathematics,Languages,Physics,Languages
+MCQ,5,What did Einstein enjoy doing as a child?,Playing sports,Reading books,Solving puzzles,Music,Solving puzzles
+MCQ,6,Which musical instrument did Einstein play?,Piano,Drums,Guitar,Violin,Violin
+MCQ,7,Einstein’s mother wanted him to become a?,Scientist,Engineer,Musician,Doctor,Musician
+MCQ,8,Which quality made Einstein different?,Arrogance,Curiosity,Laziness,Anger,Curiosity
+MCQ,9,Einstein faced difficulty in school because he was?,Slow learner,Rebellious,Disobedient,Arrogant,Rebellious
+MCQ,10,Which exam did Einstein fail initially?,School exam,University exam,Army exam,Entrance exam,Entrance exam
+MCQ,11,Einstein later became famous for his work in?,Chemistry,Biology,Physics,Geography,Physics
+MCQ,12,Which theory made Einstein world famous?,Atomic theory,Relativity,Gravity,Evolution,Relativity
+MCQ,13,Einstein received the Nobel Prize in?,Physics,Chemistry,Peace,Literature,Physics
+MCQ,14,In which year did Einstein receive the Nobel Prize?,1915,1921,1930,1945,1921
+MCQ,15,Einstein was known for his views on?,War and peace,Politics only,Economics,Sports,War and peace
+MCQ,16,Einstein believed science should be used for?,Destruction,Power,Human welfare,Money,Human welfare
+MCQ,17,Einstein opposed which weapon?,Guns,Tanks,Atomic bomb,Chemical weapons,Atomic bomb
+MCQ,18,Einstein was a supporter of?,Violence,War,Peace,Racism,Peace
+MCQ,19,Einstein migrated to which country?,UK,France,USA,Italy,USA
+MCQ,20,Einstein was a victim of which discrimination?,Gender,Racial,Religious,Political,Religious
+MCQ,21,Which organisation did Einstein support?,UN,League of Nations,Peace movements,Army,Peace movements
+MCQ,22,Einstein’s hairstyle symbolises?,Fashion,Carelessness,Uniqueness,Poverty,Uniqueness
+MCQ,23,Einstein believed imagination was more important than?,Knowledge,Wealth,Power,Education,Knowledge
+MCQ,24,Einstein’s ideas helped in the development of?,Computers,Atomic energy,Space travel,Chemistry,Atomic energy
+MCQ,25,Einstein was also a?,Poet,Philosopher,Musician,Engineer,Philosopher
+MCQ,26,Einstein spoke against?,Peace,Education,War,Equality,War
+MCQ,27,Which war influenced Einstein’s thoughts?,World War I,World War II,Civil War,None,World War I
+MCQ,28,Einstein believed in?,Racism,Nationalism,Humanity,Violence,Humanity
+MCQ,29,Einstein was known for his?,Humility,Anger,Pride,Strictness,Humility
+MCQ,30,Which quality made Einstein a great human being?,Intelligence,Wealth,Fame,Compassion,Compassion
+MCQ,31,Einstein’s work contributed to?,Peace only,War only,Both science and humanity,None,Both science and humanity
+MCQ,32,Einstein disliked?,Rigid education,Music,Freedom,Peace,Rigid education
+MCQ,33,Einstein’s childhood showed he was?,Average,Extraordinary,Slow but curious,Arrogant,Slow but curious
+MCQ,34,Einstein valued?,Marks,Degrees,Ideas,Money,Ideas
+MCQ,35,Einstein believed schools should encourage?,Fear,Obedience,Creativity,Competition,Creativity
+MCQ,36,Einstein’s life teaches us?,Only intelligence matters,Human values matter,Fame is important,Money is everything,Human values matter
+MCQ,37,Einstein refused to work for?,Science projects,Military weapons,Universities,Research labs,Military weapons
+MCQ,38,Einstein was deeply disturbed by?,Peace talks,Use of science for war,Music concerts,Teaching,Use of science for war
+MCQ,39,Einstein supported which cause?,War funding,Education reform,Peace and equality,Colonialism,Peace and equality
+MCQ,40,Einstein believed scientists should be?,Silent,Neutral,Responsible,Wealthy,Responsible
+MCQ,41,Einstein’s personality was?,Strict and harsh,Simple and kind,Arrogant,Selfish,Simple and kind
+MCQ,42,Einstein’s success came due to?,Luck only,Hard work and curiosity,Money,Connections,Hard work and curiosity
+MCQ,43,Einstein’s thinking was?,Conventional,Creative,Limited,Rigid,Creative
+MCQ,44,Einstein showed courage by?,Winning prizes,Speaking against war,Teaching students,Writing books,Speaking against war
+MCQ,45,Einstein believed all humans are?,Unequal,Superior,Equal,Divided,Equal
+MCQ,46,Einstein’s life shows intelligence without values is?,Useful,Dangerous,Normal,Unimportant,Dangerous
+MCQ,47,Einstein opposed racism because?,It was illegal,It divided humanity,It affected science,It reduced power,It divided humanity
+MCQ,48,Einstein is remembered as?,Scientist only,Humanitarian only,Both scientist and humanitarian,Politician,Both scientist and humanitarian
+MCQ,49,The title suggests a mind that is?,Intelligent only,Creative only,Intelligent and humane,Powerful,Intelligent and humane
+MCQ,50,What makes Einstein truly beautiful?,His theories,His looks,His values and intellect,His awards,His values and intellect
+
+Integer,1,Central figure?,Albert Einstein,,,,
+Integer,2,Birth year?,1879,,,,
+Integer,3,Birth country?,Germany,,,,
+Integer,4,Instrument played?,Violin,,,,
+Integer,5,Famous theory?,Relativity,,,,
+Integer,6,Nobel Prize year?,1921,,,,
+Integer,7,Nobel Prize subject?,Physics,,,,
+Integer,8,Einstein migrated to?,USA,,,,
+Integer,9,Einstein opposed?,War,,,,
+Integer,10,Einstein supported?,Peace,,,,
+Integer,11,Einstein belief?,Humanity,,,,
+Integer,12,Einstein quality?,Curiosity,,,,
+Integer,13,Einstein childhood trait?,Slow learner,,,,
+Integer,14,Einstein’s mother wished?,Musician,,,,
+Integer,15,Einstein disliked?,Rigid schooling,,,,
+Integer,16,Einstein value?,Imagination,,,,
+Integer,17,Einstein award?,Nobel,,,,
+Integer,18,Einstein ideology?,Equality,,,,
+Integer,19,Einstein profession?,Scientist,,,,
+Integer,20,Einstein subject?,Physics,,,,
+Integer,21,Einstein personality?,Humble,,,,
+Integer,22,Einstein stance on weapons?,Against,,,,
+Integer,23,Einstein humanitarian?,Yes,,,,
+Integer,24,Einstein intelligence type?,Creative,,,,
+Integer,25,Einstein goal?,Human welfare,,,,
+Integer,26,Einstein opposed racism?,Yes,,,,
+Integer,27,Einstein childhood interest?,Puzzles,,,,
+Integer,28,Einstein supported movements?,Peace,,,,
+Integer,29,Einstein moral?,Strong,,,,
+Integer,30,Einstein legacy?,Science and values,,,,
+Integer,31,Einstein’s early difficulty?,Language,,,,
+Integer,32,Einstein believed knowledge < ?,Imagination,,,,
+Integer,33,Einstein war opposition?,Atomic bomb,,,,
+Integer,34,Einstein nationality later?,American,,,,
+Integer,35,Einstein education style?,Independent,,,,
+Integer,36,Einstein lesson?,Human values,,,,
+Integer,37,Einstein disliked authority?,Yes,,,,
+Integer,38,Einstein creative thinking?,High,,,,
+Integer,39,Einstein world impact?,Global,,,,
+Integer,40,Einstein inspiration?,Youth,,,,
+Integer,41,Einstein peace efforts?,Active,,,,
+Integer,42,Einstein moral courage?,Strong,,,,
+Integer,43,Einstein nature?,Simple,,,,
+Integer,44,Einstein success factor?,Curiosity,,,,
+Integer,45,Einstein scientific field?,Physics,,,,
+Integer,46,Einstein contribution?,Relativity,,,,
+Integer,47,Einstein ethics?,Humanitarian,,,,
+Integer,48,Einstein belief system?,Equality,,,,
+Integer,49,Einstein chapter theme?,Humanism,,,,
+Integer,50,Chapter name?,A Truly Beautiful Mind,,,,
+
+Descriptive,1,Who was Albert Einstein?,,,,,Albert Einstein was a great scientist and humanitarian
+Descriptive,2,Why is Einstein called a genius?,,,,,Due to his revolutionary scientific ideas
+Descriptive,3,Describe Einstein’s childhood.,,,,,He was slow but curious and imaginative
+Descriptive,4,What difficulties did Einstein face in school?,,,,,He disliked rigid education and authority
+Descriptive,5,What was Einstein’s contribution to science?,,,,,Theory of relativity
+Descriptive,6,Why did Einstein receive the Nobel Prize?,,,,,For his contribution to physics
+Descriptive,7,Explain Einstein’s views on education.,,,,,He valued creativity over rote learning
+Descriptive,8,What was Einstein’s attitude towards war?,,,,,He strongly opposed war
+Descriptive,9,Why did Einstein oppose nuclear weapons?,,,,,They could destroy humanity
+Descriptive,10,What human qualities made Einstein great?,,,,,Compassion and humility
+Descriptive,11,Explain Einstein’s love for music.,,,,,He played violin for relaxation
+Descriptive,12,What did Einstein believe about imagination?,,,,,He felt it was more important than knowledge
+Descriptive,13,Why did Einstein migrate to the USA?,,,,,To escape persecution
+Descriptive,14,How did Einstein support peace?,,,,,By speaking against war
+Descriptive,15,Explain Einstein’s humanitarian side.,,,,,He fought racism and inequality
+Descriptive,16,What does the title signify?,,,,,A blend of intellect and humanity
+Descriptive,17,How did Einstein’s ideas influence the world?,,,,,They changed modern physics
+Descriptive,18,What lesson does Einstein’s life teach?,,,,,Intelligence with values is essential
+Descriptive,19,Why did Einstein dislike rigid schooling?,,,,,It killed creativity
+Descriptive,20,Explain Einstein’s moral courage.,,,,,He stood against injustice
+Descriptive,21,Describe Einstein as a human being.,,,,,Simple, kind and compassionate
+Descriptive,22,How did Einstein view science?,,,,,As a tool for human welfare
+Descriptive,23,What role did curiosity play in Einstein’s life?,,,,,It led to discoveries
+Descriptive,24,Explain Einstein’s opposition to racism.,,,,,He believed in equality
+Descriptive,25,Why is Einstein remembered beyond science?,,,,,For his human values
+Descriptive,26,How did Einstein balance science and humanity?,,,,,By using science responsibly
+Descriptive,27,What message does the chapter convey?,,,,,Knowledge must serve humanity
+Descriptive,28,Explain Einstein’s early struggles.,,,,,Academic and social challenges
+Descriptive,29,Why was Einstein considered rebellious?,,,,,He questioned authority
+Descriptive,30,How did Einstein inspire the youth?,,,,,Through his ideas and values
+Descriptive,31,What was Einstein’s role in world peace?,,,,,He advocated non-violence
+Descriptive,32,Explain Einstein’s humility.,,,,,Despite fame he lived simply
+Descriptive,33,What did Einstein believe about equality?,,,,,All humans are equal
+Descriptive,34,Why is imagination important according to Einstein?,,,,,It leads to innovation
+Descriptive,35,How did Einstein’s personality affect his work?,,,,,Encouraged free thinking
+Descriptive,36,Explain Einstein’s contribution to humanity.,,,,,He raised moral awareness
+Descriptive,37,Why did Einstein refuse military work?,,,,,Ethical reasons
+Descriptive,38,What does the chapter reveal about success?,,,,,Success needs values
+Descriptive,39,Explain Einstein’s ethical responsibility.,,,,,Science must not harm humanity
+Descriptive,40,Why is Einstein admired worldwide?,,,,,For intellect and compassion
+Descriptive,41,What role did perseverance play in Einstein’s life?,,,,,Helped overcome failures
+Descriptive,42,How did Einstein react to fame?,,,,,With humility
+Descriptive,43,What impact did wars have on Einstein?,,,,,Strengthened his peace stance
+Descriptive,44,Explain Einstein’s view on humanity.,,,,,Unity beyond borders
+Descriptive,45,Why is Einstein’s mind truly beautiful?,,,,,Because it combined science and ethics
+Descriptive,46,How does the chapter inspire readers?,,,,,Encourages human values
+Descriptive,47,Explain Einstein’s scientific curiosity.,,,,,Driven by questions
+Descriptive,48,Why should scientists be socially responsible?,,,,,Their work affects humanity
+Descriptive,49,How does Einstein’s life remain relevant today?,,,,,Promotes peace and equality
+Descriptive,50,Summarize "A Truly Beautiful Mind".,,,,,The chapter portrays Einstein as a brilliant scientist with deep human values

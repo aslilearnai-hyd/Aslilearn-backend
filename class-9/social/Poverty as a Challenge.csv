@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Poverty means?,Lack of money,Lack of basic needs,Low income only,None,Lack of basic needs
+MCQ,2,Which is NOT a basic need?,Food,Clothing,Mobile phone,Shelter,Mobile phone
+MCQ,3,Poverty line is based on?,Income and consumption,Religion,Caste,None,Income and consumption
+MCQ,4,Who estimates poverty line in India?,RBI,Planning Commission,Census,None,Planning Commission
+MCQ,5,Which state has high poverty?,Punjab,Kerala,Bihar,Goa,Bihar
+MCQ,6,Which state has low poverty?,Bihar,Odisha,Kerala,UP,Kerala
+MCQ,7,Poverty due to unemployment is called?,Chronic poverty,Transient poverty,Seasonal poverty,None,Chronic poverty
+MCQ,8,Poverty caused by calamities is?,Chronic,Transient,Permanent,None,Transient
+MCQ,9,Which group is most affected by poverty?,Urban rich,Rural labourers,Industrialists,None,Rural labourers
+MCQ,10,Which social group faces poverty most?,Upper caste,SC and ST,Officials,None,SC and ST
+MCQ,11,Poverty in cities mostly affects?,Factory owners,Slum dwellers,Officials,None,Slum dwellers
+MCQ,12,Which country reduced poverty successfully?,India,Nigeria,China,None,China
+MCQ,13,Which factor causes poverty?,Unemployment,Education,Health,None,Unemployment
+MCQ,14,Poverty line includes?,Food only,Non-food items only,Both food and non-food,None,Both food and non-food
+MCQ,15,Which is a symptom of poverty?,High income,Malnutrition,Education,None,Malnutrition
+MCQ,16,Which programme aims employment?,PDS,MGNREGA,ICDS,None,MGNREGA
+MCQ,17,Which programme provides food security?,MGNREGA,PDS,PMGSY,None,PDS
+MCQ,18,Which organisation fights poverty globally?,WHO,UNICEF,World Bank,None,World Bank
+MCQ,19,Poverty ratio means?,Total poor,Percentage of poor,Income level,None,Percentage of poor
+MCQ,20,Which sector has highest poor?,Service,Industrial,Agriculture,None,Agriculture
+MCQ,21,Which region has more poverty?,Urban,Rural,None,None,Rural
+MCQ,22,Poverty due to lack of assets?,Chronic,Transient,None,None,Chronic
+MCQ,23,Which measure reduces poverty?,Education,Illiteracy,None,None,Education
+MCQ,24,Which state showed poverty reduction?,Kerala,Bihar,None,None,Kerala
+MCQ,25,Which group is vulnerable?,Landless labourers,Industrialists,None,None,Landless labourers
+MCQ,26,Which scheme provides wage employment?,PDS,MGNREGA,None,None,MGNREGA
+MCQ,27,Which scheme supplies food grains?,MGNREGA,PDS,None,None,PDS
+MCQ,28,Poverty estimation based on?,Calorie intake,Income,Consumption,All,All
+MCQ,29,Which factor reduces poverty?,Economic growth,Recession,None,None,Economic growth
+MCQ,30,Which poverty is long term?,Transient,Chronic,None,None,Chronic
+MCQ,31,Poverty among tribals is?,Low,High,None,None,High
+MCQ,32,Which area has urban poverty?,Slums,Colonies,None,None,Slums
+MCQ,33,Which state has least poverty?,Kerala,Odisha,None,None,Kerala
+MCQ,34,Poverty affects which right?,Right to vote,Right to life,None,None,Right to life
+MCQ,35,Which is anti-poverty measure?,Employment generation,Unemployment,None,None,Employment generation
+MCQ,36,Which programme focuses on self-employment?,SGSY,PDS,None,None,SGSY
+MCQ,37,Which poverty caused by crop failure?,Transient,Chronic,None,None,Transient
+MCQ,38,Which poverty is seasonal?,Transient,Chronic,None,None,Transient
+MCQ,39,Poverty ratio declining due to?,Growth,Population,None,None,Growth
+MCQ,40,Which sector reforms reduce poverty?,Agriculture,Education,All,None,All
+MCQ,41,Poverty line revised by?,Census,Planning Commission,None,None,Planning Commission
+MCQ,42,Poverty affects nutrition?,Yes,No,None,None,Yes
+MCQ,43,Which is non-income aspect of poverty?,Health,Income,None,None,Health
+MCQ,44,Which country has high poverty?,India,USA,None,None,India
+MCQ,45,Poverty reduction depends on?,Growth and redistribution,Growth only,None,None,Growth and redistribution
+MCQ,46,Poverty in India declined after?,1970s,1990s,None,None,1970s
+MCQ,47,Which group suffers chronic poverty?,Disabled,Industrialists,None,None,Disabled
+MCQ,48,Poverty eradication needs?,Multiple strategies,Single scheme,None,None,Multiple strategies
+MCQ,49,Poverty includes social exclusion?,Yes,No,None,None,Yes
+MCQ,50,Poverty is a challenge because?,Limits development,Increases income,None,None,Limits development
+
+Integer,1,Meaning of poverty?,Lack of basic needs,,,,
+Integer,2,Poverty estimation body?,Planning Commission,,,,
+Integer,3,Poverty in villages?,Rural,,,,
+Integer,4,Poverty in cities?,Urban,,,,
+Integer,5,Long term poverty?,Chronic,,,,
+Integer,6,Temporary poverty?,Transient,,,,
+Integer,7,Most affected group?,Landless labourers,,,,
+Integer,8,Poverty ratio means?,Percentage of poor,,,,
+Integer,9,State with least poverty?,Kerala,,,,
+Integer,10,State with high poverty?,Bihar,,,,
+Integer,11,Poverty reduction country?,China,,,,
+Integer,12,Poverty line based on?,Consumption,,,,
+Integer,13,Major cause of poverty?,Unemployment,,,,
+Integer,14,Food insecurity symptom?,Malnutrition,,,,
+Integer,15,Employment scheme?,MGNREGA,,,,
+Integer,16,Food distribution scheme?,PDS,,,,
+Integer,17,Self employment scheme?,SGSY,,,,
+Integer,18,Poverty more in?,Rural areas,,,,
+Integer,19,Poverty among SC/ST?,High,,,,
+Integer,20,Urban poor live in?,Slums,,,,
+Integer,21,Poverty estimation revised?,Periodically,,,,
+Integer,22,Non-income poverty?,Health,,,,
+Integer,23,Poverty reduced by?,Education,,,,
+Integer,24,Poverty ratio unit?,Percent,,,,
+Integer,25,Poverty due to disaster?,Transient,,,,
+Integer,26,Poverty due to no assets?,Chronic,,,,
+Integer,27,Anti poverty strategy?,Employment,,,,
+Integer,28,Poverty affects?,Living standard,,,,
+Integer,29,Poverty eradication needs?,Multiple steps,,,,
+Integer,30,Poverty affects nutrition?,Yes,,,,
+Integer,31,Major poor sector?,Agriculture,,,,
+Integer,32,Poverty line food basis?,Calories,,,,
+Integer,33,Poverty includes?,Social exclusion,,,,
+Integer,34,Poverty reduction depends on?,Growth,,,,
+Integer,35,Poverty measurement?,Income consumption,,,,
+Integer,36,Poverty problem nature?,Economic,,,,
+Integer,37,Poverty challenge?,Development,,,,
+Integer,38,Poverty decline started?,1970s,,,,
+Integer,39,Poverty is multidimensional?,Yes,,,,
+Integer,40,Poverty among women?,High,,,,
+Integer,41,Poverty solution?,Education jobs,,,,
+Integer,42,Poverty leads to?,Malnutrition,,,,
+Integer,43,Poverty eradication goal?,Better life,,,,
+Integer,44,Poverty affects children?,Yes,,,,
+Integer,45,Poverty group example?,Urban slum,,,,
+Integer,46,Poverty measured by?,Poverty line,,,,
+Integer,47,Poverty reduction scheme?,MGNREGA,,,,
+Integer,48,Poverty type seasonal?,Transient,,,,
+Integer,49,Poverty estimation method?,Calorie method,,,,
+Integer,50,Poverty challenge chapter?,Economics,,,,
+
+Descriptive,1,What is poverty?,,,,,Inability to meet basic needs
+Descriptive,2,Why poverty is a challenge?,,,,,Limits development and dignity
+Descriptive,3,Explain poverty line.,,,,,Minimum income for basic needs
+Descriptive,4,How is poverty measured?,,,,,Income and consumption
+Descriptive,5,What are basic needs?,,,,,Food shelter clothing education
+Descriptive,6,Who are the poor?,,,,,People below poverty line
+Descriptive,7,Explain chronic poverty.,,,,,Long term poverty
+Descriptive,8,Explain transient poverty.,,,,,Temporary poverty
+Descriptive,9,Causes of poverty.,,,,,Unemployment low growth
+Descriptive,10,Social causes of poverty.,,,,,Caste gender inequality
+Descriptive,11,Economic causes of poverty.,,,,,Low income lack of jobs
+Descriptive,12,Who are vulnerable groups?,,,,,SC ST women elderly
+Descriptive,13,Poverty in rural areas.,,,,,Landless labourers
+Descriptive,14,Poverty in urban areas.,,,,,Slum dwellers
+Descriptive,15,Explain poverty among SC/ST.,,,,,Social discrimination
+Descriptive,16,What is poverty ratio?,,,,,Percentage of poor
+Descriptive,17,Which states have high poverty?,,,,,Bihar Odisha UP
+Descriptive,18,Which states reduced poverty?,,,,,Kerala Punjab
+Descriptive,19,How China reduced poverty?,,,,,Economic growth
+Descriptive,20,Non-income aspects of poverty.,,,,,Health education dignity
+Descriptive,21,What is social exclusion?,,,,,Exclusion from society
+Descriptive,22,Explain vulnerability.,,,,,Risk of falling into poverty
+Descriptive,23,Government measures to reduce poverty.,,,,,Employment schemes
+Descriptive,24,What is MGNREGA?,,,,,Employment guarantee scheme
+Descriptive,25,What is PDS?,,,,,Food distribution system
+Descriptive,26,Role of education in poverty reduction.,,,,,Skill development
+Descriptive,27,Role of health in poverty reduction.,,,,,Improves productivity
+Descriptive,28,Why employment generation important?,,,,,Income source
+Descriptive,29,What is anti-poverty strategy?,,,,,Multiple approaches
+Descriptive,30,Why poverty persists?,,,,,Population growth inequality
+Descriptive,31,Impact of poverty on health.,,,,,Malnutrition disease
+Descriptive,32,Impact of poverty on education.,,,,,School dropout
+Descriptive,33,How growth reduces poverty?,,,,,More jobs income
+Descriptive,34,Why redistribution needed?,,,,,Reduce inequality
+Descriptive,35,Poverty and gender.,,,,,Women more affected
+Descriptive,36,Poverty and children.,,,,,Malnutrition child labour
+Descriptive,37,Explain intergenerational poverty.,,,,,Passed to next generation
+Descriptive,38,What is human poverty?,,,,,Lack of capabilities
+Descriptive,39,Why poverty eradication is difficult?,,,,,Complex causes
+Descriptive,40,Explain poverty as social problem.,,,,,Exclusion inequality
+Descriptive,41,How rural development reduces poverty?,,,,,Jobs infrastructure
+Descriptive,42,Urban poverty challenges.,,,,,Housing unemployment
+Descriptive,43,Explain calorie-based poverty line.,,,,,Minimum calorie intake
+Descriptive,44,Why poverty is multidimensional?,,,,,Many aspects
+Descriptive,45,Explain government role.,,,,,Schemes policies
+Descriptive,46,Why employment schemes important?,,,,,Income security
+Descriptive,47,How education empowers poor?,,,,,Better opportunities
+Descriptive,48,What is inclusive growth?,,,,,Growth for all
+Descriptive,49,Long term solutions to poverty.,,,,,Education health growth
+Descriptive,50,Summarise poverty as a challenge.,,,,,Major socio-economic problem

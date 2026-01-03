@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of For Anne Gregory?,W B Yeats,Robert Frost,John Keats,William Wordsworth,W B Yeats
+MCQ,2,For Anne Gregory is a,Story,Poem,Play,Essay,Poem
+MCQ,3,The poem is addressed to,Anne Gregory,The poet’s sister,A friend,The poet’s wife,Anne Gregory
+MCQ,4,What physical feature of Anne is praised?,Eyes,Hair,Face,Smile,Hair
+MCQ,5,What colour is Anne’s hair?,Brown,Yellow,Black,Golden,Yellow
+MCQ,6,The poet says young men love Anne for her,Personality,Kindness,Beauty,Wealth,Beauty
+MCQ,7,What does the poet want Anne to understand?,Power of beauty,Value of inner beauty,Importance of wealth,Fame,Value of inner beauty
+MCQ,8,The poem highlights the theme of,Love and beauty,Inner beauty vs outer beauty,Nature,Friendship,Inner beauty vs outer beauty
+MCQ,9,Anne wants to be loved for her,Looks,Money,Soul,Fame,Soul
+MCQ,10,The poet suggests that true love is based on,Appearance,Hair colour,Soul,Youth,Soul
+MCQ,11,What does Anne say she can change?,Nature,Soul,Hair colour,Personality,Hair colour
+MCQ,12,According to the poet, can inner beauty be changed?,Yes,No,Sometimes,Rarely,No
+MCQ,13,The poet quotes a religious idea to support,Outer beauty,Inner beauty,Youth,Love,Inner beauty
+MCQ,14,The poem uses dialogue between,Two lovers,Poet and Anne,Two friends,Teacher and student,Poet and Anne
+MCQ,15,The tone of the poem is,Angry,Humorous,Philosophical,Sad,Philosophical
+MCQ,16,The poet believes physical beauty is,Permanent,Temporary,More important,Useless,Temporary
+MCQ,17,The poem suggests that real love is,Rare,Common,Based on beauty,Based on soul,Based on soul
+MCQ,18,Anne Gregory wants to be loved for her,Yellow hair,True self,Youth,Fame,True self
+MCQ,19,The poem ends with reference to,Love,God,Youth,Beauty,God
+MCQ,20,The poet says only God can love a person for their,Soul,Hair,Face,Money,Soul
+MCQ,21,The poem criticizes,Love,Physical attraction,Religion,Youth,Physical attraction
+MCQ,22,The young men love Anne for what they see,Yes,No,Partly,Never,Yes
+MCQ,23,The poet uses Anne’s hair as a symbol of,Youth,Beauty,Love,Power,Beauty
+MCQ,24,What does Anne feel about her beauty?,Proud,Indifferent,Concerned,Happy,Concerned
+MCQ,25,The poem belongs to the genre of,Lyric,Narrative,Ballad,Elegy,Lyric
+MCQ,26,The poet’s advice to Anne is to value,Looks,Makeup,Inner self,Fashion,Inner self
+MCQ,27,The poem suggests outer beauty can be,Loved forever,Changed,Ignored,Controlled,Changed
+MCQ,28,The poet believes human love is often,Selfless,Superficial,Spiritual,Eternal,Superficial
+MCQ,29,Anne Gregory represents,All women,Only poets,Rich people,Teenagers,All women
+MCQ,30,The poem’s message is universal because,Everyone ages,Everyone values beauty,Everyone desires true love,Everyone changes hair,Everyone desires true love
+MCQ,31,The poet’s attitude towards Anne is,Critical,Caring,Indifferent,Mocking,Caring
+MCQ,32,What does Anne want to change to test love?,Nature,Personality,Soul,Hair,Hair
+MCQ,33,The poet implies inner beauty is,Visible,Invisible,Temporary,Artificial,Invisible
+MCQ,34,The poem contrasts,Youth and age,Outer and inner beauty,Love and hate,Faith and doubt,Outer and inner beauty
+MCQ,35,The poet uses religious reference to emphasize,Truth,Beauty,Morality,Spiritual love,Spiritual love
+MCQ,36,Anne’s wish reflects human desire for,Attention,True love,Beauty,Fame,True love
+MCQ,37,The poet’s message is optimistic because,Love exists,God loves truly,Beauty lasts forever,Youth is powerful,God loves truly
+MCQ,38,The poem teaches that appearance-based love is,Strong,Lasting,Shallow,Perfect,Shallow
+MCQ,39,The poet believes inner beauty is valued by,People,Youth,God,Friends,God
+MCQ,40,The poem is written in,Free verse,Rhyming couplets,Sonnet,Ballad,Rhyming couplets
+MCQ,41,Anne Gregory is worried about,Age,Loneliness,Superficial love,Marriage,Superficial love
+MCQ,42,The poet reassures Anne by explaining,Human nature,God’s love,Youth’s power,Beauty’s value,God’s love
+MCQ,43,The poem encourages readers to seek,Outer beauty,True love,Wealth,Fame,True love
+MCQ,44,The poem’s tone can be described as,Playful,Didactic,Reflective,Angry,Reflective
+MCQ,45,The poet questions the idea of,True love,Outer beauty,Religion,Youth,Outer beauty
+MCQ,46,Anne’s response shows her desire for,Acceptance,Fame,Spiritual love,Freedom,Spiritual love
+MCQ,47,The poem suggests that God loves humans for their,Actions,Beauty,Soul,Faith,Soul
+MCQ,48,The poem highlights a contrast between,Men and women,God and humans,Youth and age,Beauty and wealth,God and humans
+MCQ,49,The poet implies most human love is based on,Character,Looks,Faith,Trust,Looks
+MCQ,50,The central idea of the poem is,Power of beauty,Love of God,True love values inner beauty,Youth matters most,True love values inner beauty
+
+Integer,1,Name of the poet?,W B Yeats,,,,
+Integer,2,Poem title?,For Anne Gregory,,,,
+Integer,3,Main character?,Anne Gregory,,,,
+Integer,4,Anne’s hair colour?,Yellow,,,,
+Integer,5,Theme of poem?,Inner beauty,,,,
+Integer,6,Poem type?,Lyric,,,,
+Integer,7,What do young men admire?,Beauty,,,,
+Integer,8,Anne wants love for?,Soul,,,,
+Integer,9,Poet’s advice?,Value inner beauty,,,,
+Integer,10,Outer beauty is?,Temporary,,,,
+Integer,11,Inner beauty is?,Permanent,,,,
+Integer,12,Anne can change?,Hair,,,,
+Integer,13,Can soul be changed?,No,,,,
+Integer,14,Poem tone?,Philosophical,,,,
+Integer,15,Poem form?,Dialogue,,,,
+Integer,16,Poet’s attitude?,Caring,,,,
+Integer,17,Poem message?,True love,,,,
+Integer,18,Human love is?,Superficial,,,,
+Integer,19,God loves?,Soul,,,,
+Integer,20,Poem setting?,Conversation,,,,
+Integer,21,Anne’s concern?,Superficial love,,,,
+Integer,22,Poem contrast?,Outer vs inner,,,,
+Integer,23,Poem ending refers to?,God,,,,
+Integer,24,Anne represents?,All women,,,,
+Integer,25,Poem relevance?,Universal,,,,
+Integer,26,Poem style?,Simple,,,,
+Integer,27,Anne’s wish?,True love,,,,
+Integer,28,Poem lesson?,Inner beauty matters,,,,
+Integer,29,Physical beauty can?,Change,,,,
+Integer,30,Spiritual love is?,Pure,,,,
+Integer,31,Poem mood?,Reflective,,,,
+Integer,32,Poet’s focus?,Love,,,,
+Integer,33,Anne’s hair symbolizes?,Outer beauty,,,,
+Integer,34,Poem theme type?,Philosophical,,,,
+Integer,35,Poem uses religion?,Yes,,,,
+Integer,36,Anne’s response shows?,Wisdom,,,,
+Integer,37,Poet believes God’s love is?,True,,,,
+Integer,38,Poem length?,Short,,,,
+Integer,39,Poem appeals to?,Everyone,,,,
+Integer,40,Anne desires?,Spiritual love,,,,
+Integer,41,Outer beauty attracts?,Humans,,,,
+Integer,42,Inner beauty attracts?,God,,,,
+Integer,43,Poem criticizes?,Superficiality,,,,
+Integer,44,Anne’s concern reflects?,Human nature,,,,
+Integer,45,Poem message tone?,Positive,,,,
+Integer,46,Poet’s role?,Guide,,,,
+Integer,47,Poem uses symbolism?,Yes,,,,
+Integer,48,Anne’s fear?,False love,,,,
+Integer,49,Central conflict?,Looks vs soul,,,,
+Integer,50,Central idea?,Inner beauty,,,,
+
+Descriptive,1,What is the central idea of the poem For Anne Gregory?,,,,,True love values inner beauty over physical appearance
+Descriptive,2,Why does the poet praise Anne Gregory’s hair?,,,,,To show attraction to outer beauty
+Descriptive,3,What does Anne Gregory desire in love?,,,,,Love for her soul
+Descriptive,4,How does the poet differentiate between outer and inner beauty?,,,,,Outer beauty changes, inner beauty remains
+Descriptive,5,Why does Anne say she can dye her hair?,,,,,To test true love
+Descriptive,6,Why does the poet say only God can love truly?,,,,,God loves the soul
+Descriptive,7,Explain the philosophical message of the poem.,,,,,Inner beauty is eternal
+Descriptive,8,How does the poem criticize superficial love?,,,,,By showing attraction to looks
+Descriptive,9,Explain Anne Gregory’s concern.,,,,,Fear of being loved only for beauty
+Descriptive,10,What advice does the poet give Anne?,,,,,Value inner self
+Descriptive,11,How does the poet use dialogue effectively?,,,,,To present two viewpoints
+Descriptive,12,Why is the poem still relevant today?,,,,,Superficial love exists
+Descriptive,13,Explain the significance of Anne’s yellow hair.,,,,,Symbol of physical beauty
+Descriptive,14,How does the poem reflect human nature?,,,,,Preference for looks
+Descriptive,15,What role does religion play in the poem?,,,,,Supports spiritual love
+Descriptive,16,Why is the poem considered philosophical?,,,,,Discusses love and soul
+Descriptive,17,How does the poet reassure Anne?,,,,,By explaining God’s love
+Descriptive,18,Explain the contrast between human and divine love.,,,,,Human love is superficial, divine love is pure
+Descriptive,19,What lesson does the poem teach readers?,,,,,Seek inner beauty
+Descriptive,20,Why does Anne represent all women?,,,,,Universal concern
+Descriptive,21,How does the poem define true love?,,,,,Love for the soul
+Descriptive,22,Why is outer beauty described as temporary?,,,,,It fades with time
+Descriptive,23,Explain the title For Anne Gregory.,,,,,Poem is addressed to her
+Descriptive,24,How does the poem challenge social norms?,,,,,Questions beauty-based love
+Descriptive,25,Explain the tone of the poem.,,,,,Reflective and thoughtful
+Descriptive,26,Why does the poet refer to God?,,,,,To show ideal love
+Descriptive,27,How does Anne’s reply show wisdom?,,,,,She values inner love
+Descriptive,28,Explain the symbolic meaning of hair.,,,,,Represents appearance
+Descriptive,29,How does the poem appeal emotionally?,,,,,Addresses human desire for love
+Descriptive,30,Why does the poet emphasize the soul?,,,,,It defines true self
+Descriptive,31,How does the poem portray youth?,,,,,Attractive but temporary
+Descriptive,32,What is the poet’s view on human love?,,,,,Often superficial
+Descriptive,33,Why does Anne want to change her appearance?,,,,,To test sincerity
+Descriptive,34,How does the poem encourage self-worth?,,,,,By valuing inner self
+Descriptive,35,Explain the ending of the poem.,,,,,God loves the soul
+Descriptive,36,Why is the poem simple yet deep?,,,,,Simple language, deep idea
+Descriptive,37,How does the poem convey moral values?,,,,,Through conversation
+Descriptive,38,Explain the conflict in the poem.,,,,,Outer beauty vs inner beauty
+Descriptive,39,How does the poem reflect modern relationships?,,,,,Focus on looks
+Descriptive,40,Why is inner beauty considered eternal?,,,,,It does not fade
+Descriptive,41,Explain the poet’s concern for Anne.,,,,,He guides her
+Descriptive,42,How does the poem redefine love?,,,,,As spiritual
+Descriptive,43,Why does the poet dismiss physical attraction?,,,,,It is temporary
+Descriptive,44,What makes the poem universal?,,,,,Common human concern
+Descriptive,45,How does the poem inspire readers?,,,,,Value inner qualities
+Descriptive,46,Explain the message in simple words.,,,,,Love the soul, not looks
+Descriptive,47,How does the poem use contrast effectively?,,,,,Beauty vs soul
+Descriptive,48,Why is the poem addressed directly to Anne?,,,,,Personal guidance
+Descriptive,49,How does the poem criticize society?,,,,,Focus on appearances
+Descriptive,50,Summarize the poem For Anne Gregory.,,,,,The poem teaches that true love values inner beauty over physical appearance

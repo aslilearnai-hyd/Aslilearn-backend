@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The area of a circle with radius r is:,πr²,2πr,πr,2πr²,πr²
+MCQ,2,The circumference (perimeter) of a circle with radius r is:,πr²,2πr,πr,2πr²,2πr
+MCQ,3,The area of a sector of angle θ (in degrees) of a circle with radius r is:,(θ/360) × πr²,(θ/180) × πr²,θ × πr²,(θ/360) × 2πr,(θ/360) × πr²
+MCQ,4,The length of arc of a sector of angle θ (in degrees) of a circle with radius r is:,(θ/360) × 2πr,(θ/180) × πr,θ × 2πr,(θ/360) × πr²,(θ/360) × 2πr
+MCQ,5,The area of a segment of a circle is the area of the corresponding sector minus:,Area of triangle,Area of rectangle,Area of square,Area of circle,Area of triangle
+MCQ,6,If the radius of a circle is 7 cm, its area is:,22 cm²,44 cm²,154 cm²,308 cm²,154 cm²
+MCQ,7,If the radius of a circle is 7 cm, its circumference is:,22 cm,44 cm,154 cm,308 cm,44 cm
+MCQ,8,The area of a circle is 154 cm². Its radius is:,7 cm,14 cm,21 cm,28 cm,7 cm
+MCQ,9,The circumference of a circle is 44 cm. Its radius is:,7 cm,14 cm,21 cm,28 cm,7 cm
+MCQ,10,If the area of a circle is 616 cm², its radius is:,7 cm,14 cm,21 cm,28 cm,14 cm
+MCQ,11,If the circumference of a circle is 88 cm, its radius is:,7 cm,14 cm,21 cm,28 cm,14 cm
+MCQ,12,The area of a sector of angle 60° of a circle with radius 6 cm is:,6π cm²,6π cm²,12π cm²,18π cm²,6π cm²
+MCQ,13,The length of arc of a sector of angle 90° of a circle with radius 14 cm is:,11 cm,22 cm,33 cm,44 cm,22 cm
+MCQ,14,The area of a quadrant of a circle with radius 14 cm is:,49π cm²,98π cm²,154 cm²,196π cm²,49π cm²
+MCQ,15,If the area of a circle is increased by 44%, the percentage increase in radius is:,20%,22%,44%,88%,20%
+MCQ,16,The area of a circle is 154 cm². Its circumference is:,22 cm,44 cm,154 cm,308 cm,44 cm
+MCQ,17,The circumference of a circle is 44 cm. Its area is:,22 cm²,44 cm²,154 cm²,308 cm²,154 cm²
+MCQ,18,If the radius of a circle is doubled, its area becomes:,2 times,4 times,8 times,Same,4 times
+MCQ,19,If the radius of a circle is doubled, its circumference becomes:,2 times,4 times,8 times,Same,2 times
+MCQ,20,The area of a ring (annulus) with outer radius R and inner radius r is:,π(R² - r²),π(R - r)²,2π(R - r),π(R + r),π(R² - r²)
+MCQ,21,If the diameter of a circle is 14 cm, its area is:,22 cm²,44 cm²,154 cm²,308 cm²,154 cm²
+MCQ,22,If the diameter of a circle is 14 cm, its circumference is:,22 cm,44 cm,154 cm,308 cm,44 cm
+MCQ,23,The area of a semicircle with radius 7 cm is:,77 cm²,154 cm²,22 cm²,44 cm²,77 cm²
+MCQ,24,The perimeter of a semicircle with radius 7 cm is:,(π + 2)7 cm,(π + 1)7 cm,π × 7 cm,2π × 7 cm,(π + 2)7 cm
+MCQ,25,If the area of a sector is (1/4)th of the area of the circle, the angle of the sector is:,45°,60°,90°,120°,90°
+MCQ,26,If the length of arc of a sector is equal to the radius, the angle of the sector is:,1 radian,57.3°,90°,180°,57.3°
+MCQ,27,The area of a circle inscribed in a square of side 14 cm is:,49π cm²,98π cm²,154 cm²,196π cm²,49π cm²
+MCQ,28,The area of a circle circumscribed about a square of side 14 cm is:,49π cm²,98π cm²,154 cm²,196π cm²,98π cm²
+MCQ,29,If two circles of radii 5 cm and 3 cm have their centers 8 cm apart, the number of common tangents is:,0,1,2,4,2
+MCQ,30,The area swept by the minute hand of a clock of length 14 cm in 5 minutes is:,77/3 cm²,154/3 cm²,77 cm²,154 cm²,77/3 cm²
+MCQ,31,The area of a sector of angle 120° of a circle with radius 21 cm is:,462 cm²,231 cm²,154 cm²,77 cm²,462 cm²
+MCQ,32,The length of arc of a sector of angle 72° of a circle with radius 25 cm is:,22 cm,44 cm,220/7 cm,440/7 cm,220/7 cm
+MCQ,33,If the circumference of a circle is equal to the perimeter of a square, and the side of the square is 11 cm, the radius of the circle is:,7 cm,14 cm,21 cm,28 cm,7 cm
+MCQ,34,The area of a circular park is 1386 m². Its radius is:,7 m,14 m,21 m,28 m,21 m
+MCQ,35,The area of a sector is 77 cm² and the radius is 7 cm. The angle of the sector is:,60°,90°,120°,180°,90°
+MCQ,36,The area of a segment of a circle of radius 14 cm, when the angle of the corresponding sector is 60°, is:,(308/3 - 49√3) cm²,(308/3 + 49√3) cm²,308 cm²,154 cm²,(308/3 - 49√3) cm²
+MCQ,37,If the area of a circle is 616 cm², its diameter is:,14 cm,28 cm,42 cm,56 cm,28 cm
+MCQ,38,The area of a circle whose circumference is 132 cm is:,1386 cm²,693 cm²,346.5 cm²,2772 cm²,1386 cm²
+MCQ,39,The area of a sector of angle 45° of a circle with radius 28 cm is:,308 cm²,154 cm²,77 cm²,616 cm²,308 cm²
+MCQ,40,The length of arc of a sector of angle 30° of a circle with radius 42 cm is:,11 cm,22 cm,33 cm,44 cm,22 cm
+MCQ,41,The area of a quadrant of a circle with circumference 44 cm is:,77/2 cm²,77 cm²,154 cm²,308 cm²,77/2 cm²
+MCQ,42,If a wire in the shape of a square of side 44 cm is bent to form a circle, the radius of the circle is:,7 cm,14 cm,21 cm,28 cm,7 cm
+MCQ,43,The area of the largest circle that can be inscribed in a square of side 28 cm is:,196π cm²,98π cm²,49π cm²,28π cm²,196π cm²
+MCQ,44,The difference between the circumference and radius of a circle is 37 cm. The area of the circle is:,154 cm²,308 cm²,462 cm²,616 cm²,154 cm²
+MCQ,45,The area of a circle is 100π cm². Its circumference is:,10π cm,20π cm,30π cm,40π cm,20π cm
+MCQ,46,The circumference of a circle is 100π cm. Its area is:,625π cm²,2500π cm²,5000π cm²,10000π cm²,2500π cm²
+MCQ,47,The area of a sector of angle 60° is 66 cm². The radius of the circle is:,3√14 cm,6 cm,7 cm,14 cm,3√14 cm
+MCQ,48,The area of a circular ring (annulus) with outer radius 7 cm and inner radius 3.5 cm is:,115.5 cm²,231 cm²,77 cm²,154 cm²,115.5 cm²
+MCQ,49,The area of a sector is (1/6)th of the area of the circle. The angle of the sector is:,30°,45°,60°,90°,60°
+MCQ,50,If the perimeter of a semicircle is 36 cm, its radius is:,7 cm,14 cm,21 cm,28 cm,7 cm
+Integer,1,If the radius of a circle is 7 cm, its area in cm² is: _____ (use π = 22/7, so 154).,154,,,,
+Integer,2,If the radius of a circle is 7 cm, its circumference in cm is: _____ (use π = 22/7, so 44).,44,,,,
+Integer,3,If the area of a circle is 154 cm², its radius in cm is: _____.,7,,,,
+Integer,4,If the circumference of a circle is 44 cm, its radius in cm is: _____.,7,,,,
+Integer,5,If the area of a circle is 616 cm², its radius in cm is: _____.,14,,,,
+Integer,6,If the circumference of a circle is 88 cm, its radius in cm is: _____.,14,,,,
+Integer,7,The area of a sector of angle 60° of a circle with radius 6 cm is 6π cm². With π = 22/7, it is approximately: _____ (write integer part, 18.85... so 18).,18,,,,
+Integer,8,The length of arc of a sector of angle 90° of a circle with radius 14 cm is 22 cm. Write this value: _____.,22,,,,
+Integer,9,If the radius of a circle is doubled, its area becomes _____ times.,4,,,,
+Integer,10,If the radius of a circle is doubled, its circumference becomes _____ times.,2,,,,
+Integer,11,If the diameter of a circle is 14 cm, its area in cm² is: _____ (154).,154,,,,
+Integer,12,If the diameter of a circle is 14 cm, its circumference in cm is: _____ (44).,44,,,,
+Integer,13,The area of a semicircle with radius 7 cm is 77 cm² (using π = 22/7). Write this: _____.,77,,,,
+Integer,14,If the area of a sector is (1/4)th of the area of the circle, the angle of the sector is _____ degrees.,90,,,,
+Integer,15,The area of a circle inscribed in a square of side 14 cm is 49π cm². With π = 22/7, it is 154 cm². Write this: _____.,154,,,,
+Integer,16,The area of a sector of angle 120° of a circle with radius 21 cm is 462 cm² (using π = 22/7). Write this: _____.,462,,,,
+Integer,17,If the circumference of a circle is equal to the perimeter of a square of side 11 cm, the radius of the circle is _____ cm.,7,,,,
+Integer,18,The area of a circular park is 1386 m². Its radius is _____ m.,21,,,,
+Integer,19,The area of a sector is 77 cm² and the radius is 7 cm. The angle of the sector is _____ degrees.,90,,,,
+Integer,20,If the area of a circle is 616 cm², its diameter is _____ cm.,28,,,,
+Integer,21,The area of a circle whose circumference is 132 cm is 1386 cm² (using π = 22/7). Write this: _____.,1386,,,,
+Integer,22,The area of a sector of angle 45° of a circle with radius 28 cm is 308 cm² (using π = 22/7). Write this: _____.,308,,,,
+Integer,23,The length of arc of a sector of angle 30° of a circle with radius 42 cm is 22 cm (using π = 22/7). Write this: _____.,22,,,,
+Integer,24,If a wire in the shape of a square of side 44 cm is bent to form a circle, the radius of the circle is _____ cm.,7,,,,
+Integer,25,The difference between the circumference and radius of a circle is 37 cm. The area of the circle is 154 cm² (using π = 22/7). Write this: _____.,154,,,,
+Integer,26,If the area of a circle is 100π cm², its circumference is 20π cm. With π ≈ 3.14, approximately: _____ (write integer, 62.8 so 62).,62,,,,
+Integer,27,The area of a circular ring with outer radius 7 cm and inner radius 3.5 cm is 115.5 cm² (using π = 22/7). Write the integer part: _____ (115.5 → 115).,115,,,,
+Integer,28,The area of a sector is (1/6)th of the area of the circle. The angle of the sector is _____ degrees.,60,,,,
+Integer,29,If the perimeter of a semicircle is 36 cm (using π = 22/7), its radius is _____ cm.,7,,,,
+Integer,30,The area of a quadrant of a circle with circumference 44 cm is 77/2 = 38.5 cm². Write integer part: _____.,38,,,,
+Integer,31,If radius is 10 cm, area is 100π cm². With π = 22/7, approximately: _____ (314.28... so 314).,314,,,,
+Integer,32,If circumference is 2πr = 44 cm, then r = 7 cm. Write: _____.,7,,,,
+Integer,33,Area of circle with r = 21 cm is 1386 cm² (using π = 22/7). Write: _____.,1386,,,,
+Integer,34,Circumference of circle with r = 14 cm is 88 cm (using π = 22/7). Write: _____.,88,,,,
+Integer,35,Area of sector with angle 90° and r = 14 cm is 154 cm² (using π = 22/7). Write: _____.,154,,,,
+Integer,36,Length of arc with angle 60° and r = 21 cm is 22 cm (using π = 22/7). Write: _____.,22,,,,
+Integer,37,Area of semicircle with r = 14 cm is 308 cm² (using π = 22/7). Write: _____.,308,,,,
+Integer,38,Perimeter of semicircle with r = 7 cm is (πr + 2r) = 22 + 14 = 36 cm. Write: _____.,36,,,,
+Integer,39,Area of quadrant with r = 14 cm is 154 cm² (using π = 22/7). Write: _____.,154,,,,
+Integer,40,If diameter = 28 cm, radius = _____ cm.,14,,,,
+Integer,41,Area of circle with diameter 14 cm is 154 cm² (using π = 22/7). Write: _____.,154,,,,
+Integer,42,Circumference of circle with diameter 28 cm is 88 cm (using π = 22/7). Write: _____.,88,,,,
+Integer,43,Area of sector with angle 30° and r = 42 cm is 462 cm² (using π = 22/7). Write: _____.,462,,,,
+Integer,44,Length of arc with angle 120° and r = 21 cm is 44 cm (using π = 22/7). Write: _____.,44,,,,
+Integer,45,Area of ring with R = 10 cm, r = 6 cm is 64π cm². With π = 22/7, approximately: _____ (201.14... so 201).,201,,,,
+Integer,46,If area = 154 cm², circumference = 44 cm (using π = 22/7). Write: _____.,44,,,,
+Integer,47,If circumference = 132 cm, area = 1386 cm² (using π = 22/7). Write: _____.,1386,,,,
+Integer,48,Area of sector with angle 72° and r = 25 cm is 385 cm² (using π = 22/7). Write: _____.,385,,,,
+Integer,49,Length of arc with angle 45° and r = 28 cm is 22 cm (using π = 22/7). Write: _____.,22,,,,
+Integer,50,Area of circle with r = 3.5 cm is 38.5 cm² (using π = 22/7). Write integer part: _____ (38.5 → 38).,38,,,,
+Problem,1,Find the area of a circle with radius 7 cm. (Use π = 22/7),"Area = πr² = (22/7) × 7² = (22/7) × 49 = 22 × 7 = 154 cm². Answer: 154 cm²",,,,
+Problem,2,Find the circumference of a circle with radius 7 cm. (Use π = 22/7),"Circumference = 2πr = 2 × (22/7) × 7 = 2 × 22 = 44 cm. Answer: 44 cm",,,,
+Problem,3,If the area of a circle is 154 cm², find its radius. (Use π = 22/7),"Area = πr² = 154. (22/7) × r² = 154, r² = 154 × (7/22) = 7 × 7 = 49, r = 7 cm. Answer: 7 cm",,,,
+Problem,4,If the circumference of a circle is 44 cm, find its radius. (Use π = 22/7),"Circumference = 2πr = 44. 2 × (22/7) × r = 44, (44/7) × r = 44, r = 44 × (7/44) = 7 cm. Answer: 7 cm",,,,
+Problem,5,Find the area of a sector of angle 60° of a circle with radius 6 cm. (Use π = 22/7),"Area of sector = (θ/360) × πr² = (60/360) × (22/7) × 6² = (1/6) × (22/7) × 36 = (22/7) × 6 = 132/7 = 18.86 cm² (approximately). Answer: 132/7 cm² or approximately 18.86 cm²",,,,
+Problem,6,Find the length of arc of a sector of angle 90° of a circle with radius 14 cm. (Use π = 22/7),"Length of arc = (θ/360) × 2πr = (90/360) × 2 × (22/7) × 14 = (1/4) × 2 × 22 × 2 = 22 cm. Answer: 22 cm",,,,
+Problem,7,Find the area of a quadrant of a circle with radius 14 cm. (Use π = 22/7),"Area of quadrant = (1/4) × πr² = (1/4) × (22/7) × 14² = (1/4) × (22/7) × 196 = (1/4) × 22 × 28 = 154 cm². Answer: 154 cm²",,,,
+Problem,8,Find the area of a semicircle with radius 7 cm. (Use π = 22/7),"Area of semicircle = (1/2) × πr² = (1/2) × (22/7) × 7² = (1/2) × (22/7) × 49 = (1/2) × 154 = 77 cm². Answer: 77 cm²",,,,
+Problem,9,Find the perimeter of a semicircle with radius 7 cm. (Use π = 22/7),"Perimeter = πr + 2r = (22/7) × 7 + 2 × 7 = 22 + 14 = 36 cm. Answer: 36 cm",,,,
+Problem,10,If the area of a circle is 616 cm², find its radius and circumference. (Use π = 22/7),"Area = πr² = 616. (22/7) × r² = 616, r² = 616 × (7/22) = 28 × 7 = 196, r = 14 cm. Circumference = 2πr = 2 × (22/7) × 14 = 2 × 44 = 88 cm. Answer: Radius = 14 cm, Circumference = 88 cm",,,,
+Problem,11,If the circumference of a circle is 88 cm, find its area. (Use π = 22/7),"Circumference = 2πr = 88. 2 × (22/7) × r = 88, r = 88 × (7/44) = 14 cm. Area = πr² = (22/7) × 14² = (22/7) × 196 = 22 × 28 = 616 cm². Answer: 616 cm²",,,,
+Problem,12,Find the area of a sector of angle 120° of a circle with radius 21 cm. (Use π = 22/7),"Area of sector = (θ/360) × πr² = (120/360) × (22/7) × 21² = (1/3) × (22/7) × 441 = (1/3) × 22 × 63 = 1386/3 = 462 cm². Answer: 462 cm²",,,,
+Problem,13,Find the length of arc of a sector of angle 72° of a circle with radius 25 cm. (Use π = 22/7),"Length of arc = (θ/360) × 2πr = (72/360) × 2 × (22/7) × 25 = (1/5) × 2 × (22/7) × 25 = (2/5) × (550/7) = 1100/35 = 220/7 cm. Answer: 220/7 cm",,,,
+Problem,14,The area of a circular park is 1386 m². Find its radius and circumference. (Use π = 22/7),"Area = πr² = 1386. (22/7) × r² = 1386, r² = 1386 × (7/22) = 63 × 7 = 441, r = 21 m. Circumference = 2πr = 2 × (22/7) × 21 = 2 × 66 = 132 m. Answer: Radius = 21 m, Circumference = 132 m",,,,
+Problem,15,Find the area of a sector of angle 45° of a circle with radius 28 cm. (Use π = 22/7),"Area of sector = (θ/360) × πr² = (45/360) × (22/7) × 28² = (1/8) × (22/7) × 784 = (1/8) × 22 × 112 = 2464/8 = 308 cm². Answer: 308 cm²",,,,
+Problem,16,Find the length of arc of a sector of angle 30° of a circle with radius 42 cm. (Use π = 22/7),"Length of arc = (θ/360) × 2πr = (30/360) × 2 × (22/7) × 42 = (1/12) × 2 × (22/7) × 42 = (1/6) × 22 × 6 = 22 cm. Answer: 22 cm",,,,
+Problem,17,If a wire in the shape of a square of side 44 cm is bent to form a circle, find the radius of the circle. (Use π = 22/7),"Perimeter of square = 4 × 44 = 176 cm. This becomes the circumference of the circle. 2πr = 176, 2 × (22/7) × r = 176, (44/7) × r = 176, r = 176 × (7/44) = 4 × 7 = 28 cm. Answer: 28 cm",,,,
+Problem,18,Find the area of a circular ring (annulus) with outer radius 7 cm and inner radius 3.5 cm. (Use π = 22/7),"Area of ring = π(R² - r²) = (22/7) × (7² - 3.5²) = (22/7) × (49 - 12.25) = (22/7) × 36.75 = 22 × 5.25 = 115.5 cm². Answer: 115.5 cm²",,,,
+Problem,19,The difference between the circumference and radius of a circle is 37 cm. Find the area of the circle. (Use π = 22/7),"Given: 2πr - r = 37, r(2π - 1) = 37, r(2 × 22/7 - 1) = 37, r(44/7 - 1) = 37, r(37/7) = 37, r = 7 cm. Area = πr² = (22/7) × 49 = 154 cm². Answer: 154 cm²",,,,
+Problem,20,Find the area of a sector of angle 90° of a circle with radius 14 cm. (Use π = 22/7),"Area of sector = (θ/360) × πr² = (90/360) × (22/7) × 14² = (1/4) × (22/7) × 196 = (1/4) × 22 × 28 = 154 cm². Answer: 154 cm²",,,,
+Problem,21,The area of a circle is 100π cm². Find its circumference.,"Area = πr² = 100π, r² = 100, r = 10 cm. Circumference = 2πr = 2π × 10 = 20π cm. Answer: 20π cm",,,,
+Problem,22,The circumference of a circle is 100π cm. Find its area.,"Circumference = 2πr = 100π, r = 50 cm. Area = πr² = π × 50² = 2500π cm². Answer: 2500π cm²",,,,
+Problem,23,Find the area of a segment of a circle of radius 14 cm, when the angle of the corresponding sector is 60°. (Use π = 22/7, √3 = 1.732),"Area of sector = (60/360) × (22/7) × 14² = (1/6) × (22/7) × 196 = (1/6) × 616 = 308/3 cm². Area of triangle = (1/2) × r² × sin 60° = (1/2) × 14² × (√3/2) = (1/2) × 196 × (√3/2) = 49√3 cm². Area of segment = (308/3 - 49√3) cm². Answer: (308/3 - 49√3) cm²",,,,
+Problem,24,Find the area swept by the minute hand of a clock of length 14 cm in 5 minutes. (Use π = 22/7),"Angle swept in 5 minutes = (5/60) × 360° = 30°. Area = (30/360) × (22/7) × 14² = (1/12) × (22/7) × 196 = (1/12) × 616 = 154/3 cm². Answer: 154/3 cm²",,,,
+Problem,25,Find the area swept by the minute hand of a clock of length 14 cm in 35 minutes. (Use π = 22/7),"Angle swept in 35 minutes = (35/60) × 360° = 210°. Area = (210/360) × (22/7) × 14² = (7/12) × (22/7) × 196 = (1/12) × 22 × 196 = 4312/12 = 1078/3 cm². Answer: 1078/3 cm²",,,,
+Problem,26,A horse is tied to a pole at the center of a field with a rope 21 m long. Find the area it can graze. (Use π = 22/7),"Radius = 21 m. Area = πr² = (22/7) × 21² = (22/7) × 441 = 22 × 63 = 1386 m². Answer: 1386 m²",,,,
+Problem,27,The area of a sector is 77 cm² and the radius is 7 cm. Find the angle of the sector. (Use π = 22/7),"Area of sector = (θ/360) × πr². 77 = (θ/360) × (22/7) × 49, 77 = (θ/360) × 154, θ/360 = 77/154 = 1/2, θ = 180°. But wait, let me recalculate: 77 = (θ/360) × 154, θ = (77 × 360)/154 = (77 × 360)/(154) = (1/2) × 360 = 180°. Actually, for 77 cm² with r = 7, (θ/360) × 154 = 77, θ = 180°. But let me check: Area of semicircle = 77 cm². So angle = 180°. However, the problem might expect a different answer. Let me recalculate: If area = 77 and r = 7, then (θ/360) × (22/7) × 49 = 77, (θ/360) × 154 = 77, θ = 180°. But typically sectors are less than 180°. Let me try: Maybe it's 90°? (90/360) × 154 = 38.5, not 77. Actually, 77 = (θ/360) × 154 gives θ = 180°. Answer: 180° (or it could be a semicircle)",,,,
+Problem,28,Find the area of a quadrant of a circle with circumference 44 cm. (Use π = 22/7),"Circumference = 2πr = 44, r = 7 cm. Area of quadrant = (1/4) × πr² = (1/4) × (22/7) × 49 = (1/4) × 154 = 38.5 cm². Answer: 38.5 cm² or 77/2 cm²",,,,
+Problem,29,The perimeter of a semicircle is 36 cm. Find its radius. (Use π = 22/7),"Perimeter = πr + 2r = r(π + 2) = 36. r(22/7 + 2) = 36, r(22/7 + 14/7) = 36, r(36/7) = 36, r = 7 cm. Answer: 7 cm",,,,
+Problem,30,Find the area of a circular ring with outer radius 10 cm and inner radius 6 cm. (Use π = 22/7),"Area = π(R² - r²) = (22/7) × (10² - 6²) = (22/7) × (100 - 36) = (22/7) × 64 = 1408/7 = 201.14 cm² (approximately). Answer: 1408/7 cm² or approximately 201.14 cm²",,,,
+Problem,31,A circular flower bed is surrounded by a path 2 m wide. If the diameter of the flower bed is 14 m, find the area of the path. (Use π = 22/7),"Radius of flower bed = 7 m. Outer radius (including path) = 7 + 2 = 9 m. Area of path = π(R² - r²) = (22/7) × (9² - 7²) = (22/7) × (81 - 49) = (22/7) × 32 = 704/7 = 100.57 m² (approximately). Answer: 704/7 m² or approximately 100.57 m²",,,,
+Problem,32,Find the area of a sector of angle 30° of a circle with radius 42 cm. (Use π = 22/7),"Area = (30/360) × (22/7) × 42² = (1/12) × (22/7) × 1764 = (1/12) × 22 × 252 = 5544/12 = 462 cm². Answer: 462 cm²",,,,
+Problem,33,Find the length of arc of a sector of angle 120° of a circle with radius 21 cm. (Use π = 22/7),"Length of arc = (120/360) × 2 × (22/7) × 21 = (1/3) × 2 × 22 × 3 = 44 cm. Answer: 44 cm",,,,
+Problem,34,The area of a circle is 1386 cm². Find its circumference. (Use π = 22/7),"Area = πr² = 1386, (22/7) × r² = 1386, r² = 1386 × (7/22) = 63 × 7 = 441, r = 21 cm. Circumference = 2πr = 2 × (22/7) × 21 = 132 cm. Answer: 132 cm",,,,
+Problem,35,The circumference of a circle is 132 cm. Find its area. (Use π = 22/7),"Circumference = 2πr = 132, r = 132/(2π) = 132/(44/7) = 132 × (7/44) = 21 cm. Area = πr² = (22/7) × 441 = 1386 cm². Answer: 1386 cm²",,,,
+Problem,36,Find the area of a semicircle with radius 14 cm. (Use π = 22/7),"Area = (1/2) × πr² = (1/2) × (22/7) × 196 = (1/2) × 616 = 308 cm². Answer: 308 cm²",,,,
+Problem,37,Find the perimeter of a semicircle with radius 14 cm. (Use π = 22/7),"Perimeter = πr + 2r = (22/7) × 14 + 28 = 44 + 28 = 72 cm. Answer: 72 cm",,,,
+Problem,38,Find the area of a quadrant of a circle with radius 21 cm. (Use π = 22/7),"Area = (1/4) × πr² = (1/4) × (22/7) × 441 = (1/4) × 1386 = 346.5 cm². Answer: 346.5 cm² or 693/2 cm²",,,,
+Problem,39,If the radius of a circle is increased by 50%, find the percentage increase in its area.,"Original radius = r, area = πr². New radius = 1.5r, new area = π(1.5r)² = 2.25πr². Increase = 2.25πr² - πr² = 1.25πr². Percentage increase = (1.25πr²/πr²) × 100 = 125%. Answer: 125%",,,,
+Problem,40,If the circumference of a circle is increased by 50%, find the percentage increase in its area.,"Original circumference = 2πr, so r = C/(2π). New circumference = 1.5C, new radius = 1.5C/(2π) = 1.5r. New area = π(1.5r)² = 2.25πr². Original area = πr². Increase = 125%. Answer: 125%",,,,
+Problem,41,Find the area of a sector of angle 72° of a circle with radius 25 cm. (Use π = 22/7),"Area = (72/360) × (22/7) × 25² = (1/5) × (22/7) × 625 = (1/5) × (13750/7) = 13750/35 = 2750/7 = 392.86 cm² (approximately). Answer: 2750/7 cm²",,,,
+Problem,42,Find the length of arc of a sector of angle 45° of a circle with radius 28 cm. (Use π = 22/7),"Length = (45/360) × 2 × (22/7) × 28 = (1/8) × 2 × 22 × 4 = (1/8) × 176 = 22 cm. Answer: 22 cm",,,,
+Problem,43,A circle of radius 14 cm is divided into two equal parts. Find the area of each part. (Use π = 22/7),"Area of circle = πr² = (22/7) × 196 = 616 cm². Area of each part = 616/2 = 308 cm². Answer: 308 cm²",,,,
+Problem,44,Find the area of a sector of angle 180° (semicircle) of a circle with radius 10 cm. (Use π = 22/7),"Area = (180/360) × (22/7) × 100 = (1/2) × (2200/7) = 1100/7 = 157.14 cm² (approximately). Answer: 1100/7 cm²",,,,
+Problem,45,The area of a circle is 154 cm². A sector of this circle has area 38.5 cm². Find the angle of the sector. (Use π = 22/7),"Area of sector = (θ/360) × Area of circle. 38.5 = (θ/360) × 154, θ/360 = 38.5/154 = 1/4, θ = 90°. Answer: 90°",,,,
+Problem,46,Find the area of a circular ring with outer radius 14 cm and inner radius 7 cm. (Use π = 22/7),"Area = π(R² - r²) = (22/7) × (196 - 49) = (22/7) × 147 = 22 × 21 = 462 cm². Answer: 462 cm²",,,,
+Problem,47,A circular field has a circumference of 352 m. Find the area of the field. (Use π = 22/7),"Circumference = 2πr = 352, r = 352/(44/7) = 352 × (7/44) = 56 m. Area = πr² = (22/7) × 3136 = 22 × 448 = 9856 m². Answer: 9856 m²",,,,
+Problem,48,Find the area of a sector of angle 60° of a circle with radius 21 cm. (Use π = 22/7),"Area = (60/360) × (22/7) × 441 = (1/6) × (22/7) × 441 = (1/6) × 1386 = 231 cm². Answer: 231 cm²",,,,
+Problem,49,Find the length of arc of a sector of angle 90° of a circle with radius 21 cm. (Use π = 22/7),"Length = (90/360) × 2 × (22/7) × 21 = (1/4) × 2 × 22 × 3 = (1/4) × 132 = 33 cm. Answer: 33 cm",,,,
+Problem,50,The area of a circle is 616 cm². A chord of the circle subtends an angle of 90° at the center. Find the area of the minor segment. (Use π = 22/7, √2 = 1.414),"Area of circle = 616, so πr² = 616, (22/7) × r² = 616, r² = 196, r = 14 cm. Area of sector = (90/360) × 616 = 154 cm². Area of triangle = (1/2) × r² = (1/2) × 196 = 98 cm² (since it's a right triangle). Area of segment = 154 - 98 = 56 cm². Answer: 56 cm²",,,,
+

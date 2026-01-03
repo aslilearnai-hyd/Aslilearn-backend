@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Agriculture is the primary activity because it,Provides raw material,Feeds people,Supports industries,All of these,All of these
+MCQ,2,Which type of farming is practiced on small patches with simple tools?,Commercial farming,Plantation farming,Primitive subsistence farming,Intensive farming,Primitive subsistence farming
+MCQ,3,Slash and burn agriculture is also known as,Intensive farming,Commercial farming,Shifting cultivation,Plantation farming,Shifting cultivation
+MCQ,4,Which of the following is a Rabi crop?,Rice,Maize,Wheat,Cotton,Wheat
+MCQ,5,Kharif crops are grown during,Winter,Summer,Rainy season,Autumn,Rainy season
+MCQ,6,Which crop is a kharif crop?,Wheat,Gram,Rice,Mustard,Rice
+MCQ,7,Which crop requires high temperature and heavy rainfall?,Wheat,Rice,Millets,Pulses,Rice
+MCQ,8,Which crop is known as a beverage crop?,Wheat,Rice,Tea,Maize,Tea
+MCQ,9,Which farming is practiced for market sale?,Subsistence farming,Primitive farming,Commercial farming,Shifting farming,Commercial farming
+MCQ,10,Which type of farming uses high doses of chemicals?,Organic farming,Subsistence farming,Intensive farming,Shifting farming,Intensive farming
+MCQ,11,Which crop is called golden fibre?,Cotton,Jute,Silk,Wool,Jute
+MCQ,12,Which crop grows well in black soil?,Rice,Wheat,Cotton,Tea,Cotton
+MCQ,13,Which soil is suitable for wheat?,Black soil,Laterite soil,Alluvial soil,Red soil,Alluvial soil
+MCQ,14,Which crop requires cool climate?,Rice,Sugarcane,Wheat,Tea,Wheat
+MCQ,15,Which is a plantation crop?,Rice,Wheat,Tea,Maize,Tea
+MCQ,16,India is the largest producer of,Tea,Coffee,Spices,Wheat,Spices
+MCQ,17,Which crop is used as raw material in textile industry?,Jute,Cotton,Both A and B,None,Both A and B
+MCQ,18,Which farming method increases soil fertility naturally?,Intensive farming,Commercial farming,Organic farming,Shifting farming,Organic farming
+MCQ,19,Which crop is grown in winter?,Rice,Maize,Wheat,Jute,Wheat
+MCQ,20,Which crop needs 200 cm rainfall?,Wheat,Millets,Rice,Maize,Rice
+MCQ,21,Which crop is a food crop?,Tea,Coffee,Wheat,Rubber,Wheat
+MCQ,22,Which crop is a fibre crop?,Rice,Wheat,Cotton,Maize,Cotton
+MCQ,23,Which state is the largest producer of rice?,Punjab,West Bengal,Uttar Pradesh,Tamil Nadu,West Bengal
+MCQ,24,Which crop is grown in arid regions?,Rice,Millets,Wheat,Jute,Millets
+MCQ,25,Which crop is grown in Assam?,Tea,Wheat,Rice,Maize,Tea
+MCQ,26,Which type of farming is labour intensive?,Subsistence farming,Extensive farming,Plantation farming,Shifting farming,Subsistence farming
+MCQ,27,Which crop requires frost-free climate?,Wheat,Tea,Cotton,Mustard,Cotton
+MCQ,28,Which crop is known as a cash crop?,Rice,Wheat,Cotton,Millets,Cotton
+MCQ,29,Which crop requires well-drained soil?,Rice,Wheat,Tea,Sugarcane,Tea
+MCQ,30,Which crop grows well in laterite soil?,Rice,Tea,Wheat,Millets,Tea
+MCQ,31,Which revolution increased food grain production?,White Revolution,Green Revolution,Blue Revolution,Yellow Revolution,Green Revolution
+MCQ,32,Which crop is a pulse crop?,Rice,Wheat,Gram,Cotton,Gram
+MCQ,33,Which crop is grown using plantation farming?,Tea,Rice,Wheat,Maize,Tea
+MCQ,34,Which crop needs high humidity?,Wheat,Rice,Cotton,Millets,Rice
+MCQ,35,Which crop is used to make sugar?,Rice,Wheat,Sugarcane,Jute,Sugarcane
+MCQ,36,Which farming depends on monsoon?,Irrigated farming,Subsistence farming,Rainfed farming,Commercial farming,Rainfed farming
+MCQ,37,Which crop grows in cool and moist climate?,Tea,Coffee,Wheat,Maize,Tea
+MCQ,38,Which soil is best for jute?,Black soil,Red soil,Alluvial soil,Laterite soil,Alluvial soil
+MCQ,39,Which crop is harvested in October?,Rabi crops,Kharif crops,Zaid crops,Plantation crops,Kharif crops
+MCQ,40,Which crop grows in winter and harvested in summer?,Rice,Maize,Wheat,Jute,Wheat
+MCQ,41,Which crop requires 20–25°C temperature?,Wheat,Rice,Millets,Gram,Rice
+MCQ,42,Which crop is used for oil extraction?,Rice,Wheat,Mustard,Maize,Mustard
+MCQ,43,Which crop is grown in Punjab?,Tea,Rice,Wheat,Both B and C,Both B and C
+MCQ,44,Which farming is capital intensive?,Subsistence farming,Commercial farming,Shifting farming,Primitive farming,Commercial farming
+MCQ,45,Which crop is a Zaid crop?,Wheat,Rice,Watermelon,Mustard,Watermelon
+MCQ,46,Which crop grows in black soil and dry climate?,Rice,Wheat,Cotton,Jute,Cotton
+MCQ,47,Which crop is sensitive to frost?,Cotton,Wheat,Mustard,Gram,Cotton
+MCQ,48,Which crop is grown in delta regions?,Millets,Wheat,Rice,Cotton,Rice
+MCQ,49,Which crop is known as poor man’s food?,Rice,Wheat,Millets,Tea,Millets
+MCQ,50,Agriculture contributes to Indian economy by,Employment,GDP,Raw material,All of these,All of these
+
+Integer,1,Main occupation of India?,Agriculture,,,,
+Integer,2,Slash and burn farming?,Shifting cultivation,,,,
+Integer,3,Winter crop?,Rabi,,,,
+Integer,4,Rainy season crop?,Kharif,,,,
+Integer,5,Food grain crop?,Wheat,,,,
+Integer,6,Golden fibre?,Jute,,,,
+Integer,7,Beverage crop?,Tea,,,,
+Integer,8,Fibre crop?,Cotton,,,,
+Integer,9,Largest rice producer?,West Bengal,,,,
+Integer,10,Black soil crop?,Cotton,,,,
+Integer,11,Cool season crop?,Wheat,,,,
+Integer,12,Plantation crop?,Tea,,,,
+Integer,13,Oilseed example?,Mustard,,,,
+Integer,14,Pulse crop?,Gram,,,,
+Integer,15,Revolution for food grains?,Green Revolution,,,,
+Integer,16,Arid region crop?,Millets,,,,
+Integer,17,Sugar producing crop?,Sugarcane,,,,
+Integer,18,Harvested in October?,Kharif,,,,
+Integer,19,Winter to summer crop?,Wheat,,,,
+Integer,20,Delta crop?,Rice,,,,
+Integer,21,Commercial crop?,Cotton,,,,
+Integer,22,Rain dependent farming?,Rainfed,,,,
+Integer,23,Zaid crop?,Watermelon,,,,
+Integer,24,Soil for jute?,Alluvial,,,,
+Integer,25,Crop needing heavy rainfall?,Rice,,,,
+Integer,26,Tea growing state?,Assam,,,,
+Integer,27,Subsistence farming aim?,Self consumption,,,,
+Integer,28,Labour intensive farming?,Subsistence,,,,
+Integer,29,Capital intensive farming?,Commercial,,,,
+Integer,30,Plantation farming example?,Tea,,,,
+Integer,31,Frost sensitive crop?,Cotton,,,,
+Integer,32,Oilseed state?,Rajasthan,,,,
+Integer,33,Cash crop?,Cotton,,,,
+Integer,34,Millets called?,Coarse grains,,,,
+Integer,35,Farming on slopes?,Terrace farming,,,,
+Integer,36,Crop rotation benefit?,Soil fertility,,,,
+Integer,37,Green Revolution period?,1960s,,,,
+Integer,38,Monsoon dependent crop?,Kharif,,,,
+Integer,39,Winter rainfall crop?,Rabi,,,,
+Integer,40,Beverage crop two?,Coffee,,,,
+Integer,41,Crop for textile?,Cotton,,,,
+Integer,42,Soil for rice?,Alluvial,,,,
+Integer,43,Main rice season?,Kharif,,,,
+Integer,44,Oilseed crop?,Groundnut,,,,
+Integer,45,Food crop?,Rice,,,,
+Integer,46,Plantation farming scale?,Large,,,,
+Integer,47,Farming using manure?,Organic,,,,
+Integer,48,Subsistence farming output?,Low,,,,
+Integer,49,Agriculture depends on?,Monsoon,,,,
+Integer,50,Chapter focus?,Agriculture,,,,
+
+Descriptive,1,What is agriculture?,,,,,Agriculture is the cultivation of crops and rearing of animals
+Descriptive,2,Explain types of farming.,,,,,Subsistence, commercial, plantation etc
+Descriptive,3,What is primitive subsistence farming?,,,,,Small scale farming using traditional tools
+Descriptive,4,Explain shifting cultivation.,,,,,Slash and burn farming method
+Descriptive,5,What is intensive farming?,,,,,High input farming on small land
+Descriptive,6,Explain commercial farming.,,,,,Farming for market sale
+Descriptive,7,What is plantation farming?,,,,,Large scale single crop farming
+Descriptive,8,Describe Rabi crops.,,,,,Grown in winter season
+Descriptive,9,Describe Kharif crops.,,,,,Grown in rainy season
+Descriptive,10,Describe Zaid crops.,,,,,Grown between Rabi and Kharif
+Descriptive,11,Explain rice cultivation.,,,,,Needs high rainfall and temperature
+Descriptive,12,Explain wheat cultivation.,,,,,Needs cool climate
+Descriptive,13,Describe millets.,,,,,Drought resistant crops
+Descriptive,14,Explain cotton cultivation.,,,,,Needs black soil and high temperature
+Descriptive,15,Describe jute cultivation.,,,,,Grown in alluvial soil
+Descriptive,16,Explain tea cultivation.,,,,,Plantation crop in humid areas
+Descriptive,17,Explain coffee cultivation.,,,,,Grown in shade
+Descriptive,18,What are food crops?,,,,,Crops used for food
+Descriptive,19,What are cash crops?,,,,,Crops grown for sale
+Descriptive,20,Explain oilseeds.,,,,,Used to extract oil
+Descriptive,21,Explain pulses.,,,,,Protein rich crops
+Descriptive,22,Explain Green Revolution.,,,,,Increased food grain production
+Descriptive,23,Role of agriculture in economy.,,,,,Employment and GDP contribution
+Descriptive,24,Explain problems of Indian agriculture.,,,,,Dependence on monsoon
+Descriptive,25,Explain irrigation methods.,,,,,Canals, tube wells
+Descriptive,26,Explain rainfed farming.,,,,,Depends on rainfall
+Descriptive,27,Explain crop rotation.,,,,,Maintains soil fertility
+Descriptive,28,Explain organic farming.,,,,,Uses natural inputs
+Descriptive,29,Explain impact of monsoon.,,,,,Affects crop yield
+Descriptive,30,Explain soil requirement for crops.,,,,,Different crops need different soils
+Descriptive,31,Explain climate requirement for crops.,,,,,Temperature and rainfall
+Descriptive,32,Describe agriculture in India.,,,,,Diverse crops and practices
+Descriptive,33,Explain subsistence farming problems.,,,,,Low productivity
+Descriptive,34,Explain advantages of commercial farming.,,,,,Higher income
+Descriptive,35,Explain role of technology.,,,,,Improves productivity
+Descriptive,36,Explain use of fertilizers.,,,,,Increase yield
+Descriptive,37,Explain use of HYV seeds.,,,,,Increase production
+Descriptive,38,Explain problems of small farmers.,,,,,Low income
+Descriptive,39,Explain agricultural marketing.,,,,,Selling farm produce
+Descriptive,40,Explain food security.,,,,,Availability of food
+Descriptive,41,Explain irrigation importance.,,,,,Reduces monsoon dependency
+Descriptive,42,Explain sustainable agriculture.,,,,,Environment friendly farming
+Descriptive,43,Explain crop diversification.,,,,,Growing multiple crops
+Descriptive,44,Explain agricultural labour.,,,,,Workforce in farming
+Descriptive,45,Explain mechanisation.,,,,,Use of machines
+Descriptive,46,Explain soil conservation.,,,,,Prevents erosion
+Descriptive,47,Explain role of government.,,,,,Support and policies
+Descriptive,48,Explain agricultural exports.,,,,,Foreign exchange
+Descriptive,49,Explain future of agriculture.,,,,,Need for sustainability
+Descriptive,50,Summarize Agriculture.,,,,,Chapter explains types, crops and importance of agriculture

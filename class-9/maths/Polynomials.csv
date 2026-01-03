@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Which of the following is a polynomial?,x+1/x,x²+3x+1,√x+1,1/x²,x²+3x+1
+MCQ,2,The degree of polynomial 3x²+5x+7 is?,1,2,3,0,2
+MCQ,3,Which is a linear polynomial?,x²+1,3x+5,2x²+3x+1,x³+2,3x+5
+MCQ,4,The constant term of 4x³+2x+9 is?,4,2,9,0,9
+MCQ,5,The coefficient of x² in 7x²−3x+1 is?,7,3,1,-3,7
+MCQ,6,Which is a quadratic polynomial?,2x+1,x²−4,5,3x³+1,x²−4
+MCQ,7,The degree of constant polynomial 5 is?,0,1,2,Undefined,0
+MCQ,8,Which polynomial has degree 3?,x²+1,3x+2,x³−x+1,5,x³−x+1
+MCQ,9,The zero of polynomial x−3 is?,0,3,-3,1,3
+MCQ,10,The number of zeros of a linear polynomial is?,0,1,2,Infinite,1
+MCQ,11,The number of zeros of a quadratic polynomial is at most?,1,2,3,0,2
+MCQ,12,Which graph represents a linear polynomial?,Straight line,Parabola,Curve,Circle,Straight line
+MCQ,13,The value of polynomial x²−1 at x=1 is?,0,1,-1,2,0
+MCQ,14,The degree of zero polynomial is?,0,1,Not defined,Infinite,Not defined
+MCQ,15,Which is not a polynomial?,2x³−x+1,5x,1/x,x²+2,1/x
+MCQ,16,The coefficient of x in 6x²−4x+3 is?,6,-4,3,4,-4
+MCQ,17,The polynomial with degree 1 is called?,Linear,Quadratic,Cubic,Constant,Linear
+MCQ,18,The polynomial x²+0x+5 has how many terms?,1,2,3,0,2
+MCQ,19,The leading coefficient of 4x³−2x+1 is?,1,4,-2,3,4
+MCQ,20,Which is a monomial?,x+1,x²+x,3x³,2x+3,3x³
+MCQ,21,Which is a binomial?,x,x²+1,3x²+x+1,5,x²+1
+MCQ,22,Which is a trinomial?,x+1,2x²+3x+1,5x,7,2x²+3x+1
+MCQ,23,The value of 2x+3 at x=2 is?,5,6,7,8,7
+MCQ,24,The zero of polynomial 2x is?,2,0,-2,1,0
+MCQ,25,The degree of polynomial 0 is?,0,1,Not defined,2,Not defined
+MCQ,26,Which polynomial has only one term?,Binomial,Trinomial,Monomial,Linear,Monomial
+MCQ,27,The value of x³ at x=1 is?,0,1,2,3,1
+MCQ,28,The graph of a quadratic polynomial is?,Straight line,Parabola,Circle,Hyperbola,Parabola
+MCQ,29,Which is a constant polynomial?,5x,3x+1,7,2x²,7
+MCQ,30,The zero of polynomial x+5 is?,5,-5,0,1,-5
+MCQ,31,The number of zeros of a cubic polynomial is at most?,1,2,3,4,3
+MCQ,32,Which has degree zero?,5,2x,x²,x³,5
+MCQ,33,The polynomial x²−4 has zeros?,±2,2 only,-2 only,0,±2
+MCQ,34,The coefficient of x³ in 5x³+2x² is?,5,2,3,0,5
+MCQ,35,Which is a polynomial in x?,x+√2,1/x,x⁻¹,√x,x+√2
+MCQ,36,The value of 3x² at x=2 is?,6,9,12,18,12
+MCQ,37,The polynomial of degree 2 is called?,Linear,Quadratic,Cubic,Constant,Quadratic
+MCQ,38,The constant term of x²−7 is?,1,-7,7,0,-7
+MCQ,39,Which polynomial has degree 1?,5x²,3x,7,x³,3x
+MCQ,40,The graph of constant polynomial is?,Line parallel to x-axis,Line parallel to y-axis,Curve,Parabola,Line parallel to x-axis
+MCQ,41,The value of x²+x at x=1 is?,1,2,3,4,2
+MCQ,42,Which is not a polynomial?,2x²+1,x³−x,1/x²,5x+3,1/x²
+MCQ,43,The degree of polynomial 7x is?,0,1,2,7,1
+MCQ,44,Which is a cubic polynomial?,x²+1,2x³+3,x+5,7,2x³+3
+MCQ,45,The value of x³−1 at x=1 is?,0,1,2,-1,0
+MCQ,46,The coefficient of x² in x²+x is?,1,0,2,-1,1
+MCQ,47,The polynomial with three terms is?,Monomial,Binomial,Trinomial,Linear,Trinomial
+MCQ,48,The value of 5 at x=any number is?,5,0,x,Undefined,5
+MCQ,49,The degree of polynomial x⁴ is?,4,3,2,1,4
+MCQ,50,The zero of polynomial x is?,1,-1,0,2,0
+
+Integer,1,Degree of 3x²+1?,2,,,,
+Integer,2,Zero of x−7?,7,,,,
+Integer,3,Constant term of x²+3?,3,,,,
+Integer,4,Value of x² at x=3?,9,,,,
+Integer,5,Degree of 5?,0,,,,
+Integer,6,Coefficient of x in 4x−2?,4,,,,
+Integer,7,Zero of 2x?,0,,,,
+Integer,8,Value of 2x+1 at x=2?,5,,,,
+Integer,9,Number of zeros of linear polynomial?,1,,,,
+Integer,10,Value of x³ at x=2?,8,,,,
+Integer,11,Degree of x³−1?,3,,,,
+Integer,12,Constant term of 7x?,0,,,,
+Integer,13,Value of x²−4 at x=2?,0,,,,
+Integer,14,Coefficient of x² in x²+3x?,1,,,,
+Integer,15,Degree of x?,1,,,,
+Integer,16,Value of 3x at x=4?,12,,,,
+Integer,17,Zero of x+9?,-9,,,,
+Integer,18,Number of terms in x²+1?,2,,,,
+Integer,19,Degree of 0 polynomial?,Not defined,,,,
+Integer,20,Value of x²+x at x=0?,0,,,,
+Integer,21,Constant polynomial value?,Same,,,,
+Integer,22,Value of x³ at x=1?,1,,,,
+Integer,23,Coefficient of x³ in x³?,1,,,,
+Integer,24,Zero of x−1?,1,,,,
+Integer,25,Value of 5x at x=0?,0,,,,
+Integer,26,Number of terms in 3x?,1,,,,
+Integer,27,Degree of 2x³?,3,,,,
+Integer,28,Value of x² at x=5?,25,,,,
+Integer,29,Constant term of x³−4?,-4,,,,
+Integer,30,Value of x−2 at x=2?,0,,,,
+Integer,31,Degree of x²−x?,2,,,,
+Integer,32,Zero of 3x?,0,,,,
+Integer,33,Value of 2x² at x=3?,18,,,,
+Integer,34,Number of zeros of quadratic polynomial?,2,,,,
+Integer,35,Constant term of 9?,9,,,,
+Integer,36,Value of x³−x at x=1?,0,,,,
+Integer,37,Coefficient of x in x?,1,,,,
+Integer,38,Degree of x⁴?,4,,,,
+Integer,39,Value of x²+1 at x=2?,5,,,,
+Integer,40,Zero of x?,0,,,,
+Integer,41,Value of 7x at x=1?,7,,,,
+Integer,42,Degree of 4x?,1,,,,
+Integer,43,Value of x² at x=1?,1,,,,
+Integer,44,Constant term of x²?,0,,,,
+Integer,45,Value of x+3 at x=0?,3,,,,
+Integer,46,Degree of x³+x?,3,,,,
+Integer,47,Zero of x+4?,-4,,,,
+Integer,48,Value of 2x at x=5?,10,,,,
+Integer,49,Coefficient of x² in 3x²?,3,,,,
+Integer,50,Value of x²−1 at x=1?,0,,,,
+
+Problem,1,Find the value of x²+3x+2 at x=1.,,,,,6
+Problem,2,Find the value of 2x²−x at x=2.,,,,,6
+Problem,3,Find the zero of polynomial x−5.,,,,,5
+Problem,4,Find the value of 3x² at x=4.,,,,,48
+Problem,5,Find the zero of 2x.,,,,,0
+Problem,6,Find the value of x²−9 at x=3.,,,,,0
+Problem,7,Find the value of 5x+1 at x=2.,,,,,11
+Problem,8,Find the zero of x+7.,,,,,-7
+Problem,9,Find the value of x³ at x=3.,,,,,27
+Problem,10,Find the value of x²+1 at x=4.,,,,,17
+Problem,11,Find the zero of x−1.,,,,,1
+Problem,12,Find the value of 4x² at x=2.,,,,,16
+Problem,13,Find the value of x²−4 at x=2.,,,,,0
+Problem,14,Find the value of 2x+3 at x=5.,,,,,13
+Problem,15,Find the zero of x.,,,,,0
+Problem,16,Find the value of x³−1 at x=1.,,,,,0
+Problem,17,Find the value of 3x+4 at x=2.,,,,,10
+Problem,18,Find the zero of x+2.,,,,,-2
+Problem,19,Find the value of x² at x=6.,,,,,36
+Problem,20,Find the value of 7x at x=3.,,,,,21
+Problem,21,Find the zero of x−9.,,,,,9
+Problem,22,Find the value of x²+2x at x=2.,,,,,8
+Problem,23,Find the value of 5 at x=any.,,,,,5
+Problem,24,Find the value of 2x³ at x=2.,,,,,16
+Problem,25,Find the zero of x−4.,,,,,4
+Problem,26,Find the value of x²−x at x=3.,,,,,6
+Problem,27,Find the value of 3x at x=7.,,,,,21
+Problem,28,Find the zero of x+1.,,,,,-1
+Problem,29,Find the value of x³ at x=2.,,,,,8
+Problem,30,Find the value of x²+5 at x=1.,,,,,6
+Problem,31,Find the zero of x−8.,,,,,8
+Problem,32,Find the value of 4x at x=6.,,,,,24
+Problem,33,Find the value of x²−16 at x=4.,,,,,0
+Problem,34,Find the value of 2x+1 at x=3.,,,,,7
+Problem,35,Find the zero of x+6.,,,,,-6
+Problem,36,Find the value of x³+1 at x=2.,,,,,9
+Problem,37,Find the value of 6x at x=5.,,,,,30
+Problem,38,Find the zero of x−10.,,,,,10
+Problem,39,Find the value of x²+3 at x=2.,,,,,7
+Problem,40,Find the value of 3x²−x at x=1.,,,,,2
+Problem,41,Find the zero of x+3.,,,,,-3
+Problem,42,Find the value of x² at x=8.,,,,,64
+Problem,43,Find the value of 5x−5 at x=2.,,,,,5
+Problem,44,Find the zero of x−2.,,,,,2
+Problem,45,Find the value of x³−x at x=2.,,,,,6
+Problem,46,Find the value of 2x at x=9.,,,,,18
+Problem,47,Find the zero of x+5.,,,,,-5
+Problem,48,Find the value of x²+2 at x=3.,,,,,11
+Problem,49,Find the value of 4x³ at x=1.,,,,,4
+Problem,50,Find the zero of x−6.,,,,,6

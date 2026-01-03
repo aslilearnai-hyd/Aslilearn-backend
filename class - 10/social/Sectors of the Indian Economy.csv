@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The primary sector includes activities related to,Manufacturing,Services,Extraction of natural resources,Trade,Extraction of natural resources
+MCQ,2,Which sector is also called agricultural sector?,Primary,Secondary,Tertiary,Quaternary,Primary
+MCQ,3,Manufacturing of goods belongs to which sector?,Primary,Secondary,Tertiary,Public,Secondary
+MCQ,4,Transport and communication belong to,Primary sector,Secondary sector,Tertiary sector,Quaternary sector,Tertiary sector
+MCQ,5,Which sector provides support services?,Primary,Secondary,Tertiary,Private,Tertiary
+MCQ,6,Which sector contributes the most to India’s GDP?,Primary,Secondary,Tertiary,Public,Tertiary
+MCQ,7,Which sector employs the largest number of people in India?,Primary,Secondary,Tertiary,Public,Primary
+MCQ,8,Which activity is part of primary sector?,Fishing,Steel making,Teaching,Banking,Fishing
+MCQ,9,Which activity belongs to secondary sector?,Mining,Farming,Textile manufacturing,Trade,Textile manufacturing
+MCQ,10,Which activity belongs to tertiary sector?,Dairy farming,Weaving cloth,Teaching,Cement making,Teaching
+MCQ,11,The organised sector has,Low wages,No job security,Fixed working hours,No benefits,Fixed working hours
+MCQ,12,Which sector follows labour laws?,Unorganised,Organised,Private,None,Organised
+MCQ,13,The unorganised sector is characterised by,Job security,Fixed income,No rules and regulations,Social security,No rules and regulations
+MCQ,14,Which of the following is an example of unorganised sector?,Government office,Private school,Street vendor,Factory,Street vendor
+MCQ,15,Public sector enterprises are owned by,Individuals,Private companies,Government,Foreigners,Government
+MCQ,16,Which of the following is a public sector enterprise?,Reliance,Jio,Indian Railways,Tata Steel,Indian Railways
+MCQ,17,Private sector enterprises are owned by,Government,Individuals,Public authority,Local bodies,Individuals
+MCQ,18,Which sector aims at social welfare?,Private,Public,Unorganised,Primary,Public
+MCQ,19,Which sector is responsible for providing basic facilities?,Private,Public,Unorganised,Secondary,Public
+MCQ,20,Which sector includes government hospitals?,Private,Public,Organised,Unorganised,Public
+MCQ,21,Which sector is expanding rapidly in India?,Primary,Secondary,Tertiary,Public,Tertiary
+MCQ,22,Which sector is known as service sector?,Primary,Secondary,Tertiary,Public,Tertiary
+MCQ,23,Seasonal unemployment is mostly found in,Primary sector,Secondary sector,Tertiary sector,Public sector,Primary sector
+MCQ,24,Disguised unemployment exists mainly in,Industry,Services,Agriculture,Public sector,Agriculture
+MCQ,25,Which sector uses natural products as raw material?,Secondary,Tertiary,Primary,Public,Primary
+MCQ,26,Which sector converts raw material into goods?,Primary,Secondary,Tertiary,Public,Secondary
+MCQ,27,Which sector helps in development of other sectors?,Primary,Secondary,Tertiary,Unorganised,Tertiary
+MCQ,28,Which sector includes teachers and doctors?,Primary,Secondary,Tertiary,Private,Tertiary
+MCQ,29,Which sector has low income and no job security?,Organised,Public,Unorganised,Private,Unorganised
+MCQ,30,Which sector provides employment opportunities?,Only primary,Only secondary,Only tertiary,All sectors,All sectors
+MCQ,31,MGNREGA is related to,Organised sector,Unorganised sector,Employment generation,Privatisation,Employment generation
+MCQ,32,Which sector includes construction work?,Primary,Secondary,Tertiary,Public,Secondary
+MCQ,33,Which sector is dependent on primary sector?,Tertiary,Secondary,Public,Private,Secondary
+MCQ,34,Which of the following is a service?,Farming,Mining,Teaching,Manufacturing,Teaching
+MCQ,35,Which sector dominates employment in developed countries?,Primary,Secondary,Tertiary,Unorganised,Tertiary
+MCQ,36,Which sector is affected most by natural calamities?,Primary,Secondary,Tertiary,Public,Primary
+MCQ,37,Which sector produces goods for direct use?,Primary,Secondary,Tertiary,Public,Primary
+MCQ,38,Which sector has factories?,Primary,Secondary,Tertiary,Public,Secondary
+MCQ,39,Which sector is essential for economic development?,Primary only,Secondary only,Tertiary only,All sectors,All sectors
+MCQ,40,Which sector is controlled by government?,Private,Public,Unorganised,Primary,Public
+MCQ,41,Which sector includes banking?,Primary,Secondary,Tertiary,Public,Tertiary
+MCQ,42,Which sector provides electricity?,Private,Public,Unorganised,Primary,Public
+MCQ,43,Which sector provides water supply?,Private,Public,Secondary,Primary,Public
+MCQ,44,Which sector has written contracts?,Unorganised,Private,Organised,Primary,Organised
+MCQ,45,Which sector ensures minimum wages?,Unorganised,Private,Organised,Primary,Organised
+MCQ,46,Which sector has maximum disguised unemployment?,Secondary,Tertiary,Primary,Public,Primary
+MCQ,47,Which sector provides transportation services?,Primary,Secondary,Tertiary,Public,Tertiary
+MCQ,48,Which sector contributes maximum to GDP today?,Primary,Secondary,Tertiary,Public,Tertiary
+MCQ,49,Which sector includes shopkeepers?,Primary,Secondary,Tertiary,Public,Tertiary
+MCQ,50,Sectors are classified on the basis of,Ownership and activities,Income only,Population,Resources,Ownership and activities
+
+Integer,1,Extraction based sector?,Primary,,,,
+Integer,2,Manufacturing sector?,Secondary,,,,
+Integer,3,Service sector?,Tertiary,,,,
+Integer,4,Agriculture belongs to?,Primary,,,,
+Integer,5,Factory work belongs to?,Secondary,,,,
+Integer,6,Teaching belongs to?,Tertiary,,,,
+Integer,7,Government owned sector?,Public,,,,
+Integer,8,Privately owned sector?,Private,,,,
+Integer,9,Job security sector?,Organised,,,,
+Integer,10,No job security sector?,Unorganised,,,,
+Integer,11,Largest GDP contributor?,Tertiary,,,,
+Integer,12,Maximum employment sector?,Primary,,,,
+Integer,13,Seasonal unemployment sector?,Primary,,,,
+Integer,14,Disguised unemployment sector?,Agriculture,,,,
+Integer,15,Service sector another name?,Tertiary,,,,
+Integer,16,Raw material provider?,Primary,,,,
+Integer,17,Goods manufacturing sector?,Secondary,,,,
+Integer,18,Support services sector?,Tertiary,,,,
+Integer,19,MGNREGA ensures?,Employment,,,,
+Integer,20,Law protected jobs?,Organised,,,,
+Integer,21,Street vendor sector?,Unorganised,,,,
+Integer,22,Indian Railways sector?,Public,,,,
+Integer,23,Banking sector?,Tertiary,,,,
+Integer,24,Construction sector?,Secondary,,,,
+Integer,25,Electricity provider?,Public,,,,
+Integer,26,Water supply sector?,Public,,,,
+Integer,27,Teacher’s job sector?,Tertiary,,,,
+Integer,28,Farming activity?,Primary,,,,
+Integer,29,Mining activity?,Primary,,,,
+Integer,30,Transport activity?,Tertiary,,,,
+Integer,31,Factory labour sector?,Secondary,,,,
+Integer,32,Organised sector benefit?,Job security,,,,
+Integer,33,Unorganised sector problem?,Low wages,,,,
+Integer,34,Employment guarantee scheme?,MGNREGA,,,,
+Integer,35,Service dominated economy?,Developed,,,,
+Integer,36,Calamity affected sector?,Primary,,,,
+Integer,37,Government hospitals sector?,Public,,,,
+Integer,38,Private ownership sector?,Private,,,,
+Integer,39,Disguised unemployment means?,More workers,,,,
+Integer,40,Written contract sector?,Organised,,,,
+Integer,41,Minimum wages sector?,Organised,,,,
+Integer,42,Shopkeeper sector?,Tertiary,,,,
+Integer,43,Transport sector?,Tertiary,,,,
+Integer,44,Primary product example?,Milk,,,,
+Integer,45,Secondary product example?,Cloth,,,,
+Integer,46,Tertiary service example?,Banking,,,,
+Integer,47,Main Indian employment sector?,Primary,,,,
+Integer,48,Fast growing sector?,Tertiary,,,,
+Integer,49,Chapter theme?,Sectors of economy,,,,
+Integer,50,Three sectors count?,Three,,,,
+
+Descriptive,1,What are economic sectors?,,,,,Economic sectors are groups of economic activities
+Descriptive,2,Explain primary sector.,,,,,Primary sector uses natural resources
+Descriptive,3,Explain secondary sector.,,,,,Secondary sector converts raw material into goods
+Descriptive,4,Explain tertiary sector.,,,,,Tertiary sector provides services
+Descriptive,5,Give examples of primary sector.,,,,,Agriculture, fishing, mining
+Descriptive,6,Give examples of secondary sector.,,,,,Manufacturing, construction
+Descriptive,7,Give examples of tertiary sector.,,,,,Transport, banking, education
+Descriptive,8,Why is tertiary sector important?,,,,,Supports other sectors
+Descriptive,9,Why has tertiary sector grown?,,,,,Increase in demand for services
+Descriptive,10,Explain organised sector.,,,,,Sector with job security and rules
+Descriptive,11,Explain unorganised sector.,,,,,Sector with no job security
+Descriptive,12,Differences between organised and unorganised sectors.,,,,,Based on job security and benefits
+Descriptive,13,What is public sector?,,,,,Sector owned by government
+Descriptive,14,What is private sector?,,,,,Sector owned by individuals
+Descriptive,15,Why is public sector important?,,,,,Provides essential services
+Descriptive,16,Explain disguised unemployment.,,,,,More workers than required
+Descriptive,17,Explain seasonal unemployment.,,,,,Work available in seasons
+Descriptive,18,Why agriculture has disguised unemployment?,,,,,Too many workers
+Descriptive,19,Explain MGNREGA.,,,,,Employment guarantee scheme
+Descriptive,20,How can unorganised sector be protected?,,,,,Through laws and schemes
+Descriptive,21,Explain interdependence of sectors.,,,,,Each sector depends on others
+Descriptive,22,Why primary sector employment is high?,,,,,Agricultural dependence
+Descriptive,23,Why secondary sector employment is low?,,,,,Use of machines
+Descriptive,24,Why tertiary sector employment is rising?,,,,,Service demand
+Descriptive,25,Explain role of government in economy.,,,,,Welfare and development
+Descriptive,26,Explain service sector growth.,,,,,Urbanisation and income growth
+Descriptive,27,Explain labour laws.,,,,,Protect workers
+Descriptive,28,Explain minimum wages.,,,,,Ensures fair income
+Descriptive,29,Explain importance of employment.,,,,,Income generation
+Descriptive,30,Explain quality of employment.,,,,,Security and wages
+Descriptive,31,Explain informal sector.,,,,,Another name for unorganised sector
+Descriptive,32,Explain formal sector.,,,,,Another name for organised sector
+Descriptive,33,Explain role of banking.,,,,,Financial services
+Descriptive,34,Explain role of transport.,,,,,Movement of goods
+Descriptive,35,Explain role of education.,,,,,Human resource development
+Descriptive,36,Explain role of health sector.,,,,,Healthy workforce
+Descriptive,37,Explain sectoral shift.,,,,,Change in importance of sectors
+Descriptive,38,Explain Indian economy structure.,,,,,Three sector economy
+Descriptive,39,Explain government employment schemes.,,,,,Reduce unemployment
+Descriptive,40,Explain importance of tertiary sector in India.,,,,,GDP contribution
+Descriptive,41,Explain public-private partnership.,,,,,Shared responsibility
+Descriptive,42,Explain challenges of unorganised sector.,,,,,Low income and insecurity
+Descriptive,43,Explain rural employment.,,,,,Agriculture based
+Descriptive,44,Explain urban employment.,,,,,Service and industry based
+Descriptive,45,Explain service sector examples.,,,,,Banking, education
+Descriptive,46,Explain industrial development.,,,,,Manufacturing growth
+Descriptive,47,Explain economic development.,,,,,Overall progress
+Descriptive,48,Explain employment generation.,,,,,Creating jobs
+Descriptive,49,Explain sustainable employment.,,,,,Long-term jobs
+Descriptive,50,Summarize Sectors of Indian Economy.,,,,,Chapter explains three sectors and employment

@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of the poem Animals?,Walt Whitman,Robert Frost,William Wordsworth,Carl Sandburg,Walt Whitman
+MCQ,2,Animals is a,Story,Poem,Play,Essay,Poem
+MCQ,3,The poet feels more comfortable with,Humans,Animals,Birds,Nature,Animals
+MCQ,4,According to the poet, animals are,Greedy,Contented,Cruel,Selfish,Contented
+MCQ,5,Animals do not complain about,Laziness,Work,Sleeping,Their condition,Their condition
+MCQ,6,Animals do not weep for their,Sins,Loss,Food,Friends,Sins
+MCQ,7,Animals are free from,Love,Jealousy,Greed,Sorrow,Greed
+MCQ,8,The poet criticizes humans for being,Honest,Simple,Materialistic,Calm,Materialistic
+MCQ,9,Animals are described as,Peaceful,Noisy,Cunning,Dangerous,Peaceful
+MCQ,10,Animals do not kneel to,God,Money,Kings,Rules,God
+MCQ,11,Animals are not obsessed with,Food,Possessions,Freedom,Nature,Possessions
+MCQ,12,The poet admires animals because they are,Innocent,Pure,Wise,Strong,Pure
+MCQ,13,The poem Animals reflects,Human superiority,Animal cruelty,Human flaws,Nature only,Human flaws
+MCQ,14,According to the poet, humans have lost,Values,Money,Power,Strength,Values
+MCQ,15,Animals are free from,Equality,Competition,Pride,Joy,Pride
+MCQ,16,The poem Animals is written in,Free verse,Rhyming couplets,Sonnet,Ballad,Free verse
+MCQ,17,Animals do not lie awake at night worrying about,Weather,Health,Their deeds,Food,Their deeds
+MCQ,18,The poet finds animals more,Honest,Complex,Greedy,Ambitious,Honest
+MCQ,19,The poet’s tone is,Critical,Admiring,Humorous,Angry,Admiring
+MCQ,20,Animals symbolize,Human ideals,Wildness,Power,Strength,Human ideals
+MCQ,21,Animals do not make the poet sick by discussing,Politics,Religion,Property,Duty,Property
+MCQ,22,The poet compares animals with,Children,Men,Birds,Nature,Men
+MCQ,23,Animals are free from the desire for,Power,Equality,Rest,Food,Power
+MCQ,24,The poet wants to live with,Humans,Animals,Children,Nature,Animals
+MCQ,25,Animals are not greedy for,Money,Food,Sleep,Freedom,Money
+MCQ,26,The poet says animals are satisfied with,Little,Nothing,Everything,Life,Life
+MCQ,27,Animals do not suffer from,Jealousy,Cold,Hunger,Sleep,Jealousy
+MCQ,28,The poem suggests humans have become,Corrupt,Simple,Free,Pure,Corrupt
+MCQ,29,The poet believes animals are closer to,Nature,God,Humans,Power,Nature
+MCQ,30,The poem criticizes human obsession with,Spirituality,Property,Peace,Nature,Property
+MCQ,31,Animals live without,Law,Rules,Complaints,Dreams,Complaints
+MCQ,32,The poet envies animals for their,Simplicity,Strength,Speed,Beauty,Simplicity
+MCQ,33,Animals do not bow to,Traditions,Religion,Customs,Kings,Religion
+MCQ,34,The poet finds animals more trustworthy than,Friends,Humans,Family,God,Humans
+MCQ,35,Animals are described as,selfish,peaceful,cruel,arrogant,peaceful
+MCQ,36,The poem highlights the theme of,Human flaws,Animal cruelty,Nature only,War,Human flaws
+MCQ,37,Animals live in the present because they do not worry about,Future,Food,Shelter,Weather,Future
+MCQ,38,The poet believes animals do not commit,Sins,Crimes,Mistakes,Errors,Sins
+MCQ,39,Animals do not discuss,Religion,Freedom,Life,Nature,Religion
+MCQ,40,The poet says animals bring him,Joy,Peace,Fear,Pain,Peace
+MCQ,41,The poem Animals is philosophical because it discusses,Life values,War,History,Nature,Life values
+MCQ,42,The poet sees animals as morally,Inferior,Superior,Equal,Dangerous,Superior
+MCQ,43,Animals are content because they do not chase,Money,Fame,Food,Power,Fame
+MCQ,44,The poet criticizes society for being,Materialistic,Honest,Simple,Kind,Materialistic
+MCQ,45,Animals live without fear of,Death,Judgement,Cold,Hunger,Judgement
+MCQ,46,The poem suggests humans should learn from,Books,Animals,Nature,Religion,Animals
+MCQ,47,Animals represent life without,Corruption,Freedom,Strength,Joy,Corruption
+MCQ,48,The poet’s attitude towards humans is,Negative,Neutral,Positive,Indifferent,Negative
+MCQ,49,The poet believes animals have retained,Innocence,Power,Wealth,Knowledge,Innocence
+MCQ,50,The central idea of the poem is,Animals are superior to humans,Animals reflect ideal human qualities,Animals are wild,Humans are perfect,Animals reflect ideal human qualities
+
+Integer,1,Name of the poet?,Walt Whitman,,,,
+Integer,2,Type of poem?,Free verse,,,,
+Integer,3,Poem title?,Animals,,,,
+Integer,4,Poet prefers?,Animals,,,,
+Integer,5,Animals are?,Contented,,,,
+Integer,6,Animals complain?,No,,,,
+Integer,7,Animals weep for sins?,No,,,,
+Integer,8,Animals obsessed with possessions?,No,,,,
+Integer,9,Humans have lost?,Values,,,,
+Integer,10,Poem theme?,Human flaws,,,,
+Integer,11,Poet tone?,Admiring,,,,
+Integer,12,Animals are?,Peaceful,,,,
+Integer,13,Animals worry about future?,No,,,,
+Integer,14,Poem form?,Free verse,,,,
+Integer,15,Animals kneel to God?,No,,,,
+Integer,16,Animals symbolize?,Purity,,,,
+Integer,17,Poet criticizes?,Humans,,,,
+Integer,18,Animals are free from?,Greed,,,,
+Integer,19,Poem message?,Learn from animals,,,,
+Integer,20,Animals live in?,Present,,,,
+Integer,21,Animals discuss religion?,No,,,,
+Integer,22,Animals are closer to?,Nature,,,,
+Integer,23,Humans are?,Materialistic,,,,
+Integer,24,Animals show jealousy?,No,,,,
+Integer,25,Animals bow to kings?,No,,,,
+Integer,26,Poem style?,Simple,,,,
+Integer,27,Animals are morally?,Superior,,,,
+Integer,28,Poet feels?,Peaceful,,,,
+Integer,29,Animals chase fame?,No,,,,
+Integer,30,Animals complain about fate?,No,,,,
+Integer,31,Poet envies?,Animals,,,,
+Integer,32,Animals are free from?,Pride,,,,
+Integer,33,Animals show innocence?,Yes,,,,
+Integer,34,Animals are trustworthy?,Yes,,,,
+Integer,35,Poem criticizes society?,Yes,,,,
+Integer,36,Animals live without?,Fear,,,,
+Integer,37,Animals reflect?,Ideal life,,,,
+Integer,38,Poem mood?,Reflective,,,,
+Integer,39,Animals are selfish?,No,,,,
+Integer,40,Humans are corrupted?,Yes,,,,
+Integer,41,Animals possess?,Simplicity,,,,
+Integer,42,Animals desire power?,No,,,,
+Integer,43,Poem focus?,Human nature,,,,
+Integer,44,Animals are peaceful?,Yes,,,,
+Integer,45,Poet’s nationality?,American,,,,
+Integer,46,Animals worry about past?,No,,,,
+Integer,47,Poem lesson?,Be simple,,,,
+Integer,48,Animals represent?,Purity,,,,
+Integer,49,Poem relevance?,Universal,,,,
+Integer,50,Central idea?,Animals teach humans,,,,
+
+Descriptive,1,What is the central idea of the poem Animals?,,,,,Animals possess qualities that humans have lost
+Descriptive,2,Why does the poet prefer animals to humans?,,,,,Animals are pure and contented
+Descriptive,3,What human qualities does the poet criticize?,,,,,Greed and materialism
+Descriptive,4,How are animals different from humans?,,,,,They are simple and honest
+Descriptive,5,Why does the poet admire animals?,,,,,They live without corruption
+Descriptive,6,Explain the theme of the poem Animals.,,,,,Animals represent ideal life
+Descriptive,7,How does the poem criticize human society?,,,,,By showing moral decay
+Descriptive,8,Why does the poet feel peaceful among animals?,,,,,They are non-judgmental
+Descriptive,9,What do animals symbolize in the poem?,,,,,Purity and innocence
+Descriptive,10,How are animals free from greed?,,,,,They don’t desire possessions
+Descriptive,11,Explain the poet’s tone in the poem.,,,,,Admiring and reflective
+Descriptive,12,Why do animals not worry about sins?,,,,,They live naturally
+Descriptive,13,How does the poem reflect human flaws?,,,,,Through comparison
+Descriptive,14,Why does the poet criticize religion?,,,,,It causes division
+Descriptive,15,How does the poem show animals as superior?,,,,,Moral qualities
+Descriptive,16,Why are animals content with life?,,,,,They accept nature
+Descriptive,17,How does the poet use contrast?,,,,,Humans vs animals
+Descriptive,18,Explain the simplicity of animals.,,,,,No desire for power
+Descriptive,19,Why does the poet say humans have lost virtues?,,,,,Due to materialism
+Descriptive,20,How does the poem encourage self-reflection?,,,,,By comparing lifestyles
+Descriptive,21,Why is the poem philosophical?,,,,,It discusses life values
+Descriptive,22,Explain the idea of living in the present.,,,,,Animals do not worry
+Descriptive,23,What lesson can humans learn from animals?,,,,,Live simply
+Descriptive,24,How does the poem criticize modern society?,,,,,Focus on possessions
+Descriptive,25,Why does the poet feel animals are honest?,,,,,They don’t pretend
+Descriptive,26,How does the poem promote simplicity?,,,,,By praising animals
+Descriptive,27,Explain the relevance of the poem today.,,,,,Modern life is materialistic
+Descriptive,28,How does the poem show peace?,,,,,Animals’ calm nature
+Descriptive,29,What does the poem suggest about happiness?,,,,,It lies in simplicity
+Descriptive,30,Why does the poet reject human pride?,,,,,It causes suffering
+Descriptive,31,Explain the poet’s admiration for animals.,,,,,Moral superiority
+Descriptive,32,How does the poem use free verse effectively?,,,,,Natural flow
+Descriptive,33,Why is innocence important in the poem?,,,,,Represents purity
+Descriptive,34,How does the poem depict corruption?,,,,,Human behavior
+Descriptive,35,Explain the phrase “I stand and look at them.”,,,,,Poet’s contemplation
+Descriptive,36,How does the poem redefine civilization?,,,,,Questions progress
+Descriptive,37,Why does the poet criticize obsession with wealth?,,,,,It corrupts values
+Descriptive,38,How does the poem portray animals as teachers?,,,,,Role models
+Descriptive,39,Explain the moral lesson of the poem.,,,,,Live honestly
+Descriptive,40,How does the poem inspire change?,,,,,Encourages reflection
+Descriptive,41,Why are animals free from judgement?,,,,,No social rules
+Descriptive,42,How does the poem reflect natural living?,,,,,Animals follow instincts
+Descriptive,43,Explain the poet’s disappointment with humans.,,,,,Lost values
+Descriptive,44,How does the poem appeal universally?,,,,,Common human flaws
+Descriptive,45,Why does the poet envy animals?,,,,,They live peacefully
+Descriptive,46,How does the poem challenge human superiority?,,,,,Shows moral failure
+Descriptive,47,Explain the symbolic meaning of animals.,,,,,Ideal humanity
+Descriptive,48,Why is the poem relevant for students?,,,,,Teaches values
+Descriptive,49,How does the poem emphasize simplicity?,,,,,Praises animal life
+Descriptive,50,Summarize the poem Animals.,,,,,The poet admires animals for their purity and criticizes human greed

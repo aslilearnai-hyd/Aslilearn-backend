@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Natural vegetation refers to?,Planted trees,Wild plants,Garden plants,Seasonal crops,Wild plants
+MCQ,2,Vegetation grown naturally without human aid is called?,Crops,Grasslands,Forests,Natural vegetation,Natural vegetation
+MCQ,3,Which factor does NOT affect natural vegetation?,Climate,Relief,Soil,Religion,Religion
+MCQ,4,India has how many major vegetation types?,3,4,5,6,5
+MCQ,5,Which vegetation grows in heavy rainfall areas?,Thorn forests,Mangroves,Tropical evergreen,Grasslands,Tropical evergreen
+MCQ,6,Tropical evergreen forests are also called?,Deciduous,Monsoon,Rain forests,Thorn,Rain forests
+MCQ,7,Which tree is found in evergreen forests?,Teak,Sal,Ebony,Acacia,Ebony
+MCQ,8,Which forests shed leaves in dry season?,Evergreen,Deciduous,Thorn,Mangrove,Deciduous
+MCQ,9,Which tree is common in deciduous forests?,Ebony,Teak,Pine,Rubber,Teak
+MCQ,10,Which forest type grows in less rainfall?,Evergreen,Deciduous,Thorn,Montane,Thorn
+MCQ,11,Which tree has long roots and sharp thorns?,Teak,Pine,Acacia,Oak,Acacia
+MCQ,12,Which forests are found in coastal areas?,Evergreen,Thorn,Mangrove,Montane,Mangrove
+MCQ,13,Mangrove forests grow in?,Fresh water,Salt water,Deserts,Mountains,Salt water
+MCQ,14,Which tree is common in mangrove forests?,Teak,Sundari,Pine,Sal,Sundari
+MCQ,15,Which vegetation is found in Himalayas?,Mangrove,Montane,Thorn,Grasslands,Montane
+MCQ,16,Which trees are found at higher altitudes?,Teak,Sal,Conifers,Acacia,Conifers
+MCQ,17,Which tree is a conifer?,Oak,Pine,Teak,Bamboo,Pine
+MCQ,18,Grasslands are suitable for?,Agriculture,Mining,Grazing,Industry,Grazing
+MCQ,19,Which animal is found in tropical forests?,Camel,Lion,Elephant,Polar bear,Elephant
+MCQ,20,Which animal is adapted to desert?,Tiger,Elephant,Camel,Rhino,Camel
+MCQ,21,Which is India’s national animal?,Lion,Tiger,Elephant,Leopard,Tiger
+MCQ,22,Which is India’s national bird?,Peacock,Sparrow,Eagle,Crow,Peacock
+MCQ,23,Which region has rich wildlife?,Desert,Mountains,Forests,Plains,Forests
+MCQ,24,Which animal is endangered?,Cow,Dog,Tiger,Goat,Tiger
+MCQ,25,Which forest is also called monsoon forest?,Evergreen,Deciduous,Thorn,Mangrove,Deciduous
+MCQ,26,Which vegetation grows in Rajasthan?,Evergreen,Deciduous,Thorn,Montane,Thorn
+MCQ,27,Which forests are found in Western Ghats?,Evergreen,Thorn,Grasslands,Montane,Evergreen
+MCQ,28,Which vegetation is found near river deltas?,Montane,Mangrove,Thorn,Grasslands,Mangrove
+MCQ,29,Which animal lives in mangroves?,Lion,Crocodile,Camel,Deer,Crocodile
+MCQ,30,Which vegetation type has dense canopy?,Deciduous,Evergreen,Thorn,Grassland,Evergreen
+MCQ,31,Which forest type sheds leaves to conserve water?,Evergreen,Deciduous,Montane,Grassland,Deciduous
+MCQ,32,Which forest has stunted trees?,Evergreen,Deciduous,Thorn,Montane,Thorn
+MCQ,33,Which region has alpine vegetation?,Plains,Plateau,High Himalayas,Coastal,High Himalayas
+MCQ,34,Which animal is found in Himalayas?,Camel,Yak,Elephant,Lion,Yak
+MCQ,35,Which vegetation grows above tree line?,Grass,Alpine shrubs,Evergreen,Thorn,Alpine shrubs
+MCQ,36,Which forest type has bamboo?,Evergreen,Deciduous,Montane,Thorn,Deciduous
+MCQ,37,Which vegetation type is least dense?,Evergreen,Deciduous,Thorn,Montane,Thorn
+MCQ,38,Which state has Sundarbans mangroves?,Odisha,West Bengal,Gujarat,Tamil Nadu,West Bengal
+MCQ,39,Which animal is protected in Gir forest?,Tiger,Lion,Elephant,Rhino,Lion
+MCQ,40,Which forest type is found in Nilgiris?,Montane,Thorn,Evergreen,Grassland,Montane
+MCQ,41,Which vegetation grows in less than 70 cm rainfall?,Evergreen,Deciduous,Thorn,Montane,Thorn
+MCQ,42,Which tree is used for furniture?,Pine,Teak,Acacia,Cactus,Teak
+MCQ,43,Which animal is found in deserts?,Yak,Camel,Rhino,Elephant,Camel
+MCQ,44,Which forest helps prevent coastal erosion?,Evergreen,Thorn,Mangrove,Montane,Mangrove
+MCQ,45,Which vegetation type has trees of medium height?,Evergreen,Deciduous,Thorn,Alpine,Deciduous
+MCQ,46,Which vegetation is adapted to cold climate?,Tropical,Desert,Montane,Grassland,Montane
+MCQ,47,Which wildlife sanctuary protects tigers?,Zoo,National Park,Bird Sanctuary,Reserve Forest,National Park
+MCQ,48,Which forest type has hardwood trees?,Evergreen,Deciduous,Thorn,Grassland,Deciduous
+MCQ,49,Which animal is India’s national heritage animal?,Elephant,Lion,Tiger,Peacock,Elephant
+MCQ,50,Which vegetation depends mainly on rainfall?,Natural vegetation,Crops,Gardens,None,Natural vegetation
+
+Integer,1,Natural vegetation grows without?,Human help,,,,
+Integer,2,Major vegetation types in India?,5,,,,
+Integer,3,Forest with heavy rainfall?,Evergreen,,,,
+Integer,4,Forest shedding leaves?,Deciduous,,,,
+Integer,5,Forest in low rainfall?,Thorn,,,,
+Integer,6,Coastal forest type?,Mangrove,,,,
+Integer,7,Mountain forest type?,Montane,,,,
+Integer,8,Tree in evergreen forest?,Ebony,,,,
+Integer,9,Tree in deciduous forest?,Teak,,,,
+Integer,10,Tree in thorn forest?,Acacia,,,,
+Integer,11,Tree in mangrove forest?,Sundari,,,,
+Integer,12,Tree in montane forest?,Pine,,,,
+Integer,13,Animal of desert?,Camel,,,,
+Integer,14,Animal of Himalayas?,Yak,,,,
+Integer,15,National animal?,Tiger,,,,
+Integer,16,National bird?,Peacock,,,,
+Integer,17,Forest in Western Ghats?,Evergreen,,,,
+Integer,18,Forest in Rajasthan?,Thorn,,,,
+Integer,19,Vegetation near deltas?,Mangrove,,,,
+Integer,20,Forest with dense canopy?,Evergreen,,,,
+Integer,21,Forest conserving water?,Deciduous,,,,
+Integer,22,Vegetation above tree line?,Alpine shrubs,,,,
+Integer,23,Forest with stunted trees?,Thorn,,,,
+Integer,24,Forest in Nilgiris?,Montane,,,,
+Integer,25,Grasslands used for?,Grazing,,,,
+Integer,26,Animal in Gir forest?,Lion,,,,
+Integer,27,Animal in mangroves?,Crocodile,,,,
+Integer,28,Forest preventing erosion?,Mangrove,,,,
+Integer,29,Tree used for furniture?,Teak,,,,
+Integer,30,Vegetation in cold region?,Montane,,,,
+Integer,31,Forest with bamboo?,Deciduous,,,,
+Integer,32,Least dense forest?,Thorn,,,,
+Integer,33,Forest in Sundarbans?,Mangrove,,,,
+Integer,34,Heritage animal?,Elephant,,,,
+Integer,35,Forest type depends on rainfall?,Natural vegetation,,,,
+Integer,36,Animal in tropical forest?,Elephant,,,,
+Integer,37,Forest in Himalayas?,Montane,,,,
+Integer,38,Vegetation in plains?,Deciduous,,,,
+Integer,39,Forest in Ganga delta?,Mangrove,,,,
+Integer,40,Hardwood forest?,Deciduous,,,,
+Integer,41,Forest with conifers?,Montane,,,,
+Integer,42,Vegetation in dry areas?,Thorn,,,,
+Integer,43,Vegetation in wet areas?,Evergreen,,,,
+Integer,44,Animal sanctuary protects?,Wildlife,,,,
+Integer,45,Forest with medium trees?,Deciduous,,,,
+Integer,46,Forest with tall trees?,Evergreen,,,,
+Integer,47,Vegetation in coastal areas?,Mangrove,,,,
+Integer,48,Forest type of Himalayas?,Montane,,,,
+Integer,49,Wildlife includes?,Animals,,,,
+Integer,50,Vegetation affected by?,Climate,,,,
+
+Descriptive,1,What is natural vegetation?,,,,,Vegetation growing naturally without human aid
+Descriptive,2,What are the factors affecting natural vegetation?,,,,,Climate soil relief
+Descriptive,3,Name the major vegetation types of India.,,,,,Evergreen deciduous thorn mangrove montane
+Descriptive,4,Describe tropical evergreen forests.,,,,,Dense forests in heavy rainfall areas
+Descriptive,5,Where are evergreen forests found?,,,,,Western Ghats Northeast Andaman
+Descriptive,6,Describe tropical deciduous forests.,,,,,Forests shedding leaves in dry season
+Descriptive,7,Why deciduous forests shed leaves?,,,,,To conserve water
+Descriptive,8,Where are deciduous forests found?,,,,,Plains and plateau
+Descriptive,9,Describe thorn forests.,,,,,Sparse vegetation in dry areas
+Descriptive,10,Where are thorn forests found?,,,,,Rajasthan Gujarat
+Descriptive,11,Describe mangrove forests.,,,,,Forests in tidal coastal areas
+Descriptive,12,Where are mangrove forests found?,,,,,River deltas
+Descriptive,13,Why mangroves have breathing roots?,,,,,For oxygen in marshy soil
+Descriptive,14,Describe montane forests.,,,,,Forests in mountainous regions
+Descriptive,15,What vegetation grows in Himalayas?,,,,,Montane and alpine
+Descriptive,16,What is alpine vegetation?,,,,,Vegetation above tree line
+Descriptive,17,Describe grasslands.,,,,,Open areas with grasses
+Descriptive,18,Importance of natural vegetation.,,,,,Maintains ecosystem balance
+Descriptive,19,What is wildlife?,,,,,Animals living in natural habitats
+Descriptive,20,Importance of wildlife.,,,,,Ecological balance tourism
+Descriptive,21,Name some wildlife of India.,,,,,Tiger elephant lion rhino
+Descriptive,22,Why forests are important?,,,,,Resources climate balance
+Descriptive,23,How vegetation depends on climate?,,,,,Rainfall temperature
+Descriptive,24,Role of forests in environment.,,,,,Prevent erosion climate control
+Descriptive,25,What is deforestation?,,,,,Cutting of forests
+Descriptive,26,Causes of deforestation.,,,,,Agriculture industry urbanization
+Descriptive,27,Effects of deforestation.,,,,,Soil erosion climate change
+Descriptive,28,How to conserve forests?,,,,,Afforestation laws
+Descriptive,29,What are wildlife sanctuaries?,,,,,Protected areas for animals
+Descriptive,30,What are national parks?,,,,,Protected natural reserves
+Descriptive,31,Difference between flora and fauna.,,,,,Plants vs animals
+Descriptive,32,Why wildlife is declining?,,,,,Poaching habitat loss
+Descriptive,33,Measures to protect wildlife.,,,,,Laws reserves
+Descriptive,34,Importance of mangroves.,,,,,Protect coast prevent erosion
+Descriptive,35,Why Western Ghats are rich in forests?,,,,,Heavy rainfall
+Descriptive,36,Why desert vegetation sparse?,,,,,Low rainfall
+Descriptive,37,Why Himalayas have varied vegetation?,,,,,Altitude variation
+Descriptive,38,Role of forests in economy.,,,,,Timber medicines
+Descriptive,39,What is biodiversity?,,,,,Variety of life forms
+Descriptive,40,Why India is rich in biodiversity?,,,,,Varied climate relief
+Descriptive,41,What are endangered species?,,,,,Species at risk of extinction
+Descriptive,42,Example of endangered animal.,,,,,Tiger
+Descriptive,43,What is ecosystem?,,,,,Interaction of living non-living
+Descriptive,44,Why conservation is important?,,,,,Future survival
+Descriptive,45,How forests affect rainfall?,,,,,Increase moisture
+Descriptive,46,Why wildlife tourism important?,,,,,Awareness income
+Descriptive,47,What is afforestation?,,,,,Planting trees
+Descriptive,48,How human activities affect vegetation?,,,,,Deforestation pollution
+Descriptive,49,Role of government in conservation.,,,,,Laws reserves
+Descriptive,50,Summarise natural vegetation and wildlife of India.,,,,,Diverse forests and rich fauna

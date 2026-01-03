@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Resources are defined as anything that has,Utility,Price,Weight,Colour,Utility
+MCQ,2,Which of the following is a natural resource?,Roads,Buildings,Water,Machines,Water
+MCQ,3,Resources which are found in nature are called,Human-made,Biotic,Abiotic,Natural,Natural
+MCQ,4,Which resource is formed from living organisms?,Abiotic,Biotic,Human-made,Potential,Biotic
+MCQ,5,Coal and petroleum are examples of,Renewable,Flow,Non-renewable,Biotic,Non-renewable
+MCQ,6,Which resource can be replenished?,Coal,Petroleum,Solar energy,Minerals,Solar energy
+MCQ,7,Which of the following is a human-made resource?,Soil,Water,Technology,Forests,Technology
+MCQ,8,Resources that are known but not used are called,Stock,Developed,Potential,Reserves,Potential
+MCQ,9,Which of the following is a developed resource?,Wind energy in Rajasthan,Coal in use,Water in rivers,Unused land,Coal in use
+MCQ,10,Which resource is owned by individuals?,Community resource,National resource,International resource,Private resource,Private resource
+MCQ,11,Village ponds are examples of,Private resources,Community resources,National resources,International resources,Community resources
+MCQ,12,Roads and railways are,Private resources,Community resources,National resources,International resources,National resources
+MCQ,13,Oceans beyond 200 km are,National resources,Private resources,International resources,Community resources,International resources
+MCQ,14,Which resource depends on technology?,Natural resource,Human-made resource,Biotic resource,Abiotic resource,Human-made resource
+MCQ,15,Which factor does NOT affect resource development?,Technology,Human skills,Climate,Superstition,Superstition
+MCQ,16,Sustainable development means,Fast development,Balanced development,Development without harming future needs,Only economic growth,Development without harming future needs
+MCQ,17,Overuse of resources leads to,Conservation,Development,Degradation,Equality,Degradation
+MCQ,18,Which resource is essential for life?,Iron,Gold,Water,Coal,Water
+MCQ,19,Land is a,Renewable resource,Non-renewable resource,Human-made resource,Flow resource,Renewable resource
+MCQ,20,Which land use category includes forests?,Net sown area,Fallow land,Forest land,Wasteland,Forest land
+MCQ,21,Which land is left uncultivated for more than 5 years?,Current fallow,Fallow land,Wasteland,Barren land,Fallow land
+MCQ,22,Which land is permanently uncultivable?,Net sown area,Fallow land,Barren land,Pasture,Barren land
+MCQ,23,Which land use category has the highest share in India?,Forest land,Net sown area,Fallow land,Wasteland,Net sown area
+MCQ,24,Soil is formed by,Weathering,Erosion,Deposition,Leaching,Weathering
+MCQ,25,Which soil is ideal for cotton?,Alluvial soil,Red soil,Black soil,Laterite soil,Black soil
+MCQ,26,Which soil is rich in humus?,Alluvial soil,Red soil,Black soil,Forest soil,Forest soil
+MCQ,27,Which soil is formed by deposition of rivers?,Alluvial soil,Laterite soil,Red soil,Arid soil,Alluvial soil
+MCQ,28,Soil erosion is caused by,Afforestation,Overgrazing,Conservation,Farming,Overgrazing
+MCQ,29,Which method prevents soil erosion?,Deforestation,Overgrazing,Contour ploughing,Mining,Contour ploughing
+MCQ,30,Strip cropping is used to,Increase erosion,Prevent erosion,Destroy soil,Reduce fertility,Prevent erosion
+MCQ,31,Resources should be used judiciously to avoid,Development,Conservation,Exhaustion,Growth,Exhaustion
+MCQ,32,Which resource is renewable?,Wind,Coal,Petroleum,Natural gas,Wind
+MCQ,33,Which soil is found in Rajasthan?,Laterite soil,Arid soil,Black soil,Forest soil,Arid soil
+MCQ,34,Which soil is less fertile?,Red soil,Alluvial soil,Forest soil,Black soil,Red soil
+MCQ,35,Which soil is suitable for rice?,Alluvial soil,Arid soil,Laterite soil,Red soil,Alluvial soil
+MCQ,36,Land degradation is caused by,Afforestation,Mining,Conservation,Terracing,Mining
+MCQ,37,Which state has serious land degradation due to mining?,Punjab,Rajasthan,Jharkhand,Kerala,Jharkhand
+MCQ,38,Resources are classified on the basis of,Origin,Ownership,Exhaustibility,All of these,All of these
+MCQ,39,Which soil develops under high temperature and rainfall?,Laterite soil,Alluvial soil,Red soil,Arid soil,Laterite soil
+MCQ,40,Which practice helps conserve land?,Afforestation,Deforestation,Overgrazing,Mining,Afforestation
+MCQ,41,Renewable resources are,Unlimited,Exhaustible,Replenishable,Non-living,Replenishable
+MCQ,42,Non-renewable resources take,Short time,No time,Millions of years,One year,Millions of years
+MCQ,43,Which is an abiotic resource?,Plants,Animals,Water,Human beings,Water
+MCQ,44,Which soil is acidic in nature?,Black soil,Alluvial soil,Laterite soil,Arid soil,Laterite soil
+MCQ,45,Land use depends on,Relief,Climate,Human factors,All of these,All of these
+MCQ,46,Which activity leads to land degradation?,Terracing,Afforestation,Over-irrigation,Contour ploughing,Over-irrigation
+MCQ,47,The most widespread soil in India is,Red soil,Black soil,Alluvial soil,Laterite soil,Alluvial soil
+MCQ,48,Resources are important for,Only economy,Only society,Development,Decoration,Development
+MCQ,49,Soil conservation is important to,Increase erosion,Maintain fertility,Destroy crops,Reduce land,Maintain fertility
+MCQ,50,The main aim of resource planning is,Sustainable development,Maximum exploitation,Urbanisation,Industrialisation,Sustainable development
+
+Integer,1,Anything that has utility is called?,Resource,,,,
+Integer,2,Resource formed from living organisms?,Biotic,,,,
+Integer,3,Coal is a ___ resource?,Non-renewable,,,,
+Integer,4,Resources owned by individuals?,Private,,,,
+Integer,5,Village grazing lands are ___ resources?,Community,,,,
+Integer,6,Oceans beyond 200 km are ___ resources?,International,,,,
+Integer,7,Unused but known resources?,Potential,,,,
+Integer,8,Resources currently in use?,Developed,,,,
+Integer,9,Development without harming future?,Sustainable development,,,,
+Integer,10,Process of soil formation?,Weathering,,,,
+Integer,11,Soil best for cotton?,Black,,,,
+Integer,12,Soil deposited by rivers?,Alluvial,,,,
+Integer,13,Soil rich in humus?,Forest,,,,
+Integer,14,Major land use in India?,Net sown area,,,,
+Integer,15,Permanently uncultivable land?,Barren,,,,
+Integer,16,Soil erosion cause?,Overgrazing,,,,
+Integer,17,Method to prevent erosion?,Terracing,,,,
+Integer,18,Soil in Rajasthan?,Arid,,,,
+Integer,19,Soil under high rainfall?,Laterite,,,,
+Integer,20,Most fertile soil?,Alluvial,,,,
+Integer,21,Renewable resource example?,Wind,,,,
+Integer,22,Non-renewable resource example?,Coal,,,,
+Integer,23,Human-made resource example?,Technology,,,,
+Integer,24,Land degradation due to mining state?,Jharkhand,,,,
+Integer,25,Soil conservation method?,Contour ploughing,,,,
+Integer,26,Resource classification basis?,Origin,,,,
+Integer,27,Abiotic resource example?,Water,,,,
+Integer,28,Land left uncultivated?,Fallow,,,,
+Integer,29,Resource planning aims?,Sustainability,,,,
+Integer,30,Land use affected by?,Climate,,,,
+Integer,31,Resource depletion leads to?,Crisis,,,,
+Integer,32,Over-irrigation causes?,Salinity,,,,
+Integer,33,Black soil retains?,Moisture,,,,
+Integer,34,Soil fertility maintained by?,Conservation,,,,
+Integer,35,Land used for grazing?,Pasture,,,,
+Integer,36,Resource for development?,Natural,,,,
+Integer,37,Soil erosion by water called?,Sheet erosion,,,,
+Integer,38,Main soil in plains?,Alluvial,,,,
+Integer,39,Resource owned by nation?,National,,,,
+Integer,40,Resource use must be?,Judicious,,,,
+Integer,41,Soil erosion by wind common in?,Deserts,,,,
+Integer,42,Land degradation reduces?,Productivity,,,,
+Integer,43,Flow resource example?,Water,,,,
+Integer,44,Soil formed by lava?,Black,,,,
+Integer,45,Soil conservation practice?,Afforestation,,,,
+Integer,46,Land with shrubs and grass?,Pasture,,,,
+Integer,47,Resources depend on?,Technology,,,,
+Integer,48,Soil erosion reduces?,Fertility,,,,
+Integer,49,Major aim of conservation?,Sustainability,,,,
+Integer,50,Key chapter theme?,Resources,,,,
+
+Descriptive,1,What are resources?,,,,,Resources are things with utility used to satisfy human needs
+Descriptive,2,Explain the classification of resources.,,,,,Resources are classified by origin, exhaustibility and ownership
+Descriptive,3,What are natural resources?,,,,,Resources obtained from nature
+Descriptive,4,Explain biotic and abiotic resources.,,,,,Biotic come from living organisms, abiotic from non-living
+Descriptive,5,What are renewable resources?,,,,,Resources that can be replenished
+Descriptive,6,What are non-renewable resources?,,,,,Resources that take long time to form
+Descriptive,7,Explain developed and potential resources.,,,,,Developed are in use, potential are unused
+Descriptive,8,What is resource planning?,,,,,Planned use of resources
+Descriptive,9,Why is resource planning necessary?,,,,,To prevent misuse and depletion
+Descriptive,10,Explain sustainable development.,,,,,Development without harming future needs
+Descriptive,11,What is land use?,,,,,Utilisation of land for various purposes
+Descriptive,12,Describe land use pattern in India.,,,,,Net sown area is highest
+Descriptive,13,What is soil?,,,,,Upper layer of earth supporting plant life
+Descriptive,14,Explain soil formation.,,,,,Formed by weathering of rocks
+Descriptive,15,Describe alluvial soil.,,,,,Fertile soil deposited by rivers
+Descriptive,16,Describe black soil.,,,,,Clayey soil ideal for cotton
+Descriptive,17,Describe red soil.,,,,,Less fertile soil rich in iron
+Descriptive,18,Describe laterite soil.,,,,,Formed in high rainfall areas
+Descriptive,19,What is soil erosion?,,,,,Removal of top fertile soil
+Descriptive,20,Causes of soil erosion.,,,,,Deforestation, overgrazing, wind
+Descriptive,21,Methods of soil conservation.,,,,,Terracing, contour ploughing
+Descriptive,22,What is land degradation?,,,,,Decline in land quality
+Descriptive,23,Causes of land degradation.,,,,,Mining, over-irrigation
+Descriptive,24,Measures to control land degradation.,,,,,Afforestation and regulation
+Descriptive,25,Explain the importance of resources.,,,,,Essential for development
+Descriptive,26,What are community resources?,,,,,Resources accessible to all
+Descriptive,27,What are national resources?,,,,,Resources owned by the nation
+Descriptive,28,What are international resources?,,,,,Resources beyond national boundaries
+Descriptive,29,Explain ownership-based classification.,,,,,Private, community, national, international
+Descriptive,30,Explain origin-based classification.,,,,,Biotic and abiotic
+Descriptive,31,Explain exhaustibility-based classification.,,,,,Renewable and non-renewable
+Descriptive,32,Describe arid soil.,,,,,Sandy soil found in deserts
+Descriptive,33,How does deforestation cause erosion?,,,,,Roots no longer hold soil
+Descriptive,34,Explain contour ploughing.,,,,,Ploughing along contours
+Descriptive,35,Explain strip cropping.,,,,,Alternate crop strips
+Descriptive,36,Why is soil conservation important?,,,,,Maintains fertility
+Descriptive,37,Explain the role of technology in resource use.,,,,,Helps develop resources
+Descriptive,38,How does population affect resources?,,,,,Increases demand
+Descriptive,39,Explain resource depletion.,,,,,Overuse leading to scarcity
+Descriptive,40,What is afforestation?,,,,,Planting trees
+Descriptive,41,Explain over-irrigation problems.,,,,,Causes salinity
+Descriptive,42,How does mining degrade land?,,,,,Removes topsoil
+Descriptive,43,Explain importance of land.,,,,,Base for activities
+Descriptive,44,Describe forest soil.,,,,,Rich in organic matter
+Descriptive,45,Explain role of human beings in resource development.,,,,,Skills and technology
+Descriptive,46,Why is sustainable development essential?,,,,,For future generations
+Descriptive,47,Explain judicious use of resources.,,,,,Careful and planned use
+Descriptive,48,Describe major soil types of India.,,,,,Alluvial, black, red, laterite
+Descriptive,49,Explain the need for conservation.,,,,,To avoid depletion
+Descriptive,50,Summarize Resources and Development.,,,,,The chapter explains types, use and conservation of resources

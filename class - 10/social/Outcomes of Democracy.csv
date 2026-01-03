@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Democracy is a form of government that produces,Quick decisions,Accountability,Dictatorship,Military rule,Accountability
+MCQ,2,Which outcome of democracy ensures people’s participation?,Economic growth,Transparency,Legitimacy,Centralisation,Legitimacy
+MCQ,3,Democracy is accountable to,Army,Judiciary,People,Media,People
+MCQ,4,Which system allows citizens to question rulers?,Dictatorship,Monarchy,Democracy,Military rule,Democracy
+MCQ,5,Which is NOT an outcome of democracy?,Accountability,Economic inequality,Transparency,Legitimacy,Economic inequality
+MCQ,6,Democracy ensures regular,Military actions,Elections,Revolutions,Strikes,Elections
+MCQ,7,Which outcome relates to decision-making process?,Transparency,Equality,Liberty,Justice,Transparency
+MCQ,8,Democracy improves quality of decision-making because it,Is fast,Is secret,Is consultative,Is authoritarian,Is consultative
+MCQ,9,Which value is promoted by democracy?,Inequality,Suppression,Equality,Discrimination,Equality
+MCQ,10,Which system allows peaceful correction of mistakes?,Dictatorship,Monarchy,Democracy,Colonial rule,Democracy
+MCQ,11,Democracy leads to,Concentration of power,Accountability,Autocracy,Instability,Accountability
+MCQ,12,Which outcome refers to people accepting democracy as right?,Legitimacy,Efficiency,Speed,Control,Legitimacy
+MCQ,13,Which system promotes dignity of individual?,Dictatorship,Democracy,Monarchy,Theocracy,Democracy
+MCQ,14,Democracy is based on the idea of,Power of elites,Power of army,Power of people,Power of religion,Power of people
+MCQ,15,Which outcome of democracy is related to rights?,Economic growth,Dignity and freedom,Centralisation,Military power,Dignity and freedom
+MCQ,16,Which system may be slow but is accountable?,Dictatorship,Democracy,Monarchy,Military rule,Democracy
+MCQ,17,Democracy ensures transparency through,Secret decisions,Public debates,Military orders,One-party rule,Public debates
+MCQ,18,Which outcome shows moral superiority of democracy?,Economic growth,Legitimacy,Dominance,Control,Legitimacy
+MCQ,19,Which outcome of democracy is linked with equality?,Social equality,Economic monopoly,Centralisation,Suppression,Social equality
+MCQ,20,Which system respects minority rights?,Dictatorship,Democracy,Monarchy,Colonial rule,Democracy
+MCQ,21,Democracy allows citizens to,Obey blindly,Question decisions,Follow rulers,Accept inequality,Question decisions
+MCQ,22,Which outcome of democracy is NOT guaranteed?,Economic equality,Accountability,Legitimacy,Participation,Economic equality
+MCQ,23,Democracy promotes accommodation of,Only majority,Only elite,Diverse groups,Army,Diverse groups
+MCQ,24,Which system corrects its own mistakes?,Monarchy,Dictatorship,Democracy,Colonialism,Democracy
+MCQ,25,Which outcome is related to free elections?,Accountability,Legitimacy,Participation,All of these,All of these
+MCQ,26,Democracy ensures dignity of,Only men,Only women,All individuals,Only majority,All individuals
+MCQ,27,Which outcome refers to open decision making?,Transparency,Equality,Justice,Liberty,Transparency
+MCQ,28,Democracy leads to better decisions because,One person decides,People consult,Army controls,Ruler decides,People consult
+MCQ,29,Which outcome strengthens people’s faith in democracy?,Legitimacy,Speed,Control,Force,Legitimacy
+MCQ,30,Which system promotes political equality?,Monarchy,Dictatorship,Democracy,Military rule,Democracy
+MCQ,31,Democracy is better than other systems because it allows,Errors without correction,Peaceful correction of mistakes,Military rule,No opposition,Peaceful correction of mistakes
+MCQ,32,Which outcome relates to accountability of rulers?,Transparency,Legitimacy,Responsibility,Equality,Responsibility
+MCQ,33,Which system gives equal voting rights?,Dictatorship,Democracy,Monarchy,Theocracy,Democracy
+MCQ,34,Democracy ensures people’s dignity by,Suppressing voices,Ignoring minorities,Respecting rights,Centralising power,Respecting rights
+MCQ,35,Which outcome of democracy is political?,Economic growth,Political equality,Industrial growth,Military strength,Political equality
+MCQ,36,Democracy improves decision making because it involves,One ruler,Public discussion,Army rule,Secret meetings,Public discussion
+MCQ,37,Which outcome shows democracy is morally right?,Legitimacy,Efficiency,Speed,Control,Legitimacy
+MCQ,38,Which system is more transparent?,Dictatorship,Democracy,Monarchy,Colonial rule,Democracy
+MCQ,39,Which outcome is linked with freedom of expression?,Dignity,Accountability,Legitimacy,Equality,Dignity
+MCQ,40,Democracy promotes,Uniformity,Accommodation,Suppression,Centralisation,Accommodation
+MCQ,41,Which outcome ensures rulers answerable to people?,Legitimacy,Accountability,Equality,Justice,Accountability
+MCQ,42,Democracy ensures respect for,Power,Authority,Human rights,Army,Human rights
+MCQ,43,Which system allows opposition parties?,Dictatorship,Monarchy,Democracy,Military rule,Democracy
+MCQ,44,Democracy leads to development by,Force,Participation,Suppression,Centralisation,Participation
+MCQ,45,Which outcome of democracy is social?,Economic growth,Social equality,Military power,Central rule,Social equality
+MCQ,46,Democracy may not always give,Accountability,Equality,Quick decisions,Legitimacy,Quick decisions
+MCQ,47,Which outcome of democracy builds trust?,Legitimacy,Control,Force,Speed,Legitimacy
+MCQ,48,Which system ensures citizens’ rights?,Monarchy,Dictatorship,Democracy,Colonial rule,Democracy
+MCQ,49,Democracy is preferred because it,Suppresses people,Ensures dignity and equality,Centralises power,Eliminates opposition,Ensures dignity and equality
+MCQ,50,Overall outcome of democracy is,Authoritarianism,Better governance,Military power,Instability,Better governance
+
+Integer,1,Government by people?,Democracy,,,,
+Integer,2,Answerability of rulers?,Accountability,,,,
+Integer,3,Open decision making?,Transparency,,,,
+Integer,4,Acceptance of democracy?,Legitimacy,,,,
+Integer,5,Equal value of vote?,Political equality,,,,
+Integer,6,Respect for individual?,Dignity,,,,
+Integer,7,Ability to question rulers?,Democracy,,,,
+Integer,8,Correction of mistakes?,Democracy,,,,
+Integer,9,Decision through discussion?,Consultation,,,,
+Integer,10,Outcome related to trust?,Legitimacy,,,,
+Integer,11,People’s involvement?,Participation,,,,
+Integer,12,Equal rights?,Equality,,,,
+Integer,13,Freedom of expression ensures?,Dignity,,,,
+Integer,14,Public debate ensures?,Transparency,,,,
+Integer,15,Rulers answerable to?,People,,,,
+Integer,16,Democracy improves?,Decision making,,,,
+Integer,17,Opposite of dictatorship?,Democracy,,,,
+Integer,18,Outcome not guaranteed?,Economic equality,,,,
+Integer,19,Democracy respects?,Minorities,,,,
+Integer,20,Free and fair elections ensure?,Accountability,,,,
+Integer,21,System allowing opposition?,Democracy,,,,
+Integer,22,Peaceful change of government?,Democracy,,,,
+Integer,23,Value of one person one vote?,Equality,,,,
+Integer,24,People accept democracy as right?,Legitimacy,,,,
+Integer,25,Democracy based on?,Consent,,,,
+Integer,26,Quality of decisions improved by?,Discussion,,,,
+Integer,27,Democracy promotes?,Accommodation,,,,
+Integer,28,Democracy ensures human?,Rights,,,,
+Integer,29,Government mistakes corrected by?,Elections,,,,
+Integer,30,Democracy may be slow but?,Accountable,,,,
+Integer,31,Outcome related to moral right?,Legitimacy,,,,
+Integer,32,Transparency achieved by?,Debate,,,,
+Integer,33,Democracy ensures dignity of?,Individual,,,,
+Integer,34,Equal opportunity principle?,Equality,,,,
+Integer,35,Democracy allows peaceful?,Protest,,,,
+Integer,36,Government legitimacy comes from?,People,,,,
+Integer,37,Democracy improves governance by?,Participation,,,,
+Integer,38,People’s trust in system?,Legitimacy,,,,
+Integer,39,Democracy protects?,Rights,,,,
+Integer,40,Political equality means?,Equal vote,,,,
+Integer,41,Democracy ensures?,Accountability,,,,
+Integer,42,Decision making method?,Consultation,,,,
+Integer,43,Democracy respects diversity by?,Accommodation,,,,
+Integer,44,Outcome linked with responsibility?,Accountability,,,,
+Integer,45,Democracy promotes human?,Dignity,,,,
+Integer,46,Outcome of democracy?,Better governance,,,,
+Integer,47,Democracy allows criticism?,Yes,,,,
+Integer,48,Democracy ensures transparency?,Yes,,,,
+Integer,49,Chapter theme?,Outcomes of Democracy,,,,
+Integer,50,Democracy’s moral value?,Legitimacy,,,,
+
+Descriptive,1,What is democracy?,,,,,Democracy is a form of government where rulers are elected by the people
+Descriptive,2,Explain accountability in democracy.,,,,,Rulers are answerable to citizens
+Descriptive,3,How does democracy ensure transparency?,,,,,Through public debate and open decision making
+Descriptive,4,Explain legitimacy as an outcome of democracy.,,,,,People accept democracy as rightful
+Descriptive,5,How does democracy improve decision making?,,,,,Through consultation and discussion
+Descriptive,6,Explain dignity and freedom in democracy.,,,,,Democracy respects individual rights
+Descriptive,7,Why is democracy considered morally superior?,,,,,It is based on people’s consent
+Descriptive,8,Explain political equality.,,,,,Each citizen has equal vote
+Descriptive,9,How does democracy correct its mistakes?,,,,,Through elections and public criticism
+Descriptive,10,Explain participation as an outcome of democracy.,,,,,People take part in decision making
+Descriptive,11,Why is democracy accountable?,,,,,Rulers depend on public support
+Descriptive,12,Explain importance of free elections.,,,,,They ensure accountability
+Descriptive,13,How does democracy respect minorities?,,,,,By protecting rights
+Descriptive,14,Explain accommodation of diversity.,,,,,Different groups coexist peacefully
+Descriptive,15,Why is democracy better than dictatorship?,,,,,Allows freedom and correction
+Descriptive,16,Explain social equality in democracy.,,,,,Equal status to all
+Descriptive,17,Explain economic outcomes of democracy.,,,,,May not ensure equality
+Descriptive,18,Why democracy is slow but effective?,,,,,Due to discussion
+Descriptive,19,Explain public debate in democracy.,,,,,Leads to informed decisions
+Descriptive,20,How does democracy ensure dignity?,,,,,Respects human rights
+Descriptive,21,Explain legitimacy through elections.,,,,,People choose rulers
+Descriptive,22,Explain accountability through institutions.,,,,,Parliament, judiciary
+Descriptive,23,Explain democracy and development.,,,,,Participation aids development
+Descriptive,24,Explain transparency in governance.,,,,,Decisions are open
+Descriptive,25,Explain political equality in India.,,,,,Universal adult franchise
+Descriptive,26,Explain freedom of expression.,,,,,Right to speak freely
+Descriptive,27,Explain democracy’s moral appeal.,,,,,Based on equality
+Descriptive,28,Explain peaceful transfer of power.,,,,,Through elections
+Descriptive,29,Explain democracy and social justice.,,,,,Promotes equality
+Descriptive,30,Explain citizen’s role in democracy.,,,,,Participation and vigilance
+Descriptive,31,Explain accountability vs efficiency.,,,,,Democracy may be slower
+Descriptive,32,Explain democracy’s ability to self-correct.,,,,,Allows reform
+Descriptive,33,Explain democratic decision making.,,,,,Consultative process
+Descriptive,34,Explain democracy and human rights.,,,,,Protects rights
+Descriptive,35,Explain legitimacy of democratic government.,,,,,Based on consent
+Descriptive,36,Explain transparency and RTI.,,,,,Access to information
+Descriptive,37,Explain democracy’s limitation.,,,,,Economic inequality
+Descriptive,38,Explain why people prefer democracy.,,,,,Ensures dignity
+Descriptive,39,Explain democracy and accountability of rulers.,,,,,Answerable to people
+Descriptive,40,Explain democracy as responsive government.,,,,,Listens to people
+Descriptive,41,Explain democracy and equality.,,,,,Equal political rights
+Descriptive,42,Explain democracy and freedom.,,,,,Freedom of speech
+Descriptive,43,Explain democratic outcomes in India.,,,,,Elections and rights
+Descriptive,44,Explain moral dimension of democracy.,,,,,Respect for people
+Descriptive,45,Explain democracy’s role in conflict resolution.,,,,,Peaceful methods
+Descriptive,46,Explain democracy and transparency.,,,,,Open governance
+Descriptive,47,Explain long-term outcomes of democracy.,,,,,Stability and trust
+Descriptive,48,Explain why democracy is accountable.,,,,,Public scrutiny
+Descriptive,49,Explain democracy as better governance.,,,,,Participation and legitimacy
+Descriptive,50,Summarize Outcomes of Democracy.,,,,,Chapter explains accountability, legitimacy, equality and dignity

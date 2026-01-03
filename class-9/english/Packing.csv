@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of "Packing"?,R.K. Narayan,Jerome K. Jerome,Mark Twain,Charles Dickens,Jerome K. Jerome
+MCQ,2,"Packing" is an extract from which book?,Three Men in a Boat,Three Men on the Bummel,My Experiments with Truth,Wings of Fire,Three Men in a Boat
+MCQ,3,Who are the three main characters?,George,Harris,Narrator,All of these,All of these
+MCQ,4,What were the friends planning?,A picnic,A journey,A holiday by boat,A walk,A holiday by boat
+MCQ,5,Who claimed to be good at packing?,Narrator,George,Harris,All three,Narrator
+MCQ,6,What item did the narrator forget to pack?,Toothbrush,Boots,Soap,Camera,Toothbrush
+MCQ,7,Where did the narrator finally find the toothbrush?,Bag,Coat pocket,Boot,Table,Coat pocket
+MCQ,8,Who packed the boots?,Narrator,George,Harris,None,George
+MCQ,9,Why was Harris angry?,Too much luggage,Narrator’s interference,Lost items,Hunger,Narrator’s interference
+MCQ,10,What did George do with the boots?,Packed neatly,Sat on them,Put in bag upside down,Wore them,Put in bag upside down
+MCQ,11,What tone does the chapter have?,Serious,Tragic,Humorous,Sad,Humorous
+MCQ,12,What quality of the narrator is shown?,Efficiency,Vanity,Carelessness,Arrogance,Vanity
+MCQ,13,Why did narrator insist on packing?,To help friends,To show skill,No reason,Forced,To show skill
+MCQ,14,What did Harris break?,Bottle,Plate,Cup,Nothing,Cup
+MCQ,15,What happened to the butter?,Melted,Lost,Squashed,Eaten,Squashed
+MCQ,16,Who stepped on the butter?,Narrator,George,Harris,Dog,Harris
+MCQ,17,What animal helped in packing?,Dog,Cat,Mouse,None,None
+MCQ,18,Why was packing delayed?,Carelessness,Arguments,Missing items,All of these,All of these
+MCQ,19,What annoyed George the most?,Noise,Narrator’s comments,Butter,Boots,Narrator’s comments
+MCQ,20,What kind of friends were they?,Serious,Organised,Clumsy,Professional,Clumsy
+MCQ,21,What literary device is used?,Irony,Simile,Metaphor,Personification,Irony
+MCQ,22,What does the story mainly show?,Adventure,Packing skills,Human foolishness,Travel tips,Human foolishness
+MCQ,23,Why is the narrator funny?,Overconfidence,Anger,Silence,Discipline,Overconfidence
+MCQ,24,What happened to the jam?,Eaten,Broken,Smashed,Saved,Smashed
+MCQ,25,Who cleaned the mess?,Narrator,George,Harris,None,None
+MCQ,26,What lesson does the story teach?,Planning,Humility,Not to boast,Hard work,Not to boast
+MCQ,27,What time was packing done?,Morning,Night,Afternoon,Evening,Night
+MCQ,28,Why was the narrator angry at George?,Boots issue,Noise,Delay,Food,Boots issue
+MCQ,29,What was packed first?,Food,Clothes,Boots,Bags,Bags
+MCQ,30,Who actually packed better?,Narrator,George,Harris,None,None
+MCQ,31,What made the situation comic?,Arguments,Mess,Overconfidence,All,All
+MCQ,32,What quality of Harris is shown?,Patience,Clumsiness,Anger,Skill,Clumsiness
+MCQ,33,What happened to the plates?,Packed safely,Broken,Left behind,Lost,Broken
+MCQ,34,Why did narrator keep interrupting?,To help,To show off,Confusion,Boredom,To show off
+MCQ,35,What emotion dominates the chapter?,Fear,Humour,Anger,Sadness,Humour
+MCQ,36,Who finally packed the bags?,Narrator,George and Harris,Narrator’s dog,None,George and Harris
+MCQ,37,What is the central theme?,Travel,Friendship,Humour in daily life,Packing tips,Humour in daily life
+MCQ,38,What does the narrator represent?,Efficiency,Pride,Common human weakness,Discipline,Common human weakness
+MCQ,39,What makes Jerome’s writing effective?,Length,Humour,Simplicity,Both B and C,Both B and C
+MCQ,40,What did the narrator keep losing?,Temper,Items,Time,Friends,Items
+MCQ,41,Why is the story relatable?,Common experience,Adventure,History,Facts,Common experience
+MCQ,42,What happened to the food items?,Organised,Messed up,Thrown away,Safe,Messed up
+MCQ,43,Who was most confident?,George,Harris,Narrator,None,Narrator
+MCQ,44,What ruined the packing?,Carelessness,Overconfidence,Interference,All of these,All of these
+MCQ,45,What does the butter incident show?,Care,Clumsiness,Planning,Skill,Clumsiness
+MCQ,46,How does the story end?,Successfully,In chaos,With humour,In anger,With humour
+MCQ,47,What quality is mocked?,Pride,Honesty,Hard work,Discipline,Pride
+MCQ,48,Why is the chapter amusing?,Exaggeration,Irony,Daily life humour,All,All
+MCQ,49,What is narrator’s main flaw?,Pride,Anger,Laziness,Fear,Pride
+MCQ,50,Overall mood of the story?,Serious,Comic,Tragic,Dull,Comic
+
+Integer,1,Author?,Jerome K. Jerome,,,,
+Integer,2,Book?,Three Men in a Boat,,,,
+Integer,3,Main characters?,Three,,,,
+Integer,4,Narrator trait?,Overconfident,,,,
+Integer,5,Item forgotten?,Toothbrush,,,,
+Integer,6,Who packed boots?,George,,,,
+Integer,7,Butter fate?,Squashed,,,,
+Integer,8,Story tone?,Humorous,,,,
+Integer,9,Narrator flaw?,Pride,,,,
+Integer,10,Harris trait?,Clumsy,,,,
+Integer,11,Genre?,Humour,,,,
+Integer,12,Literary device?,Irony,,,,
+Integer,13,Packing time?,Night,,,,
+Integer,14,Theme?,Human foolishness,,,,
+Integer,15,Narrator role?,Interfering,,,,
+Integer,16,Jam result?,Smashed,,,,
+Integer,17,Mess cause?,Carelessness,,,,
+Integer,18,Friends count?,Three,,,,
+Integer,19,Butter stepped by?,Harris,,,,
+Integer,20,Story setting?,Room,,,,
+Integer,21,Ending mood?,Comic,,,,
+Integer,22,Narrator confidence?,High,,,,
+Integer,23,Real packing skill?,Poor,,,,
+Integer,24,Lesson?,Do not boast,,,,
+Integer,25,Story style?,Light,,,,
+Integer,26,Major emotion?,Humour,,,,
+Integer,27,Narrator interruption?,Frequent,,,,
+Integer,28,Food condition?,Messed,,,,
+Integer,29,Boot problem?,Yes,,,,
+Integer,30,Friendship type?,Fun-loving,,,,
+Integer,31,Narrator forgetful?,Yes,,,,
+Integer,32,Packing result?,Chaos,,,,
+Integer,33,Narrator help?,Negative,,,,
+Integer,34,George emotion?,Annoyed,,,,
+Integer,35,Harris mood?,Irritated,,,,
+Integer,36,Item most trouble?,Butter,,,,
+Integer,37,Story message?,Humility,,,,
+Integer,38,Narrator reaction?,Anger,,,,
+Integer,39,Writing tone?,Comic,,,,
+Integer,40,Story focus?,Daily life,,,,
+Integer,41,Narrator learning?,None,,,,
+Integer,42,Friends coordination?,Poor,,,,
+Integer,43,Story appeal?,Humour,,,,
+Integer,44,Narrator self-image?,Expert,,,,
+Integer,45,Reality?,Incompetent,,,,
+Integer,46,Conflict cause?,Overconfidence,,,,
+Integer,47,Humour type?,Situational,,,,
+Integer,48,Story relevance?,Universal,,,,
+Integer,49,Central flaw?,Pride,,,,
+Integer,50,Chapter name?,Packing,,,,
+
+Descriptive,1,Who wrote "Packing"?,,,,,Jerome K. Jerome wrote the chapter
+Descriptive,2,What is the chapter about?,,,,,It describes a humorous packing experience
+Descriptive,3,Describe the narrator’s personality.,,,,,He is proud, overconfident and careless
+Descriptive,4,Why did the narrator insist on packing?,,,,,To show his supposed skill
+Descriptive,5,What problems occurred during packing?,,,,,Items were forgotten, broken and misplaced
+Descriptive,6,Describe the butter incident.,,,,,Butter got squashed and caused a mess
+Descriptive,7,How does humour arise in the story?,,,,,Through irony and exaggeration
+Descriptive,8,What role does overconfidence play?,,,,,It leads to chaos
+Descriptive,9,Why is the narrator ironic?,,,,,He boasts but performs poorly
+Descriptive,10,Describe Harris’s role.,,,,,He is clumsy and careless
+Descriptive,11,Describe George’s role.,,,,,He is irritated but practical
+Descriptive,12,What lesson does the story teach?,,,,,Do not boast about abilities
+Descriptive,13,Explain the title "Packing".,,,,,It refers to a chaotic packing event
+Descriptive,14,How is daily life humour shown?,,,,,Through common mistakes
+Descriptive,15,Why is the story relatable?,,,,,Everyone has experienced packing problems
+Descriptive,16,Explain the toothbrush episode.,,,,,Narrator repeatedly forgot it
+Descriptive,17,What is the central theme?,,,,,Humour in human behaviour
+Descriptive,18,How does Jerome use irony?,,,,,By contrasting claim and action
+Descriptive,19,What makes the narrator funny?,,,,,His exaggerated confidence
+Descriptive,20,Why is packing shown as difficult?,,,,,Due to lack of organisation
+Descriptive,21,Explain situational humour.,,,,,Unexpected chaos creates laughter
+Descriptive,22,How does friendship add humour?,,,,,Friends argue playfully
+Descriptive,23,Describe the ending of the story.,,,,,It ends humorously
+Descriptive,24,What does the story say about human nature?,,,,,People overestimate themselves
+Descriptive,25,How is exaggeration used?,,,,,To intensify humour
+Descriptive,26,What is the role of dialogue?,,,,,It enhances comedy
+Descriptive,27,Why does narrator keep interfering?,,,,,He wants to dominate
+Descriptive,28,How does pride affect the narrator?,,,,,It blinds him
+Descriptive,29,What is mocked in the story?,,,,,Human pride and carelessness
+Descriptive,30,Why is the story entertaining?,,,,,It mirrors real-life situations
+Descriptive,31,Describe the chaotic scene.,,,,,Items broken and scattered
+Descriptive,32,How does humour reduce seriousness?,,,,,By making mistakes funny
+Descriptive,33,What makes Jerome’s style effective?,,,,,Simple language and wit
+Descriptive,34,Explain the moral of the story.,,,,,Humility is important
+Descriptive,35,Why didn’t packing go smoothly?,,,,,Due to overconfidence
+Descriptive,36,What values does the story promote?,,,,,Humility and cooperation
+Descriptive,37,How does the narrator view himself?,,,,,As an expert packer
+Descriptive,38,How is reality different?,,,,,He is incompetent
+Descriptive,39,Explain the role of mess.,,,,,It creates comedy
+Descriptive,40,What makes the butter incident memorable?,,,,,Its absurdity
+Descriptive,41,How is humour sustained throughout?,,,,,Through continuous mishaps
+Descriptive,42,Why is the story light-hearted?,,,,,No serious consequences
+Descriptive,43,Explain the narrator’s learning.,,,,,He learns nothing
+Descriptive,44,What makes the story timeless?,,,,,Universal human behaviour
+Descriptive,45,How does the author criticise pride?,,,,,Through comic failure
+Descriptive,46,Why is the narrator unreliable?,,,,,He exaggerates his skills
+Descriptive,47,Explain the importance of teamwork.,,,,,Lack of it causes chaos
+Descriptive,48,What does the story reveal about planning?,,,,,Poor planning leads to trouble
+Descriptive,49,Why is the chapter enjoyable for students?,,,,,Simple and funny incidents
+Descriptive,50,Summarize "Packing".,,,,,The chapter humorously portrays the chaos caused by overconfidence and carelessness while packing

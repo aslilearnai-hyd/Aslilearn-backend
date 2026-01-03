@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,What are democratic rights?,Natural rights,Legal rights,Fundamental rights,None,Fundamental rights
+MCQ,2,Fundamental Rights are given in which part of Indian Constitution?,Part II,Part III,Part IV,Part V,Part III
+MCQ,3,Which right ensures equality before law?,Right to Freedom,Right to Equality,Right to Religion,None,Right to Equality
+MCQ,4,Which right protects freedom of speech?,Right to Equality,Right to Freedom,Right against Exploitation,None,Right to Freedom
+MCQ,5,Which right abolishes untouchability?,Right to Equality,Right to Religion,Right to Freedom,None,Right to Equality
+MCQ,6,Which right protects cultural practices?,Right to Religion,Right to Equality,Right to Freedom,None,Right to Religion
+MCQ,7,Which right prevents forced labour?,Right against Exploitation,Right to Equality,Right to Freedom,None,Right against Exploitation
+MCQ,8,Which right allows citizens to move court?,Right to Constitutional Remedies,Right to Freedom,Right to Equality,None,Right to Constitutional Remedies
+MCQ,9,Who is the guardian of Fundamental Rights?,President,Prime Minister,Judiciary,None,Judiciary
+MCQ,10,Which article abolished untouchability?,Article 14,Article 15,Article 17,Article 19,Article 17
+MCQ,11,Which right ensures freedom of religion?,Right to Freedom,Right to Equality,Right to Religion,None,Right to Religion
+MCQ,12,Which right includes freedom of speech and expression?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Freedom
+MCQ,13,Which right is called the heart of the Constitution?,Right to Equality,Right to Freedom,Right to Constitutional Remedies,None,Right to Constitutional Remedies
+MCQ,14,Who can move Supreme Court for rights protection?,Only MPs,Citizens,Only judges,None,Citizens
+MCQ,15,Which right protects children from child labour?,Right to Equality,Right against Exploitation,Right to Freedom,None,Right against Exploitation
+MCQ,16,Which right ensures equal opportunity in employment?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Equality
+MCQ,17,Which freedom allows peaceful protest?,Right to Religion,Right to Freedom,Right to Equality,None,Right to Freedom
+MCQ,18,Which right allows forming associations?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Freedom
+MCQ,19,Which is NOT a Fundamental Right?,Right to Property,Right to Equality,Right to Freedom,None,Right to Property
+MCQ,20,Which right protects minorities?,Cultural and Educational Rights,Right to Equality,Right to Freedom,None,Cultural and Educational Rights
+MCQ,21,Which right protects against illegal detention?,Right to Equality,Right to Freedom,Right to Constitutional Remedies,None,Right to Freedom
+MCQ,22,Which right allows practicing any religion?,Right to Religion,Right to Equality,Right to Freedom,None,Right to Religion
+MCQ,23,Which body enforces Fundamental Rights?,Legislature,Executive,Judiciary,None,Judiciary
+MCQ,24,Which right ensures no discrimination?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Equality
+MCQ,25,Which freedom includes movement and residence?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Freedom
+MCQ,26,Which right protects culture and language?,Cultural Rights,Political Rights,Legal Rights,None,Cultural Rights
+MCQ,27,Which right is violated by bonded labour?,Right to Freedom,Right against Exploitation,Right to Equality,None,Right against Exploitation
+MCQ,28,Which court can issue writs?,District Court,High Court,Supreme Court,Both HC and SC,Both HC and SC
+MCQ,29,Which writ protects personal freedom?,Mandamus,Habeas Corpus,Certiorari,None,Habeas Corpus
+MCQ,30,Which right is available to foreigners?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Equality
+MCQ,31,Which freedom allows profession?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Freedom
+MCQ,32,Which right is suspended during emergency?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Freedom
+MCQ,33,Which article ensures equality of opportunity?,Article 14,Article 15,Article 16,Article 17,Article 16
+MCQ,34,Which right protects education of minorities?,Cultural Rights,Right to Freedom,Right to Equality,None,Cultural Rights
+MCQ,35,Which is a political right?,Right to Vote,Right to Equality,Right to Freedom,None,Right to Vote
+MCQ,36,Which right ensures dignity of individuals?,Right to Equality,Right to Freedom,All Fundamental Rights,None,All Fundamental Rights
+MCQ,37,Which right was removed by 44th Amendment?,Right to Equality,Right to Property,Right to Freedom,None,Right to Property
+MCQ,38,Which freedom allows trade?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Freedom
+MCQ,39,Which right can be enforced by courts?,Legal Rights,Fundamental Rights,Natural Rights,None,Fundamental Rights
+MCQ,40,Which right ensures secularism?,Right to Religion,Right to Equality,Right to Freedom,None,Right to Religion
+MCQ,41,Which right prohibits human trafficking?,Right to Freedom,Right against Exploitation,Right to Equality,None,Right against Exploitation
+MCQ,42,Which right protects life and liberty?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Freedom
+MCQ,43,Which right allows writs?,Right to Equality,Right to Constitutional Remedies,Right to Freedom,None,Right to Constitutional Remedies
+MCQ,44,Which right protects weaker sections?,Right to Equality,Right against Exploitation,Right to Religion,None,Right against Exploitation
+MCQ,45,Which right allows assembly?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Freedom
+MCQ,46,Which right is common to all democracies?,Fundamental Rights,Legal Rights,Political Rights,None,Fundamental Rights
+MCQ,47,Which right ensures justice?,Right to Equality,Fundamental Rights,Legal Rights,None,Fundamental Rights
+MCQ,48,Which body can declare law unconstitutional?,Executive,Legislature,Judiciary,None,Judiciary
+MCQ,49,Which right ensures fairness?,Right to Equality,Right to Freedom,Right to Religion,None,Right to Equality
+MCQ,50,Which right is the foundation of democracy?,Fundamental Rights,Political Rights,Natural Rights,None,Fundamental Rights
+
+Integer,1,Part of Constitution for FR?,Part III,,,,
+Integer,2,Right abolishing untouchability?,Equality,,,,
+Integer,3,Right ensuring free speech?,Freedom,,,,
+Integer,4,Right preventing child labour?,Exploitation,,,,
+Integer,5,Guardian of rights?,Judiciary,,,,
+Integer,6,Heart of Constitution?,Constitutional Remedies,,,,
+Integer,7,Writ for personal liberty?,Habeas Corpus,,,,
+Integer,8,Right removed in 1978?,Property,,,,
+Integer,9,Equality before law article?,14,,,,
+Integer,10,Equal opportunity article?,16,,,,
+Integer,11,Abolition of untouchability article?,17,,,,
+Integer,12,Right to approach court?,Constitutional Remedies,,,,
+Integer,13,Right against bonded labour?,Exploitation,,,,
+Integer,14,Right to practice religion?,Religion,,,,
+Integer,15,Freedom of association?,Freedom,,,,
+Integer,16,Right protecting minorities?,Cultural Rights,,,,
+Integer,17,Right common to all?,Fundamental Rights,,,,
+Integer,18,Right enforcing courts?,Judiciary,,,,
+Integer,19,Right to move freely?,Freedom,,,,
+Integer,20,Right to life?,Freedom,,,,
+Integer,21,Right to equality covers?,Non-discrimination,,,,
+Integer,22,Right protecting culture?,Cultural Rights,,,,
+Integer,23,Right suspended in emergency?,Freedom,,,,
+Integer,24,Right enforcing writs?,Constitutional Remedies,,,,
+Integer,25,Right preventing trafficking?,Exploitation,,,,
+Integer,26,Right ensuring dignity?,All FR,,,,
+Integer,27,Right to choose profession?,Freedom,,,,
+Integer,28,Right against discrimination?,Equality,,,,
+Integer,29,Right to manage religion?,Religion,,,,
+Integer,30,Right enforcing democracy?,Fundamental Rights,,,,
+Integer,31,Right ensuring justice?,Equality,,,,
+Integer,32,Right to protest?,Freedom,,,,
+Integer,33,Right against forced labour?,Exploitation,,,,
+Integer,34,Right for minorities schools?,Cultural Rights,,,,
+Integer,35,Right enforceable by?,Courts,,,,
+Integer,36,Right to move Supreme Court?,Constitutional Remedies,,,,
+Integer,37,Right to speech article?,19,,,,
+Integer,38,Right to religion articles?,25–28,,,,
+Integer,39,Right to equality articles?,14–18,,,,
+Integer,40,Right to freedom articles?,19–22,,,,
+Integer,41,Right against exploitation articles?,23–24,,,,
+Integer,42,Right to remedies article?,32,,,,
+Integer,43,Fundamental Rights apply to?,Citizens,,,,
+Integer,44,Equality promotes?,Justice,,,,
+Integer,45,Freedom ensures?,Liberty,,,,
+Integer,46,Exploitation harms?,Human dignity,,,,
+Integer,47,Religion right ensures?,Secularism,,,,
+Integer,48,Minority rights protect?,Culture,,,,
+Integer,49,Democracy foundation?,Rights,,,,
+Integer,50,FR enforced by?,Judiciary,,,,
+
+Descriptive,1,What are Fundamental Rights?,,,,,Basic rights guaranteed by Constitution
+Descriptive,2,Why are Fundamental Rights important?,,,,,Protect freedom and dignity
+Descriptive,3,Explain Right to Equality.,,,,,Ensures equal treatment
+Descriptive,4,Explain Right to Freedom.,,,,,Ensures personal liberty
+Descriptive,5,Explain Right against Exploitation.,,,,,Prevents forced labour
+Descriptive,6,Explain Right to Religion.,,,,,Freedom of faith
+Descriptive,7,Explain Cultural and Educational Rights.,,,,,Protect minority culture
+Descriptive,8,Explain Right to Constitutional Remedies.,,,,,Right to approach courts
+Descriptive,9,Why Right to Remedies is important?,,,,,Enforces all rights
+Descriptive,10,What is Habeas Corpus?,,,,,Protects personal liberty
+Descriptive,11,How judiciary protects rights?,,,,,Through judicial review
+Descriptive,12,What is writ?,,,,,Court order to enforce rights
+Descriptive,13,Why equality is essential?,,,,,Prevents discrimination
+Descriptive,14,How freedom supports democracy?,,,,,Allows expression
+Descriptive,15,Why exploitation must be banned?,,,,,Protect dignity
+Descriptive,16,Why religious freedom important?,,,,,Promotes secularism
+Descriptive,17,How cultural rights protect minorities?,,,,,Preserve identity
+Descriptive,18,What is discrimination?,,,,,Unfair treatment
+Descriptive,19,Explain untouchability abolition.,,,,,Ensures social equality
+Descriptive,20,Why child labour is banned?,,,,,Protect children
+Descriptive,21,What is secularism?,,,,,Equal respect to religions
+Descriptive,22,Explain freedom of speech.,,,,,Express opinions freely
+Descriptive,23,Why protest is democratic right?,,,,,Voice grievances
+Descriptive,24,How rights ensure dignity?,,,,,Respect individuals
+Descriptive,25,Explain importance of judiciary.,,,,,Guardian of Constitution
+Descriptive,26,Why Fundamental Rights justiciable?,,,,,Enforceable in courts
+Descriptive,27,What happens if rights violated?,,,,,Courts intervene
+Descriptive,28,Explain political rights.,,,,,Rights related to governance
+Descriptive,29,Why property not a FR now?,,,,,Legal right
+Descriptive,30,How rights limit government power?,,,,,Prevent misuse
+Descriptive,31,Explain minority protection.,,,,,Prevent majority dominance
+Descriptive,32,Why freedom of profession important?,,,,,Economic liberty
+Descriptive,33,Explain Right to Life.,,,,,Life with dignity
+Descriptive,34,How equality promotes justice?,,,,,Fair treatment
+Descriptive,35,Why remedies essential?,,,,,Protect all rights
+Descriptive,36,Explain Fundamental Rights during emergency.,,,,,Some suspended
+Descriptive,37,Why rights differ from duties?,,,,,Rights privileges duties obligations
+Descriptive,38,Explain cultural diversity protection.,,,,,Through rights
+Descriptive,39,Why courts independent?,,,,,Protect rights
+Descriptive,40,How rights strengthen democracy?,,,,,Empower citizens
+Descriptive,41,Explain freedom of movement.,,,,,Move freely
+Descriptive,42,Why forced labour harmful?,,,,,Violates dignity
+Descriptive,43,Explain freedom of association.,,,,,Form groups
+Descriptive,44,Why rights are fundamental?,,,,,Essential for life
+Descriptive,45,How rights ensure equality?,,,,,No discrimination
+Descriptive,46,Explain judicial review.,,,,,Courts check laws
+Descriptive,47,Why constitutional remedies important?,,,,,Heart of Constitution
+Descriptive,48,How rights protect minorities?,,,,,Cultural security
+Descriptive,49,Explain significance of Fundamental Rights.,,,,,Democratic foundation
+Descriptive,50,Summarise Democratic Rights.,,,,,Guarantee freedom equality justice

@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,The study of classification is called?,Ecology,Taxonomy,Physiology,Genetics,Taxonomy
+MCQ,2,Who proposed five kingdom classification?,Linnaeus,Whittaker,Darwin,Aristotle,Whittaker
+MCQ,3,How many kingdoms are there in Whittaker system?,2,3,5,6,5
+MCQ,4,Which kingdom includes bacteria?,Protista,Fungi,Monera,Plantae,Monera
+MCQ,5,Which organisms are prokaryotic?,Protista,Monera,Fungi,Plantae,Monera
+MCQ,6,Which kingdom has unicellular eukaryotes?,Monera,Protista,Fungi,Plantae,Protista
+MCQ,7,Which kingdom includes mushrooms?,Plantae,Fungi,Protista,Animalia,Fungi
+MCQ,8,Which kingdom includes humans?,Protista,Plantae,Animalia,Fungi,Animalia
+MCQ,9,Which kingdom includes algae?,Protista,Monera,Animalia,Fungi,Protista
+MCQ,10,Which organisms lack cell wall?,Plantae,Fungi,Animalia,Monera,Animalia
+MCQ,11,Cell wall in plants made of?,Chitin,Cellulose,Peptidoglycan,Protein,Cellulose
+MCQ,12,Cell wall in fungi made of?,Cellulose,Chitin,Protein,None,Chitin
+MCQ,13,Which kingdom has autotrophs?,Animalia,Fungi,Plantae,Protista,Plantae
+MCQ,14,Which are heterotrophs?,Plantae,Animalia,Fungi,Both B and C,Both B and C
+MCQ,15,Which division includes algae?,Bryophyta,Thallophyta,Pteridophyta,Gymnosperms,Thallophyta
+MCQ,16,Which plants lack vascular tissue?,Pteridophyta,Bryophyta,Gymnosperms,Angiosperms,Bryophyta
+MCQ,17,Which plants are called amphibians?,Thallophyta,Bryophyta,Pteridophyta,Angiosperms,Bryophyta
+MCQ,18,Which plants have vascular tissues?,Bryophyta,Thallophyta,Pteridophyta,Both C and D,Both C and D
+MCQ,19,Which plants bear naked seeds?,Angiosperms,Gymnosperms,Bryophyta,Pteridophyta,Gymnosperms
+MCQ,20,Which plants bear seeds in fruits?,Gymnosperms,Angiosperms,Bryophyta,Thallophyta,Angiosperms
+MCQ,21,Which animals have notochord?,Arthropoda,Mollusca,Chordata,Annelida,Chordata
+MCQ,22,Which phylum includes insects?,Annelida,Arthropoda,Mollusca,Echinodermata,Arthropoda
+MCQ,23,Which phylum has segmented body?,Annelida,Porifera,Cnidaria,Platyhelminthes,Annelida
+MCQ,24,Which phylum has jointed legs?,Arthropoda,Annelida,Mollusca,Echinodermata,Arthropoda
+MCQ,25,Which phylum has radial symmetry?,Arthropoda,Annelida,Echinodermata,Mollusca,Echinodermata
+MCQ,26,Which phylum includes snails?,Annelida,Arthropoda,Mollusca,Chordata,Mollusca
+MCQ,27,Which phylum includes starfish?,Mollusca,Arthropoda,Echinodermata,Annelida,Echinodermata
+MCQ,28,Which phylum includes earthworm?,Annelida,Arthropoda,Mollusca,Echinodermata,Annelida
+MCQ,29,Which animal has backbone?,Fish,Frog,Human,All,All
+MCQ,30,Animals without backbone are?,Chordates,Vertebrates,Invertebrates,Mammals,Invertebrates
+MCQ,31,Which class has feathers?,Mammalia,Reptilia,Aves,Amphibia,Aves
+MCQ,32,Which class lays eggs and has hair?,Aves,Mammalia,Reptilia,None,Mammalia
+MCQ,33,Which animals live both on land and water?,Reptiles,Amphibians,Fishes,Birds,Amphibians
+MCQ,34,Which animals are cold-blooded?,Birds,Mammals,Reptiles,Both C and D,Both C and D
+MCQ,35,Which animals are warm-blooded?,Fishes,Amphibians,Birds and mammals,None,Birds and mammals
+MCQ,36,Which vertebrate has fins?,Fish,Amphibia,Reptilia,Aves,Fish
+MCQ,37,Which class has scales?,Reptilia,Aves,Mammalia,Amphibia,Reptilia
+MCQ,38,Which class has mammary glands?,Aves,Mammalia,Reptilia,Fish,Mammalia
+MCQ,39,Which plant group has flowers?,Gymnosperms,Angiosperms,Bryophyta,Pteridophyta,Angiosperms
+MCQ,40,Which group lacks true roots?,Bryophyta,Angiosperms,Gymnosperms,Pteridophyta,Bryophyta
+MCQ,41,Which kingdom includes cyanobacteria?,Protista,Monera,Fungi,Plantae,Monera
+MCQ,42,Which classification is artificial?,Linnaeus,Whittaker,None,None,Linnaeus
+MCQ,43,Which classification is natural?,Whittaker,Aristotle,None,None,Whittaker
+MCQ,44,Which organism is unicellular?,Human,Amoeba,Frog,Dog,Amoeba
+MCQ,45,Which kingdom has saprophytic nutrition?,Plantae,Animalia,Fungi,Protista,Fungi
+MCQ,46,Which phylum has porous body?,Porifera,Cnidaria,Annelida,Mollusca,Porifera
+MCQ,47,Which phylum has cnidoblasts?,Cnidaria,Annelida,Arthropoda,Mollusca,Cnidaria
+MCQ,48,Which phylum is flatworm?,Platyhelminthes,Nematoda,Annelida,None,Platyhelminthes
+MCQ,49,Which phylum has roundworms?,Nematoda,Annelida,Mollusca,None,Nematoda
+MCQ,50,Which phylum has true coelom?,Annelida,Platyhelminthes,Nematoda,None,Annelida
+
+Integer,1,Study of classification?,Taxonomy,,,,
+Integer,2,Five kingdom classification by?,Whittaker,,,,
+Integer,3,Prokaryotic kingdom?,Monera,,,,
+Integer,4,Unicellular eukaryotes?,Protista,,,,
+Integer,5,Kingdom with chlorophyll?,Plantae,,,,
+Integer,6,Fungi cell wall material?,Chitin,,,,
+Integer,7,Plant cell wall material?,Cellulose,,,,
+Integer,8,Amphibians of plant kingdom?,Bryophyta,,,,
+Integer,9,Seedless vascular plants?,Pteridophyta,,,,
+Integer,10,Naked seed plants?,Gymnosperms,,,,
+Integer,11,Flowering plants?,Angiosperms,,,,
+Integer,12,Backbone animals?,Vertebrates,,,,
+Integer,13,No backbone animals?,Invertebrates,,,,
+Integer,14,Segmented worms?,Annelida,,,,
+Integer,15,Jointed leg animals?,Arthropoda,,,,
+Integer,16,Soft-bodied animals?,Mollusca,,,,
+Integer,17,Radial symmetry animals?,Echinodermata,,,,
+Integer,18,Porous body animals?,Porifera,,,,
+Integer,19,Flatworms?,Platyhelminthes,,,,
+Integer,20,Roundworms?,Nematoda,,,,
+Integer,21,Insects belong to?,Arthropoda,,,,
+Integer,22,Starfish belongs to?,Echinodermata,,,,
+Integer,23,Earthworm belongs to?,Annelida,,,,
+Integer,24,Snail belongs to?,Mollusca,,,,
+Integer,25,Animals with feathers?,Aves,,,,
+Integer,26,Animals with hair?,Mammalia,,,,
+Integer,27,Cold-blooded animals?,Reptiles,,,,
+Integer,28,Warm-blooded animals?,Birds and mammals,,,,
+Integer,29,Fins present in?,Fishes,,,,
+Integer,30,Scales present in?,Reptiles,,,,
+Integer,31,Mammary glands present in?,Mammals,,,,
+Integer,32,Cnidoblasts found in?,Cnidaria,,,,
+Integer,33,Coelom present in?,Annelida,,,,
+Integer,34,Unicellular organism?,Amoeba,,,,
+Integer,35,Saprophytic kingdom?,Fungi,,,,
+Integer,36,Photosynthetic protists?,Algae,,,,
+Integer,37,True roots absent in?,Bryophyta,,,,
+Integer,38,Vascular tissue absent in?,Bryophyta,,,,
+Integer,39,True flowers present in?,Angiosperms,,,,
+Integer,40,Naked seeds present in?,Gymnosperms,,,,
+Integer,41,Artificial classification by?,Linnaeus,,,,
+Integer,42,Natural classification by?,Whittaker,,,,
+Integer,43,Cyanobacteria belong to?,Monera,,,,
+Integer,44,Vertebrate with gills?,Fish,,,,
+Integer,45,Amphibians live?,Land and water,,,,
+Integer,46,Reptiles breathe through?,Lungs,,,,
+Integer,47,Birds breathe through?,Lungs,,,,
+Integer,48,Mammals give birth to?,Young ones,,,,
+Integer,49,Number of kingdoms?,5,,,,
+Integer,50,Classification based on similarities? (Yes/No),Yes,,,,
+
+Descriptive,1,Define biological classification.,,,,,Grouping organisms based on similarities and differences
+Descriptive,2,What is taxonomy?,,,,,Science of classification
+Descriptive,3,Name the five kingdoms.,,,,,Monera Protista Fungi Plantae Animalia
+Descriptive,4,Explain Monera.,,,,,Prokaryotic unicellular organisms
+Descriptive,5,Explain Protista.,,,,,Unicellular eukaryotes
+Descriptive,6,Explain Fungi.,,,,,Eukaryotic heterotrophs with chitin wall
+Descriptive,7,Explain Plantae.,,,,,Multicellular autotrophs
+Descriptive,8,Explain Animalia.,,,,,Multicellular heterotrophs
+Descriptive,9,Why classification necessary?,,,,,To study diversity easily
+Descriptive,10,Difference between prokaryotes and eukaryotes.,,,,,Nucleus absent vs present
+Descriptive,11,Explain Thallophyta.,,,,,Simple plants without roots stems
+Descriptive,12,Explain Bryophyta.,,,,,Non vascular plants
+Descriptive,13,Explain Pteridophyta.,,,,,Seedless vascular plants
+Descriptive,14,Explain Gymnosperms.,,,,,Plants with naked seeds
+Descriptive,15,Explain Angiosperms.,,,,,Flowering plants
+Descriptive,16,What are vertebrates?,,,,,Animals with backbone
+Descriptive,17,What are invertebrates?,,,,,Animals without backbone
+Descriptive,18,Explain Porifera.,,,,,Porous body animals
+Descriptive,19,Explain Cnidaria.,,,,,Radial symmetry animals
+Descriptive,20,Explain Platyhelminthes.,,,,,Flatworms
+Descriptive,21,Explain Nematoda.,,,,,Roundworms
+Descriptive,22,Explain Annelida.,,,,,Segmented worms
+Descriptive,23,Explain Arthropoda.,,,,,Jointed leg animals
+Descriptive,24,Explain Mollusca.,,,,,Soft bodied animals
+Descriptive,25,Explain Echinodermata.,,,,,Spiny skinned animals
+Descriptive,26,Explain Pisces.,,,,,Aquatic vertebrates
+Descriptive,27,Explain Amphibia.,,,,,Live on land and water
+Descriptive,28,Explain Reptilia.,,,,,Cold blooded reptiles
+Descriptive,29,Explain Aves.,,,,,Feathered birds
+Descriptive,30,Explain Mammalia.,,,,,Hair and mammary glands
+Descriptive,31,Difference between plants and animals.,,,,,Autotroph vs heterotroph
+Descriptive,32,Difference between gymnosperms and angiosperms.,,,,,Naked vs enclosed seeds
+Descriptive,33,Difference between vertebrates and invertebrates.,,,,,Backbone presence
+Descriptive,34,Why fungi not plants?,,,,,No chlorophyll
+Descriptive,35,Why bryophytes amphibians?,,,,,Need water for reproduction
+Descriptive,36,Why birds warm blooded?,,,,,Maintain body temperature
+Descriptive,37,Why mammals give milk?,,,,,Mammary glands
+Descriptive,38,Why reptiles cold blooded?,,,,,Depend on environment
+Descriptive,39,Importance of classification.,,,,,Simplifies study
+Descriptive,40,Why scientific names needed?,,,,,Avoid confusion
+Descriptive,41,Explain binomial nomenclature.,,,,,Two word scientific name
+Descriptive,42,Why angiosperms dominant?,,,,,Efficient reproduction
+Descriptive,43,Explain autotrophic nutrition.,,,,,Self food making
+Descriptive,44,Explain heterotrophic nutrition.,,,,,Depend on others
+Descriptive,45,Why fish aquatic?,,,,,Fins and gills
+Descriptive,46,Why amphibians have moist skin?,,,,,Respiration
+Descriptive,47,Why arthropods successful?,,,,,Adaptations
+Descriptive,48,Why mammals intelligent?,,,,,Brain development
+Descriptive,49,Why echinoderms marine?,,,,,Adaptation
+Descriptive,50,Why diversity important?,,,,,Maintains balance

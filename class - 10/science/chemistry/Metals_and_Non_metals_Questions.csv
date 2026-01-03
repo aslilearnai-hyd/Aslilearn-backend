@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Metals are generally:,Good conductors of electricity,Poor conductors of electricity,Insulators,Semiconductors,Good conductors of electricity
+MCQ,2,Non-metals are generally:,Good conductors of electricity,Poor conductors of electricity,Good conductors of heat,Metallic,Poor conductors of electricity
+MCQ,3,Metals are generally:,Malleable,Brittle,Soft,Non-ductile,Malleable
+MCQ,4,Non-metals are generally:,Malleable,Ductile,Brittle,Shiny,Brittle
+MCQ,5,The property of metals to be drawn into wires is called:,Malleability,Ductility,Sonority,Lustre,Ductility
+MCQ,6,The property of metals to be beaten into thin sheets is called:,Ductility,Malleability,Sonority,Lustre,Malleability
+MCQ,7,The property of metals to produce sound when struck is called:,Malleability,Ductility,Sonority,Lustre,Sonority
+MCQ,8,Metals generally have:,High melting points,Low melting points,Very low melting points,No melting point,High melting points
+MCQ,9,The most reactive metal is:,Gold,Silver,Potassium,Iron,Potassium
+MCQ,10,The least reactive metal is:,Sodium,Calcium,Gold,Aluminium,Gold
+MCQ,11,Which metal is stored under kerosene?,Sodium,Gold,Silver,Copper,Sodium
+MCQ,12,Which metal catches fire on reaction with water?,Gold,Silver,Sodium,Iron,Sodium
+MCQ,13,Metals react with oxygen to form:,Metal oxides,Non-metal oxides,Salts,Acids,Metal oxides
+MCQ,14,The reaction of metal with oxygen is called:,Reduction,Oxidation,Neutralization,Displacement,Oxidation
+MCQ,15,Aluminium oxide is:,Acidic,Basic,Amphoteric,Neutral,Amphoteric
+MCQ,16,Zinc oxide is:,Acidic,Basic,Amphoteric,Neutral,Amphoteric
+MCQ,17,Non-metals react with oxygen to form:,Metal oxides,Acidic oxides,Basic oxides,Neutral oxides,Acidic oxides
+MCQ,18,Metals react with water to form:,Metal hydroxide and hydrogen,Metal oxide and hydrogen,Salt and water,Salt and hydrogen,Metal hydroxide and hydrogen
+MCQ,19,Which metal does not react with water at all?,Sodium,Potassium,Iron,Gold,Gold
+MCQ,20,Which metal reacts with water at room temperature?,Gold,Silver,Sodium,Iron,Sodium
+MCQ,21,Metals react with acids to produce:,Salt and water,Salt and hydrogen,Salt and oxygen,Salt and carbon dioxide,Salt and hydrogen
+MCQ,22,Which metal does not react with dilute acids?,Zinc,Iron,Copper,Magnesium,Copper
+MCQ,23,The most reactive metals are extracted by:,Electrolysis,Reduction with carbon,Reduction with aluminium,Heating alone,Electrolysis
+MCQ,24,The metals in the middle of reactivity series are extracted by:,Electrolysis,Reduction with carbon,Reduction with aluminium,Heating alone,Reduction with carbon
+MCQ,25,The least reactive metals are found in:,Combined state,Free state,Both,Neither,Free state
+MCQ,26,An alloy is:,A pure metal,A mixture of metals,A compound of metals,A non-metal,A mixture of metals
+MCQ,27,Brass is an alloy of:,Copper and zinc,Copper and tin,Copper and aluminium,Zinc and tin,Copper and zinc
+MCQ,28,Bronze is an alloy of:,Copper and zinc,Copper and tin,Copper and aluminium,Zinc and tin,Copper and tin
+MCQ,29,Steel is an alloy of:,Iron and carbon,Iron and chromium,Iron and nickel,Iron and zinc,Iron and carbon
+MCQ,30,Stainless steel is an alloy of:,Iron and carbon,Iron, chromium and nickel,Iron and zinc,Iron and copper,Iron, chromium and nickel
+MCQ,31,The process of slow eating away of metals due to reaction with air and moisture is called:,Rusting,Corrosion,Galvanization,Tinning,Corrosion
+MCQ,32,The corrosion of iron is called:,Rusting,Tarnishing,Galvanization,Electroplating,Rusting
+MCQ,33,The formula of rust is:,FeO,Fe₂O₃,Fe₃O₄,Fe(OH)₃,Fe₂O₃
+MCQ,34,To prevent rusting, iron is coated with:,Zinc,Copper,Silver,Gold,Zinc
+MCQ,35,The process of coating iron with zinc is called:,Galvanization,Tinning,Electroplating,Anodizing,Galvanization
+MCQ,36,Ionic compounds are generally:,Solid at room temperature,Liquid at room temperature,Gas at room temperature,Plasma,Solid at room temperature
+MCQ,37,Ionic compounds have:,Low melting points,High melting points,Very low melting points,No definite melting point,High melting points
+MCQ,38,Ionic compounds conduct electricity in:,Solid state,Molten state,Aqueous solution,Both b and c,Both b and c
+MCQ,39,The metal that is liquid at room temperature is:,Sodium,Potassium,Mercury,Calcium,Mercury
+MCQ,40,The non-metal that is liquid at room temperature is:,Chlorine,Bromine,Iodine,Fluorine,Bromine
+MCQ,41,The metal used in making aircraft is:,Iron,Copper,Aluminium,Silver,Aluminium
+MCQ,42,The metal used in electrical wires is:,Iron,Copper,Aluminium,Both b and c,Both b and c
+MCQ,43,The metal used in making jewellery is:,Iron,Copper,Gold,Aluminium,Gold
+MCQ,44,Which non-metal is used in fertilizers?,Nitrogen,Oxygen,Hydrogen,Carbon,Nitrogen
+MCQ,45,Which non-metal is essential for breathing?,Nitrogen,Oxygen,Hydrogen,Carbon,Oxygen
+MCQ,46,The property due to which metals can be polished is called:,Malleability,Ductility,Lustre,Sonority,Lustre
+MCQ,47,Which metal is used in thermometers?,Sodium,Mercury,Gold,Silver,Mercury
+MCQ,48,The reaction: 2Na + 2H₂O → 2NaOH + H₂ represents reaction of metal with:,Oxygen,Water,Acid,Salt,Water
+MCQ,49,The reaction: Zn + 2HCl → ZnCl₂ + H₂ represents reaction of metal with:,Oxygen,Water,Acid,Salt,Acid
+MCQ,50,The metal that displaces copper from copper sulphate solution is:,Silver,Gold,Zinc,Copper,Zinc
+Integer,1,The number of electrons in outermost shell of sodium (atomic number 11) is: _____.,1,,,,
+Integer,2,The number of electrons in outermost shell of chlorine (atomic number 17) is: _____.,7,,,,
+Integer,3,The number of valence electrons in magnesium (atomic number 12) is: _____.,2,,,,
+Integer,4,The number of valence electrons in oxygen (atomic number 8) is: _____.,6,,,,
+Integer,5,In the reaction 2Na + 2H₂O → 2NaOH + H₂, the coefficient of H₂ is: _____.,1,,,,
+Integer,6,In the reaction Zn + 2HCl → ZnCl₂ + H₂, the coefficient of HCl is: _____.,2,,,,
+Integer,7,In the reaction 2Mg + O₂ → 2MgO, the coefficient of MgO is: _____.,2,,,,
+Integer,8,In the reaction Fe + CuSO₄ → FeSO₄ + Cu, the coefficient of each substance is: _____ (1).,1,,,,
+Integer,9,The atomic number of sodium is: _____.,11,,,,
+Integer,10,The atomic number of chlorine is: _____.,17,,,,
+Integer,11,The atomic number of magnesium is: _____.,12,,,,
+Integer,12,The atomic number of oxygen is: _____.,8,,,,
+Integer,13,The atomic number of aluminium is: _____.,13,,,,
+Integer,14,The atomic number of potassium is: _____.,19,,,,
+Integer,15,The atomic number of calcium is: _____.,20,,,,
+Integer,16,In the reaction 2Al + 6HCl → 2AlCl₃ + 3H₂, the coefficient of H₂ is: _____.,3,,,,
+Integer,17,In the reaction 2Al + 6HCl → 2AlCl₃ + 3H₂, the coefficient of AlCl₃ is: _____.,2,,,,
+Integer,18,In the reaction Ca + 2H₂O → Ca(OH)₂ + H₂, the coefficient of H₂ is: _____.,1,,,,
+Integer,19,In the reaction 4Na + O₂ → 2Na₂O, the coefficient of Na₂O is: _____.,2,,,,
+Integer,20,In the reaction 2Cu + O₂ → 2CuO, the coefficient of CuO is: _____.,2,,,,
+Integer,21,The number of electrons sodium loses to form Na⁺ is: _____.,1,,,,
+Integer,22,The number of electrons chlorine gains to form Cl⁻ is: _____.,1,,,,
+Integer,23,The number of electrons magnesium loses to form Mg²⁺ is: _____.,2,,,,
+Integer,24,The number of electrons oxygen gains to form O²⁻ is: _____.,2,,,,
+Integer,25,The number of electrons aluminium loses to form Al³⁺ is: _____.,3,,,,
+Integer,26,In NaCl, the ratio of Na to Cl atoms is: _____ (1:1, so 1).,1,,,,
+Integer,27,In MgCl₂, the ratio of Mg to Cl atoms is: _____ (1:2, but for integer, if asked for Cl per Mg, it's 2).,2,,,,
+Integer,28,In Al₂O₃, the ratio of Al to O atoms is: _____ (2:3, but for integer if asked for coefficient of Al, it's 2).,2,,,,
+Integer,29,The atomic number of iron is: _____.,26,,,,
+Integer,30,The atomic number of copper is: _____.,29,,,,
+Integer,31,The atomic number of zinc is: _____.,30,,,,
+Integer,32,The atomic number of gold is: _____.,79,,,,
+Integer,33,The atomic number of silver is: _____.,47,,,,
+Integer,34,In the reaction 2Na + Cl₂ → 2NaCl, the coefficient of NaCl is: _____.,2,,,,
+Integer,35,In the reaction Mg + Cl₂ → MgCl₂, the coefficient of each substance is: _____ (1).,1,,,,
+Integer,36,In the reaction 2Al + 3Cl₂ → 2AlCl₃, the coefficient of AlCl₃ is: _____.,2,,,,
+Integer,37,In the reaction 4Al + 3O₂ → 2Al₂O₃, the coefficient of Al₂O₃ is: _____.,2,,,,
+Integer,38,The number of metals in the reactivity series (common ones) is approximately: _____ (let's say we list K, Na, Ca, Mg, Al, Zn, Fe, Pb, H, Cu, Ag, Au - about 12, but for integer type, let's use simpler: The position of hydrogen in reactivity series - it's in the middle, so we can ask differently). Actually, let's use: The number of valence electrons in group 1 metals is: _____ (1).,1,,,,
+Integer,39,The number of valence electrons in group 2 metals is: _____.,2,,,,
+Integer,40,The number of valence electrons in group 13 metals is: _____.,3,,,,
+Integer,41,The number of valence electrons in group 17 non-metals is: _____.,7,,,,
+Integer,42,The number of valence electrons in group 16 non-metals is: _____.,6,,,,
+Integer,43,In the reaction Fe + S → FeS, the coefficient of each substance is: _____ (1).,1,,,,
+Integer,44,In the reaction 2Cu + S → Cu₂S, the coefficient of Cu₂S is: _____.,1,,,,
+Integer,45,The number of electrons in Na⁺ ion is: _____ (11-1=10).,10,,,,
+Integer,46,The number of electrons in Cl⁻ ion is: _____ (17+1=18).,18,,,,
+Integer,47,The number of electrons in Mg²⁺ ion is: _____ (12-2=10).,10,,,,
+Integer,48,The number of electrons in O²⁻ ion is: _____ (8+2=10).,10,,,,
+Integer,49,The number of electrons in Al³⁺ ion is: _____ (13-3=10).,10,,,,
+Integer,50,In the reaction 2Zn + O₂ → 2ZnO, the coefficient of ZnO is: _____.,2,,,,
+Problem,1,Why are metals good conductors of electricity?,"Metals are good conductors of electricity because they have free electrons in their outermost shells. These free electrons can move freely through the metal, allowing electric current to flow. When a potential difference is applied, these electrons move, conducting electricity. Answer: Metals have free electrons that can move and carry electric current",,,,
+Problem,2,Why are non-metals poor conductors of electricity?,"Non-metals are poor conductors of electricity because they do not have free electrons. Their electrons are tightly bound to the atoms and cannot move freely. Therefore, they cannot conduct electric current. However, graphite (a form of carbon) is an exception. Answer: Non-metals don't have free electrons, electrons are tightly bound",,,,
+Problem,3,Explain why metals are malleable.,"Metals are malleable because their atoms are arranged in layers that can slide over each other. When a force is applied, these layers slide without breaking the metallic bonds. The presence of free electrons allows the layers to maintain their metallic character even when shifted. Answer: Atoms arranged in layers that can slide over each other",,,,
+Problem,4,Explain why non-metals are brittle.,"Non-metals are brittle because their atoms are not arranged in layers like metals. When a force is applied, non-metals break rather than bend or change shape. The bonds between atoms in non-metals are directional and cannot easily slide, causing them to shatter. Answer: Atoms not in layers, bonds break instead of sliding",,,,
+Problem,5,Write the balanced equation for the reaction of sodium with water.,"Sodium reacts violently with water to form sodium hydroxide and hydrogen gas. Balanced equation: 2Na + 2H₂O → 2NaOH + H₂. This reaction is exothermic and produces heat. Answer: 2Na + 2H₂O → 2NaOH + H₂",,,,
+Problem,6,Write the balanced equation for the reaction of magnesium with oxygen.,"Magnesium burns in oxygen to form magnesium oxide. Balanced equation: 2Mg + O₂ → 2MgO. This reaction produces a bright white light. Answer: 2Mg + O₂ → 2MgO",,,,
+Problem,7,Write the balanced equation for the reaction of zinc with dilute hydrochloric acid.,"Zinc reacts with dilute hydrochloric acid to form zinc chloride and hydrogen gas. Balanced equation: Zn + 2HCl → ZnCl₂ + H₂. This is a displacement reaction. Answer: Zn + 2HCl → ZnCl₂ + H₂",,,,
+Problem,8,Write the balanced equation for the reaction of iron with copper sulphate solution.,"Iron displaces copper from copper sulphate solution because iron is more reactive. Balanced equation: Fe + CuSO₄ → FeSO₄ + Cu. The blue color of copper sulphate fades, and copper is deposited. Answer: Fe + CuSO₄ → FeSO₄ + Cu",,,,
+Problem,9,Explain why aluminium does not corrode easily.,"Aluminium does not corrode easily because it forms a protective layer of aluminium oxide (Al₂O₃) on its surface when exposed to air. This layer prevents further reaction with air and moisture, protecting the metal underneath. This property is called passivation. Answer: Forms protective Al₂O₃ layer that prevents further corrosion",,,,
+Problem,10,What is the reactivity series? List some metals in order of decreasing reactivity.,"The reactivity series is an arrangement of metals in order of their decreasing reactivity. Order: Potassium (K) > Sodium (Na) > Calcium (Ca) > Magnesium (Mg) > Aluminium (Al) > Zinc (Zn) > Iron (Fe) > Lead (Pb) > Hydrogen (H) > Copper (Cu) > Silver (Ag) > Gold (Au). Answer: Arrangement of metals from most to least reactive",,,,
+Problem,11,Why is sodium stored under kerosene?,"Sodium is stored under kerosene because it is highly reactive. It reacts vigorously with air and water. If exposed to air, it forms sodium oxide. If it comes in contact with water, it reacts violently producing hydrogen gas and heat, which can cause fire. Kerosene prevents contact with air and moisture. Answer: To prevent reaction with air and water",,,,
+Problem,12,Write the balanced equation for the reaction of calcium with water.,"Calcium reacts with water to form calcium hydroxide and hydrogen gas. Balanced equation: Ca + 2H₂O → Ca(OH)₂ + H₂. The reaction is less violent than sodium. Answer: Ca + 2H₂O → Ca(OH)₂ + H₂",,,,
+Problem,13,Write the balanced equation for the reaction of aluminium with hydrochloric acid.,"Aluminium reacts with hydrochloric acid to form aluminium chloride and hydrogen gas. Balanced equation: 2Al + 6HCl → 2AlCl₃ + 3H₂. Answer: 2Al + 6HCl → 2AlCl₃ + 3H₂",,,,
+Problem,14,Explain why copper does not react with dilute acids.,"Copper does not react with dilute acids because it is below hydrogen in the reactivity series. Metals above hydrogen can displace hydrogen from acids, but metals below hydrogen cannot. Since copper is less reactive than hydrogen, it cannot displace hydrogen from acids. Answer: Copper is less reactive than hydrogen, cannot displace H⁺ from acids",,,,
+Problem,15,What is an alloy? Give two examples with their compositions.,"An alloy is a homogeneous mixture of two or more metals, or a metal and a non-metal. Examples: 1) Brass: Copper (Cu) and Zinc (Zn). 2) Bronze: Copper (Cu) and Tin (Sn). 3) Steel: Iron (Fe) and Carbon (C). Alloys have improved properties compared to pure metals. Answer: Mixture of metals. Examples: Brass (Cu+Zn), Bronze (Cu+Sn)",,,,
+Problem,16,What is rusting? Write the chemical formula of rust.,"Rusting is the corrosion of iron. When iron comes in contact with air and moisture, it forms a reddish-brown substance called rust. Chemical formula of rust: Fe₂O₃·xH₂O (hydrated iron(III) oxide) or simply Fe₂O₃. Answer: Corrosion of iron, formula: Fe₂O₃·xH₂O",,,,
+Problem,17,How is rusting prevented? Mention three methods.,"Rusting can be prevented by: 1) Galvanization: Coating iron with zinc. 2) Painting: Applying paint layer. 3) Oiling/Greasing: Applying oil or grease. 4) Chromium plating: Coating with chromium. 5) Using stainless steel (alloy). Answer: Galvanization, painting, oiling, chromium plating, using alloys",,,,
+Problem,18,What is galvanization? Why is it done?,"Galvanization is the process of coating iron or steel with a layer of zinc to prevent rusting. It is done because zinc acts as a protective layer. Even if the zinc coating is scratched, zinc protects iron sacrificially (zinc corrodes instead of iron) because zinc is more reactive. Answer: Coating iron with zinc to prevent rusting",,,,
+Problem,19,Explain the formation of ionic bond with an example of NaCl.,"Ionic bond is formed by the transfer of electrons from metal to non-metal. In NaCl: Sodium (Na) has 1 valence electron, Chlorine (Cl) has 7 valence electrons. Na donates 1 electron to Cl, forming Na⁺ and Cl⁻. These oppositely charged ions attract each other, forming ionic bond: Na⁺ + Cl⁻ → NaCl. Answer: Transfer of electrons forms ions, oppositely charged ions attract",,,,
+Problem,20,Explain why ionic compounds have high melting and boiling points.,"Ionic compounds have high melting and boiling points because they have strong electrostatic forces of attraction between oppositely charged ions. A large amount of energy is required to break these strong bonds. Therefore, they have high melting and boiling points. Answer: Strong electrostatic forces between ions require large energy to break",,,,
+Problem,21,Explain why ionic compounds conduct electricity in molten state but not in solid state.,"In solid state, ions are fixed in position and cannot move, so no electric current flows. In molten state or aqueous solution, ions become free to move. When electric current is applied, positive ions move towards cathode and negative ions move towards anode, conducting electricity. Answer: Ions are fixed in solid state, free to move in molten/aqueous state",,,,
+Problem,22,What is an amphoteric oxide? Give two examples.,"An amphoteric oxide is an oxide that can react with both acids and bases. Examples: 1) Aluminium oxide (Al₂O₃): Al₂O₃ + 6HCl → 2AlCl₃ + 3H₂O; Al₂O₃ + 2NaOH → 2NaAlO₂ + H₂O. 2) Zinc oxide (ZnO): ZnO + 2HCl → ZnCl₂ + H₂O; ZnO + 2NaOH → Na₂ZnO₂ + H₂O. Answer: Oxide that reacts with both acids and bases. Examples: Al₂O₃, ZnO",,,,
+Problem,23,Write the balanced equation for the reaction of aluminium with oxygen.,"Aluminium reacts with oxygen to form aluminium oxide. Balanced equation: 4Al + 3O₂ → 2Al₂O₃. The oxide layer formed protects the metal. Answer: 4Al + 3O₂ → 2Al₂O₃",,,,
+Problem,24,Write the balanced equation for the reaction of zinc with oxygen.,"Zinc reacts with oxygen to form zinc oxide. Balanced equation: 2Zn + O₂ → 2ZnO. Answer: 2Zn + O₂ → 2ZnO",,,,
+Problem,25,What happens when copper is heated in air? Write the equation.,"When copper is heated in air, it forms black copper oxide. Balanced equation: 2Cu + O₂ → 2CuO. The surface turns black due to formation of CuO. Answer: 2Cu + O₂ → 2CuO (forms black copper oxide)",,,,
+Problem,26,Explain why gold and silver are used for making jewellery.,"Gold and silver are used for making jewellery because: 1) They are less reactive and do not corrode easily, 2) They have a shiny appearance (lustre), 3) They are malleable and can be shaped into ornaments, 4) They are ductile and can be drawn into wires. Answer: Less reactive, shiny, malleable, ductile, don't corrode",,,,
+Problem,27,Why is aluminium used for making aircraft?,"Aluminium is used for making aircraft because: 1) It is lightweight (low density), 2) It is strong, 3) It does not corrode easily (forms protective oxide layer), 4) It is malleable and can be shaped. These properties make it ideal for aircraft construction. Answer: Lightweight, strong, corrosion-resistant, malleable",,,,
+Problem,28,Explain the extraction of metals at the top of reactivity series.,"Metals at the top of reactivity series (K, Na, Ca, Mg, Al) are extracted by electrolysis of their molten compounds. These metals are so reactive that they cannot be reduced by carbon or other reducing agents. Electrolysis uses electricity to reduce the metal ions to metal. Answer: Extracted by electrolysis of molten compounds",,,,
+Problem,29,Explain the extraction of metals in the middle of reactivity series.,"Metals in the middle of reactivity series (Zn, Fe, Pb) are extracted by reduction of their oxides with carbon (coke) or carbon monoxide. The metal oxide is heated with carbon, which reduces the oxide to metal: Metal oxide + Carbon → Metal + Carbon dioxide. Answer: Reduced by heating with carbon or carbon monoxide",,,,
+Problem,30,Explain why metals at the bottom of reactivity series are found in free state.,"Metals at the bottom of reactivity series (Cu, Ag, Au) are found in free state because they are least reactive. They do not react easily with air, water, or other substances, so they remain uncombined in nature. For example, gold and silver are found as native metals. Answer: Least reactive, don't combine with other elements",,,,
+Problem,31,Write the balanced equation for the reaction of magnesium with dilute sulphuric acid.,"Magnesium reacts with dilute sulphuric acid to form magnesium sulphate and hydrogen gas. Balanced equation: Mg + H₂SO₄ → MgSO₄ + H₂. Answer: Mg + H₂SO₄ → MgSO₄ + H₂",,,,
+Problem,32,What happens when zinc is added to iron sulphate solution? Why?,"Zinc does not react with iron sulphate solution because zinc is more reactive than iron. A more reactive metal can displace a less reactive metal, but not vice versa. Since zinc is above iron in reactivity series, zinc can displace iron, but if zinc is added to iron sulphate, nothing happens because zinc is already more reactive. Actually, wait - if zinc is added to iron sulphate, zinc should displace iron. Let me correct: When zinc is added to iron sulphate, zinc displaces iron: Zn + FeSO₄ → ZnSO₄ + Fe. Answer: Zn + FeSO₄ → ZnSO₄ + Fe (zinc displaces iron)",,,,
+Problem,33,What happens when iron is added to zinc sulphate solution? Why?,"When iron is added to zinc sulphate solution, no reaction occurs because iron is less reactive than zinc. A less reactive metal cannot displace a more reactive metal from its compound. Since iron is below zinc in reactivity series, iron cannot displace zinc from zinc sulphate. Answer: No reaction, iron is less reactive than zinc",,,,
+Problem,34,What is stainless steel? What are its uses?,"Stainless steel is an alloy of iron, chromium, and nickel. It does not rust and is resistant to corrosion. Uses: Making utensils, surgical instruments, cutlery, building materials, chemical plants. It has improved properties compared to pure iron. Answer: Alloy of Fe, Cr, Ni. Uses: Utensils, surgical instruments, cutlery",,,,
+Problem,35,What is the difference between metals and non-metals based on their reaction with acids?,"Metals react with acids to produce salt and hydrogen gas. Example: Zn + 2HCl → ZnCl₂ + H₂. Non-metals generally do not react with acids. However, some non-metals like carbon and sulphur react with concentrated oxidizing acids. Answer: Metals produce H₂, non-metals generally don't react with acids",,,,
+Problem,36,Write the balanced equation for the reaction of sodium with chlorine.,"Sodium reacts with chlorine to form sodium chloride. Balanced equation: 2Na + Cl₂ → 2NaCl. This is a combination reaction forming an ionic compound. Answer: 2Na + Cl₂ → 2NaCl",,,,
+Problem,37,Write the balanced equation for the reaction of magnesium with chlorine.,"Magnesium reacts with chlorine to form magnesium chloride. Balanced equation: Mg + Cl₂ → MgCl₂. Answer: Mg + Cl₂ → MgCl₂",,,,
+Problem,38,Explain why metals are sonorous.,"Metals are sonorous (produce sound when struck) because of their crystalline structure and the way vibrations travel through them. When struck, metals vibrate and produce a ringing sound. This property is due to the regular arrangement of atoms and the metallic bonding. Answer: Vibrations travel through crystalline structure, producing sound",,,,
+Problem,39,What is the reaction of non-metals with oxygen? Give an example.,"Non-metals react with oxygen to form acidic oxides (or neutral oxides in some cases). Example: C + O₂ → CO₂ (carbon dioxide is an acidic oxide). S + O₂ → SO₂ (sulphur dioxide is an acidic oxide). These oxides dissolve in water to form acids. Answer: Form acidic oxides. Example: C + O₂ → CO₂",,,,
+Problem,40,Explain the formation of magnesium chloride (MgCl₂).,"Magnesium chloride is formed by the reaction of magnesium with chlorine. Magnesium (Mg) has 2 valence electrons, chlorine (Cl) has 7. One Mg atom donates 2 electrons (one to each of 2 Cl atoms), forming Mg²⁺ and 2Cl⁻. These ions combine: Mg²⁺ + 2Cl⁻ → MgCl₂. Answer: Mg donates 2 electrons to 2 Cl atoms, forming ionic compound",,,,
+Problem,41,Why do metals lose electrons to form positive ions?,"Metals lose electrons to form positive ions because they have 1, 2, or 3 valence electrons. It is easier for them to lose these few electrons to achieve a stable noble gas configuration. By losing electrons, they form cations (positive ions) and become stable. Answer: Have few valence electrons, easier to lose and achieve stable configuration",,,,
+Problem,42,Why do non-metals gain electrons to form negative ions?,"Non-metals gain electrons to form negative ions because they have 4, 5, 6, or 7 valence electrons. It is easier for them to gain electrons (to complete octet) rather than lose many electrons. By gaining electrons, they form anions (negative ions) and achieve stable noble gas configuration. Answer: Have 4-7 valence electrons, easier to gain electrons to complete octet",,,,
+Problem,43,What is the reaction of metals with chlorine? Give an example.,"Metals react with chlorine to form ionic chlorides (metal chlorides). Example: 2Na + Cl₂ → 2NaCl. Mg + Cl₂ → MgCl₂. 2Al + 3Cl₂ → 2AlCl₃. These are combination reactions forming ionic compounds. Answer: Form metal chlorides. Example: 2Na + Cl₂ → 2NaCl",,,,
+Problem,44,What is the reaction of metals with sulphur? Give an example.,"Metals react with sulphur to form metal sulphides. Example: Fe + S → FeS (iron sulphide). 2Cu + S → Cu₂S (copper sulphide). Zn + S → ZnS (zinc sulphide). These reactions require heating. Answer: Form metal sulphides. Example: Fe + S → FeS",,,,
+Problem,45,Explain why ionic compounds are hard and brittle.,"Ionic compounds are hard because of strong electrostatic forces between oppositely charged ions. They are brittle because when a force is applied, the layers of ions shift. This brings like charges together, causing repulsion and the crystal breaks. Answer: Hard due to strong forces, brittle because layers shift causing like charges to repel",,,,
+Problem,46,What happens when a piece of sodium is dropped in water?,"When sodium is dropped in water, it reacts violently: 2Na + 2H₂O → 2NaOH + H₂. The reaction is exothermic, producing heat and hydrogen gas. Sodium moves rapidly on water surface, melts (due to heat), and may catch fire. It's a dangerous reaction. Answer: Violent reaction, produces NaOH and H₂, generates heat, may catch fire",,,,
+Problem,47,Compare the reactivity of potassium, sodium, and lithium with water.,"All three react with water, but reactivity increases down the group: Lithium < Sodium < Potassium. Potassium reacts most violently, followed by sodium, then lithium. All produce metal hydroxide and hydrogen: 2M + 2H₂O → 2MOH + H₂. Answer: Reactivity increases: Li < Na < K, all produce MOH and H₂",,,,
+Problem,48,Explain why copper vessels develop a green coating when exposed to air.,"Copper vessels develop a green coating (patina) when exposed to moist air. This is due to formation of basic copper carbonate: 2Cu + H₂O + CO₂ + O₂ → Cu₂CO₃(OH)₂. The green coating is copper carbonate which protects the metal underneath. Answer: Forms basic copper carbonate (patina) that protects the metal",,,,
+Problem,49,What is the difference between roasting and calcination?,"Roasting: Heating of sulphide ores in presence of air to convert them to oxides. Example: 2ZnS + 3O₂ → 2ZnO + 2SO₂. Calcination: Heating of carbonate ores in absence of air to convert them to oxides. Example: CaCO₃ → CaO + CO₂. Answer: Roasting - sulphides in air to oxides; Calcination - carbonates without air to oxides",,,,
+Problem,50,What is meant by 'ores'? Give examples of important ores.,"Ores are naturally occurring minerals from which metals can be extracted profitably. Examples: 1) Bauxite (Al₂O₃·2H₂O) - ore of aluminium, 2) Haematite (Fe₂O₃) - ore of iron, 3) Zinc blende (ZnS) - ore of zinc, 4) Galena (PbS) - ore of lead, 5) Cinnabar (HgS) - ore of mercury. Answer: Minerals containing metals. Examples: Bauxite (Al), Haematite (Fe), Zinc blende (Zn)",,,,
+

@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who invented the printing press?,Johannes Gutenberg,James Watt,Isaac Newton,Marco Polo,Johannes Gutenberg
+MCQ,2,The first printed book was the,Bible,Newspaper,Novel,Magazine,Bible
+MCQ,3,The printing press was invented in the,14th century,15th century,16th century,17th century,15th century
+MCQ,4,The first printing press in India was set up in,Goa,Bombay,Calcutta,Delhi,Goa
+MCQ,5,Who introduced the printing press in India?,Portuguese missionaries,British officials,Indian rulers,Traders,Portuguese missionaries
+MCQ,6,Print culture led to the spread of,Illiteracy,Knowledge,Slavery,Colonialism,Knowledge
+MCQ,7,The first newspapers appeared in,China,Europe,India,America,Europe
+MCQ,8,The Protestant Reformation was led by,Martin Luther,Gutenberg,Calvin,Henry VIII,Martin Luther
+MCQ,9,Martin Luther criticized the,Printing press,Church practices,Bible,Education,Church practices
+MCQ,10,Print culture helped spread,Democracy,Ideas and reforms,Slavery,Imperialism,Ideas and reforms
+MCQ,11,Which book popularised scientific ideas?,Bible,Encyclopaedia,Novel,Magazine,Encyclopaedia
+MCQ,12,Cheap books were called,Hardbacks,Manuscripts,Chapbooks,Comics,Chapbooks
+MCQ,13,Which country was first to use woodblock printing?,China,India,France,Germany,China
+MCQ,14,The first novel printed in India was,Rajmohan’s Wife,Godaan,Devdas,Pariksha Guru,Rajmohan’s Wife
+MCQ,15,Who wrote Rajmohan’s Wife?,Premchand,Bankim Chandra Chattopadhyay,Rabindranath Tagore,Bharatendu Harishchandra,Bankim Chandra Chattopadhyay
+MCQ,16,Print culture encouraged,Oral tradition,Reading habit,Illiteracy,Silence,Reading habit
+MCQ,17,Which group benefited most from print culture?,Only elites,Common people,Rulers only,Clergy,Common people
+MCQ,18,The Vernacular Press Act was passed in,1857,1878,1905,1919,1878
+MCQ,19,The Vernacular Press Act was aimed at controlling,Indian press,British press,Education,Trade,Indian press
+MCQ,20,Print culture helped women by promoting,Education,Domestic work,Isolation,Tradition,Education
+MCQ,21,Who wrote Gulamgiri?,Jyotiba Phule,B R Ambedkar,Gandhi,Tagore,Jyotiba Phule
+MCQ,22,Print culture helped in spreading,Nationalism,Illiteracy,Colonial rule,Poverty,Nationalism
+MCQ,23,Which language newspapers grew in India?,English only,Vernacular languages,Latin,Chinese,Vernacular languages
+MCQ,24,Print culture led to fear of,Moral decay,Loss of authority,Knowledge growth,Education,Loss of authority
+MCQ,25,Which class feared print culture?,Common people,Elites,Rulers,Women,Rulers
+MCQ,26,Who introduced lithography?,Gutenberg,Thomas Edison,Alois Senefelder,Newton,Alois Senefelder
+MCQ,27,Print allowed people to read in,Groups,Silence,Only aloud,Public places,Silence
+MCQ,28,The first newspaper in India was,Hickey’s Bengal Gazette,Times of India,Amrita Bazar Patrika,Kesari,Hickey’s Bengal Gazette
+MCQ,29,Print culture led to rise of,Public opinion,Illiteracy,Slavery,Isolation,Public opinion
+MCQ,30,Print culture played a role in,Freedom movement,Colonial expansion,Trade only,Agriculture,Freedom movement
+MCQ,31,Who started Kesari newspaper?,Tilak,Gandhi,Nehru,Tagore,Tilak
+MCQ,32,Print culture spread ideas of,Liberty and equality,Slavery,Monarchy,Imperialism,Liberty and equality
+MCQ,33,Who were early readers in Europe?,Clergy and elites,Workers only,Peasants only,Women only,Clergy and elites
+MCQ,34,Print made knowledge,Limited,Expensive,Accessible,Hidden,Accessible
+MCQ,35,Print culture increased literacy by,Making books cheap,Destroying schools,Limiting reading,Oral teaching,Making books cheap
+MCQ,36,Which medium replaced manuscripts?,Printing press,Telegraph,Radio,Telephone,Printing press
+MCQ,37,Print culture helped spread,Scientific ideas,Superstition,Colonial laws,Fear,Scientific ideas
+MCQ,38,The colonial government feared print because it spread,Criticism,Praise,Support,Silence,Criticism
+MCQ,39,Print culture transformed society by,Creating debate,Stopping ideas,Destroying culture,Isolation,Creating debate
+MCQ,40,Which group used print for reforms?,Social reformers,Colonial rulers,Merchants only,Farmers only,Social reformers
+MCQ,41,Print culture helped form,Public opinion,Dictatorship,Colonial power,Slavery,Public opinion
+MCQ,42,Which technology preceded print?,Manuscripts,Radio,Television,Internet,Manuscripts
+MCQ,43,Print culture led to decline of,Handwritten books,Education,Ideas,Reading,Handwritten books
+MCQ,44,Who controlled print through censorship?,Readers,Printers,Rulers,Teachers,Rulers
+MCQ,45,Print culture helped nationalism by,Uniting people,Dividing people,Suppressing ideas,Silencing voices,Uniting people
+MCQ,46,Which movement used print effectively?,National movement,Colonial movement,Trade movement,Labour movement,National movement
+MCQ,47,Print culture increased discussion on,Social issues,Only religion,Only trade,Only war,Social issues
+MCQ,48,Print made reading a,Public activity,Private activity,Dangerous act,Forbidden act,Private activity
+MCQ,49,Which region saw early print revolution?,Europe,Africa,Australia,America,Europe
+MCQ,50,The central idea of the chapter is,History of books,Impact of print on society,Colonialism only,Education system,Impact of print on society
+
+Integer,1,Inventor of printing press?,Gutenberg,,,,
+Integer,2,First printed book?,Bible,,,,
+Integer,3,Country of woodblock printing?,China,,,,
+Integer,4,First printing press in India?,Goa,,,,
+Integer,5,Leader of Reformation?,Martin Luther,,,,
+Integer,6,Cheap books called?,Chapbooks,,,,
+Integer,7,First newspaper in India?,Hickey’s Bengal Gazette,,,,
+Integer,8,Act controlling vernacular press?,Vernacular Press Act,,,,
+Integer,9,Year of Vernacular Press Act?,1878,,,,
+Integer,10,First Indian novel?,Rajmohan’s Wife,,,,
+Integer,11,Author of Rajmohan’s Wife?,Bankim Chandra Chattopadhyay,,,,
+Integer,12,Technique replacing manuscripts?,Printing,,,,
+Integer,13,Print spread ideas of?,Reform,,,,
+Integer,14,Group fearing print?,Rulers,,,,
+Integer,15,Print helped spread?,Nationalism,,,,
+Integer,16,Social reformer author of Gulamgiri?,Jyotiba Phule,,,,
+Integer,17,Language newspapers grew?,Vernacular,,,,
+Integer,18,Early European readers?,Clergy,,,,
+Integer,19,Print increased?,Literacy,,,,
+Integer,20,First printed religious book?,Bible,,,,
+Integer,21,Print culture formed?,Public opinion,,,,
+Integer,22,Who started Kesari?,Tilak,,,,
+Integer,23,Print allowed reading in?,Silence,,,,
+Integer,24,Colonial fear of print?,Criticism,,,,
+Integer,25,Printing press century?,15th,,,,
+Integer,26,Print promoted?,Education,,,,
+Integer,27,Medium before print?,Manuscripts,,,,
+Integer,28,Print helped women’s?,Education,,,,
+Integer,29,Cheap reading material?,Chapbooks,,,,
+Integer,30,Print culture spread?,Knowledge,,,,
+Integer,31,Print revolution started in?,Europe,,,,
+Integer,32,Act to suppress Indian press?,Vernacular Press Act,,,,
+Integer,33,Print reduced cost of?,Books,,,,
+Integer,34,Print supported which movement?,National movement,,,,
+Integer,35,Print led to debate?,Yes,,,,
+Integer,36,Print culture declined?,Manuscripts,,,,
+Integer,37,Printing material?,Paper,,,,
+Integer,38,Print increased reading habit?,Yes,,,,
+Integer,39,Print made ideas?,Accessible,,,,
+Integer,40,Print spread scientific?,Ideas,,,,
+Integer,41,First book printed?,Bible,,,,
+Integer,42,Print culture era?,Modern,,,,
+Integer,43,Print controlled by?,Rulers,,,,
+Integer,44,Print empowered?,People,,,,
+Integer,45,Print culture impact?,Social change,,,,
+Integer,46,First press users in India?,Missionaries,,,,
+Integer,47,Print promoted freedom?,Yes,,,,
+Integer,48,Print spread reforms?,Yes,,,,
+Integer,49,Key theme?,Print revolution,,,,
+Integer,50,Chapter focus?,Print and society,,,,
+
+Descriptive,1,What is print culture?,,,,,Print culture refers to the influence of printed material on society
+Descriptive,2,Describe the invention of the printing press.,,,,,Gutenberg invented movable type printing
+Descriptive,3,Explain the impact of print culture in Europe.,,,,,It spread ideas and knowledge
+Descriptive,4,What role did print play in the Reformation?,,,,,Helped spread Luther’s ideas
+Descriptive,5,Describe woodblock printing.,,,,,Early printing method from China
+Descriptive,6,Explain how print reached India.,,,,,Introduced by Portuguese missionaries
+Descriptive,7,What were chapbooks?,,,,,Cheap popular books
+Descriptive,8,Explain the role of newspapers.,,,,,Shaped public opinion
+Descriptive,9,Describe the Vernacular Press Act.,,,,,Law to control Indian press
+Descriptive,10,How did print culture help nationalism?,,,,,Spread nationalist ideas
+Descriptive,11,Explain the impact of print on education.,,,,,Increased literacy
+Descriptive,12,Describe print culture and women.,,,,,Promoted women’s education
+Descriptive,13,How did rulers control print?,,,,,Censorship laws
+Descriptive,14,Explain print culture and social reforms.,,,,,Spread reform ideas
+Descriptive,15,Describe the first printing press in India.,,,,,Established in Goa
+Descriptive,16,How did print reduce cost of books?,,,,,Mass production
+Descriptive,17,Explain rise of reading public.,,,,,Books became accessible
+Descriptive,18,Describe impact of print on religion.,,,,,Questioned church authority
+Descriptive,19,How did print spread scientific ideas?,,,,,Through books and journals
+Descriptive,20,Explain print culture and nationalism in India.,,,,,Unified people
+Descriptive,21,Describe growth of vernacular press.,,,,,Newspapers in local languages
+Descriptive,22,Explain fear of print culture.,,,,,Loss of authority
+Descriptive,23,Describe contribution of social reformers.,,,,,Used print to spread ideas
+Descriptive,24,Explain impact on oral tradition.,,,,,Declined importance
+Descriptive,25,How did print change reading habits?,,,,,Silent and individual reading
+Descriptive,26,Explain role of women readers.,,,,,New awareness
+Descriptive,27,Describe print and caste issues.,,,,,Lower caste voices emerged
+Descriptive,28,Explain how print created public opinion.,,,,,Encouraged debate
+Descriptive,29,Describe impact on literature.,,,,,Growth of novels
+Descriptive,30,Explain print and colonialism.,,,,,Both tool and threat
+Descriptive,31,How did print affect education system?,,,,,Standardised learning
+Descriptive,32,Explain print culture in India.,,,,,Boosted reforms and nationalism
+Descriptive,33,Describe censorship laws.,,,,,Restricted freedom of press
+Descriptive,34,Explain role of newspapers in freedom struggle.,,,,,Mobilised masses
+Descriptive,35,How did print empower people?,,,,,Access to ideas
+Descriptive,36,Explain print culture and modern world.,,,,,Shaped modern society
+Descriptive,37,Describe print as agent of change.,,,,,Social transformation
+Descriptive,38,Explain spread of literacy.,,,,,Cheap books
+Descriptive,39,How did print challenge authority?,,,,,Criticism of rulers
+Descriptive,40,Describe early print users.,,,,,Clergy and elites
+Descriptive,41,Explain print revolution.,,,,,Shift from manuscripts to print
+Descriptive,42,Describe impact on society.,,,,,Cultural and social change
+Descriptive,43,Explain role of print in democracy.,,,,,Informed citizens
+Descriptive,44,Describe print culture and nationalism.,,,,,Spread unity
+Descriptive,45,Explain print and reform movements.,,,,,Spread reformist ideas
+Descriptive,46,Describe growth of Indian newspapers.,,,,,Vernacular press expansion
+Descriptive,47,Explain importance of printing press.,,,,,Mass communication
+Descriptive,48,How did print shape modern identity?,,,,,Shared ideas
+Descriptive,49,Explain significance of print culture.,,,,,Foundation of modern world
+Descriptive,50,Summarize Print Culture and the Modern World.,,,,,Print revolution transformed society, politics and culture

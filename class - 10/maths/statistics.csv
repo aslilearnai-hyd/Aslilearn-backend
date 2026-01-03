@@ -1,0 +1,115 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The mean of the first 10 natural numbers is:,5,5.5,6,6.5,5.5
+MCQ,2,The median of the data: 2, 3, 4, 5, 6 is:,3,4,5,6,4
+MCQ,3,The mode of the data: 2, 3, 3, 4, 4, 4, 5 is:,3,4,5,6,4
+MCQ,4,The mean of 5 numbers is 20. If one number is excluded, the mean becomes 18. The excluded number is:,26,28,30,32,28
+MCQ,5,The class mark of the class interval 10-20 is:,10,15,20,25,15
+MCQ,6,The class size of the class interval 10-20 is:,5,10,15,20,10
+MCQ,7,The cumulative frequency is used to find:,Mean,Median,Mode,Range,Median
+MCQ,8,For grouped data, the mode lies in the class with:,Lowest frequency,Highest frequency,Mean frequency,Median frequency,Highest frequency
+MCQ,9,The empirical relationship between mean, median, and mode is:,Mode = 3Median - 2Mean,Mode = 3Mean - 2Median,Mean = 3Median - 2Mode,Median = 3Mean - 2Mode,Mode = 3Median - 2Mean
+MCQ,10,If the mean of 5, 7, 9, x, 11 is 8, then x =:,6,7,8,9,8
+MCQ,11,The median of the data: 10, 12, 14, 16, 18, 20 is:,14,15,16,17,15
+MCQ,12,If the mean of the data: 2, 4, 6, 8, 10, 12, 14 is 8, then the mean of 4, 8, 12, 16, 20, 24, 28 is:,12,14,16,18,16
+MCQ,13,The range of the data: 5, 8, 10, 15, 20, 25 is:,15,20,25,30,20
+MCQ,14,For the class intervals 0-10, 10-20, 20-30, the upper limit of the first class is:,0,5,10,15,10
+MCQ,15,For the class intervals 0-10, 10-20, 20-30, the lower limit of the second class is:,5,10,15,20,10
+MCQ,16,The mean of first 5 prime numbers is:,5.6,5.8,6,6.2,5.6
+MCQ,17,If the mean of x, x+2, x+4, x+6, x+8 is 13, then x =:,9,10,11,12,9
+MCQ,18,The median of the data: 1, 3, 5, 7, 9, 11, 13 is:,5,6,7,8,7
+MCQ,19,If the mode of the data: 3, 4, 5, 5, 6, 7, 8, 8, 9, 9, 9 is 9, then the mean is:,6,6.5,7,7.5,6.5
+MCQ,20,For a grouped frequency distribution, the class mark of a class interval is:,Upper limit - Lower limit,(Upper limit + Lower limit)/2,Upper limit + Lower limit,Lower limit - Upper limit,(Upper limit + Lower limit)/2
+MCQ,21,The mean of 100 observations is 50. If one observation which was 50 is replaced by 150, the new mean is:,50.5,51,51.5,52,51
+MCQ,22,If the mean of the observations: x, x+3, x+5, x+7, x+10 is 9, then the mean of the last three observations is:,10,11,12,13,11
+MCQ,23,The median of the data arranged in ascending order: 11, 12, 14, 18, x+2, x+4, 30, 32, 35, 41 is 24, then x =:,20,22,24,26,22
+MCQ,24,For a frequency distribution, if the mean is 12 and median is 15, then the mode is:,18,19,20,21,21
+MCQ,25,The mean of 25 observations is 36. Out of these, if the mean of first 13 observations is 32 and that of last 13 observations is 40, the 13th observation is:,32,34,36,38,36
+MCQ,26,If the class size is 10 and the lower limit of a class is 15, then its upper limit is:,20,25,30,35,25
+MCQ,27,The cumulative frequency of a class is the sum of frequencies of:,That class only,All previous classes,That class and all previous classes,All classes,That class and all previous classes
+MCQ,28,In a frequency distribution, the mid-value of a class is 42 and the class size is 10. The lower limit of the class is:,37,38,39,40,37
+MCQ,29,The mean of 20 numbers is 15. If each number is multiplied by 2, then the new mean is:,15,20,30,60,30
+MCQ,30,If the mean of 5 observations is 12 and the mean of another 5 observations is 16, then the mean of all 10 observations is:,13,14,15,16,14
+MCQ,31,The mode of the data: 4, 5, 6, 6, 7, 8, 9, 9, 9, 10 is:,6,7,8,9,9
+MCQ,32,For grouped data, the formula for mean by direct method is:,Σfx/Σf,Σf/Σfx,Σfx,Σf,Σfx/Σf
+MCQ,33,The mean of first n natural numbers is:,(n+1)/2,n/2,(n-1)/2,n,(n+1)/2
+MCQ,34,If the mean of the data: 2, 4, 6, 8, x is 6, then x =:,8,10,12,14,10
+MCQ,35,The median of the data: 6, 8, 9, 15, 16, 18, 21, 22, 25 is:,15,16,17,18,16
+MCQ,36,If the mean of the observations: a, a+1, a+2, a+3, a+4 is 10, then a =:,7,8,9,10,8
+MCQ,37,The range of the data: 10, 15, 20, 25, 30, 35, 40 is:,25,30,35,40,30
+MCQ,38,For a frequency distribution with mean 25 and median 27, the mode is:,29,30,31,32,31
+MCQ,39,The mean of 15 numbers is 25. If each number is increased by 5, then the new mean is:,25,30,35,40,30
+MCQ,40,If the class mark is 25 and the class size is 10, then the class interval is:,20-30,15-25,25-35,20-25,20-30
+MCQ,41,The cumulative frequency of the last class is always equal to:,0,1,The total frequency,The mean,The total frequency
+MCQ,42,The mean of 12, 14, 16, 18, 20 is:,14,15,16,17,16
+MCQ,43,If the mode of the data: 5, 7, 8, 8, 9, 10, 11, 11, 11, 12 is 11, then the median is:,9,9.5,10,10.5,9.5
+MCQ,44,For grouped data, the median class is the class having:,Lowest frequency,Highest frequency,Cumulative frequency just greater than n/2,Mean frequency,Cumulative frequency just greater than n/2
+MCQ,45,The mean of first 10 even numbers is:,9,10,11,12,11
+MCQ,46,If the mean of x, 2x, 3x, 4x, 5x is 30, then x =:,8,9,10,11,10
+MCQ,47,The median of the data: 7, 10, 12, 14, 16, 18, 20, 22 is:,15,16,17,18,15
+MCQ,48,The mode of the data: 3, 5, 7, 7, 8, 9, 10, 10, 10, 11 is:,7,8,9,10,10
+MCQ,49,If the mean of 8 numbers is 12 and the mean of 12 numbers is 8, then the mean of all 20 numbers is:,9,9.5,10,10.5,9.6
+MCQ,50,The mean of the squares of first 5 natural numbers is:,9,10,11,12,11
+Integer,1,The mean of the first 10 natural numbers is: _____ (write as 5.5, so integer part is 5, but for integer type write 6 or just 5). Actually mean is 5.5, but for integer type questions, let's use: The mean of first 5 natural numbers is: _____ (which is 3, but that's also decimal). Let me use: The mean of first 9 natural numbers is: _____ (which is 5). Or: The median of data 2,3,4,5,6 is: _____ (which is 4).,4,,,,
+Integer,2,The median of the data: 2, 3, 4, 5, 6 is: _____.,4,,,,
+Integer,3,The mode of the data: 2, 3, 3, 4, 4, 4, 5 is: _____.,4,,,,
+Integer,4,The class mark of the class interval 10-20 is: _____.,15,,,,
+Integer,5,The class size of the class interval 10-20 is: _____.,10,,,,
+Integer,6,If the mean of 5, 7, 9, x, 11 is 8, then x =: _____.,8,,,,
+Integer,7,The median of the data: 10, 12, 14, 16, 18, 20 is: _____ (average of 14 and 16 = 15, but for integer write 15).,15,,,,
+Integer,8,The range of the data: 5, 8, 10, 15, 20, 25 is: _____.,20,,,,
+Integer,9,The mean of first 5 prime numbers is 5.6. Write integer part: _____ (or use: If mean of 5 numbers is 20, and 4 numbers sum to 72, the 5th number is: 28).,28,,,,
+Integer,10,If the mean of x, x+2, x+4, x+6, x+8 is 13, then x =: _____.,9,,,,
+Integer,11,The median of the data: 1, 3, 5, 7, 9, 11, 13 is: _____.,7,,,,
+Integer,12,The range of the data: 10, 15, 20, 25, 30, 35, 40 is: _____.,30,,,,
+Integer,13,If the class size is 10 and the lower limit is 15, then the upper limit is: _____.,25,,,,
+Integer,14,The mean of 20 numbers is 15. If each is multiplied by 2, the new mean is: _____.,30,,,,
+Integer,15,If mean of 5 observations is 12 and mean of another 5 is 16, mean of all 10 is: _____.,14,,,,
+Integer,16,The mode of data: 4, 5, 6, 6, 7, 8, 9, 9, 9, 10 is: _____.,9,,,,
+Integer,17,The mean of first n natural numbers when n=9 is 5. But integer: If mean of 2, 4, 6, 8, x is 6, then x =: _____.,10,,,,
+Integer,18,The median of data: 6, 8, 9, 15, 16, 18, 21, 22, 25 is: _____.,16,,,,
+Integer,19,If mean of a, a+1, a+2, a+3, a+4 is 10, then a =: _____.,8,,,,
+Integer,20,The mean of 15 numbers is 25. If each is increased by 5, new mean is: _____.,30,,,,
+Integer,21,The mean of 12, 14, 16, 18, 20 is: _____.,16,,,,
+Integer,22,The mode of data: 5, 7, 8, 8, 9, 10, 11, 11, 11, 12 is: _____.,11,,,,
+Integer,23,The median of data: 7, 10, 12, 14, 16, 18, 20, 22 is: _____.,15,,,,
+Integer,24,The mode of data: 3, 5, 7, 7, 8, 9, 10, 10, 10, 11 is: _____.,10,,,,
+Integer,25,The range of data: 12, 18, 24, 30, 36, 42 is: _____.,30,,,,
+Integer,26,If class mark is 25 and class size is 10, lower limit is: _____.,20,,,,
+Integer,27,If class mark is 25 and class size is 10, upper limit is: _____.,30,,,,
+Integer,28,The median of data: 5, 8, 11, 14, 17, 20, 23 is: _____.,14,,,,
+Integer,29,If mean of x, 2x, 3x, 4x, 5x is 30, then x =: _____.,10,,,,
+Integer,30,The mode of data: 2, 4, 6, 6, 8, 10, 10, 10, 12 is: _____.,10,,,,
+Integer,31,The range of data: 15, 20, 25, 30, 35, 40, 45 is: _____.,30,,,,
+Integer,32,The median of data: 4, 7, 10, 13, 16, 19, 22, 25 is: _____.,14,,,,
+Integer,33,If mean of 8 numbers is 12, sum of 7 numbers is 80, the 8th number is: _____.,16,,,,
+Integer,34,The class mark of class 30-40 is: _____.,35,,,,
+Integer,35,The class size of class 25-35 is: _____.,10,,,,
+Integer,36,The median of data: 3, 6, 9, 12, 15, 18, 21 is: _____.,12,,,,
+Integer,37,The mode of data: 1, 3, 5, 5, 7, 9, 9, 9, 11 is: _____.,9,,,,
+Integer,38,If mean of 6, 10, 14, 18, x is 14, then x =: _____.,22,,,,
+Integer,39,The range of data: 20, 25, 30, 35, 40, 45, 50 is: _____.,30,,,,
+Integer,40,The median of data: 8, 12, 16, 20, 24, 28, 32 is: _____.,20,,,,
+Integer,41,The class mark of class 50-60 is: _____.,55,,,,
+Integer,42,If mean of 4, 8, 12, 16, x is 12, then x =: _____.,20,,,,
+Integer,43,The mode of data: 6, 8, 10, 10, 12, 14, 14, 14, 16 is: _____.,14,,,,
+Integer,44,The range of data: 25, 30, 35, 40, 45, 50, 55 is: _____.,30,,,,
+Integer,45,The median of data: 10, 15, 20, 25, 30, 35, 40, 45 is: _____.,27,,,,
+Integer,46,The class size of class 40-50 is: _____.,10,,,,
+Integer,47,If mean of 5, 10, 15, 20, x is 15, then x =: _____.,25,,,,
+Integer,48,The mode of data: 4, 6, 8, 8, 10, 12, 12, 12, 14 is: _____.,12,,,,
+Integer,49,The range of data: 30, 35, 40, 45, 50, 55, 60 is: _____.,30,,,,
+Integer,50,The median of data: 12, 18, 24, 30, 36, 42, 48 is: _____.,30,,,,
+Problem,1,Find the mean of the first 10 natural numbers.,"First 10 natural numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Sum = 55. Mean = 55/10 = 5.5. Answer: 5.5",,,,
+Problem,2,Find the median of the data: 2, 3, 4, 5, 6.,"Data is already in ascending order. Number of observations (n) = 5 (odd). Median = (n+1)/2 th term = 3rd term = 4. Answer: 4",,,,
+Problem,3,Find the mode of the data: 2, 3, 3, 4, 4, 4, 5.,"Frequency: 2 appears 1 time, 3 appears 2 times, 4 appears 3 times, 5 appears 1 time. Mode = 4 (highest frequency). Answer: 4",,,,
+Problem,4,The mean of 5 numbers is 20. If one number is excluded, the mean becomes 18. Find the excluded number.,"Sum of 5 numbers = 5 × 20 = 100. Sum of 4 numbers = 4 × 18 = 72. Excluded number = 100 - 72 = 28. Answer: 28",,,,
+Problem,5,Find the class mark of the class interval 10-20.,"Class mark = (Lower limit + Upper limit)/2 = (10 + 20)/2 = 30/2 = 15. Answer: 15",,,,
+Problem,6,Find the mean of the data: 5, 7, 9, 11, 13.,"Sum = 5 + 7 + 9 + 11 + 13 = 45. Mean = 45/5 = 9. Answer: 9",,,,
+Problem,7,Find the median of the data: 10, 12, 14, 16, 18, 20.,"Data is in ascending order. n = 6 (even). Median = Average of (n/2)th and (n/2 + 1)th terms = Average of 3rd and 4th terms = (14 + 16)/2 = 30/2 = 15. Answer: 15",,,,
+Problem,8,Find the range of the data: 5, 8, 10, 15, 20, 25.,"Range = Maximum value - Minimum value = 25 - 5 = 20. Answer: 20",,,,
+Problem,9,If the mean of the observations: 2, 4, 6, 8, x is 6, find x.,"Sum = 2 + 4 + 6 + 8 + x = 20 + x. Mean = (20 + x)/5 = 6, 20 + x = 30, x = 10. Answer: 10",,,,
+Problem,10,Find the mean of the data: 12, 14, 16, 18, 20.,"Sum = 12 + 14 + 16 + 18 + 20 = 80. Mean = 80/5 = 16. Answer: 16",,,,
+Problem,11,The mean of 20 numbers is 15. If each number is multiplied by 2, find the new mean.,"New mean = Old mean × 2 = 15 × 2 = 30. Answer: 30",,,,
+Problem,12,Find the median of the data: 6, 8, 9, 15, 16, 18, 21, 22, 25.,"Data is in ascending order. n = 9 (odd). Median = (9+1)/2 = 5th term = 16. Answer: 16",,,,
+Problem,13,If the mean of x, x+2, x+4, x+6, x+8 is 13, find x.,"Sum = x + (x+2) + (x+4) + (x+6) + (x+8) = 5x + 20. Mean = (5x + 20)/5 = x + 4 = 13, x = 9. Answer: 9",,,,
+Problem,14,Find the mode of the data: 4, 5, 6, 6, 7, 8, 9, 9, 9, 10.,"

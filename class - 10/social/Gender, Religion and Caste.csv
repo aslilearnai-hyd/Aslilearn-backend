@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Gender division refers to,Division based on religion,Division based on caste,Division based on gender,Economic division,Division based on gender
+MCQ,2,Which work is generally unpaid?,Office work,Factory work,Domestic work,Farm work,Domestic work
+MCQ,3,Which gender is considered disadvantaged in India?,Men,Women,Both,None,Women
+MCQ,4,Women’s participation in politics is,Equal to men,More than men,Less than men,None,Less than men
+MCQ,5,Which country has highest women representation in parliament?,India,USA,Sweden,Japan,Sweden
+MCQ,6,Which amendment reserves seats for women in local bodies?,52nd,61st,73rd,86th,73rd
+MCQ,7,How many seats are reserved for women in Panchayats?,10%,20%,33%,50%,33%
+MCQ,8,Religion based politics is called,Secularism,Communalism,Socialism,Federalism,Communalism
+MCQ,9,Which country is a secular state?,India,Pakistan,Sri Lanka,Nepal,India
+MCQ,10,Communal politics is based on,Shared beliefs,Religious identity,National unity,Equality,Religious identity
+MCQ,11,Which is NOT a form of communalism?,Everyday beliefs,Political mobilisation,Communal violence,Secularism,Secularism
+MCQ,12,Which country officially follows one religion?,India,USA,Pakistan,France,Pakistan
+MCQ,13,Society divided on caste lines is called,Caste system,Class system,Gender system,Religious system,Caste system
+MCQ,14,Which caste group is considered socially backward?,SC,ST,OBC,All of these,All of these
+MCQ,15,Caste system is based on,Occupation,Birth,Income,Education,Birth
+MCQ,16,Which factor has reduced caste inequalities?,Urbanisation,Education,Constitution,All of these,All of these
+MCQ,17,Which movement fought for women’s rights?,Civil Rights,Women’s Movement,Green Movement,Labour Movement,Women’s Movement
+MCQ,18,Which right ensures equal pay?,Right to equality,Right to freedom,Right to religion,Right to education,Right to equality
+MCQ,19,Which term means no discrimination by religion?,Communalism,Secularism,Socialism,Federalism,Secularism
+MCQ,20,Which religion dominates politics in communalism?,Majority religion,Minority religion,All religions,None,Majority religion
+MCQ,21,Which country faced communal violence?,India,USA,UK,Japan,India
+MCQ,22,Which social division is universal?,Gender,Religion,Caste,Language,Gender
+MCQ,23,Which social division is often linked with politics?,Caste,Gender,Religion,All of these,All of these
+MCQ,24,Which body ensures equality for women?,Parliament,Judiciary,Constitution,Government,Constitution
+MCQ,25,Which practice promotes gender equality?,Discrimination,Reservation,Patriarchy,Communalism,Reservation
+MCQ,26,Which religion based discrimination is against secularism?,Communalism,Socialism,Federalism,Democracy,Communalism
+MCQ,27,Which term refers to male dominance?,Equality,Patriarchy,Feminism,Secularism,Patriarchy
+MCQ,28,Which caste category includes artisans?,SC,ST,OBC,General,OBC
+MCQ,29,Which country reserves seats for women in parliament?,India,Rwanda,USA,UK,Rwanda
+MCQ,30,Which institution enforces laws for equality?,Police,Judiciary,Media,Parties,Judiciary
+MCQ,31,Which form of communalism leads to riots?,Political mobilisation,Everyday belief,Communal violence,Peaceful coexistence,Communal violence
+MCQ,32,Which value promotes harmony?,Discrimination,Tolerance,Hatred,Violence,Tolerance
+MCQ,33,Which group suffered caste discrimination?,Upper caste,Lower caste,Foreigners,Women,Lower caste
+MCQ,34,Which factor weakened caste system?,Modern education,Urban jobs,Constitution,All of these,All of these
+MCQ,35,Which term means rule by religion?,Secularism,Theocracy,Democracy,Communalism,Theocracy
+MCQ,36,Which system supports religious freedom?,Theocracy,Secularism,Communalism,Dictatorship,Secularism
+MCQ,37,Which social division is not permanent?,Gender,Caste,Religion,Occupation,Occupation
+MCQ,38,Which practice violates equality?,Untouchability,Reservation,Education,Employment,Untouchability
+MCQ,39,Which law abolished untouchability?,Constitution of India,Panchayat Act,RTI Act,Education Act,Constitution of India
+MCQ,40,Which movement demanded equal wages?,Women’s movement,Peasant movement,Labour movement,Green movement,Women’s movement
+MCQ,41,Which country gives equal rights to all religions?,India,Pakistan,Sri Lanka,Myanmar,India
+MCQ,42,Which term means equal respect to all religions?,Secularism,Communalism,Theocracy,Patriarchy,Secularism
+MCQ,43,Which social inequality is most visible?,Economic,Gender,Caste,Religious,Gender
+MCQ,44,Which political practice strengthens democracy?,Communalism,Gender equality,Caste politics,Patriarchy,Gender equality
+MCQ,45,Which system divides society rigidly?,Class system,Caste system,Democracy,Secularism,Caste system
+MCQ,46,Which factor promotes women empowerment?,Education,Reservation,Employment,All of these,All of these
+MCQ,47,Which religion based politics harms democracy?,Secularism,Communalism,Federalism,Socialism,Communalism
+MCQ,48,Which value ensures peaceful coexistence?,Equality,Tolerance,Hatred,Violence,Tolerance
+MCQ,49,Which social group faces multiple discrimination?,Upper caste men,Women,Lower caste women,None,Lower caste women
+MCQ,50,Gender, religion and caste are examples of,Political institutions,Social divisions,Economic systems,Government organs,Social divisions
+
+Integer,1,Division based on sex?,Gender,,,,
+Integer,2,Unpaid household work done by?,Women,,,,
+Integer,3,Women representation reservation?,33%,,,,
+Integer,4,Religion based politics?,Communalism,,,,
+Integer,5,State with no official religion?,Secular,,,,
+Integer,6,Social division based on birth?,Caste,,,,
+Integer,7,Male dominance term?,Patriarchy,,,,
+Integer,8,Movement for women rights?,Women’s movement,,,,
+Integer,9,Equal respect to all religions?,Secularism,,,,
+Integer,10,Lowest caste group?,SC,,,,
+Integer,11,Artisan caste group?,OBC,,,,
+Integer,12,Gender inequality exists?,Yes,,,,
+Integer,13,Constitution bans?,Untouchability,,,,
+Integer,14,Seats reserved in Panchayat?,33%,,,,
+Integer,15,Country with women majority MPs?,Rwanda,,,,
+Integer,16,Universal social division?,Gender,,,,
+Integer,17,Religion dominated politics?,Communalism,,,,
+Integer,18,Rule by religion?,Theocracy,,,,
+Integer,19,Equal wages right?,Equality,,,,
+Integer,20,Social harmony value?,Tolerance,,,,
+Integer,21,Women empowerment factor?,Education,,,,
+Integer,22,Caste inequality reduced by?,Urbanisation,,,,
+Integer,23,Religion freedom ensured by?,Constitution,,,,
+Integer,24,Gender equality opposite?,Patriarchy,,,,
+Integer,25,Untouchability abolished?,Yes,,,,
+Integer,26,Women reservation amendment?,73rd,,,,
+Integer,27,Lower caste discrimination?,Casteism,,,,
+Integer,28,Politics based on religion?,Communalism,,,,
+Integer,29,Group facing dual discrimination?,Lower caste women,,,,
+Integer,30,Indian state religion?,None,,,,
+Integer,31,Religion in politics harmful?,Yes,,,,
+Integer,32,Gender division universal?,Yes,,,,
+Integer,33,Law enforcing equality?,Judiciary,,,,
+Integer,34,Women political participation?,Low,,,,
+Integer,35,Equal opportunity principle?,Equality,,,,
+Integer,36,Social justice requires?,Equality,,,,
+Integer,37,Discrimination causes?,Inequality,,,,
+Integer,38,Religion neutrality?,Secularism,,,,
+Integer,39,Reserved seats help?,Representation,,,,
+Integer,40,Social division example?,Caste,,,,
+Integer,41,Religion based riots?,Communal violence,,,,
+Integer,42,Women unpaid work value?,Ignored,,,,
+Integer,43,Democracy supports?,Equality,,,,
+Integer,44,Indian constitution promotes?,Secularism,,,,
+Integer,45,Caste hierarchy basis?,Birth,,,,
+Integer,46,Women movement aim?,Equality,,,,
+Integer,47,Social division politicised leads to?,Conflict,,,,
+Integer,48,Equality opposite?,Discrimination,,,,
+Integer,49,Chapter theme?,Gender religion caste,,,,
+Integer,50,Democracy needs?,Equality,,,,
+
+Descriptive,1,What is gender division?,,,,,Division of society based on gender roles
+Descriptive,2,Explain gender inequality.,,,,,Unequal treatment of women and men
+Descriptive,3,Why are women disadvantaged?,,,,,Due to patriarchy and social norms
+Descriptive,4,Explain women’s political representation.,,,,,Less participation than men
+Descriptive,5,Explain women’s movement.,,,,,Movement for gender equality
+Descriptive,6,What is patriarchy?,,,,,System of male dominance
+Descriptive,7,Explain reservation for women.,,,,,Ensures political participation
+Descriptive,8,What is communalism?,,,,,Politics based on religion
+Descriptive,9,Explain forms of communalism.,,,,,Beliefs, mobilisation, violence
+Descriptive,10,Why is communalism harmful?,,,,,It divides society
+Descriptive,11,What is secularism?,,,,,Equal respect for all religions
+Descriptive,12,Explain Indian secularism.,,,,,State has no religion
+Descriptive,13,What is caste system?,,,,,Social division based on birth
+Descriptive,14,Explain caste inequalities.,,,,,Hierarchy and discrimination
+Descriptive,15,How has caste system changed?,,,,,Urbanisation and education
+Descriptive,16,Explain role of constitution.,,,,,Ensures equality
+Descriptive,17,What is untouchability?,,,,,Extreme caste discrimination
+Descriptive,18,Explain abolition of untouchability.,,,,,Constitutional ban
+Descriptive,19,Explain OBC category.,,,,,Socially backward castes
+Descriptive,20,Explain SC and ST.,,,,,Historically oppressed groups
+Descriptive,21,Explain gender equality.,,,,,Equal rights for all genders
+Descriptive,22,Explain communal violence.,,,,,Riots based on religion
+Descriptive,23,Explain women empowerment.,,,,,Education and opportunities
+Descriptive,24,Explain caste in politics.,,,,,Political mobilisation
+Descriptive,25,Explain religion in politics.,,,,,Can harm democracy
+Descriptive,26,Explain social divisions.,,,,,Differences among groups
+Descriptive,27,Why gender division is universal?,,,,,Exists in all societies
+Descriptive,28,Explain role of education.,,,,,Reduces inequality
+Descriptive,29,Explain economic inequality among genders.,,,,,Unequal wages
+Descriptive,30,Explain political representation.,,,,,Voice in decision making
+Descriptive,31,Explain role of judiciary.,,,,,Protects rights
+Descriptive,32,Explain democracy and equality.,,,,,Democracy promotes equality
+Descriptive,33,Explain discrimination.,,,,,Unfair treatment
+Descriptive,34,Explain social justice.,,,,,Fair distribution of opportunities
+Descriptive,35,Explain tolerance.,,,,,Respecting differences
+Descriptive,36,Explain caste based politics.,,,,,Vote bank politics
+Descriptive,37,Explain secular state.,,,,,No official religion
+Descriptive,38,Explain challenges to equality.,,,,,Social norms
+Descriptive,39,Explain importance of reservation.,,,,,Representation of deprived groups
+Descriptive,40,Explain women’s role in democracy.,,,,,Active participation
+Descriptive,41,Explain caste and occupation.,,,,,Traditional linkage
+Descriptive,42,Explain modern changes in caste.,,,,,Urbanisation
+Descriptive,43,Explain religion and democracy.,,,,,Balance required
+Descriptive,44,Explain communal harmony.,,,,,Peaceful coexistence
+Descriptive,45,Explain equality before law.,,,,,Same law for all
+Descriptive,46,Explain intersectional discrimination.,,,,,Multiple inequalities
+Descriptive,47,Explain social reform movements.,,,,,Fight inequality
+Descriptive,48,Explain long-term impact of equality.,,,,,Social stability
+Descriptive,49,Explain democracy’s response to diversity.,,,,,Accommodation
+Descriptive,50,Summarize Gender Religion and Caste.,,,,,Chapter explains social divisions and democracy

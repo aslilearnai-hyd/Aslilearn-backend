@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Drainage refers to?,Flow of rivers,Flow of groundwater,River system of an area,Water cycle,River system of an area
+MCQ,2,Which is a perennial river?,Yamuna,Ganga,Luni,Godavari,Ganga
+MCQ,3,Which river system is Himalayan?,Narmada,Tapi,Ganga,Godavari,Ganga
+MCQ,4,Which river is the longest in India?,Yamuna,Ganga,Brahmaputra,Godavari,Ganga
+MCQ,5,The Indus river originates from?,Amarnath,Manasarovar,Gangotri,None,Manasarovar
+MCQ,6,Which river flows through rift valley?,Ganga,Yamuna,Narmada,Brahmaputra,Narmada
+MCQ,7,Which river is called Dakshin Ganga?,Krishna,Kaveri,Godavari,Mahanadi,Godavari
+MCQ,8,Which river flows eastward?,Narmada,Tapi,Mahi,Godavari,Godavari
+MCQ,9,Which river flows westward?,Ganga,Yamuna,Narmada,Mahanadi,Narmada
+MCQ,10,The Brahmaputra is known as Tsangpo in?,India,Bhutan,Tibet,Bangladesh,Tibet
+MCQ,11,Which river forms the Sundarban delta?,Yamuna,Ganga,Brahmaputra,Mahanadi,Ganga
+MCQ,12,Which is a tributary of Ganga?,Yamuna,Narmada,Tapi,Mahi,Yamuna
+MCQ,13,Which river has the largest basin in India?,Godavari,Ganga,Narmada,Krishna,Ganga
+MCQ,14,Which river drains into Arabian Sea?,Mahanadi,Krishna,Tapi,Godavari,Tapi
+MCQ,15,Which river rises from Amarkantak?,Narmada,Mahanadi,Godavari,None,Narmada
+MCQ,16,Which river is the longest peninsular river?,Godavari,Krishna,Kaveri,Mahanadi,Godavari
+MCQ,17,Which river forms estuaries?,Ganga,Godavari,Narmada,Mahanadi,Narmada
+MCQ,18,Which river has the largest delta?,Ganga,Godavari,Krishna,Mahanadi,Ganga
+MCQ,19,Which river flows through Bangladesh?,Yamuna,Ganga,Brahmaputra,Tapi,Brahmaputra
+MCQ,20,Which river system flows from south to north?,Narmada,Tapi,Brahmaputra,None,Brahmaputra
+MCQ,21,Which is a Himalayan tributary of Ganga?,Son,Yamuna,Chambal,None,Yamuna
+MCQ,22,Which river is known for floods?,Narmada,Ganga,Brahmaputra,Tapi,Brahmaputra
+MCQ,23,Which river flows through Rajasthan?,Yamuna,Ganga,Luni,None,Luni
+MCQ,24,Which river drains into Bay of Bengal?,Krishna,Narmada,Tapi,Mahi,Krishna
+MCQ,25,Which river is seasonal?,Ganga,Yamuna,Luni,Brahmaputra,Luni
+MCQ,26,Which river originates from Western Ghats?,Ganga,Yamuna,Godavari,Brahmaputra,Godavari
+MCQ,27,Which river flows through Maharashtra?,Kaveri,Brahmaputra,Godavari,Chenab,Godavari
+MCQ,28,Which river has largest peninsular basin?,Krishna,Mahanadi,Godavari,Narmada,Godavari
+MCQ,29,Which river flows through Punjab?,Ganga,Sutlej,Godavari,None,Sutlej
+MCQ,30,Which river forms a gorge?,Ganga,Yamuna,Narmada,Brahmaputra,Narmada
+MCQ,31,Which tributary joins Ganga from the left?,Yamuna,Ghaghara,Son,None,Ghaghara
+MCQ,32,Which tributary joins Ganga from the right?,Yamuna,Ghaghara,Kosi,None,Yamuna
+MCQ,33,Which river is called sorrow of Bihar?,Kosi,Ghaghara,Yamuna,None,Kosi
+MCQ,34,Which river is smallest peninsular river?,Kaveri,Mahanadi,Godavari,None,Kaveri
+MCQ,35,Which river drains into Rann of Kutch?,Luni,Mahi,Narmada,None,Luni
+MCQ,36,Which river flows through Tamil Nadu?,Godavari,Kaveri,Krishna,Mahanadi,Kaveri
+MCQ,37,Which river forms delta at east coast?,Narmada,Tapi,Ganga,Mahi,Ganga
+MCQ,38,Which river flows from Himalayas to Bay of Bengal?,Ganga,Narmada,Tapi,None,Ganga
+MCQ,39,Which river system is older?,Himalayan,Peninsular,None,None,Peninsular
+MCQ,40,Which river has braided channels?,Ganga,Yamuna,Brahmaputra,None,Brahmaputra
+MCQ,41,Which river has largest number of tributaries?,Ganga,Godavari,Narmada,None,Ganga
+MCQ,42,Which river forms Majuli island?,Yamuna,Ganga,Brahmaputra,None,Brahmaputra
+MCQ,43,Which river is snow-fed?,Ganga,Luni,Kaveri,None,Ganga
+MCQ,44,Which river drains Chota Nagpur plateau?,Damodar,Ganga,Narmada,None,Damodar
+MCQ,45,Which river valley is densely populated?,Narmada,Ganga,Tapi,None,Ganga
+MCQ,46,Which river joins Ganga at Prayagraj?,Yamuna,Son,Ghaghara,None,Yamuna
+MCQ,47,Which river is called lifeline of north India?,Ganga,Yamuna,Brahmaputra,None,Ganga
+MCQ,48,Which river basin supports agriculture?,Luni,Narmada,Ganga,None,Ganga
+MCQ,49,Which river flows through Assam?,Ganga,Yamuna,Brahmaputra,None,Brahmaputra
+MCQ,50,Which river system drains into Bay of Bengal mostly?,Peninsular,Himalayan,None,None,Himalayan
+
+Integer,1,Study of river systems?,Drainage,,,,
+Integer,2,Longest river of India?,Ganga,,,,
+Integer,3,Source of Ganga?,Gangotri,,,,
+Integer,4,Peninsular longest river?,Godavari,,,,
+Integer,5,River flowing west?,Narmada,,,,
+Integer,6,River flowing east?,Krishna,,,,
+Integer,7,Old river system?,Peninsular,,,,
+Integer,8,Snow-fed rivers?,Himalayan,,,,
+Integer,9,Seasonal river?,Luni,,,,
+Integer,10,River forming delta?,Ganga,,,,
+Integer,11,River forming estuary?,Narmada,,,,
+Integer,12,River in Rajasthan?,Luni,,,,
+Integer,13,River called Dakshin Ganga?,Godavari,,,,
+Integer,14,River of floods?,Brahmaputra,,,,
+Integer,15,Source of Indus?,Manasarovar,,,,
+Integer,16,River in rift valley?,Narmada,,,,
+Integer,17,Tributary of Ganga?,Yamuna,,,,
+Integer,18,Smallest peninsular river?,Kaveri,,,,
+Integer,19,Largest basin?,Ganga,,,,
+Integer,20,Tributary joining from right?,Yamuna,,,,
+Integer,21,Tributary joining from left?,Ghaghara,,,,
+Integer,22,Sorrow of Bihar?,Kosi,,,,
+Integer,23,River of Tamil Nadu?,Kaveri,,,,
+Integer,24,River of Punjab?,Sutlej,,,,
+Integer,25,River through Assam?,Brahmaputra,,,,
+Integer,26,Delta in Bengal?,Sundarban,,,,
+Integer,27,River draining Arabian Sea?,Tapi,,,,
+Integer,28,River draining Bay of Bengal?,Godavari,,,,
+Integer,29,River through Maharashtra?,Godavari,,,,
+Integer,30,River through plateau?,Damodar,,,,
+Integer,31,River forming gorge?,Narmada,,,,
+Integer,32,Island formed by river?,Majuli,,,,
+Integer,33,River joining at Prayagraj?,Yamuna,,,,
+Integer,34,River basin populous?,Ganga,,,,
+Integer,35,Peninsular rivers are?,Old,,,,
+Integer,36,Himalayan rivers are?,Perennial,,,,
+Integer,37,Tributary of Indus?,Chenab,,,,
+Integer,38,River of western ghats?,Godavari,,,,
+Integer,39,River in Rann of Kutch?,Luni,,,,
+Integer,40,Drainage pattern type?,Dendritic,,,,
+Integer,41,Water divide means?,Highland,,,,
+Integer,42,Main water divide of India?,Ambala,,,,
+Integer,43,River joining Bangladesh?,Brahmaputra,,,,
+Integer,44,Major east flowing river?,Mahanadi,,,,
+Integer,45,Major west flowing river?,Narmada,,,,
+Integer,46,River basin for agriculture?,Ganga,,,,
+Integer,47,River in Bihar?,Kosi,,,,
+Integer,48,River from Amarkantak?,Narmada,,,,
+Integer,49,River draining Chota Nagpur?,Damodar,,,,
+Integer,50,River system of north?,Himalayan,,,,
+
+Descriptive,1,What is drainage?,,,,,The river system of an area
+Descriptive,2,What is a river basin?,,,,,Area drained by a river
+Descriptive,3,What is a water divide?,,,,,Highland separating river basins
+Descriptive,4,Name major Himalayan rivers.,,,,,Indus Ganga Brahmaputra
+Descriptive,5,Describe the Ganga river system.,,,,,Major Himalayan river with many tributaries
+Descriptive,6,Describe the Brahmaputra river.,,,,,Powerful river prone to floods
+Descriptive,7,Describe the Indus river system.,,,,,River flowing to Arabian Sea
+Descriptive,8,What are peninsular rivers?,,,,,Old seasonal rivers
+Descriptive,9,Name major peninsular rivers.,,,,,Godavari Krishna Kaveri Mahanadi
+Descriptive,10,Difference between Himalayan and Peninsular rivers.,,,,,Perennial vs seasonal
+Descriptive,11,Why Himalayan rivers are perennial?,,,,,Snow and rain fed
+Descriptive,12,Why peninsular rivers are seasonal?,,,,,Depend on rainfall
+Descriptive,13,What is a delta?,,,,,River deposit at mouth
+Descriptive,14,What is an estuary?,,,,,Tidal river mouth
+Descriptive,15,Why Narmada forms estuary?,,,,,Hard rocks fast flow
+Descriptive,16,Importance of rivers.,,,,,Water agriculture transport
+Descriptive,17,How rivers shape landforms?,,,,,Erosion and deposition
+Descriptive,18,Why Ganga basin fertile?,,,,,Alluvial soil
+Descriptive,19,Explain drainage patterns.,,,,,Dendritic trellis etc
+Descriptive,20,What is dendritic pattern?,,,,,Tree like branching
+Descriptive,21,Why Brahmaputra causes floods?,,,,,Heavy rainfall and silt
+Descriptive,22,What is river pollution?,,,,,Contamination of river water
+Descriptive,23,Causes of river pollution.,,,,,Industrial waste sewage
+Descriptive,24,Effects of river pollution.,,,,,Harm to life
+Descriptive,25,How to conserve rivers?,,,,,Prevent pollution
+Descriptive,26,Role of rivers in civilization.,,,,,Settlement and trade
+Descriptive,27,Why rivers are called lifelines?,,,,,Support life
+Descriptive,28,What is seasonal river?,,,,,Flows in rainy season
+Descriptive,29,What is perennial river?,,,,,Flows year round
+Descriptive,30,Why dams built on rivers?,,,,,Irrigation power
+Descriptive,31,Problems of dams.,,,,,Displacement
+Descriptive,32,Importance of Ganga.,,,,,Religion agriculture transport
+Descriptive,33,Why Kosi is sorrow of Bihar?,,,,,Frequent floods
+Descriptive,34,Describe east flowing rivers.,,,,,Form deltas
+Descriptive,35,Describe west flowing rivers.,,,,,Short estuaries
+Descriptive,36,Why rivers erode land?,,,,,Flowing water energy
+Descriptive,37,What is river meander?,,,,,Bends in river
+Descriptive,38,Explain flood plains.,,,,,Flat fertile areas
+Descriptive,39,What is watershed?,,,,,Area dividing rivers
+Descriptive,40,Importance of drainage system.,,,,,Water management
+Descriptive,41,Why rivers important for agriculture?,,,,,Irrigation
+Descriptive,42,How rivers affect climate?,,,,,Humidity rainfall
+Descriptive,43,What is river capture?,,,,,Change of course
+Descriptive,44,Why peninsular rivers are shorter?,,,,,Hard rock terrain
+Descriptive,45,Describe Damodar river.,,,,,River of sorrow
+Descriptive,46,Why Brahmaputra braided?,,,,,Heavy silt load
+Descriptive,47,Explain river erosion.,,,,,Wearing away land
+Descriptive,48,Explain river deposition.,,,,,Sediment settling
+Descriptive,49,How rivers help trade?,,,,,Navigation routes
+Descriptive,50,Summarise drainage of India.,,,,,Himalayan and peninsular systems

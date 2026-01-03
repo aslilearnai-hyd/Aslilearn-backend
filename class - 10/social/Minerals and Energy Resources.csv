@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Minerals are defined as,Man-made substances,Naturally occurring substances,Artificial resources,Biotic resources,Naturally occurring substances
+MCQ,2,Which mineral is known as the backbone of modern industry?,Copper,Iron ore,Gold,Aluminium,Iron ore
+MCQ,3,Which mineral is used in steel production?,Bauxite,Iron ore,Mica,Limestone,Iron ore
+MCQ,4,Which mineral is an important raw material for aluminium?,Iron ore,Bauxite,Manganese,Copper,Bauxite
+MCQ,5,Which mineral is used in electrical industry?,Coal,Mica,Iron ore,Limestone,Mica
+MCQ,6,Minerals found in cracks and crevices are called,Placer deposits,Veins and lodes,Residual deposits,Alluvial deposits,Veins and lodes
+MCQ,7,Minerals deposited in river beds are called,Veins,Residual,Placer deposits,Igneous,Placer deposits
+MCQ,8,Which type of coal has the highest carbon content?,Lignite,Peat,Bituminous,Anthracite,Anthracite
+MCQ,9,Which is a non-metallic mineral?,Iron,Manganese,Mica,Copper,Mica
+MCQ,10,Which mineral is used in cement industry?,Coal,Limestone,Mica,Bauxite,Limestone
+MCQ,11,Which mineral is used as fuel?,Iron,Bauxite,Coal,Mica,Coal
+MCQ,12,Which state is the largest producer of iron ore?,Odisha,Chhattisgarh,Goa,Karnataka,Odisha
+MCQ,13,Which region has rich iron ore deposits?,Chotanagpur Plateau,Deccan Plateau,Western Ghats,Northern Plains,Chotanagpur Plateau
+MCQ,14,Which mineral is obtained from placer deposits?,Iron,Bauxite,Gold,Manganese,Gold
+MCQ,15,Which mineral is used in manufacturing aircraft?,Iron,Copper,Bauxite,Manganese,Bauxite
+MCQ,16,Which energy resource is renewable?,Coal,Petroleum,Hydel power,Natural gas,Hydel power
+MCQ,17,Which source of energy is called fossil fuel?,Solar,Wind,Coal,Hydel,Coal
+MCQ,18,Which energy source is obtained from sun?,Thermal,Hydel,Solar,Nuclear,Solar
+MCQ,19,Which is a conventional source of energy?,Solar,Wind,Coal,Biogas,Coal
+MCQ,20,Which is a non-conventional energy source?,Coal,Petroleum,Solar,Natural gas,Solar
+MCQ,21,Which state leads in coal production?,Jharkhand,Odisha,Chhattisgarh,West Bengal,Jharkhand
+MCQ,22,Which coalfield is the oldest in India?,Jharia,Bokaro,Raniganj,Talcher,Raniganj
+MCQ,23,Which mineral is used to harden steel?,Iron,Bauxite,Manganese,Mica,Manganese
+MCQ,24,Which mineral is essential for automobile industry?,Copper,Iron ore,Mica,Gold,Iron ore
+MCQ,25,Which energy source causes maximum pollution?,Solar,Wind,Coal,Hydel,Coal
+MCQ,26,Which mineral is obtained from ocean water?,Coal,Petroleum,Common salt,Iron,Common salt
+MCQ,27,Which oilfield is located in Assam?,Digboi,Mumbai High,Ankleshwar,Koyali,Digboi
+MCQ,28,Mumbai High is related to,Coal,Iron ore,Petroleum,Mica,Petroleum
+MCQ,29,Which mineral is also called white gold?,Iron,Bauxite,Mica,Limestone,Mica
+MCQ,30,Which power station uses water to generate electricity?,Thermal,Nuclear,Hydel,Solar,Hydel
+MCQ,31,Which energy resource is environment friendly?,Coal,Nuclear,Solar,Petroleum,Solar
+MCQ,32,Which mineral is used in fertilizers?,Iron,Mica,Potash,Bauxite,Potash
+MCQ,33,Which state has large bauxite deposits?,Jharkhand,Odisha,Punjab,Haryana,Odisha
+MCQ,34,Which mineral is used in making wires?,Iron,Mica,Copper,Coal,Copper
+MCQ,35,Which energy source is obtained from decomposition of waste?,Solar,Biogas,Hydel,Wind,Biogas
+MCQ,36,Which mineral is used in glass industry?,Mica,Limestone,Bauxite,Iron,Limestone
+MCQ,37,Which coal is low-grade and has high moisture?,Anthracite,Bituminous,Lignite,Peat,Lignite
+MCQ,38,Which mineral is important for stainless steel?,Iron,Manganese,Copper,Mica,Manganese
+MCQ,39,Which is a renewable energy resource?,Petroleum,Natural gas,Wind,Coal,Wind
+MCQ,40,Which mineral is used in making cement?,Mica,Iron,Limestone,Gold,Limestone
+MCQ,41,Which energy source depends on wind?,Solar,Hydel,Wind energy,Nuclear,Wind energy
+MCQ,42,Which state has petroleum reserves in offshore areas?,Assam,Gujarat,Maharashtra,Rajasthan,Maharashtra
+MCQ,43,Which mineral resource is finite?,Solar,Wind,Coal,Hydel,Coal
+MCQ,44,Which mineral is used in electrical appliances?,Copper,Coal,Bauxite,Iron,Copper
+MCQ,45,Which energy resource uses uranium?,Solar,Hydel,Nuclear,Wind,Nuclear
+MCQ,46,Which mineral is essential for construction?,Iron,Limestone,Mica,Bauxite,Limestone
+MCQ,47,Which coal type is most suitable for power generation?,Anthracite,Bituminous,Lignite,Peat,Bituminous
+MCQ,48,Which state is famous for mica production?,Jharkhand,Punjab,Kerala,Haryana,Jharkhand
+MCQ,49,Which energy resource is inexhaustible?,Coal,Petroleum,Wind,Natural gas,Wind
+MCQ,50,The main aim of mineral conservation is,Sustainable use,Maximum extraction,Export,Industrialisation,Sustainable use
+
+Integer,1,Backbone of industry?,Iron ore,,,,
+Integer,2,Raw material for aluminium?,Bauxite,,,,
+Integer,3,Highest grade coal?,Anthracite,,,,
+Integer,4,Non-metallic mineral?,Mica,,,,
+Integer,5,Fuel mineral?,Coal,,,,
+Integer,6,Energy from sun?,Solar,,,,
+Integer,7,Largest iron ore producer?,Odisha,,,,
+Integer,8,Oldest coalfield?,Raniganj,,,,
+Integer,9,Oilfield in Assam?,Digboi,,,,
+Integer,10,Offshore oilfield?,Mumbai High,,,,
+Integer,11,Renewable energy?,Wind,,,,
+Integer,12,Energy from waste?,Biogas,,,,
+Integer,13,Steel hardening mineral?,Manganese,,,,
+Integer,14,Cement raw material?,Limestone,,,,
+Integer,15,Aircraft metal?,Aluminium,,,,
+Integer,16,Coal with high moisture?,Lignite,,,,
+Integer,17,Energy using uranium?,Nuclear,,,,
+Integer,18,Glass industry mineral?,Limestone,,,,
+Integer,19,White gold mineral?,Mica,,,,
+Integer,20,Oil producing state?,Assam,,,,
+Integer,21,Placer deposit mineral?,Gold,,,,
+Integer,22,Conventional energy?,Coal,,,,
+Integer,23,Non-conventional energy?,Solar,,,,
+Integer,24,State rich in mica?,Jharkhand,,,,
+Integer,25,Metal for wires?,Copper,,,,
+Integer,26,Power from water?,Hydel,,,,
+Integer,27,Energy causing pollution?,Coal,,,,
+Integer,28,Resource needing conservation?,Minerals,,,,
+Integer,29,Energy from wind?,Wind energy,,,,
+Integer,30,Finite resource?,Coal,,,,
+Integer,31,Mineral from sea?,Salt,,,,
+Integer,32,Energy saving fuel?,Natural gas,,,,
+Integer,33,State rich in bauxite?,Odisha,,,,
+Integer,34,Construction mineral?,Iron,,,,
+Integer,35,Steel industry mineral?,Iron ore,,,,
+Integer,36,Energy for future?,Solar,,,,
+Integer,37,Oil producing region offshore?,Mumbai High,,,,
+Integer,38,Coal for power plants?,Bituminous,,,,
+Integer,39,Energy resource inexhaustible?,Wind,,,,
+Integer,40,Main coal belt?,Chotanagpur,,,,
+Integer,41,Metallic mineral example?,Iron,,,,
+Integer,42,Non-renewable energy?,Coal,,,,
+Integer,43,Energy from biomass?,Biogas,,,,
+Integer,44,Main theme?,Minerals and energy,,,,
+Integer,45,Resource conservation aim?,Sustainability,,,,
+Integer,46,Energy resource polluting?,Coal,,,,
+Integer,47,Mineral for fertilizers?,Potash,,,,
+Integer,48,Metal used in vehicles?,Iron,,,,
+Integer,49,Energy from rivers?,Hydel,,,,
+Integer,50,Chapter focus?,Resources,,,,
+
+Descriptive,1,What are minerals?,,,,,Naturally occurring substances with fixed composition
+Descriptive,2,Explain classification of minerals.,,,,,Metallic and non-metallic minerals
+Descriptive,3,Describe iron ore and its uses.,,,,,Used in steel and construction
+Descriptive,4,Explain bauxite and its importance.,,,,,Raw material for aluminium
+Descriptive,5,Describe mica and its uses.,,,,,Used in electrical industry
+Descriptive,6,What are energy resources?,,,,,Sources that provide power
+Descriptive,7,Explain conventional energy resources.,,,,,Coal, petroleum and hydel power
+Descriptive,8,Explain non-conventional energy resources.,,,,,Solar, wind and biogas
+Descriptive,9,Describe coal types.,,,,,Anthracite, bituminous, lignite, peat
+Descriptive,10,Explain petroleum as an energy resource.,,,,,Major source of fuel
+Descriptive,11,Describe natural gas.,,,,,Cleanest fossil fuel
+Descriptive,12,Explain hydel power.,,,,,Energy from flowing water
+Descriptive,13,Describe solar energy.,,,,,Energy from sun
+Descriptive,14,Explain wind energy.,,,,,Energy from wind movement
+Descriptive,15,What is nuclear energy?,,,,,Energy from atomic reactions
+Descriptive,16,Explain mineral conservation.,,,,,Judicious use of minerals
+Descriptive,17,Describe iron ore distribution in India.,,,,,Odisha, Jharkhand, Durg
+Descriptive,18,Explain coal distribution in India.,,,,,Jharkhand and West Bengal
+Descriptive,19,Describe petroleum distribution in India.,,,,,Assam, Gujarat, Mumbai High
+Descriptive,20,Explain the importance of minerals.,,,,,Essential for development
+Descriptive,21,Explain uses of manganese.,,,,,Hardening steel
+Descriptive,22,Describe limestone and its uses.,,,,,Cement and glass
+Descriptive,23,Explain environmental impact of mining.,,,,,Pollution and land degradation
+Descriptive,24,Explain why minerals are finite.,,,,,Takes millions of years
+Descriptive,25,Explain importance of energy resources.,,,,,Supports industry and life
+Descriptive,26,Describe biogas plants.,,,,,Energy from organic waste
+Descriptive,27,Explain need for alternative energy.,,,,,To reduce pollution
+Descriptive,28,Explain distribution of bauxite.,,,,,Odisha and Gujarat
+Descriptive,29,Describe coal as fossil fuel.,,,,,Formed from dead vegetation
+Descriptive,30,Explain power generation in India.,,,,,Thermal, hydel and nuclear
+Descriptive,31,Describe mining methods.,,,,,Open cast and shaft mining
+Descriptive,32,Explain renewable energy.,,,,,Can be replenished
+Descriptive,33,Explain non-renewable energy.,,,,,Finite resources
+Descriptive,34,Describe challenges in mineral extraction.,,,,,High cost and pollution
+Descriptive,35,Explain role of minerals in economy.,,,,,Industrial growth
+Descriptive,36,Explain sustainable use of energy.,,,,,Conservation for future
+Descriptive,37,Describe oil refineries.,,,,,Processing crude oil
+Descriptive,38,Explain distribution of mica.,,,,,Jharkhand belt
+Descriptive,39,Describe importance of iron and steel industry.,,,,,Foundation of industries
+Descriptive,40,Explain role of technology in mining.,,,,,Improves efficiency
+Descriptive,41,Describe hydel projects.,,,,,Dams and reservoirs
+Descriptive,42,Explain advantages of renewable energy.,,,,,Eco-friendly and sustainable
+Descriptive,43,Explain disadvantages of fossil fuels.,,,,,Pollution and depletion
+Descriptive,44,Describe India’s energy needs.,,,,,Growing demand
+Descriptive,45,Explain importance of conservation.,,,,,Protect future resources
+Descriptive,46,Describe impact of mining on environment.,,,,,Deforestation and pollution
+Descriptive,47,Explain mineral-based industries.,,,,,Depend on raw materials
+Descriptive,48,Explain future of energy resources.,,,,,Shift to renewables
+Descriptive,49,Explain government role in energy sector.,,,,,Policies and regulation
+Descriptive,50,Summarize Minerals and Energy Resources.,,,,,Chapter explains types, distribution and conservation of resources

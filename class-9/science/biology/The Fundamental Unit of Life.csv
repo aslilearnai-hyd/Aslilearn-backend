@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Who discovered the cell?,Robert Hooke,Leeuwenhoek,Schleiden,Schwann,Robert Hooke
+MCQ,2,Cell is the basic unit of?,Life,Tissue,Organ,System,Life
+MCQ,3,Which organism is unicellular?,Human,Amoeba,Frog,Tree,Amoeba
+MCQ,4,Which cell organelle is called power house?,Ribosome,Nucleus,Mitochondria,Vacuole,Mitochondria
+MCQ,5,Cell wall is present in?,Animal cell,Plant cell,Both,None,Plant cell
+MCQ,6,Plasma membrane is?,Permeable,Impermeable,Selectively permeable,None,Selectively permeable
+MCQ,7,Which organelle controls cell activities?,Mitochondria,Nucleus,Ribosome,ER,Nucleus
+MCQ,8,Which organelle contains DNA?,Ribosome,Nucleus,ER,Vacoule,Nucleus
+MCQ,9,Which organelle is absent in animal cell?,Cell wall,Mitochondria,Ribosome,Nucleus,Cell wall
+MCQ,10,Which organelle helps in protein synthesis?,Ribosome,Golgi body,Lysosome,Vacuole,Ribosome
+MCQ,11,Which organelle modifies proteins?,ER,Ribosome,Golgi apparatus,Nucleus,Golgi apparatus
+MCQ,12,Which organelle contains digestive enzymes?,Mitochondria,Lysosome,Ribosome,ER,Lysosome
+MCQ,13,Which cell organelle is suicidal bag?,Lysosome,Nucleus,Mitochondria,Vacuole,Lysosome
+MCQ,14,Which organelle stores materials?,Vacuole,Ribosome,ER,Golgi,Vacuole
+MCQ,15,Plant cell vacuole is?,Small,Absent,Large,None,Large
+MCQ,16,Which organelle helps in lipid synthesis?,SER,RER,Golgi,Nucleus,SER
+MCQ,17,Which organelle transports materials?,ER,Golgi,Mitochondria,None,ER
+MCQ,18,Which cell has no nucleus?,RBC,WBC,Nerve cell,Muscle cell,RBC
+MCQ,19,Which organelle is present in all cells?,Nucleus,Ribosome,Mitochondria,Vacuole,Ribosome
+MCQ,20,Which structure gives shape to plant cell?,Cell membrane,Cell wall,Nucleus,None,Cell wall
+MCQ,21,Plastids are found in?,Animal cells,Plant cells,Both,None,Plant cells
+MCQ,22,Which plastid is green?,Leucoplast,Chromoplast,Chloroplast,None,Chloroplast
+MCQ,23,Which plastid stores food?,Chloroplast,Chromoplast,Leucoplast,None,Leucoplast
+MCQ,24,Which plastid gives color to fruits?,Chloroplast,Chromoplast,Leucoplast,None,Chromoplast
+MCQ,25,Photosynthesis occurs in?,Mitochondria,Nucleus,Chloroplast,ER,Chloroplast
+MCQ,26,Which organelle is double membrane?,Nucleus,Mitochondria,Both,None,Both
+MCQ,27,Which organelle is single membrane?,Lysosome,Nucleus,Mitochondria,None,Lysosome
+MCQ,28,Which structure surrounds nucleus?,Nuclear membrane,Cell wall,Plasma membrane,None,Nuclear membrane
+MCQ,29,Which organelle has ribosomes attached?,SER,RER,Golgi,None,RER
+MCQ,30,Which organelle produces ATP?,Ribosome,Mitochondria,Golgi,None,Mitochondria
+MCQ,31,Which cell part is living?,Cell wall,Vacuole,Cytoplasm,None,Cytoplasm
+MCQ,32,Which cell part is non-living?,Cytoplasm,Nucleus,Cell wall,ER,Cell wall
+MCQ,33,Which organelle absent in prokaryotes?,Nucleus,Ribosome,Plasma membrane,Cell wall,Nucleus
+MCQ,34,Which organism is prokaryotic?,Amoeba,Bacteria,Fungi,Plant,Bacteria
+MCQ,35,Which structure controls entry and exit?,Cell wall,Plasma membrane,Nucleus,None,Plasma membrane
+MCQ,36,Which process is diffusion?,Movement from high to low concentration,Low to high,None,None,Movement from high to low concentration
+MCQ,37,Which process requires energy?,Diffusion,Osmosis,Active transport,None,Active transport
+MCQ,38,Osmosis is movement of?,Solute,Salt,Water,None,Water
+MCQ,39,Endocytosis occurs in?,Plant cell,Animal cell,Both,None,Animal cell
+MCQ,40,Which cell organelle digests waste?,Lysosome,ER,Golgi,None,Lysosome
+MCQ,41,Which cell has large vacuole?,Animal,Plant,Bacteria,None,Plant
+MCQ,42,Which organelle forms lysosomes?,Golgi body,ER,Nucleus,None,Golgi body
+MCQ,43,Which structure gives rigidity?,Plasma membrane,Cell wall,Nucleus,None,Cell wall
+MCQ,44,Which cell organelle is called brain?,Nucleus,Mitochondria,Golgi,None,Nucleus
+MCQ,45,Which part contains cell sap?,Vacuole,Nucleus,ER,None,Vacuole
+MCQ,46,Which cell organelle is protein factory?,Ribosome,ER,Golgi,None,Ribosome
+MCQ,47,Which structure absent in plant cell?,Centriole,Cell wall,Chloroplast,None,Centriole
+MCQ,48,Which organelle is present only in animal cells?,Centriole,Cell wall,Plastid,None,Centriole
+MCQ,49,Which cell organelle stores enzymes?,Lysosome,ER,Golgi,None,Lysosome
+MCQ,50,Which structure separates cell from environment?,Cell wall,Nucleus,Plasma membrane,None,Plasma membrane
+
+Integer,1,Who discovered cell?,Robert Hooke,,,,
+Integer,2,Basic unit of life?,Cell,,,,
+Integer,3,Cell without nucleus?,RBC,,,,
+Integer,4,Power house of cell?,Mitochondria,,,,
+Integer,5,Organelle with DNA?,Nucleus,,,,
+Integer,6,Cell wall present in?,Plant cell,,,,
+Integer,7,Cell membrane type?,Selective permeable,,,,
+Integer,8,Protein synthesis site?,Ribosome,,,,
+Integer,9,Photosynthesis site?,Chloroplast,,,,
+Integer,10,Suicidal bag?,Lysosome,,,,
+Integer,11,Storage organelle?,Vacuole,,,,
+Integer,12,Lipid synthesis?,SER,,,,
+Integer,13,Protein modification?,Golgi body,,,,
+Integer,14,Transport organelle?,ER,,,,
+Integer,15,ATP producing organelle?,Mitochondria,,,,
+Integer,16,Plastids found in?,Plants,,,,
+Integer,17,Green plastid?,Chloroplast,,,,
+Integer,18,Food storage plastid?,Leucoplast,,,,
+Integer,19,Colored plastid?,Chromoplast,,,,
+Integer,20,Double membrane organelle?,Nucleus,,,,
+Integer,21,Living cell part?,Cytoplasm,,,,
+Integer,22,Non living cell part?,Cell wall,,,,
+Integer,23,Organelle absent in prokaryotes?,Nucleus,,,,
+Integer,24,Prokaryotic organism?,Bacteria,,,,
+Integer,25,Water movement across membrane?,Osmosis,,,,
+Integer,26,Movement without energy?,Diffusion,,,,
+Integer,27,Movement with energy?,Active transport,,,,
+Integer,28,Entry of materials into cell?,Endocytosis,,,,
+Integer,29,Waste digestion organelle?,Lysosome,,,,
+Integer,30,Large vacuole cell?,Plant cell,,,,
+Integer,31,Organelle forming lysosome?,Golgi body,,,,
+Integer,32,Controls cell activities?,Nucleus,,,,
+Integer,33,Organelle absent in animal cell?,Cell wall,,,,
+Integer,34,Organelle absent in plant cell?,Centriole,,,,
+Integer,35,Cell sap present in?,Vacuole,,,,
+Integer,36,Organelle present in all cells?,Ribosome,,,,
+Integer,37,Rigid cell structure?,Cell wall,,,,
+Integer,38,Fluid part of cell?,Cytoplasm,,,,
+Integer,39,Plasma membrane allows?,Selective entry,,,,
+Integer,40,Organelle with cristae?,Mitochondria,,,,
+Integer,41,Cell theory given by?,Schleiden and Schwann,,,,
+Integer,42,Nucleus surrounded by?,Nuclear membrane,,,,
+Integer,43,Organelle with ribosomes?,RER,,,,
+Integer,44,Cell without membrane bound organelles?,Prokaryote,,,,
+Integer,45,Photosynthetic pigment?,Chlorophyll,,,,
+Integer,46,Cell boundary in animals?,Plasma membrane,,,,
+Integer,47,Organelle storing enzymes?,Lysosome,,,,
+Integer,48,Cell wall made of?,Cellulose,,,,
+Integer,49,Cell size smallest?,Bacteria,,,,
+Integer,50,Cell size largest?,Ostrich egg,,,,
+
+Descriptive,1,Define cell.,,,,,Cell is the basic structural and functional unit of life
+Descriptive,2,Who discovered cell and how?,,,,,Robert Hooke discovered cell in cork
+Descriptive,3,Define unicellular organism.,,,,,Organism made of one cell
+Descriptive,4,Define multicellular organism.,,,,,Organism made of many cells
+Descriptive,5,Explain cell theory.,,,,,All organisms made of cells; cell is basic unit
+Descriptive,6,Describe plasma membrane.,,,,,Selectively permeable membrane controlling entry and exit
+Descriptive,7,What is cell wall?,,,,,Rigid outer layer in plant cells
+Descriptive,8,Explain nucleus.,,,,,Controls activities and contains genetic material
+Descriptive,9,Explain mitochondria.,,,,,Produces energy in form of ATP
+Descriptive,10,Explain ribosomes.,,,,,Sites of protein synthesis
+Descriptive,11,Explain ER.,,,,,Transport and synthesis network
+Descriptive,12,Explain Golgi apparatus.,,,,,Modifies and packages proteins
+Descriptive,13,Explain lysosomes.,,,,,Digest wastes and worn-out organelles
+Descriptive,14,Explain vacuole.,,,,,Stores cell sap and materials
+Descriptive,15,Explain plastids.,,,,,Organelles for photosynthesis and storage
+Descriptive,16,What is chloroplast?,,,,,Green plastid for photosynthesis
+Descriptive,17,What is leucoplast?,,,,,Stores food materials
+Descriptive,18,What is chromoplast?,,,,,Gives colour to fruits and flowers
+Descriptive,19,Define diffusion.,,,,,Movement from high to low concentration
+Descriptive,20,Define osmosis.,,,,,Movement of water across membrane
+Descriptive,21,Define active transport.,,,,,Movement against gradient using energy
+Descriptive,22,What is endocytosis?,,,,,Intake of materials by cell
+Descriptive,23,Difference between plant and animal cell.,,,,,Plant cells have wall and plastids
+Descriptive,24,Difference between prokaryotic and eukaryotic.,,,,,Prokaryotes lack nucleus
+Descriptive,25,Function of cell wall.,,,,,Provides shape and protection
+Descriptive,26,Function of plasma membrane.,,,,,Controls substance movement
+Descriptive,27,Function of nucleus.,,,,,Controls heredity and metabolism
+Descriptive,28,Function of mitochondria.,,,,,Energy production
+Descriptive,29,Function of ribosomes.,,,,,Protein synthesis
+Descriptive,30,Function of Golgi body.,,,,,Packaging and secretion
+Descriptive,31,Function of lysosome.,,,,,Intracellular digestion
+Descriptive,32,Function of vacuole.,,,,,Maintains turgidity
+Descriptive,33,Function of chloroplast.,,,,,Photosynthesis
+Descriptive,34,What are chromosomes?,,,,,Structures carrying genes
+Descriptive,35,What is cytoplasm?,,,,,Fluid matrix of cell
+Descriptive,36,Why mitochondria double membrane?,,,,,For efficient respiration
+Descriptive,37,Why lysosome called suicidal bag?,,,,,Releases enzymes on damage
+Descriptive,38,Why plant cells have large vacuole?,,,,,Maintains rigidity
+Descriptive,39,Why RBC has no nucleus?,,,,,More space for haemoglobin
+Descriptive,40,Why ribosomes present in all cells?,,,,,Essential for protein synthesis
+Descriptive,41,What is cell sap?,,,,,Fluid inside vacuole
+Descriptive,42,Why cell wall absent in animals?,,,,,Animals need flexibility
+Descriptive,43,Explain membrane permeability.,,,,,Allows selective movement
+Descriptive,44,Why chloroplast absent in animals?,,,,,No photosynthesis
+Descriptive,45,Explain plasmolysis.,,,,,Shrinkage of cytoplasm in hypertonic solution
+Descriptive,46,Explain hypotonic solution.,,,,,Cell swells due to water entry
+Descriptive,47,Explain hypertonic solution.,,,,,Cell shrinks due to water loss
+Descriptive,48,Explain isotonic solution.,,,,,No net water movement
+Descriptive,49,What are organelles?,,,,,Specialized structures in cell
+Descriptive,50,Why cell is called fundamental unit?,,,,,All life functions occur in cells

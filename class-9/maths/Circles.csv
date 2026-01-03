@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,A circle is the collection of points?,At same distance from centre,At different distance,Inside circle,Outside circle,At same distance from centre
+MCQ,2,The fixed distance from centre to circle is called?,Diameter,Radius,Chord,Arc,Radius
+MCQ,3,The longest chord of a circle is?,Radius,Diameter,Arc,Tangent,Diameter
+MCQ,4,The centre of a circle lies?,On the circle,Inside the circle,Outside the circle,On diameter,Inside the circle
+MCQ,5,A chord passing through centre is?,Radius,Diameter,Arc,Secant,Diameter
+MCQ,6,How many radii does a circle have?,1,2,Infinite,4,Infinite
+MCQ,7,How many diameters does a circle have?,1,2,Infinite,4,Infinite
+MCQ,8,A diameter is how many times the radius?,1,2,3,4,2
+MCQ,9,The radius is how many times the diameter?,1,1/2,2,3,1/2
+MCQ,10,Which is true?,All diameters are equal,All chords are equal,All arcs are equal,None,All diameters are equal
+MCQ,11,A chord divides the circle into?,Two arcs,Two radii,Two diameters,None,Two arcs
+MCQ,12,A line segment joining centre to any point on circle is?,Diameter,Radius,Chord,Arc,Radius
+MCQ,13,A chord that is not diameter lies?,Inside centre,Outside centre,At centre,None,Outside centre
+MCQ,14,Which passes through centre?,Radius,Chord,Diameter,Arc,Diameter
+MCQ,15,The distance around a circle is?,Area,Diameter,Circumference,Radius,Circumference
+MCQ,16,A circle has how many centres?,0,1,2,Infinite,1
+MCQ,17,Equal chords of a circle are?,Equidistant from centre,Unequal distance,Touch centre,None,Equidistant from centre
+MCQ,18,Chords equidistant from centre are?,Equal,Unequal,Parallel,None,Equal
+MCQ,19,Perpendicular from centre to chord?,Bisects chord,Equal chord,Parallel,None,Bisects chord
+MCQ,20,Which is not part of circle?,Radius,Chord,Triangle,Diameter,Triangle
+MCQ,21,The circle is a?,Polygon,Closed curve,Open curve,Line,Closed curve
+MCQ,22,The plane figure bounded by circle is?,Arc,Circle,Disc,Radius,Disc
+MCQ,23,The diameter divides circle into?,Two semicircles,Four quadrants,Two radii,None,Two semicircles
+MCQ,24,If radius is 7 cm, diameter is?,7 cm,14 cm,21 cm,28 cm,14 cm
+MCQ,25,If diameter is 10 cm, radius is?,2 cm,5 cm,10 cm,20 cm,5 cm
+MCQ,26,Which is smaller?,Radius,Diameter,Arc,Circumference,Radius
+MCQ,27,Which is bigger?,Radius,Diameter,Chord,Arc,Diameter
+MCQ,28,The line joining two points on circle is?,Radius,Diameter,Chord,Arc,Chord
+MCQ,29,A chord passing through centre is always?,Smallest chord,Largest chord,Equal,None,Largest chord
+MCQ,30,A circle has how many chords?,1,2,Infinite,4,Infinite
+MCQ,31,The region inside the circle is?,Arc,Chord,Disc,Radius,Disc
+MCQ,32,A circle divides the plane into?,2 parts,3 parts,4 parts,None,3 parts
+MCQ,33,Which lies completely inside the circle?,Diameter,Radius,Chord,None,Chord
+MCQ,34,Distance between centre and circle is?,Radius,Diameter,Circumference,Chord,Radius
+MCQ,35,All radii of a circle are?,Equal,Unequal,Parallel,None,Equal
+MCQ,36,Which statement is false?,All radii equal,All diameters equal,All chords equal,Centre is inside,All chords equal
+MCQ,37,A semicircle is?,Half of circle,Quarter of circle,Full circle,None,Half of circle
+MCQ,38,Two circles are congruent if?,Same radius,Same centre,Same chord,None,Same radius
+MCQ,39,Two circles are equal if?,Same radius,Same diameter,Same area,Both A and C,Both A and C
+MCQ,40,The boundary of disc is?,Arc,Circle,Chord,Radius,Circle
+MCQ,41,A circle is named by its?,Centre,Radius,Diameter,Chord,Centre
+MCQ,42,The centre of a circle is denoted by?,O,C,A,B,O
+MCQ,43,The longest distance in circle?,Radius,Chord,Diameter,Arc,Diameter
+MCQ,44,A radius is a?,Line segment,Ray,Line,Arc,Line segment
+MCQ,45,The distance from centre to chord is measured by?,Radius,Perpendicular,Diameter,Arc,Perpendicular
+MCQ,46,Which is always inside circle?,Centre,Diameter,Arc,Tangent,Centre
+MCQ,47,A chord can be equal to diameter? (Yes/No),Yes,No,Depends,None,Yes
+MCQ,48,The part of circle between two points is?,Radius,Arc,Chord,Diameter,Arc
+MCQ,49,All points on circle are?,Equidistant from centre,At centre,Inside disc,None,Equidistant from centre
+MCQ,50,A circle is a?,1-D figure,2-D figure,3-D figure,None,2-D figure
+
+Integer,1,Number of centres in a circle?,1,,,,
+Integer,2,Number of radii?,Infinite,,,,
+Integer,3,Number of diameters?,Infinite,,,,
+Integer,4,Longest chord?,Diameter,,,,
+Integer,5,Diameter is how many times radius?,2,,,,
+Integer,6,Radius is half of?,Diameter,,,,
+Integer,7,Region inside circle?,Disc,,,,
+Integer,8,Boundary of disc?,Circle,,,,
+Integer,9,Distance from centre to circle?,Radius,,,,
+Integer,10,Chord through centre?,Diameter,,,,
+Integer,11,All radii equal? (Yes/No),Yes,,,,
+Integer,12,All chords equal? (Yes/No),No,,,,
+Integer,13,Centre lies inside circle? (Yes/No),Yes,,,,
+Integer,14,A circle has area? (Yes/No),Yes,,,,
+Integer,15,A circle has perimeter? (Yes/No),Yes,,,,
+Integer,16,Equal chords equidistant from centre? (Yes/No),Yes,,,,
+Integer,17,Perpendicular from centre to chord?,Bisects,,,,
+Integer,18,Diameter divides circle into?,Two semicircles,,,,
+Integer,19,A semicircle is half of?,Circle,,,,
+Integer,20,Number of chords?,Infinite,,,,
+Integer,21,Smallest chord?,None fixed,,,,
+Integer,22,Circle divides plane into how many parts?,3,,,,
+Integer,23,A circle is closed curve? (Yes/No),Yes,,,,
+Integer,24,Diameter is longest chord? (Yes/No),Yes,,,,
+Integer,25,Chord can be diameter? (Yes/No),Yes,,,,
+Integer,26,All diameters equal? (Yes/No),Yes,,,,
+Integer,27,Centre is equidistant from all points? (Yes/No),Yes,,,,
+Integer,28,Radius depends on size? (Yes/No),Yes,,,,
+Integer,29,Diameter depends on radius? (Yes/No),Yes,,,,
+Integer,30,Equal circles have equal area? (Yes/No),Yes,,,,
+Integer,31,Circle named by its centre?,Yes,,,,
+Integer,32,Distance from centre to chord is shortest? (Yes/No),Yes,,,,
+Integer,33,A chord always less than diameter? (Yes/No),Yes,,,,
+Integer,34,Two equal circles have equal radii? (Yes/No),Yes,,,,
+Integer,35,A disc includes boundary? (Yes/No),Yes,,,,
+Integer,36,Number of arcs?,Infinite,,,,
+Integer,37,A circle is polygon? (Yes/No),No,,,,
+Integer,38,Radius is a line segment? (Yes/No),Yes,,,,
+Integer,39,Diameter is twice radius? (Yes/No),Yes,,,,
+Integer,40,Centre lies on circle? (Yes/No),No,,,,
+Integer,41,Chord is part of circle? (Yes/No),Yes,,,,
+Integer,42,Arc is part of circle? (Yes/No),Yes,,,,
+Integer,43,Smallest radius possible?,Depends,,,,
+Integer,44,Chord can pass outside centre? (Yes/No),Yes,,,,
+Integer,45,Radius can be greater than diameter? (Yes/No),No,,,,
+Integer,46,All points inside disc equidistant? (Yes/No),No,,,,
+Integer,47,Circle is 2-D figure? (Yes/No),Yes,,,,
+Integer,48,Disc is filled circle? (Yes/No),Yes,,,,
+Integer,49,Perpendicular from centre to chord bisects chord? (Yes/No),Yes,,,,
+Integer,50,Two congruent circles have same radius? (Yes/No),Yes,,,,
+
+Problem,1,Find diameter if radius is 7 cm.,,,,,14 cm
+Problem,2,Find radius if diameter is 20 cm.,,,,,10 cm
+Problem,3,Name the longest chord of a circle.,,,,,Diameter
+Problem,4,How many diameters can a circle have?,,,,,Infinite
+Problem,5,Find radius if diameter is 14 cm.,,,,,7 cm
+Problem,6,Name the region inside a circle.,,,,,Disc
+Problem,7,What is half of a circle called?,,,,,Semicircle
+Problem,8,Find diameter if radius is 3.5 cm.,,,,,7 cm
+Problem,9,Name a chord passing through centre.,,,,,Diameter
+Problem,10,State the distance from centre to circle.,,,,,Radius
+Problem,11,Are all radii equal?,,,,,Yes
+Problem,12,Are all chords equal?,,,,,No
+Problem,13,What is the boundary of a disc?,,,,,Circle
+Problem,14,How many radii form a diameter?,,,,,2
+Problem,15,Can a chord be equal to diameter?,,,,,Yes
+Problem,16,Which is greater: radius or diameter?,,,,,Diameter
+Problem,17,Name a line segment from centre to circle.,,,,,Radius
+Problem,18,Do equal circles have equal area?,,,,,Yes
+Problem,19,What divides circle into two semicircles?,,,,,Diameter
+Problem,20,Can a circle have two centres?,,,,,No
+Problem,21,What is the shape of a circle?,,,,,Closed curve
+Problem,22,Find radius if diameter is 8 cm.,,,,,4 cm
+Problem,23,Name the part joining two points on circle.,,,,,Chord
+Problem,24,Does diameter pass through centre?,,,,,Yes
+Problem,25,Find diameter if radius is 10 cm.,,,,,20 cm
+Problem,26,How many chords can be drawn?,,,,,Infinite
+Problem,27,Which chord is smallest?,,,,,Depends on position
+Problem,28,Name the distance around circle.,,,,,Circumference
+Problem,29,What bisects a chord at right angle?,,,,,Perpendicular from centre
+Problem,30,Name the plane figure bounded by circle.,,,,,Disc
+Problem,31,Find radius if diameter is 50 cm.,,,,,25 cm
+Problem,32,Name a chord not passing centre.,,,,,Any non-diameter chord
+Problem,33,Are all diameters equal?,,,,,Yes
+Problem,34,Can a radius be longer than diameter?,,,,,No
+Problem,35,How many arcs does a circle have?,,,,,Infinite
+Problem,36,Is circle a polygon?,,,,,No
+Problem,37,Name the largest chord.,,,,,Diameter
+Problem,38,Does centre lie on circle?,,,,,No
+Problem,39,Can chord lie outside centre?,,,,,Yes
+Problem,40,Is radius always inside circle?,,,,,Yes
+Problem,41,What is the shape inside circle?,,,,,Disc
+Problem,42,Find diameter if radius is 2.5 cm.,,,,,5 cm
+Problem,43,Name two equal parts formed by diameter.,,,,,Semicircles
+Problem,44,Is every diameter a chord?,,,,,Yes
+Problem,45,Is every chord a diameter?,,,,,No
+Problem,46,What is distance from centre to chord called?,,,,,Perpendicular
+Problem,47,Name a figure with all points equidistant from centre.,,,,,Circle
+Problem,48,Does disc include centre?,,,,,Yes
+Problem,49,Name a closed curve.,,,,,Circle
+Problem,50,Is circle a 2-D figure?,,,,,Yes

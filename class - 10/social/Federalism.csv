@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Federalism means,Power with one government,Division of power among levels,Military rule,Monarchy,Division of power among levels
+MCQ,2,Which country follows federal system?,Sri Lanka,China,India,Nepal,India
+MCQ,3,How many levels of government are there in India?,One,Two,Three,Four,Three
+MCQ,4,Which is NOT a feature of federalism?,Two governments,Written constitution,Centralisation of power,Division of powers,Centralisation of power
+MCQ,5,Which list has subjects of national importance?,State List,Union List,Concurrent List,Local List,Union List
+MCQ,6,Which list includes subjects of local importance?,Union List,Concurrent List,State List,Residual List,State List
+MCQ,7,Which list includes subjects of common interest?,Union List,State List,Concurrent List,Local List,Concurrent List
+MCQ,8,Who resolves disputes between centre and states?,Parliament,President,Supreme Court,Prime Minister,Supreme Court
+MCQ,9,Which constitution is supreme in a federation?,State constitution,Parliament,Written constitution,Cabinet,Written constitution
+MCQ,10,Which level is responsible for police?,Union,State,Local,Central,State
+MCQ,11,Which country has a coming together federation?,India,Belgium,USA,Sri Lanka,USA
+MCQ,12,Which country has holding together federation?,USA,India,Australia,Canada,India
+MCQ,13,Which amendment strengthened local government?,42nd,44th,73rd,52nd,73rd
+MCQ,14,Panchayati Raj applies to,Urban areas,Rural areas,Both,Industrial areas,Rural areas
+MCQ,15,Municipalities are part of,Union government,State government,Local government,Central government,Local government
+MCQ,16,Which language policy does India follow?,One language,Two languages,Multilingualism,No language,Multilingualism
+MCQ,17,Which schedule contains language list?,7th,8th,9th,10th,8th
+MCQ,18,How many languages are in Eighth Schedule?,14,18,22,25,22
+MCQ,19,Which body conducts elections in India?,Parliament,President,Election Commission,Supreme Court,Election Commission
+MCQ,20,Which government can make laws on Concurrent List?,Centre only,State only,Both centre and state,Local bodies,Both centre and state
+MCQ,21,Which tier includes Zila Parishad?,Union,State,Local,Central,Local
+MCQ,22,Which subject belongs to Union List?,Police,Agriculture,Defence,Public health,Defence
+MCQ,23,Which subject belongs to State List?,Defence,Foreign affairs,Agriculture,Banking,Agriculture
+MCQ,24,Which subject belongs to Concurrent List?,Police,Defence,Education,Trade,Education
+MCQ,25,Which body interprets the constitution?,President,Parliament,Supreme Court,Cabinet,Supreme Court
+MCQ,26,Which feature ensures independence of judiciary?,Appointment by PM,Security of tenure,Removal by president,Low salary,Security of tenure
+MCQ,27,Which country inspired Indian federalism?,USA,UK,France,China,USA
+MCQ,28,Which term refers to three levels of government?,Unitary,Federal,Decentralisation,Centralisation,Decentralisation
+MCQ,29,Which amendment gave constitutional status to Panchayats?,52nd,61st,73rd,86th,73rd
+MCQ,30,Which amendment gave status to municipalities?,73rd,74th,42nd,44th,74th
+MCQ,31,Who appoints the Governor?,Chief Minister,President,Prime Minister,Chief Justice,President
+MCQ,32,Which system has single level of government?,Federal,Unitary,Confederal,Decentralised,Unitary
+MCQ,33,Which feature prevents misuse of power?,Federalism,Judiciary,Democracy,Centralisation,Federalism
+MCQ,34,Which government controls currency?,State,Local,Union,Panchayat,Union
+MCQ,35,Which country follows unitary system?,India,USA,Sri Lanka,Canada,Sri Lanka
+MCQ,36,Which list has residuary powers?,State,Concurrent,Union,Local,Union
+MCQ,37,Which tier deals with village issues?,Union,State,Local,Central,Local
+MCQ,38,Which institution settles inter-state disputes?,High Court,Supreme Court,President,Governor,Supreme Court
+MCQ,39,Which government handles foreign policy?,State,Local,Union,District,Union
+MCQ,40,Which feature promotes unity in diversity?,Centralisation,Federalism,Dictatorship,Monarchy,Federalism
+MCQ,41,Which amendment relates to local self-government?,44th,73rd,52nd,86th,73rd
+MCQ,42,Which level has gram panchayat?,State,Local,Union,Central,Local
+MCQ,43,Which list has subjects like marriage?,Union,State,Concurrent,Local,Concurrent
+MCQ,44,Which tier is closest to people?,Union,State,Local,Central,Local
+MCQ,45,Which country adopted federalism to manage diversity?,China,Sri Lanka,India,Nepal,India
+MCQ,46,Which type of federation is India?,Coming together,Holding together,Unitary,Confederal,Holding together
+MCQ,47,Which factor does NOT promote federalism?,Independent judiciary,Written constitution,Centralisation,Division of powers,Centralisation
+MCQ,48,Which body ensures free elections?,Parliament,Judiciary,Election Commission,President,Election Commission
+MCQ,49,Which subject is shared?,Police,Defence,Education,Currency,Education
+MCQ,50,Federalism is important for,Unity,Democracy,Accommodation,All of these,All of these
+
+Integer,1,Division of power?,Federalism,,,,
+Integer,2,Number of government levels in India?,Three,,,,
+Integer,3,Highest court?,Supreme Court,,,,
+Integer,4,List for defence?,Union List,,,,
+Integer,5,List for agriculture?,State List,,,,
+Integer,6,List for education?,Concurrent List,,,,
+Integer,7,Local government amendment?,73rd,,,,
+Integer,8,Urban bodies amendment?,74th,,,,
+Integer,9,Village body?,Gram Panchayat,,,,
+Integer,10,State head?,Governor,,,,
+Integer,11,Languages in 8th schedule?,22,,,,
+Integer,12,Election conducting body?,Election Commission,,,,
+Integer,13,Country with coming together federation?,USA,,,,
+Integer,14,Country with holding together federation?,India,,,,
+Integer,15,Constitution interpreter?,Supreme Court,,,,
+Integer,16,Police under?,State,,,,
+Integer,17,Currency controlled by?,Union,,,,
+Integer,18,Foreign policy by?,Union,,,,
+Integer,19,Closest government to people?,Local,,,,
+Integer,20,Judiciary independence feature?,Tenure,,,,
+Integer,21,Single government system?,Unitary,,,,
+Integer,22,Multiple language policy?,Multilingualism,,,,
+Integer,23,Decentralisation means?,Power to local,,,,
+Integer,24,Head of state?,President,,,,
+Integer,25,State legislature?,Vidhan Sabha,,,,
+Integer,26,Panchayat term?,5 years,,,,
+Integer,27,Power sharing promotes?,Unity,,,,
+Integer,28,Inter-state dispute resolver?,Supreme Court,,,,
+Integer,29,Local tax collection?,Panchayat,,,,
+Integer,30,Urban local body?,Municipality,,,,
+Integer,31,Residue powers belong to?,Union,,,,
+Integer,32,Indian system?,Federal,,,,
+Integer,33,Education shared subject?,Yes,,,,
+Integer,34,State capital road?,State highway,,,,
+Integer,35,Three tier system includes?,Local,,,,
+Integer,36,Gram Sabha includes?,Villagers,,,,
+Integer,37,Federalism protects?,Diversity,,,,
+Integer,38,Law making body?,Legislature,,,,
+Integer,39,Law implementing body?,Executive,,,,
+Integer,40,Law interpreting body?,Judiciary,,,,
+Integer,41,Local self-government?,Decentralisation,,,,
+Integer,42,Power divided constitutionally?,Yes,,,,
+Integer,43,Local government example?,Panchayat,,,,
+Integer,44,Federalism opposite?,Unitary,,,,
+Integer,45,Democracy needs?,Federalism,,,,
+Integer,46,State executive head?,Chief Minister,,,,
+Integer,47,Indian constitution type?,Written,,,,
+Integer,48,State dispute?,Inter-state,,,,
+Integer,49,Chapter theme?,Federalism,,,,
+Integer,50,Power sharing type?,Vertical,,,,
+
+Descriptive,1,What is federalism?,,,,,Federalism is division of power between central and state governments
+Descriptive,2,Explain features of federalism.,,,,,Two levels, constitution, judiciary
+Descriptive,3,Why is federalism important?,,,,,Manages diversity and unity
+Descriptive,4,Explain Union List.,,,,,Subjects of national importance
+Descriptive,5,Explain State List.,,,,,Subjects of state importance
+Descriptive,6,Explain Concurrent List.,,,,,Subjects shared by centre and state
+Descriptive,7,What is decentralisation?,,,,,Transfer of power to local bodies
+Descriptive,8,Explain Panchayati Raj.,,,,,Local government in villages
+Descriptive,9,Explain municipalities.,,,,,Urban local government
+Descriptive,10,Explain role of Supreme Court.,,,,,Guardian of constitution
+Descriptive,11,Explain Indian federal system.,,,,,Holding together federation
+Descriptive,12,Explain coming together federation.,,,,,Independent states unite
+Descriptive,13,Explain holding together federation.,,,,,Centre gives power to states
+Descriptive,14,Explain language policy of India.,,,,,Multilingual approach
+Descriptive,15,Explain 73rd Amendment.,,,,,Strengthened Panchayats
+Descriptive,16,Explain 74th Amendment.,,,,,Strengthened municipalities
+Descriptive,17,Explain separation of powers.,,,,,Division among organs
+Descriptive,18,Explain role of Election Commission.,,,,,Conducts free elections
+Descriptive,19,Explain inter-state relations.,,,,,Resolved constitutionally
+Descriptive,20,Explain need for independent judiciary.,,,,,Checks misuse of power
+Descriptive,21,Explain federalism and democracy.,,,,,Ensures participation
+Descriptive,22,Explain power distribution.,,,,,Prevents centralisation
+Descriptive,23,Explain financial autonomy of states.,,,,,Tax sharing
+Descriptive,24,Explain role of governors.,,,,,State-centre link
+Descriptive,25,Explain Gram Sabha.,,,,,Village assembly
+Descriptive,26,Explain Zila Parishad.,,,,,District level body
+Descriptive,27,Explain local self-government.,,,,,Grassroot democracy
+Descriptive,28,Explain challenges to federalism.,,,,,Central dominance
+Descriptive,29,Explain importance of constitution.,,,,,Defines powers
+Descriptive,30,Explain linguistic diversity.,,,,,Multiple languages
+Descriptive,31,Explain cooperative federalism.,,,,,Centre-state cooperation
+Descriptive,32,Explain competitive federalism.,,,,,Healthy competition
+Descriptive,33,Explain role of states.,,,,,Regional development
+Descriptive,34,Explain role of centre.,,,,,National unity
+Descriptive,35,Explain federal disputes.,,,,,Legal resolution
+Descriptive,36,Explain decentralisation benefits.,,,,,Better governance
+Descriptive,37,Explain minority protection.,,,,,Autonomy and rights
+Descriptive,38,Explain fiscal federalism.,,,,,Revenue sharing
+Descriptive,39,Explain role of local bodies.,,,,,Service delivery
+Descriptive,40,Explain Indian success of federalism.,,,,,Unity in diversity
+Descriptive,41,Explain unitary vs federal.,,,,,Power concentration vs division
+Descriptive,42,Explain constitutional supremacy.,,,,,Rule of law
+Descriptive,43,Explain division of subjects.,,,,,Three lists
+Descriptive,44,Explain representation at local level.,,,,,People participation
+Descriptive,45,Explain importance of autonomy.,,,,,State independence
+Descriptive,46,Explain centre-state relations.,,,,,Balanced power
+Descriptive,47,Explain democracy at grassroot.,,,,,Local governance
+Descriptive,48,Explain federalism examples.,,,,,India and USA
+Descriptive,49,Explain long-term benefits of federalism.,,,,,Stability and unity
+Descriptive,50,Summarize Federalism.,,,,,Chapter explains power division and decentralisation

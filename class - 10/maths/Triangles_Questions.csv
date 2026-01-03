@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Two triangles are similar if their corresponding angles are:,Equal,Proportional,Different,Complementary,Equal
+MCQ,2,Two triangles are similar if their corresponding sides are:,Equal,Proportional,Parallel,Perpendicular,Proportional
+MCQ,3,The Basic Proportionality Theorem is also known as:,Pythagoras Theorem,Thales Theorem,Angle Bisector Theorem,Midpoint Theorem,Thales Theorem
+MCQ,4,If a line is drawn parallel to one side of a triangle intersecting the other two sides, then it divides those sides in:,Equal ratios,Equal parts,Unequal ratios,Equal angles,Equal ratios
+MCQ,5,In two similar triangles, the ratio of their corresponding sides is called:,Scale factor,Ratio factor,Similarity ratio,Proportional factor,Scale factor
+MCQ,6,If two triangles are similar, then the ratio of their areas is equal to:,Ratio of their sides,Ratio of squares of their corresponding sides,Ratio of their perimeters,Ratio of their angles,Ratio of squares of their corresponding sides
+MCQ,7,In a right triangle, the square of the hypotenuse is equal to the sum of squares of the other two sides. This is:,Pythagoras Theorem,Thales Theorem,Basic Proportionality Theorem,Area Theorem,Pythagoras Theorem
+MCQ,8,If ΔABC ~ ΔDEF and AB/DE = 1/2, then area(ΔABC)/area(ΔDEF) =:,1/2,1/4,2,4,1/4
+MCQ,9,The similarity criterion where all three angles of one triangle are equal to the corresponding angles of another triangle is:,SSS,AAA,SAS,RHS,AAA
+MCQ,10,The similarity criterion where all three sides of one triangle are proportional to the corresponding sides of another triangle is:,AAA,SSS,SAS,RHS,SSS
+MCQ,11,If two triangles have one angle equal and the sides including these angles are proportional, then they are similar by:,AAA criterion,SSS criterion,SAS criterion,RHS criterion,SAS criterion
+MCQ,12,In ΔABC, if DE || BC and AD/DB = 3/2, then AE/EC =:,2/3,3/2,5/3,3/5,3/2
+MCQ,13,Two triangles are similar. If one side of the first triangle is 6 cm and the corresponding side of the second triangle is 8 cm, then the scale factor is:,3/4,4/3,2/3,3/2,3/4
+MCQ,14,If two triangles have the same shape but not necessarily the same size, they are:,Congruent,Similar,Equal,Equivalent,Similar
+MCQ,15,In a triangle, if a line parallel to one side divides the other two sides proportionally, then the line is parallel to the:,Base,Altitude,Median,Third side,Third side
+MCQ,16,If ΔABC ~ ΔPQR and ∠A = 50°, then ∠P =:,50°,100°,130°,40°,50°
+MCQ,17,The ratio of areas of two similar triangles is 9:25. The ratio of their corresponding sides is:,3:5,9:25,5:3,25:9,3:5
+MCQ,18,In a right triangle, the side opposite to the right angle is called:,Base,Perpendicular,Hypotenuse,Altitude,Hypotenuse
+MCQ,19,If the sides of two triangles are 3 cm, 4 cm, 5 cm and 6 cm, 8 cm, 10 cm respectively, then they are:,Congruent,Similar,Not similar,Equal,Similar
+MCQ,20,In ΔABC, if DE || BC, AD = 3 cm, DB = 6 cm, and AE = 2 cm, then EC =:,4 cm,6 cm,8 cm,10 cm,4 cm
+MCQ,21,If two triangles are similar and the ratio of their areas is 4:9, then the ratio of their perimeters is:,2:3,4:9,3:2,9:4,2:3
+MCQ,22,In a triangle, the line joining the midpoints of two sides is parallel to the third side and is:,Equal to it,Half of it,Double of it,One-third of it,Half of it
+MCQ,23,If ΔABC ~ ΔDEF and area(ΔABC) = 36 cm², area(ΔDEF) = 64 cm², then AB/DE =:,3/4,4/3,6/8,9/16,3/4
+MCQ,24,The converse of Basic Proportionality Theorem states that if a line divides two sides of a triangle proportionally, then the line is:,Perpendicular to the third side,Parallel to the third side,Equal to the third side,At an angle to the third side,Parallel to the third side
+MCQ,25,If in two triangles, corresponding angles are equal, then the triangles are:,Congruent,Similar,Equal,Isosceles,Similar
+MCQ,26,In ΔABC, if AD is the median, then:,BD = DC,AB = AC,∠B = ∠C,AD ⊥ BC,BD = DC
+MCQ,27,If the ratio of areas of two similar triangles is 16:25, then the ratio of their corresponding sides is:,4:5,5:4,16:25,25:16,4:5
+MCQ,28,In a right triangle, if the lengths of two sides are 5 cm and 12 cm, then the length of the hypotenuse is:,13 cm,17 cm,7 cm,15 cm,13 cm
+MCQ,29,Two triangles are similar if they have the same:,Area,Perimeter,Shape,Size,Shape
+MCQ,30,If ΔABC ~ ΔDEF and AB = 4 cm, DE = 6 cm, then the scale factor is:,2/3,3/2,4/6,6/4,2/3
+MCQ,31,In similar triangles, the ratio of corresponding altitudes is equal to the ratio of:,Their areas,Their sides,Their perimeters,Their medians,Their sides
+MCQ,32,If ΔABC ~ ΔDEF, ∠A = 60°, ∠B = 70°, then ∠F =:,50°,60°,70°,130°,50°
+MCQ,33,The ratio of areas of two similar triangles is 1:4. If one side of the first triangle is 5 cm, then the corresponding side of the second triangle is:,10 cm,20 cm,2.5 cm,15 cm,10 cm
+MCQ,34,In ΔABC, if DE || BC and AD = 4 cm, DB = 8 cm, AE = 3 cm, then EC =:,6 cm,9 cm,12 cm,15 cm,6 cm
+MCQ,35,If two triangles have their sides proportional, they are similar by:,AAA criterion,SSS criterion,SAS criterion,RHS criterion,SSS criterion
+MCQ,36,In a right triangle, if one angle is 45°, then the triangle is:,Equilateral,Isosceles,Scalene,Right-angled isosceles,Right-angled isosceles
+MCQ,37,If ΔABC ~ ΔPQR and area(ΔABC)/area(ΔPQR) = 9/16, then AB/PQ =:,3/4,4/3,9/16,16/9,3/4
+MCQ,38,The midpoint theorem states that the line joining midpoints of two sides of a triangle is parallel to the third side and equals:,Half the third side,One-third the third side,Double the third side,Equal to the third side,Half the third side
+MCQ,39,If in ΔABC, DE || BC, AD = 2 cm, DB = 4 cm, and AC = 12 cm, then AE =:,4 cm,6 cm,8 cm,10 cm,4 cm
+MCQ,40,Two triangles are similar if two angles of one triangle are equal to:,Two angles of the other,Three angles of the other,One angle of the other,Corresponding angles of the other,Two angles of the other
+MCQ,41,If the areas of two similar triangles are in the ratio 25:36, then the ratio of their corresponding sides is:,5:6,6:5,25:36,36:25,5:6
+MCQ,42,In ΔABC, if AD is the altitude from A to BC, then:,AD ⊥ BC,AD || BC,AD = BC,AD bisects BC,AD ⊥ BC
+MCQ,43,If ΔABC ~ ΔDEF and AB = 6 cm, DE = 9 cm, area(ΔABC) = 24 cm², then area(ΔDEF) =:,36 cm²,54 cm²,81 cm²,108 cm²,54 cm²
+MCQ,44,In a triangle, if a line divides two sides proportionally, then by converse of BPT, the line is:,Parallel to the third side,Perpendicular to the third side,Equal to the third side,At 45° to the third side,Parallel to the third side
+MCQ,45,If two triangles have one angle equal and the sides including these angles are proportional, they are similar by:,AAA criterion,SSS criterion,SAS criterion,ASA criterion,SAS criterion
+MCQ,46,The ratio of areas of two similar triangles is equal to the square of the ratio of their:,Sides,Perimeters,Altitudes,All of the above,All of the above
+MCQ,47,In ΔABC, if DE || BC, AD = 6 cm, AE = 4 cm, EC = 2 cm, then DB =:,3 cm,6 cm,9 cm,12 cm,3 cm
+MCQ,48,If the sides of two triangles are in the ratio 3:5, then the ratio of their areas is:,3:5,9:25,5:3,25:9,9:25
+MCQ,49,In a right triangle with sides 8 cm and 15 cm, the hypotenuse is:,17 cm,23 cm,19 cm,13 cm,17 cm
+MCQ,50,If ΔABC ~ ΔDEF, then (AB/DE)² =:,Area(ΔABC)/Area(ΔDEF),Area(ΔDEF)/Area(ΔABC),Perimeter(ΔABC)/Perimeter(ΔDEF),Angle A/Angle D,Area(ΔABC)/Area(ΔDEF)
+Integer,1,In ΔABC, if DE || BC, AD = 3 cm, DB = 6 cm, and AE = 2 cm, then EC = _____ cm.,4,,,,
+Integer,2,If the ratio of areas of two similar triangles is 9:16, then the ratio of their corresponding sides is _____:4.,3,,,,
+Integer,3,In a right triangle with sides 3 cm and 4 cm, the hypotenuse is _____ cm.,5,,,,
+Integer,4,If ΔABC ~ ΔDEF and AB = 6 cm, DE = 9 cm, then the scale factor (as a fraction in simplest form, numerator) is: _____ (write 2 for 2/3).,2,,,,
+Integer,5,In ΔABC, if DE || BC, AD = 4 cm, DB = 8 cm, AE = 3 cm, then EC = _____ cm.,6,,,,
+Integer,6,If the areas of two similar triangles are in the ratio 4:9, then the ratio of their sides is 2:_____.,3,,,,
+Integer,7,In a right triangle with sides 5 cm and 12 cm, the hypotenuse is _____ cm.,13,,,,
+Integer,8,If ΔABC ~ ΔPQR and area(ΔABC) = 16 cm², area(ΔPQR) = 36 cm², then AB/PQ = 2:_____.,3,,,,
+Integer,9,In ΔABC, if DE || BC, AD = 2 cm, DB = 4 cm, and AC = 12 cm, then AE = _____ cm.,4,,,,
+Integer,10,If the sides of two similar triangles are in the ratio 3:4, then the ratio of their areas is 9:_____.,16,,,,
+Integer,11,In a right triangle with sides 8 cm and 15 cm, the hypotenuse is _____ cm.,17,,,,
+Integer,12,If ΔABC ~ ΔDEF and AB = 4 cm, DE = 6 cm, then the scale factor (as a fraction, numerator) is: _____ (write 2 for 2/3).,2,,,,
+Integer,13,In ΔABC, if DE || BC, AD = 6 cm, AE = 4 cm, EC = 2 cm, then DB = _____ cm.,3,,,,
+Integer,14,If the ratio of areas is 25:36, then the ratio of sides is 5:_____.,6,,,,
+Integer,15,In a right triangle with sides 7 cm and 24 cm, the hypotenuse is _____ cm.,25,,,,
+Integer,16,If ΔABC ~ ΔPQR, area(ΔABC) = 25 cm², area(ΔPQR) = 64 cm², then AB/PQ = 5:_____.,8,,,,
+Integer,17,In ΔABC, if DE || BC, AD = 5 cm, DB = 10 cm, AE = 4 cm, then EC = _____ cm.,8,,,,
+Integer,18,If the sides are in ratio 2:3, then the areas are in ratio 4:_____.,9,,,,
+Integer,19,In a right triangle with sides 9 cm and 12 cm, the hypotenuse is _____ cm.,15,,,,
+Integer,20,If ΔABC ~ ΔDEF and AB = 8 cm, DE = 12 cm, then scale factor (numerator) is _____ (2/3).,2,,,,
+Integer,21,In ΔABC, if DE || BC, AD = 3 cm, DB = 9 cm, and AC = 16 cm, then AE = _____ cm.,4,,,,
+Integer,22,If the areas are in ratio 16:25, then the sides are in ratio 4:_____.,5,,,,
+Integer,23,In a right triangle with sides 20 cm and 21 cm, the hypotenuse is _____ cm.,29,,,,
+Integer,24,If ΔABC ~ ΔPQR, area(ΔABC) = 36 cm², area(ΔPQR) = 49 cm², then AB/PQ = 6:_____.,7,,,,
+Integer,25,In ΔABC, if DE || BC, AD = 4 cm, DB = 12 cm, AE = 5 cm, then EC = _____ cm.,15,,,,
+Integer,26,If the sides are in ratio 5:7, then the areas are in ratio 25:_____.,49,,,,
+Integer,27,In a right triangle with sides 6 cm and 8 cm, the hypotenuse is _____ cm.,10,,,,
+Integer,28,If ΔABC ~ ΔDEF, AB = 5 cm, DE = 8 cm, then scale factor (numerator) is _____ (5/8).,5,,,,
+Integer,29,In ΔABC, if DE || BC, AD = 2 cm, DB = 6 cm, and AC = 16 cm, then AE = _____ cm.,4,,,,
+Integer,30,If the areas are in ratio 1:4, then the sides are in ratio 1:_____.,2,,,,
+Integer,31,In a right triangle with sides 15 cm and 20 cm, the hypotenuse is _____ cm.,25,,,,
+Integer,32,If ΔABC ~ ΔPQR, area(ΔABC) = 81 cm², area(ΔPQR) = 100 cm², then AB/PQ = 9:_____.,10,,,,
+Integer,33,In ΔABC, if DE || BC, AD = 5 cm, DB = 15 cm, AE = 3 cm, then EC = _____ cm.,9,,,,
+Integer,34,If the sides are in ratio 4:5, then the areas are in ratio 16:_____.,25,,,,
+Integer,35,In a right triangle with sides 12 cm and 16 cm, the hypotenuse is _____ cm.,20,,,,
+Integer,36,If ΔABC ~ ΔDEF, AB = 9 cm, DE = 12 cm, then scale factor (numerator) is _____ (3/4 = 3).,3,,,,
+Integer,37,In ΔABC, if DE || BC, AD = 6 cm, DB = 18 cm, and AC = 20 cm, then AE = _____ cm.,5,,,,
+Integer,38,If the areas are in ratio 49:64, then the sides are in ratio 7:_____.,8,,,,
+Integer,39,In a right triangle with sides 10 cm and 24 cm, the hypotenuse is _____ cm.,26,,,,
+Integer,40,If ΔABC ~ ΔPQR, area(ΔABC) = 144 cm², area(ΔPQR) = 169 cm², then AB/PQ = 12:_____.,13,,,,
+Integer,41,In ΔABC, if DE || BC, AD = 3 cm, DB = 12 cm, AE = 2 cm, then EC = _____ cm.,8,,,,
+Integer,42,If the sides are in ratio 6:7, then the areas are in ratio 36:_____.,49,,,,
+Integer,43,In a right triangle with sides 21 cm and 28 cm, the hypotenuse is _____ cm.,35,,,,
+Integer,44,If ΔABC ~ ΔDEF, AB = 7 cm, DE = 14 cm, then scale factor (numerator) is _____ (1/2 = 1).,1,,,,
+Integer,45,In ΔABC, if DE || BC, AD = 4 cm, DB = 16 cm, and AC = 25 cm, then AE = _____ cm.,5,,,,
+Integer,46,If the areas are in ratio 64:81, then the sides are in ratio 8:_____.,9,,,,
+Integer,47,In a right triangle with sides 18 cm and 24 cm, the hypotenuse is _____ cm.,30,,,,
+Integer,48,If ΔABC ~ ΔPQR, area(ΔABC) = 100 cm², area(ΔPQR) = 225 cm², then AB/PQ = 10:_____.,15,,,,
+Integer,49,In ΔABC, if DE || BC, AD = 5 cm, DB = 20 cm, AE = 4 cm, then EC = _____ cm.,16,,,,
+Integer,50,If the sides are in ratio 8:9, then the areas are in ratio 64:_____.,81,,,,
+Problem,1,In ΔABC, DE || BC. If AD = 3 cm, DB = 5 cm, and AE = 4.5 cm, find EC.,"By Basic Proportionality Theorem: AD/DB = AE/EC. 3/5 = 4.5/EC. EC = (4.5 × 5)/3 = 22.5/3 = 7.5 cm. Answer: EC = 7.5 cm",,,,
+Problem,2,In ΔABC, DE || BC. If AD = 4 cm, AE = 6 cm, EC = 3 cm, find DB.,"By BPT: AD/DB = AE/EC. 4/DB = 6/3 = 2. DB = 4/2 = 2 cm. Answer: DB = 2 cm",,,,
+Problem,3,If the areas of two similar triangles are 64 cm² and 144 cm², find the ratio of their corresponding sides.,"Ratio of areas = 64:144 = 4²:6². Ratio of sides = √(64/144) = √(4²/6²) = 4:6 = 2:3. Answer: 2:3",,,,
+Problem,4,The areas of two similar triangles are 25 cm² and 81 cm². If one side of the first triangle is 5 cm, find the corresponding side of the second triangle.,"Ratio of areas = 25:81 = 5²:9². Ratio of sides = 5:9. If side of first triangle = 5 cm, then side of second triangle = (9/5) × 5 = 9 cm. Answer: 9 cm",,,,
+Problem,5,In ΔABC, DE || BC and AD/DB = 2/3. If AE = 6 cm, find AC.,"AD/DB = 2/3 = AE/EC. 2/3 = 6/EC, EC = (6 × 3)/2 = 9 cm. AC = AE + EC = 6 + 9 = 15 cm. Answer: AC = 15 cm",,,,
+Problem,6,In a right triangle ABC, right-angled at B, if AB = 6 cm and BC = 8 cm, find AC.,"By Pythagoras theorem: AC² = AB² + BC² = 6² + 8² = 36 + 64 = 100. AC = √100 = 10 cm. Answer: AC = 10 cm",,,,
+Problem,7,In ΔABC, DE || BC. If AD = 6 cm, DB = 9 cm, and AC = 20 cm, find AE and EC.,"By BPT: AD/DB = AE/EC = 6/9 = 2/3. Let AE = 2x, EC = 3x. AC = AE + EC = 2x + 3x = 5x = 20. x = 4. AE = 2×4 = 8 cm, EC = 3×4 = 12 cm. Answer: AE = 8 cm, EC = 12 cm",,,,
+Problem,8,Two similar triangles have areas 100 cm² and 144 cm². If one side of the first triangle is 10 cm, find the corresponding side of the second triangle.,"Ratio of areas = 100:144 = 10²:12². Ratio of sides = 10:12 = 5:6. Corresponding side = (6/5) × 10 = 12 cm. Answer: 12 cm",,,,
+Problem,9,In ΔABC, D and E are points on AB and AC respectively such that DE || BC. If AD = 4 cm, AE = 5 cm, DB = 6 cm, find EC.,"By BPT: AD/DB = AE/EC. 4/6 = 5/EC. EC = (5 × 6)/4 = 30/4 = 7.5 cm. Answer: EC = 7.5 cm",,,,
+Problem,10,If ΔABC ~ ΔDEF and AB/DE = 3/4, find area(ΔABC)/area(ΔDEF).,"For similar triangles, area ratio = (side ratio)² = (3/4)² = 9/16. Answer: 9:16",,,,
+Problem,11,In a right triangle, if one side is 9 cm and the hypotenuse is 15 cm, find the other side.,"By Pythagoras: (hypotenuse)² = (side1)² + (side2)². 15² = 9² + (side2)², 225 = 81 + (side2)², (side2)² = 144, side2 = 12 cm. Answer: 12 cm",,,,
+Problem,12,In ΔABC, DE || BC. If AD = 5 cm, DB = 10 cm, and the area of ΔADE = 25 cm², find the area of ΔABC.,"By BPT: AD/AB = AD/(AD+DB) = 5/15 = 1/3. Since DE || BC, ΔADE ~ ΔABC. Area ratio = (1/3)² = 1/9. Area(ΔABC) = 9 × 25 = 225 cm². Answer: 225 cm²",,,,
+Problem,13,The perimeters of two similar triangles are 30 cm and 45 cm. If one side of the first triangle is 6 cm, find the corresponding side of the second triangle.,"Ratio of perimeters = 30:45 = 2:3 = ratio of corresponding sides. Corresponding side = (3/2) × 6 = 9 cm. Answer: 9 cm",,,,
+Problem,14,In ΔABC, P and Q are points on sides AB and AC respectively such that PQ || BC. If AP = 3 cm, PB = 6 cm, and AQ = 2 cm, find QC.,"By BPT: AP/PB = AQ/QC. 3/6 = 2/QC, 1/2 = 2/QC, QC = 4 cm. Answer: QC = 4 cm",,,,
+Problem,15,If ΔABC ~ ΔPQR, ∠A = 50°, ∠B = 60°, find ∠R.,"In ΔABC: ∠A + ∠B + ∠C = 180°, 50° + 60° + ∠C = 180°, ∠C = 70°. Since ΔABC ~ ΔPQR, corresponding angles are equal. ∠R = ∠C = 70°. Answer: ∠R = 70°",,,,
+Problem,16,The sides of two similar triangles are in the ratio 4:5. Find the ratio of their areas.,"Ratio of areas = (ratio of sides)² = (4/5)² = 16/25. Answer: 16:25",,,,
+Problem,17,In ΔABC, DE || BC. If AD = 2 cm, DB = 8 cm, and area(ΔADE) = 10 cm², find area(ΔABC).,"AD/AB = 2/(2+8) = 2/10 = 1/5. Since DE || BC, ΔADE ~ ΔABC. Area ratio = (1/5)² = 1/25. Area(ΔABC) = 25 × 10 = 250 cm². Answer: 250 cm²",,,,
+Problem,18,In a right triangle, if the two sides containing the right angle are 8 cm and 15 cm, find the hypotenuse.,"By Pythagoras: hypotenuse² = 8² + 15² = 64 + 225 = 289. Hypotenuse = √289 = 17 cm. Answer: 17 cm",,,,
+Problem,19,If ΔABC ~ ΔDEF, AB = 6 cm, DE = 9 cm, and area(ΔABC) = 24 cm², find area(ΔDEF).,"AB/DE = 6/9 = 2/3. Area ratio = (2/3)² = 4/9. Area(ΔDEF) = (9/4) × 24 = 54 cm². Answer: 54 cm²",,,,
+Problem,20,In ΔABC, D is the midpoint of AB and E is the midpoint of AC. If DE = 5 cm, find BC.,"By Midpoint Theorem: DE || BC and DE = (1/2)BC. BC = 2 × DE = 2 × 5 = 10 cm. Answer: 10 cm",,,,
+Problem,21,The areas of two similar triangles are 121 cm² and 64 cm². If one side of the first triangle is 11 cm, find the corresponding side of the second triangle.,"Ratio of areas = 121:64 = 11²:8². Ratio of sides = 11:8. Corresponding side = (8/11) × 11 = 8 cm. Answer: 8 cm",,,,
+Problem,22,In ΔABC, DE || BC. If AD = 4 cm, DB = 12 cm, AE = 3 cm, find EC.,"By BPT: AD/DB = AE/EC. 4/12 = 3/EC, 1/3 = 3/EC, EC = 9 cm. Answer: EC = 9 cm",,,,
+Problem,23,If the ratio of areas of two similar triangles is 25:36, find the ratio of their corresponding altitudes.,"Ratio of altitudes = ratio of sides = √(25/36) = 5/6. Answer: 5:6",,,,
+Problem,24,In a right triangle, if the hypotenuse is 13 cm and one side is 5 cm, find the other side.,"By Pythagoras: 13² = 5² + (side)², 169 = 25 + (side)², (side)² = 144, side = 12 cm. Answer: 12 cm",,,,
+Problem,25,In ΔABC, P and Q are points on sides AB and AC such that PQ || BC. If AP = 6 cm, PB = 9 cm, and AC = 20 cm, find AQ and QC.,"By BPT: AP/PB = AQ/QC = 6/9 = 2/3. Let AQ = 2x, QC = 3x. AC = 2x + 3x = 5x = 20, x = 4. AQ = 8 cm, QC = 12 cm. Answer: AQ = 8 cm, QC = 12 cm",,,,
+Problem,26,The sides of two similar triangles are in the ratio 3:7. Find the ratio of their perimeters.,"Ratio of perimeters = ratio of sides = 3:7. Answer: 3:7",,,,
+Problem,27,In ΔABC, DE || BC. If AD = 5 cm, DB = 10 cm, and area(ΔADE) = 20 cm², find area of trapezium BCED.,"AD/AB = 5/15 = 1/3. Area(ΔABC) = 9 × 20 = 180 cm². Area of trapezium = Area(ΔABC) - Area(ΔADE) = 180 - 20 = 160 cm². Answer: 160 cm²",,,,
+Problem,28,If ΔABC ~ ΔPQR, ∠A = 40°, ∠B = 80°, find ∠P and ∠Q.,"In ΔABC: ∠C = 180° - 40° - 80° = 60°. Since ΔABC ~ ΔPQR: ∠P = ∠A = 40°, ∠Q = ∠B = 80°. Answer: ∠P = 40°, ∠Q = 80°",,,,
+Problem,29,In a right triangle, if one acute angle is 30°, find the other acute angle.,"Sum of angles = 180°. Right angle = 90°. 90° + 30° + other angle = 180°, other angle = 60°. Answer: 60°",,,,
+Problem,30,The areas of two similar triangles are 49 cm² and 81 cm². Find the ratio of their corresponding sides.,"Ratio of sides = √(49/81) = √(7²/9²) = 7/9. Answer: 7:9",,,,
+Problem,31,In ΔABC, D and E are midpoints of AB and AC respectively. If BC = 14 cm, find DE.,"By Midpoint Theorem: DE = (1/2)BC = (1/2) × 14 = 7 cm. Answer: 7 cm",,,,
+Problem,32,If the sides of two similar triangles are in the ratio 5:8, find the ratio of their areas.,"Ratio of areas = (5/8)² = 25/64. Answer: 25:64",,,,
+Problem,33,In ΔABC, DE || BC. If AD = 3 cm, AE = 4.5 cm, EC = 7.5 cm, find DB.,"By BPT: AD/DB = AE/EC. 3/DB = 4.5/7.5 = 3/5. DB = (3 × 5)/3 = 5 cm. Answer: DB = 5 cm",,,,
+Problem,34,In a right triangle, if the sides containing the right angle are 12 cm and 16 cm, find the length of the hypotenuse.,"Hypotenuse² = 12² + 16² = 144 + 256 = 400. Hypotenuse = √400 = 20 cm. Answer: 20 cm",,,,
+Problem,35,If ΔABC ~ ΔDEF, AB = 8 cm, DE = 12 cm, area(ΔABC) = 32 cm², find area(ΔDEF).,"AB/DE = 8/12 = 2/3. Area ratio = (2/3)² = 4/9. Area(ΔDEF) = (9/4) × 32 = 72 cm². Answer: 72 cm²",,,,
+Problem,36,In ΔABC, P and Q are points on AB and AC such that PQ || BC. If AP = 4 cm, PB = 8 cm, and AQ = 5 cm, find QC.,"By BPT: AP/PB = AQ/QC. 4/8 = 5/QC, 1/2 = 5/QC, QC = 10 cm. Answer: QC = 10 cm",,,,
+Problem,37,The perimeters of two similar triangles are 24 cm and 36 cm. If one side of the second triangle is 9 cm, find the corresponding side of the first triangle.,"Ratio of perimeters = 24:36 = 2:3. Corresponding side = (2/3) × 9 = 6 cm. Answer: 6 cm",,,,
+Problem,38,In ΔABC, DE || BC. If AD = 6 cm, DB = 18 cm, and area(ΔADE) = 15 cm², find area(ΔABC).,"AD/AB = 6/24 = 1/4. Area ratio = (1/4)² = 1/16. Area(ΔABC) = 16 × 15 = 240 cm². Answer: 240 cm²",,,,
+Problem,39,If the ratio of areas of two similar triangles is 16:25, find the ratio of their corresponding medians.,"Ratio of medians = ratio of sides = √(16/25) = 4/5. Answer: 4:5",,,,
+Problem,40,In a right triangle, if the hypotenuse is 25 cm and one side is 7 cm, find the other side.,"25² = 7² + (side)², 625 = 49 + (side)², (side)² = 576, side = 24 cm. Answer: 24 cm",,,,
+Problem,41,In ΔABC, D and E are points on sides AB and AC such that DE || BC. If AD = 2.5 cm, DB = 7.5 cm, and AE = 3 cm, find EC.,"By BPT: AD/DB = AE/EC. 2.5/7.5 = 3/EC, 1/3 = 3/EC, EC = 9 cm. Answer: EC = 9 cm",,,,
+Problem,42,The sides of two similar triangles are in the ratio 2:5. If the area of the smaller triangle is 32 cm², find the area of the larger triangle.,"Area ratio = (2/5)² = 4/25. Area of larger = (25/4) × 32 = 200 cm². Answer: 200 cm²",,,,
+Problem,43,In ΔABC, P is the midpoint of AB and Q is the midpoint of AC. If PQ = 6 cm, find BC.,"By Midpoint Theorem: PQ = (1/2)BC. BC = 2 × 6 = 12 cm. Answer: 12 cm",,,,
+Problem,44,If ΔABC ~ ΔPQR and ∠A = 55°, ∠B = 65°, find ∠R.,"∠C = 180° - 55° - 65° = 60°. Since triangles are similar, ∠R = ∠C = 60°. Answer: ∠R = 60°",,,,
+Problem,45,The areas of two similar triangles are 100 cm² and 225 cm². If one side of the first triangle is 10 cm, find the corresponding side of the second triangle.,"Ratio of areas = 100:225 = 10²:15². Ratio of sides = 10:15 = 2:3. Corresponding side = (3/2) × 10 = 15 cm. Answer: 15 cm",,,,
+Problem,46,In ΔABC, DE || BC. If AD = 7 cm, DB = 21 cm, and AC = 16 cm, find AE and EC.,"AD/DB = 7/21 = 1/3 = AE/EC. Let AE = x, EC = 3x. AC = x + 3x = 4x = 16, x = 4. AE = 4 cm, EC = 12 cm. Answer: AE = 4 cm, EC = 12 cm",,,,
+Problem,47,If the sides of two similar triangles are in the ratio 4:7, find the ratio of their altitudes.,"Ratio of altitudes = ratio of sides = 4:7. Answer: 4:7",,,,
+Problem,48,In a right triangle, if one side is 20 cm and the hypotenuse is 29 cm, find the other side.,"29² = 20² + (side)², 841 = 400 + (side)², (side)² = 441, side = 21 cm. Answer: 21 cm",,,,
+Problem,49,In ΔABC, PQ || BC. If AP = 5 cm, PB = 10 cm, and area(ΔAPQ) = 25 cm², find area(ΔABC).,"AP/AB = 5/15 = 1/3. Area ratio = (1/3)² = 1/9. Area(ΔABC) = 9 × 25 = 225 cm². Answer: 225 cm²",,,,
+Problem,50,If ΔABC ~ ΔDEF, AB = 10 cm, DE = 15 cm, and area(ΔABC) = 50 cm², find area(ΔDEF).,"AB/DE = 10/15 = 2/3. Area ratio = (2/3)² = 4/9. Area(ΔDEF) = (9/4) × 50 = 112.5 cm². Answer: 112.5 cm²",,,,
+

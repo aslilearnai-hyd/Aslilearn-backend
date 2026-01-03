@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who wrote the poem "The Road Not Taken"?,William Wordsworth,Robert Frost,John Keats,Percy Shelley,Robert Frost
+MCQ,2,The poem is about?,Nature,Choices in life,War,Love,Choices in life
+MCQ,3,Where does the poet stand?,City road,Forest road,Desert,River bank,Forest road
+MCQ,4,How many roads diverged?,One,Two,Three,Four,Two
+MCQ,5,The roads diverged in a?,Yellow wood,Green field,Dark cave,Busy street,Yellow wood
+MCQ,6,Why couldn’t the poet travel both roads?,Lack of time,Fear,Being one traveler,Weather,Being one traveler
+MCQ,7,Which road did the poet choose?,Crowded one,First one,Second one,Safer one,Second one
+MCQ,8,Why did the poet choose the second road?,It was shorter,It was grassy and less worn,It was dangerous,It was popular,It was grassy and less worn
+MCQ,9,What does the road symbolize?,Journey,Choices,Forest,Life,Choices
+MCQ,10,The first road was?,Well worn,Dangerous,Less travelled,Blocked,Well worn
+MCQ,11,The second road was?,Crowded,Less travelled,Blocked,Unsafe,Less travelled
+MCQ,12,What does "yellow wood" signify?,Autumn,Spring,Youth,Old age,Autumn
+MCQ,13,The poet felt about his choice?,Happy,Regretful,Confident,Indifferent,Confident
+MCQ,14,What does the poet doubt?,Returning back,Success,Failure,Time,Returning back
+MCQ,15,The poem highlights?,Fate,Choices and consequences,Nature beauty,Travel,Choices and consequences
+MCQ,16,The road less travelled made?,Life boring,Life difficult,All the difference,No change,All the difference
+MCQ,17,The poet keeps the first road for?,Another day,Never,Next year,Friend,Another day
+MCQ,18,The tone of the poem is?,Sad,Reflective,Angry,Joyful,Reflective
+MCQ,19,The poet expects to tell the story?,Sadly,Proudly,Sighing,Angrily,Sighing
+MCQ,20,The poem teaches?,Avoid risks,Follow crowd,Be independent,Ignore choices,Be independent
+MCQ,21,What literary device is used in roads?,Metaphor,Simile,Alliteration,Personification,Metaphor
+MCQ,22,The road not taken means?,Wrong choice,Popular choice,Unchosen option,Dangerous path,Unchosen option
+MCQ,23,The poem encourages?,Fear,Conformity,Individuality,Laziness,Individuality
+MCQ,24,What season is suggested?,Winter,Spring,Autumn,Summer,Autumn
+MCQ,25,The speaker is?,Tourist,Poet,Farmer,Traveller,Traveller
+MCQ,26,The poem is written in?,Free verse,Blank verse,Rhyming scheme,Prose,Rhyming scheme
+MCQ,27,What is the rhyme scheme?,ABAB,AABB,ABAAB,AAAA,ABAAB
+MCQ,28,The road choice reflects?,Luck,Fate,Decision making,Weather,Decision making
+MCQ,29,The poem ends on?,Sad note,Hopeful note,Confused note,Angry note,Hopeful note
+MCQ,30,The poet regrets his choice?,Yes,No,Not sure,Sometimes,No
+MCQ,31,The roads were equally?,Different,Worn,Attractive,Used,Attractive
+MCQ,32,The poet’s future depends on?,Road chosen,Fate only,Others,Chance,Road chosen
+MCQ,33,The road less travelled was?,More worn,Equally worn,Less worn,Blocked,Less worn
+MCQ,34,What made the roads similar?,Leaves on them,Trees,Rain,Crowd,Leaves on them
+MCQ,35,What does the poem reflect?,Human psychology,Nature only,Travel guide,History,Human psychology
+MCQ,36,The speaker stands long to?,Rest,Decide,Wait,Think,Decide
+MCQ,37,The sigh in future indicates?,Regret,Reflection,Pain,Anger,Reflection
+MCQ,38,The poem suggests choices are?,Easy,Reversible,Difficult,Meaningless,Difficult
+MCQ,39,The poet’s choice was?,Popular,Unique,Forced,Accidental,Unique
+MCQ,40,The theme relates to?,Education,Career,Life decisions,Friendship,Life decisions
+MCQ,41,The poet looks down one road as far as?,Possible,He could see,He could travel,He wanted,He could see
+MCQ,42,The road led into?,Village,Forest undergrowth,City,Mountain,Forest undergrowth
+MCQ,43,The poem suggests life has?,One path,Many choices,No choices,Fixed fate,Many choices
+MCQ,44,The poet is satisfied?,Yes,No,Confused,Angry,Yes
+MCQ,45,The title suggests?,Lost road,Regret,Choice importance,Adventure,Choice importance
+MCQ,46,The roads represent?,Physical roads,Life paths,Travel routes,Forests,Life paths
+MCQ,47,The poet’s decision was?,Careless,Thoughtful,Forced,Rushed,Thoughtful
+MCQ,48,What difference did the road make?,None,Small,Big,Negative,Big
+MCQ,49,The poem is philosophical because?,It discusses life choices,It describes nature,It tells history,It is sad,It discusses life choices
+MCQ,50,Central message?,Follow crowd,Choose wisely,Avoid choices,Regret always,Choose wisely
+
+Integer,1,Poet?,Robert Frost,,,,
+Integer,2,Poem type?,Narrative poem,,,,
+Integer,3,Number of roads?,Two,,,,
+Integer,4,Setting?,Yellow wood,,,,
+Integer,5,Theme?,Choices,,,,
+Integer,6,Chosen road?,Less travelled,,,,
+Integer,7,Symbol?,Road,,,,
+Integer,8,Season?,Autumn,,,,
+Integer,9,Rhyme scheme?,ABAAB,,,,
+Integer,10,Tone?,Reflective,,,,
+Integer,11,Poet role?,Traveller,,,,
+Integer,12,Decision type?,Life choice,,,,
+Integer,13,Future telling?,With sigh,,,,
+Integer,14,Road meaning?,Life path,,,,
+Integer,15,Poet regret?,No,,,,
+Integer,16,Poem message?,Choose wisely,,,,
+Integer,17,Leaves color?,Yellow,,,,
+Integer,18,Device used?,Metaphor,,,,
+Integer,19,Road condition?,Grassy,,,,
+Integer,20,First road?,Well worn,,,,
+Integer,21,Second road?,Less worn,,,,
+Integer,22,Poet mood?,Thoughtful,,,,
+Integer,23,Title meaning?,Choice impact,,,,
+Integer,24,Ending tone?,Hopeful,,,,
+Integer,25,Roads symbolize?,Decisions,,,,
+Integer,26,Poem theme?,Individuality,,,,
+Integer,27,Choice difficulty?,High,,,,
+Integer,28,Poet confidence?,Yes,,,,
+Integer,29,Life comparison?,Journey,,,,
+Integer,30,Road result?,Difference,,,,
+Integer,31,Poem focus?,Decision making,,,,
+Integer,32,Poet stands?,Long,,,,
+Integer,33,Future certainty?,No,,,,
+Integer,34,Road equality?,Almost,,,,
+Integer,35,Lesson?,Independent thinking,,,,
+Integer,36,Poet satisfaction?,Yes,,,,
+Integer,37,Poem style?,Rhyming,,,,
+Integer,38,Central idea?,Choices shape life,,,,
+Integer,39,Speaker emotion?,Reflective,,,,
+Integer,40,Path taken?,Unpopular,,,,
+Integer,41,Path impact?,Life changing,,,,
+Integer,42,Decision timing?,Present,,,,
+Integer,43,Poet vision?,Limited,,,,
+Integer,44,Poem length?,Four stanzas,,,,
+Integer,45,Stanza lines?,Five,,,,
+Integer,46,Road direction?,Diverged,,,,
+Integer,47,Choice nature?,Irreversible,,,,
+Integer,48,Road future?,Unknown,,,,
+Integer,49,Poet belief?,Choices matter,,,,
+Integer,50,Poem title?,The Road Not Taken,,,,
+
+Descriptive,1,Who wrote "The Road Not Taken"?,,,,,It was written by Robert Frost
+Descriptive,2,What is the central theme of the poem?,,,,,The importance of choices in life
+Descriptive,3,What do the two roads symbolize?,,,,,They symbolize life’s choices
+Descriptive,4,Why couldn’t the poet travel both roads?,,,,,Because he was one traveler
+Descriptive,5,Why did the poet choose the second road?,,,,,It was less travelled and grassy
+Descriptive,6,What does the "yellow wood" represent?,,,,,Autumn and maturity
+Descriptive,7,Explain the title of the poem.,,,,,It highlights the importance of choices not taken
+Descriptive,8,What lesson does the poem teach?,,,,,Choices shape our life
+Descriptive,9,Is the poet happy with his decision?,,,,,Yes, he feels satisfied
+Descriptive,10,What does the sigh at the end suggest?,,,,,Reflection on past choices
+Descriptive,11,How is the road a metaphor?,,,,,It represents life paths
+Descriptive,12,Describe the setting of the poem.,,,,,A forest with diverging roads
+Descriptive,13,What is meant by "road less travelled"?,,,,,An uncommon or difficult choice
+Descriptive,14,Why is decision-making difficult?,,,,,Because choices are irreversible
+Descriptive,15,Explain the poem’s tone.,,,,,It is reflective and thoughtful
+Descriptive,16,What difference did the road make?,,,,,It changed the poet’s life
+Descriptive,17,What does the poem say about individuality?,,,,,It encourages independent thinking
+Descriptive,18,Why does the poet doubt returning?,,,,,Life choices cannot be reversed
+Descriptive,19,How does Frost compare life to a journey?,,,,,Through road symbolism
+Descriptive,20,Explain the philosophical aspect.,,,,,It reflects human decision-making
+Descriptive,21,What role does fate play?,,,,,Less than personal choice
+Descriptive,22,How does the poem relate to real life?,,,,,We face similar choices daily
+Descriptive,23,Explain the significance of autumn.,,,,,It symbolizes maturity
+Descriptive,24,What emotions does the poem evoke?,,,,,Thoughtfulness and reflection
+Descriptive,25,Why is the poem inspiring?,,,,,It promotes courage in choices
+Descriptive,26,How is regret handled in the poem?,,,,,As reflection, not sorrow
+Descriptive,27,What is the poet’s attitude toward choice?,,,,,Confident and thoughtful
+Descriptive,28,Why is the poem universal?,,,,,Everyone makes life choices
+Descriptive,29,How does Frost use nature?,,,,,To explain life concepts
+Descriptive,30,Explain the ending of the poem.,,,,,It shows satisfaction with choice
+Descriptive,31,Why are both roads similar?,,,,,Life options often look equal
+Descriptive,32,What is the moral of the poem?,,,,,Choose wisely and independently
+Descriptive,33,How does the poet justify his choice?,,,,,By believing it made a difference
+Descriptive,34,Why is the poem reflective?,,,,,It looks back on decisions
+Descriptive,35,What is the significance of divergence?,,,,,It represents decision points
+Descriptive,36,How does the poet view the future?,,,,,As shaped by present choice
+Descriptive,37,What does the poem say about regret?,,,,,Regret is natural but unnecessary
+Descriptive,38,Why is the poem memorable?,,,,,Relatable life message
+Descriptive,39,Explain the use of imagery.,,,,,Vivid forest and roads imagery
+Descriptive,40,How does the poem motivate readers?,,,,,To take responsibility for choices
+Descriptive,41,What does the poem say about conformity?,,,,,It discourages blind following
+Descriptive,42,Explain the speaker’s dilemma.,,,,,Choosing one path over another
+Descriptive,43,How does Frost express wisdom?,,,,,Through simple language
+Descriptive,44,What is the role of uncertainty?,,,,,It makes choices difficult
+Descriptive,45,Why is choice irreversible?,,,,,Time moves forward
+Descriptive,46,How does the poem relate to students?,,,,,Career and life choices
+Descriptive,47,What is the significance of the road not taken?,,,,,It represents missed opportunities
+Descriptive,48,Why is independence important?,,,,,It leads to meaningful life
+Descriptive,49,Explain why the poem is philosophical.,,,,,It reflects on life decisions
+Descriptive,50,Summarize "The Road Not Taken".,,,,,The poem describes a traveler choosing between two paths, symbolizing life choices, and conveys that independent decisions shape our future

@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,What is an election?,Selection by king,People choose leaders,Army appointment,None,People choose leaders
+MCQ,2,Elections are essential for?,Dictatorship,Democracy,Monarchy,None,Democracy
+MCQ,3,Who elects representatives in democracy?,Army,Judges,People,None,People
+MCQ,4,Minimum age to vote in India is?,16,18,21,25,18
+MCQ,5,Right to vote is also called?,Right to speech,Universal adult franchise,Right to equality,None,Universal adult franchise
+MCQ,6,Which body conducts elections in India?,Parliament,Judiciary,Election Commission,None,Election Commission
+MCQ,7,Who appoints Election Commission?,Prime Minister,President,Chief Justice,None,President
+MCQ,8,Which election chooses Lok Sabha members?,State election,General election,By-election,None,General election
+MCQ,9,Which election fills vacant seat?,General election,Mid-term election,By-election,None,By-election
+MCQ,10,Term of Lok Sabha is?,4 years,5 years,6 years,7 years,5 years
+MCQ,11,Who can contest elections?,Any citizen,Adult citizen,Only rich,None,Adult citizen
+MCQ,12,Which document lists candidates?,Voter ID,Electoral roll,Manifesto,None,Electoral roll
+MCQ,13,What is an electoral constituency?,Polling booth,Area for election,State,None,Area for election
+MCQ,14,India follows which election system?,PR system,FPTP system,Nomination,None,FPTP system
+MCQ,15,FPTP means?,Fair process,Federal power,First Past the Post,None,First Past the Post
+MCQ,16,Who wins in FPTP system?,Most votes,50% votes,All votes,None,Most votes
+MCQ,17,Which election level is Panchayat?,National,State,Local,None,Local
+MCQ,18,Which symbol is allotted by?,Party,ECI,Voters,None,ECI
+MCQ,19,Which election allows people to choose rulers?,Dictatorship,Election,Monarchy,None,Election
+MCQ,20,Which is NOT a feature of free election?,Fairness,Intimidation,Choice,None,Intimidation
+MCQ,21,Which ensures fair elections?,Army,Media,Election Commission,None,Election Commission
+MCQ,22,What is voter turnout?,Votes counted,Votes cast percentage,Candidates list,None,Votes cast percentage
+MCQ,23,Which election is held every 5 years?,Presidential,General,Local,None,General
+MCQ,24,What is a manifesto?,Law book,Party promises,Voter list,None,Party promises
+MCQ,25,Which country uses PR system?,India,UK,Israel,None,Israel
+MCQ,26,Which is a challenge to free elections?,Illiteracy,Fair media,Neutral officials,None,Illiteracy
+MCQ,27,Which ensures equality in elections?,One vote one value,Rigging,None,None,One vote one value
+MCQ,28,Which practice is illegal?,Campaigning,Voting,Booth capturing,None,Booth capturing
+MCQ,29,Which election body is independent?,Parliament,Judiciary,ECI,None,ECI
+MCQ,30,Who prepares electoral rolls?,State govt,ECI,Courts,None,ECI
+MCQ,31,What is political competition?,Single party,Multiple parties,None,None,Multiple parties
+MCQ,32,Why competition is good?,Better choices,No choice,None,None,Better choices
+MCQ,33,Which is a demerit of elections?,Choice,Money power,None,None,Money power
+MCQ,34,Which practice affects fairness?,Free media,Muscle power,None,None,Muscle power
+MCQ,35,Which election decides government?,General election,By-election,None,None,General election
+MCQ,36,Which right allows voting?,Political right,Civil right,None,None,Political right
+MCQ,37,Which is part of election process?,Campaigning,Cooking,None,None,Campaigning
+MCQ,38,Which level election elects MLA?,National,State,Local,None,State
+MCQ,39,Which election elects MP?,State,National,None,None,National
+MCQ,40,Which document proves voter identity?,Aadhar,Voter ID,Passport,None,Voter ID
+MCQ,41,Which factor affects election outcome?,Weather,Money power,None,None,Money power
+MCQ,42,Which election ensures accountability?,Regular elections,Nomination,None,None,Regular elections
+MCQ,43,Which body resolves election disputes?,ECI,Courts,None,None,Courts
+MCQ,44,Which election is unfair?,Free and fair,Rigged,None,None,Rigged
+MCQ,45,Which is democratic election?,Free choice,Force,None,None,Free choice
+MCQ,46,Which ensures people’s participation?,Elections,Army,None,None,Elections
+MCQ,47,Which election uses ballot/EVM?,Election process,Census,None,None,Election process
+MCQ,48,Which system allows choice of leaders?,Democracy,Dictatorship,None,None,Democracy
+MCQ,49,Which body enforces code of conduct?,ECI,Parliament,None,None,ECI
+MCQ,50,Which value is strengthened by elections?,Equality,Freedom,None,None,Equality
+
+Integer,1,Minimum voting age?,18,,,,
+Integer,2,Term of Lok Sabha?,5 years,,,,
+Integer,3,Election body?,Election Commission,,,,
+Integer,4,Type of system in India?,FPTP,,,,
+Integer,5,Area for election?,Constituency,,,,
+Integer,6,Document of voters?,Electoral roll,,,,
+Integer,7,Vote right name?,Universal adult franchise,,,,
+Integer,8,Symbol allotted by?,ECI,,,,
+Integer,9,National election?,General election,,,,
+Integer,10,Voter identity proof?,Voter ID,,,,
+Integer,11,Election to fill vacancy?,By-election,,,,
+Integer,12,Party promise document?,Manifesto,,,,
+Integer,13,Winning rule in India?,Most votes,,,,
+Integer,14,Local body election?,Panchayat,,,,
+Integer,15,Who conducts elections?,ECI,,,,
+Integer,16,Election fairness ensured by?,ECI,,,,
+Integer,17,Illegal election practice?,Booth capturing,,,,
+Integer,18,Vote value principle?,One vote one value,,,,
+Integer,19,Political competition meaning?,Many parties,,,,
+Integer,20,Free election feature?,Choice,,,,
+Integer,21,Vote casting device?,EVM,,,,
+Integer,22,MLA elected in?,State election,,,,
+Integer,23,MP elected in?,National election,,,,
+Integer,24,Election code enforced by?,ECI,,,,
+Integer,25,Age to contest LS?,25,,,,
+Integer,26,Election frequency?,5 years,,,,
+Integer,27,Political right?,Vote,,,,
+Integer,28,Election dispute body?,Courts,,,,
+Integer,29,Unfair election called?,Rigged,,,,
+Integer,30,People participation method?,Voting,,,,
+Integer,31,First election year India?,1952,,,,
+Integer,32,Electoral roll prepared by?,ECI,,,,
+Integer,33,Money misuse in elections?,Corruption,,,,
+Integer,34,Muscle power means?,Force,,,,
+Integer,35,Campaign period ends?,48 hours before poll,,,,
+Integer,36,Choice between candidates?,Competition,,,,
+Integer,37,Democratic election type?,Free and fair,,,,
+Integer,38,Political parties contest?,Elections,,,,
+Integer,39,Representative chosen by?,People,,,,
+Integer,40,People’s approval method?,Election,,,,
+Integer,41,Independent body?,ECI,,,,
+Integer,42,Vote secrecy ensured?,Yes,,,,
+Integer,43,Election ensures?,Accountability,,,,
+Integer,44,Government removed by?,Election,,,,
+Integer,45,Participation age?,18+,,,,
+Integer,46,Election symbol purpose?,Identify party,,,,
+Integer,47,Electoral process includes?,Campaigning,,,,
+Integer,48,People rule through?,Elections,,,,
+Integer,49,Election promotes?,Democracy,,,,
+Integer,50,Election study topic?,Civics,,,,
+
+Descriptive,1,What is an election?,,,,,Process by which people choose representatives
+Descriptive,2,Why are elections necessary?,,,,,Ensure democracy and choice
+Descriptive,3,Explain universal adult franchise.,,,,,All adults have voting right
+Descriptive,4,What is an electoral constituency?,,,,,Area from which representative elected
+Descriptive,5,What is an electoral roll?,,,,,List of eligible voters
+Descriptive,6,Explain First Past the Post system.,,,,,Candidate with most votes wins
+Descriptive,7,Why India adopted FPTP system?,,,,,Simplicity and stability
+Descriptive,8,What is a general election?,,,,,Election for entire legislature
+Descriptive,9,What is a by-election?,,,,,Election to fill vacant seat
+Descriptive,10,Role of Election Commission.,,,,,Conducts free and fair elections
+Descriptive,11,Why Election Commission is independent?,,,,,Ensure fairness
+Descriptive,12,What is a voter turnout?,,,,,Percentage of voters voting
+Descriptive,13,What is a manifesto?,,,,,Promises made by parties
+Descriptive,14,Why political competition important?,,,,,Better choices and accountability
+Descriptive,15,What is free and fair election?,,,,,No pressure or fraud
+Descriptive,16,Challenges to free elections.,,,,,Money and muscle power
+Descriptive,17,What is booth capturing?,,,,,Forceful control of polling booth
+Descriptive,18,How elections ensure accountability?,,,,,Remove bad rulers
+Descriptive,19,Why elections improve democracy?,,,,,People participation
+Descriptive,20,What is code of conduct?,,,,,Rules for election behaviour
+Descriptive,21,Who enforces code of conduct?,,,,,Election Commission
+Descriptive,22,Why regular elections necessary?,,,,,Change government peacefully
+Descriptive,23,What is political participation?,,,,,People involvement in politics
+Descriptive,24,Why elections are democratic?,,,,,People choose leaders
+Descriptive,25,What are electoral reforms?,,,,,Improve election system
+Descriptive,26,How money power affects elections?,,,,,Unfair advantage
+Descriptive,27,How muscle power affects elections?,,,,,Violence intimidation
+Descriptive,28,What is secret ballot?,,,,,Privacy of voter choice
+Descriptive,29,Why voter education important?,,,,,Informed voting
+Descriptive,30,What is EVM?,,,,,Electronic Voting Machine
+Descriptive,31,Why EVM is used?,,,,,Faster and fair counting
+Descriptive,32,What is political equality?,,,,,One vote one value
+Descriptive,33,Why illiteracy affects elections?,,,,,Poor awareness
+Descriptive,34,How elections strengthen democracy?,,,,,Participation and accountability
+Descriptive,35,What is role of media in elections?,,,,,Inform voters
+Descriptive,36,How elections ensure representation?,,,,,Elected representatives
+Descriptive,37,Why opposition important in elections?,,,,,Alternative choice
+Descriptive,38,What is independent candidate?,,,,,Candidate without party
+Descriptive,39,Why election symbols important?,,,,,Identify party
+Descriptive,40,How elections promote peaceful change?,,,,,Replace government peacefully
+Descriptive,41,What is electoral malpractice?,,,,,Unfair practices
+Descriptive,42,Why voter turnout low sometimes?,,,,,Apathy lack of trust
+Descriptive,43,How elections reflect public opinion?,,,,,Voting results
+Descriptive,44,Why elections need transparency?,,,,,Public trust
+Descriptive,45,What is representative democracy?,,,,,People elect representatives
+Descriptive,46,How elections control misuse of power?,,,,,Remove rulers
+Descriptive,47,Why election laws needed?,,,,,Ensure fairness
+Descriptive,48,What is political competition?,,,,,Contest among parties
+Descriptive,49,Why elections are complex in India?,,,,,Large population
+Descriptive,50,Summarise electoral politics.,,,,,Elections ensure democratic governance

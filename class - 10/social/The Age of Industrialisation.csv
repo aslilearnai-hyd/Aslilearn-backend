@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Which country was the first to industrialise?,France,Germany,Britain,USA,Britain
+MCQ,2,Industrialisation in Britain began in,17th century,18th century,19th century,20th century,18th century
+MCQ,3,Which sector grew first during industrialisation?,Iron,Textile,Chemical,Coal,Textile
+MCQ,4,The invention of the steam engine is associated with,James Watt,Arkwright,Hargreaves,Stephenson,James Watt
+MCQ,5,Factories became common in Britain during,1750s,1770s,1850s,1900s,1850s
+MCQ,6,Who invented the spinning jenny?,James Watt,Richard Arkwright,James Hargreaves,Samuel Crompton,James Hargreaves
+MCQ,7,The factory system led to,Decentralisation,Urbanisation,Decline of cities,Unemployment,Urbanisation
+MCQ,8,Which industry dominated early industrialisation?,Steel,Cotton textiles,Chemicals,Shipbuilding,Cotton textiles
+MCQ,9,Industrialisation increased demand for,Skilled labour,Handmade goods,Raw materials,Artisans,Raw materials
+MCQ,10,Which transport revolution supported industrialisation?,Railways,Camels,Ships only,Bullock carts,Railways
+MCQ,11,Who benefited most from industrialisation?,Workers,Peasants,Industrialists,Artisans,Industrialists
+MCQ,12,Industrialisation led to growth of,Handicrafts,Factories,Cottage industries,Barter system,Factories
+MCQ,13,Which country industrialised later than Britain?,Germany,USA,France,All of these,All of these
+MCQ,14,Early factories employed mostly,Women and children,Skilled men only,Farmers only,Slaves,Women and children
+MCQ,15,Which invention improved weaving?,Power loom,Steam engine,Spinning jenny,Plough,Power loom
+MCQ,16,Industrialisation caused decline of,Factories,Artisans,Trade,Technology,Artisans
+MCQ,17,In India, industrialisation was controlled by,British officials,Indian artisans,Peasants,Traders,British officials
+MCQ,18,Which Indian industry grew during colonial period?,Steel,Cotton textiles,Shipbuilding,Chemicals,Cotton textiles
+MCQ,19,The first cotton mill in India was set up in,Bombay,Calcutta,Ahmedabad,Madras,Bombay
+MCQ,20,The first cotton mill in India was established in,1854,1860,1870,1880,1854
+MCQ,21,Which city became textile hub of India?,Bombay,Delhi,Lucknow,Patna,Bombay
+MCQ,22,Indian weavers suffered because of,High demand,Cheap imports,Better wages,Support from British,Cheap imports
+MCQ,23,Which group resisted machines?,Industrialists,Workers,Artisans,Traders,Artisans
+MCQ,24,Luddites were,Industrialists,Workers who destroyed machines,Traders,Peasants,Workers who destroyed machines
+MCQ,25,Industrialisation changed lives of workers by,Improving conditions,Worsening conditions,Providing luxury,Ending poverty,Worsening conditions
+MCQ,26,Factories were established near,Fields,Rivers,Railways,Forests,Railways
+MCQ,27,Which country became world’s workshop?,France,Britain,Germany,USA,Britain
+MCQ,28,Industrialisation led to migration from,Villages to cities,Cities to villages,India to Europe,Europe to Asia,Villages to cities
+MCQ,29,In India, handloom production survived because of,Government support,Low cost,High quality,Foreign demand,High quality
+MCQ,30,Which war boosted industrial production in India?,World War I,World War II,Crimean War,Napoleonic Wars,World War I
+MCQ,31,During WWI, British factories focused on,Consumer goods,War supplies,Agriculture,Textiles,War supplies
+MCQ,32,Industrialisation increased environmental,Protection,Balance,Pollution,Cleanliness,Pollution
+MCQ,33,Which invention revolutionised transport?,Steam engine,Power loom,Spinning jenny,Electric motor,Steam engine
+MCQ,34,In Britain, industrialisation was supported by,Colonies,Rich resources,Poor farmers,Slaves,Colonies
+MCQ,35,The term proto-industrialisation refers to,Factory production,Large-scale industry,Small-scale production before factories,Machine age,Small-scale production before factories
+MCQ,36,Proto-industrialisation existed before,Factories,Handicrafts,Colonial rule,Trade,Factories
+MCQ,37,Industrialisation created new class called,Peasants,Middle class,Industrial working class,Artisans,Industrial working class
+MCQ,38,Which factor did NOT promote industrialisation?,Capital,Technology,Markets,Isolation,Isolation
+MCQ,39,Indian markets were flooded with,British goods,Indian goods,American goods,Chinese goods,British goods
+MCQ,40,Indian entrepreneurs faced problems due to,Lack of skill,Lack of capital,Colonial policies,Labour shortage,Colonial policies
+MCQ,41,Which Indian industrialist founded Tata Iron and Steel?,G D Birla,J N Tata,Dhirubhai Ambani,Ratan Tata,J N Tata
+MCQ,42,TISCO was established in,1907,1911,1920,1930,1907
+MCQ,43,Industrialisation in India was slow because of,Strong support,British policies,High demand,Cheap labour,British policies
+MCQ,44,The jobber was responsible for,Recruiting workers,Owning factories,Selling goods,Managing machines,Recruiting workers
+MCQ,45,Industrial workers lived in,Large houses,Slums,Villages,Farms,Slums
+MCQ,46,Factory labour was attractive because of,High wages,Regular income,Comfort,Less work,Regular income
+MCQ,47,Handloom weavers survived by,Improving quality,Lowering wages,Closing work,Migration,Improving quality
+MCQ,48,Industrialisation transformed,Economy only,Society only,Both economy and society,Politics,Both economy and society
+MCQ,49,Which class invested in industries?,Peasants,Landlords,Entrepreneurs,Workers,Entrepreneurs
+MCQ,50,The central idea of the chapter is,Machines only,History of trade,Growth of industries and its impact,Colonialism,Growth of industries and its impact
+
+Integer,1,First industrialised country?,Britain,,,,
+Integer,2,Main early industry?,Textile,,,,
+Integer,3,Inventor of steam engine?,James Watt,,,,
+Integer,4,Spinning jenny inventor?,James Hargreaves,,,,
+Integer,5,Factory system began in?,Britain,,,,
+Integer,6,Indian first cotton mill city?,Bombay,,,,
+Integer,7,Year first cotton mill in India?,1854,,,,
+Integer,8,Workers destroying machines?,Luddites,,,,
+Integer,9,Industrial working class created?,Yes,,,,
+Integer,10,Proto-industrialisation means?,Before factories,,,,
+Integer,11,Transport aiding industry?,Railways,,,,
+Integer,12,Jobber role?,Recruiting workers,,,,
+Integer,13,Major Indian textile hub?,Bombay,,,,
+Integer,14,Founder of TISCO?,J N Tata,,,,
+Integer,15,TISCO year?,1907,,,,
+Integer,16,War boosting Indian industry?,World War I,,,,
+Integer,17,Industrialisation increased?,Urbanisation,,,,
+Integer,18,Artisans lost work?,Yes,,,,
+Integer,19,Indian markets filled with?,British goods,,,,
+Integer,20,Factory workers lived in?,Slums,,,,
+Integer,21,Women and children employed?,Yes,,,,
+Integer,22,Industrialisation began century?,18th,,,,
+Integer,23,Power loom used for?,Weaving,,,,
+Integer,24,Proto industry was?,Small-scale,,,,
+Integer,25,Industrial hub country?,Britain,,,,
+Integer,26,Colonial rule helped whom?,British industries,,,,
+Integer,27,Indian industry growth slow?,Yes,,,,
+Integer,28,Handloom survived due to?,Quality,,,,
+Integer,29,Industrial pollution increased?,Yes,,,,
+Integer,30,Industrialisation affected society?,Yes,,,,
+Integer,31,Factory labour attracted by?,Regular wages,,,,
+Integer,32,Main raw material?,Cotton,,,,
+Integer,33,Entrepreneurs invested?,Yes,,,,
+Integer,34,Workers migrated from?,Villages,,,,
+Integer,35,Textile industry dominated?,Britain,,,,
+Integer,36,Indian entrepreneur example?,J N Tata,,,,
+Integer,37,Industrialisation led to?,Class division,,,,
+Integer,38,Jobber acted as?,Middleman,,,,
+Integer,39,Industrialisation created?,Factories,,,,
+Integer,40,Proto industry before?,Industrial Revolution,,,,
+Integer,41,Early factories employed?,Women and children,,,,
+Integer,42,Colonial policy favoured?,Britain,,,,
+Integer,43,Industrial city growth?,Rapid,,,,
+Integer,44,Weavers resisted?,Machines,,,,
+Integer,45,Industrialisation period India?,Colonial era,,,,
+Integer,46,Handicrafts declined?,Yes,,,,
+Integer,47,Industrial economy replaced?,Agrarian,,,,
+Integer,48,Industrialisation changed lifestyle?,Yes,,,,
+Integer,49,Factory owners called?,Industrialists,,,,
+Integer,50,Central theme?,Industrial growth,,,,
+
+Descriptive,1,What is industrialisation?,,,,,Industrialisation is the growth of machine-based production
+Descriptive,2,Explain proto-industrialisation.,,,,,Small-scale production before factories
+Descriptive,3,Describe the role of cotton textile industry.,,,,,It led early industrial growth
+Descriptive,4,Explain the invention of steam engine.,,,,,It powered machines and transport
+Descriptive,5,How did factories change production?,,,,,Centralised large-scale production
+Descriptive,6,Describe the impact of industrialisation on workers.,,,,,Poor working and living conditions
+Descriptive,7,Who were the Luddites?,,,,,Workers opposing machines
+Descriptive,8,Explain industrialisation in Britain.,,,,,Started with textiles and steam power
+Descriptive,9,Why did artisans oppose machines?,,,,,Loss of livelihood
+Descriptive,10,Describe working conditions in factories.,,,,,Long hours and low wages
+Descriptive,11,Explain industrialisation in India.,,,,,Controlled by British policies
+Descriptive,12,Why did Indian handloom survive?,,,,,High quality products
+Descriptive,13,Explain the role of railways.,,,,,Facilitated transport of goods
+Descriptive,14,Describe growth of cotton mills in India.,,,,,Bombay emerged as hub
+Descriptive,15,How did WWI affect Indian industries?,,,,,Boosted production
+Descriptive,16,Explain colonial policies on industry.,,,,,Favoured British goods
+Descriptive,17,Describe the life of factory workers.,,,,,Lived in slums
+Descriptive,18,Explain the role of jobbers.,,,,,Recruited labour
+Descriptive,19,How did industrialisation affect cities?,,,,,Rapid urban growth
+Descriptive,20,Describe environmental impact.,,,,,Increased pollution
+Descriptive,21,Explain the growth of industrial working class.,,,,,Migration from villages
+Descriptive,22,Why was industrialisation slow in India?,,,,,Colonial restrictions
+Descriptive,23,Explain the significance of TISCO.,,,,,First major steel industry
+Descriptive,24,Describe women and child labour.,,,,,Cheap labour force
+Descriptive,25,Explain changes in economy.,,,,,Shift to industrial economy
+Descriptive,26,How did industrialisation affect artisans?,,,,,Decline in work
+Descriptive,27,Explain role of entrepreneurs.,,,,,Invested in industries
+Descriptive,28,Describe proto-industrial workers.,,,,,Worked from homes
+Descriptive,29,Explain factory discipline.,,,,,Strict rules and time
+Descriptive,30,Describe industrial cities.,,,,,Overcrowded and polluted
+Descriptive,31,Explain role of colonies.,,,,,Supplied raw materials
+Descriptive,32,How did technology promote industry?,,,,,Improved efficiency
+Descriptive,33,Describe changes in transport.,,,,,Steamships and railways
+Descriptive,34,Explain the social impact of industrialisation.,,,,,Class divisions
+Descriptive,35,Why were factories located near railways?,,,,,Easy transport
+Descriptive,36,Explain the decline of handicrafts.,,,,,Competition from machines
+Descriptive,37,Describe the industrial revolution.,,,,,Transition to machine production
+Descriptive,38,Explain labour problems.,,,,,Low wages and insecurity
+Descriptive,39,How did industrialisation affect villages?,,,,,Migration to cities
+Descriptive,40,Explain factory system.,,,,,Centralised production
+Descriptive,41,Describe impact on women.,,,,,Employment with exploitation
+Descriptive,42,Explain colonial exploitation.,,,,,Markets flooded with British goods
+Descriptive,43,Describe early industrialists.,,,,,Invested capital
+Descriptive,44,Explain why machines were feared.,,,,,Job loss
+Descriptive,45,How did industrialisation transform society?,,,,,Changed lifestyle and work
+Descriptive,46,Explain relationship between industry and trade.,,,,,Increased global trade
+Descriptive,47,Describe Indian entrepreneurial efforts.,,,,,Tata and Birla
+Descriptive,48,Explain industrialisation and nationalism.,,,,,Economic self-reliance
+Descriptive,49,Why is the chapter important?,,,,,Explains economic transformation
+Descriptive,50,Summarize The Age of Industrialisation.,,,,,The chapter explains growth of industries and its social impact

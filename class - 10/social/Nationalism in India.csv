@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who led the Indian National Movement against British rule?,Jawaharlal Nehru,B R Ambedkar,Mahatma Gandhi,Bhagat Singh,Mahatma Gandhi
+MCQ,2,The Non-Cooperation Movement was launched in,1915,1917,1920,1930,1920
+MCQ,3,The Rowlatt Act was passed in,1917,1918,1919,1920,1919
+MCQ,4,The Jallianwala Bagh massacre took place in,1918,1919,1920,1921,1919
+MCQ,5,The Khilafat Movement was started to support,Ottoman Caliph,Indian farmers,Workers,Tribal people,Ottoman Caliph
+MCQ,6,Who called off the Non-Cooperation Movement?,Jawaharlal Nehru,B R Ambedkar,Mahatma Gandhi,S C Bose,Mahatma Gandhi
+MCQ,7,The Chauri Chaura incident occurred in,1920,1921,1922,1923,1922
+MCQ,8,The Civil Disobedience Movement was launched in,1927,1928,1930,1932,1930
+MCQ,9,The Salt March started from,Sabarmati to Dandi,Dandi to Delhi,Bombay to Surat,Delhi to Amritsar,Sabarmati to Dandi
+MCQ,10,The Simon Commission was opposed because it had,Too many members,No Indian member,Too few members,Only British women,No Indian member
+MCQ,11,Who presided over the Lahore Session of INC (1929)?,Gandhi,Nehru,Patel,Bose,Nehru
+MCQ,12,Purna Swaraj was declared in the year,1927,1928,1929,1930,1929
+MCQ,13,The Dandi March was related to,Forest laws,Salt law,Land tax,Education,Salt law
+MCQ,14,The All India Muslim League was founded in,1905,1906,1910,1915,1906
+MCQ,15,The Swaraj Party was formed by,Motilal Nehru and C R Das,Gandhi and Nehru,Bose and Patel,Tilak and Gokhale,Motilal Nehru and C R Das
+MCQ,16,Gandhiji promoted which form of protest?,Violence,Passive resistance,Armed struggle,Revolution,Passive resistance
+MCQ,17,The idea of satyagraha means,Violence,Truth force,Revenge,Boycott,Truth force
+MCQ,18,Which movement united Hindus and Muslims?,Civil Disobedience,Quit India,Khilafat-Non-Cooperation,Swadeshi,Khilafat-Non-Cooperation
+MCQ,19,The Quit India Movement was launched in,1935,1939,1942,1945,1942
+MCQ,20,Who designed the Swaraj flag?,Rabindranath Tagore,Gandhi,S C Bose,C R Das,Gandhi
+MCQ,21,The plantation workers of Assam joined the movement by,Strikes,Marching to villages,Violence,Boycott,Marching to villages
+MCQ,22,The tribal movement in Andhra Pradesh was led by,Alluri Sitaram Raju,Birsa Munda,Gandhi,Nehru,Alluri Sitaram Raju
+MCQ,23,The Non-Cooperation Movement supported boycott of,Foreign goods,Indian goods,Land,Education only,Foreign goods
+MCQ,24,Which class actively participated in nationalism?,Middle class only,Peasants and workers,Only elites,Only students,Peasants and workers
+MCQ,25,The Indian National Congress was founded in,1885,1890,1900,1905,1885
+MCQ,26,The Simon Commission arrived in India in,1925,1927,1928,1930,1928
+MCQ,27,Gandhi returned to India from South Africa in,1913,1914,1915,1916,1915
+MCQ,28,The idea of nationalism spread through,Symbols and folklore,Only newspapers,Only leaders,Only violence,Symbols and folklore
+MCQ,29,The term Swaraj means,Freedom,Self-rule,Reform,Equality,Self-rule
+MCQ,30,The British used divide and rule by encouraging,National unity,Communalism,Education,Industries,Communalism
+MCQ,31,Which movement broke colonial laws peacefully?,Satyagraha,Swadeshi,Revolutionary movement,Armed struggle,Satyagraha
+MCQ,32,The Rowlatt Act allowed detention without,Trial,Bail,Charge,Appeal,Trial
+MCQ,33,The Civil Disobedience Movement was suspended due to,Gandhi-Irwin Pact,Chauri Chaura,Quit India,Simon Commission,Gandhi-Irwin Pact
+MCQ,34,The Gandhi-Irwin Pact was signed in,1929,1930,1931,1932,1931
+MCQ,35,Who organized the Awadh peasant movement?,Jawaharlal Nehru,Baba Ramchandra,Gandhi,Patel,Baba Ramchandra
+MCQ,36,The Non-Cooperation Movement encouraged boycott of,British schools,British courts,British goods,All of these,All of these
+MCQ,37,Nationalism in India grew due to,Colonial exploitation,Industrial growth,Foreign trade,Modernization,Colonial exploitation
+MCQ,38,The symbol of Bharat Mata represented,Colonial power,National unity,British rule,Religion only,National unity
+MCQ,39,Who wrote the song Vande Mataram?,Bankim Chandra Chattopadhyay,Rabindranath Tagore,Gandhi,Nehru,Bankim Chandra Chattopadhyay
+MCQ,40,The Civil Disobedience Movement mainly targeted,Education laws,Salt law,Forest law,Press law,Salt law
+MCQ,41,The Indian National Movement aimed at,Reforms,Swaraj,Employment,Education,Swaraj
+MCQ,42,The British introduced repressive laws to,Support nationalism,Suppress nationalism,Encourage unity,End poverty,Suppress nationalism
+MCQ,43,The Non-Cooperation Movement ended because of,Violence at Chauri Chaura,British repression,World War I,Famine,Violence at Chauri Chaura
+MCQ,44,Which group was reluctant in CDM?,Industrialists,Peasants,Workers,Students,Industrialists
+MCQ,45,The idea of nationalism united people based on,Region,Language,Common identity,Religion only,Common identity
+MCQ,46,The first satyagraha in India was in,Champaran,Ahmedabad,Kheda,Dandi,Champaran
+MCQ,47,The movement in Kheda was related to,Tax relief,Forest rights,Salt law,Labour strike,Tax relief
+MCQ,48,The Non-Cooperation Movement supported,Swadeshi,Boycott of foreign goods,National education,All of these,All of these
+MCQ,49,Nationalism in India was inspired by,French Revolution,Russian Revolution,British reforms,Industrialization,French Revolution
+MCQ,50,The central idea of Nationalism in India was,Unity against colonial rule,Industrial growth,Modern education,British cooperation,Unity against colonial rule
+
+Integer,1,Year of Non-Cooperation Movement?,1920,,,,
+Integer,2,Year of Rowlatt Act?,1919,,,,
+Integer,3,Year of Jallianwala Bagh massacre?,1919,,,,
+Integer,4,Leader of Indian nationalism?,Mahatma Gandhi,,,,
+Integer,5,Meaning of Swaraj?,Self-rule,,,,
+Integer,6,Year of Dandi March?,1930,,,,
+Integer,7,Movement started after Chauri Chaura?,Withdrawn,,,,
+Integer,8,Name of salt march destination?,Dandi,,,,
+Integer,9,Year of Civil Disobedience Movement?,1930,,,,
+Integer,10,Movement launched in 1942?,Quit India,,,,
+Integer,11,Founder of INC?,A O Hume,,,,
+Integer,12,Leader of Khilafat Movement?,Ali brothers,,,,
+Integer,13,Concept of truth force?,Satyagraha,,,,
+Integer,14,Author of Vande Mataram?,Bankim Chandra Chattopadhyay,,,,
+Integer,15,Year of Simon Commission?,1928,,,,
+Integer,16,Purna Swaraj year?,1929,,,,
+Integer,17,Place of Chauri Chaura?,Gorakhpur,,,,
+Integer,18,Leader of tribal revolt in AP?,Alluri Sitaram Raju,,,,
+Integer,19,First satyagraha?,Champaran,,,,
+Integer,20,Gandhi returned to India in?,1915,,,,
+Integer,21,Peasant movement in Awadh led by?,Baba Ramchandra,,,,
+Integer,22,Movement linked with salt?,Civil Disobedience,,,,
+Integer,23,British policy to divide people?,Divide and rule,,,,
+Integer,24,National flag symbolized?,Unity,,,,
+Integer,25,Plantation workers joined by?,Marching home,,,,
+Integer,26,Law allowing detention without trial?,Rowlatt Act,,,,
+Integer,27,Movement suspended in 1931?,Civil Disobedience,,,,
+Integer,28,Pact between Gandhi and Irwin?,Gandhi-Irwin Pact,,,,
+Integer,29,Symbol of nation?,Bharat Mata,,,,
+Integer,30,Year INC founded?,1885,,,,
+Integer,31,Movement of 1920?,Non-Cooperation,,,,
+Integer,32,Leader of Lahore Session?,Jawaharlal Nehru,,,,
+Integer,33,Main aim of nationalism?,Independence,,,,
+Integer,34,Popular protest method?,Boycott,,,,
+Integer,35,Movement encouraging swadeshi?,Non-Cooperation,,,,
+Integer,36,Leader of Indian peasants?,Gandhi,,,,
+Integer,37,Main colonial exploitation?,Economic,,,,
+Integer,38,Indian unity based on?,Common identity,,,,
+Integer,39,Movement against forest laws?,Tribal movement,,,,
+Integer,40,Movement encouraging khadi?,Swadeshi,,,,
+Integer,41,Year Quit India?,1942,,,,
+Integer,42,People united through?,Symbols,,,,
+Integer,43,Leader of CDM?,Gandhi,,,,
+Integer,44,Opposition to Simon Commission?,No Indians,,,,
+Integer,45,National song?,Vande Mataram,,,,
+Integer,46,Movement supporting Hindu-Muslim unity?,Khilafat,,,,
+Integer,47,Method of Gandhian struggle?,Non-violence,,,,
+Integer,48,Main class leading movement?,Middle class,,,,
+Integer,49,Movement withdrew due to violence?,Non-Cooperation,,,,
+Integer,50,Central idea?,National unity,,,,
+
+Descriptive,1,Explain the rise of nationalism in India.,,,,,Nationalism grew due to colonial exploitation and shared struggle
+Descriptive,2,Describe the role of Mahatma Gandhi in nationalism.,,,,,He united masses through satyagraha
+Descriptive,3,What was the Non-Cooperation Movement?,,,,,Mass boycott of British institutions
+Descriptive,4,Explain the significance of the Dandi March.,,,,,It broke the salt law peacefully
+Descriptive,5,What was the Rowlatt Act?,,,,,Law allowing detention without trial
+Descriptive,6,Describe the Jallianwala Bagh massacre.,,,,,Brutal killing of peaceful protestors
+Descriptive,7,Explain the Khilafat Movement.,,,,,Movement to support Caliph
+Descriptive,8,Why was the Non-Cooperation Movement withdrawn?,,,,,Due to violence at Chauri Chaura
+Descriptive,9,What was Civil Disobedience Movement?,,,,,Violation of unjust laws
+Descriptive,10,Explain the role of peasants in nationalism.,,,,,They protested against high taxes
+Descriptive,11,Describe the tribal movements.,,,,,Resisted forest laws
+Descriptive,12,What was the Quit India Movement?,,,,,Demand for immediate independence
+Descriptive,13,Explain the idea of satyagraha.,,,,,Peaceful resistance based on truth
+Descriptive,14,Describe the role of women in nationalism.,,,,,Participated in protests
+Descriptive,15,What was the impact of nationalism?,,,,,United Indians against British
+Descriptive,16,Explain the significance of symbols.,,,,,Created sense of unity
+Descriptive,17,How did British repress nationalism?,,,,,Through laws and force
+Descriptive,18,Explain the plantation workers’ movement.,,,,,Demanded freedom of movement
+Descriptive,19,What was the role of students?,,,,,Boycotted schools
+Descriptive,20,Explain the Awadh peasant movement.,,,,,Protested against landlords
+Descriptive,21,Describe Gandhian methods.,,,,,Non-violence and mass participation
+Descriptive,22,Explain the impact of French Revolution.,,,,,Inspired Indian nationalism
+Descriptive,23,How did nationalism unite diverse groups?,,,,,Common struggle
+Descriptive,24,Describe the role of Congress.,,,,,Led national movement
+Descriptive,25,Explain colonial economic exploitation.,,,,,Drain of wealth
+Descriptive,26,Why was salt chosen as symbol?,,,,,Affected everyone
+Descriptive,27,Explain Hindu-Muslim unity.,,,,,Through Khilafat-NCM
+Descriptive,28,What were the limits of nationalism?,,,,,Communal tensions
+Descriptive,29,Explain Gandhiji’s leadership.,,,,,Mass mobilization
+Descriptive,30,Describe the impact of World War I.,,,,,Economic hardship
+Descriptive,31,Explain the idea of swadeshi.,,,,,Use of Indian goods
+Descriptive,32,How did folklore spread nationalism?,,,,,Shared history
+Descriptive,33,Describe repression under British rule.,,,,,Censorship and arrests
+Descriptive,34,Explain the significance of 1929 Lahore Session.,,,,,Demand for complete independence
+Descriptive,35,What was the role of business class?,,,,,Supported selectively
+Descriptive,36,Explain nationalist unity.,,,,,Overcoming differences
+Descriptive,37,Describe peasant participation.,,,,,Protests and marches
+Descriptive,38,Explain role of language.,,,,,Created identity
+Descriptive,39,What problems emerged in nationalism?,,,,,Communalism
+Descriptive,40,Describe Gandhiji’s early movements.,,,,,Champaran and Kheda
+Descriptive,41,Explain the idea of Bharat Mata.,,,,,Symbol of nation
+Descriptive,42,How did nationalism affect villages?,,,,,Mobilized peasants
+Descriptive,43,Explain the role of press.,,,,,Spread ideas
+Descriptive,44,Describe non-violent resistance.,,,,,Peaceful protest
+Descriptive,45,What was the legacy of nationalism?,,,,,Independence
+Descriptive,46,Explain importance of unity.,,,,,Strengthened struggle
+Descriptive,47,Describe British divide and rule.,,,,,Created divisions
+Descriptive,48,Explain the outcome of movements.,,,,,Mass awakening
+Descriptive,49,How did nationalism inspire people?,,,,,Sense of pride
+Descriptive,50,Summarize Nationalism in India.,,,,,Indian nationalism united people to fight colonial rule

@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Two angles are supplementary if their sum is?,90°,180°,360°,45°,180°
+MCQ,2,Two angles are complementary if their sum is?,90°,180°,360°,60°,90°
+MCQ,3,The angle between a line and itself is?,0°,45°,90°,180°,0°
+MCQ,4,Vertically opposite angles are?,Equal,Supplementary,Complementary,Unequal,Equal
+MCQ,5,If two lines intersect, how many angles are formed?,2,3,4,6,4
+MCQ,6,Linear pair angles are?,Equal,Supplementary,Complementary,Vertical,Supplementary
+MCQ,7,The sum of angles in a linear pair is?,90°,180°,270°,360°,180°
+MCQ,8,When a transversal cuts parallel lines, alternate interior angles are?,Equal,Unequal,Supplementary,Complementary,Equal
+MCQ,9,Corresponding angles are equal when lines are?,Intersecting,Parallel,Perpendicular,Skew,Parallel
+MCQ,10,If one angle of a linear pair is 50°, the other is?,130°,40°,50°,180°,130°
+MCQ,11,Adjacent angles have?,Common arm,Equal measure,Same vertex only,No common arm,Common arm
+MCQ,12,Vertically opposite angles are formed by?,Parallel lines,Intersecting lines,Perpendicular lines,Transversal,Intersecting lines
+MCQ,13,If two lines are perpendicular, each angle is?,45°,60°,90°,180°,90°
+MCQ,14,The sum of vertically opposite angles is?,90°,180°,360°,Depends,Depends
+MCQ,15,If corresponding angles are equal, lines are?,Intersecting,Parallel,Perpendicular,Skew,Parallel
+MCQ,16,The angle made by a straight line is?,90°,180°,270°,360°,180°
+MCQ,17,Which angles are always equal?,Linear pair,Adjacent,Vertically opposite,Supplementary,Vertically opposite
+MCQ,18,Interior angles on same side of transversal are?,Equal,Supplementary,Complementary,Vertical,Supplementary
+MCQ,19,If one angle is 110°, its supplementary angle is?,70°,90°,110°,180°,70°
+MCQ,20,If two angles are complementary and one is 30°, the other is?,60°,90°,30°,150°,60°
+MCQ,21,A pair of angles whose sum is 180° is called?,Complementary,Supplementary,Vertical,Adjacent,Supplementary
+MCQ,22,A transversal is a line that?,Cuts parallel lines,Cuts only one line,Cuts no line,Is parallel,Cuts parallel lines
+MCQ,23,Alternate exterior angles are?,Equal when lines are parallel,Always unequal,Always supplementary,Random,Equal when lines are parallel
+MCQ,24,If two lines intersect, vertically opposite angles are?,Equal,Unequal,Complementary,Supplementary,Equal
+MCQ,25,Which angle pair is adjacent?,Linear pair,Vertical angles,Corresponding,Alternate,Linear pair
+MCQ,26,The angle between perpendicular lines is?,45°,60°,90°,180°,90°
+MCQ,27,If two angles form a linear pair, they are?,Equal,Supplementary,Complementary,Vertical,Supplementary
+MCQ,28,The sum of all angles around a point is?,90°,180°,270°,360°,360°
+MCQ,29,If a transversal cuts two parallel lines, interior angles on same side are?,Equal,Supplementary,Complementary,Vertical,Supplementary
+MCQ,30,An angle greater than 90° but less than 180° is?,Acute,Right,Obtuse,Straight,Obtuse
+MCQ,31,An angle equal to 90° is?,Acute,Right,Obtuse,Straight,Right
+MCQ,32,An angle less than 90° is?,Acute,Right,Obtuse,Straight,Acute
+MCQ,33,If one vertically opposite angle is 65°, the other is?,65°,115°,180°,90°,65°
+MCQ,34,If two lines are parallel, they never?,Intersect,Form angles,Cross,Meet at infinity,Intersect
+MCQ,35,Which is a pair of supplementary angles?,40° and 140°,30° and 50°,60° and 90°,45° and 45°,40° and 140°
+MCQ,36,Which is a pair of complementary angles?,30° and 60°,90° and 90°,45° and 60°,100° and 80°,30° and 60°
+MCQ,37,Corresponding angles are formed when?,Two lines intersect,A transversal cuts two lines,Lines are perpendicular,Lines are skew,A transversal cuts two lines
+MCQ,38,Which angle pair is equal when lines are parallel?,Alternate interior,Co-interior,Linear pair,Adjacent,Alternate interior
+MCQ,39,If one angle of a linear pair is x, the other is?,x,180°−x,90°−x,2x,180°−x
+MCQ,40,The sum of complementary angles is?,90°,180°,270°,360°,90°
+MCQ,41,If two lines intersect, how many vertically opposite angle pairs are formed?,1,2,3,4,2
+MCQ,42,Which angle pair shares a common vertex and arm?,Vertical,Corresponding,Adjacent,Alternate,Adjacent
+MCQ,43,An angle of 180° is called?,Right,Obtuse,Straight,Reflex,Straight
+MCQ,44,An angle greater than 180° is?,Acute,Obtuse,Reflex,Straight,Reflex
+MCQ,45,If two angles are equal and supplementary, each is?,45°,90°,180°,60°,90°
+MCQ,46,Which angles add up to 360°?,Linear pair,Around a point,Complementary,Vertical,Around a point
+MCQ,47,The bisector of an angle divides it into?,Two equal parts,Unequal parts,Three parts,Four parts,Two equal parts
+MCQ,48,If corresponding angles are equal, the lines are?,Intersecting,Parallel,Perpendicular,Skew,Parallel
+MCQ,49,Which angle pair is not equal?,Vertically opposite,Corresponding (parallel),Alternate interior (parallel),Linear pair,Linear pair
+MCQ,50,Lines which never meet are called?,Intersecting,Parallel,Perpendicular,Concurrent,Parallel
+
+Integer,1,Sum of linear pair angles?,180°, , , ,
+Integer,2,Sum of complementary angles?,90°, , , ,
+Integer,3,Sum of angles around a point?,360°, , , ,
+Integer,4,Angle between perpendicular lines?,90°, , , ,
+Integer,5,Angle between parallel lines?,0°, , , ,
+Integer,6,Number of angles formed when two lines intersect?,4, , , ,
+Integer,7,Vertically opposite angles are equal? (Yes/No),Yes, , , ,
+Integer,8,Linear pair angles are supplementary? (Yes/No),Yes, , , ,
+Integer,9,If one angle is 70°, its supplementary is?,110°, , , ,
+Integer,10,If one complementary angle is 40°, the other is?,50°, , , ,
+Integer,11,Angle less than 90° is called?,Acute, , , ,
+Integer,12,Angle more than 90° but less than 180°?,Obtuse, , , ,
+Integer,13,Angle equal to 180°?,Straight, , , ,
+Integer,14,Angle greater than 180°?,Reflex, , , ,
+Integer,15,Vertically opposite angles are formed by?,Intersecting lines, , , ,
+Integer,16,Corresponding angles are equal when lines are?,Parallel, , , ,
+Integer,17,Alternate interior angles are equal when lines are?,Parallel, , , ,
+Integer,18,Interior angles on same side are?,Supplementary, , , ,
+Integer,19,Angle bisector divides angle into?,Two equal parts, , , ,
+Integer,20,If one angle is 120°, its vertically opposite angle is?,120°, , , ,
+Integer,21,Number of right angles in straight angle?,2, , , ,
+Integer,22,Number of right angles around a point?,4, , , ,
+Integer,23,If one angle of linear pair is 95°, the other is?,85°, , , ,
+Integer,24,Complementary of 35°?,55°, , , ,
+Integer,25,Supplementary of 45°?,135°, , , ,
+Integer,26,Angle at a point on a straight line?,180°, , , ,
+Integer,27,Adjacent angles share common?,Arm, , , ,
+Integer,28,Vertically opposite angles share arm? (Yes/No),No, , , ,
+Integer,29,Corresponding angles are formed by?,Transversal, , , ,
+Integer,30,Alternate interior angles lie?,Between lines, , , ,
+Integer,31,Parallel lines intersect? (Yes/No),No, , , ,
+Integer,32,Angle equal to 90°?,Right, , , ,
+Integer,33,Sum of two right angles?,180°, , , ,
+Integer,34,Sum of four right angles?,360°, , , ,
+Integer,35,Angles on a straight line form?,Linear pair, , , ,
+Integer,36,Reflex angle is greater than?,180°, , , ,
+Integer,37,Angle between x-axis and y-axis?,90°, , , ,
+Integer,38,If two angles are equal and supplementary, each is?,90°, , , ,
+Integer,39,Number of rays forming an angle?,2, , , ,
+Integer,40,Angle formed by a ray with itself?,0°, , , ,
+Integer,41,If corresponding angles unequal, lines are?,Not parallel, , , ,
+Integer,42,Co-interior angles sum is?,180°, , , ,
+Integer,43,Angle between two intersecting lines can be?,Acute or obtuse, , , ,
+Integer,44,Alternate exterior angles are equal if lines are?,Parallel, , , ,
+Integer,45,Right angle is equal to?,90°, , , ,
+Integer,46,Two supplementary angles both acute? (Yes/No),No, , , ,
+Integer,47,Angle of complete revolution?,360°, , , ,
+Integer,48,Linear pair has how many angles?,2, , , ,
+Integer,49,Vertical angles are?,Equal, , , ,
+Integer,50,Angle greater than straight angle is?,Reflex, , , ,
+
+Problem,1,Find the supplementary angle of 65°.,,,,,115°
+Problem,2,Find the complementary angle of 30°.,,,,,60°
+Problem,3,Find the vertically opposite angle of 75°.,,,,,75°
+Problem,4,Find the other angle of a linear pair if one is 110°.,,,,,70°
+Problem,5,Find the complementary angle of 45°.,,,,,45°
+Problem,6,Find the supplementary angle of 90°.,,,,,90°
+Problem,7,If two angles form a linear pair and one is 40°, find the other.,,,,,140°
+Problem,8,If two angles are vertically opposite and one is 125°, find the other.,,,,,125°
+Problem,9,Find the sum of angles around a point.,,,,,360°
+Problem,10,Find the angle between perpendicular lines.,,,,,90°
+Problem,11,If corresponding angles are 70°, find the alternate interior angle.,,,,,70°
+Problem,12,If one angle of linear pair is x, write the other.,,,,,180°−x
+Problem,13,Find the complementary angle of 25°.,,,,,65°
+Problem,14,Find the supplementary angle of 150°.,,,,,30°
+Problem,15,If one vertically opposite angle is 35°, find the other.,,,,,35°
+Problem,16,If two angles are supplementary and equal, find each.,,,,,90°
+Problem,17,Find the angle if its supplement is 120°.,,,,,60°
+Problem,18,Find the angle if its complement is 20°.,,,,,70°
+Problem,19,If one angle on straight line is 75°, find the other.,,,,,105°
+Problem,20,Find the reflex angle of 110°.,,,,,250°
+Problem,21,Find the angle between two parallel lines.,,,,,0°
+Problem,22,If interior angles on same side are 110°, find the other.,,,,,70°
+Problem,23,Find the vertically opposite angle of 90°.,,,,,90°
+Problem,24,Find the complement of 0°.,,,,,90°
+Problem,25,Find the supplement of 0°.,,,,,180°
+Problem,26,Find the angle formed by two perpendicular lines.,,,,,90°
+Problem,27,Find the sum of two right angles.,,,,,180°
+Problem,28,Find the angle which is twice its complement.,,,,,60°
+Problem,29,Find the angle whose supplement is double of it.,,,,,60°
+Problem,30,Find the angle whose complement is 15°.,,,,,75°
+Problem,31,Find the supplementary angle of 135°.,,,,,45°
+Problem,32,Find the angle if its complement is 35°.,,,,,55°
+Problem,33,Find the angle if its supplement is 145°.,,,,,35°
+Problem,34,Find the angle formed by straight line.,,,,,180°
+Problem,35,Find the angle formed at complete revolution.,,,,,360°
+Problem,36,Find the vertically opposite angle of 48°.,,,,,48°
+Problem,37,Find the other angle of linear pair if one is 95°.,,,,,85°
+Problem,38,Find the complement of 60°.,,,,,30°
+Problem,39,Find the supplement of 60°.,,,,,120°
+Problem,40,Find the angle between x-axis and y-axis.,,,,,90°
+Problem,41,Find the reflex angle of 90°.,,,,,270°
+Problem,42,Find the angle if two complementary angles are equal.,,,,,45°
+Problem,43,Find the angle if two supplementary angles are equal.,,,,,90°
+Problem,44,Find the other angle of linear pair if one is 20°.,,,,,160°
+Problem,45,Find the vertically opposite angle of 140°.,,,,,140°
+Problem,46,Find the complement of 80°.,,,,,10°
+Problem,47,Find the supplement of 80°.,,,,,100°
+Problem,48,Find the angle if its supplement is 100°.,,,,,80°
+Problem,49,Find the angle if its complement is 50°.,,,,,40°
+Problem,50,Find the angle formed by two intersecting lines if one is 30°.,,,,,150°

@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Tissue is a group of?,Cells,Organs,Systems,Organelles,Cells
+MCQ,2,Study of tissues is called?,Histology,Morphology,Anatomy,Physiology,Histology
+MCQ,3,Which tissue is responsible for growth in plants?,Permanent tissue,Meristematic tissue,Ground tissue,Vascular tissue,Meristematic tissue
+MCQ,4,Meristematic tissues are found at?,Root tip,Stem tip,Both,None,Both
+MCQ,5,Which tissue has actively dividing cells?,Permanent,Meristematic,Epithelial,Connective,Meristematic
+MCQ,6,Which plant tissue provides support?,Parenchyma,Collenchyma,Sclerenchyma,None,Sclerenchyma
+MCQ,7,Which tissue stores food?,Parenchyma,Collenchyma,Sclerenchyma,None,Parenchyma
+MCQ,8,Which tissue has thickened corners?,Parenchyma,Collenchyma,Sclerenchyma,None,Collenchyma
+MCQ,9,Dead cells are found in?,Parenchyma,Collenchyma,Sclerenchyma,None,Sclerenchyma
+MCQ,10,Which tissue transports water in plants?,Phloem,Xylem,Parenchyma,None,Xylem
+MCQ,11,Which tissue transports food in plants?,Xylem,Phloem,Collenchyma,None,Phloem
+MCQ,12,Xylem is made of?,Tracheids,Vessels,Fibres,All of these,All of these
+MCQ,13,Phloem transports?,Water,Food,Minerals,None,Food
+MCQ,14,Which is a simple tissue?,Xylem,Phloem,Parenchyma,None,Parenchyma
+MCQ,15,Which is a complex tissue?,Parenchyma,Collenchyma,Xylem,None,Xylem
+MCQ,16,Epithelial tissue covers?,Body surface,Organs,Both,None,Both
+MCQ,17,Which epithelial tissue is flat?,Cuboidal,Columnar,Squamous,None,Squamous
+MCQ,18,Which tissue lines blood vessels?,Cuboidal,Squamous,Columnar,None,Squamous
+MCQ,19,Which epithelial tissue has cilia?,Cuboidal,Ciliated,Columnar,None,Ciliated
+MCQ,20,Which tissue provides protection?,Epithelial,Muscular,Nervous,None,Epithelial
+MCQ,21,Which tissue connects bones?,Muscle,Nerve,Ligament,None,Ligament
+MCQ,22,Which tissue connects muscle to bone?,Ligament,Tendon,Cartilage,None,Tendon
+MCQ,23,Which connective tissue stores fat?,Blood,Cartilage,Adipose,None,Adipose
+MCQ,24,Which tissue transports oxygen?,Blood,Lymph,Nerve,None,Blood
+MCQ,25,Blood is a?,Muscular tissue,Connective tissue,Epithelial tissue,None,Connective tissue
+MCQ,26,Which tissue gives shape to nose?,Bone,Cartilage,Muscle,None,Cartilage
+MCQ,27,Which tissue helps in movement?,Epithelial,Muscular,Nervous,None,Muscular
+MCQ,28,Voluntary muscles are?,Smooth,Skeletal,Cardiac,None,Skeletal
+MCQ,29,Involuntary muscles are?,Skeletal,Smooth,Striated,None,Smooth
+MCQ,30,Cardiac muscles are found in?,Heart,Stomach,Arms,None,Heart
+MCQ,31,Which muscle works continuously?,Skeletal,Smooth,Cardiac,None,Cardiac
+MCQ,32,Which tissue controls body activities?,Muscular,Nervous,Epithelial,None,Nervous
+MCQ,33,Neuron is a unit of?,Muscle,Nerve,Bone,None,Nerve
+MCQ,34,Which tissue lacks blood supply?,Epithelial,Muscular,Nervous,None,Epithelial
+MCQ,35,Which plant tissue is living?,Xylem,Phloem,Sclerenchyma,None,Phloem
+MCQ,36,Which plant tissue is dead?,Phloem,Parenchyma,Xylem,None,Xylem
+MCQ,37,Which tissue has intercellular spaces?,Parenchyma,Collenchyma,Sclerenchyma,None,Parenchyma
+MCQ,38,Which tissue gives flexibility?,Collenchyma,Sclerenchyma,Parenchyma,None,Collenchyma
+MCQ,39,Which connective tissue is fluid?,Blood,Bone,Cartilage,None,Blood
+MCQ,40,Which epithelial tissue forms kidney tubules?,Squamous,Cuboidal,Columnar,None,Cuboidal
+MCQ,41,Which tissue helps in conduction of impulses?,Muscular,Nervous,Connective,None,Nervous
+MCQ,42,Which muscle is non-striated?,Skeletal,Cardiac,Smooth,None,Smooth
+MCQ,43,Which tissue forms brain?,Muscle,Nerve,Bone,None,Nerve
+MCQ,44,Which plant tissue is photosynthetic?,Parenchyma,Chlorenchyma,Sclerenchyma,None,Chlorenchyma
+MCQ,45,Which tissue repairs body?,Epithelial,Connective,Nervous,None,Connective
+MCQ,46,Which muscle shows striations?,Smooth,Skeletal,Cardiac,None,Skeletal
+MCQ,47,Which tissue has long cells?,Nervous,Epithelial,Bone,None,Nervous
+MCQ,48,Which tissue supports plant body?,Collenchyma,Sclerenchyma,Both,None,Both
+MCQ,49,Which tissue has sieve tubes?,Xylem,Phloem,Parenchyma,None,Phloem
+MCQ,50,Which tissue has vessels?,Xylem,Phloem,Parenchyma,None,Xylem
+
+Integer,1,Study of tissues?,Histology,,,,
+Integer,2,Growth tissue in plants?,Meristematic,,,,
+Integer,3,Food storing tissue?,Parenchyma,,,,
+Integer,4,Dead supporting tissue?,Sclerenchyma,,,,
+Integer,5,Water conducting tissue?,Xylem,,,,
+Integer,6,Food conducting tissue?,Phloem,,,,
+Integer,7,Simple plant tissue?,Parenchyma,,,,
+Integer,8,Complex plant tissue?,Xylem,,,,
+Integer,9,Body covering tissue?,Epithelial,,,,
+Integer,10,Movement tissue?,Muscular,,,,
+Integer,11,Impulse conducting tissue?,Nervous,,,,
+Integer,12,Bone to bone connector?,Ligament,,,,
+Integer,13,Muscle to bone connector?,Tendon,,,,
+Integer,14,Fat storing tissue?,Adipose,,,,
+Integer,15,Oxygen transporting tissue?,Blood,,,,
+Integer,16,Heart muscle?,Cardiac,,,,
+Integer,17,Voluntary muscle?,Skeletal,,,,
+Integer,18,Involuntary muscle?,Smooth,,,,
+Integer,19,Neuron belongs to?,Nervous tissue,,,,
+Integer,20,Flat epithelial tissue?,Squamous,,,,
+Integer,21,Living plant tissue?,Phloem,,,,
+Integer,22,Dead plant tissue?,Xylem,,,,
+Integer,23,Flexibility tissue?,Collenchyma,,,,
+Integer,24,Plant photosynthetic tissue?,Chlorenchyma,,,,
+Integer,25,Fluid connective tissue?,Blood,,,,
+Integer,26,Tissue without blood supply?,Epithelial,,,,
+Integer,27,Longest cells?,Nerve cells,,,,
+Integer,28,Plant tissue with thick walls?,Sclerenchyma,,,,
+Integer,29,Organ movement tissue?,Muscular,,,,
+Integer,30,Brain tissue?,Nervous,,,,
+Integer,31,Meristem at root tip?,Apical,,,,
+Integer,32,Lateral growth tissue?,Cambium,,,,
+Integer,33,Plant tissue giving strength?,Sclerenchyma,,,,
+Integer,34,Transport tissue?,Vascular,,,,
+Integer,35,Animal supportive tissue?,Connective,,,,
+Integer,36,Soft tissue in nose?,Cartilage,,,,
+Integer,37,Red blood cells transport?,Oxygen,,,,
+Integer,38,White blood cells function?,Defense,,,,
+Integer,39,Platelets help in?,Clotting,,,,
+Integer,40,Cell division tissue?,Meristematic,,,,
+Integer,41,Storage connective tissue?,Adipose,,,,
+Integer,42,Plant tissue with spaces?,Parenchyma,,,,
+Integer,43,Organ lining tissue?,Epithelial,,,,
+Integer,44,Impulse speed tissue?,Nervous,,,,
+Integer,45,Elastic tissue?,Cartilage,,,,
+Integer,46,Tissue joining muscles?,Tendon,,,,
+Integer,47,Tissue joining bones?,Ligament,,,,
+Integer,48,Plant growth in thickness?,Lateral meristem,,,,
+Integer,49,Tissue with chlorophyll?,Chlorenchyma,,,,
+Integer,50,Animal tissue classification count?,4,,,,
+
+Descriptive,1,Define tissue.,,,,,Group of similar cells performing same function
+Descriptive,2,What is histology?,,,,,Study of tissues
+Descriptive,3,Explain meristematic tissue.,,,,,Actively dividing plant tissue
+Descriptive,4,Types of meristematic tissue.,,,,,Apical, lateral and intercalary
+Descriptive,5,Explain parenchyma.,,,,,Living tissue for storage
+Descriptive,6,Explain collenchyma.,,,,,Provides flexibility
+Descriptive,7,Explain sclerenchyma.,,,,,Dead tissue giving strength
+Descriptive,8,Explain xylem.,,,,,Conducts water and minerals
+Descriptive,9,Explain phloem.,,,,,Conducts food
+Descriptive,10,Difference between xylem and phloem.,,,,,Water vs food transport
+Descriptive,11,Define epithelial tissue.,,,,,Protective tissue covering organs
+Descriptive,12,Types of epithelial tissue.,,,,,Squamous, cuboidal, columnar
+Descriptive,13,Explain connective tissue.,,,,,Connects and supports organs
+Descriptive,14,Types of connective tissue.,,,,,Bone, cartilage, blood
+Descriptive,15,Explain blood.,,,,,Fluid connective tissue
+Descriptive,16,Explain cartilage.,,,,,Flexible connective tissue
+Descriptive,17,Explain bone.,,,,,Hard connective tissue
+Descriptive,18,Explain muscular tissue.,,,,,Responsible for movement
+Descriptive,19,Types of muscles.,,,,,Skeletal, smooth, cardiac
+Descriptive,20,Explain skeletal muscle.,,,,,Voluntary and striated
+Descriptive,21,Explain smooth muscle.,,,,,Involuntary and non-striated
+Descriptive,22,Explain cardiac muscle.,,,,,Heart muscle
+Descriptive,23,Explain nervous tissue.,,,,,Conducts impulses
+Descriptive,24,Structure of neuron.,,,,,Dendrite, axon, cell body
+Descriptive,25,Function of nervous tissue.,,,,,Control and coordination
+Descriptive,26,Difference between plant and animal tissues.,,,,,Growth vs movement
+Descriptive,27,Why meristematic cells divide?,,,,,For growth
+Descriptive,28,Why xylem is dead tissue?,,,,,For strength
+Descriptive,29,Why blood is connective tissue?,,,,,Connects organs
+Descriptive,30,Why epithelial tissue lacks blood vessels?,,,,,Protection
+Descriptive,31,Function of parenchyma.,,,,,Storage and photosynthesis
+Descriptive,32,Function of collenchyma.,,,,,Flexibility
+Descriptive,33,Function of sclerenchyma.,,,,,Support
+Descriptive,34,Function of phloem.,,,,,Food transport
+Descriptive,35,Function of xylem.,,,,,Water transport
+Descriptive,36,Why muscles contract?,,,,,For movement
+Descriptive,37,Why neurons long?,,,,,Impulse transmission
+Descriptive,38,Why plants need tissues?,,,,,Division of labour
+Descriptive,39,Why animals need tissues?,,,,,Specialization
+Descriptive,40,Define vascular tissue.,,,,,Xylem and phloem
+Descriptive,41,Define simple tissue.,,,,,One type of cells
+Descriptive,42,Define complex tissue.,,,,,More than one type
+Descriptive,43,Explain adipose tissue.,,,,,Fat storage
+Descriptive,44,Explain ligament.,,,,,Bone to bone connector
+Descriptive,45,Explain tendon.,,,,,Muscle to bone connector
+Descriptive,46,Why cartilage flexible?,,,,,Elastic matrix
+Descriptive,47,Why cardiac muscle never tires?,,,,,Continuous supply
+Descriptive,48,Explain apical meristem.,,,,,Growth in length
+Descriptive,49,Explain lateral meristem.,,,,,Growth in thickness
+Descriptive,50,Why tissue organization important?,,,,,Efficient functioning

@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Force can change?,Shape,Speed,Direction,All of these,All of these
+MCQ,2,SI unit of force is?,dyne,newton,kg,m/s,newton
+MCQ,3,Force is a?,Scalar,Vector,Both,None,Vector
+MCQ,4,First law of motion is also called?,Law of force,Law of inertia,Law of action,reaction law,Law of inertia
+MCQ,5,Inertia depends on?,Speed,Mass,Force,Velocity,Mass
+MCQ,6,Greater the mass, greater the?,Acceleration,Inertia,Velocity,Speed,Inertia
+MCQ,7,Which has more inertia?,Truck,Bicycle,Ball,Car,Truck
+MCQ,8,Second law of motion gives?,Force,Inertia,Momentum,None,Force
+MCQ,9,SI unit of momentum is?,kg m/s,newton,m/s,kg,kg m/s
+MCQ,10,Momentum =?,m+v,m/v,mv,v/m,mv
+MCQ,11,Newton’s second law states F is proportional to?,Velocity,Acceleration,Mass×acceleration,Mass,Mass×acceleration
+MCQ,12,If net force is zero, body remains?,At rest or uniform motion,Accelerated,Stopped,None,At rest or uniform motion
+MCQ,13,Newton’s third law talks about?,Inertia,Force pairs,Acceleration,Mass,Force pairs
+MCQ,14,Action and reaction forces act?,On same body,On different bodies,Same direction,None,On different bodies
+MCQ,15,Which law explains recoil of gun?,First,Second,Third,None,Third
+MCQ,16,Which law explains walking?,First,Second,Third,None,Third
+MCQ,17,Rate of change of momentum equals?,Force,Mass,Acceleration,Velocity,Force
+MCQ,18,Unit of force from F=ma?,kg m/s,newton,kg,m/s,newton
+MCQ,19,Which is correct?,F=ma,F=mv,F=m/a,F=v/m,F=ma
+MCQ,20,If force increases, acceleration?,Decreases,Increases,Same,Zero,Increases
+MCQ,21,If mass increases, acceleration?,Increases,Decreases,Same,None,Decreases
+MCQ,22,Inertia of rest means?,Resists motion,Resists change of position,Resists change of speed,None,Resists change of position
+MCQ,23,Inertia of motion means?,Resists rest,Resists motion,Resists change of speed,None,Resists change of speed
+MCQ,24,Inertia of direction means?,Resists turning,Resists speed,Resists rest,None,Resists turning
+MCQ,25,Momentum is conserved when?,External force zero,Force present,Mass changes,None,External force zero
+MCQ,26,Law of conservation of momentum applies to?,Isolated system,Open system,Single body,None,Isolated system
+MCQ,27,Unit of impulse?,N s,kg m/s²,kg,s,N s
+MCQ,28,Impulse equals?,Force × time,Mass × velocity,Acceleration × mass,None,Force × time
+MCQ,29,Change in momentum equals?,Force,Impulse,Mass,None,Impulse
+MCQ,30,Newton’s laws are valid in?,Inertial frames,Non-inertial frames,Both,None,Inertial frames
+MCQ,31,Which is an example of inertia?,Passenger falls forward,Braking car,Jumping,None,Passenger falls forward
+MCQ,32,Which law explains seat belts?,First,Second,Third,None,First
+MCQ,33,If force is doubled, acceleration?,Doubles,Halves,Same,Zero,Doubles
+MCQ,34,Which quantity has direction?,Force,Mass,Speed,Time,Force
+MCQ,35,Force is needed to?,Change motion,Maintain motion,Stop motion,All,Change motion
+MCQ,36,Which law explains rocket propulsion?,First,Second,Third,None,Third
+MCQ,37,SI unit of mass?,kg,g,newton,tonne,kg
+MCQ,38,If momentum is zero, body is?,At rest,Moving fast,Accelerating,None,At rest
+MCQ,39,Which is contact force?,Gravity,Friction,Magnetism,Electrostatic,Friction
+MCQ,40,Which is non-contact force?,Friction,Normal force,Gravitational,Tension,Gravitational
+MCQ,41,Weight is a?,Mass,Force,Energy,Power,Force
+MCQ,42,Force causes deformation means?,Change in shape,Change in speed,Change in direction,None,Change in shape
+MCQ,43,Newton’s first law applies when net force is?,Maximum,Zero,Minimum,None,Zero
+MCQ,44,Which is correct momentum unit?,kg m/s,N s,both A and B,None,both A and B
+MCQ,45,Which law defines force?,First,Second,Third,None,Second
+MCQ,46,Which law talks about equal and opposite forces?,First,Second,Third,None,Third
+MCQ,47,If no force acts, body continues?,Rest or uniform motion,Accelerates,Stops,None,Rest or uniform motion
+MCQ,48,Force changes momentum by changing?,Velocity,Mass,Both,None,Velocity
+MCQ,49,Impulse is large when?,Force large,time small,Force small,time large,Both A and B,None,Both A and B
+MCQ,50,Newton’s laws are laws of?,Motion,Energy,Work,Power,Motion
+
+Integer,1,SI unit of force?,Newton,,,,
+Integer,2,SI unit of mass?,kg,,,,
+Integer,3,SI unit of momentum?,kg m/s,,,,
+Integer,4,Formula of momentum?,p=mv,,,,
+Integer,5,Formula of force?,F=ma,,,,
+Integer,6,First law also called?,Law of inertia,,,,
+Integer,7,Inertia depends on?,Mass,,,,
+Integer,8,Greater mass means greater?,Inertia,,,,
+Integer,9,Rate of change of momentum equals?,Force,,,,
+Integer,10,Newton’s third law talks about?,Action and reaction,,,,
+Integer,11,Momentum unit also equals?,N s,,,,
+Integer,12,Impulse formula?,F×t,,,,
+Integer,13,Change in momentum equals?,Impulse,,,,
+Integer,14,Inertia of rest resists?,Change of rest,,,,
+Integer,15,Inertia of motion resists?,Change of motion,,,,
+Integer,16,Inertia of direction resists?,Change of direction,,,,
+Integer,17,Force is vector? (Yes/No),Yes,,,,
+Integer,18,Momentum is vector? (Yes/No),Yes,,,,
+Integer,19,Force required for acceleration? (Yes/No),Yes,,,,
+Integer,20,If net force zero, acceleration?,Zero,,,,
+Integer,21,Newton’s laws valid in?,Inertial frames,,,,
+Integer,22,Which law gives F=ma?,Second law,,,,
+Integer,23,Which law explains recoil?,Third law,,,,
+Integer,24,Impulse unit?,N s,,,,
+Integer,25,Force × time equals?,Impulse,,,,
+Integer,26,Conservation of momentum applies to?,Isolated system,,,,
+Integer,27,Seat belts work on which law?,First law,,,,
+Integer,28,Walking works on which law?,Third law,,,,
+Integer,29,Which has more inertia: car or bike?,Car,,,,
+Integer,30,Weight is force? (Yes/No),Yes,,,,
+Integer,31,Mass unit in SI?,kg,,,,
+Integer,32,Momentum zero means body is?,At rest,,,,
+Integer,33,Friction is contact force? (Yes/No),Yes,,,,
+Integer,34,Gravity is non-contact force? (Yes/No),Yes,,,,
+Integer,35,Force can change shape? (Yes/No),Yes,,,,
+Integer,36,If mass doubles, inertia?,Doubles,,,,
+Integer,37,Which quantity conserved in collision?,Momentum,,,,
+Integer,38,Impulse causes change in?,Momentum,,,,
+Integer,39,Force proportional to acceleration? (Yes/No),Yes,,,,
+Integer,40,Which law defines force?,Second law,,,,
+Integer,41,Force unit from F=ma?,Newton,,,,
+Integer,42,Newton’s laws count?,3,,,,
+Integer,43,Action and reaction act on?,Different bodies,,,,
+Integer,44,If force increases acceleration?,Increases,,,,
+Integer,45,Force required to change velocity? (Yes/No),Yes,,,,
+Integer,46,Force without contact?,Gravitational,,,,
+Integer,47,Mass remains constant? (Yes/No),Yes,,,,
+Integer,48,Momentum depends on?,Mass and velocity,,,,
+Integer,49,Force can change direction? (Yes/No),Yes,,,,
+Integer,50,Which law is inertia law?,First law,,,,
+
+Problem,1,Find momentum of a body of mass 5 kg moving at 10 m/s.,,,,,50 kg m/s
+Problem,2,Find force if mass=2 kg and acceleration=5 m/s².,,,,,10 N
+Problem,3,Find acceleration if force=20 N and mass=4 kg.,,,,,5 m/s²
+Problem,4,Find momentum of 10 kg body at rest.,,,,,0
+Problem,5,Find change in momentum if mass=5 kg velocity changes from 2 to 6 m/s.,,,,,20 kg m/s
+Problem,6,Find impulse if force=10 N acts for 2 s.,,,,,20 N s
+Problem,7,Find force if momentum changes by 30 kg m/s in 3 s.,,,,,10 N
+Problem,8,Find mass if force=15 N and acceleration=3 m/s².,,,,,5 kg
+Problem,9,Find acceleration if force=50 N mass=10 kg.,,,,,5 m/s²
+Problem,10,Find momentum of 4 kg body moving at 5 m/s.,,,,,20 kg m/s
+Problem,11,Find force if mass=1 kg acceleration=9.8 m/s².,,,,,9.8 N
+Problem,12,Find impulse if force=20 N time=5 s.,,,,,100 N s
+Problem,13,Find final momentum if initial=10 kg m/s impulse=5 N s.,,,,,15 kg m/s
+Problem,14,Find change in momentum if body stops from 10 m/s mass=2 kg.,,,,,20 kg m/s
+Problem,15,Find force if 5 kg body stops in 2 s from 10 m/s.,,,,,25 N
+Problem,16,Find momentum of 0.5 kg ball at 20 m/s.,,,,,10 kg m/s
+Problem,17,Find acceleration if force=0.,,,,,0
+Problem,18,Find force if mass=3 kg velocity changes 6 m/s in 2 s.,,,,,9 N
+Problem,19,Find impulse if change in momentum=40 kg m/s.,,,,,40 N s
+Problem,20,Find momentum of car 1000 kg moving at 20 m/s.,,,,,20000 kg m/s
+Problem,21,Find acceleration if 10 N force acts on 2 kg.,,,,,5 m/s²
+Problem,22,Find force if 4 kg body accelerates at 2.5 m/s².,,,,,10 N
+Problem,23,Find momentum of 8 kg body at 3 m/s.,,,,,24 kg m/s
+Problem,24,Find impulse if force=5 N acts for 6 s.,,,,,30 N s
+Problem,25,Find acceleration if force=30 N mass=6 kg.,,,,,5 m/s²
+Problem,26,Find mass if force=12 N acceleration=4 m/s².,,,,,3 kg
+Problem,27,Find change in momentum if velocity changes from 5 to 15 m/s mass=2 kg.,,,,,20 kg m/s
+Problem,28,Find force if impulse=50 N s and time=5 s.,,,,,10 N
+Problem,29,Find impulse if force=8 N time=4 s.,,,,,32 N s
+Problem,30,Find momentum of 1 kg body moving at 15 m/s.,,,,,15 kg m/s
+Problem,31,Find force if mass=20 kg acceleration=1.5 m/s².,,,,,30 N
+Problem,32,Find acceleration if force=60 N mass=12 kg.,,,,,5 m/s²
+Problem,33,Find momentum of bullet 0.02 kg at 400 m/s.,,,,,8 kg m/s
+Problem,34,Find impulse if momentum changes from 5 to 25 kg m/s.,,,,,20 N s
+Problem,35,Find force if 10 kg body changes velocity by 10 m/s in 5 s.,,,,,20 N
+Problem,36,Find momentum of 3 kg body at 7 m/s.,,,,,21 kg m/s
+Problem,37,Find mass if momentum=40 kg m/s velocity=8 m/s.,,,,,5 kg
+Problem,38,Find force if acceleration=0.,,,,,0
+Problem,39,Find impulse if force=100 N time=0.5 s.,,,,,50 N s
+Problem,40,Find acceleration if force=25 N mass=5 kg.,,,,,5 m/s²
+Problem,41,Find momentum of 6 kg body at rest.,,,,,0
+Problem,42,Find force if mass=2 kg velocity change 4 m/s in 1 s.,,,,,8 N
+Problem,43,Find impulse if force=12 N acts for 3 s.,,,,,36 N s
+Problem,44,Find momentum of 0.1 kg ball at 30 m/s.,,,,,3 kg m/s
+Problem,45,Find acceleration if 15 N force acts on 3 kg.,,,,,5 m/s²
+Problem,46,Find force if mass=50 kg acceleration=2 m/s².,,,,,100 N
+Problem,47,Find momentum if mass=7 kg velocity=4 m/s.,,,,,28 kg m/s
+Problem,48,Find impulse if change in momentum=15 kg m/s.,,,,,15 N s
+Problem,49,Find force if impulse=60 N s time=6 s.,,,,,10 N
+Problem,50,Find acceleration if force=9.8 N mass=1 kg.,,,,,9.8 m/s²

@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who wrote the poem "The Duck and the Kangaroo"?,Lewis Carroll,Edward Lear,Roald Dahl,James Kirkup,Edward Lear
+MCQ,2,The poem is an example of?,Tragedy,Nonsense verse,Sonnet,Drama,Nonsense verse
+MCQ,3,Who wants to travel?,Duck,Kangaroo,Both,None,Duck
+MCQ,4,Where does the Duck want to go?,River,Sea,World,Pond,World
+MCQ,5,Why does the Duck want to travel?,To swim,To explore places,To meet friends,To rest,To explore places
+MCQ,6,What animal agrees to help the Duck?,Frog,Turtle,Kangaroo,Fish,Kangaroo
+MCQ,7,The Kangaroo lives in?,India,Africa,Australia,America,Australia
+MCQ,8,What problem does the Kangaroo mention?,Duck is heavy,Duck is cold,Duck’s feet are wet,Duck is slow,Duck’s feet are wet
+MCQ,9,What does the Duck wear to solve the problem?,Shoes,Socks,Coat,Hat,Socks
+MCQ,10,What else does the Duck promise to wear?,Ring,Cigar,Cloak,Cap,Cigar
+MCQ,11,The Duck calls the Kangaroo?,Brother,Friend,Dear Sir,Master,Dear Sir
+MCQ,12,The Kangaroo worries about?,Cold,Health,Comfort,Noise,Comfort
+MCQ,13,What does the Duck think about the world?,Boring,Sad,Pleasant and fun,Dangerous,Pleasant and fun
+MCQ,14,The poem is written in?,Free verse,Rhyming couplets,Blank verse,Prose,Rhyming couplets
+MCQ,15,The Duck wants to sit?,On ground,In water,On Kangaroo’s back,On tree,On Kangaroo’s back
+MCQ,16,The Kangaroo agrees after?,Refusal,Argument,Conditions,Fight,Conditions
+MCQ,17,What does the Duck carry?,Umbrella,Food,Nothing,Bag,Nothing
+MCQ,18,What kind of poem is this?,Serious,Didactic,Humorous,Tragic,Humorous
+MCQ,19,The tone of the poem is?,Serious,Playful,Sad,Angry,Playful
+MCQ,20,What quality of Duck is shown?,Fear,Curiosity,Laziness,Anger,Curiosity
+MCQ,21,What quality of Kangaroo is shown?,Cruelty,Kindness,Greed,Pride,Kindness
+MCQ,22,The Duck’s feet are?,Dry,Wet,Burnt,Frozen,Wet
+MCQ,23,The Kangaroo hops?,Slowly,Angrily,Fast,Happily,Happily
+MCQ,24,The poem promotes?,Hatred,Friendship,War,Competition,Friendship
+MCQ,25,The Duck feels the world is?,Small,Round,Big and wide,Scary,Big and wide
+MCQ,26,What is the Duck afraid of?,Water,Cold,Getting cold,Night,Getting cold
+MCQ,27,What does the Duck request politely?,Food,Travel help,Money,Shelter,Travel help
+MCQ,28,The poem mainly focuses on?,Nature,Animals,Adventure and friendship,Morals,Adventure and friendship
+MCQ,29,The Duck calls the Kangaroo?,Enemy,Stranger,Dear friend,Sir,Dear friend
+MCQ,30,The Kangaroo finally feels?,Angry,Annoyed,Happy,Upset,Happy
+MCQ,31,The Duck wears socks to?,Look nice,Stay warm,Swim faster,Fly,Stay warm
+MCQ,32,What object causes discomfort to Kangaroo?,Duck’s wet feet,Duck’s voice,Duck’s weight,Duck’s tail,Duck’s wet feet
+MCQ,33,The Duck also promises to smoke?,Pipe,Cigar,Cigarette,None,Cigar
+MCQ,34,The Duck wants to enjoy?,Life,Swimming,World tour,Sleep,World tour
+MCQ,35,The Kangaroo is initially?,Agreeable,Confused,Reluctant,Happy,Reluctant
+MCQ,36,The poem is imaginative because?,Talking animals,Real story,History,Facts,Talking animals
+MCQ,37,The Duck praises the?,River,World,Kangaroo,Sea,World
+MCQ,38,The poem is suitable for?,Adults only,Children,Scientists,Politicians,Children
+MCQ,39,The Duck’s request is?,Rude,Polite,Angry,Demanding,Polite
+MCQ,40,What does the Duck fear about his feet?,Pain,Cold,Heat,Injury,Cold
+MCQ,41,The poem belongs to?,Romantic poetry,Nonsense poetry,War poetry,Modern poetry,Nonsense poetry
+MCQ,42,The Duck and Kangaroo relationship shows?,Conflict,Cooperation,Hatred,Competition,Cooperation
+MCQ,43,The Kangaroo’s concern shows?,Selfishness,Carelessness,Care for comfort,Anger,Care for comfort
+MCQ,44,The Duck enjoys?,Travel,Rest,Sleep,Food,Travel
+MCQ,45,The Kangaroo hops to?,Show strength,Travel together,Win race,Escape,Travel together
+MCQ,46,The poem has how many characters?,One,Two,Three,Many,Two
+MCQ,47,The Duck’s nature is?,Lazy,Adventurous,Angry,Shy,Adventurous
+MCQ,48,The Kangaroo finally says?,No,Maybe,Yes,Never,Yes
+MCQ,49,The poem’s ending is?,Sad,Serious,Happy,Unclear,Happy
+MCQ,50,The central theme is?,Conflict,Friendship and adventure,Nature study,Discipline,Friendship and adventure
+
+Integer,1,Poet?,Edward Lear,,,,
+Integer,2,Poem type?,Nonsense verse,,,,
+Integer,3,Main speaker?,Duck,,,,
+Integer,4,Helper animal?,Kangaroo,,,,
+Integer,5,Theme?,Friendship,,,,
+Integer,6,Setting?,World,,,,
+Integer,7,Duck problem?,Cold feet,,,,
+Integer,8,Solution?,Socks,,,,
+Integer,9,Extra item?,Cigar,,,,
+Integer,10,Poem tone?,Playful,,,,
+Integer,11,Poem mood?,Humorous,,,,
+Integer,12,Kangaroo trait?,Kind,,,,
+Integer,13,Duck trait?,Curious,,,,
+Integer,14,Travel type?,Adventure,,,,
+Integer,15,Poem style?,Rhyming,,,,
+Integer,16,Animal talk?,Yes,,,,
+Integer,17,Duck request?,Ride,,,,
+Integer,18,Kangaroo move?,Hop,,,,
+Integer,19,Duck fear?,Cold,,,,
+Integer,20,Poem message?,Cooperation,,,,
+Integer,21,Poem audience?,Children,,,,
+Integer,22,Ending mood?,Happy,,,,
+Integer,23,Poem form?,Verse,,,,
+Integer,24,Duck footwear?,Socks,,,,
+Integer,25,Poem nature?,Imaginative,,,,
+Integer,26,Setting type?,Imaginary,,,,
+Integer,27,Travel reason?,Explore,,,,
+Integer,28,Duck polite?,Yes,,,,
+Integer,29,Kangaroo concern?,Comfort,,,,
+Integer,30,Poem theme?,Adventure,,,,
+Integer,31,Animals symbolize?,Friendship,,,,
+Integer,32,Duck view of world?,Pleasant,,,,
+Integer,33,Kangaroo feeling?,Happy,,,,
+Integer,34,Poem humor?,High,,,,
+Integer,35,Duck desire?,Journey,,,,
+Integer,36,Poem language?,Simple,,,,
+Integer,37,Poem rhythm?,Light,,,,
+Integer,38,Duck problem solved?,Yes,,,,
+Integer,39,Kangaroo decision?,Agree,,,,
+Integer,40,Poem focus?,Togetherness,,,,
+Integer,41,Travel mode?,Hopping,,,,
+Integer,42,Poem setting type?,Fantasy,,,,
+Integer,43,Duck carries?,Nothing,,,,
+Integer,44,Poem lesson?,Help others,,,,
+Integer,45,Kangaroo species?,Marsupial,,,,
+Integer,46,Duck habitat?,Water,,,,
+Integer,47,Poem message?,Friendship,,,,
+Integer,48,Poem tone?,Cheerful,,,,
+Integer,49,Poem title?,The Duck and the Kangaroo,,,,
+Integer,50,Ending result?,Journey together,,,,
+
+Descriptive,1,Who wrote "The Duck and the Kangaroo"?,,,,,The poem was written by Edward Lear
+Descriptive,2,What kind of poem is "The Duck and the Kangaroo"?,,,,,It is a humorous nonsense poem
+Descriptive,3,Why does the Duck want to travel?,,,,,The Duck wants to explore the world
+Descriptive,4,Why does the Duck approach the Kangaroo?,,,,,To request a ride for travelling
+Descriptive,5,What problem does the Kangaroo raise?,,,,,The Duck’s wet feet may cause cold
+Descriptive,6,How does the Duck solve the problem?,,,,,By wearing woollen socks
+Descriptive,7,What additional promise does the Duck make?,,,,,He promises to smoke a cigar
+Descriptive,8,Describe the Duck’s character.,,,,,The Duck is adventurous, polite and curious
+Descriptive,9,Describe the Kangaroo’s character.,,,,,The Kangaroo is cautious but kind
+Descriptive,10,What is the theme of the poem?,,,,,Friendship and cooperation
+Descriptive,11,How does humor arise in the poem?,,,,,Through talking animals and funny conditions
+Descriptive,12,Why is the poem called a nonsense poem?,,,,,It has imaginary talking animals
+Descriptive,13,What lesson does the poem teach?,,,,,Helping others leads to happiness
+Descriptive,14,Explain the title of the poem.,,,,,It highlights the two main characters
+Descriptive,15,Why is the Duck polite?,,,,,He requests respectfully
+Descriptive,16,How does the Kangaroo react initially?,,,,,He is hesitant and cautious
+Descriptive,17,What makes the poem enjoyable for children?,,,,,Simple language and humor
+Descriptive,18,Explain the ending of the poem.,,,,,They travel together happily
+Descriptive,19,What does the Duck think about the world?,,,,,It is pleasant and enjoyable
+Descriptive,20,How does cooperation help in the poem?,,,,,Both animals enjoy the journey
+Descriptive,21,What role does imagination play?,,,,,It creates a fantasy world
+Descriptive,22,Why does the Duck fear cold?,,,,,His feet are always wet
+Descriptive,23,How is friendship shown?,,,,,Through helping and adjusting
+Descriptive,24,What values are promoted?,,,,,Kindness and cooperation
+Descriptive,25,How does the Kangaroo show kindness?,,,,,By agreeing to help
+Descriptive,26,What makes the poem humorous?,,,,,Absurd requests and talking animals
+Descriptive,27,Explain the Duck’s excitement.,,,,,He is eager to travel
+Descriptive,28,Why does the Kangaroo finally agree?,,,,,The Duck meets all conditions
+Descriptive,29,What is the moral of the poem?,,,,,Mutual understanding helps relationships
+Descriptive,30,How is the poem imaginative?,,,,,Animals behave like humans
+Descriptive,31,What kind of journey do they take?,,,,,A joyful world tour
+Descriptive,32,Why is the poem light-hearted?,,,,,It avoids serious issues
+Descriptive,33,How does the Duck express gratitude?,,,,,By praising the Kangaroo
+Descriptive,34,What does the poem say about adjustment?,,,,,It is necessary for friendship
+Descriptive,35,How is politeness important in the poem?,,,,,It helps get help easily
+Descriptive,36,Explain the Duck’s enthusiasm.,,,,,He is thrilled about travel
+Descriptive,37,Why is the Kangaroo careful?,,,,,He values comfort
+Descriptive,38,What message does the poem convey?,,,,,Friendship makes adventures fun
+Descriptive,39,How does the poem use rhyme?,,,,,To create musical quality
+Descriptive,40,What makes the characters lovable?,,,,,Their innocence and humor
+Descriptive,41,How does the Duck convince the Kangaroo?,,,,,By solving his concerns
+Descriptive,42,Why is the poem suitable for young readers?,,,,,It is simple and funny
+Descriptive,43,What does the poem teach about friendship?,,,,,Friends help each other
+Descriptive,44,Explain the importance of cooperation.,,,,,It leads to happiness
+Descriptive,45,How does humor enhance the message?,,,,,It makes learning enjoyable
+Descriptive,46,Why is the poem memorable?,,,,,Because of its fun and imagination
+Descriptive,47,What does the journey symbolize?,,,,,Life’s adventures
+Descriptive,48,How does the poem end?,,,,,On a joyful note
+Descriptive,49,What human qualities are shown by animals?,,,,,Politeness and kindness
+Descriptive,50,Summarize "The Duck and the Kangaroo".,,,,,The poem humorously narrates how an adventurous Duck requests a ride from a cautious Kangaroo to travel the world. After setting conditions, the Kangaroo agrees, showing that friendship, cooperation and understanding make journeys joyful

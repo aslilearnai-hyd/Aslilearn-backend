@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the author of "Reach for the Top"?,Arundhati Roy,Santosh Yadav biography writer,Paulo Coelho,Jerome K Jerome,Santosh Yadav biography writer
+MCQ,2,"Reach for the Top" has how many parts?,One,Two,Three,Four,Two
+MCQ,3,Part I of the chapter is about?,Maria Sharapova,Santosh Yadav,Bachendri Pal,Kalpana Chawla,Santosh Yadav
+MCQ,4,Part II of the chapter is about?,Sania Mirza,Mary Kom,PV Sindhu,Maria Sharapova,Maria Sharapova
+MCQ,5,Santosh Yadav is famous for?,Running,Tennis,Mountaineering,Badminton,Mountaineering
+MCQ,6,Santosh Yadav climbed which peak twice?,Mt Everest,Mt Kilimanjaro,Mt Fuji,Mt Elbrus,Mt Everest
+MCQ,7,Santosh Yadav belongs to which state?,Uttarakhand,Rajasthan,Haryana,Himachal Pradesh,Haryana
+MCQ,8,Santosh Yadav was born in a?,Wealthy family,Middle-class family,Poor family,Royal family,Poor family
+MCQ,9,What made Santosh different as a child?,Obedience,Rebellious nature,Silence,Laziness,Rebellious nature
+MCQ,10,Why did Santosh leave home?,To study,To work,To avoid marriage,To travel,To avoid marriage
+MCQ,11,Santosh joined which institute?,NIM,Uttarkashi,IIT,NCC,NIM Uttarkashi
+MCQ,12,Santosh collected garbage on Everest to?,Earn money,Win prize,Protect environment,Help climbers,Protect environment
+MCQ,13,Santosh Yadav is an example of?,Luck,Talent only,Determination,Fame,Determination
+MCQ,14,Maria Sharapova is a famous?,Runner,Mountaineer,Tennis player,Swimmer,Tennis player
+MCQ,15,Maria Sharapova belongs to?,USA,Russia,UK,Spain,Russia
+MCQ,16,Maria moved to USA at age?,5,6,7,8,7
+MCQ,17,Who trained Maria Sharapova?,Her father,Her mother,A coach,Her uncle,Her father
+MCQ,18,Maria faced hardships like?,Poverty,Language problem,Separation from mother,All of these,All of these
+MCQ,19,Maria Sharapova won Wimbledon at age?,15,16,17,18,17
+MCQ,20,Who did Maria defeat at Wimbledon?,Serena Williams,Venus Williams,Steffi Graf,Martina Hingis,Serena Williams
+MCQ,21,What quality helped Maria succeed?,Luck,Discipline and hard work,Fame,Wealth,Discipline and hard work
+MCQ,22,Santosh Yadav refused to?,Obey parents,Accept marriage,Stop climbing,Join job,Accept marriage
+MCQ,23,Santosh’s parents wanted her to?,Study,Climb mountains,Marry early,Work abroad,Marry early
+MCQ,24,Santosh’s education was?,Ignored,Stopped early,Continued with climbing,Not mentioned,Continued with climbing
+MCQ,25,Which value does Santosh show?,Greed,Determination,Anger,Fear,Determination
+MCQ,26,Maria lived alone in?,Russia,USA,India,UK,USA
+MCQ,27,What lesson does the chapter teach?,Fame is everything,Hard work pays,Money matters,Only talent matters,Hard work pays
+MCQ,28,Santosh climbed Everest first time in?,1990,1992,1994,1998,1992
+MCQ,29,Maria’s childhood was?,Comfortable,Luxurious,Difficult,Easy,Difficult
+MCQ,30,Santosh’s nature was?,Obedient,Independent,Lazy,Timid,Independent
+MCQ,31,Maria Sharapova’s mother tongue?,English,Russian,Spanish,French,Russian
+MCQ,32,Santosh Yadav became role model for?,Boys only,Girls only,Mountaineers,Women and girls,Women and girls
+MCQ,33,Maria believes success requires?,Luck only,Sacrifice and hard work,Beauty,Fame,Sacrifice and hard work
+MCQ,34,Santosh Yadav helped other climbers by?,Guiding them,Giving food,Sharing oxygen,Collecting waste,Sharing oxygen
+MCQ,35,Which theme is common in both parts?,Talent,Discipline,Determination and sacrifice,Money,Determination and sacrifice
+MCQ,36,Maria was trained at?,Harvard,Tennis academy,School only,Home,Tennis academy
+MCQ,37,Santosh’s achievement shows?,Rebellion fails,Determination wins,Luck matters,Family support only,Determination wins
+MCQ,38,Maria Sharapova’s sport?,Cricket,Football,Tennis,Hockey,Tennis
+MCQ,39,Santosh Yadav challenged?,Nature,Family rules,Society,All of these,All of these
+MCQ,40,Maria’s biggest challenge?,Language,Weather,Money,All of these,All of these
+MCQ,41,Santosh Yadav’s second Everest climb year?,1992,1993,1994,1995,1993
+MCQ,42,Maria Sharapova became world no.1 at age?,17,18,19,20,18
+MCQ,43,Santosh proved girls can?,Not climb mountains,Do anything boys can,Stay home only,Fail,Do anything boys can
+MCQ,44,Maria’s training life was?,Easy,Comfortable,Strict and disciplined,Relaxed,Strict and disciplined
+MCQ,45,What does "Reach for the Top" mean?,Aim low,Aim high,Be famous,Be rich,Aim high
+MCQ,46,Santosh Yadav’s strength?,Wealth,Physical power,Strong will,Fame,Strong will
+MCQ,47,Maria Sharapova’s attitude?,Lazy,Positive and determined,Careless,Arrogant,Positive and determined
+MCQ,48,Both Santosh and Maria achieved success through?,Luck only,Hard work,Money,Connections,Hard work
+MCQ,49,The chapter inspires?,Athletes only,Mountaineers only,Everyone,Rich people,Everyone
+MCQ,50,Central message of chapter?,Talent matters,Determination leads to success,Money is key,Fame is goal,Determination leads to success
+
+Integer,1,Part I heroine?,Santosh Yadav,,,,
+Integer,2,Part II heroine?,Maria Sharapova,,,,
+Integer,3,Santosh profession?,Mountaineer,,,,
+Integer,4,Maria profession?,Tennis player,,,,
+Integer,5,Santosh peak?,Everest,,,,
+Integer,6,Santosh state?,Haryana,,,,
+Integer,7,Maria country?,Russia,,,,
+Integer,8,Maria moved age?,7,,,,
+Integer,9,Santosh institute?,NIM Uttarkashi,,,,
+Integer,10,Santosh first climb year?,1992,,,,
+Integer,11,Santosh second climb year?,1993,,,,
+Integer,12,Maria Wimbledon age?,17,,,,
+Integer,13,Maria defeated?,Serena Williams,,,,
+Integer,14,Santosh challenge?,Early marriage,,,,
+Integer,15,Maria hardship?,Loneliness,,,,
+Integer,16,Theme?,Determination,,,,
+Integer,17,Santosh role?,Environmental awareness,,,,
+Integer,18,Maria training?,Strict,,,,
+Integer,19,Santosh strength?,Willpower,,,,
+Integer,20,Maria language?,Russian,,,,
+Integer,21,Santosh collected?,Garbage,,,,
+Integer,22,Maria world rank?,No.1,,,,
+Integer,23,Santosh inspiration?,Women,,,,
+Integer,24,Maria sacrifice?,Family,,,,
+Integer,25,Santosh refused?,Marriage,,,,
+Integer,26,Maria coach?,Father,,,,
+Integer,27,Santosh nature?,Independent,,,,
+Integer,28,Maria quality?,Discipline,,,,
+Integer,29,Common lesson?,Hard work,,,,
+Integer,30,Santosh achievement?,Two Everests,,,,
+Integer,31,Maria childhood?,Hard,,,,
+Integer,32,Santosh support?,Self,,,,
+Integer,33,Maria sport?,Tennis,,,,
+Integer,34,Santosh goal?,Climbing,,,,
+Integer,35,Maria dream?,Champion,,,,
+Integer,36,Santosh age start?,Young,,,,
+Integer,37,Maria training place?,USA,,,,
+Integer,38,Santosh struggle?,Social norms,,,,
+Integer,39,Maria win?,Wimbledon,,,,
+Integer,40,Santosh success?,Determination,,,,
+Integer,41,Maria discipline?,High,,,,
+Integer,42,Santosh gender barrier?,Broken,,,,
+Integer,43,Maria inspiration?,Young athletes,,,,
+Integer,44,Santosh courage?,High,,,,
+Integer,45,Maria lifestyle?,Strict,,,,
+Integer,46,Santosh lesson?,Never give up,,,,
+Integer,47,Maria mindset?,Positive,,,,
+Integer,48,Chapter theme?,Reach high,,,,
+Integer,49,Both inspire?,Youth,,,,
+Integer,50,Chapter name?,Reach for the Top,,,,
+
+Descriptive,1,Who is Santosh Yadav?,,,,,She is the first woman to climb Mount Everest twice
+Descriptive,2,Why was Santosh Yadav rebellious?,,,,,She refused early marriage and social restrictions
+Descriptive,3,Describe Santosh Yadav’s childhood.,,,,,She was independent and determined
+Descriptive,4,How did Santosh train herself?,,,,,By joining NIM Uttarkashi
+Descriptive,5,What environmental work did Santosh do?,,,,,She collected garbage from Everest
+Descriptive,6,What challenges did Santosh face?,,,,,Poverty, social pressure and harsh conditions
+Descriptive,7,How did Santosh help fellow climbers?,,,,,By sharing oxygen
+Descriptive,8,What lesson does Santosh’s life teach?,,,,,Determination leads to success
+Descriptive,9,Who is Maria Sharapova?,,,,,She is a world-famous tennis player
+Descriptive,10,Describe Maria Sharapova’s early life.,,,,,She faced poverty and loneliness
+Descriptive,11,Why did Maria move to USA?,,,,,For professional tennis training
+Descriptive,12,What sacrifices did Maria make (or her family)?,,,,,Living away from mother
+Descriptive,13,How did Maria achieve success?,,,,,Through discipline and hard work
+Descriptive,14,What hardships did Maria face?,,,,,Language issues and tough training
+Descriptive,15,Why is Maria an inspiration?,,,,,She achieved success despite struggles
+Descriptive,16,What is the central theme of the chapter?,,,,,Determination and perseverance
+Descriptive,17,How does Santosh inspire women?,,,,,By breaking gender barriers
+Descriptive,18,How does Maria inspire young athletes?,,,,,By showing dedication leads to success
+Descriptive,19,Explain the title "Reach for the Top".,,,,,It means aiming high despite challenges
+Descriptive,20,What qualities are common in Santosh and Maria?,,,,,Determination, discipline and courage
+Descriptive,21,How did society challenge Santosh?,,,,,By forcing early marriage
+Descriptive,22,Why was Santosh’s achievement special?,,,,,She climbed Everest twice
+Descriptive,23,Describe Maria’s training routine.,,,,,It was strict and disciplined
+Descriptive,24,How did Santosh balance education and passion?,,,,,She continued studies while climbing
+Descriptive,25,What message does the chapter give students?,,,,,Never give up on dreams
+Descriptive,26,Why is sacrifice important for success?,,,,,Success needs dedication
+Descriptive,27,How did Santosh prove girls are equal?,,,,,By excelling in mountaineering
+Descriptive,28,How did Maria handle loneliness?,,,,,By focusing on her goal
+Descriptive,29,Explain determination with Santosh’s example.,,,,,She overcame social pressure
+Descriptive,30,Explain discipline with Maria’s example.,,,,,She followed strict training
+Descriptive,31,Why is hard work important?,,,,,It turns dreams into reality
+Descriptive,32,How does the chapter motivate readers?,,,,,It encourages aiming high
+Descriptive,33,What role did parents play in Maria’s success?,,,,,They supported her sacrifices
+Descriptive,34,What role did self-belief play for Santosh?,,,,,It gave her strength
+Descriptive,35,Explain gender equality in the chapter.,,,,,Santosh broke stereotypes
+Descriptive,36,What does Maria say about success?,,,,,It needs sacrifice
+Descriptive,37,Why is Santosh called a role model?,,,,,She inspires women
+Descriptive,38,How does Maria define success?,,,,,Through effort and discipline
+Descriptive,39,Explain perseverance using examples.,,,,,Both never gave up
+Descriptive,40,What obstacles did Maria face abroad?,,,,,Language and loneliness
+Descriptive,41,What obstacles did Santosh face?,,,,,Poverty and society
+Descriptive,42,Why is environmental awareness important?,,,,,To protect nature
+Descriptive,43,How did Santosh show leadership?,,,,,Helping climbers
+Descriptive,44,What does the chapter teach about dreams?,,,,,Dream big and work hard
+Descriptive,45,Why is the chapter inspiring?,,,,,It shows real-life success stories
+Descriptive,46,Explain courage in Santosh’s life.,,,,,She defied social norms
+Descriptive,47,Explain patience in Maria’s life.,,,,,She trained for years
+Descriptive,48,How do both stories complement each other?,,,,,Both show success through effort
+Descriptive,49,What values should students learn?,,,,,Hard work, courage and discipline
+Descriptive,50,Summarize "Reach for the Top".,,,,,The chapter highlights how determination, discipline and sacrifice helped Santosh Yadav and Maria Sharapova achieve greatness

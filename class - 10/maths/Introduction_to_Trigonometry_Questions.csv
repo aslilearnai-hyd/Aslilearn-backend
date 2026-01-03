@@ -1,0 +1,152 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,In a right triangle, sin A is equal to:,Opposite side/Hypotenuse,Adjacent side/Hypotenuse,Opposite side/Adjacent side,Hypotenuse/Opposite side,Opposite side/Hypotenuse
+MCQ,2,In a right triangle, cos A is equal to:,Opposite side/Hypotenuse,Adjacent side/Hypotenuse,Opposite side/Adjacent side,Hypotenuse/Adjacent side,Adjacent side/Hypotenuse
+MCQ,3,In a right triangle, tan A is equal to:,Opposite side/Hypotenuse,Adjacent side/Hypotenuse,Opposite side/Adjacent side,Hypotenuse/Opposite side,Opposite side/Adjacent side
+MCQ,4,The value of sin 30° is:,1/2,√3/2,1/√2,1,1/2
+MCQ,5,The value of cos 60° is:,1/2,√3/2,1/√2,1,1/2
+MCQ,6,The value of tan 45° is:,0,1,√3,1/√3,1
+MCQ,7,The value of sin 90° is:,0,1/2,1,√3/2,1
+MCQ,8,The value of cos 0° is:,0,1/2,1,√3/2,1
+MCQ,9,The value of sin 45° is:,1/2,√3/2,1/√2,1,1/√2
+MCQ,10,The value of cos 45° is:,1/2,√3/2,1/√2,1,1/√2
+MCQ,11,The value of tan 60° is:,1/√3,1,√3,0,√3
+MCQ,12,The value of sin 60° is:,1/2,√3/2,1/√2,1,√3/2
+MCQ,13,The value of cos 30° is:,1/2,√3/2,1/√2,1,√3/2
+MCQ,14,The value of tan 30° is:,1/√3,1,√3,0,1/√3
+MCQ,15,The value of sin 0° is:,0,1/2,1,√3/2,0
+MCQ,16,The value of tan 0° is:,0,1,√3,1/√3,0
+MCQ,17,If sin A = 3/5, then cos A =:,3/5,4/5,5/4,5/3,4/5
+MCQ,18,If cos A = 12/13, then sin A =:,5/13,12/13,13/12,13/5,5/13
+MCQ,19,The identity sin² A + cos² A is equal to:,0,1,tan A,cot A,1
+MCQ,20,The value of sec² A - tan² A is:,0,1,sin A,cos A,1
+MCQ,21,The value of cosec² A - cot² A is:,0,1,sin A,cos A,1
+MCQ,22,If sin A = cos A, then A =:,30°,45°,60°,90°,45°
+MCQ,23,sin (90° - A) is equal to:,sin A,cos A,tan A,cot A,cos A
+MCQ,24,cos (90° - A) is equal to:,sin A,cos A,tan A,cot A,sin A
+MCQ,25,tan (90° - A) is equal to:,tan A,cot A,sin A,cos A,cot A
+MCQ,26,The value of sin² 30° + cos² 30° is:,0,1,1/2,3/4,1
+MCQ,27,The value of tan 30° × tan 60° is:,1,√3,1/√3,3,1
+MCQ,28,The value of (sin 30° + cos 60°) is:,1,1/2,√3/2,0,1
+MCQ,29,If tan A = 1, then A =:,30°,45°,60°,90°,45°
+MCQ,30,The value of (1 - cos² A) is:,sin² A,cos² A,tan² A,sec² A,sin² A
+MCQ,31,The value of (1 - sin² A) is:,sin² A,cos² A,tan² A,sec² A,cos² A
+MCQ,32,If sin A = 1/2, then A =:,30°,45°,60°,90°,30°
+MCQ,33,If cos A = 1/2, then A =:,30°,45°,60°,90°,60°
+MCQ,34,The value of sec 45° is:,1,√2,1/√2,2,√2
+MCQ,35,The value of cosec 30° is:,1,2,√2,√3,2
+MCQ,36,The value of cot 45° is:,0,1,√3,1/√3,1
+MCQ,37,If sin A = cos A, then the value of tan A is:,0,1,√3,1/√3,1
+MCQ,38,The value of (sin 45° + cos 45°) is:,1,√2,1/√2,2,√2
+MCQ,39,The value of (tan 45° - sin 30°) is:,1/2,1,3/2,0,1/2
+MCQ,40,If A + B = 90°, then sin A =:,sin B,cos B,tan B,cot B,cos B
+MCQ,41,The value of sin² 60° + cos² 60° is:,0,1/2,3/4,1,1
+MCQ,42,The value of (sin 60° cos 30° + cos 60° sin 30°) is:,0,1/2,1,√3/2,1
+MCQ,43,If tan A = √3, then A =:,30°,45°,60°,90°,60°
+MCQ,44,The value of (1 + tan² A) is:,sin² A,cos² A,sec² A,cosec² A,sec² A
+MCQ,45,The value of (1 + cot² A) is:,sin² A,cos² A,sec² A,cosec² A,cosec² A
+MCQ,46,If sec A = 2, then cos A =:,1/2,2,1,√3/2,1/2
+MCQ,47,The value of cot (90° - A) is:,tan A,cot A,sin A,cos A,tan A
+MCQ,48,The value of (sec² A - 1) is:,tan² A,cot² A,sin² A,cos² A,tan² A
+MCQ,49,If sin A = 0, then A =:,0°,30°,45°,60°,0°
+MCQ,50,The value of (cosec² A - 1) is:,tan² A,cot² A,sin² A,cos² A,cot² A
+Integer,1,The value of sin 30° = 1/2. Write the numerator: _____.,1,,,,
+Integer,2,The value of cos 60° = 1/2. Write the numerator: _____.,1,,,,
+Integer,3,The value of tan 45° = _____.,1,,,,
+Integer,4,The value of sin 90° = _____.,1,,,,
+Integer,5,The value of cos 0° = _____.,1,,,,
+Integer,6,The value of sin 0° = _____.,0,,,,
+Integer,7,The value of tan 0° = _____.,0,,,,
+Integer,8,The value of sin² 30° + cos² 30° = _____.,1,,,,
+Integer,9,If sin A = 3/5, then using sin² A + cos² A = 1, cos A = 4/5. Write the numerator: _____.,4,,,,
+Integer,10,The value of tan 30° × tan 60° = _____.,1,,,,
+Integer,11,The value of (sin 30° + cos 60°) = _____.,1,,,,
+Integer,12,The value of (1 - cos² A) = sin² A. This is a trigonometric identity. The coefficient is: _____.,1,,,,
+Integer,13,If sin A = 1/2, then A = _____ degrees.,30,,,,
+Integer,14,If cos A = 1/2, then A = _____ degrees.,60,,,,
+Integer,15,If tan A = 1, then A = _____ degrees.,45,,,,
+Integer,16,The value of (sin 45° + cos 45°) = √2. Write the coefficient: _____ (for √2, write 1).,1,,,,
+Integer,17,The value of cosec 30° = _____.,2,,,,
+Integer,18,The value of cot 45° = _____.,1,,,,
+Integer,19,The value of (tan 45° - sin 30°) = 1 - 1/2 = _____/2. Write numerator: _____.,1,,,,
+Integer,20,The value of sin² 60° + cos² 60° = _____.,1,,,,
+Integer,21,If tan A = √3, then A = _____ degrees.,60,,,,
+Integer,22,The value of sec² A - tan² A = _____.,1,,,,
+Integer,23,The value of cosec² A - cot² A = _____.,1,,,,
+Integer,24,If sec A = 2, then cos A = 1/2. Write the numerator: _____.,1,,,,
+Integer,25,The value of (sec² A - 1) = tan² A. The coefficient is: _____.,1,,,,
+Integer,26,The value of (cosec² A - 1) = cot² A. The coefficient is: _____.,1,,,,
+Integer,27,If sin A = 0, then A = _____ degrees.,0,,,,
+Integer,28,The value of (1 + tan² A) = sec² A. The coefficient is: _____.,1,,,,
+Integer,29,The value of (1 + cot² A) = cosec² A. The coefficient is: _____.,1,,,,
+Integer,30,If sin A = cos A, then A = _____ degrees.,45,,,,
+Integer,31,The value of sin 45° = 1/√2. In decimal approximation to one decimal, it's approximately 0.7, but exactly the numerator is: _____ (for 1/√2, write 1).,1,,,,
+Integer,32,The value of cos 45° = 1/√2. The numerator is: _____.,1,,,,
+Integer,33,The value of sec 45° = √2. The coefficient is: _____ (for √2, write 1).,1,,,,
+Integer,34,If in a right triangle, opposite side = 3, hypotenuse = 5, then sin A = 3/5. The numerator is: _____.,3,,,,
+Integer,35,If in a right triangle, adjacent side = 4, hypotenuse = 5, then cos A = 4/5. The numerator is: _____.,4,,,,
+Integer,36,If in a right triangle, opposite = 3, adjacent = 4, then tan A = 3/4. The numerator is: _____.,3,,,,
+Integer,37,The value of sin² A + cos² A = _____.,1,,,,
+Integer,38,If sin (90° - A) = cos A, and if A = 30°, then sin 60° = cos 30° = √3/2. The coefficient in √3/2 is: _____ (for √3/2, write 1).,1,,,,
+Integer,39,The value of (sin 60° cos 30° + cos 60° sin 30°) = (√3/2)(√3/2) + (1/2)(1/2) = 3/4 + 1/4 = _____.,1,,,,
+Integer,40,If tan A = 1/√3, then A = _____ degrees.,30,,,,
+Integer,41,The value of sin 30° cos 60° + cos 30° sin 60° = (1/2)(1/2) + (√3/2)(√3/2) = 1/4 + 3/4 = _____.,1,,,,
+Integer,42,If A + B = 90° and sin A = 3/5, then cos B = 3/5. The numerator is: _____.,3,,,,
+Integer,43,The value of cot (90° - A) = tan A. If A = 30°, then cot 60° = tan 30° = 1/√3. The numerator is: _____.,1,,,,
+Integer,44,The value of (1 - sin² 60°) = cos² 60° = (1/2)² = 1/4. The numerator is: _____.,1,,,,
+Integer,45,The value of (1 - cos² 30°) = sin² 30° = (1/2)² = 1/4. The numerator is: _____.,1,,,,
+Integer,46,If sec A = 5/3, then cos A = 3/5. The numerator is: _____.,3,,,,
+Integer,47,The value of (tan² 45° - sin² 30°) = 1² - (1/2)² = 1 - 1/4 = 3/4. The numerator is: _____.,3,,,,
+Integer,48,The value of (cos² 45° + sin² 45°) = (1/√2)² + (1/√2)² = 1/2 + 1/2 = _____.,1,,,,
+Integer,49,If sin A = 4/5, then using identity, cos A = 3/5. The numerator is: _____.,3,,,,
+Integer,50,The value of (cosec² 30° - cot² 30°) = 2² - (√3)² = 4 - 3 = _____.,1,,,,
+Problem,1,In a right triangle ABC, right-angled at B, if AB = 3 cm and BC = 4 cm, find sin A, cos A, and tan A.,"Given: AB = 3 cm (adjacent to A), BC = 4 cm (opposite to A). AC = √(AB² + BC²) = √(9 + 16) = √25 = 5 cm. sin A = Opposite/Hypotenuse = BC/AC = 4/5. cos A = Adjacent/Hypotenuse = AB/AC = 3/5. tan A = Opposite/Adjacent = BC/AB = 4/3. Answer: sin A = 4/5, cos A = 3/5, tan A = 4/3",,,,
+Problem,2,If sin A = 3/5, find cos A and tan A.,"Given: sin A = 3/5. Using sin² A + cos² A = 1: (3/5)² + cos² A = 1, 9/25 + cos² A = 1, cos² A = 1 - 9/25 = 16/25, cos A = 4/5 (taking positive value). tan A = sin A/cos A = (3/5)/(4/5) = 3/4. Answer: cos A = 4/5, tan A = 3/4",,,,
+Problem,3,If cos A = 12/13, find sin A and tan A.,"Given: cos A = 12/13. Using sin² A + cos² A = 1: sin² A + (12/13)² = 1, sin² A + 144/169 = 1, sin² A = 1 - 144/169 = 25/169, sin A = 5/13 (taking positive value). tan A = sin A/cos A = (5/13)/(12/13) = 5/12. Answer: sin A = 5/13, tan A = 5/12",,,,
+Problem,4,If tan A = 4/3, find sin A and cos A.,"Given: tan A = 4/3 = sin A/cos A. Let sin A = 4k, cos A = 3k. Using sin² A + cos² A = 1: (4k)² + (3k)² = 1, 16k² + 9k² = 1, 25k² = 1, k² = 1/25, k = 1/5. sin A = 4/5, cos A = 3/5. Answer: sin A = 4/5, cos A = 3/5",,,,
+Problem,5,Evaluate: sin 30° + cos 60° - tan 45°.,"sin 30° = 1/2, cos 60° = 1/2, tan 45° = 1. sin 30° + cos 60° - tan 45° = 1/2 + 1/2 - 1 = 1 - 1 = 0. Answer: 0",,,,
+Problem,6,Evaluate: sin² 30° + cos² 30° + tan² 45°.,"sin 30° = 1/2, cos 30° = √3/2, tan 45° = 1. sin² 30° + cos² 30° + tan² 45° = (1/2)² + (√3/2)² + 1² = 1/4 + 3/4 + 1 = 1 + 1 = 2. Answer: 2",,,,
+Problem,7,Evaluate: (sin 60° cos 30° + cos 60° sin 30°).,"sin 60° = √3/2, cos 30° = √3/2, cos 60° = 1/2, sin 30° = 1/2. sin 60° cos 30° + cos 60° sin 30° = (√3/2)(√3/2) + (1/2)(1/2) = 3/4 + 1/4 = 4/4 = 1. Answer: 1",,,,
+Problem,8,If sin A = cos A, find the value of A.,"Given: sin A = cos A. Dividing both sides by cos A: tan A = 1. Therefore, A = 45° (since tan 45° = 1). Answer: A = 45°",,,,
+Problem,9,Prove that: sin² A + cos² A = 1.,"Consider a right triangle with angle A. Let opposite = p, adjacent = b, hypotenuse = h. Then sin A = p/h, cos A = b/h. sin² A + cos² A = (p/h)² + (b/h)² = (p² + b²)/h². By Pythagoras theorem: p² + b² = h². Therefore, sin² A + cos² A = h²/h² = 1. Answer: Proved",,,,
+Problem,10,Evaluate: (1 + tan² 45°)/(1 + tan² 45°).,"tan 45° = 1. 1 + tan² 45° = 1 + 1 = 2. (1 + tan² 45°)/(1 + tan² 45°) = 2/2 = 1. Answer: 1",,,,
+Problem,11,If A + B = 90°, show that sin A = cos B.,"Given: A + B = 90°, so B = 90° - A. sin A = sin A. cos B = cos (90° - A) = sin A (by complementary angle property). Therefore, sin A = cos B. Answer: Proved",,,,
+Problem,12,Evaluate: sec² 45° - tan² 45°.,"sec 45° = √2, tan 45° = 1. sec² 45° - tan² 45° = (√2)² - 1² = 2 - 1 = 1. Answer: 1",,,,
+Problem,13,Evaluate: cosec² 30° - cot² 30°.,"cosec 30° = 2, cot 30° = √3. cosec² 30° - cot² 30° = 2² - (√3)² = 4 - 3 = 1. Answer: 1",,,,
+Problem,14,If sin A = 1/2, find the value of A.,"Given: sin A = 1/2. We know that sin 30° = 1/2. Therefore, A = 30° (or A = 150° in second quadrant, but typically we take acute angle A = 30°). Answer: A = 30°",,,,
+Problem,15,If cos A = 1/2, find the value of A.,"Given: cos A = 1/2. We know that cos 60° = 1/2. Therefore, A = 60° (or A = 300°, but typically we take acute angle A = 60°). Answer: A = 60°",,,,
+Problem,16,If tan A = √3, find the value of A.,"Given: tan A = √3. We know that tan 60° = √3. Therefore, A = 60° (or A = 240°, but typically we take acute angle A = 60°). Answer: A = 60°",,,,
+Problem,17,Evaluate: (sin 45° + cos 45°)/(sin 45° - cos 45°).,"sin 45° = 1/√2, cos 45° = 1/√2. sin 45° + cos 45° = 1/√2 + 1/√2 = 2/√2 = √2. sin 45° - cos 45° = 1/√2 - 1/√2 = 0. Division by zero is undefined, but if we consider the limit, the expression is undefined. Actually, since sin 45° = cos 45°, the denominator is 0, so the expression is undefined. Answer: Undefined (division by zero)",,,,
+Problem,18,Evaluate: (tan 45° - sin 30°)/(cos 60°).,"tan 45° = 1, sin 30° = 1/2, cos 60° = 1/2. (tan 45° - sin 30°)/(cos 60°) = (1 - 1/2)/(1/2) = (1/2)/(1/2) = 1. Answer: 1",,,,
+Problem,19,If sec A = 5/3, find cos A, sin A, and tan A.,"Given: sec A = 5/3. cos A = 1/sec A = 3/5. Using sin² A + cos² A = 1: sin² A + (3/5)² = 1, sin² A + 9/25 = 1, sin² A = 16/25, sin A = 4/5. tan A = sin A/cos A = (4/5)/(3/5) = 4/3. Answer: cos A = 3/5, sin A = 4/5, tan A = 4/3",,,,
+Problem,20,Evaluate: sin² 60° + cos² 60° + tan² 45°.,"sin 60° = √3/2, cos 60° = 1/2, tan 45° = 1. sin² 60° + cos² 60° + tan² 45° = (√3/2)² + (1/2)² + 1² = 3/4 + 1/4 + 1 = 1 + 1 = 2. Answer: 2",,,,
+Problem,21,If cot A = 3/4, find sin A and cos A.,"Given: cot A = 3/4 = cos A/sin A. Let cos A = 3k, sin A = 4k. Using sin² A + cos² A = 1: (4k)² + (3k)² = 1, 16k² + 9k² = 1, 25k² = 1, k = 1/5. sin A = 4/5, cos A = 3/5. Answer: sin A = 4/5, cos A = 3/5",,,,
+Problem,22,Evaluate: (1 - cos² 30°)/(1 - sin² 30°).,"cos 30° = √3/2, sin 30° = 1/2. 1 - cos² 30° = 1 - (√3/2)² = 1 - 3/4 = 1/4 = sin² 30°. 1 - sin² 30° = 1 - (1/2)² = 1 - 1/4 = 3/4 = cos² 30°. (1 - cos² 30°)/(1 - sin² 30°) = (1/4)/(3/4) = 1/3. Answer: 1/3",,,,
+Problem,23,If sin A = cos A, find the value of 2tan² A + sin² A - 1.,"Given: sin A = cos A, so A = 45°. tan 45° = 1, sin 45° = 1/√2. 2tan² A + sin² A - 1 = 2(1)² + (1/√2)² - 1 = 2 + 1/2 - 1 = 1 + 1/2 = 3/2. Answer: 3/2",,,,
+Problem,24,Evaluate: (sin 30° + tan 45° - cosec 60°)/(sec 30° + cos 60° + cot 45°).,"sin 30° = 1/2, tan 45° = 1, cosec 60° = 2/√3, sec 30° = 2/√3, cos 60° = 1/2, cot 45° = 1. Numerator = 1/2 + 1 - 2/√3 = 3/2 - 2/√3. Denominator = 2/√3 + 1/2 + 1 = 3/2 + 2/√3. This gives a complex fraction. Let's simplify: = (3/2 - 2/√3)/(3/2 + 2/√3). Multiplying numerator and denominator by 2√3: = (3√3 - 4)/(3√3 + 4). Answer: (3√3 - 4)/(3√3 + 4)",,,,
+Problem,25,Prove that: (1 + tan² A) = sec² A.,"We know: tan A = sin A/cos A. 1 + tan² A = 1 + sin² A/cos² A = (cos² A + sin² A)/cos² A = 1/cos² A = sec² A. Answer: Proved",,,,
+Problem,26,Prove that: (1 + cot² A) = cosec² A.,"We know: cot A = cos A/sin A. 1 + cot² A = 1 + cos² A/sin² A = (sin² A + cos² A)/sin² A = 1/sin² A = cosec² A. Answer: Proved",,,,
+Problem,27,Evaluate: (tan 60° - tan 30°)/(1 + tan 60° tan 30°).,"tan 60° = √3, tan 30° = 1/√3. tan 60° - tan 30° = √3 - 1/√3 = (3 - 1)/√3 = 2/√3. 1 + tan 60° tan 30° = 1 + (√3)(1/√3) = 1 + 1 = 2. (tan 60° - tan 30°)/(1 + tan 60° tan 30°) = (2/√3)/2 = 1/√3 = tan 30°. Answer: 1/√3 or tan 30°",,,,
+Problem,28,If A and B are acute angles such that sin A = cos B, then prove that A + B = 90°.,"Given: sin A = cos B. We know: cos B = sin (90° - B). Therefore, sin A = sin (90° - B). Since A and B are acute angles, A = 90° - B, so A + B = 90°. Answer: Proved",,,,
+Problem,29,Evaluate: sin² 45° + cos² 45° + tan² 45°.,"sin 45° = 1/√2, cos 45° = 1/√2, tan 45° = 1. sin² 45° + cos² 45° + tan² 45° = (1/√2)² + (1/√2)² + 1² = 1/2 + 1/2 + 1 = 1 + 1 = 2. Answer: 2",,,,
+Problem,30,If sin (A + B) = 1 and cos (A - B) = 1, find A and B.,"Given: sin (A + B) = 1, so A + B = 90°. cos (A - B) = 1, so A - B = 0°, therefore A = B. Substituting: 2A = 90°, A = 45°, B = 45°. Answer: A = 45°, B = 45°",,,,
+Problem,31,Evaluate: (cos 0° + sin 90° - tan 45°)/(sin 30° + cos 60°).,"cos 0° = 1, sin 90° = 1, tan 45° = 1, sin 30° = 1/2, cos 60° = 1/2. Numerator = 1 + 1 - 1 = 1. Denominator = 1/2 + 1/2 = 1. (cos 0° + sin 90° - tan 45°)/(sin 30° + cos 60°) = 1/1 = 1. Answer: 1",,,,
+Problem,32,If 3tan A = 4, find sin A and cos A.,"Given: 3tan A = 4, so tan A = 4/3. Let sin A = 4k, cos A = 3k. Using sin² A + cos² A = 1: (4k)² + (3k)² = 1, 16k² + 9k² = 1, 25k² = 1, k = 1/5. sin A = 4/5, cos A = 3/5. Answer: sin A = 4/5, cos A = 3/5",,,,
+Problem,33,Evaluate: (1 - sin² 60°)/(1 - cos² 60°).,"sin 60° = √3/2, cos 60° = 1/2. 1 - sin² 60° = 1 - (√3/2)² = 1 - 3/4 = 1/4 = cos² 60°. 1 - cos² 60° = 1 - (1/2)² = 1 - 1/4 = 3/4 = sin² 60°. (1 - sin² 60°)/(1 - cos² 60°) = (1/4)/(3/4) = 1/3. Answer: 1/3",,,,
+Problem,34,If sec A + tan A = p, find sec A - tan A.,"We know: sec² A - tan² A = 1. (sec A + tan A)(sec A - tan A) = 1. Given sec A + tan A = p. Therefore, sec A - tan A = 1/p. Answer: 1/p",,,,
+Problem,35,Evaluate: sin 30° cos 60° + cos 30° sin 60°.,"sin 30° = 1/2, cos 60° = 1/2, cos 30° = √3/2, sin 60° = √3/2. sin 30° cos 60° + cos 30° sin 60° = (1/2)(1/2) + (√3/2)(√3/2) = 1/4 + 3/4 = 4/4 = 1. Answer: 1",,,,
+Problem,36,If cosec A = 13/5, find sin A, cos A, and tan A.,"Given: cosec A = 13/5. sin A = 1/cosec A = 5/13. Using sin² A + cos² A = 1: (5/13)² + cos² A = 1, 25/169 + cos² A = 1, cos² A = 144/169, cos A = 12/13. tan A = sin A/cos A = (5/13)/(12/13) = 5/12. Answer: sin A = 5/13, cos A = 12/13, tan A = 5/12",,,,
+Problem,37,Evaluate: (tan² 60° - sin² 30°)/(cos² 30° - cot² 45°).,"tan 60° = √3, sin 30° = 1/2, cos 30° = √3/2, cot 45° = 1. Numerator = (√3)² - (1/2)² = 3 - 1/4 = 11/4. Denominator = (√3/2)² - 1² = 3/4 - 1 = -1/4. (tan² 60° - sin² 30°)/(cos² 30° - cot² 45°) = (11/4)/(-1/4) = -11. Answer: -11",,,,
+Problem,38,If sin A = 5/13 and A is acute, find cos A and tan A.,"Given: sin A = 5/13. Using sin² A + cos² A = 1: (5/13)² + cos² A = 1, 25/169 + cos² A = 1, cos² A = 144/169, cos A = 12/13. tan A = sin A/cos A = (5/13)/(12/13) = 5/12. Answer: cos A = 12/13, tan A = 5/12",,,,
+Problem,39,Evaluate: (sin 0° + cos 0° + tan 0°)/(sin 90° + cos 90° + tan 45°).,"sin 0° = 0, cos 0° = 1, tan 0° = 0, sin 90° = 1, cos 90° = 0, tan 45° = 1. Numerator = 0 + 1 + 0 = 1. Denominator = 1 + 0 + 1 = 2. (sin 0° + cos 0° + tan 0°)/(sin 90° + cos 90° + tan 45°) = 1/2. Answer: 1/2",,,,
+Problem,40,If cot A = 5/12, find sin A, cos A, and sec A.,"Given: cot A = 5/12 = cos A/sin A. Let cos A = 5k, sin A = 12k. Using sin² A + cos² A = 1: (12k)² + (5k)² = 1, 144k² + 25k² = 1, 169k² = 1, k = 1/13. sin A = 12/13, cos A = 5/13, sec A = 1/cos A = 13/5. Answer: sin A = 12/13, cos A = 5/13, sec A = 13/5",,,,
+Problem,41,Evaluate: (1 + sin 90°)(1 - sin 90°).,"sin 90° = 1. 1 + sin 90° = 1 + 1 = 2. 1 - sin 90° = 1 - 1 = 0. (1 + sin 90°)(1 - sin 90°) = 2 × 0 = 0. Answer: 0",,,,
+Problem,42,If sin A = 1/√2 and cos A = 1/√2, find the value of A.,"Given: sin A = 1/√2 and cos A = 1/√2. We know: sin 45° = 1/√2 and cos 45° = 1/√2. Therefore, A = 45°. Answer: A = 45°",,,,
+Problem,43,Evaluate: sec² 30° - tan² 30°.,"sec 30° = 2/√3, tan 30° = 1/√3. sec² 30° - tan² 30° = (2/√3)² - (1/√3)² = 4/3 - 1/3 = 3/3 = 1. Answer: 1",,,,
+Problem,44,Evaluate: cosec² 60° - cot² 60°.,"cosec 60° = 2/√3, cot 60° = 1/√3. cosec² 60° - cot² 60° = (2/√3)² - (1/√3)² = 4/3 - 1/3 = 3/3 = 1. Answer: 1",,,,
+Problem,45,If tan A = 1/√3, find the value of A.,"Given: tan A = 1/√3. We know: tan 30° = 1/√3. Therefore, A = 30°. Answer: A = 30°",,,,
+Problem,46,Evaluate: (sin 30° + cos 60°)/(tan 45°).,"sin 30° = 1/2, cos 60° = 1/2, tan 45° = 1. (sin 30° + cos 60°)/(tan 45°) = (1/2 + 1/2)/1 = 1/1 = 1. Answer: 1",,,,
+Problem,47,If sin (A - B) = 1/2 and cos (A + B) = 1/2, find A and B.,"Given: sin (A - B) = 1/2, so A - B = 30°. cos (A + B) = 1/2, so A + B = 60°. Adding: 2A = 90°, A = 45°. Subtracting: 2B = 30°, B = 15°. Answer: A = 45°, B = 15°",,,,
+Problem,48,Evaluate: (cos² 30° + sin² 30°)/(tan 60°).,"cos 30° = √3/2, sin 30° = 1/2, tan 60° = √3. cos² 30° + sin² 30° = (√3/2)² + (1/2)² = 3/4 + 1/4 = 1. (cos² 30° + sin² 30°)/(tan 60°) = 1/√3. Answer: 1/√3",,,,
+Problem,49,If 5sin A = 3, find cos A and tan A.,"Given: 5sin A = 3, so sin A = 3/5. Using sin² A + cos² A = 1: (3/5)² + cos² A = 1, 9/25 + cos² A = 1, cos² A = 16/25, cos A = 4/5. tan A = sin A/cos A = (3/5)/(4/5) = 3/4. Answer: cos A = 4/5, tan A = 3/4",,,,
+Problem,50,Evaluate: sin 60° cos 30° - cos 60° sin 30°.,"sin 60° = √3/2, cos 30° = √3/2, cos 60° = 1/2, sin 30° = 1/2. sin 60° cos 30° - cos 60° sin 30° = (√3/2)(√3/2) - (1/2)(1/2) = 3/4 - 1/4 = 2/4 = 1/2. Answer: 1/2",,,,
+

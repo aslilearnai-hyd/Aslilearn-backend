@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The lifelines of national economy refer to,Industries only,Agriculture only,Transport and communication,Trade only,Transport and communication
+MCQ,2,Which mode of transport is most economical for long distances?,Roadways,Railways,Airways,Waterways,Waterways
+MCQ,3,Which transport carries maximum goods in India?,Roadways,Railways,Pipelines,Airways,Railways
+MCQ,4,Which transport is known as lifeline of the country?,Airways,Waterways,Railways,Roadways,Railways
+MCQ,5,Which road type connects villages?,National highways,State highways,District roads,Rural roads,Rural roads
+MCQ,6,Which authority maintains National Highways?,State government,Local bodies,Central government,Private sector,Central government
+MCQ,7,Golden Quadrilateral connects major cities of,South India,East India,North-East India,India,India
+MCQ,8,Which is the longest highway in India?,NH-44,NH-7,NH-1,NH-48,NH-44
+MCQ,9,Which transport is fastest?,Railways,Roadways,Airways,Waterways,Airways
+MCQ,10,Which transport is cheapest for bulky goods?,Roadways,Railways,Waterways,Airways,Waterways
+MCQ,11,Which transport uses pipelines?,Oil transport,Coal transport,Food transport,Passenger transport,Oil transport
+MCQ,12,Which port is the oldest in India?,Mumbai,Kolkata,Chennai,Kandla,Kolkata
+MCQ,13,Which port is a tidal port?,Mumbai,Chennai,Kolkata,Kochi,Kolkata
+MCQ,14,Which port is the largest port in India?,Kandla,Mumbai,Chennai,Kolkata,Mumbai
+MCQ,15,Which waterway is known as National Waterway No.1?,Ganga,Brahmaputra,Yamuna,Godavari,Ganga
+MCQ,16,Which transport is affected by weather?,Roadways,Railways,Airways,Pipelines,Airways
+MCQ,17,Which is a public sector airline of India?,IndiGo,Air India,Vistara,SpiceJet,Air India
+MCQ,18,Which transport is used in hilly areas?,Railways,Roadways,Pipelines,Waterways,Roadways
+MCQ,19,Which communication means is fastest?,Post,Telephone,Internet,Television,Internet
+MCQ,20,Which type of trade occurs within a country?,International trade,External trade,Local trade,Internal trade,Internal trade
+MCQ,21,Trade between countries is called,Internal trade,Local trade,International trade,Domestic trade,International trade
+MCQ,22,Which export item earns maximum foreign exchange?,Tea,Textiles,Petroleum products,Gems and jewellery,Petroleum products
+MCQ,23,Which transport links major ports?,Roadways,Railways,Airways,Waterways,Railways
+MCQ,24,Which port is located in Gujarat?,Mumbai,Kandla,Chennai,Kochi,Kandla
+MCQ,25,Which mode of transport is suitable for perishable goods?,Roadways,Railways,Airways,Waterways,Airways
+MCQ,26,Which port is known as Queen of Arabian Sea?,Kandla,Mumbai,Kochi,Chennai,Kochi
+MCQ,27,Which transport uses least energy?,Roadways,Railways,Waterways,Airways,Waterways
+MCQ,28,Which medium spreads news worldwide?,Radio,Newspaper,Internet,Post,Internet
+MCQ,29,Which organisation controls railways?,State government,Private sector,Indian Railways,Local bodies,Indian Railways
+MCQ,30,Which transport is flexible?,Railways,Roadways,Waterways,Pipelines,Roadways
+MCQ,31,Which highway connects Delhi and Mumbai?,NH-44,NH-48,NH-1,NH-7,NH-48
+MCQ,32,Which port is an artificial port?,Mumbai,Kolkata,Chennai,Kochi,Chennai
+MCQ,33,Which transport helps tourism?,Railways,Roadways,Airways,All of these,All of these
+MCQ,34,Which means of communication is cheapest?,Telephone,Mobile,Post,Internet,Post
+MCQ,35,Which transport pollutes least?,Roadways,Railways,Waterways,Airways,Waterways
+MCQ,36,Which inland waterway runs along Brahmaputra?,NW-1,NW-2,NW-3,NW-4,NW-2
+MCQ,37,Which transport is ideal for petroleum?,Railways,Roadways,Pipelines,Airways,Pipelines
+MCQ,38,Which trade increases national income?,Internal trade,Barter trade,International trade,Local trade,International trade
+MCQ,39,Which transport is expensive?,Roadways,Railways,Waterways,Airways,Airways
+MCQ,40,Which port handles maximum cargo?,Mumbai,Kandla,Chennai,Kolkata,Mumbai
+MCQ,41,Which road connects state capitals?,National highways,State highways,District roads,Rural roads,State highways
+MCQ,42,Which transport is seasonal?,Railways,Roadways,Waterways,Pipelines,Waterways
+MCQ,43,Which means connects remote areas quickly?,Post,Roadways,Airways,Railways,Airways
+MCQ,44,Which transport supports industrial growth?,Roadways,Railways,Pipelines,All of these,All of these
+MCQ,45,Which port is a natural harbour?,Chennai,Mumbai,Kolkata,Kandla,Mumbai
+MCQ,46,Which sector includes transport and trade?,Primary,Secondary,Tertiary,Quaternary,Tertiary
+MCQ,47,Which communication method uses satellites?,Radio,Television,Internet,All of these,All of these
+MCQ,48,Which transport is affected by floods?,Railways,Roadways,Waterways,Airways,Roadways
+MCQ,49,Which activity links producers and consumers?,Transport,Communication,Trade,All of these,All of these
+MCQ,50,Lifelines of national economy are important for,Development,Trade,Connectivity,All of these,All of these
+
+Integer,1,Lifelines refer to?,Transport and communication,,,,
+Integer,2,Cheapest transport?,Waterways,,,,
+Integer,3,Fastest transport?,Airways,,,,
+Integer,4,Longest highway?,NH-44,,,,
+Integer,5,Oldest port?,Kolkata,,,,
+Integer,6,Tidal port?,Kolkata,,,,
+Integer,7,Public airline?,Air India,,,,
+Integer,8,Trade within country?,Internal trade,,,,
+Integer,9,Trade between nations?,International trade,,,,
+Integer,10,National Waterway No.1?,Ganga,,,,
+Integer,11,Pipeline transports?,Oil,,,,
+Integer,12,Major rail authority?,Indian Railways,,,,
+Integer,13,Artificial port?,Chennai,,,,
+Integer,14,Natural harbour?,Mumbai,,,,
+Integer,15,Transport in hills?,Roadways,,,,
+Integer,16,Export earning max?,Petroleum,,,,
+Integer,17,Queen of Arabian Sea?,Kochi,,,,
+Integer,18,Cheapest communication?,Post,,,,
+Integer,19,Fast communication?,Internet,,,,
+Integer,20,Port in Gujarat?,Kandla,,,,
+Integer,21,Transport for bulky goods?,Waterways,,,,
+Integer,22,Transport for tourists?,Airways,,,,
+Integer,23,Inland waterway on Brahmaputra?,NW-2,,,,
+Integer,24,Energy efficient transport?,Waterways,,,,
+Integer,25,Flexible transport?,Roadways,,,,
+Integer,26,Expensive transport?,Airways,,,,
+Integer,27,Highway connecting Delhi-Mumbai?,NH-48,,,,
+Integer,28,Transport using pipes?,Pipelines,,,,
+Integer,29,Major cargo port?,Mumbai,,,,
+Integer,30,Transport polluting least?,Waterways,,,,
+Integer,31,Communication using satellites?,Internet,,,,
+Integer,32,Service sector?,Tertiary,,,,
+Integer,33,Transport helps?,Trade,,,,
+Integer,34,Transport affected by weather?,Airways,,,,
+Integer,35,State capital roads?,State highways,,,,
+Integer,36,Seasonal transport?,Waterways,,,,
+Integer,37,Inland transport?,Waterways,,,,
+Integer,38,Mail service?,Post,,,,
+Integer,39,Industrial support transport?,Railways,,,,
+Integer,40,Transport for petroleum?,Pipelines,,,,
+Integer,41,Remote area access?,Airways,,,,
+Integer,42,Main rail cargo?,Goods,,,,
+Integer,43,Trade increases?,Income,,,,
+Integer,44,National economy lifeline?,Transport,,,,
+Integer,45,Old communication?,Post,,,,
+Integer,46,Port city in Kerala?,Kochi,,,,
+Integer,47,Capital intensive transport?,Airways,,,,
+Integer,48,Transport network?,Connectivity,,,,
+Integer,49,Chapter theme?,Transport and trade,,,,
+Integer,50,National economy growth needs?,Connectivity,,,,
+
+Descriptive,1,What are lifelines of national economy?,,,,,Transport and communication systems supporting economic activities
+Descriptive,2,Explain importance of transport.,,,,,It connects production and consumption
+Descriptive,3,Describe roadways in India.,,,,,Most used and flexible transport
+Descriptive,4,Explain railways in India.,,,,,Backbone of transport system
+Descriptive,5,Describe waterways.,,,,,Cheapest mode for bulky goods
+Descriptive,6,Explain air transport.,,,,,Fastest means of transport
+Descriptive,7,Describe pipeline transport.,,,,,Used for oil and gas
+Descriptive,8,What is communication?,,,,,Exchange of information
+Descriptive,9,Explain means of communication.,,,,,Post, telephone, internet
+Descriptive,10,Describe trade.,,,,,Exchange of goods and services
+Descriptive,11,Explain internal trade.,,,,,Trade within a country
+Descriptive,12,Explain international trade.,,,,,Trade between countries
+Descriptive,13,Describe major sea ports of India.,,,,,Mumbai, Chennai, Kolkata
+Descriptive,14,Explain Golden Quadrilateral.,,,,,Connects major cities
+Descriptive,15,Describe National Highways.,,,,,Connect major cities
+Descriptive,16,Explain State Highways.,,,,,Connect state capitals
+Descriptive,17,Describe rural roads.,,,,,Connect villages
+Descriptive,18,Explain importance of railways.,,,,,Carry goods and passengers
+Descriptive,19,Describe inland waterways.,,,,,River based transport
+Descriptive,20,Explain importance of ports.,,,,,Gateway of trade
+Descriptive,21,Describe Mumbai port.,,,,,Largest natural port
+Descriptive,22,Explain Kolkata port.,,,,,Only riverine port
+Descriptive,23,Describe Kochi port.,,,,,Natural harbour
+Descriptive,24,Explain role of airways.,,,,,Connect remote areas
+Descriptive,25,Describe communication revolution.,,,,,Growth of internet
+Descriptive,26,Explain importance of trade.,,,,,Boosts economy
+Descriptive,27,Describe export items of India.,,,,,Petroleum, textiles
+Descriptive,28,Explain import items of India.,,,,,Machinery, petroleum
+Descriptive,29,Explain transport and industrial growth.,,,,,Supports industries
+Descriptive,30,Describe problems of road transport.,,,,,Congestion and accidents
+Descriptive,31,Explain advantages of rail transport.,,,,,Economical for long distance
+Descriptive,32,Explain advantages of waterways.,,,,,Cheap and eco-friendly
+Descriptive,33,Explain disadvantages of airways.,,,,,Very expensive
+Descriptive,34,Describe role of pipelines.,,,,,Continuous transport
+Descriptive,35,Explain postal services.,,,,,Cheapest communication
+Descriptive,36,Describe digital communication.,,,,,Fast information exchange
+Descriptive,37,Explain tourism and transport.,,,,,Transport supports tourism
+Descriptive,38,Describe role of transport in national unity.,,,,,Connects regions
+Descriptive,39,Explain role of trade in development.,,,,,Generates income
+Descriptive,40,Describe transport infrastructure.,,,,,Roads, railways, ports
+Descriptive,41,Explain challenges of transport.,,,,,Maintenance and pollution
+Descriptive,42,Explain sustainable transport.,,,,,Eco-friendly transport
+Descriptive,43,Describe importance of connectivity.,,,,,Economic integration
+Descriptive,44,Explain transport during disasters.,,,,,Relief operations
+Descriptive,45,Describe role of government.,,,,,Development and regulation
+Descriptive,46,Explain transport and employment.,,,,,Job creation
+Descriptive,47,Describe future of transport.,,,,,Technology based
+Descriptive,48,Explain communication and globalization.,,,,,Global connectivity
+Descriptive,49,Explain economic importance of ports.,,,,,Foreign trade
+Descriptive,50,Summarize Lifelines of National Economy.,,,,,Chapter highlights transport, communication and trade

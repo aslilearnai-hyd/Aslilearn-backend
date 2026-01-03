@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of the poem Dust of Snow?,Robert Frost,John Keats,William Wordsworth,Emily Dickinson,Robert Frost
+MCQ,2,Dust of Snow is a,Story,Poem,Play,Essay,Poem
+MCQ,3,What shook the dust of snow?,Wind,Crow,Sparrow,Child,Crow
+MCQ,4,From which tree did the dust of snow fall?,Oak,Pine,Hemlock,Birch,Hemlock
+MCQ,5,What bird is mentioned in the poem?,Peacock,Crow,Sparrow,Eagle,Crow
+MCQ,6,The poet’s mood at the beginning was,Sad,Happy,Excited,Joyful,Sad
+MCQ,7,What did the dust of snow do?,Spoiled the day,Changed the mood,Made him angry,Made him cry,Changed the mood
+MCQ,8,What does dust of snow symbolize?,Death,Sorrow,Small joy,Nature’s beauty,Small joy
+MCQ,9,Hemlock tree is usually associated with,Happiness,Beauty,Poison,Joy,Poison
+MCQ,10,Crow is generally considered a symbol of,Bad omen,Good luck,Beauty,Peace,Bad omen
+MCQ,11,How many stanzas are in the poem?,1,2,3,4,2
+MCQ,12,The rhyme scheme of the poem is,ABAB,ABCB,AABB,AAAA,ABAB
+MCQ,13,The poet saved some part of the day from,Waste,Joy,Anger,Pain,Waste
+MCQ,14,The dust of snow represents,Big events,Small incidents,Nature’s cruelty,Storms,Small incidents
+MCQ,15,The poem shows the power of,Nature,Money,People,Words,Nature
+MCQ,16,The poem Dust of Snow is about,Loss,Depression,Hope,Nature changing mood,Hope
+MCQ,17,What fell on the poet?,Leaves,Dust of snow,Rain,Hail,Dust of snow
+MCQ,18,The poet’s mood changed due to,Nature,People,Time,Weather,Nature
+MCQ,19,What kind of poem is Dust of Snow?,Narrative,Lyric,Sonnet,Ballad,Lyric
+MCQ,20,The poet was initially in a,Cheerful mood,Bad mood,Neutral mood,Excited mood,Bad mood
+MCQ,21,What does the crow’s action signify?,Bad luck,Good luck,Indifference,Nature’s intervention,Nature’s intervention
+MCQ,22,The poem suggests that joy can come from,Big things,Small things,Money,Success,Small things
+MCQ,23,Which element brings positivity?,Snow,Crow,Hemlock tree,Dust of snow,Dust of snow
+MCQ,24,The poem highlights,A tragic event,A depressing incident,A small natural incident,A celebration,A small natural incident
+MCQ,25,The tone of the poem is,Angry,Hopeful,Sarcastic,Sad,Hopeful
+MCQ,26,What time of year is suggested?,Summer,Spring,Winter,Autumn,Winter
+MCQ,27,The dust of snow fell because the crow,Sat on tree,Flew away,Shook tree,Slept,Shook tree
+MCQ,28,What did the poet lose initially?,Time,Hope,Money,Friends,Hope
+MCQ,29,The poet regained,Anger,Depression,Joy,Sadness,Joy
+MCQ,30,The poem teaches that,A day can be wasted,Nature is cruel,Small things matter,Life is sad,Small things matter
+MCQ,31,The setting of the poem is,Nature,City,House,Market,Nature
+MCQ,32,The poet uses crow and hemlock to show,Beauty,Negativity,Neutrality,Positivity,Negativity
+MCQ,33,The change in mood was,Gradual,Sudden,Permanent,Temporary,Sudden
+MCQ,34,The poem is an example of,Optimism,Pessimism,Naturalism,Romanticism,Optimism
+MCQ,35,What literary device is used in dust of snow?,Metaphor,Simile,Alliteration,Personification,Metaphor
+MCQ,36,What saved the poet’s day?,Crow,Dust of snow,Hemlock tree,Nature,Dust of snow
+MCQ,37,The poet’s reaction to the incident was,Anger,Joy,Indifference,Fear,Joy
+MCQ,38,The poem shows that nature can be,Destructive,Healing,Dangerous,Useless,Healing
+MCQ,39,The poet’s mood before the incident was,Positive,Negative,Neutral,Hopeful,Negative
+MCQ,40,What does snow usually symbolize?,Heat,Sadness,Cold,Purity,Purity
+MCQ,41,The poem ends on a note of,Despair,Anger,Hope,Sadness,Hope
+MCQ,42,The dust of snow fell on poet’s,Head,Hand,Face,Shoulder,Head
+MCQ,43,The poem consists of,8 lines,10 lines,12 lines,6 lines,8 lines
+MCQ,44,The theme of the poem is,Power of nature,Human conflict,Love,War,Power of nature
+MCQ,45,The poet believes that nature can,Destroy life,Change mood,Create fear,Cause sadness,Change mood
+MCQ,46,What kind of mood does the poem finally convey?,Sad,Hopeless,Cheerful,Angry,Cheerful
+MCQ,47,The dust of snow caused the poet to,Slip,Smile,Cry,Run,Smile
+MCQ,48,The poem shows that negativity can be turned into,Joy,Sadness,Anger,Fear,Joy
+MCQ,49,The poet uses simple incident to convey,Complex idea,Nothing,A joke,A story,Complex idea
+MCQ,50,The central message of the poem is,Nature is harmful,Life is sad,Small joys matter,Nature is scary,Small joys matter
+
+Integer,1,Name of the poet?,Robert Frost,,,,
+Integer,2,Poem mentioned?,Dust of Snow,,,,
+Integer,3,Type of poem?,Lyric,,,,
+Integer,4,Number of stanzas?,2,,,,
+Integer,5,Number of lines?,8,,,,
+Integer,6,Bird mentioned?,Crow,,,,
+Integer,7,Tree mentioned?,Hemlock,,,,
+Integer,8,Poet’s initial mood?,Sad,,,,
+Integer,9,What fell on the poet?,Dust of snow,,,,
+Integer,10,Poet’s final mood?,Happy,,,,
+Integer,11,Symbol of crow?,Bad omen,,,,
+Integer,12,Symbol of hemlock?,Poison,,,,
+Integer,13,Season suggested?,Winter,,,,
+Integer,14,Poet’s day was saved from?,Waste,,,,
+Integer,15,Theme of poem?,Hope,,,,
+Integer,16,Tone of poem?,Optimistic,,,,
+Integer,17,Poet’s nationality?,American,,,,
+Integer,18,Rhyme scheme?,ABAB,,,,
+Integer,19,Poet regained?,Joy,,,,
+Integer,20,Poem length?,Short,,,,
+Integer,21,Nature’s role?,Healing,,,,
+Integer,22,Incident type?,Small,,,,
+Integer,23,What changed poet’s mood?,Nature,,,,
+Integer,24,Dust of snow fell from?,Tree,,,,
+Integer,25,Poet felt before incident?,Depressed,,,,
+Integer,26,Poet felt after incident?,Relieved,,,,
+Integer,27,Literary device used?,Metaphor,,,,
+Integer,28,Setting?,Nature,,,,
+Integer,29,Message of poem?,Positivity,,,,
+Integer,30,Tree type?,Poisonous,,,,
+Integer,31,Bird type?,Unpleasant,,,,
+Integer,32,Poem teaches?,Optimism,,,,
+Integer,33,Poet’s reaction?,Smile,,,,
+Integer,34,Emotion changed to?,Happiness,,,,
+Integer,35,Impact of nature?,Positive,,,,
+Integer,36,Crow shook?,Tree,,,,
+Integer,37,What fell suddenly?,Snow,,,,
+Integer,38,Poem conveys?,Hope,,,,
+Integer,39,Poet’s wasted time saved?,Yes,,,,
+Integer,40,Poem mood shift?,Negative to positive,,,,
+Integer,41,Central idea?,Small joys,,,,
+Integer,42,Nature’s power?,Mood change,,,,
+Integer,43,Poem structure?,Simple,,,,
+Integer,44,Poet’s perspective?,Optimistic,,,,
+Integer,45,Poem setting environment?,Cold,,,,
+Integer,46,Poet’s emotion at end?,Content,,,,
+Integer,47,Poem style?,Simple,,,,
+Integer,48,Poem message about life?,Hopeful,,,,
+Integer,49,Impact of small events?,Significant,,,,
+Integer,50,Overall mood?,Positive,,,,
+
+Descriptive,1,What is the central idea of the poem Dust of Snow?,,,,,Small natural events can bring positive change
+Descriptive,2,How does nature change the poet’s mood?,,,,,Through a small incident
+Descriptive,3,Why are crow and hemlock used in the poem?,,,,,To represent negativity
+Descriptive,4,Explain the symbolism of dust of snow.,,,,,Symbol of small joy
+Descriptive,5,What was the poet’s mood at the beginning?,,,,,Depressed and sad
+Descriptive,6,How did the poet’s mood change?,,,,,From sad to happy
+Descriptive,7,What saved the poet’s day?,,,,,Dust of snow
+Descriptive,8,Why is the poem called Dust of Snow?,,,,,Central incident
+Descriptive,9,Explain the role of nature in the poem.,,,,,Nature heals
+Descriptive,10,How does the poem convey optimism?,,,,,Through mood change
+Descriptive,11,Why is the incident described as small?,,,,,Yet meaningful
+Descriptive,12,Explain the tone of the poem.,,,,,Hopeful
+Descriptive,13,What message does the poem convey?,,,,,Small joys matter
+Descriptive,14,How is irony used in the poem?,,,,,Negativity brings joy
+Descriptive,15,Why is the crow considered unpleasant?,,,,,Symbol of bad omen
+Descriptive,16,Why is the hemlock tree symbolic?,,,,,Represents poison
+Descriptive,17,Explain the title of the poem.,,,,,Refers to small incident
+Descriptive,18,How does the poem reflect human emotions?,,,,,Mood swings
+Descriptive,19,Why did the poet feel the day was wasted?,,,,,He was depressed
+Descriptive,20,How does nature act as a healer?,,,,,Changes mood
+Descriptive,21,Explain the poetic device used.,,,,,Metaphor
+Descriptive,22,How does the poem end?,,,,,On hopeful note
+Descriptive,23,Why is the poem short?,,,,,Simple message
+Descriptive,24,Explain the significance of winter.,,,,,Reflects sadness
+Descriptive,25,What lesson does the poem teach?,,,,,Value small happiness
+Descriptive,26,How does Frost use simplicity?,,,,,Clear message
+Descriptive,27,Explain the contrast in the poem.,,,,,Sad to happy
+Descriptive,28,How does the poem show nature’s power?,,,,,Mood transformation
+Descriptive,29,Why is the incident sudden?,,,,,Unexpected joy
+Descriptive,30,Explain how small events impact life.,,,,,They change perspective
+Descriptive,31,What is the poet’s attitude towards nature?,,,,,Respectful
+Descriptive,32,Why does the poet mention waste of day?,,,,,To show transformation
+Descriptive,33,Explain symbolism of snow.,,,,,Purity and freshness
+Descriptive,34,How does the poem inspire readers?,,,,,Find joy in small things
+Descriptive,35,What literary style is used?,,,,,Simple lyric
+Descriptive,36,How does mood shift affect the poem?,,,,,Creates optimism
+Descriptive,37,Explain emotional journey of poet.,,,,,Sadness to happiness
+Descriptive,38,Why does nature play key role?,,,,,It triggers change
+Descriptive,39,How does the poem relate to real life?,,,,,Small joys matter
+Descriptive,40,Explain how negativity turns positive.,,,,,Through nature
+Descriptive,41,Why is the poem relevant today?,,,,,Life stress relief
+Descriptive,42,How does Frost convey deep meaning?,,,,,Simple incident
+Descriptive,43,Explain significance of dust.,,,,,Small but powerful
+Descriptive,44,What makes the poem inspiring?,,,,,Optimistic message
+Descriptive,45,Why is mood change important?,,,,,Shows hope
+Descriptive,46,Explain how poem teaches positivity.,,,,,Unexpected joy
+Descriptive,47,What is Frost’s message to readers?,,,,,Never lose hope
+Descriptive,48,How does poem show human psychology?,,,,,Mood depends on events
+Descriptive,49,Why is the poem memorable?,,,,,Simple yet deep
+Descriptive,50,Summarize the poem Dust of Snow.,,,,,Small incident changes poet’s mood positively

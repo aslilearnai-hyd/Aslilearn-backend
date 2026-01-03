@@ -1,0 +1,154 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+
+MCQ,1,Socialism refers to?,Private ownership,Collective ownership,Capitalism,Feudalism,Collective ownership
+MCQ,2,Who supported socialism?,Capitalists,Workers,Nobles,Monarchs,Workers
+MCQ,3,Which system opposed socialism?,Capitalism,Democracy,Republic,None,Capitalism
+MCQ,4,Who were liberals?,Support absolute monarchy,Support individual freedom,Support socialism,None,Support individual freedom
+MCQ,5,Who were radicals?,Wanted absolute monarchy,Wanted gradual change,Wanted revolutionary change,None,Wanted revolutionary change
+MCQ,6,Who were conservatives?,Supported change,Opposed change,Supported socialism,None,Opposed change
+MCQ,7,Which country was centre of socialist ideas?,France,Russia,Germany,Britain,France
+MCQ,8,Who wrote Communist Manifesto?,Lenin,Marx,Stalin,Trotsky,Marx
+MCQ,9,Communist Manifesto was published in?,1848,1917,1905,1924,1848
+MCQ,10,Who was Karl Marx?,Capitalist,Socialist thinker,King,None,Socialist thinker
+MCQ,11,Who ruled Russia before revolution?,Tsar,President,Prime Minister,None,Tsar
+MCQ,12,Which Tsar ruled during 1917 revolution?,Alexander II,Nicholas II,Peter I,None,Nicholas II
+MCQ,13,Which party led Russian Revolution?,Mensheviks,Bolsheviks,Liberals,None,Bolsheviks
+MCQ,14,Leader of Bolsheviks was?,Stalin,Trotsky,Lenin,Nicholas II,Lenin
+MCQ,15,Russian Revolution occurred in?,1905,1917,1924,1939,1917
+MCQ,16,Which revolution ended Tsar rule?,1905 revolution,February Revolution,October Revolution,None,February Revolution
+MCQ,17,Which revolution brought Bolsheviks to power?,February Revolution,October Revolution,1905 revolution,None,October Revolution
+MCQ,18,What was Duma?,Russian parliament,Army,Court,None,Russian parliament
+MCQ,19,Which event triggered 1905 revolution?,Bloody Sunday,World War I,Food shortage,None,Bloody Sunday
+MCQ,20,Who were peasants?,Landowners,Farm labourers,Industrialists,None,Farm labourers
+MCQ,21,What was serfdom?,Slavery,Peasant bondage,Capitalism,None,Peasant bondage
+MCQ,22,Serfdom was abolished in?,1861,1905,1917,1924,1861
+MCQ,23,Who abolished serfdom?,Nicholas II,Alexander II,Lenin,None,Alexander II
+MCQ,24,Which war weakened Russia?,Crimean War,World War I,World War II,None,World War I
+MCQ,25,What was Pravda?,Russian army,Newspaper,Party,None,Newspaper
+MCQ,26,Who were Mensheviks?,Majority group,Minority group,Capitalists,None,Minority group
+MCQ,27,Which group wanted immediate socialism?,Mensheviks,Bolsheviks,Liberals,None,Bolsheviks
+MCQ,28,What slogan was raised?,Peace Land Bread,Liberty Equality,None,None,Peace Land Bread
+MCQ,29,Which body replaced Tsar?,Provisional Government,Duma,Soviet,None,Provisional Government
+MCQ,30,Which organisation represented workers?,Duma,Soviets,Army,None,Soviets
+MCQ,31,What is Soviet?,Council of workers,Army,Parliament,None,Council of workers
+MCQ,32,Which policy introduced by Lenin?,New Economic Policy,Five Year Plan,Collectivisation,None,New Economic Policy
+MCQ,33,Who succeeded Lenin?,Trotsky,Stalin,Nicholas,None,Stalin
+MCQ,34,Who introduced Five Year Plans?,Lenin,Stalin,Trotsky,None,Stalin
+MCQ,35,What was collectivisation?,Private farming,State farming,Capitalism,None,State farming
+MCQ,36,Which year USSR was formed?,1917,1922,1924,1939,1922
+MCQ,37,USSR stands for?,Union of Socialist Soviet Republics,United Socialist States,None,None,Union of Socialist Soviet Republics
+MCQ,38,Which class supported Bolsheviks?,Nobles,Workers and peasants,Capitalists,None,Workers and peasants
+MCQ,39,Which revolution was peaceful?,1905,February,October,None,February
+MCQ,40,Which revolution was violent?,February,October,1905,None,October
+MCQ,41,Who controlled industries after revolution?,Capitalists,State,Private owners,None,State
+MCQ,42,What happened to private property?,Increased,Abolished,Privatised,None,Abolished
+MCQ,43,Which aim was central to socialism?,Profit,Equality,Monarchy,None,Equality
+MCQ,44,Which newspaper spread socialist ideas?,Times,Pravda,Guardian,None,Pravda
+MCQ,45,Which leader supported world revolution?,Stalin,Lenin,Trotsky,None,Trotsky
+MCQ,46,Which policy allowed small businesses?,NEP,Collectivisation,None,None,NEP
+MCQ,47,Which class suffered famine?,Workers,Peasants,Nobles,None,Peasants
+MCQ,48,Which country became communist?,Russia,France,Britain,None,Russia
+MCQ,49,Who controlled agriculture after collectivisation?,Farmers,State,Capitalists,None,State
+MCQ,50,Main cause of Russian Revolution?,Autocracy and poverty,Religion,None,None,Autocracy and poverty
+
+Integer,1,Communist Manifesto year?,1848,,,,
+Integer,2,Russian Revolution year?,1917,,,,
+Integer,3,Ruler title of Russia?,Tsar,,,,
+Integer,4,Leader of Bolsheviks?,Lenin,,,,
+Integer,5,Russian parliament?,Duma,,,,
+Integer,6,Event of 1905?,Bloody Sunday,,,,
+Integer,7,Serfdom abolished year?,1861,,,,
+Integer,8,Revolution ending monarchy?,February Revolution,,,,
+Integer,9,Revolution bringing Bolsheviks?,October Revolution,,,,
+Integer,10,Workers councils called?,Soviets,,,,
+Integer,11,Slogan of Bolsheviks?,Peace Land Bread,,,,
+Integer,12,Party of Lenin?,Bolsheviks,,,,
+Integer,13,Minority group?,Mensheviks,,,,
+Integer,14,Leader after Lenin?,Stalin,,,,
+Integer,15,Economic policy of Lenin?,NEP,,,,
+Integer,16,State farming system?,Collectivisation,,,,
+Integer,17,Planning policy?,Five Year Plan,,,,
+Integer,18,Newspaper of socialists?,Pravda,,,,
+Integer,19,USSR formed in?,1922,,,,
+Integer,20,Workers supported?,Bolsheviks,,,,
+Integer,21,Peasant bondage?,Serfdom,,,,
+Integer,22,War weakening Russia?,World War I,,,,
+Integer,23,Temporary govt in 1917?,Provisional Government,,,,
+Integer,24,Socialist thinker?,Karl Marx,,,,
+Integer,25,Book by Marx?,Communist Manifesto,,,,
+Integer,26,Policy allowing trade?,NEP,,,,
+Integer,27,Group opposing change?,Conservatives,,,,
+Integer,28,Group wanting gradual reform?,Liberals,,,,
+Integer,29,Group wanting radical change?,Radicals,,,,
+Integer,30,Majority party?,Bolsheviks,,,,
+Integer,31,State of equality?,Socialism,,,,
+Integer,32,Leader of USSR?,Stalin,,,,
+Integer,33,Private property status?,Abolished,,,,
+Integer,34,Workers class?,Proletariat,,,,
+Integer,35,Owners class?,Capitalists,,,,
+Integer,36,Russian emperor?,Nicholas II,,,,
+Integer,37,Farming under state?,Collective farming,,,,
+Integer,38,Revolution newspaper?,Pravda,,,,
+Integer,39,Ideology of equality?,Socialism,,,,
+Integer,40,Peasant food shortage?,Famine,,,,
+Integer,41,Leader of October Revolution?,Lenin,,,,
+Integer,42,Year Lenin died?,1924,,,,
+Integer,43,Party split year?,1903,,,,
+Integer,44,Russian capital?,Petrograd,,,,
+Integer,45,Political councils?,Soviets,,,,
+Integer,46,Land redistributed to?,Peasants,,,,
+Integer,47,Army mutiny occurred?,1905,,,,
+Integer,48,Workers strikes year?,1905,,,,
+Integer,49,Industrial control?,State,,,,
+Integer,50,Main idea of socialism?,Equality,,,,
+
+Descriptive,1,What is socialism?,,,,,A system advocating collective ownership
+Descriptive,2,Who were socialists?,,,,,Supporters of equality
+Descriptive,3,Difference between liberals and radicals.,,,,,Gradual vs revolutionary change
+Descriptive,4,Who were conservatives?,,,,,Opposed change
+Descriptive,5,Explain ideas of Karl Marx.,,,,,Criticised capitalism
+Descriptive,6,What is Communism?,,,,,Classless society
+Descriptive,7,Describe Russia before 1917.,,,,,Autocratic rule poverty
+Descriptive,8,What was serfdom?,,,,,Peasant bondage system
+Descriptive,9,Causes of Russian Revolution.,,,,,Autocracy war poverty
+Descriptive,10,What was Bloody Sunday?,,,,,Massacre of workers
+Descriptive,11,Explain 1905 Revolution.,,,,,Workers protest against Tsar
+Descriptive,12,February Revolution.,,,,,End of monarchy
+Descriptive,13,October Revolution.,,,,,Bolsheviks seize power
+Descriptive,14,Role of Lenin.,,,,,Led Bolshevik revolution
+Descriptive,15,Who were Bolsheviks?,,,,,Radical socialist party
+Descriptive,16,Who were Mensheviks?,,,,,Moderate socialist group
+Descriptive,17,What were Soviets?,,,,,Workers councils
+Descriptive,18,What was Provisional Government?,,,,,Temporary government
+Descriptive,19,Why did Provisional Government fail?,,,,,Continued war
+Descriptive,20,Slogans of Bolsheviks.,,,,,Peace Land Bread
+Descriptive,21,Changes after revolution.,,,,,State control equality
+Descriptive,22,What was NEP?,,,,,Limited market economy
+Descriptive,23,Why NEP introduced?,,,,,Economic recovery
+Descriptive,24,Who was Stalin?,,,,,Leader after Lenin
+Descriptive,25,What were Five Year Plans?,,,,,Economic planning
+Descriptive,26,What was collectivisation?,,,,,State controlled farming
+Descriptive,27,Impact on peasants.,,,,,Food shortages
+Descriptive,28,Impact on workers.,,,,,Employment security
+Descriptive,29,Formation of USSR.,,,,,Union of republics
+Descriptive,30,Impact on world.,,,,,Inspired revolutions
+Descriptive,31,Why socialism spread?,,,,,Inequality
+Descriptive,32,What is capitalism?,,,,,Private ownership system
+Descriptive,33,Difference capitalism socialism.,,,,,Private vs collective
+Descriptive,34,Role of World War I.,,,,,Weakened Russia
+Descriptive,35,Why Tsar lost support?,,,,,Repression war
+Descriptive,36,Role of women.,,,,,Strikes protests
+Descriptive,37,What happened to industries?,,,,,State ownership
+Descriptive,38,What happened to land?,,,,,Given to peasants
+Descriptive,39,Why revolution important?,,,,,End of autocracy
+Descriptive,40,Failures of Tsarist regime.,,,,,Autocracy poverty
+Descriptive,41,What was Pravda?,,,,,Socialist newspaper
+Descriptive,42,How socialism changed Russia?,,,,,Economic political change
+Descriptive,43,Why famine occurred?,,,,,Collectivisation
+Descriptive,44,How education changed?,,,,,State controlled
+Descriptive,45,Why NEP ended?,,,,,State planning
+Descriptive,46,Effect on agriculture.,,,,,Collective farms
+Descriptive,47,Impact on society.,,,,,Equality
+Descriptive,48,Lessons from revolution.,,,,,Justice equality
+Descriptive,49,Why revolution succeeded?,,,,,Mass support
+Descriptive,50,Importance of Russian Revolution.,,,,,First socialist state

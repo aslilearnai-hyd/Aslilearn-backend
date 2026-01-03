@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,Who is the poet of How to Tell Wild Animals?,Robert Frost,Carolyn Wells,Leslie Norris,William Blake,Carolyn Wells
+MCQ,2,How to Tell Wild Animals is a,Story,Poem,Play,Essay,Poem
+MCQ,3,The poem is written in a,Serious tone,Humorous tone,Sad tone,Angry tone,Humorous tone
+MCQ,4,Which animal is described first in the poem?,Tiger,Lion,Bear,Leopard,Tiger
+MCQ,5,The Asian Lion is identified by,Black stripes,Roaring loudly,Brownish yellow colour,Sharp teeth,Brownish yellow colour
+MCQ,6,The Bengal Tiger attacks by,Hugging,Scratching,Biting,Roaring,Biting
+MCQ,7,The poet says you will know it is a tiger if it,Bites you,Hugs you,Kills you,Roars at you,Bites you
+MCQ,8,The leopard can be identified by its,Speed,Spots,Size,Teeth,Spots
+MCQ,9,What happens if the leopard leaps on you?,It runs away,It hugs you,It scratches you,It kills you,It scratches you
+MCQ,10,The poet describes the bear as,Fast,Angry,Clumsy,Playful,Clumsy
+MCQ,11,If a bear hugs you tightly, it means,Love,Playfulness,Affection,It is a bear,It is a bear
+MCQ,12,Which animal gives a tight hug?,Lion,Leopard,Bear,Tiger,Bear
+MCQ,13,The hyena laughs when it,Plays,Eats,Smiles,Attacks,Eats
+MCQ,14,Which animal is known for its laughing sound?,Hyena,Leopard,Bear,Lion,Hyena
+MCQ,15,The crocodile can be identified by,Its tears,Its smile,Its walk,Its roar,Its tears
+MCQ,16,Crocodile sheds tears while,Walking,Smiling,Eating,Sleeping,Eating
+MCQ,17,The chameleon is known for,Changing colour,Roaring,Running fast,Attacking,Changing colour
+MCQ,18,Which animal has no fixed colour?,Leopard,Chameleon,Tiger,Lion,Chameleon
+MCQ,19,The poem teaches how to identify animals by,Books,Zoos,Funny signs,Experts,Funny signs
+MCQ,20,The poem is an example of,Tragedy,Satire,Comedy,Humorous poetry,Humorous poetry
+MCQ,21,The poet uses humour to,Scare readers,Amuse readers,Teach science,Describe danger,Amuse readers
+MCQ,22,The poem warns readers about,Dangers of animals,Animal cruelty,Hunting,Zoos,Dangers of animals
+MCQ,23,The poem uses exaggeration to create,Tragedy,Humour,Fear,Sadness,Humour
+MCQ,24,Which animal is described as smiling?,Tiger,Crocodile,Bear,Hyena,Crocodile
+MCQ,25,The poet advises not to confuse animals because,They look similar,It is dangerous,They are rare,They are friendly,It is dangerous
+MCQ,26,The poem describes animals in a,Scientific way,Serious way,Humorous way,Emotional way,Humorous way
+MCQ,27,Which animal leaps again and again?,Tiger,Leopard,Bear,Lion,Leopard
+MCQ,28,The bear is described as giving you,A bite,A scratch,A hug,A roar,A hug
+MCQ,29,The hyena’s laughter occurs while,Running,Attacking,Eating,Sleeping,Eating
+MCQ,30,The crocodile’s tears are a sign of,Pain,Joy,False sadness,Hunger,False sadness
+MCQ,31,The chameleon is difficult to spot because it,Is fast,Is small,Changes colour,Hides underground,Changes colour
+MCQ,32,The poem is meant to be read as,Instruction manual,Humorous verse,Scientific text,Story,Humorous verse
+MCQ,33,The animals described in the poem are,Domestic,Wild,Pet,Farm animals,Wild
+MCQ,34,The poet’s style is,Serious,Instructional,Playful,Dull,Playful
+MCQ,35,The central idea of the poem is,Animal classification,Animal safety,Humorous identification of animals,Wildlife protection,Humorous identification of animals
+MCQ,36,The poem mocks,Animals,Readers,Human fear,Science,Human fear
+MCQ,37,Which animal is described last?,Lion,Tiger,Chameleon,Hyena,Chameleon
+MCQ,38,The leopard’s spots are described as,Beautiful,Decorative,Leopard’s identity,Dangerous,Leopard’s identity
+MCQ,39,The bear’s hug is,A sign of love,A sign of play,A sign of danger,A greeting,A sign of danger
+MCQ,40,The poem suggests that wild animals are,Safe,Friendly,Dangerous,Harmless,Dangerous
+MCQ,41,The poem uses which literary device mainly?,Simile,Metaphor,Irony,Humour,Humour
+MCQ,42,The poet exaggerates animal behaviour to make the poem,Scary,Informative,Funny,Scientific,Funny
+MCQ,43,Which animal is compared to a smiling one?,Bear,Crocodile,Hyena,Leopard,Crocodile
+MCQ,44,The poem is suitable for,Children only,Adults only,All ages,Scientists,All ages
+MCQ,45,The animals are identified through,Physical features,Scientific names,Actions,Experts,Actions
+MCQ,46,The poet’s intention is to,Educate seriously,Entertain and warn,Describe animals,Promote hunting,Entertain and warn
+MCQ,47,The tone of the poem remains,Serious,Humorous,Angry,Sad,Humorous
+MCQ,48,The poem ends with the description of,Hyena,Crocodile,Chameleon,Tiger,Chameleon
+MCQ,49,The chameleon’s speciality is,Speed,Strength,Colour change,Roaring,Colour change
+MCQ,50,The poem teaches readers to,Approach animals,Identify animals humorously,Feed animals,Keep pets,Identify animals humorously
+
+Integer,1,Name of the poet?,Carolyn Wells,,,,
+Integer,2,Type of poem?,Humorous,,,,
+Integer,3,First animal mentioned?,Tiger,,,,
+Integer,4,Animal with black stripes?,Tiger,,,,
+Integer,5,Animal with spots?,Leopard,,,,
+Integer,6,Animal that hugs tightly?,Bear,,,,
+Integer,7,Animal that laughs?,Hyena,,,,
+Integer,8,Animal that sheds tears?,Crocodile,,,,
+Integer,9,Animal that changes colour?,Chameleon,,,,
+Integer,10,Total animals described?,6,,,,
+Integer,11,Tone of poem?,Humorous,,,,
+Integer,12,Poem type?,Comic verse,,,,
+Integer,13,Leopard attacks by?,Leaping,,,,
+Integer,14,Bear’s nature?,Clumsy,,,,
+Integer,15,Hyena laughs while?,Eating,,,,
+Integer,16,Crocodile cries while?,Eating,,,,
+Integer,17,Chameleon’s ability?,Camouflage,,,,
+Integer,18,Poem theme?,Humour and danger,,,,
+Integer,19,Poet’s purpose?,Entertainment,,,,
+Integer,20,Animal with smiling face?,Crocodile,,,,
+Integer,21,Animal that bites?,Tiger,,,,
+Integer,22,Animal that scratches?,Leopard,,,,
+Integer,23,Poem language?,Simple,,,,
+Integer,24,Animal with no fixed colour?,Chameleon,,,,
+Integer,25,Animal that leaps again?,Leopard,,,,
+Integer,26,Animal that hugs?,Bear,,,,
+Integer,27,Animal known for false tears?,Crocodile,,,,
+Integer,28,Animal with striped skin?,Tiger,,,,
+Integer,29,Animal with spotted skin?,Leopard,,,,
+Integer,30,Animal known as laughing one?,Hyena,,,,
+Integer,31,Poem mood?,Playful,,,,
+Integer,32,Poem message?,Beware of animals,,,,
+Integer,33,Animals described are?,Wild,,,,
+Integer,34,Poem style?,Light-hearted,,,,
+Integer,35,Animal hard to recognize?,Chameleon,,,,
+Integer,36,Poem uses exaggeration?,Yes,,,,
+Integer,37,Animal that kills by biting?,Tiger,,,,
+Integer,38,Animal that attacks silently?,Leopard,,,,
+Integer,39,Animal described as clumsy?,Bear,,,,
+Integer,40,Poem’s ending animal?,Chameleon,,,,
+Integer,41,Poem’s tone remains?,Humorous,,,,
+Integer,42,Poet nationality?,American,,,,
+Integer,43,Poem’s main device?,Humour,,,,
+Integer,44,Poem intended for?,All ages,,,,
+Integer,45,Animal that changes appearance?,Chameleon,,,,
+Integer,46,Poem warns against?,Carelessness,,,,
+Integer,47,Animal identified by action?,All,,,,
+Integer,48,Poem is entertaining?,Yes,,,,
+Integer,49,Central idea?,Funny identification,,,,
+Integer,50,Poem type?,Light verse,,,,
+
+Descriptive,1,What is the central idea of the poem How to Tell Wild Animals?,,,,,The poem humorously explains how to identify wild animals
+Descriptive,2,Why is the poem considered humorous?,,,,,Because of exaggeration and funny descriptions
+Descriptive,3,How does the poet describe the tiger?,,,,,By its stripes and biting nature
+Descriptive,4,How can one identify a leopard according to the poet?,,,,,By its spots and scratching attack
+Descriptive,5,What makes the bear’s description funny?,,,,,Its tight hug
+Descriptive,6,How does the poet describe the hyena?,,,,,By its laughing sound while eating
+Descriptive,7,What is meant by crocodile tears?,,,,,False tears while eating
+Descriptive,8,How is the chameleon described in the poem?,,,,,By its colour-changing ability
+Descriptive,9,What tone does the poet use throughout the poem?,,,,,Humorous
+Descriptive,10,Why does the poet use exaggeration?,,,,,To create humour
+Descriptive,11,How does the poem warn readers?,,,,,By highlighting animal dangers humorously
+Descriptive,12,Why should wild animals not be approached?,,,,,They are dangerous
+Descriptive,13,What is the poet’s purpose in writing the poem?,,,,,To entertain and caution
+Descriptive,14,Explain the use of humour in the poem.,,,,,Humour makes warning effective
+Descriptive,15,How does the poet make learning enjoyable?,,,,,Using funny descriptions
+Descriptive,16,What message does the poem convey?,,,,,Be careful of wild animals
+Descriptive,17,Why is the poem suitable for children?,,,,,Simple and funny language
+Descriptive,18,How are animals identified in the poem?,,,,,By actions and behaviour
+Descriptive,19,Explain the significance of the title.,,,,,Suggests humorous guide
+Descriptive,20,How does the poem differ from scientific texts?,,,,,Uses humour instead of facts
+Descriptive,21,What literary device dominates the poem?,,,,,Humour
+Descriptive,22,Why is the crocodile’s smile deceptive?,,,,,It cries while eating
+Descriptive,23,How does the poem maintain a light mood?,,,,,Through playful tone
+Descriptive,24,Explain how the poet mocks human fear.,,,,,Through exaggeration
+Descriptive,25,Why is the chameleon hard to recognize?,,,,,It blends with surroundings
+Descriptive,26,How does the poet describe danger humorously?,,,,,Using funny situations
+Descriptive,27,What role does exaggeration play?,,,,,Creates comic effect
+Descriptive,28,How does the poem balance fun and warning?,,,,,Humour with caution
+Descriptive,29,Why is the bear’s hug dangerous?,,,,,It can kill
+Descriptive,30,How does the poet describe animal behaviour?,,,,,In exaggerated way
+Descriptive,31,What is the effect of playful language?,,,,,Makes poem engaging
+Descriptive,32,Why does the poet use simple language?,,,,,To reach all readers
+Descriptive,33,How does the poem appeal to readers?,,,,,By being funny and informative
+Descriptive,34,Explain the humour in leopard’s description.,,,,,Leaps and scratches
+Descriptive,35,How does the poem end?,,,,,With description of chameleon
+Descriptive,36,Why is the poem memorable?,,,,,Because of humour
+Descriptive,37,How does the poem reflect creativity?,,,,,Funny imagination
+Descriptive,38,Why is the poem called a light verse?,,,,,Playful tone
+Descriptive,39,How does the poem create awareness?,,,,,Warns about wild animals
+Descriptive,40,Explain the poet’s writing style.,,,,,Light-hearted and humorous
+Descriptive,41,What makes the poem entertaining?,,,,,Funny exaggerations
+Descriptive,42,How does humour help convey the message?,,,,,Makes warning enjoyable
+Descriptive,43,Why does the poet choose common animals?,,,,,Familiar to readers
+Descriptive,44,How does the poem use irony?,,,,,Funny contradictions
+Descriptive,45,What lesson can readers learn?,,,,,Be cautious of wild animals
+Descriptive,46,How does the poem use actions instead of looks?,,,,,For identification
+Descriptive,47,Why is the poem not a real guide?,,,,,It is humorous
+Descriptive,48,How does the poem attract young readers?,,,,,Simple humour
+Descriptive,49,Why does the poem remain popular?,,,,,Entertaining message
+Descriptive,50,Summarize the poem How to Tell Wild Animals.,,,,,A humorous poem describing how to identify wild animals through exaggerated actions

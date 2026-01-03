@@ -1,0 +1,153 @@
+Question_Type,Question_Number,Question,Option_A,Option_B,Option_C,Option_D,Answer
+MCQ,1,The degree of the polynomial 4x³ + 5x² - 6x + 7 is:,2,3,4,5,3
+MCQ,2,The number of zeroes of the polynomial p(x) = x² - 4 is:,0,1,2,4,2
+MCQ,3,If α and β are the zeroes of the polynomial x² - 5x + 6, then α + β is:,-5,5,6,-6,5
+MCQ,4,If α and β are the zeroes of the polynomial x² - 5x + 6, then αβ is:,5,6,-5,-6,6
+MCQ,5,The zeroes of the polynomial x² - 4 are:,2 and -2,2 and 2,-2 and -2,4 and -4,2 and -2
+MCQ,6,A quadratic polynomial whose zeroes are -3 and 4 is:,x² - x - 12,x² + x - 12,x² - 7x + 12,x² - x + 12,x² - x - 12
+MCQ,7,If the zeroes of the quadratic polynomial ax² + bx + c are equal, then:,c and a have opposite signs,c and a have the same sign,b² - 4ac = 0,b² - 4ac > 0,b² - 4ac = 0
+MCQ,8,The graph of the polynomial p(x) = x² - 1 cuts the x-axis at:,One point,Two points,Three points,Four points,Two points
+MCQ,9,If one zero of the quadratic polynomial x² + 3x + k is 2, then the value of k is:,-10,10,5,-5,-10
+MCQ,10,The sum of the zeroes of the polynomial 2x² - 8x + 6 is:,4,-4,3,-3,4
+MCQ,11,The product of the zeroes of the polynomial 2x² - 8x + 6 is:,3,-3,4,-4,3
+MCQ,12,If α and β are zeroes of x² + 5x + 8, then the value of α + β is:,-5,5,8,-8,-5
+MCQ,13,If α and β are zeroes of x² + 5x + 8, then the value of αβ is:,5,8,-5,-8,8
+MCQ,14,A polynomial of degree 3 is called a:,Linear polynomial,Quadratic polynomial,Cubic polynomial,Biquadratic polynomial,Cubic polynomial
+MCQ,15,A polynomial of degree 2 is called a:,Linear polynomial,Quadratic polynomial,Cubic polynomial,Biquadratic polynomial,Quadratic polynomial
+MCQ,16,A polynomial of degree 1 is called a:,Linear polynomial,Quadratic polynomial,Cubic polynomial,Biquadratic polynomial,Linear polynomial
+MCQ,17,The maximum number of zeroes a polynomial of degree n can have is:,n,n+1,n-1,2n,n
+MCQ,18,If -4 is a zero of the polynomial x² - x - (2k + 2), then the value of k is:,-5,5,9,-9,9
+MCQ,19,If 1 is a zero of the polynomial p(x) = ax² - 3(a - 1)x - 1, then the value of a is:,1,2,3,4,1
+MCQ,20,The zeroes of the polynomial x² - 3x are:,0 and 3,0 and -3,3 and -3,1 and 3,0 and 3
+MCQ,21,The zeroes of the polynomial x² + 7x + 10 are:,-2 and -5,2 and 5,-2 and 5,2 and -5,-2 and -5
+MCQ,22,If the sum of zeroes of the quadratic polynomial 3x² - kx + 6 is 3, then the value of k is:,9,6,3,1,9
+MCQ,23,If the product of zeroes of the quadratic polynomial x² - 4x + k is 3, then the value of k is:,3,4,5,6,3
+MCQ,24,If α and β are the zeroes of the polynomial f(x) = x² + x - 2, then (1/α + 1/β) is:,1/2,-1/2,2,-2,1/2
+MCQ,25,If α and β are the zeroes of the polynomial x² - 4x + 1, then 1/α + 1/β is:,4,-4,1,-1,4
+MCQ,26,If α, β are the zeroes of the polynomial f(x) = x² - p(x + 1) - c, then (α + 1)(β + 1) equals:,c - 1,c,1 - c,1 + c,1 - c
+MCQ,27,If α and β are zeroes of polynomial f(x) = x² - px + q, then find the value of 1/α² + 1/β².,(p² - 2q)/q²,(p² + 2q)/q²,(p² - q)/q²,(p² + q)/q²,(p² - 2q)/q²
+MCQ,28,If the zeroes of the polynomial x³ - 3x² + x + 1 are a - b, a, a + b, then a is:,1,2,3,4,1
+MCQ,29,If one zero of the polynomial (a² + 9)x² + 13x + 6a is reciprocal of the other, then a is:,2,3,4,5,3
+MCQ,30,If α and β are the zeroes of x² - 6x + k, what is the value of k if 3α + 2β = 20?,8,-16,16,-8,-16
+MCQ,31,The quadratic polynomial whose zeroes are 1 and -3 is:,x² + 2x - 3,x² - 2x - 3,x² + 2x + 3,x² - 2x + 3,x² + 2x - 3
+MCQ,32,The number of zeroes of the polynomial p(x) = (x - 2)² + 4 is:,0,1,2,4,0
+MCQ,33,If α and β are the zeroes of 2x² + 5x + k such that α² + β² + αβ = 21/4, then k =:,2,3,4,5,2
+MCQ,34,If the polynomial x³ - 6x² + ax + b is exactly divisible by (x² - 3x + 2), then:,a = 11, b = -6,a = -11, b = 6,a = 11, b = 6,a = -11, b = -6,a = 11, b = -6
+MCQ,35,If α and β are the zeroes of the polynomial x² - x - 4, then the value of 1/α + 1/β is:,-1/4,1/4,4,-4,-1/4
+MCQ,36,If α, β are the zeroes of the polynomial x² - 4x + 3, then the value of α² + β² is:,10,12,13,14,10
+MCQ,37,If α and β are the zeroes of the polynomial x² - 5x + m such that α - β = 1, then m is:,5,6,7,8,6
+MCQ,38,The graph of a quadratic polynomial is a:,Straight line,Circle,Parabola,Ellipse,Parabola
+MCQ,39,If the zeroes of the quadratic polynomial x² + (a + 1)x + b are 2 and -3, then:,a = -7, b = -1,a = 0, b = -6,a = -6, b = 0,a = 7, b = 1,a = 0, b = -6
+MCQ,40,The zeroes of the polynomial p(x) = 4x² - 4x - 3 are:,3/2 and -1/2,3/2 and 1/2,-3/2 and -1/2,-3/2 and 1/2,3/2 and -1/2
+MCQ,41,If the sum of the zeroes of the quadratic polynomial kx² + 2x + 3k is equal to their product, then k =:,2/3,-2/3,1/3,-1/3,-2/3
+MCQ,42,If α and β are zeroes of polynomial x² - 2x - 8, then form a quadratic polynomial whose zeroes are (2α) and (2β).,x² - 4x - 32,x² + 4x - 32,x² - 4x + 32,x² + 4x + 32,x² - 4x - 32
+MCQ,43,If α and β are the zeroes of the polynomial f(x) = x² - 2x + 3, then a polynomial having 1/α and 1/β as its zeroes is:,3x² - 2x + 1,3x² + 2x + 1,x² - 2x + 3,x² + 2x + 3,3x² - 2x + 1
+MCQ,44,If one zero of the polynomial 2x² + 3x + k is reciprocal of the other, then the value of k is:,1,2,3,4,2
+MCQ,45,If α and β are the zeroes of x² - 4x + 1, then the value of α³ + β³ is:,52,56,58,60,52
+MCQ,46,If the zeroes of the polynomial x³ - 3x² + x + 1 are a - b, a, a + b, then b is:,±√2,±2,±√3,±3,±√2
+MCQ,47,If α, β, γ are the zeroes of the polynomial x³ - 5x² - 2x + 24 such that αβ = 12, then γ is:,-2,2,3,4,-2
+MCQ,48,If the polynomial x⁴ - 6x³ + 16x² - 25x + 10 is divided by x² - 2x + k, the remainder comes out to be x + a, then k and a are:,k = 5, a = -5,k = 3, a = -3,k = 4, a = -4,k = 2, a = -2,k = 5, a = -5
+MCQ,49,The degree of the zero polynomial is:,0,1,Not defined,∞,Not defined
+MCQ,50,If the polynomial 6x⁴ + 8x³ - 5x² + ax + b is exactly divisible by the polynomial 2x² - 5, then the values of a and b are:,a = -20, b = -25,a = 20, b = -25,a = -20, b = 25,a = 20, b = 25,a = -20, b = -25
+Integer,1,The degree of the polynomial 5x³ - 4x² + 7x - 8 is:.,3,,,,
+Integer,2,The number of zeroes of the polynomial p(x) = x² - 5x + 6 is:.,2,,,,
+Integer,3,If α and β are the zeroes of x² - 5x + 6, then α + β =:.,5,,,,
+Integer,4,If α and β are the zeroes of x² - 5x + 6, then αβ =:.,6,,,,
+Integer,5,If one zero of the quadratic polynomial x² + 3x + k is 2, then k =:.,-10,,,,
+Integer,6,The sum of the zeroes of the polynomial 2x² - 8x + 6 is:.,4,,,,
+Integer,7,The product of the zeroes of the polynomial 2x² - 8x + 6 is:.,3,,,,
+Integer,8,If α and β are zeroes of x² + 5x + 8, then α + β =:.,-5,,,,
+Integer,9,If α and β are zeroes of x² + 5x + 8, then αβ =:.,8,,,,
+Integer,10,The zeroes of the polynomial x² - 4 are: (Enter the positive zero),2,,,,
+Integer,11,If -4 is a zero of the polynomial x² - x - (2k + 2), then k =:.,9,,,,
+Integer,12,The zeroes of the polynomial x² - 3x are: (Enter the non-zero zero),3,,,,
+Integer,13,If the sum of zeroes of the quadratic polynomial 3x² - kx + 6 is 3, then k =:.,9,,,,
+Integer,14,If the product of zeroes of the quadratic polynomial x² - 4x + k is 3, then k =:.,3,,,,
+Integer,15,If α and β are the zeroes of x² - 4x + 1, then 1/α + 1/β =:.,4,,,,
+Integer,16,If α, β are the zeroes of the polynomial x² - 4x + 3, then α² + β² =:.,10,,,,
+Integer,17,If α and β are the zeroes of the polynomial x² - 5x + m such that α - β = 1, then m =:.,6,,,,
+Integer,18,The zeroes of the polynomial 4x² - 4x - 3 are: (Enter the positive zero as numerator, then answer is 3/2, so enter 3),3,,,,
+Integer,19,If the sum of the zeroes of the quadratic polynomial kx² + 2x + 3k is equal to their product, then k =: (Enter numerator),-2,,,,
+Integer,20,If one zero of the polynomial 2x² + 3x + k is reciprocal of the other, then k =:.,2,,,,
+Integer,21,If α and β are the zeroes of x² - 4x + 1, then α³ + β³ =:.,52,,,,
+Integer,22,The number of zeroes of the polynomial p(x) = (x - 2)² + 4 is:.,0,,,,
+Integer,23,If α and β are the zeroes of 2x² + 5x + k such that α² + β² + αβ = 21/4, then k =:.,2,,,,
+Integer,24,If α and β are the zeroes of x² - 2x - 8, then α + β =:.,2,,,,
+Integer,25,If α and β are the zeroes of x² - 2x - 8, then αβ =:.,-8,,,,
+Integer,26,If α and β are the zeroes of x² + 7x + 10, then α + β =:.,-7,,,,
+Integer,27,If α and β are the zeroes of x² + 7x + 10, then αβ =:.,10,,,,
+Integer,28,If the zeroes of the quadratic polynomial x² + (a + 1)x + b are 2 and -3, then a =:.,0,,,,
+Integer,29,If the zeroes of the quadratic polynomial x² + (a + 1)x + b are 2 and -3, then b =:.,-6,,,,
+Integer,30,If α and β are the zeroes of x² - x - 4, then 1/α + 1/β =: (Enter numerator),-1,,,,
+Integer,31,The maximum number of zeroes a polynomial of degree 5 can have is:.,5,,,,
+Integer,32,If α and β are the zeroes of x² - 6x + 8, then α + β =:.,6,,,,
+Integer,33,If α and β are the zeroes of x² - 6x + 8, then αβ =:.,8,,,,
+Integer,34,If α, β, γ are the zeroes of the polynomial x³ - 5x² - 2x + 24 such that αβ = 12, then γ =:.,-2,,,,
+Integer,35,If one zero of the polynomial (a² + 9)x² + 13x + 6a is reciprocal of the other, then a =:.,3,,,,
+Integer,36,The degree of the zero polynomial is: (Answer: Not defined, enter 0 for representation),0,,,,
+Integer,37,If α and β are the zeroes of x² - 8x + 15, then α + β =:.,8,,,,
+Integer,38,If α and β are the zeroes of x² - 8x + 15, then αβ =:.,15,,,,
+Integer,39,If the graph of a quadratic polynomial cuts the x-axis at two distinct points, the number of zeroes is:.,2,,,,
+Integer,40,If the graph of a quadratic polynomial touches the x-axis at one point, the number of zeroes is:.,1,,,,
+Integer,41,If the graph of a quadratic polynomial does not cut or touch the x-axis, the number of real zeroes is:.,0,,,,
+Integer,42,If α and β are the zeroes of x² + 11x + 30, then α + β =:.,-11,,,,
+Integer,43,If α and β are the zeroes of x² + 11x + 30, then αβ =:.,30,,,,
+Integer,44,The zeroes of the polynomial x² - 9 are: (Enter the positive zero),3,,,,
+Integer,45,If α and β are the zeroes of 3x² - 5x + 2, then α + β =: (Answer as fraction in simplest form, enter numerator),5,,,,
+Integer,46,If α and β are the zeroes of 3x² - 5x + 2, then αβ =: (Answer as fraction in simplest form, enter numerator),2,,,,
+Integer,47,If α and β are the zeroes of x² - 7x + 12, then α² + β² =:.,25,,,,
+Integer,48,If α and β are the zeroes of x² - 10x + 21, then α + β =:.,10,,,,
+Integer,49,If α and β are the zeroes of x² - 10x + 21, then αβ =:.,21,,,,
+Integer,50,The number of zeroes of a cubic polynomial can be at most:.,3,,,,
+Problem,1,Find the zeroes of the polynomial x² - 3x - 4 and verify the relationship between zeroes and coefficients.,"x² - 3x - 4 = (x - 4)(x + 1). Zeroes: x = 4, x = -1. Sum of zeroes = 4 + (-1) = 3 = -(-3)/1 = -b/a. Product of zeroes = 4(-1) = -4 = (-4)/1 = c/a. Verified.",,,,
+Problem,2,Find the zeroes of the polynomial 6x² - 3 - 7x and verify the relationship between zeroes and coefficients.,"6x² - 7x - 3 = 0. Factorizing: (3x + 1)(2x - 3) = 0. Zeroes: x = -1/3, x = 3/2. Sum = -1/3 + 3/2 = 7/6 = -(-7)/6 = -b/a. Product = (-1/3)(3/2) = -1/2 = (-3)/6 = c/a. Verified.",,,,
+Problem,3,Find a quadratic polynomial each with the given numbers as the sum and product of its zeroes respectively: (i) 1/4, -1 (ii) √2, 1/3,"(i) Polynomial: x² - (1/4)x - 1 = x² - x/4 - 1 = 4x² - x - 4. (ii) Polynomial: x² - √2x + 1/3 = 3x² - 3√2x + 1. Answer: (i) 4x² - x - 4, (ii) 3x² - 3√2x + 1",,,,
+Problem,4,Divide the polynomial p(x) by the polynomial g(x) and find the quotient and remainder: p(x) = x³ - 3x² + 5x - 3, g(x) = x² - 2.,"Using long division: Quotient = x - 3, Remainder = 7x - 9. Answer: Quotient = x - 3, Remainder = 7x - 9",,,,
+Problem,5,Check whether the first polynomial is a factor of the second polynomial by dividing the second polynomial by the first polynomial: t² - 3, 2t⁴ + 3t³ - 2t² - 9t - 12.,"Dividing: 2t⁴ + 3t³ - 2t² - 9t - 12 by t² - 3. Quotient = 2t² + 3t + 4, Remainder = 0. Since remainder is 0, t² - 3 is a factor. Answer: Yes, it is a factor",,,,
+Problem,6,Obtain all other zeroes of 3x⁴ + 6x³ - 2x² - 10x - 5, if two of its zeroes are √(5/3) and -√(5/3).,"Since √(5/3) and -√(5/3) are zeroes, (x² - 5/3) is a factor. Dividing: 3x⁴ + 6x³ - 2x² - 10x - 5 by x² - 5/3, we get quotient 3x² + 6x + 3 = 3(x² + 2x + 1) = 3(x + 1)². Other zeroes: x = -1, -1. Answer: Other zeroes are -1, -1",,,,
+Problem,7,On dividing x³ - 3x² + x + 2 by a polynomial g(x), the quotient and remainder were x - 2 and -2x + 4, respectively. Find g(x).,"Using division algorithm: x³ - 3x² + x + 2 = g(x)(x - 2) + (-2x + 4). So g(x)(x - 2) = x³ - 3x² + x + 2 + 2x - 4 = x³ - 3x² + 3x - 2. Dividing by (x - 2): g(x) = x² - x + 1. Answer: g(x) = x² - x + 1",,,,
+Problem,8,Give examples of polynomials p(x), g(x), q(x) and r(x), which satisfy the division algorithm and (i) deg p(x) = deg q(x) (ii) deg q(x) = deg r(x) (iii) deg r(x) = 0.,"(i) p(x) = 2x² + 2x + 2, g(x) = 2x, q(x) = x + 1, r(x) = 2. (ii) p(x) = x³ + x, g(x) = x², q(x) = x, r(x) = x. (iii) p(x) = x³ + 1, g(x) = x², q(x) = x, r(x) = 1. Answer: Examples as above",,,,
+Problem,9,Find all the zeroes of 2x⁴ - 3x³ - 3x² + 6x - 2, if you know that two of its zeroes are √2 and -√2.,"Since √2 and -√2 are zeroes, (x² - 2) is a factor. Dividing: 2x⁴ - 3x³ - 3x² + 6x - 2 by x² - 2, quotient is 2x² - 3x + 1 = (2x - 1)(x - 1). Other zeroes: x = 1/2, x = 1. Answer: Zeroes are √2, -√2, 1/2, 1",,,,
+Problem,10,If the zeroes of the polynomial x³ - 3x² + x + 1 are a - b, a, a + b, find a and b.,"Sum of zeroes = (a - b) + a + (a + b) = 3a = -(-3)/1 = 3, so a = 1. Product = a(a² - b²) = 1 - b² = -1/1 = -1, so b² = 2, b = ±√2. Answer: a = 1, b = ±√2",,,,
+Problem,11,Find a quadratic polynomial whose zeroes are reciprocals of the zeroes of the polynomial f(x) = ax² + bx + c, a ≠ 0, c ≠ 0.,"If α and β are zeroes of f(x), then α + β = -b/a, αβ = c/a. For polynomial with zeroes 1/α and 1/β: Sum = 1/α + 1/β = (α + β)/(αβ) = (-b/a)/(c/a) = -b/c. Product = 1/(αβ) = a/c. Required polynomial: x² - (sum)x + product = x² + (b/c)x + a/c = cx² + bx + a. Answer: cx² + bx + a",,,,
+Problem,12,If the squared difference of the zeroes of the quadratic polynomial f(x) = x² + px + 45 is equal to 144, find the value of p.,"Let zeroes be α and β. Then α + β = -p, αβ = 45. Given (α - β)² = 144, so (α + β)² - 4αβ = 144, p² - 180 = 144, p² = 324, p = ±18. Answer: p = ±18",,,,
+Problem,13,If α and β are the zeroes of the quadratic polynomial f(x) = 6x² + x - 2, find the value of α/β + β/α.,"α + β = -1/6, αβ = -2/6 = -1/3. α/β + β/α = (α² + β²)/(αβ) = ((α + β)² - 2αβ)/(αβ) = (1/36 + 2/3)/(-1/3) = (1/36 + 24/36)/(-1/3) = (25/36)/(-1/3) = -25/12. Answer: -25/12",,,,
+Problem,14,If α and β are the zeroes of the polynomial f(x) = x² - 5x + k such that α - β = 1, find the value of k.,"α + β = 5, αβ = k. Given α - β = 1. Squaring: (α - β)² = 1, so (α + β)² - 4αβ = 1, 25 - 4k = 1, 4k = 24, k = 6. Answer: k = 6",,,,
+Problem,15,Find the zeroes of the polynomial x² + 7x + 10 and verify the relationship between zeroes and coefficients.,"x² + 7x + 10 = (x + 2)(x + 5). Zeroes: x = -2, x = -5. Sum = -2 + (-5) = -7 = -7/1 = -b/a. Product = (-2)(-5) = 10 = 10/1 = c/a. Verified. Answer: Zeroes are -2, -5",,,,
+Problem,16,Find a quadratic polynomial, the sum and product of whose zeroes are -3 and 2, respectively.,"Polynomial: x² - (sum)x + product = x² - (-3)x + 2 = x² + 3x + 2. Answer: x² + 3x + 2",,,,
+Problem,17,Find the zeroes of the quadratic polynomial x² - 2x - 8 and verify the relationship.,"x² - 2x - 8 = (x - 4)(x + 2). Zeroes: x = 4, x = -2. Sum = 4 + (-2) = 2 = -(-2)/1 = -b/a. Product = 4(-2) = -8 = -8/1 = c/a. Verified. Answer: Zeroes are 4, -2",,,,
+Problem,18,If α and β are the zeroes of the quadratic polynomial f(x) = 2x² - 5x + 7, find a polynomial whose zeroes are 2α + 3β and 2β + 3α.,"α + β = 5/2, αβ = 7/2. Sum of new zeroes = (2α + 3β) + (2β + 3α) = 5(α + β) = 25/2. Product = (2α + 3β)(2β + 3α) = 4αβ + 6α² + 6β² + 9αβ = 13αβ + 6(α² + β²) = 13(7/2) + 6((α + β)² - 2αβ) = 91/2 + 6(25/4 - 7) = 91/2 + 6(-3/4) = 91/2 - 9/2 = 82/2 = 41. Polynomial: x² - (25/2)x + 41 = 2x² - 25x + 82. Answer: 2x² - 25x + 82",,,,
+Problem,19,Find the zeroes of the polynomial 4x² - 4x - 3 and verify the relationship between zeroes and coefficients.,"4x² - 4x - 3 = 0. Using quadratic formula: x = (4 ± √(16 + 48))/8 = (4 ± 8)/8. Zeroes: x = 3/2, x = -1/2. Sum = 3/2 + (-1/2) = 1 = -(-4)/4 = -b/a. Product = (3/2)(-1/2) = -3/4 = (-3)/4 = c/a. Verified. Answer: Zeroes are 3/2, -1/2",,,,
+Problem,20,If the polynomial x⁴ - 6x³ + 16x² - 25x + 10 is divided by another polynomial x² - 2x + k, the remainder comes out to be x + a, find k and a.,"Using division algorithm: x⁴ - 6x³ + 16x² - 25x + 10 = (x² - 2x + k)q(x) + (x + a). By comparing coefficients or synthetic division, we get: k = 5, a = -5. Answer: k = 5, a = -5",,,,
+Problem,21,Find all zeroes of the polynomial (2x⁴ - 9x³ + 5x² + 3x - 1) if two of its zeroes are (2 + √3) and (2 - √3).,"Since (2 + √3) and (2 - √3) are zeroes, (x² - 4x + 1) is a factor. Dividing, we get quotient 2x² - x - 1 = (2x + 1)(x - 1). Other zeroes: x = -1/2, x = 1. Answer: Zeroes are 2 + √3, 2 - √3, -1/2, 1",,,,
+Problem,22,If the zeroes of the polynomial x³ - 12x² + 39x - 28 are in A.P., find them.,"Let zeroes be a - d, a, a + d. Sum = 3a = 12, so a = 4. Product = a(a² - d²) = 4(16 - d²) = 28, so 16 - d² = 7, d² = 9, d = ±3. Zeroes: 1, 4, 7. Answer: Zeroes are 1, 4, 7",,,,
+Problem,23,If α and β are the zeroes of the polynomial f(x) = x² - px + q, prove that α²/β² + β²/α² = p⁴/q² - 4p²/q + 2.,"α + β = p, αβ = q. α²/β² + β²/α² = (α⁴ + β⁴)/(α²β²) = ((α² + β²)² - 2α²β²)/(α²β²) = ((p² - 2q)² - 2q²)/q² = (p⁴ - 4p²q + 4q² - 2q²)/q² = (p⁴ - 4p²q + 2q²)/q² = p⁴/q² - 4p²/q + 2. Proved.",,,,
+Problem,24,Find the condition that the zeroes of the polynomial p(x) = ax² + bx + c are reciprocal of each other.,"If zeroes are α and 1/α, then product = α(1/α) = 1 = c/a, so c = a. Answer: c = a",,,,
+Problem,25,Find the zeroes of the polynomial p(x) = x² - √2x - 12 and verify the relationship.,"x² - √2x - 12 = 0. Using quadratic formula: x = (√2 ± √(2 + 48))/2 = (√2 ± √50)/2 = (√2 ± 5√2)/2. Zeroes: x = 3√2, x = -2√2. Sum = 3√2 + (-2√2) = √2 = -(-√2)/1 = -b/a. Product = (3√2)(-2√2) = -12 = -12/1 = c/a. Verified.",,,,
+Problem,26,If α, β are the zeroes of the polynomial x² - 4x + 3, then find the value of α²β + αβ².,"α + β = 4, αβ = 3. α²β + αβ² = αβ(α + β) = 3(4) = 12. Answer: 12",,,,
+Problem,27,Find a quadratic polynomial with zeroes 5 and -2.,"Sum = 5 + (-2) = 3, Product = 5(-2) = -10. Polynomial: x² - 3x - 10. Answer: x² - 3x - 10",,,,
+Problem,28,Divide x³ - 3x² + 5x - 3 by x² - 2 and verify the division algorithm.,"Quotient = x - 3, Remainder = 7x - 9. Verification: (x² - 2)(x - 3) + (7x - 9) = x³ - 3x² - 2x + 6 + 7x - 9 = x³ - 3x² + 5x - 3. Verified. Answer: Quotient = x - 3, Remainder = 7x - 9",,,,
+Problem,29,If the polynomial x⁴ + 2x³ + 8x² + 12x + 18 is divided by another polynomial x² + 5, the remainder comes out to be px + q, find p and q.,"Dividing x⁴ + 2x³ + 8x² + 12x + 18 by x² + 5: Quotient = x² + 2x + 3, Remainder = 2x + 3. So p = 2, q = 3. Answer: p = 2, q = 3",,,,
+Problem,30,Find all zeroes of the polynomial x⁴ - 3x³ - x² + 9x - 6, if it is given that two of its zeroes are -√3 and √3.,"Since -√3 and √3 are zeroes, (x² - 3) is a factor. Dividing, quotient is x² - 3x + 2 = (x - 1)(x - 2). Other zeroes: x = 1, x = 2. Answer: Zeroes are -√3, √3, 1, 2",,,,
+Problem,31,If α and β are the zeroes of the polynomial f(x) = 2x² + 5x + k satisfying the relation α² + β² + αβ = 21/4, then find the value of k.,"α + β = -5/2, αβ = k/2. α² + β² + αβ = (α + β)² - αβ = 25/4 - k/2 = 21/4. So 25/4 - k/2 = 21/4, k/2 = 1, k = 2. Answer: k = 2",,,,
+Problem,32,Find the zeroes of the quadratic polynomial 3x² - x - 4 and verify the relationship between zeroes and coefficients.,"3x² - x - 4 = 0. Using quadratic formula: x = (1 ± √(1 + 48))/6 = (1 ± 7)/6. Zeroes: x = 4/3, x = -1. Sum = 4/3 + (-1) = 1/3 = -(-1)/3 = -b/a. Product = (4/3)(-1) = -4/3 = (-4)/3 = c/a. Verified.",,,,
+Problem,33,If one zero of the polynomial (a² + 9)x² + 13x + 6a is reciprocal of the other, find the value of a.,"Let zeroes be α and 1/α. Product = α(1/α) = 1 = (6a)/(a² + 9). So 6a = a² + 9, a² - 6a + 9 = 0, (a - 3)² = 0, a = 3. Answer: a = 3",,,,
+Problem,34,Find a quadratic polynomial whose zeroes are 3 + 2√5 and 3 - 2√5.,"Sum = (3 + 2√5) + (3 - 2√5) = 6. Product = (3 + 2√5)(3 - 2√5) = 9 - 20 = -11. Polynomial: x² - 6x - 11. Answer: x² - 6x - 11",,,,
+Problem,35,If α and β are the zeroes of the polynomial x² - 6x + k and 3α + 2β = 20, find k.,"α + β = 6, αβ = k. Also 3α + 2β = 20. From first: β = 6 - α. Substituting: 3α + 2(6 - α) = 20, 3α + 12 - 2α = 20, α = 8, so β = -2. Then k = αβ = 8(-2) = -16. Answer: k = -16",,,,
+Problem,36,Find all zeroes of the polynomial 2x³ + x² - 6x - 3, if two of its zeroes are -√3 and √3.,"Since -√3 and √3 are zeroes, (x² - 3) is a factor. Dividing: quotient is 2x + 1. Other zero: x = -1/2. Answer: Zeroes are -√3, √3, -1/2",,,,
+Problem,37,If α and β are the zeroes of the polynomial f(x) = x² - 2x + 3, find a polynomial whose zeroes are (α + 2) and (β + 2).,"α + β = 2, αβ = 3. Sum of new zeroes = (α + 2) + (β + 2) = α + β + 4 = 6. Product = (α + 2)(β + 2) = αβ + 2(α + β) + 4 = 3 + 4 + 4 = 11. Polynomial: x² - 6x + 11. Answer: x² - 6x + 11",,,,
+Problem,38,Find the zeroes of the polynomial x² + 11x + 30 and verify the relationship.,"x² + 11x + 30 = (x + 5)(x + 6). Zeroes: x = -5, x = -6. Sum = -5 + (-6) = -11 = -11/1 = -b/a. Product = (-5)(-6) = 30 = 30/1 = c/a. Verified. Answer: Zeroes are -5, -6",,,,
+Problem,39,If α and β are the zeroes of x² - 7x + 12, find the value of α² + β².,"α + β = 7, αβ = 12. α² + β² = (α + β)² - 2αβ = 49 - 24 = 25. Answer: 25",,,,
+Problem,40,Find a quadratic polynomial with sum and product of zeroes as 1/4 and -1 respectively.,"Polynomial: x² - (1/4)x - 1 = (4x² - x - 4)/4. Or simply: 4x² - x - 4. Answer: 4x² - x - 4",,,,
+Problem,41,If α, β, γ are the zeroes of the polynomial x³ - 5x² - 2x + 24, such that αβ = 12, find γ.,"Sum = α + β + γ = 5. Given αβ = 12. Product = αβγ = -24, so 12γ = -24, γ = -2. Answer: γ = -2",,,,
+Problem,42,Divide the polynomial p(x) = x³ - 3x² + 5x - 3 by g(x) = x² - 2 and verify division algorithm.,"Using long division: Quotient q(x) = x - 3, Remainder r(x) = 7x - 9. Verification: g(x)q(x) + r(x) = (x² - 2)(x - 3) + (7x - 9) = x³ - 3x² - 2x + 6 + 7x - 9 = x³ - 3x² + 5x - 3 = p(x). Verified.",,,,
+Problem,43,Find all zeroes of the polynomial x³ - 4x² - 3x + 12, if one of its zeroes is 4.,"Since 4 is a zero, (x - 4) is a factor. Dividing: quotient is x² - 3. Other zeroes: x = √3, x = -√3. Answer: Zeroes are 4, √3, -√3",,,,
+Problem,44,If the polynomial x⁴ - 6x³ + 16x² - 25x + 10 is divided by x² - 2x + k, the remainder is x + a, find k and a.,"By polynomial division or comparing coefficients method: k = 5, a = -5. Answer: k = 5, a = -5",,,,
+Problem,45,Find the zeroes of the polynomial p(x) = x² - 8x + 15 and verify the relationship.,"x² - 8x + 15 = (x - 3)(x - 5). Zeroes: x = 3, x = 5. Sum = 3 + 5 = 8 = -(-8)/1 = -b/a. Product = 3(5) = 15 = 15/1 = c/a. Verified. Answer: Zeroes are 3, 5",,,,
+Problem,46,If α and β are the zeroes of x² - 6x + 8, find α² + β².,"α + β = 6, αβ = 8. α² + β² = (α + β)² - 2αβ = 36 - 16 = 20. Answer: 20",,,,
+Problem,47,Find a quadratic polynomial whose zeroes are 2 and -3.,"Sum = 2 + (-3) = -1, Product = 2(-3) = -6. Polynomial: x² - (-1)x + (-6) = x² + x - 6. Answer: x² + x - 6",,,,
+Problem,48,If α and β are the zeroes of 3x² - 5x + 2, find 1/α + 1/β.,"α + β = 5/3, αβ = 2/3. 1/α + 1/β = (α + β)/(αβ) = (5/3)/(2/3) = 5/2. Answer: 5/2",,,,
+Problem,49,Find all zeroes of the polynomial 2x⁴ - 9x³ + 5x² + 3x - 1, if two zeroes are 2 + √3 and 2 - √3.,"Since (2 + √3) and (2 - √3) are zeroes, (x² - 4x + 1) is a factor. Dividing: quotient is 2x² - x - 1 = (2x + 1)(x - 1). Other zeroes: x = -1/2, x = 1. Answer: Zeroes are 2 + √3, 2 - √3, -1/2, 1",,,,
+Problem,50,If α and β are the zeroes of x² - 10x + 21, find α³ + β³.,"α + β = 10, αβ = 21. α³ + β³ = (α + β)³ - 3αβ(α + β) = 1000 - 3(21)(10) = 1000 - 630 = 370. Answer: 370",,,,
+
+
