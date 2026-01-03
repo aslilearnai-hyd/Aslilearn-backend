@@ -15,7 +15,8 @@ import {
   createTestQuestions,
   createClasswork,
   createSchedule,
-  createTeacherTool
+  createTeacherTool,
+  getTopics
 } from '../controllers/aiToolsController.js';
 import Video from '../models/Video.js';
 import Assessment from '../models/Assessment.js';
@@ -63,6 +64,9 @@ const upload = multer({
   }
 });
 
+// Teacher Dashboard Routes (before auth middleware for testing)
+router.get('/test', testTeacherData);
+
 // Apply authentication middleware to all routes
 router.use(verifyToken);
 router.use(verifyTeacher);
@@ -70,7 +74,6 @@ router.use(extractTeacherId);
 
 // Teacher Dashboard Routes
 router.get('/dashboard', getTeacherDashboardStats);
-router.get('/test', testTeacherData);
 
 // Get teacher's assigned classes
 router.get('/classes', async (req, res) => {
@@ -350,6 +353,7 @@ router.get('/classes/:classNumber/subjects', async (req, res) => {
 });
 
 // AI Tools Routes
+router.get('/ai/topics', getTopics); // Get available topics for class and subject
 router.post('/ai/lesson-plan', createLessonPlan);
 router.post('/ai/test-questions', createTestQuestions);
 router.post('/ai/classwork', createClasswork);

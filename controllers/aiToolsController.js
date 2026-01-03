@@ -1,180 +1,9 @@
-import {
-  generateLessonPlan,
-  generateTestQuestions,
-  generateClasswork,
-  generateSchedule,
-  generateTeacherTool
-} from '../services/gemini-service.js';
+import { generateContentFromCSV, getAvailableTopics } from '../services/csv-question-service.js';
 
-// Generate Lesson Plan
-export const createLessonPlan = async (req, res) => {
-  try {
-    const { subject, topic, gradeLevel, duration } = req.body;
-    const teacherId = req.teacherId;
-
-    if (!subject || !topic || !gradeLevel || !duration) {
-      return res.status(400).json({
-        success: false,
-        message: 'Subject, topic, grade level, and duration are required'
-      });
-    }
-
-    const lessonPlan = await generateLessonPlan(subject, topic, gradeLevel, duration);
-
-    res.json({
-      success: true,
-      data: {
-        lessonPlan,
-        metadata: {
-          subject,
-          topic,
-          gradeLevel,
-          duration,
-          generatedAt: new Date(),
-          teacherId
-        }
-      }
-    });
-  } catch (error) {
-    console.error('Create lesson plan error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to generate lesson plan' 
-    });
-  }
-};
-
-// Generate Test Questions
-export const createTestQuestions = async (req, res) => {
-  try {
-    const { subject, topic, gradeLevel, questionCount, difficulty } = req.body;
-    const teacherId = req.teacherId;
-
-    if (!subject || !topic || !gradeLevel || !questionCount) {
-      return res.status(400).json({
-        success: false,
-        message: 'Subject, topic, grade level, and question count are required'
-      });
-    }
-
-    const testQuestions = await generateTestQuestions(
-      subject, 
-      topic, 
-      gradeLevel, 
-      questionCount, 
-      difficulty || 'medium'
-    );
-
-    res.json({
-      success: true,
-      data: {
-        testQuestions,
-        metadata: {
-          subject,
-          topic,
-          gradeLevel,
-          questionCount,
-          difficulty: difficulty || 'medium',
-          generatedAt: new Date(),
-          teacherId
-        }
-      }
-    });
-  } catch (error) {
-    console.error('Create test questions error:', error);
-    console.error('Error details:', {
-      message: error.message,
-      stack: error.stack,
-      name: error.name
-    });
-    res.status(500).json({ 
-      success: false, 
-      message: error.message || 'Failed to generate test questions',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
-    });
-  }
-};
-
-// Generate Classwork
-export const createClasswork = async (req, res) => {
-  try {
-    const { subject, topic, gradeLevel, assignmentType } = req.body;
-    const teacherId = req.teacherId;
-
-    if (!subject || !topic || !gradeLevel || !assignmentType) {
-      return res.status(400).json({
-        success: false,
-        message: 'Subject, topic, grade level, and assignment type are required'
-      });
-    }
-
-    const classwork = await generateClasswork(subject, topic, gradeLevel, assignmentType);
-
-    res.json({
-      success: true,
-      data: {
-        classwork,
-        metadata: {
-          subject,
-          topic,
-          gradeLevel,
-          assignmentType,
-          generatedAt: new Date(),
-          teacherId
-        }
-      }
-    });
-  } catch (error) {
-    console.error('Create classwork error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to generate classwork' 
-    });
-  }
-};
-
-// Generate Schedule
-export const createSchedule = async (req, res) => {
-  try {
-    const { subjects, gradeLevels, timeSlots, preferences } = req.body;
-    const teacherId = req.teacherId;
-
-    if (!subjects || !gradeLevels || !timeSlots) {
-      return res.status(400).json({
-        success: false,
-        message: 'Subjects, grade levels, and time slots are required'
-      });
-    }
-
-    const schedule = await generateSchedule(subjects, gradeLevels, timeSlots, preferences || '');
-
-    res.json({
-      success: true,
-      data: {
-        schedule,
-        metadata: {
-          subjects,
-          gradeLevels,
-          timeSlots,
-          preferences: preferences || '',
-          generatedAt: new Date(),
-          teacherId
-        }
-      }
-    });
-  } catch (error) {
-    console.error('Create schedule error:', error);
-    res.status(500).json({ 
-      success: false, 
-      message: 'Failed to generate schedule' 
-    });
-  }
-};
-
-// Generic Teacher Tool Generator
+// Generic Teacher Tool Generator - Uses CSV files instead of Gemini
 export const createTeacherTool = async (req, res) => {
   try {
-    const { toolType, ...params } = req.body;
+    const { toolType, classNumber, subject, topic, ...params } = req.body;
     const teacherId = req.teacherId;
 
     if (!toolType) {
@@ -184,14 +13,35 @@ export const createTeacherTool = async (req, res) => {
       });
     }
 
-    const result = await generateTeacherTool(toolType, params);
+    // Validate required fields for CSV-based tools
+    if (!classNumber || !subject || !topic) {
+      return res.status(400).json({
+        success: false,
+        message: 'Class number, subject, and topic are required. Topic should match the CSV filename.'
+      });
+    }
+
+    // Validate class number (only 9 and 10 are supported)
+    const classNum = parseInt(classNumber);
+    if (classNum !== 9 && classNum !== 10) {
+      return res.status(400).json({
+        success: false,
+        message: 'Only Class 9 and Class 10 are supported'
+      });
+    }
+
+    // Generate content from CSV
+    const content = generateContentFromCSV(classNum, subject, topic, toolType, params);
 
     res.json({
       success: true,
       data: {
-        content: result,
+        content,
         toolType,
         metadata: {
+          classNumber: classNum,
+          subject,
+          topic,
           ...params,
           generatedAt: new Date(),
           teacherId
@@ -202,8 +52,80 @@ export const createTeacherTool = async (req, res) => {
     console.error('Create teacher tool error:', error);
     res.status(500).json({ 
       success: false, 
-      message: `Failed to generate ${req.body.toolType || 'tool'}`,
+      message: `Failed to generate ${req.body.toolType || 'tool'}: ${error.message}`,
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
+};
+
+// Get available topics for a class and subject
+export const getTopics = async (req, res) => {
+  try {
+    const { classNumber, subject } = req.query;
+    
+    console.log('📥 getTopics called with:', { classNumber, subject });
+
+    if (!classNumber || !subject) {
+      console.log('❌ Missing classNumber or subject');
+      return res.status(400).json({
+        success: false,
+        message: 'Class number and subject are required'
+      });
+    }
+
+    const classNum = parseInt(classNumber);
+    if (classNum !== 9 && classNum !== 10) {
+      console.log('❌ Invalid class number:', classNum);
+      return res.status(400).json({
+        success: false,
+        message: 'Only Class 9 and Class 10 are supported'
+      });
+    }
+
+    console.log('✅ Calling getAvailableTopics with:', { classNum, subject });
+    const topics = getAvailableTopics(classNum, subject);
+    console.log('✅ Topics returned:', topics.length, 'topics');
+
+    res.json({
+      success: true,
+      data: topics
+    });
+  } catch (error) {
+    console.error('❌ Get topics error:', error);
+    console.error('Error stack:', error.stack);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to get topics',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
+
+// Legacy endpoints (kept for backward compatibility but will return error)
+export const createLessonPlan = async (req, res) => {
+  res.status(400).json({
+    success: false,
+    message: 'This endpoint is deprecated. Please use /api/teacher/ai/tool with toolType: lesson-planner'
+  });
+};
+
+export const createTestQuestions = async (req, res) => {
+  res.status(400).json({
+    success: false,
+    message: 'This endpoint is deprecated. Please use /api/teacher/ai/tool with toolType: exam-question-paper-generator'
+  });
+};
+
+export const createClasswork = async (req, res) => {
+  res.status(400).json({
+    success: false,
+    message: 'This endpoint is deprecated. Please use /api/teacher/ai/tool with toolType: homework-creator'
+  });
+};
+
+export const createSchedule = async (req, res) => {
+  res.status(400).json({
+    success: false,
+    message: 'This endpoint is deprecated. Please use /api/teacher/ai/tool with toolType: daily-class-plan-maker'
+  });
 };
