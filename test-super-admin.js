@@ -4,7 +4,7 @@ const API_BASE = 'http://localhost:3001';
 
 // Test data
 const testCredentials = {
-  email: 'Amenity@gmail.com',
+  email: 'amenityforge@gmail.com',
   password: 'Amenity'
 };
 
@@ -244,7 +244,7 @@ async function runTests() {
   console.log('   1. Start your frontend: cd ../client && npm run dev');
   console.log('   2. Go to: http://localhost:5173');
   console.log('   3. Click "Super Admin Access" button');
-  console.log('   4. Login with: Amenity@gmail.com / Amenity');
+    console.log('   4. Login with: amenityforge@gmail.com / Amenity');
 }
 
 // Check if fetch is available (Node.js 18+)

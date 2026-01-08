@@ -29,7 +29,10 @@ import {
   migrateAllBoards,
   removeDuplicates,
   importSubjectsFromContent,
-  deleteRemainingSubjects
+  deleteRemainingSubjects,
+  analyzeStudentRiskSuperAdmin,
+  downloadAndSendRiskAnalysisPDF,
+  downloadRiskAnalysisPDF
 } from '../controllers/superAdminController.js';
 import {
   getAllBoards,
@@ -217,6 +220,15 @@ router.post('/delete-remaining-subjects', deleteRemainingSubjects); // Delete su
 // User Management (Global)
 router.get('/users', getAllUsers);
 router.post('/users', createUser);
+
+// AI Student Risk Analysis (Super Admin - can analyze any student)
+router.post('/ai/student-risk-analysis', analyzeStudentRiskSuperAdmin);
+router.post('/ai/student-risk-analysis/download-send', downloadAndSendRiskAnalysisPDF);
+router.get('/reports/download/:reportId', downloadRiskAnalysisPDF);
+console.log('✅ Super Admin AI Risk Analysis routes registered:');
+console.log('   POST /api/super-admin/ai/student-risk-analysis');
+console.log('   POST /api/super-admin/ai/student-risk-analysis/download-send');
+console.log('   GET /api/super-admin/reports/download/:reportId');
 
 // Teacher Management (Global)
 router.get('/teachers', getAllTeachers);

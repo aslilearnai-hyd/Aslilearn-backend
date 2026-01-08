@@ -15,7 +15,7 @@ console.log('   💳 Subscriptions: GET /api/super-admin/subscriptions');
 console.log('   📤 Export: GET /api/super-admin/export');
 console.log('');
 console.log('🔑 Super Admin Credentials:');
-console.log('   Email: Amenity@gmail.com');
+console.log('   Email: amenityforge@gmail.com');
 console.log('   Password: Amenity');
 console.log('');
 
@@ -59,7 +59,7 @@ setTimeout(() => {
   console.log('   1. Start your frontend: cd ../client && npm run dev');
   console.log('   2. Go to: http://localhost:5173');
   console.log('   3. Click "Super Admin Access" button');
-  console.log('   4. Login with: Amenity@gmail.com / Amenity');
+    console.log('   4. Login with: amenityforge@gmail.com / Amenity');
 }, 2000);
 
 

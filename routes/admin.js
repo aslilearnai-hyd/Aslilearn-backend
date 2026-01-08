@@ -41,7 +41,10 @@ import {
   createClass,
   deleteClass,
   deleteAllClasses,
-  promoteClasses
+  promoteClasses,
+  analyzeStudentRisk,
+  downloadAndSendRiskAnalysisPDF,
+  downloadRiskAnalysisPDF
 } from '../controllers/adminController.js';
 import {
   getViewableExams,
@@ -424,5 +427,10 @@ router.get('/asli-prep-content', async (req, res) => {
 // Removed: POST /exams, PUT /exams/:id, DELETE /exams/:id
 // Removed: POST /exams/:examId/questions, PUT /questions/:questionId, DELETE /questions/:questionId
 // Admins can NO LONGER create, edit, or delete exams
+
+// AI Student Risk Analysis
+router.post('/ai/student-risk-analysis', verifyAdmin, analyzeStudentRisk);
+router.post('/ai/student-risk-analysis/download-send', verifyAdmin, downloadAndSendRiskAnalysisPDF);
+router.get('/reports/download/:reportId', verifyAdmin, downloadRiskAnalysisPDF);
 
 export default router;

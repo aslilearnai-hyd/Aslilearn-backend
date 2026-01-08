@@ -9,6 +9,7 @@ import Teacher from '../models/Teacher.js';
 import Subject from '../models/Subject.js';
 import Content from '../models/Content.js';
 import StudentRemark from '../models/StudentRemark.js';
+import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 import { verifyToken } from '../middleware/auth.js';
 import {
   getStudentExamRanking,
@@ -2206,6 +2207,84 @@ router.post('/ai/tool', async (req, res) => {
     res.status(500).json({
       success: false,
       message: error.message || `Failed to generate content for ${req.body.toolType}`,
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+// Get Risk Analysis Reports for Student
+router.get('/risk-analysis-reports', async (req, res) => {
+  try {
+    const studentId = req.userId;
+
+    const reports = await RiskAnalysisReport.find({ studentId })
+      .sort({ sentAt: -1 })
+      .populate('adminId', 'fullName email')
+      .select('-analysisData'); // Don't send full analysis data in list
+
+    res.json({
+      success: true,
+      data: reports
+    });
+  } catch (error) {
+    console.error('Error fetching risk analysis reports:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to fetch risk analysis reports',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+});
+
+// Download Risk Analysis Report PDF
+router.get('/risk-analysis-reports/:reportId/download', async (req, res) => {
+  try {
+    const { reportId } = req.params;
+    const studentId = req.userId;
+
+    const report = await RiskAnalysisReport.findById(reportId);
+    if (!report) {
+      return res.status(404).json({
+        success: false,
+        message: 'Report not found'
+      });
+    }
+
+    // Verify student owns this report
+    if (report.studentId.toString() !== studentId) {
+      return res.status(403).json({
+        success: false,
+        message: 'Access denied'
+      });
+    }
+
+    // Mark as read
+    if (!report.isRead) {
+      report.isRead = true;
+      report.readAt = new Date();
+      await report.save();
+    }
+
+    const fs = await import('fs');
+
+    if (!fs.existsSync(report.pdfPath)) {
+      return res.status(404).json({
+        success: false,
+        message: 'PDF file not found'
+      });
+    }
+
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename="${report.pdfFilename}"`);
+    
+    const fileStream = fs.createReadStream(report.pdfPath);
+    fileStream.pipe(res);
+
+  } catch (error) {
+    console.error('Error downloading risk analysis report:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to download report',
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }

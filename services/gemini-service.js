@@ -5,15 +5,11 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 class GeminiService {
   constructor() {
-    this.apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    this.apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-2.5-flash'; // Latest model that works with v1 API
+    this.textModel = 'gemini-1.5-flash'; // Fast and efficient model for content generation
     
-    if (!this.apiKey) {
-      console.warn('⚠️  GEMINI_API_KEY not set in environment variables');
-    } else {
-      console.log('✅ Gemini service initialized');
-    }
+    console.log('✅ Gemini service initialized with API key');
   }
 
   async generateStructuredContent(prompt, format = 'text') {
@@ -24,10 +20,11 @@ class GeminiService {
         ? 'You are a helpful assistant. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.'
         : 'You are a helpful assistant. Provide clear, structured responses.';
 
-      const result = await model.generateContent({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
-        systemInstruction: systemInstruction
-      });
+      // Note: systemInstruction may not be supported in all API versions
+      // Include instruction in prompt instead
+      const fullPrompt = systemInstruction ? `${systemInstruction}\n\n${prompt}` : prompt;
+      
+      const result = await model.generateContent(fullPrompt);
 
       const response = await result.response;
       let resultText = response.text();
@@ -47,15 +44,13 @@ class GeminiService {
 
 // Export functions for backward compatibility with existing code
 export const generateLessonPlan = async (subject, topic, gradeLevel, duration) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
   
   // Try multiple models in order of preference
   const modelsToTry = [
-    'gemini-2.5-flash',    // Latest version
-    'gemini-2.0-flash',    // Version 2.0
-    'gemini-pro',          // Stable fallback
-    'gemini-1.5-flash'     // Older but might work
+    'gemini-1.5-flash',    // Fast and efficient
+    'gemini-1.5-pro'       // More capable
   ];
 
   const prompt = `Create a comprehensive, detailed lesson plan for IIT JEE Mains preparation:
@@ -140,7 +135,7 @@ Format the response in a clear, structured manner with proper headings and secti
 };
 
 export const generateTestQuestions = async (subject, topic, gradeLevel, questionCount, difficulty) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
     
     const prompt = `Generate exactly ${questionCount} multiple-choice test questions for:
@@ -179,10 +174,8 @@ ${prompt}`;
 
   // Try multiple models in order of preference
   const modelsToTry = [
-    'gemini-2.5-flash',    // Latest version
-    'gemini-2.0-flash',    // Version 2.0
-    'gemini-pro',          // Stable fallback
-    'gemini-1.5-flash'     // Older but might work
+    'gemini-1.5-flash',    // Fast and efficient
+    'gemini-1.5-pro'       // More capable
   ];
 
   for (const modelName of modelsToTry) {
@@ -212,7 +205,7 @@ ${prompt}`;
 };
 
 export const generateClasswork = async (subject, topic, gradeLevel, assignmentType) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
     
     const prompt = `
@@ -235,10 +228,8 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
 
   // Try multiple models in order of preference
   const modelsToTry = [
-    'gemini-2.5-flash',    // Latest version
-    'gemini-2.0-flash',    // Version 2.0
-    'gemini-pro',          // Stable fallback
-    'gemini-1.5-flash'     // Older but might work
+    'gemini-1.5-flash',    // Fast and efficient
+    'gemini-1.5-pro'       // More capable
   ];
 
   for (const modelName of modelsToTry) {
@@ -261,7 +252,7 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
 };
 
 export const generateSchedule = async (subjects, gradeLevels, timeSlots, preferences) => {
-    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+    const apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     const genAI = new GoogleGenerativeAI(apiKey);
     
     const prompt = `
@@ -284,10 +275,8 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
 
   // Try multiple models in order of preference
   const modelsToTry = [
-    'gemini-2.5-flash',    // Latest version
-    'gemini-2.0-flash',    // Version 2.0
-    'gemini-pro',          // Stable fallback
-    'gemini-1.5-flash'     // Older but might work
+    'gemini-1.5-flash',    // Fast and efficient
+    'gemini-1.5-pro'       // More capable
   ];
 
   for (const modelName of modelsToTry) {
@@ -311,7 +300,7 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
 
 // Generic teacher tool generator
 export const generateTeacherTool = async (toolType, params) => {
-  const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
+  const apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
   const genAI = new GoogleGenerativeAI(apiKey);
   
   // Define prompts for each tool type
@@ -741,10 +730,8 @@ Format using Markdown with proper headings (##), bold text (**text**), and clear
   }
 
   const modelsToTry = [
-    'gemini-2.5-flash',
-    'gemini-2.0-flash',
-    'gemini-pro',
-    'gemini-1.5-flash'
+    'gemini-1.5-flash',
+    'gemini-1.5-pro'
   ];
 
   for (const modelName of modelsToTry) {
@@ -771,7 +758,7 @@ const geminiService = new GeminiService();
 // Student Tool Generator
 export const generateStudentTool = async (toolType, params) => {
   const { GoogleGenerativeAI } = await import('@google/generative-ai');
-  const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  const genAI = new GoogleGenerativeAI('AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8');
 
   const toolPrompts = {
     'smart-study-guide-generator': `Create a comprehensive, personalized study guide.
@@ -1213,10 +1200,8 @@ Make it inspiring, actionable, and tailored to the student's goals.`
   }
 
   const modelsToTry = [
-    'gemini-2.5-flash',
-    'gemini-2.0-flash',
-    'gemini-pro',
-    'gemini-1.5-flash'
+    'gemini-1.5-flash',
+    'gemini-1.5-pro'
   ];
 
   for (const modelName of modelsToTry) {

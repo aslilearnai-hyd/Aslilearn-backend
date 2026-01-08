@@ -108,8 +108,7 @@ app.post('/api/auth/login', async (req, res) => {
     
     // Check for Super Admin credentials first
     const superAdminCredentials = [
-      { email: 'Amenity@gmail.com', password: 'Amenity', fullName: 'Super Admin' },
-      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' }
+      { email: 'amenityforge@gmail.com', password: 'Amenity', fullName: 'Super Admin' }
     ];
     
     const validCredential = superAdminCredentials.find(
@@ -352,8 +351,8 @@ app.listen(PORT, () => {
   console.log(`📊 Dashboard Stats: ${baseUrl}/api/super-admin/stats`);
   console.log('');
   console.log('🔑 Super Admin Credentials:');
-  console.log('   Email: Amenity@gmail.com / sealucknow2017@gmail.com');
-  console.log('   Password: Amenity / Asli123');
+  console.log('   Email: amenityforge@gmail.com');
+  console.log('   Password: Amenity');
   console.log('');
   
   const frontendUrl = process.env.FRONTEND_URL || 

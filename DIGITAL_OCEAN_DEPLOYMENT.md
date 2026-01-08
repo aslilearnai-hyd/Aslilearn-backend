@@ -215,7 +215,7 @@ OLLAMA_TEXT_MODEL=llama3.2:1b
 OLLAMA_VISION_MODEL=llava:7b
 
 # Super Admin Credentials
-SUPER_ADMIN_EMAIL=Amenity@gmail.com
+SUPER_ADMIN_EMAIL=amenityforge@gmail.com
 SUPER_ADMIN_PASSWORD=Amenity
 ```
 

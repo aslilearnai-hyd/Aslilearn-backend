@@ -1,11 +1,17 @@
 import express from 'express';
 import multer from 'multer';
 import mongoose from 'mongoose';
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import {
   verifyToken,
   verifyTeacher,
   extractTeacherId
 } from '../middleware/auth.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 import {
   getTeacherDashboardStats,
   testTeacherData
@@ -58,9 +64,28 @@ router.post('/test-video', async (req, res) => {
 
 // Configure multer for file uploads
 const upload = multer({
-  storage: multer.memoryStorage(),
+  storage: multer.diskStorage({
+    destination: function (req, file, cb) {
+      const uploadDir = path.join(__dirname, '../uploads/pdfs');
+      if (!fs.existsSync(uploadDir)) {
+        fs.mkdirSync(uploadDir, { recursive: true });
+      }
+      cb(null, uploadDir);
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+      cb(null, 'pdf-' + uniqueSuffix + path.extname(file.originalname));
+    }
+  }),
   limits: {
-    fileSize: 10 * 1024 * 1024 // 10MB limit
+    fileSize: 50 * 1024 * 1024 // 50MB limit for PDFs
+  },
+  fileFilter: (req, file, cb) => {
+    if (file.mimetype === 'application/pdf') {
+      cb(null, true);
+    } else {
+      cb(new Error('Only PDF files are allowed'), false);
+    }
   }
 });
 
@@ -353,12 +378,13 @@ router.get('/classes/:classNumber/subjects', async (req, res) => {
 });
 
 // AI Tools Routes
-router.get('/ai/topics', getTopics); // Get available topics for class and subject
+// AI Tools Routes - All use Gemini API only
+router.get('/ai/topics', getTopics); // Returns empty array - users can enter any topic
 router.post('/ai/lesson-plan', createLessonPlan);
 router.post('/ai/test-questions', createTestQuestions);
 router.post('/ai/classwork', createClasswork);
 router.post('/ai/schedule', createSchedule);
-router.post('/ai/tool', createTeacherTool);
+router.post('/ai/tool', createTeacherTool); // Uses Gemini API directly
 
 // Grading endpoint
 router.post('/grade-work', upload.single('file'), async (req, res) => {

@@ -8,7 +8,7 @@ Your backend already has all the Super Admin functionality implemented! This gui
 
 ### 🔐 **Authentication System**
 - **Endpoint**: `POST /api/super-admin/login`
-- **Credentials**: `Amenity@gmail.com` / `Amenity`
+- **Credentials**: `amenityforge@gmail.com` / `Amenity`
 - **Response**: JWT token for authentication
 
 ### 📊 **Dashboard Statistics**
@@ -65,7 +65,7 @@ Your frontend should connect to: `http://localhost:3001`
 ```javascript
 POST /api/super-admin/login
 {
-  "email": "Amenity@gmail.com",
+    "email": "amenityforge@gmail.com",
   "password": "Amenity"
 }
 ```
@@ -154,7 +154,7 @@ const API_BASE = 'http://localhost:3001';
 const response = await fetch(`${API_BASE}/api/super-admin/login`, {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ email: 'Amenity@gmail.com', password: 'Amenity' })
+  body: JSON.stringify({ email: 'amenityforge@gmail.com', password: 'Amenity' })
 });
 ```
 
@@ -207,7 +207,7 @@ const stats = await response.json();
 
 ### **Manual Testing**
 1. Start backend: `npm run super-admin`
-2. Test login: `curl -X POST http://localhost:3001/api/super-admin/login -H "Content-Type: application/json" -d '{"email":"Amenity@gmail.com","password":"Amenity"}'`
+2. Test login: `curl -X POST http://localhost:3001/api/super-admin/login -H "Content-Type: application/json" -d '{"email":"amenityforge@gmail.com","password":"Amenity"}'`
 3. Test stats: `curl http://localhost:3001/api/super-admin/stats`
 
 ### **Automated Testing**
@@ -248,7 +248,7 @@ Your backend is already configured for Railway deployment:
 1. **Start Backend**: `cd backend && npm run super-admin`
 2. **Start Frontend**: `cd client && npm run dev`
 3. **Access Dashboard**: Go to `http://localhost:5173`
-4. **Login**: Click "Super Admin Access" → Login with `Amenity@gmail.com` / `Amenity`
+4. **Login**: Click "Super Admin Access" → Login with `amenityforge@gmail.com` / `Amenity`
 
 ## 🔧 Troubleshooting
 
@@ -280,7 +280,7 @@ curl http://localhost:3001/api/health
 # Test super admin login
 curl -X POST http://localhost:3001/api/super-admin/login \
   -H "Content-Type: application/json" \
-  -d '{"email":"Amenity@gmail.com","password":"Amenity"}'
+  -d '{"email":"amenityforge@gmail.com","password":"Amenity"}'
 
 # Test dashboard stats
 curl http://localhost:3001/api/super-admin/stats

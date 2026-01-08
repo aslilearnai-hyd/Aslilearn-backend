@@ -5,7 +5,7 @@ const BASE_URL = 'http://localhost:3001';
 // Test configuration
 const testConfig = {
   superAdminCredentials: {
-    email: 'Amenity@gmail.com',
+    email: 'amenityforge@gmail.com',
     password: 'Amenity'
   },
   adminCredentials: {

@@ -14,7 +14,7 @@ async function testEndpoints() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        email: 'Amenity@gmail.com',
+        email: 'amenityforge@gmail.com',
         password: 'Amenity'
       })
     });

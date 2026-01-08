@@ -20,7 +20,7 @@ export const getPlatformStats = async () => {
       totalAssessments,
       totalAdmins,
       superAdmins: 1,
-      revenue: 245678 // Mock revenue data
+      revenue: 0 // Revenue tracking to be implemented
     };
   } catch (error) {
     throw new Error('Failed to fetch platform statistics');
@@ -200,20 +200,21 @@ export const getAnalytics = async () => {
     const totalTeachers = await Teacher.countDocuments();
     const totalVideos = await Video.countDocuments();
     
-    // Calculate analytics (mock data for now)
-    const dailyActive = Math.floor(totalUsers * 0.1);
-    const weeklyActive = Math.floor(totalUsers * 0.3);
-    const monthlyActive = Math.floor(totalUsers * 0.7);
+    // Calculate real analytics from database
+    // TODO: Implement real analytics calculations based on user sessions and activity
+    const dailyActive = 0; // To be calculated from UserSession model
+    const weeklyActive = 0; // To be calculated from UserSession model
+    const monthlyActive = 0; // To be calculated from UserSession model
     
     return {
       dailyActive,
       weeklyActive,
       monthlyActive,
-      avgSessionTime: "24m 35s",
-      completionRate: 76,
-      revenueGrowth: 23.5,
-      userGrowth: 18.2,
-      courseEngagement: 89
+      avgSessionTime: "0m 0s", // To be calculated from real session data
+      completionRate: 0, // To be calculated from real completion data
+      revenueGrowth: 0, // To be calculated from real revenue data
+      userGrowth: 0, // To be calculated from real user growth data
+      courseEngagement: 0 // To be calculated from real engagement data
     };
   } catch (error) {
     throw new Error('Failed to fetch analytics');

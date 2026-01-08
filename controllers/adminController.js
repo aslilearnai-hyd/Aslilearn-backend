@@ -11,6 +11,7 @@ import ExamResult from '../models/ExamResult.js';
 import Class from '../models/Class.js';
 import Subject from '../models/Subject.js';
 import Content from '../models/Content.js';
+import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 
 // Admin Dashboard Stats
 export const getAdminDashboardStats = async (req, res) => {
@@ -2689,6 +2690,340 @@ export const assignSubjectsToClass = async (req, res) => {
       message: 'Failed to assign subjects to class',
       error: error.message,
       ...(process.env.NODE_ENV === 'development' && { stack: error.stack })
+    });
+  }
+};
+
+// AI Student Risk Analysis - Uses Gemini API
+export const analyzeStudentRisk = async (req, res) => {
+  try {
+    const { studentId, analysisType = 'comprehensive', timeRange = '90days' } = req.body;
+    const adminId = req.adminId;
+
+    // Verify student belongs to this admin
+    const student = await User.findOne({ 
+      _id: studentId, 
+      role: 'student', 
+      assignedAdmin: adminId 
+    });
+
+    if (!student) {
+      return res.status(404).json({ 
+        success: false, 
+        message: 'Student not found or not assigned to you' 
+      });
+    }
+
+    // Calculate date range
+    const daysAgo = timeRange === 'all' ? 365 * 5 : parseInt(timeRange);
+    const startDate = new Date();
+    startDate.setDate(startDate.getDate() - daysAgo);
+
+    // Fetch all exam results for this student
+    const examResults = await ExamResult.find({
+      userId: studentId,
+      completedAt: { $gte: startDate }
+    }).sort({ completedAt: 1 });
+
+    if (examResults.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: 'No exam data available for analysis. Student needs to complete at least one exam.'
+      });
+    }
+
+    // Helper function to get best subject
+    const getBestSubject = (results) => {
+      const subjectScores = {};
+      results.forEach(result => {
+        if (result.subjectWiseScore) {
+          Object.entries(result.subjectWiseScore).forEach(([subject, data]) => {
+            if (!subjectScores[subject]) {
+              subjectScores[subject] = { total: 0, count: 0 };
+            }
+            const percentage = data.total > 0 ? (data.correct / data.total) * 100 : 0;
+            subjectScores[subject].total += percentage;
+            subjectScores[subject].count += 1;
+          });
+        }
+      });
+
+      let bestSubject = null;
+      let bestAvg = 0;
+      Object.entries(subjectScores).forEach(([subject, data]) => {
+        const avg = data.total / data.count;
+        if (avg > bestAvg) {
+          bestAvg = avg;
+          bestSubject = subject;
+        }
+      });
+      return bestSubject;
+    };
+
+    // Helper function to get worst subject
+    const getWorstSubject = (results) => {
+      const subjectScores = {};
+      results.forEach(result => {
+        if (result.subjectWiseScore) {
+          Object.entries(result.subjectWiseScore).forEach(([subject, data]) => {
+            if (!subjectScores[subject]) {
+              subjectScores[subject] = { total: 0, count: 0 };
+            }
+            const percentage = data.total > 0 ? (data.correct / data.total) * 100 : 0;
+            subjectScores[subject].total += percentage;
+            subjectScores[subject].count += 1;
+          });
+        }
+      });
+
+      let worstSubject = null;
+      let worstAvg = 100;
+      Object.entries(subjectScores).forEach(([subject, data]) => {
+        const avg = data.total / data.count;
+        if (avg < worstAvg) {
+          worstAvg = avg;
+          worstSubject = subject;
+        }
+      });
+      return worstSubject;
+    };
+
+    // Prepare data for AI analysis
+    const performanceData = {
+      studentInfo: {
+        name: student.fullName,
+        email: student.email,
+        classNumber: student.classNumber,
+        totalExams: examResults.length
+      },
+      examHistory: examResults.map(result => ({
+        examTitle: result.examTitle,
+        date: result.completedAt,
+        percentage: result.percentage,
+        timeTaken: result.timeTaken,
+        correctAnswers: result.correctAnswers,
+        totalQuestions: result.totalQuestions,
+        subjectScores: Object.fromEntries(result.subjectWiseScore || [])
+      })),
+      statistics: {
+        averageScore: examResults.reduce((sum, r) => sum + r.percentage, 0) / examResults.length,
+        latestScore: examResults[examResults.length - 1].percentage,
+        trend: examResults.length >= 2 
+          ? (examResults[examResults.length - 1].percentage - examResults[0].percentage)
+          : 0,
+        bestSubject: getBestSubject(examResults),
+        worstSubject: getWorstSubject(examResults)
+      }
+    };
+
+    // Generate AI analysis using Gemini API
+    const analysisPrompt = `You are an expert educational analyst with deep knowledge of student performance patterns, learning psychology, and intervention strategies. Analyze this student's performance data and provide a comprehensive risk assessment.
+
+STUDENT DATA:
+${JSON.stringify(performanceData, null, 2)}
+
+Provide a detailed analysis in the following JSON format (ONLY JSON, no markdown, no code blocks):
+{
+  "riskLevel": "high" | "medium" | "low",
+  "riskScore": 0.0-1.0,
+  "analysis": {
+    "summary": "Brief summary of overall performance (2-3 sentences)",
+    "trends": "Describe performance trends over time with specific details",
+    "strengths": ["List 2-3 key strengths"],
+    "weaknesses": ["List 2-3 key weaknesses"],
+    "rootCauses": ["List 2-3 root causes of performance issues"]
+  },
+  "predictions": {
+    "nextExamPrediction": 0-100,
+    "confidence": 0.0-1.0,
+    "trend": "declining" | "stable" | "improving"
+  },
+  "interventions": [
+    {
+      "priority": "high" | "medium" | "low",
+      "action": "Specific actionable intervention",
+      "reasoning": "Why this intervention is needed based on data",
+      "expectedImpact": "Expected improvement with timeframe"
+    }
+  ],
+  "subjectBreakdown": {
+    "SubjectName": {
+      "performance": "strong" | "average" | "weak",
+      "trend": "improving" | "stable" | "declining",
+      "recommendation": "Specific recommendation for this subject"
+    }
+  }
+}
+
+Be specific, actionable, and data-driven. Focus on identifying real issues and providing practical solutions. Use the actual data provided to make informed assessments.`;
+
+    // Import Gemini service
+    const { generateTeacherTool } = await import('../services/gemini-service.js');
+    
+    // Call Gemini API with custom prompt
+    const { GoogleGenerativeAI } = await import('@google/generative-ai');
+    const genAI = new GoogleGenerativeAI('AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8');
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+
+    const result = await model.generateContent({
+      contents: [{ role: 'user', parts: [{ text: analysisPrompt }] }],
+      systemInstruction: 'You are an expert educational analyst. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.'
+    });
+
+    const response = await result.response;
+    let aiResponse = response.text();
+
+    // Parse AI response
+    let analysisResult;
+    try {
+      // Clean JSON response
+      const cleanedResponse = aiResponse
+        .replace(/^```json\s*/i, '')
+        .replace(/^```\s*/i, '')
+        .replace(/\s*```$/i, '')
+        .trim();
+      
+      analysisResult = JSON.parse(cleanedResponse);
+    } catch (parseError) {
+      console.error('Failed to parse AI response:', parseError);
+      console.error('Raw AI response:', aiResponse);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to parse AI analysis. Please try again.',
+        error: process.env.NODE_ENV === 'development' ? parseError.message : undefined
+      });
+    }
+
+    // Add metadata
+    analysisResult.generatedAt = new Date();
+    analysisResult.studentId = studentId;
+    analysisResult.dataPoints = examResults.length;
+    analysisResult.analysisType = analysisType;
+    analysisResult.timeRange = timeRange;
+
+    res.json({
+      success: true,
+      data: analysisResult
+    });
+
+  } catch (error) {
+    console.error('Student risk analysis error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to analyze student risk',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
+
+// Download PDF and Send to Student (Admin version)
+export const downloadAndSendRiskAnalysisPDF = async (req, res) => {
+  try {
+    const { studentId, analysisData } = req.body;
+    const adminId = req.adminId;
+
+    if (!studentId || !analysisData) {
+      return res.status(400).json({
+        success: false,
+        message: 'Student ID and analysis data are required'
+      });
+    }
+
+    // Verify student belongs to this admin
+    const student = await User.findOne({ 
+      _id: studentId, 
+      role: 'student', 
+      assignedAdmin: adminId 
+    });
+
+    if (!student) {
+      return res.status(404).json({
+        success: false,
+        message: 'Student not found or not assigned to you'
+      });
+    }
+
+    // Generate PDF
+    const { generateRiskAnalysisPDF } = await import('../services/pdf-generator-service.js');
+    const { filepath, filename } = await generateRiskAnalysisPDF(analysisData, {
+      studentId: student._id.toString(),
+      name: student.fullName,
+      email: student.email,
+      classNumber: student.classNumber
+    });
+
+    // Save report to database
+    const report = await RiskAnalysisReport.create({
+      studentId: student._id,
+      adminId: adminId,
+      analysisData,
+      pdfPath: filepath,
+      pdfFilename: filename
+    });
+
+    res.json({
+      success: true,
+      message: 'PDF generated and sent to student successfully',
+      data: {
+        reportId: report._id,
+        pdfPath: `/api/admin/reports/download/${report._id}`,
+        filename: filename
+      }
+    });
+
+  } catch (error) {
+    console.error('❌ Error generating/sending PDF:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to generate or send PDF',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
+
+// Download PDF file (Admin version)
+export const downloadRiskAnalysisPDF = async (req, res) => {
+  try {
+    const { reportId } = req.params;
+    const adminId = req.adminId;
+
+    const report = await RiskAnalysisReport.findById(reportId).populate('studentId');
+    if (!report) {
+      return res.status(404).json({
+        success: false,
+        message: 'Report not found'
+      });
+    }
+
+    // Check if admin has access to this student
+    if (report.studentId.assignedAdmin.toString() !== adminId) {
+      return res.status(403).json({
+        success: false,
+        message: 'Access denied'
+      });
+    }
+
+    const fs = await import('fs');
+
+    if (!fs.existsSync(report.pdfPath)) {
+      return res.status(404).json({
+        success: false,
+        message: 'PDF file not found'
+      });
+    }
+
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename="${report.pdfFilename}"`);
+    
+    const fileStream = fs.createReadStream(report.pdfPath);
+    fileStream.pipe(res);
+
+  } catch (error) {
+    console.error('❌ Error downloading PDF:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to download PDF',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }
 };

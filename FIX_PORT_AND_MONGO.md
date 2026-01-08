@@ -53,7 +53,7 @@ PORT=3001
 NODE_ENV=production
 
 # Database Configuration - REQUIRED
-MONGO_URI=mongodb+srv://amenityforge_db_user:qcTX55G2K6ct36Ij@cluster0.ibp4qe2.mongodb.net/ASLI-LEARN?appName=Cluster0
+MONGO_URI=mongodb+srv://akhileshsamayamanthula:rxvIPIT4Bzobk9Ne@cluster0.4ej8ne2.mongodb.net/Asli?retryWrites=true&w=majority&appName=Cluster0
 
 # JWT Configuration - REQUIRED
 JWT_SECRET=33e5d04de5698b678209074e1c412adc39f792cd1f81d8dfacbd89f38601cf38
@@ -62,7 +62,7 @@ JWT_SECRET=33e5d04de5698b678209074e1c412adc39f792cd1f81d8dfacbd89f38601cf38
 FRONTEND_URL=https://www.aslilearn.ai
 
 # Super Admin Credentials (Optional - for initial setup only)
-SUPER_ADMIN_EMAIL=Amenity@gmail.com
+SUPER_ADMIN_EMAIL=amenityforge@gmail.com
 SUPER_ADMIN_PASSWORD=Amenity
 
 # Gemini AI Configuration

@@ -597,8 +597,7 @@ app.post('/api/auth/login', async (req, res) => {
     
     // Check for Super Admin credentials first
     const superAdminCredentials = [
-      { email: 'Amenity@gmail.com', password: 'Amenity', fullName: 'Super Admin' },
-      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' }
+      { email: 'amenityforge@gmail.com', password: 'Amenity', fullName: 'Super Admin' }
     ];
     
     const validCredential = superAdminCredentials.find(
@@ -4738,8 +4737,7 @@ app.post('/api/super-admin/login', async (req, res) => {
     
     // Super admin credentials
     const superAdminCredentials = [
-      { email: 'Amenity@gmail.com', password: 'Amenity', fullName: 'Super Admin' },
-      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' }
+      { email: 'amenityforge@gmail.com', password: 'Amenity', fullName: 'Super Admin' }
     ];
     
     // Check super admin credentials
@@ -4786,15 +4784,15 @@ app.get('/api/super-admin/stats', async (req, res) => {
     const totalVideos = await Video.countDocuments();
     const totalAssessments = await Assessment.countDocuments();
     
-    // Calculate revenue (mock data for now)
-    const revenue = 245678;
+    // Get real admin count from database
+    const totalAdmins = await User.countDocuments({ role: 'admin' });
     
     res.json({
       totalUsers,
-      revenue,
+      revenue: 0, // Revenue tracking to be implemented
       courses: totalVideos,
       teachers: totalTeachers,
-      admins: 5, // Mock data
+      admins: totalAdmins,
       superAdmins: 1
     });
   } catch (error) {

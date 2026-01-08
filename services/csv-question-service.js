@@ -260,7 +260,7 @@ export function getAvailableTopics(classNumber, subject) {
 /**
  * Transform questions based on tool type
  */
-function transformQuestionsForTool(questions, toolType, params = {}) {
+export function transformQuestionsForTool(questions, toolType, params = {}) {
   const { difficulty, questionCount, format } = params;
   
   // Filter by difficulty if specified
@@ -326,14 +326,22 @@ function transformQuestionsForTool(questions, toolType, params = {}) {
  * Generate Worksheet format
  */
 function generateWorksheet(questions, params) {
+  const questionCount = questions.length;
   let content = `# Worksheet: ${params.topic || 'Practice Questions'}\n\n`;
   content += `**Subject:** ${params.subject || 'General'}\n`;
   content += `**Class:** ${params.classNumber || 'N/A'}\n`;
-  content += `**Date:** ${new Date().toLocaleDateString()}\n\n`;
+  if (params.subTopic) {
+    content += `**Sub Topic:** ${params.subTopic}\n`;
+  }
+  content += `**Date:** ${new Date().toLocaleDateString()}\n`;
+  content += `**Total Questions:** ${questionCount}\n\n`;
+  content += `---\n\n`;
+  content += `## Instructions\n\n`;
+  content += `Please answer all questions. Show your work where applicable.\n\n`;
   content += `---\n\n`;
   
   questions.forEach((q, index) => {
-    content += `## Question ${index + 1}\n\n`;
+    content += `### Question ${index + 1}\n\n`;
     content += `${q.Question || q.question || ''}\n\n`;
     
     if (q.Option_A || q.option_a) {
@@ -343,8 +351,14 @@ function generateWorksheet(questions, params) {
       content += `**D)** ${q.Option_D || q.option_d}\n\n`;
     }
     
-    content += `**Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
-    content += `---\n\n`;
+    content += `\n`;
+  });
+  
+  // Answer Key at the end
+  content += `\n---\n\n## Answer Key\n\n`;
+  questions.forEach((q, index) => {
+    const answer = q.Answer || q.answer || 'N/A';
+    content += `**Q${index + 1}:** ${answer}\n`;
   });
   
   return content;
@@ -354,20 +368,25 @@ function generateWorksheet(questions, params) {
  * Generate Exam Paper format
  */
 function generateExamPaper(questions, params) {
-  const { timeLimit = 60, totalMarks = 100 } = params;
-  const marksPerQuestion = Math.floor(totalMarks / questions.length);
+  const { duration = 90, totalMarks = 100 } = params;
+  const marksPerQuestion = questions.length > 0 ? Math.floor(totalMarks / questions.length) : 1;
   
   let content = `# Examination Paper\n\n`;
   content += `**Subject:** ${params.subject || 'General'}\n`;
   content += `**Class:** ${params.classNumber || 'N/A'}\n`;
   content += `**Topic:** ${params.topic || 'N/A'}\n`;
-  content += `**Time:** ${timeLimit} minutes\n`;
+  if (params.subTopic) {
+    content += `**Sub Topic:** ${params.subTopic}\n`;
+  }
+  content += `**Time:** ${duration} minutes\n`;
+  content += `**Total Questions:** ${questions.length}\n`;
   content += `**Total Marks:** ${totalMarks}\n\n`;
   content += `---\n\n`;
   content += `## Instructions\n\n`;
   content += `1. Answer all questions.\n`;
   content += `2. Each question carries ${marksPerQuestion} marks.\n`;
-  content += `3. Write clearly and legibly.\n\n`;
+  content += `3. Write clearly and legibly.\n`;
+  content += `4. Read all questions carefully before answering.\n\n`;
   content += `---\n\n`;
   
   questions.forEach((q, index) => {
@@ -387,7 +406,8 @@ function generateExamPaper(questions, params) {
   // Answer key at the end
   content += `\n---\n\n## Answer Key\n\n`;
   questions.forEach((q, index) => {
-    content += `**Q${index + 1}:** ${q.Answer || q.answer || 'N/A'}\n`;
+    const answer = q.Answer || q.answer || 'N/A';
+    content += `**Q${index + 1}:** ${answer}\n`;
   });
   
   return content;
@@ -397,12 +417,19 @@ function generateExamPaper(questions, params) {
  * Generate Flashcards format
  */
 function generateFlashcards(questions, params) {
+  const cardCount = params.cardCount ? Math.min(parseInt(params.cardCount), questions.length) : questions.length;
+  const selectedQuestions = questions.slice(0, cardCount);
+  
   let content = `# Flashcards: ${params.topic || 'Practice'}\n\n`;
   content += `**Subject:** ${params.subject || 'General'}\n`;
-  content += `**Class:** ${params.classNumber || 'N/A'}\n\n`;
+  content += `**Class:** ${params.classNumber || 'N/A'}\n`;
+  if (params.subTopic) {
+    content += `**Sub Topic:** ${params.subTopic}\n`;
+  }
+  content += `**Total Cards:** ${cardCount}\n\n`;
   content += `---\n\n`;
   
-  questions.forEach((q, index) => {
+  selectedQuestions.forEach((q, index) => {
     content += `## Flashcard ${index + 1}\n\n`;
     content += `### Front:\n\n`;
     content += `${q.Question || q.question || ''}\n\n`;
@@ -427,14 +454,21 @@ function generateFlashcards(questions, params) {
  * Generate Homework format
  */
 function generateHomework(questions, params) {
+  const expectedDuration = params.duration || 30;
   let content = `# Homework Assignment\n\n`;
   content += `**Subject:** ${params.subject || 'General'}\n`;
   content += `**Class:** ${params.classNumber || 'N/A'}\n`;
   content += `**Topic:** ${params.topic || 'N/A'}\n`;
+  if (params.subTopic) {
+    content += `**Sub Topic:** ${params.subTopic}\n`;
+  }
+  content += `**Expected Duration:** ${expectedDuration} minutes\n`;
+  content += `**Total Questions:** ${questions.length}\n`;
   content += `**Due Date:** ${params.dueDate || 'To be announced'}\n\n`;
   content += `---\n\n`;
   content += `## Instructions\n\n`;
-  content += `Please complete the following questions. Show all your work.\n\n`;
+  content += `Please complete the following questions. Show all your work and reasoning.\n`;
+  content += `Submit your completed homework by the due date.\n\n`;
   content += `---\n\n`;
   
   questions.forEach((q, index) => {
@@ -451,20 +485,203 @@ function generateHomework(questions, params) {
     content += `\n`;
   });
   
+  // Answer key for teacher reference (can be removed before giving to students)
+  content += `\n---\n\n## Answer Key (Teacher Reference)\n\n`;
+  questions.forEach((q, index) => {
+    const answer = q.Answer || q.answer || 'N/A';
+    content += `**Q${index + 1}:** ${answer}\n`;
+  });
+  
   return content;
+}
+
+/**
+ * Generate detailed explanation for a question
+ */
+function generateExplanation(question, concept, subject) {
+  const q = question.Question || question.question || '';
+  const answer = question.Answer || question.answer || '';
+  const optionA = question.Option_A || question.option_a || '';
+  const optionB = question.Option_B || question.option_b || '';
+  const optionC = question.Option_C || question.option_c || '';
+  const optionD = question.Option_D || question.option_d || '';
+  
+  let explanation = '';
+  
+  // Extract the correct answer letter and value
+  let correctOption = '';
+  let correctAnswerValue = answer;
+  
+  // Check if answer is a letter (A, B, C, D) or contains the actual answer text
+  if (answer.trim().length === 1 && ['A', 'B', 'C', 'D', 'a', 'b', 'c', 'd'].includes(answer.trim())) {
+    correctOption = answer.trim().toUpperCase();
+    // Get the actual answer value from the option
+    if (correctOption === 'A') correctAnswerValue = optionA;
+    else if (correctOption === 'B') correctAnswerValue = optionB;
+    else if (correctOption === 'C') correctAnswerValue = optionC;
+    else if (correctOption === 'D') correctAnswerValue = optionD;
+  } else {
+    // Answer contains the actual text, find which option matches
+    if (optionA && (answer.includes(optionA) || optionA.includes(answer) || answer.toLowerCase() === optionA.toLowerCase())) {
+      correctOption = 'A';
+      correctAnswerValue = optionA;
+    } else if (optionB && (answer.includes(optionB) || optionB.includes(answer) || answer.toLowerCase() === optionB.toLowerCase())) {
+      correctOption = 'B';
+      correctAnswerValue = optionB;
+    } else if (optionC && (answer.includes(optionC) || optionC.includes(answer) || answer.toLowerCase() === optionC.toLowerCase())) {
+      correctOption = 'C';
+      correctAnswerValue = optionC;
+    } else if (optionD && (answer.includes(optionD) || optionD.includes(answer) || answer.toLowerCase() === optionD.toLowerCase())) {
+      correctOption = 'D';
+      correctAnswerValue = optionD;
+    }
+  }
+  
+  // Generate detailed explanation based on question content and concept
+  const qLower = q.toLowerCase();
+  const conceptLower = concept.toLowerCase();
+  
+  // States of Matter specific explanations
+  if (conceptLower.includes('state') || conceptLower.includes('matter')) {
+    if (qLower.includes('fixed volume') || qLower.includes('volume')) {
+      if (correctAnswerValue.toLowerCase().includes('solid')) {
+        explanation = `**Solid** is the correct answer because solids have a fixed volume and fixed shape. `;
+        explanation += `The particles in a solid are tightly packed in a regular arrangement, which prevents them from moving freely. `;
+        explanation += `This is why solids maintain their shape and volume regardless of the container they're placed in. `;
+        if (optionB && optionB.toLowerCase().includes('liquid')) {
+          explanation += `Liquids have a fixed volume but not a fixed shape (they take the shape of their container). `;
+        }
+        if (optionC && optionC.toLowerCase().includes('gas')) {
+          explanation += `Gases have neither fixed volume nor fixed shape.`;
+        }
+      } else if (correctAnswerValue.toLowerCase().includes('liquid')) {
+        explanation = `**Liquid** is correct because liquids have a fixed volume but not a fixed shape. `;
+        explanation += `The particles in a liquid are close together but can move past each other, allowing liquids to flow and take the shape of their container. `;
+        explanation += `However, the volume remains constant because the particles are still relatively close together.`;
+      }
+    } else if (qLower.includes('shape') || qLower.includes('fixed shape')) {
+      explanation = `**${correctAnswerValue}** is correct because in the context of **${concept}**, this state has the characteristic described in the question. `;
+      explanation += `Solids have both fixed shape and volume, liquids have fixed volume but not fixed shape, and gases have neither. `;
+      explanation += `This fundamental property helps distinguish between the three states of matter.`;
+    } else if (qLower.includes('particle') || qLower.includes('molecule')) {
+      explanation = `**${correctAnswerValue}** is the correct answer because it accurately describes the particle arrangement in **${concept}**. `;
+      explanation += `The behavior and arrangement of particles (atoms or molecules) determine the properties of each state of matter. `;
+      explanation += `Understanding particle behavior is key to mastering **${concept}**.`;
+    } else {
+      explanation = `**${correctAnswerValue}** is correct because it represents a fundamental property of **${concept}**. `;
+      explanation += `In the study of states of matter, we learn that solids, liquids, and gases each have distinct characteristics. `;
+      explanation += `${correctAnswerValue} is the accurate answer based on the scientific principles of **${concept}**.`;
+    }
+  }
+  // Temperature and phase change questions
+  else if (qLower.includes('temperature') || qLower.includes('point') || qLower.includes('melting') || qLower.includes('boiling') || qLower.includes('freezing')) {
+    if (answer.includes('°C') || answer.includes('°F') || answer.includes('K') || answer.match(/\d+/)) {
+      explanation = `The correct answer is **${answer}** because this is the scientifically established value for this property. `;
+      if (qLower.includes('melting') && answer.includes('0')) {
+        explanation += `The melting point of ice (solid water) is 0°C at standard atmospheric pressure. `;
+        explanation += `At this temperature, ice changes from solid to liquid state.`;
+      } else if (qLower.includes('boiling') && (answer.includes('100') || answer.includes('373'))) {
+        explanation += `The boiling point of water is 100°C (373 K) at standard atmospheric pressure. `;
+        explanation += `At this temperature, liquid water changes to water vapor (gas).`;
+      } else {
+        explanation += `This value is a fundamental constant in the study of **${concept}** and is determined through careful scientific measurement.`;
+      }
+    } else {
+      explanation = `**${correctAnswerValue}** is correct because it accurately represents the temperature or condition described in **${concept}**. `;
+      explanation += `Temperature plays a crucial role in phase changes and state transitions in matter.`;
+    }
+  }
+  // "Which" or "What" questions - provide specific reasoning
+  else if (qLower.includes('which') || qLower.includes('what')) {
+    explanation = `**${correctAnswerValue}** is the correct answer because it specifically matches the criteria described in the question about **${concept}**. `;
+    
+    // Provide specific reasoning based on the answer
+    if (correctOption && optionA && optionB && optionC && optionD) {
+      explanation += `\n\n**Why this answer is correct:**\n`;
+      explanation += `- ${correctAnswerValue} directly addresses the question about **${concept}**\n`;
+      explanation += `- It aligns with the fundamental principles of **${concept}**\n`;
+      
+      // Explain why other options are wrong
+      const wrongOptions = [];
+      if (correctOption !== 'A' && optionA) wrongOptions.push({ letter: 'A', value: optionA });
+      if (correctOption !== 'B' && optionB) wrongOptions.push({ letter: 'B', value: optionB });
+      if (correctOption !== 'C' && optionC) wrongOptions.push({ letter: 'C', value: optionC });
+      if (correctOption !== 'D' && optionD) wrongOptions.push({ letter: 'D', value: optionD });
+      
+      if (wrongOptions.length > 0) {
+        explanation += `\n**Why other options are incorrect:**\n`;
+        wrongOptions.forEach(opt => {
+          explanation += `- Option ${opt.letter} (${opt.value}) does not match the criteria or represents a different aspect of **${concept}**\n`;
+        });
+      }
+    }
+  }
+  // "Why" or explanation questions
+  else if (qLower.includes('why') || qLower.includes('explain') || qLower.includes('reason')) {
+    explanation = `**${correctAnswerValue}** is correct because it provides the scientific reasoning related to **${concept}**. `;
+    explanation += `This answer demonstrates the cause-and-effect relationship or underlying principle that governs **${concept}**. `;
+    explanation += `Understanding this connection helps you see how different aspects of **${concept}** are interrelated.`;
+  }
+  // Calculation or "how" questions
+  else if (qLower.includes('how') || qLower.includes('calculate') || qLower.includes('find') || qLower.includes('solve')) {
+    explanation = `To answer this question about **${concept}**, the correct answer is **${answer}**. `;
+    explanation += `This requires applying the key principles and formulas related to **${concept}**. `;
+    explanation += `The solution involves understanding the relationship between different variables in **${concept}**.`;
+  }
+  // Default - provide contextual explanation
+  else {
+    explanation = `**${correctAnswerValue}** is the correct answer because it accurately represents a key aspect of **${concept}**. `;
+    
+    if (correctOption && optionA && optionB && optionC && optionD) {
+      const wrongOptions = [];
+      if (correctOption !== 'A' && optionA) wrongOptions.push(`A (${optionA})`);
+      if (correctOption !== 'B' && optionB) wrongOptions.push(`B (${optionB})`);
+      if (correctOption !== 'C' && optionC) wrongOptions.push(`C (${optionC})`);
+      if (correctOption !== 'D' && optionD) wrongOptions.push(`D (${optionD})`);
+      
+      if (wrongOptions.length > 0) {
+        explanation += `\n\nThe other options ${wrongOptions.join(', ')} are incorrect because:\n`;
+        explanation += `- They represent different concepts or properties\n`;
+        explanation += `- They don't apply to the specific question about **${concept}**\n`;
+        explanation += `- They may contain factual errors or misconceptions\n`;
+      }
+    }
+    
+    explanation += `\n\n**Key Takeaway:** Understanding why **${correctAnswerValue}** is correct helps you build a solid foundation in **${concept}**. `;
+    explanation += `This knowledge connects to broader principles in ${subject || 'this subject'}.`;
+  }
+  
+  return explanation;
 }
 
 /**
  * Generate Concept Mastery format
  */
 function generateConceptMastery(questions, params) {
-  let content = `# Concept Mastery Guide: ${params.topic || 'Topic'}\n\n`;
-  content += `**Subject:** ${params.subject || 'General'}\n`;
-  content += `**Class:** ${params.classNumber || 'N/A'}\n\n`;
-  content += `---\n\n`;
+  const concept = params.concept || params.topic || 'Topic';
+  const subject = params.subject || 'General';
+  let content = `# Concept Mastery Guide: ${concept}\n\n`;
+  content += `**Subject:** ${subject}\n`;
+  content += `**Class:** ${params.classNumber || 'N/A'}\n`;
+  if (params.subTopic) {
+    content += `**Sub Topic:** ${params.subTopic}\n`;
+  }
+  content += `\n---\n\n`;
   content += `## Overview\n\n`;
-  content += `This guide helps you master the concept of **${params.topic || 'this topic'}** through structured practice questions.\n\n`;
+  content += `This guide helps you master the concept of **${concept}** through structured practice questions and detailed explanations.\n\n`;
+  content += `### Learning Path\n`;
+  content += `1. **Understand** the core concept\n`;
+  content += `2. **Practice** with guided questions\n`;
+  content += `3. **Apply** knowledge to solve problems\n`;
+  content += `4. **Master** through repeated practice\n\n`;
   content += `---\n\n`;
+  content += `## Concept Breakdown\n\n`;
+  content += `### Key Concepts\n`;
+  content += `- Core principles of **${concept}**\n`;
+  content += `- Important relationships and patterns\n`;
+  content += `- Common applications and examples\n\n`;
+  content += `---\n\n`;
+  content += `## Practice Questions with Detailed Explanations\n\n`;
   
   questions.forEach((q, index) => {
     content += `### Concept Check ${index + 1}\n\n`;
@@ -479,9 +696,19 @@ function generateConceptMastery(questions, params) {
     }
     
     content += `**Correct Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
-    content += `**Explanation:** Review the concept and understand why this is the correct answer.\n\n`;
+    content += `**Explanation:**\n\n`;
+    
+    // Generate detailed explanation
+    const explanation = generateExplanation(q, concept, subject);
+    content += explanation;
+    
+    content += `\n\n`;
     content += `---\n\n`;
   });
+  
+  content += `## Summary\n\n`;
+  content += `Continue practicing with these questions to master **${concept}**. `;
+  content += `Focus on understanding the reasoning behind each answer and how it relates to the core principles of **${concept}**.\n\n`;
   
   return content;
 }
@@ -492,23 +719,44 @@ function generateConceptMastery(questions, params) {
 function generateShortNotes(questions, params) {
   let content = `# Short Notes: ${params.topic || 'Topic'}\n\n`;
   content += `**Subject:** ${params.subject || 'General'}\n`;
-  content += `**Class:** ${params.classNumber || 'N/A'}\n\n`;
-  content += `---\n\n`;
+  content += `**Class:** ${params.classNumber || 'N/A'}\n`;
+  if (params.subTopic) {
+    content += `**Sub Topic:** ${params.subTopic}\n`;
+  }
+  content += `\n---\n\n`;
+  content += `## Key Concepts & Points\n\n`;
   
-  // Group questions by concepts
-  const keyPoints = questions.slice(0, Math.min(10, questions.length)).map((q, index) => {
-    return `**Key Point ${index + 1}:** ${q.Question || q.question || ''}\n`;
+  // Use first 10-15 questions as key points
+  const keyPointsCount = Math.min(15, questions.length);
+  const keyPoints = questions.slice(0, keyPointsCount);
+  
+  keyPoints.forEach((q, index) => {
+    // Extract concept from question (first sentence or main idea)
+    const questionText = q.Question || q.question || '';
+    const concept = questionText.split('.')[0] || questionText.split('?')[0] || questionText;
+    content += `### ${index + 1}. ${concept.substring(0, 100)}${concept.length > 100 ? '...' : ''}\n\n`;
+    if (q.Answer || q.answer) {
+      content += `**Key Point:** ${q.Answer || q.answer}\n\n`;
+    }
   });
   
-  content += `## Key Points\n\n`;
-  content += keyPoints.join('\n');
-  content += `\n---\n\n`;
+  content += `---\n\n`;
   content += `## Quick Review Questions\n\n`;
   
-  questions.slice(10).forEach((q, index) => {
-    content += `${index + 1}. ${q.Question || q.question || ''}\n`;
-    content += `   **Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
-  });
+  // Use remaining questions for review
+  const reviewQuestions = questions.slice(keyPointsCount);
+  if (reviewQuestions.length > 0) {
+    reviewQuestions.forEach((q, index) => {
+      content += `${index + 1}. ${q.Question || q.question || ''}\n`;
+      content += `   **Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
+    });
+  } else {
+    // If no remaining questions, use all questions as review
+    questions.forEach((q, index) => {
+      content += `${index + 1}. ${q.Question || q.question || ''}\n`;
+      content += `   **Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
+    });
+  }
   
   return content;
 }
@@ -519,12 +767,26 @@ function generateShortNotes(questions, params) {
 function generateActivityProject(questions, params) {
   let content = `# Activity/Project: ${params.topic || 'Topic'}\n\n`;
   content += `**Subject:** ${params.subject || 'General'}\n`;
-  content += `**Class:** ${params.classNumber || 'N/A'}\n\n`;
-  content += `---\n\n`;
+  content += `**Class:** ${params.classNumber || 'N/A'}\n`;
+  if (params.subTopic) {
+    content += `**Sub Topic:** ${params.subTopic}\n`;
+  }
+  if (params.className) {
+    content += `**Section:** ${params.className}\n`;
+  }
+  content += `\n---\n\n`;
   content += `## Activity Description\n\n`;
-  content += `This activity is designed to help students understand **${params.topic || 'this topic'}** through hands-on practice.\n\n`;
+  content += `This activity is designed to help students understand **${params.topic || 'this topic'}** through hands-on practice and engagement.\n\n`;
+  content += `### Learning Goals\n`;
+  content += `- Develop understanding of key concepts\n`;
+  content += `- Apply knowledge through practical tasks\n`;
+  content += `- Enhance problem-solving skills\n\n`;
+  content += `### Materials Needed\n`;
+  content += `- Textbook/Reference materials\n`;
+  content += `- Writing materials\n`;
+  content += `- Calculator (if applicable)\n\n`;
   content += `---\n\n`;
-  content += `## Practice Questions\n\n`;
+  content += `## Activity Tasks\n\n`;
   
   questions.forEach((q, index) => {
     content += `### Task ${index + 1}\n\n`;
@@ -541,6 +803,12 @@ function generateActivityProject(questions, params) {
     content += `**Expected Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
   });
   
+  content += `---\n\n`;
+  content += `## Assessment Criteria\n\n`;
+  content += `- Completion of all tasks: 40%\n`;
+  content += `- Accuracy of answers: 40%\n`;
+  content += `- Presentation and clarity: 20%\n\n`;
+  
   return content;
 }
 
@@ -548,21 +816,37 @@ function generateActivityProject(questions, params) {
  * Generate Lesson Plan format
  */
 function generateLessonPlan(questions, params) {
+  const duration = params.duration || 90;
+  const timePerQuestion = Math.floor(duration / Math.max(questions.length, 1));
+  
   let content = `# Lesson Plan: ${params.topic || 'Topic'}\n\n`;
   content += `**Subject:** ${params.subject || 'General'}\n`;
   content += `**Class:** ${params.classNumber || 'N/A'}\n`;
-  content += `**Duration:** ${params.duration || '45 minutes'}\n\n`;
+  if (params.subTopic) {
+    content += `**Sub Topic:** ${params.subTopic}\n`;
+  }
+  content += `**Duration:** ${duration} minutes\n`;
+  content += `**Total Questions:** ${questions.length}\n\n`;
   content += `---\n\n`;
   content += `## Learning Objectives\n\n`;
   content += `By the end of this lesson, students will be able to:\n`;
-  content += `- Understand key concepts related to ${params.topic || 'this topic'}\n`;
-  content += `- Solve practice problems\n`;
-  content += `- Apply knowledge to new situations\n\n`;
+  content += `- Understand key concepts related to **${params.topic || 'this topic'}**\n`;
+  content += `- Solve practice problems independently\n`;
+  content += `- Apply knowledge to new situations\n`;
+  content += `- Demonstrate mastery through assessment\n\n`;
   content += `---\n\n`;
-  content += `## Practice Questions\n\n`;
+  content += `## Lesson Structure\n\n`;
+  content += `### Introduction (10 minutes)\n`;
+  content += `- Review previous concepts\n`;
+  content += `- Introduce the topic: **${params.topic || 'Topic'}**\n`;
+  content += `- Set learning objectives\n\n`;
+  content += `### Main Activity (${Math.floor(duration * 0.6)} minutes)\n`;
+  content += `- Guided practice with questions\n`;
+  content += `- Independent problem-solving\n\n`;
+  content += `### Practice Questions\n\n`;
   
   questions.forEach((q, index) => {
-    content += `### Question ${index + 1}\n\n`;
+    content += `#### Question ${index + 1}\n\n`;
     content += `${q.Question || q.question || ''}\n\n`;
     
     if (q.Option_A || q.option_a) {
@@ -574,6 +858,11 @@ function generateLessonPlan(questions, params) {
     
     content += `**Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
   });
+  
+  content += `### Wrap-up (10 minutes)\n`;
+  content += `- Review key concepts\n`;
+  content += `- Address questions and clarifications\n`;
+  content += `- Assign homework if applicable\n\n`;
   
   return content;
 }
@@ -582,24 +871,43 @@ function generateLessonPlan(questions, params) {
  * Generate Daily Class Plan format
  */
 function generateDailyClassPlan(questions, params) {
-  let content = `# Daily Class Plan: ${params.topic || 'Topic'}\n\n`;
-  content += `**Subject:** ${params.subject || 'General'}\n`;
-  content += `**Class:** ${params.classNumber || 'N/A'}\n`;
-  content += `**Date:** ${new Date().toLocaleDateString()}\n\n`;
-  content += `---\n\n`;
-  content += `## Class Activities\n\n`;
-  content += `### Warm-up (5 minutes)\n`;
-  content += `Review previous concepts.\n\n`;
-  content += `### Main Activity (30 minutes)\n`;
-  content += `Practice questions on ${params.topic || 'this topic'}:\n\n`;
+  const date = params.date || new Date().toLocaleDateString();
+  const subjects = params.subjects || params.subject || 'General';
+  const timeSlots = params.timeSlots || '9:00-10:00, 10:15-11:15';
   
-  questions.forEach((q, index) => {
+  let content = `# Daily Class Plan\n\n`;
+  content += `**Date:** ${date}\n`;
+  content += `**Class:** ${params.classNumber || 'N/A'}\n`;
+  content += `**Subjects:** ${subjects}\n`;
+  if (params.subTopic) {
+    content += `**Sub Topic:** ${params.subTopic}\n`;
+  }
+  content += `**Time Slots:** ${timeSlots}\n\n`;
+  content += `---\n\n`;
+  content += `## Class Schedule\n\n`;
+  content += `### Warm-up (5-10 minutes)\n`;
+  content += `- Review previous concepts\n`;
+  content += `- Quick recap of homework\n`;
+  content += `- Set agenda for today's class\n\n`;
+  content += `### Main Activity (30-40 minutes)\n`;
+  content += `**Topic:** ${params.topic || 'Current Topic'}\n\n`;
+  content += `Practice questions:\n\n`;
+  
+  questions.slice(0, Math.min(10, questions.length)).forEach((q, index) => {
     content += `${index + 1}. ${q.Question || q.question || ''}\n`;
-    content += `   Answer: ${q.Answer || q.answer || 'N/A'}\n\n`;
+  });
+  
+  content += `\n### Practice Session\n\n`;
+  questions.forEach((q, index) => {
+    content += `**Q${index + 1}:** ${q.Question || q.question || ''}\n`;
+    content += `   **Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
   });
   
   content += `### Wrap-up (10 minutes)\n`;
-  content += `Review answers and clarify doubts.\n\n`;
+  content += `- Review answers and solutions\n`;
+  content += `- Address student questions\n`;
+  content += `- Assign homework\n`;
+  content += `- Preview next lesson\n\n`;
   
   return content;
 }
@@ -608,45 +916,120 @@ function generateDailyClassPlan(questions, params) {
  * Generate Rubrics format
  */
 function generateRubrics(questions, params) {
-  let content = `# Assessment Rubric: ${params.topic || 'Topic'}\n\n`;
-  content += `**Subject:** ${params.subject || 'General'}\n`;
-  content += `**Class:** ${params.classNumber || 'N/A'}\n\n`;
-  content += `---\n\n`;
-  content += `## Evaluation Criteria\n\n`;
-  content += `### Knowledge & Understanding (40%)\n`;
-  content += `- Correct answers to factual questions\n`;
-  content += `- Understanding of key concepts\n\n`;
-  content += `### Application (30%)\n`;
-  content += `- Ability to apply knowledge to solve problems\n\n`;
-  content += `### Analysis (20%)\n`;
-  content += `- Ability to analyze and reason\n\n`;
-  content += `### Communication (10%)\n`;
-  content += `- Clarity of responses\n\n`;
-  content += `---\n\n`;
-  content += `## Sample Questions for Assessment\n\n`;
+  const outputType = params.outputType || 'Rubrics & Evaluation';
+  const isReportCard = outputType === 'Report Card';
   
-  questions.forEach((q, index) => {
-    content += `**Question ${index + 1}:** ${q.Question || q.question || ''}\n`;
-    content += `**Correct Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
-  });
-  
-  return content;
+  if (isReportCard) {
+    // Generate Report Card format
+    let content = `# Report Card\n\n`;
+    content += `**Student Name:** ${params.studentName || 'Student Name'}\n`;
+    content += `**Class:** ${params.classNumber || 'N/A'}\n`;
+    content += `**Subject:** ${params.subject || 'General'}\n`;
+    if (params.term) {
+      content += `**Term:** ${params.term}\n`;
+    }
+    content += `**Date:** ${new Date().toLocaleDateString()}\n\n`;
+    content += `---\n\n`;
+    content += `## Academic Performance\n\n`;
+    content += `### Subject: ${params.subject || 'General'}\n\n`;
+    content += `**Overall Grade:** To be determined\n\n`;
+    content += `### Assessment Breakdown\n\n`;
+    content += `- **Knowledge & Understanding:** Based on performance\n`;
+    content += `- **Application Skills:** Based on problem-solving\n`;
+    content += `- **Analysis & Reasoning:** Based on critical thinking\n`;
+    content += `- **Communication:** Based on clarity of responses\n\n`;
+    content += `---\n\n`;
+    content += `## Sample Assessment Questions\n\n`;
+    
+    questions.slice(0, Math.min(10, questions.length)).forEach((q, index) => {
+      content += `${index + 1}. ${q.Question || q.question || ''}\n`;
+      content += `   **Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
+    });
+    
+    content += `---\n\n`;
+    content += `## Teacher Comments\n\n`;
+    content += `*Comments to be filled by teacher*\n\n`;
+    content += `## Recommendations\n\n`;
+    content += `*Recommendations for improvement*\n\n`;
+    
+    return content;
+  } else {
+    // Generate Rubrics & Evaluation format
+    let content = `# Assessment Rubric: ${params.topic || params.assignmentType || 'Assignment'}\n\n`;
+    content += `**Subject:** ${params.subject || 'General'}\n`;
+    content += `**Class:** ${params.classNumber || 'N/A'}\n`;
+    if (params.assignmentType) {
+      content += `**Assignment Type:** ${params.assignmentType}\n`;
+    }
+    if (params.subTopic) {
+      content += `**Sub Topic:** ${params.subTopic}\n`;
+    }
+    content += `\n---\n\n`;
+    content += `## Evaluation Criteria\n\n`;
+    content += `### Knowledge & Understanding (40%)\n`;
+    content += `- **Excellent (36-40%):** Demonstrates comprehensive understanding of key concepts\n`;
+    content += `- **Good (28-35%):** Shows good understanding with minor gaps\n`;
+    content += `- **Satisfactory (20-27%):** Basic understanding demonstrated\n`;
+    content += `- **Needs Improvement (<20%):** Limited understanding shown\n\n`;
+    content += `### Application (30%)\n`;
+    content += `- **Excellent (27-30%):** Successfully applies knowledge to solve complex problems\n`;
+    content += `- **Good (21-26%):** Applies knowledge to solve standard problems\n`;
+    content += `- **Satisfactory (15-20%):** Basic application skills demonstrated\n`;
+    content += `- **Needs Improvement (<15%):** Struggles with application\n\n`;
+    content += `### Analysis (20%)\n`;
+    content += `- **Excellent (18-20%):** Excellent analytical and reasoning skills\n`;
+    content += `- **Good (14-17%):** Good analytical skills with minor errors\n`;
+    content += `- **Satisfactory (10-13%):** Basic analytical skills\n`;
+    content += `- **Needs Improvement (<10%):** Limited analytical ability\n\n`;
+    content += `### Communication (10%)\n`;
+    content += `- **Excellent (9-10%):** Clear, well-organized responses\n`;
+    content += `- **Good (7-8%):** Generally clear responses\n`;
+    content += `- **Satisfactory (5-6%):** Adequate communication\n`;
+    content += `- **Needs Improvement (<5%):** Unclear or disorganized responses\n\n`;
+    content += `---\n\n`;
+    content += `## Sample Questions for Assessment\n\n`;
+    
+    questions.forEach((q, index) => {
+      content += `### Question ${index + 1}\n\n`;
+      content += `${q.Question || q.question || ''}\n\n`;
+      if (q.Option_A || q.option_a) {
+        content += `**Options:**\n`;
+        content += `- A) ${q.Option_A || q.option_a}\n`;
+        content += `- B) ${q.Option_B || q.option_b}\n`;
+        content += `- C) ${q.Option_C || q.option_c}\n`;
+        content += `- D) ${q.Option_D || q.option_d}\n\n`;
+      }
+      content += `**Correct Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
+    });
+    
+    return content;
+  }
 }
 
 /**
  * Generate Story/Passage format
  */
 function generateStoryPassage(questions, params) {
+  const length = params.length || 'medium';
+  const passageLength = length === 'short' ? 5 : length === 'long' ? 15 : 10;
+  const selectedQuestions = questions.slice(0, Math.min(passageLength, questions.length));
+  
   let content = `# Reading Passage: ${params.topic || 'Topic'}\n\n`;
   content += `**Subject:** ${params.subject || 'General'}\n`;
-  content += `**Class:** ${params.classNumber || 'N/A'}\n\n`;
+  content += `**Class:** ${params.classNumber || 'N/A'}\n`;
+  if (params.subTopic) {
+    content += `**Sub Topic:** ${params.subTopic}\n`;
+  }
+  content += `**Length:** ${length}\n\n`;
   content += `---\n\n`;
   content += `## Passage\n\n`;
-  content += `Read the following questions and answer them based on your understanding of **${params.topic || 'this topic'}**.\n\n`;
+  content += `Read the following passage and answer the comprehension questions based on your understanding of **${params.topic || 'this topic'}**.\n\n`;
+  content += `### Introduction\n\n`;
+  content += `This passage explores the key concepts and ideas related to **${params.topic || 'this topic'}**. Pay attention to the main ideas, supporting details, and relationships between concepts.\n\n`;
   content += `---\n\n`;
   content += `## Comprehension Questions\n\n`;
   
-  questions.forEach((q, index) => {
+  selectedQuestions.forEach((q, index) => {
     content += `### Question ${index + 1}\n\n`;
     content += `${q.Question || q.question || ''}\n\n`;
     
@@ -657,7 +1040,14 @@ function generateStoryPassage(questions, params) {
       content += `**D)** ${q.Option_D || q.option_d}\n\n`;
     }
     
-    content += `**Answer:** ${q.Answer || q.answer || 'N/A'}\n\n`;
+    content += `\n`;
+  });
+  
+  content += `---\n\n`;
+  content += `## Answer Key\n\n`;
+  selectedQuestions.forEach((q, index) => {
+    const answer = q.Answer || q.answer || 'N/A';
+    content += `**Q${index + 1}:** ${answer}\n`;
   });
   
   return content;

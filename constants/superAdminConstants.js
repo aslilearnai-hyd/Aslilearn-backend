@@ -1,7 +1,7 @@
 // Super Admin Constants
 
 export const SUPER_ADMIN_CREDENTIALS = {
-  email: 'Amenity@gmail.com',
+  email: 'amenityforge@gmail.com',
   password: 'Amenity'
 };
 

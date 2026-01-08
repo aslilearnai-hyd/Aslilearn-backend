@@ -9,6 +9,7 @@ import ExamResult from '../models/ExamResult.js';
 import Content from '../models/Content.js';
 import Subject from '../models/Subject.js';
 import Class from '../models/Class.js';
+import RiskAnalysisReport from '../models/RiskAnalysisReport.js';
 
 // Super Admin Login
 export const superAdminLogin = async (req, res) => {
@@ -17,8 +18,7 @@ export const superAdminLogin = async (req, res) => {
     
     // Super admin credentials
     const superAdminCredentials = [
-      { email: 'Amenity@gmail.com', password: 'Amenity', fullName: 'Super Admin' },
-      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' }
+      { email: 'amenityforge@gmail.com', password: 'Amenity', fullName: 'Super Admin' }
     ];
     
     // Check super admin credentials
@@ -77,6 +77,16 @@ export const getDashboardStats = async (req, res) => {
     const avgExamsPerStudent = totalStudents > 0 ? (totalExamResults / totalStudents).toFixed(1) : 0;
     const contentEngagement = totalVideos + totalAssessments + totalExams;
     
+    // Calculate pass rate from real exam results (assuming passing is >= 40%)
+    const allExamResults = await ExamResult.find().select('percentage');
+    const passingResults = allExamResults.filter(result => (result.percentage || 0) >= 40);
+    const passRate = allExamResults.length > 0 ? ((passingResults.length / allExamResults.length) * 100).toFixed(1) : 0;
+    
+    // Calculate active students (students who have taken at least one exam)
+    const studentsWithExams = await ExamResult.distinct('userId');
+    const activeStudents = studentsWithExams.length;
+    const activeStudentsPercentage = totalStudents > 0 ? ((activeStudents / totalStudents) * 100).toFixed(0) : 0;
+    
     res.json({
       success: true,
       data: {
@@ -92,6 +102,9 @@ export const getDashboardStats = async (req, res) => {
         activeAssessments,
         avgExamsPerStudent,
         contentEngagement,
+        passRate: parseFloat(passRate),
+        activeStudents,
+        activeStudentsPercentage: parseFloat(activeStudentsPercentage),
         superAdmins: 1
       }
     });
@@ -1591,6 +1604,360 @@ export const getSubscriptions = async (req, res) => {
   } catch (error) {
     console.error('Subscriptions error:', error);
     res.status(500).json({ success: false, message: 'Failed to fetch subscriptions' });
+  }
+};
+
+// AI Student Risk Analysis for Super Admin - Can analyze any student
+export const analyzeStudentRiskSuperAdmin = async (req, res) => {
+  try {
+    console.log('🔍 AI Risk Analysis - Request received:', {
+      studentId: req.body.studentId,
+      analysisType: req.body.analysisType,
+      timeRange: req.body.timeRange,
+      user: req.user
+    });
+    
+    const { studentId, analysisType = 'comprehensive', timeRange = '90days' } = req.body;
+
+    // Super admin can access any student
+    const student = await User.findOne({ 
+      _id: studentId, 
+      role: 'student'
+    });
+
+    if (!student) {
+      return res.status(404).json({ 
+        success: false, 
+        message: 'Student not found' 
+      });
+    }
+
+    // Calculate date range
+    let daysAgo;
+    if (timeRange === 'all') {
+      daysAgo = 365 * 5;
+    } else if (timeRange === '30days') {
+      daysAgo = 30;
+    } else if (timeRange === '90days') {
+      daysAgo = 90;
+    } else {
+      daysAgo = parseInt(timeRange) || 90; // Default to 90 days if invalid
+    }
+    const startDate = new Date();
+    startDate.setDate(startDate.getDate() - daysAgo);
+
+    // Fetch all exam results for this student
+    const examResults = await ExamResult.find({
+      userId: studentId,
+      completedAt: { $gte: startDate }
+    }).sort({ completedAt: 1 });
+
+    if (examResults.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: 'No exam data available for analysis. Student needs to complete at least one exam.'
+      });
+    }
+
+    // Helper function to get best subject
+    const getBestSubject = (results) => {
+      const subjectScores = {};
+      results.forEach(result => {
+        if (result.subjectWiseScore) {
+          Object.entries(result.subjectWiseScore).forEach(([subject, data]) => {
+            if (!subjectScores[subject]) {
+              subjectScores[subject] = { total: 0, count: 0 };
+            }
+            const percentage = data.total > 0 ? (data.correct / data.total) * 100 : 0;
+            subjectScores[subject].total += percentage;
+            subjectScores[subject].count += 1;
+          });
+        }
+      });
+
+      let bestSubject = null;
+      let bestAvg = 0;
+      Object.entries(subjectScores).forEach(([subject, data]) => {
+        const avg = data.total / data.count;
+        if (avg > bestAvg) {
+          bestAvg = avg;
+          bestSubject = subject;
+        }
+      });
+      return bestSubject;
+    };
+
+    // Helper function to get worst subject
+    const getWorstSubject = (results) => {
+      const subjectScores = {};
+      results.forEach(result => {
+        if (result.subjectWiseScore) {
+          Object.entries(result.subjectWiseScore).forEach(([subject, data]) => {
+            if (!subjectScores[subject]) {
+              subjectScores[subject] = { total: 0, count: 0 };
+            }
+            const percentage = data.total > 0 ? (data.correct / data.total) * 100 : 0;
+            subjectScores[subject].total += percentage;
+            subjectScores[subject].count += 1;
+          });
+        }
+      });
+
+      let worstSubject = null;
+      let worstAvg = 100;
+      Object.entries(subjectScores).forEach(([subject, data]) => {
+        const avg = data.total / data.count;
+        if (avg < worstAvg) {
+          worstAvg = avg;
+          worstSubject = subject;
+        }
+      });
+      return worstSubject;
+    };
+
+    // Prepare data for AI analysis
+    const performanceData = {
+      studentInfo: {
+        name: student.fullName,
+        email: student.email,
+        classNumber: student.classNumber,
+        totalExams: examResults.length
+      },
+      examHistory: examResults.map(result => ({
+        examTitle: result.examTitle,
+        date: result.completedAt,
+        percentage: result.percentage,
+        timeTaken: result.timeTaken,
+        correctAnswers: result.correctAnswers,
+        totalQuestions: result.totalQuestions,
+        subjectScores: Object.fromEntries(result.subjectWiseScore || [])
+      })),
+      statistics: {
+        averageScore: examResults.reduce((sum, r) => sum + r.percentage, 0) / examResults.length,
+        latestScore: examResults[examResults.length - 1].percentage,
+        trend: examResults.length >= 2 
+          ? (examResults[examResults.length - 1].percentage - examResults[0].percentage)
+          : 0,
+        bestSubject: getBestSubject(examResults),
+        worstSubject: getWorstSubject(examResults)
+      }
+    };
+
+    // Generate AI analysis using Gemini API
+    const analysisPrompt = `You are an expert educational analyst with deep knowledge of student performance patterns, learning psychology, and intervention strategies. Analyze this student's performance data and provide a comprehensive risk assessment.
+
+STUDENT DATA:
+${JSON.stringify(performanceData, null, 2)}
+
+Provide a detailed analysis in the following JSON format (ONLY JSON, no markdown, no code blocks):
+{
+  "riskLevel": "high" | "medium" | "low",
+  "riskScore": 0.0-1.0,
+  "analysis": {
+    "summary": "Brief summary of overall performance (2-3 sentences)",
+    "trends": "Describe performance trends over time with specific details",
+    "strengths": ["List 2-3 key strengths"],
+    "weaknesses": ["List 2-3 key weaknesses"],
+    "rootCauses": ["List 2-3 root causes of performance issues"]
+  },
+  "predictions": {
+    "nextExamPrediction": 0-100,
+    "confidence": 0.0-1.0,
+    "trend": "declining" | "stable" | "improving"
+  },
+  "interventions": [
+    {
+      "priority": "high" | "medium" | "low",
+      "action": "Specific actionable intervention",
+      "reasoning": "Why this intervention is needed based on data",
+      "expectedImpact": "Expected improvement with timeframe"
+    }
+  ],
+  "subjectBreakdown": {
+    "SubjectName": {
+      "performance": "strong" | "average" | "weak",
+      "trend": "improving" | "stable" | "declining",
+      "recommendation": "Specific recommendation for this subject"
+    }
+  }
+}
+
+Be specific, actionable, and data-driven. Focus on identifying real issues and providing practical solutions. Use the actual data provided to make informed assessments.`;
+
+    // Call Gemini API
+    const { GoogleGenerativeAI } = await import('@google/generative-ai');
+    const genAI = new GoogleGenerativeAI('AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8');
+    
+    // Include system instruction in the prompt since systemInstruction parameter is not supported
+    const fullPrompt = `You are an expert educational analyst. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.
+
+${analysisPrompt}`;
+    
+    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const result = await model.generateContent(fullPrompt);
+
+    const response = await result.response;
+    let aiResponse;
+    try {
+      // response.text() is a synchronous getter property, not an async method
+      aiResponse = response.text();
+    } catch (textError) {
+      console.error('Failed to get text from AI response:', textError);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to get AI response. Please try again.',
+        error: process.env.NODE_ENV === 'development' ? textError.message : undefined
+      });
+    }
+
+    // Parse AI response
+    let analysisResult;
+    try {
+      // Clean JSON response
+      const cleanedResponse = aiResponse
+        .replace(/^```json\s*/i, '')
+        .replace(/^```\s*/i, '')
+        .replace(/\s*```$/i, '')
+        .trim();
+      
+      analysisResult = JSON.parse(cleanedResponse);
+    } catch (parseError) {
+      console.error('Failed to parse AI response:', parseError);
+      console.error('Raw AI response:', aiResponse?.substring(0, 500));
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to parse AI analysis. Please try again.',
+        error: process.env.NODE_ENV === 'development' ? parseError.message : undefined
+      });
+    }
+
+    // Add metadata
+    analysisResult.generatedAt = new Date();
+    analysisResult.studentId = studentId;
+    analysisResult.dataPoints = examResults.length;
+    analysisResult.analysisType = analysisType;
+    analysisResult.timeRange = timeRange;
+
+    res.json({
+      success: true,
+      data: analysisResult
+    });
+
+  } catch (error) {
+    console.error('❌ Student risk analysis error:', error);
+    console.error('Error stack:', error.stack);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to analyze student risk',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+      ...(process.env.NODE_ENV === 'development' && { stack: error.stack })
+    });
+  }
+};
+
+// Download PDF and Send to Student
+export const downloadAndSendRiskAnalysisPDF = async (req, res) => {
+  try {
+    const { studentId, analysisData } = req.body;
+
+    if (!studentId || !analysisData) {
+      return res.status(400).json({
+        success: false,
+        message: 'Student ID and analysis data are required'
+      });
+    }
+
+    // Get student info
+    const student = await User.findById(studentId);
+    if (!student) {
+      return res.status(404).json({
+        success: false,
+        message: 'Student not found'
+      });
+    }
+
+    // Generate PDF
+    const { generateRiskAnalysisPDF } = await import('../services/pdf-generator-service.js');
+    const { filepath, filename } = await generateRiskAnalysisPDF(analysisData, {
+      studentId: student._id.toString(),
+      name: student.fullName,
+      email: student.email,
+      classNumber: student.classNumber
+    });
+
+    // Save report to database
+    const report = await RiskAnalysisReport.create({
+      studentId: student._id,
+      adminId: req.user.role === 'admin' ? req.userId : null,
+      analysisData,
+      pdfPath: filepath,
+      pdfFilename: filename
+    });
+
+    res.json({
+      success: true,
+      message: 'PDF generated and sent to student successfully',
+      data: {
+        reportId: report._id,
+        pdfPath: `/api/reports/download/${report._id}`,
+        filename: filename
+      }
+    });
+
+  } catch (error) {
+    console.error('❌ Error generating/sending PDF:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to generate or send PDF',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
+  }
+};
+
+// Download PDF file
+export const downloadRiskAnalysisPDF = async (req, res) => {
+  try {
+    const { reportId } = req.params;
+
+    const report = await RiskAnalysisReport.findById(reportId);
+    if (!report) {
+      return res.status(404).json({
+        success: false,
+        message: 'Report not found'
+      });
+    }
+
+    // Check if user has access (student can only see their own, admin/super-admin can see all)
+    if (req.user.role === 'student' && report.studentId.toString() !== req.userId) {
+      return res.status(403).json({
+        success: false,
+        message: 'Access denied'
+      });
+    }
+
+    const fs = await import('fs');
+    const path = await import('path');
+
+    if (!fs.existsSync(report.pdfPath)) {
+      return res.status(404).json({
+        success: false,
+        message: 'PDF file not found'
+      });
+    }
+
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', `attachment; filename="${report.pdfFilename}"`);
+    
+    const fileStream = fs.createReadStream(report.pdfPath);
+    fileStream.pipe(res);
+
+  } catch (error) {
+    console.error('❌ Error downloading PDF:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to download PDF',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
   }
 };
 

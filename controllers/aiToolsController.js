@@ -1,6 +1,6 @@
-import { generateContentFromCSV, getAvailableTopics } from '../services/csv-question-service.js';
+import { generateTeacherTool } from '../services/gemini-service.js';
 
-// Generic Teacher Tool Generator - Uses CSV files instead of Gemini
+// Generic Teacher Tool Generator - Uses Gemini API directly
 export const createTeacherTool = async (req, res) => {
   try {
     const { toolType, classNumber, subject, topic, ...params } = req.body;
@@ -13,25 +13,27 @@ export const createTeacherTool = async (req, res) => {
       });
     }
 
-    // Validate required fields for CSV-based tools
+    // Validate required fields
     if (!classNumber || !subject || !topic) {
       return res.status(400).json({
         success: false,
-        message: 'Class number, subject, and topic are required. Topic should match the CSV filename.'
+        message: 'Class number, subject, and topic are required.'
       });
     }
 
-    // Validate class number (only 9 and 10 are supported)
     const classNum = parseInt(classNumber);
-    if (classNum !== 9 && classNum !== 10) {
-      return res.status(400).json({
-        success: false,
-        message: 'Only Class 9 and Class 10 are supported'
-      });
-    }
+    
+    console.log(`🤖 Generating ${toolType} using Gemini API for Class ${classNum}, ${subject}, ${topic}`);
 
-    // Generate content from CSV
-    const content = generateContentFromCSV(classNum, subject, topic, toolType, params);
+    // Use Gemini API directly to generate content
+    const content = await generateTeacherTool(toolType, {
+      ...params,
+      classNumber: classNum,
+      subject,
+      topic,
+      gradeLevel: `Class ${classNum}`,
+      className: `Class ${classNum}`
+    });
 
     res.json({
       success: true,
@@ -44,7 +46,9 @@ export const createTeacherTool = async (req, res) => {
           topic,
           ...params,
           generatedAt: new Date(),
-          teacherId
+          teacherId,
+          source: 'gemini-ai',
+          sourceLabel: 'AI Generated (Gemini)'
         }
       }
     });
@@ -59,6 +63,7 @@ export const createTeacherTool = async (req, res) => {
 };
 
 // Get available topics for a class and subject
+// Since we're using Gemini API, topics can be any topic name - return empty array to allow free-form input
 export const getTopics = async (req, res) => {
   try {
     const { classNumber, subject } = req.query;
@@ -73,22 +78,13 @@ export const getTopics = async (req, res) => {
       });
     }
 
-    const classNum = parseInt(classNumber);
-    if (classNum !== 9 && classNum !== 10) {
-      console.log('❌ Invalid class number:', classNum);
-      return res.status(400).json({
-        success: false,
-        message: 'Only Class 9 and Class 10 are supported'
-      });
-    }
-
-    console.log('✅ Calling getAvailableTopics with:', { classNum, subject });
-    const topics = getAvailableTopics(classNum, subject);
-    console.log('✅ Topics returned:', topics.length, 'topics');
-
+    // With Gemini API, we don't need predefined topics - users can enter any topic
+    // Return empty array to indicate free-form topic input is allowed
+    // Frontend can still show PDF topics if available, but it's not required
     res.json({
       success: true,
-      data: topics
+      data: [],
+      message: 'With AI generation, you can enter any topic name. The system will generate content based on your input.'
     });
   } catch (error) {
     console.error('❌ Get topics error:', error);
@@ -129,3 +125,5 @@ export const createSchedule = async (req, res) => {
     message: 'This endpoint is deprecated. Please use /api/teacher/ai/tool with toolType: daily-class-plan-maker'
   });
 };
+
+// PDF upload and extraction removed - AI tools now use Gemini API only
