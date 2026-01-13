@@ -42,3 +42,7 @@ echo "💡 Test extraction manually:"
 echo "   python3 scripts/pdf-extractor.py <pdf_path> <output_dir> <class> <subject> <topic>"
 
 
+
+
+
+

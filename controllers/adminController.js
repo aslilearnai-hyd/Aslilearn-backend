@@ -2863,12 +2863,39 @@ Be specific, actionable, and data-driven. Focus on identifying real issues and p
     // Call Gemini API with custom prompt
     const { GoogleGenerativeAI } = await import('@google/generative-ai');
     const genAI = new GoogleGenerativeAI('AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8');
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    
+    // Include system instruction in the prompt since systemInstruction parameter is not supported
+    const fullPrompt = `You are an expert educational analyst. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.
 
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: analysisPrompt }] }],
-      systemInstruction: 'You are an expert educational analyst. Respond ONLY with valid JSON, no markdown, no code blocks, just pure JSON.'
-    });
+${analysisPrompt}`;
+    
+    // Try multiple models with fallback - prioritize 2.5 Flash (confirmed working)
+    const modelsToTry = [
+      'gemini-2.5-flash',  // ✅ Confirmed working
+      'gemini-2.0-flash',  // May have quota limits
+      'gemini-1.5-flash',
+      'gemini-1.5-pro'
+    ];
+    
+    let result;
+    let lastError;
+    
+    for (const modelName of modelsToTry) {
+      try {
+        console.log(`🔄 Trying model: ${modelName}`);
+        const model = genAI.getGenerativeModel({ model: modelName });
+        result = await model.generateContent(fullPrompt);
+        console.log(`✅ Successfully used model: ${modelName}`);
+        break;
+      } catch (error) {
+        console.log(`❌ Model ${modelName} failed: ${error.message}`);
+        lastError = error;
+        if (modelName === modelsToTry[modelsToTry.length - 1]) {
+          throw new Error(`All models failed. Last error: ${error.message}`);
+        }
+        continue;
+      }
+    }
 
     const response = await result.response;
     let aiResponse = response.text();

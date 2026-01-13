@@ -7,7 +7,7 @@ class GeminiService {
   constructor() {
     this.apiKey = 'AIzaSyDExDEuif6KRk5suciCPLr1sDqkQFDfNb8';
     this.genAI = new GoogleGenerativeAI(this.apiKey);
-    this.textModel = 'gemini-1.5-flash'; // Fast and efficient model for content generation
+    this.textModel = 'gemini-2.5-flash'; // ✅ Confirmed working - Latest Flash model
     
     console.log('✅ Gemini service initialized with API key');
   }
@@ -49,8 +49,10 @@ export const generateLessonPlan = async (subject, topic, gradeLevel, duration) =
   
   // Try multiple models in order of preference
   const modelsToTry = [
-    'gemini-1.5-flash',    // Fast and efficient
-    'gemini-1.5-pro'       // More capable
+    'gemini-2.5-flash',            // ✅ Confirmed working - Latest Flash (June 2025)
+    'gemini-2.0-flash',            // Flash 2.0 (December 2024) - May have quota limits
+    'gemini-1.5-flash',            // Flash 1.5 fallback
+    'gemini-1.5-pro'               // Pro fallback
   ];
 
   const prompt = `Create a comprehensive, detailed lesson plan for IIT JEE Mains preparation:
@@ -174,8 +176,10 @@ ${prompt}`;
 
   // Try multiple models in order of preference
   const modelsToTry = [
-    'gemini-1.5-flash',    // Fast and efficient
-    'gemini-1.5-pro'       // More capable
+    'gemini-2.5-flash',            // ✅ Confirmed working - Latest Flash (June 2025)
+    'gemini-2.0-flash',            // Flash 2.0 (December 2024) - May have quota limits
+    'gemini-1.5-flash',            // Flash 1.5 fallback
+    'gemini-1.5-pro'               // Pro fallback
   ];
 
   for (const modelName of modelsToTry) {
@@ -228,8 +232,10 @@ export const generateClasswork = async (subject, topic, gradeLevel, assignmentTy
 
   // Try multiple models in order of preference
   const modelsToTry = [
-    'gemini-1.5-flash',    // Fast and efficient
-    'gemini-1.5-pro'       // More capable
+    'gemini-2.5-flash',            // ✅ Confirmed working - Latest Flash (June 2025)
+    'gemini-2.0-flash',            // Flash 2.0 (December 2024) - May have quota limits
+    'gemini-1.5-flash',            // Flash 1.5 fallback
+    'gemini-1.5-pro'               // Pro fallback
   ];
 
   for (const modelName of modelsToTry) {
@@ -275,8 +281,10 @@ export const generateSchedule = async (subjects, gradeLevels, timeSlots, prefere
 
   // Try multiple models in order of preference
   const modelsToTry = [
-    'gemini-1.5-flash',    // Fast and efficient
-    'gemini-1.5-pro'       // More capable
+    'gemini-2.5-flash',            // ✅ Confirmed working - Latest Flash (June 2025)
+    'gemini-2.0-flash',            // Flash 2.0 (December 2024) - May have quota limits
+    'gemini-1.5-flash',            // Flash 1.5 fallback
+    'gemini-1.5-pro'               // Pro fallback
   ];
 
   for (const modelName of modelsToTry) {
@@ -730,6 +738,8 @@ Format using Markdown with proper headings (##), bold text (**text**), and clear
   }
 
   const modelsToTry = [
+    'gemini-2.5-flash',  // ✅ Confirmed working
+    'gemini-2.0-flash',  // May have quota limits
     'gemini-1.5-flash',
     'gemini-1.5-pro'
   ];
@@ -1200,6 +1210,8 @@ Make it inspiring, actionable, and tailored to the student's goals.`
   }
 
   const modelsToTry = [
+    'gemini-2.5-flash',  // ✅ Confirmed working
+    'gemini-2.0-flash',  // May have quota limits
     'gemini-1.5-flash',
     'gemini-1.5-pro'
   ];

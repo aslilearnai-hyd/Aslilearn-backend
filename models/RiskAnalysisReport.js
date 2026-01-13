@@ -45,3 +45,5 @@ riskAnalysisReportSchema.index({ studentId: 1, isRead: 1 });
 
 export default mongoose.model('RiskAnalysisReport', riskAnalysisReportSchema);
 
+
+

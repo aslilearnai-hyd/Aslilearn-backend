@@ -41,3 +41,7 @@ echo 💡 Test extraction manually:
 echo    python scripts\pdf-extractor.py ^<pdf_path^> ^<output_dir^> ^<class^> ^<subject^> ^<topic^>
 
 
+
+
+
+
