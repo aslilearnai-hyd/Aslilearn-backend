@@ -2747,6 +2747,74 @@ app.post('/api/debug/create-working-teacher', async (req, res) => {
   }
 });
 
+// Fix teacher login - check and reset password
+app.post('/api/debug/fix-teacher-login', async (req, res) => {
+  try {
+    const { email, newPassword } = req.body;
+    
+    if (!email) {
+      return res.status(400).json({ 
+        success: false,
+        message: 'Email is required' 
+      });
+    }
+
+    const password = newPassword || 'Password123';
+    
+    // Find teacher
+    const teacher = await Teacher.findOne({ email: email.toLowerCase() });
+    
+    if (!teacher) {
+      return res.status(404).json({ 
+        success: false,
+        message: `Teacher with email "${email}" not found in database`,
+        suggestion: 'Use /api/debug/create-test-teacher to create a test teacher account'
+      });
+    }
+
+    console.log(`🔧 Fixing teacher login for: ${teacher.email}`);
+    console.log(`   Current status: Active=${teacher.isActive}, HasPassword=${!!teacher.password}`);
+
+    // Activate account if inactive
+    if (!teacher.isActive) {
+      teacher.isActive = true;
+      console.log('   ✅ Activating account');
+    }
+
+    // Reset password
+    const bcrypt = await import('bcryptjs');
+    const hashedPassword = await bcrypt.default.hash(password, 12);
+    teacher.password = hashedPassword;
+    await teacher.save();
+
+    // Verify password
+    const verifyPassword = await bcrypt.default.compare(password, teacher.password);
+    
+    res.json({ 
+      success: true,
+      message: 'Teacher account fixed successfully',
+      teacher: {
+        email: teacher.email,
+        fullName: teacher.fullName,
+        isActive: teacher.isActive,
+        passwordReset: true,
+        passwordVerified: verifyPassword
+      },
+      credentials: {
+        email: teacher.email,
+        password: password,
+        note: 'Use these credentials to login'
+      }
+    });
+  } catch (error) {
+    console.error('Failed to fix teacher login:', error);
+    res.status(500).json({ 
+      success: false,
+      error: error.message 
+    });
+  }
+});
+
 // Create multiple teacher accounts for testing
 app.post('/api/debug/create-multiple-teachers', async (req, res) => {
   try {

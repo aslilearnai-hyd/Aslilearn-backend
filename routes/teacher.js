@@ -22,7 +22,9 @@ import {
   createClasswork,
   createSchedule,
   createTeacherTool,
-  getTopics
+  getSubjects,
+  getTopics,
+  getAvailableContent
 } from '../controllers/aiToolsController.js';
 import Video from '../models/Video.js';
 import Assessment from '../models/Assessment.js';
@@ -378,13 +380,15 @@ router.get('/classes/:classNumber/subjects', async (req, res) => {
 });
 
 // AI Tools Routes
-// AI Tools Routes - All use Gemini API only
-router.get('/ai/topics', getTopics); // Returns empty array - users can enter any topic
+// AI Tools Routes - All use hardcoded content only
+router.get('/ai/subjects', getSubjects); // Returns valid subjects for Class 6
+router.get('/ai/topics', getTopics); // Returns chapters from planner.json
+router.get('/ai/available-content', getAvailableContent); // Returns all available content types for a chapter
 router.post('/ai/lesson-plan', createLessonPlan);
 router.post('/ai/test-questions', createTestQuestions);
 router.post('/ai/classwork', createClasswork);
 router.post('/ai/schedule', createSchedule);
-router.post('/ai/tool', createTeacherTool); // Uses Gemini API directly
+router.post('/ai/tool', createTeacherTool); // Uses hardcoded content only
 
 // Grading endpoint
 router.post('/grade-work', upload.single('file'), async (req, res) => {
