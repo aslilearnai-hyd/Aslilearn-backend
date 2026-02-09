@@ -1,0 +1,97 @@
+{
+  "content_type": "Flashcard Maker",
+  "generated_at": "2026-02-05T00:06:10.168491",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the largest planet in our Solar System?",
+        "correct_answer": "Jupiter",
+        "explanation": "Jupiter is the largest of all the planets in terms of both mass and size."
+      },
+      {
+        "question": "Which planet is known as the Red Planet?",
+        "correct_answer": "Mars",
+        "explanation": "The soil on Mars appears reddish in color, which gives it its nickname."
+      },
+      {
+        "question": "What is the Moon's diameter compared to Earth's?",
+        "correct_answer": "About a quarter of Earth's diameter",
+        "explanation": "The Moon is about one-fourth the size of the Earth in diameter."
+      },
+      {
+        "question": "How many moons does Mars have?",
+        "correct_answer": "Two",
+        "explanation": "Mars has two natural satellites, Phobos and Deimos."
+      },
+      {
+        "question": "What is Pluto's status according to the International Astronomical Union (IAU)?",
+        "correct_answer": "Dwarf planet",
+        "explanation": "Pluto was reclassified as a dwarf planet in 2006 by the IAU."
+      },
+      {
+        "question": "Which of the following planets can be seen with the naked eye?",
+        "correct_answer": "Mercury, Venus, Mars, Jupiter, and Saturn",
+        "explanation": "These five planets are visible to the naked eye from Earth."
+      },
+      {
+        "question": "How long does it take the Moon to complete one revolution around the Earth?",
+        "correct_answer": "27 days",
+        "explanation": "The Moon orbits the Earth in approximately 27.3 days."
+      },
+      {
+        "question": "What is the largest group of objects that orbit around a planet called?",
+        "correct_answer": "Satellite system",
+        "explanation": "A satellite system consists of multiple satellites orbiting a single planet."
+      },
+      {
+        "question": "Which planet has the most moons in our Solar System?",
+        "correct_answer": "Jupiter",
+        "explanation": "Jupiter is orbited by a total of 92 confirmed moons."
+      },
+      {
+        "question": "What is the term for objects that are smaller than planets but still orbit around them?",
+        "correct_answer": "Dwarf planets or asteroids/comets",
+        "explanation": "Smaller bodies like dwarf planets, asteroids, and comets can also be found in our Solar System."
+      }
+    ],
+    "important_notes": [
+      {
+        "title": "The Sun is a star",
+        "content": "The Sun is the center of our Solar System and provides light and heat to Earth."
+      },
+      {
+        "title": "The planets are divided into two main groups: rocky and gas giants",
+        "content": "Rocky planets like Earth have solid surfaces, while gas giants like Jupiter are primarily composed of gases."
+      },
+      {
+        "title": "Asteroids and comets are smaller than planets but still orbit around the Sun",
+        "content": "These objects can be found in our Solar System and often have unique orbits."
+      },
+      {
+        "title": "The Moon is Earth's natural satellite",
+        "content": "The Moon orbits the Earth in approximately 27.3 days."
+      },
+      {
+        "title": "Pluto was reclassified as a dwarf planet in 2006",
+        "content": "This decision was made by the International Astronomical Union (IAU)."
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The Solar System is estimated to be around 4.6 billion years old."
+      },
+      {
+        "fact": "Mercury is the closest planet to the Sun, with an average distance of about 58 million kilometers."
+      },
+      {
+        "fact": "Venus is often called the hottest planet due to its thick atmosphere and surface temperature reaching up to 462°C."
+      },
+      {
+        "fact": "Mars has the largest volcano in our Solar System, Olympus Mons, which stands at a height of over 27 km."
+      },
+      {
+        "fact": "Jupiter's Great Red Spot is a persistent anticyclonic storm that has been raging for centuries."
+      }
+    ]
+  }
+}

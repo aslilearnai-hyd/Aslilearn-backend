@@ -1,0 +1,53 @@
+Question,Answer
+Define perimeter.,The total length of the boundary of a figure.
+Define area.,The region enclosed by a figure.
+Find the perimeter of a square with side 5 cm.,20 cm
+Find the area of a square with side 6 cm.,36 cm²
+Find the perimeter of a rectangle with length 8 cm and width 5 cm.,26 cm
+Find the area of a rectangle with length 10 cm and width 4 cm.,40 cm²
+Define circumference.,The boundary length of a circle.
+Find circumference of a circle with radius 7 cm.,44 cm (using π≈3.14)
+Find area of a circle with radius 5 cm.,78.5 cm²
+Define radius of a circle.,Distance from center to any point on circle.
+Define diameter of a circle.,A line passing through center connecting two points on circle.
+Find perimeter of a triangle with sides 5 cm, 6 cm, 7 cm.,18 cm
+Find area of a triangle with base 6 cm and height 4 cm.,12 cm²
+Define volume.,The space occupied by a solid object.
+Define surface area.,Total area of all faces of a 3D object.
+Find volume of a cube with side 4 cm.,64 cm³
+Find surface area of a cube with side 5 cm.,150 cm²
+Find volume of a cuboid with length 8 cm, width 5 cm, height 3 cm.,120 cm³
+Find surface area of a cuboid with length 7 cm, width 4 cm, height 5 cm.,214 cm²
+Define lateral surface area.,Sum of areas of all sides excluding base(s).
+Find LSA of a cube with side 6 cm.,144 cm²
+Find LSA of a cuboid with length 10 cm, width 5 cm, height 4 cm.,180 cm²
+Find perimeter of a regular pentagon with side 7 cm.,35 cm
+Find area of a regular triangle with base 6 cm and height 4 cm.,12 cm²
+Find circumference of a circle with diameter 14 cm.,44 cm (using π≈3.14)
+Find area of a semicircle with radius 7 cm.,77 cm²
+Define height of a prism.,The perpendicular distance between its bases.
+Find volume of a prism with base area 20 cm² and height 5 cm.,100 cm³
+Find volume of a cylinder with radius 3 cm and height 7 cm.,197.82 cm³ (using π≈3.14)
+Find surface area of cylinder with radius 5 cm and height 10 cm.,471 cm² (using π≈3.14)
+Define slant height of a cone.,Distance from apex to a point on the circumference of base.
+Find volume of a cone with radius 4 cm and height 9 cm.,150.72 cm³ (using π≈3.14)
+Find curved surface area of a cone with radius 3 cm and slant height 5 cm.,47.1 cm²
+Find total surface area of a cone with radius 3 cm and slant height 5 cm.,75.36 cm²
+Define sphere.,A perfectly round 3D object.
+Find volume of a sphere with radius 7 cm.,1436.03 cm³ (using π≈3.14)
+Find surface area of a sphere with radius 7 cm.,615.44 cm²
+Define perimeter of a circle.,Circumference
+Find perimeter of rectangle with length 12 cm and width 8 cm.,40 cm
+Find area of rectangle with length 15 cm and width 6 cm.,90 cm²
+Find perimeter of a triangle with sides 3 cm, 4 cm, 5 cm.,12 cm
+Find area of a triangle with sides 3 cm, 4 cm and height 4 cm.,6 cm²
+Find area of square with diagonal 7 cm.,24.5 cm²
+Find surface area of a cube with side 8 cm.,384 cm²
+Find volume of cuboid with length 12 cm, width 5 cm, height 4 cm.,240 cm³
+Find volume of cube with side 10 cm.,1000 cm³
+Find lateral surface area of cuboid with length 6 cm, width 4 cm, height 5 cm.,200 cm²
+Find circumference of circle with radius 10 cm.,62.8 cm (π≈3.14)
+Find area of semicircle with radius 6 cm.,56.52 cm²
+Find volume of cylinder with radius 4 cm and height 10 cm.,502.4 cm³
+Find curved surface area of cylinder with radius 5 cm and height 12 cm.,376.8 cm²
+Find total surface area of cylinder with radius 5 cm and height 12 cm.,565.2 cm²

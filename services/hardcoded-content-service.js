@@ -10,7 +10,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 // Base path to hardcoded content folder
-const HARDCODED_ROOT = path.join(__dirname, '../../Asli hardcoding');
+// The "Asli hardcoding" folder is kept INSIDE the backend folder:
+// backend/Asli hardcoding
+const HARDCODED_ROOT = path.join(__dirname, '../Asli hardcoding');
 
 /**
  * Get the base path for a specific class
@@ -21,7 +23,7 @@ function getClassBasePath(classNumber) {
 
 /**
  * Get AMENITY base path
- * AMENITY folder is at root level: Asli hardcoding/AMENITY/
+ * AMENITY folder is at backend level: backend/Asli hardcoding/AMENITY/
  */
 function getAmenityBasePath() {
   return path.join(HARDCODED_ROOT, 'AMENITY');

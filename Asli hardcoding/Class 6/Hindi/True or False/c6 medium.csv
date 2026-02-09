@@ -1,0 +1,54 @@
+Chapter,Question,Answer
+Integers,Zero is an integer.,True
+Integers,All negative numbers are integers.,True
+Integers,All positive numbers are integers.,True
+Integers,Integers include fractions.,False
+Integers,Integers include decimals.,False
+Integers,-5 is less than -3.,True
+Integers,-10 is greater than -20.,True
+Integers,0 is less than any positive integer.,True
+Integers,0 is greater than any negative integer.,True
+Integers,-7 + 5 = -2.,True
+Integers,3 - 5 = -2.,True
+Integers,-4 - (-3) = -1.,True
+Integers,Multiplying two negative integers gives a positive integer.,True
+Integers,Multiplying a positive and a negative integer gives a negative integer.,True
+Integers,Adding two negative integers gives a negative integer.,True
+Integers,Adding two positive integers gives a negative integer.,False
+Integers,Subtracting a negative integer is the same as addition.,True
+Integers,-6 × -2 = 12.,True
+Integers,-8 × 3 = -24.,True
+Integers,Dividing a positive integer by a negative integer gives a negative integer.,True
+Integers,-12 ÷ -4 = 3.,True
+Integers,-15 ÷ 5 = -3.,True
+Integers,-20 ÷ 5 = -4.,True
+Integers,-9 ÷ 3 = -3.,True
+Integers,0 is neither positive nor negative.,True
+Integers,The opposite of -7 is 7.,True
+Integers,The opposite of 0 is 0.,True
+Integers,-10 + 10 = 0.,True
+Integers,Subtracting a positive integer from zero gives a negative integer.,True
+Integers,Adding zero to any integer changes its value.,False
+Integers,Subtracting zero from any integer does not change its value.,True
+Integers,Multiplying any integer by zero gives zero.,True
+Integers,Dividing zero by any non-zero integer gives zero.,True
+Integers,Dividing any integer by zero is possible.,False
+Integers,-7 + (-3) = -10.,True
+Integers,5 + (-8) = -3.,True
+Integers,10 - (-5) = 15.,True
+Integers,-12 - 8 = -20.,True
+Integers,The sum of a positive and negative integer can be positive or negative.,True
+Integers,-4 × 0 = 0.,True
+Integers,0 ÷ 5 = 0.,True
+Integers,0 ÷ 0 is undefined.,True
+Integers,-6 + 0 = -6.,True
+Integers,The absolute value of -9 is 9.,True
+Integers,The absolute value of 0 is 0.,True
+Integers,-15 - (-5) = -10.,True
+Integers,Multiplying zero with any negative integer gives zero.,True
+Integers,Subtracting a negative integer is same as adding its opposite.,True
+Integers,-8 + 8 = 0.,True
+Integers,-9 × -3 = 27.,True
+Integers,-18 ÷ -6 = 3.,True
+Integers,The number -1 is smaller than -2.,False
+Integers,The number 1 is greater than -1.,True

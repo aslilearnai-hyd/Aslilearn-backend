@@ -1,0 +1,50 @@
+Statement,Answer
+0 is the smallest whole number.,True
+Every whole number has a predecessor.,False
+Every whole number has a successor.,True
+0 has a predecessor in whole numbers.,False
+Whole numbers include negative numbers.,False
+Whole numbers are infinite.,True
+Addition of whole numbers is closed.,True
+Subtraction of whole numbers is closed.,False
+Multiplication of whole numbers is closed.,True
+Division of whole numbers is closed.,False
+0 is the additive identity for whole numbers.,True
+1 is the multiplicative identity for whole numbers.,True
+0 × any whole number = 0.,True
+Any whole number multiplied by 1 gives the same number.,True
+The predecessor of 1 is 0.,True
+The successor of 999 is 1000.,True
+The predecessor of 0 is −1.,False
+The smallest 2-digit whole number is 10.,True
+The largest 3-digit whole number is 999.,True
+The successor of the largest 3-digit whole number is 1001.,False
+5 − 7 is a whole number.,False
+7 − 5 is a whole number.,True
+3 ÷ 1 is a whole number.,True
+1 ÷ 3 is a whole number.,False
+0 ÷ 5 is defined in whole numbers.,True
+5 ÷ 0 is defined in whole numbers.,False
+a + b = b + a for all whole numbers a and b.,True
+(a + b) + c = a + (b + c) for all whole numbers.,True
+a × (b + c) = a × b + a × c.,True
+a × b = b × a for all whole numbers.,True
+Whole numbers start from 1.,False
+The successor of 0 is 1.,True
+The predecessor of 1 is 2.,False
+1000 is a 4-digit whole number.,True
+There are finite whole numbers.,False
+0 is both a whole number and a natural number.,True
+The difference of two whole numbers is always a whole number.,False
+The sum of two whole numbers is always a whole number.,True
+The product of two whole numbers is always a whole number.,True
+The successor of 49 is 50.,True
+The predecessor of 10 is 11.,False
+0 is the identity for multiplication.,False
+1 is the identity for addition.,False
+The smallest whole number greater than 999 is 1000.,True
+Every whole number except 0 has a predecessor.,True
+The successor of any whole number is unique.,True
+The predecessor of any whole number is unique.,True
+0 × 0 = 0.,True
+2 ÷ 2 is not a whole number.,False

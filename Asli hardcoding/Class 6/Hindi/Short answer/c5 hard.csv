@@ -1,0 +1,49 @@
+Question,Answer
+Define a polygon.,A closed figure made of straight line segments.
+Name a polygon with 3 sides.,Triangle
+Name a polygon with 4 sides.,Quadrilateral
+Define a triangle.,A polygon with 3 sides.
+Define a quadrilateral.,A polygon with 4 sides.
+Name the quadrilateral with all sides equal and angles 90°.,Square
+Name the quadrilateral with opposite sides equal and angles 90°.,Rectangle
+Name the quadrilateral with all sides equal but angles not 90°.,Rhombus
+Define a parallelogram.,A quadrilateral with opposite sides parallel.
+Define a kite.,A quadrilateral with two pairs of adjacent sides equal.
+Define a trapezium.,A quadrilateral with only one pair of parallel sides.
+What is a regular polygon?,A polygon with all sides and angles equal.
+What is an irregular polygon?,A polygon with sides or angles unequal.
+Name the polygon with 5 sides.,Pentagon
+Name the polygon with 6 sides.,Hexagon
+Name the polygon with 7 sides.,Heptagon
+Name the polygon with 8 sides.,Octagon
+Define a convex polygon.,A polygon with all interior angles less than 180°.
+Define a concave polygon.,A polygon with at least one interior angle greater than 180°.
+Define a diagonal.,A line joining two non-adjacent vertices of a polygon.
+How many diagonals does a triangle have?,0
+How many diagonals does a quadrilateral have?,2
+How many diagonals does a pentagon have?,5
+How many diagonals does a hexagon have?,9
+What is a right-angled triangle?,A triangle with one 90° angle.
+What is an equilateral triangle?,A triangle with all sides equal.
+What is an isosceles triangle?,A triangle with two sides equal.
+What is a scalene triangle?,A triangle with all sides unequal.
+What is an acute-angled triangle?,A triangle with all angles less than 90°.
+What is an obtuse-angled triangle?,A triangle with one angle greater than 90°.
+Define a circle.,A set of all points at a fixed distance from a center.
+Define radius.,Distance from center to any point on the circle.
+Define diameter.,A line through the center connecting two points on the circle.
+Define chord.,A line joining two points on the circle.
+Define circumference.,The boundary length of a circle.
+Define sector.,The area between two radii and the arc.
+Define segment of circle.,The area between a chord and the corresponding arc.
+Define tangent.,A line that touches a circle at exactly one point.
+Define secant.,A line that cuts the circle at two points.
+Define concentric circles.,Circles with same center but different radii.
+What is an ellipse?,A curve with sum of distances from two foci constant.
+Define a polygon angle sum formula.,Sum of interior angles = (n-2)*180°
+Define an exterior angle of polygon.,Angle formed outside by extending a side.
+Define center of polygon.,Point from which vertices are equidistant in regular polygons.
+Define perimeter.,Total length of sides of a shape.
+Define area.,The region enclosed by a shape.
+Define line of symmetry.,A line dividing a figure into two equal halves.
+Define rotational symmetry.,When a figure looks same after rotation.

@@ -1,0 +1,47 @@
+Question,Answer
+Explain what electric current is.,Electric current is the flow of electric charge (usually electrons) through a conductor, measured in amperes (A).
+Describe the difference between conductors and insulators.,Conductors allow electric current to pass easily (copper, aluminum), insulators resist current flow (rubber, plastic, wood).
+Explain the concept of voltage.,Voltage is the electric potential difference between two points, which drives current through a circuit, measured in volts (V).
+Describe how a simple electric circuit is made.,A simple circuit includes a source of electricity (battery), a conductor (wire), and a load (bulb), forming a closed path for current to flow.
+Explain the difference between series and parallel circuits.,Series circuits have components in a single path; current is same, voltage divides. Parallel circuits have multiple paths; voltage is same, current divides.
+Describe the effect of adding more resistors in series and parallel.,Series – total resistance increases, current decreases. Parallel – total resistance decreases, current increases in overall circuit.
+Explain the role of switches in a circuit.,Switches control the flow of current by opening (off) or closing (on) the circuit.
+Describe how safety devices protect circuits.,Fuses and circuit breakers interrupt excessive current flow to prevent damage, fire, or electrical shocks.
+Explain Ohm’s law with formula.,Ohm’s law states that current (I) through a conductor is directly proportional to voltage (V) across it and inversely proportional to resistance (R): V = I × R.
+Describe how resistors affect electric current.,Resistors limit current flow, control voltage distribution, and protect components in circuits.
+Explain how conductors allow electron flow.,Conductors have free electrons in outer shells that move under potential difference, creating current.
+Describe the concept of electrical energy and power.,Electrical energy is the work done by electric current; power is the rate of energy transfer, P = V × I, measured in watts.
+Explain how a battery produces electric current.,Chemical reactions in a battery create a potential difference, causing electrons to flow from negative to positive terminal.
+Describe the difference between alternating current (AC) and direct current (DC).,AC changes direction periodically (household supply), DC flows in one direction (battery, solar cells).
+Explain the function of a resistor in a circuit.,Resistors reduce current, divide voltage, and protect sensitive components in circuits.
+Describe how a bulb lights up in a circuit.,Electric current passes through filament, heating it until it glows, converting electrical energy to light and heat.
+Explain the role of wires in circuits.,Wires provide a path for electrons to flow, connecting source, load, and switches, completing the circuit.
+Describe how short circuits occur and their dangers.,Short circuits occur when current bypasses the load due to direct connection; excessive current may cause fire or damage components.
+Explain the difference between electric energy and magnetic energy.,Electric energy comes from moving charges, magnetic energy comes from magnetic fields produced by current or magnets; both can interconvert in devices.
+Describe the function of an ammeter and voltmeter.,Ammeter measures current in series with circuit, voltmeter measures voltage across components in parallel.
+Explain the effect of wire thickness on current flow.,Thicker wires have less resistance, allowing more current; thinner wires have higher resistance, reducing current.
+Describe how a cell differs from a battery.,A cell provides a single source of emf; a battery is a combination of two or more cells connected in series or parallel for higher voltage or capacity.
+Explain how conductors and insulators are used in daily life.,Conductors are used in wiring, motors, and electronic devices; insulators protect people from shock (plastic coating, handles).
+Describe the concept of electric potential.,Electric potential is the potential energy per unit charge at a point in a field, determining the direction and magnitude of current flow.
+Explain the principle of conservation of charge.,The total electric charge in an isolated system remains constant; charges can move but not be created or destroyed.
+Describe how to make a simple series circuit experiment.,Connect a battery, bulb, and switch in series using wires; close switch to allow current and light the bulb.
+Explain the role of electrons in electricity.,Electrons move through conductors under voltage, creating electric current, while protons remain fixed in the atomic nucleus.
+Describe how resistance depends on length, area, and material.,Resistance increases with length, decreases with larger cross-sectional area, and depends on material’s conductivity.
+Explain how electric circuits are represented using symbols.,Standard symbols like battery (| |), bulb (circle with filament), switch (open/closed), wire (line) depict circuits in diagrams.
+Describe the hazards of electricity and safety precautions.,Electric shock, burns, and fires can occur; precautions include insulated wires, dry hands, fuses, circuit breakers, and safe handling.
+Explain how a parallel circuit allows independent operation of devices.,Each branch gets full voltage; if one device fails, others continue to operate due to multiple paths.
+Describe how current divides in a parallel circuit.,Current splits inversely proportional to branch resistances; total current equals sum of branch currents.
+Explain the role of switches in controlling multiple devices.,Switches can isolate or connect different paths, controlling one or more devices in series or parallel arrangements.
+Describe how a fuse works to prevent electrical hazards.,A fuse melts when current exceeds rated value, breaking circuit and preventing overheating or fire.
+Explain the principle behind electric bell operation.,Electric current passes through electromagnet, attracting hammer to strike bell; circuit breaks and reforms repeatedly, creating ringing.
+Describe the difference between conductors, semiconductors, and insulators.,Conductors allow easy current (copper), semiconductors partially conduct under conditions (silicon), insulators block current (rubber).
+Explain how electricity is generated in power stations.,Mechanical energy (steam, water, wind) rotates turbines, spinning coils in magnetic field, inducing current via electromagnetic induction.
+Describe how electric current produces heat and magnetic effects.,Current through conductor generates heat (resistive heating) and produces magnetic field around wire (electromagnetism).
+Explain the effect of series connection on voltage and current.,In series, voltage divides among components, current remains same throughout circuit.
+Describe the effect of parallel connection on voltage and current.,In parallel, voltage across each branch is same, total current splits among branches depending on resistance.
+Explain how circuits can be used to measure electrical quantities.,Using ammeter, voltmeter, and multimeter, current, voltage, resistance, and power can be measured for analysis.
+Describe how electricity is transmitted over long distances.,High voltage transmission reduces current, minimizing energy loss; transformers step up/down voltage for efficient delivery.
+Explain how short and open circuits affect devices.,Short circuit bypasses load, causing high current; open circuit stops current, preventing operation.
+Describe the concept of electric power and energy consumption.,Power is rate of energy transfer (P = V × I); energy consumed over time is E = P × t, measured in joules or kWh.
+Explain how household circuits are wired for safety.,Live, neutral, and earth wires, along with fuses, circuit breakers, and proper insulation, prevent shocks and fire.
+Describe the role of switches and fuses in protecting circuits.,Switches control current, fuses break excessive current, preventing damage to devices and hazards.

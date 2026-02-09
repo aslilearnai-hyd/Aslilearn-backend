@@ -1,0 +1,36 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "generated_at": "2026-02-05T15:25:13.744592",
+  "notes": [
+    {
+      "concept_name": "Fraction as Equal Share",
+      "summary": "A fraction results when a whole number of units is divided into equal parts and shared equally. Each part is called a fractional unit. For example, if three rotis are shared equally among four children, each child gets 3/4 of a roti.",
+      "importance": "Understanding fractions as equal shares helps in dividing quantities into equal parts and sharing them among individuals.",
+      "quick_facts": [
+        "A fraction represents an equal share of a whole number",
+        "Fractional units are equal parts of the whole number",
+        "Sharing equally is essential to understand fractions"
+      ]
+    },
+    {
+      "concept_name": "Equivalent Fractions",
+      "summary": "Fractions that represent the same share or number are called equivalent fractions. They have the same fractional unit, i.e., the same denominator. For example, 3/4, 6/8, and 9/12 are equivalent fractions.",
+      "importance": "Equivalent fractions help in simplifying complex fraction calculations and comparing quantities.",
+      "quick_facts": [
+        "Equivalent fractions represent the same share or number",
+        "They have the same denominator (fractional unit)",
+        "To find equivalent fractions, multiply the numerator and denominator by the same number"
+      ]
+    },
+    {
+      "concept_name": "Brahmagupta's Method for Adding/Subtracting Fractions",
+      "summary": "Brahmagupta's method involves converting fractions into equivalent fractions with the same fractional unit (same denominator). Then, add or subtract the numerators while keeping the same denominator. For example, to add 1/4 and 1/6, convert them to have the same denominator (12) and then add the numerators.",
+      "importance": "Brahmagupta's method helps in simplifying fraction addition and subtraction by converting fractions into equivalent forms.",
+      "quick_facts": [
+        "Convert fractions to have the same denominator",
+        "Add or subtract numerators while keeping the same denominator",
+        "This method is essential for adding and subtracting complex fractions"
+      ]
+    }
+  ]
+}

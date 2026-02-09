@@ -1,0 +1,61 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "generated_at": "2026-02-05T15:58:57.377877",
+  "notes": [
+    {
+      "concept_name": "Numbering Floors in the Building of Fun",
+      "summary": "The floors in the Building of Fun are numbered starting from the ground floor, which is called Floor 0. The floors above the ground floor are numbered with positive numbers, and those below are numbered with negative numbers. To reach a floor, you must press the '+' button for positive numbers or '-' button for negative numbers.",
+      "importance": "Understanding how to number floors is essential for navigation in the Building of Fun, allowing visitors to find their desired destination easily.",
+      "quick_facts": [
+        "Ground floor is called Floor 0",
+        "Floors above ground floor are numbered with positive numbers",
+        "Floors below ground floor are numbered with negative numbers",
+        "Press '+' button for floors above ground and '-' button for those below"
+      ]
+    },
+    {
+      "concept_name": "Positive and Negative Numbers",
+      "summary": "A positive number has a '+' sign in front, while a negative number has a '-' sign. In the Building of Fun, positive numbers are used to indicate floors above the ground floor, and negative numbers indicate those below.",
+      "importance": "Understanding the concept of positive and negative numbers is crucial for navigating the building and recognizing floor numbers.",
+      "quick_facts": [
+        "Positive number has '+' sign",
+        "Negative number has '-' sign",
+        "Positive numbers used for floors above ground floor",
+        "Negative numbers used for floors below ground floor"
+      ]
+    },
+    {
+      "concept_name": "Zero as a Reference Point",
+      "summary": "Zero is neither positive nor negative and serves as a reference point. It does not have a '+' or '-' sign in front of it.",
+      "importance": "Understanding zero's role as a reference point helps visitors to correctly identify floor numbers and navigate the building.",
+      "quick_facts": [
+        "Zero is neither positive nor negative",
+        "Zero serves as a reference point",
+        "No '+' or '-' sign in front of zero",
+        "Ground floor is Floor 0"
+      ]
+    },
+    {
+      "concept_name": "Number Representation in the Building of Fun",
+      "summary": "In the Building of Fun, numbers are represented using a '+' or '-' sign to indicate positive or negative numbers. This system allows visitors to easily identify their location and navigate the building.",
+      "importance": "The number representation system is essential for understanding floor numbers and navigating the building efficiently.",
+      "quick_facts": [
+        "Number with '+' sign is positive",
+        "Number with '-' sign is negative",
+        "Positive numbers indicate floors above ground floor",
+        "Negative numbers indicate floors below ground floor"
+      ]
+    },
+    {
+      "concept_name": "Floor Numbers and Navigation",
+      "summary": "The Building of Fun uses a unique system to number its floors, using positive and negative numbers. Visitors can navigate the building by understanding how these numbers are represented.",
+      "importance": "Understanding floor numbers is crucial for visitors to find their desired destination in the Building of Fun.",
+      "quick_facts": [
+        "Floors above ground floor have positive numbers",
+        "Floors below ground floor have negative numbers",
+        "Press '+' button for floors above and '-' button for those below",
+        "Ground floor is Floor 0"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+Column A,Column B
+Prime number,Number with exactly 2 factors
+Composite number,Number with more than 2 factors
+HCF,Greatest number that divides two or more numbers exactly
+LCM,Smallest number divisible by two or more numbers
+Co-prime numbers,Numbers whose HCF is 1
+Multiplicative identity,1
+Additive identity,0
+Divisible by 2,Even number
+Divisible by 5,Number ending with 0 or 5
+Divisible by 10,Number ending with 0
+Unit number,Number with only one factor
+Factor of a number,Number which divides another number exactly
+Multiple of a number,Number obtained by multiplying with natural numbers
+Smallest prime number,2
+Smallest composite number,4

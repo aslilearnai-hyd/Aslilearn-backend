@@ -1,0 +1,97 @@
+{
+  "content_type": "Flashcard Maker",
+  "generated_at": "2026-02-05T15:59:25.978727",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the value of (+5) + (-3)?",
+        "correct_answer": "+2",
+        "explanation": "The tokens cancel each other out, leaving 2 positives."
+      },
+      {
+        "question": "How many zero pairs are needed to subtract (+10) - (+7)?",
+        "correct_answer": "3",
+        "explanation": "To take away 7 positives from 10, we need 3 zero pairs."
+      },
+      {
+        "question": "What is the result of (-8) + (+4)?",
+        "correct_answer": "-4",
+        "explanation": "The negatives and positives cancel each other out, leaving -4."
+      },
+      {
+        "question": "How many tokens are left after subtracting (-5) - (+3)?",
+        "correct_answer": "2 negatives, 1 positive",
+        "explanation": "We take away 3 positives from 5, leaving 2 negatives and 1 positive."
+      },
+      {
+        "question": "What is the initial bank balance if you deposit ₹100?",
+        "correct_answer": "₹100",
+        "explanation": "The account starts with a balance of ₹100."
+      },
+      {
+        "question": "What is the new bank balance after depositing ₹60?",
+        "correct_answer": "₹160",
+        "explanation": "We add ₹60 to the initial balance of ₹100."
+      },
+      {
+        "question": "What happens when you pay an electric bill of ₹30?",
+        "correct_answer": "Bank balance decreases by ₹30",
+        "explanation": "You subtract ₹30 from your current bank balance."
+      },
+      {
+        "question": "What is the new bank balance after paying an electric bill of ₹30?",
+        "correct_answer": "₹130",
+        "explanation": "We subtract ₹30 from the previous balance of ₹160."
+      },
+      {
+        "question": "Is it possible for a bank account to have a negative balance?",
+        "correct_answer": "Yes, temporarily",
+        "explanation": "Some banks allow accounts to become negative temporarily, with additional fees or interest."
+      },
+      {
+        "question": "What happens when you make a major purchase of ₹150?",
+        "correct_answer": "Bank balance decreases by ₹150",
+        "explanation": "You subtract ₹150 from your current bank balance."
+      }
+    ],
+    "important_notes": [
+      {
+        "title": "Tokens and Zero Pairs",
+        "content": "A positive and negative token cancel each other out, forming a zero pair. We can use these to simplify calculations with integers."
+      },
+      {
+        "title": "Subtraction using Tokens",
+        "content": "To subtract an integer, we add its inverse instead. This allows us to use tokens to visualize the process."
+      },
+      {
+        "title": "Bank Account Balances",
+        "content": "A bank account balance can be positive or negative, depending on deposits and withdrawals. Some banks charge additional fees for negative balances."
+      },
+      {
+        "title": "Integers in Real-World Applications",
+        "content": "Integers are used to represent quantities with no units, such as temperatures, heights, and times. They are also used in financial transactions like bank account balances."
+      },
+      {
+        "title": "Token Model for Addition",
+        "content": "We can use tokens to visualize the process of adding integers. A positive token represents an addition operation, while a negative token represents a subtraction operation."
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Integers were first introduced by Indian mathematician Aryabhata in the 5th century AD."
+      },
+      {
+        "fact": "The concept of zero as a number was developed independently in ancient India and China around the same time."
+      },
+      {
+        "fact": "The token model for addition is based on the idea that positive tokens represent additions, while negative tokens represent subtractions."
+      },
+      {
+        "fact": "Integers are used extensively in computer science, particularly in algorithms and data structures."
+      },
+      {
+        "fact": "The concept of bank account balances was first introduced by medieval merchants to keep track of transactions."
+      }
+    ]
+  }
+}

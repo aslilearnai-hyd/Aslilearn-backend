@@ -1,0 +1,52 @@
+Question,Answer
+The perimeter of a rectangle is calculated by __.,2 × (length + breadth)
+The area of a rectangle is calculated by __.,length × breadth
+The perimeter of a square is __.,4 × side
+The area of a square is __.,side × side
+The sum of all sides of a polygon is called __.,perimeter
+The area of a triangle is __.,1/2 × base × height
+The area of a parallelogram is __.,base × height
+The area of a trapezium is __.,1/2 × (sum of parallel sides) × height
+The circumference of a circle is __.,2 × π × radius
+The area of a circle is __.,π × radius²
+The radius is __ of the diameter.,half
+The diameter is __ of the radius.,twice
+The curved surface area of a cylinder is __.,2 × π × radius × height
+The total surface area of a cylinder is __.,2 × π × radius × (height + radius)
+The volume of a cube is __.,side³
+The surface area of a cube is __.,6 × side²
+The volume of a cuboid is __.,length × breadth × height
+The surface area of a cuboid is __.,2 × (lb + bh + hl)
+The volume of a cylinder is __.,π × radius² × height
+The total surface area of a cylinder includes __ and __.,curved surface, two circular ends
+The volume of a cone is __.,1/3 × π × radius² × height
+The curved surface area of a cone is __.,π × radius × slant height
+The total surface area of a cone is __.,π × radius × (radius + slant height)
+The slant height of a cone is denoted by __.,l
+The perimeter of a semicircle is __.,π × radius + 2 × radius
+The area of a semicircle is __.,1/2 × π × radius²
+The perimeter of a rectangle with length 8 cm and breadth 5 cm is __.,26 cm
+The area of a rectangle with length 8 cm and breadth 5 cm is __.,40 cm²
+The perimeter of a square with side 6 cm is __.,24 cm
+The area of a square with side 6 cm is __.,36 cm²
+The circumference of a circle with radius 7 cm is __.,44 cm (approx)
+The area of a circle with radius 7 cm is __.,154 cm² (approx)
+The volume of a cube with side 4 cm is __.,64 cm³
+The surface area of a cube with side 4 cm is __.,96 cm²
+The volume of a cuboid with length 5 cm, breadth 3 cm, and height 2 cm is __.,30 cm³
+The surface area of a cuboid with length 5 cm, breadth 3 cm, and height 2 cm is __.,62 cm²
+The volume of a cylinder with radius 3 cm and height 7 cm is __.,197.82 cm³ (approx)
+The curved surface area of the cylinder is __.,131.88 cm² (approx)
+The total surface area of the cylinder is __.,197.82 cm² (approx)
+The volume of a cone with radius 3 cm and height 6 cm is __.,56.52 cm³ (approx)
+The curved surface area of the cone is __.,28.27 cm² (approx)
+The total surface area of the cone is __.,37.68 cm² (approx)
+The slant height of a cone with radius 3 cm and height 4 cm is __.,5 cm
+The perimeter of a semicircle with radius 7 cm is __.,35 cm (approx)
+The area of a semicircle with radius 7 cm is __.,76.96 cm² (approx)
+The volume of a cube with side 10 cm is __.,1000 cm³
+The surface area of a cube with side 10 cm is __.,600 cm²
+The volume of a cuboid with length 10 cm, breadth 5 cm, and height 2 cm is __.,100 cm³
+The surface area of a cuboid with length 10 cm, breadth 5 cm, and height 2 cm is __.,170 cm²
+The total surface area of a cube is __ times the square of its side.,6
+The curved surface area of a cylinder is calculated using __.,2 × π × radius × height

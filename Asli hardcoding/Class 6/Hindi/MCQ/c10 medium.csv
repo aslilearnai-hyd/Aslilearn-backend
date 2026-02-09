@@ -1,0 +1,49 @@
+Chapter,Question,Option A,Option B,Option C,Option D,Answer
+Mensuration,Area of rectangle formula?,Length × Breadth,2(Length + Breadth),Length + Breadth,Length × Height,Length × Breadth
+Mensuration,Perimeter of square formula?,4 × Side,Side × Side,2 × (Length + Breadth),2 × Side,4 × Side
+Mensuration,Area of square formula?,Side × Side,4 × Side,2 × Side,2(Length + Breadth),Side × Side
+Mensuration,Perimeter of rectangle formula?,2(Length + Breadth),Length × Breadth,4 × Side,Side × Side,2(Length + Breadth)
+Mensuration,Area of triangle formula?,1/2 × Base × Height,Base × Height,Side × Side,1/2 × Side × Height,1/2 × Base × Height
+Mensuration,Perimeter of triangle formula?,Sum of all sides,Base × Height,1/2 × Base × Height,2 × Base,Sum of all sides
+Mensuration,Area of circle formula?,π × r × r,2 × π × r,π × d,π × r,π × r × r
+Mensuration,Circumference of circle formula?,2 × π × r,π × r × r,π × d,2 × π × r,2 × π × r
+Mensuration,Area of parallelogram formula?,Base × Height,Side × Side,2 × Base,1/2 × Base × Height,Base × Height
+Mensuration,Perimeter of parallelogram formula?,2(Length + Breadth),2 × Side,Base × Height,4 × Side,2(Length + Breadth)
+Mensuration,Area of trapezium formula?,1/2 × (Sum of parallel sides) × Height,Base × Height,Side × Side,2 × Base,1/2 × (Sum of parallel sides) × Height
+Mensuration,Perimeter of trapezium formula?,Sum of all sides,2 × (Sum of parallel sides),Base × Height,2 × Side,Sum of all sides
+Mensuration,Area of rhombus formula?,1/2 × (d1 × d2),Side × Side,Base × Height,2 × Side,1/2 × (d1 × d2)
+Mensuration,Perimeter of rhombus formula?,4 × Side,2 × Side,Side × Side,Base × Height,4 × Side
+Mensuration,Area of square with side 5 cm?,20 cm²,25 cm²,10 cm²,30 cm²,25 cm²
+Mensuration,Perimeter of square with side 6 cm?,24 cm,36 cm,12 cm,30 cm,24 cm
+Mensuration,Area of rectangle with length 8 cm and breadth 5 cm?,40 cm²,26 cm²,13 cm²,20 cm²,40 cm²
+Mensuration,Perimeter of rectangle with length 7 cm and breadth 3 cm?,20 cm,10 cm,14 cm,24 cm,20 cm
+Mensuration,Area of triangle with base 6 cm and height 4 cm?,12 cm²,24 cm²,10 cm²,8 cm²,12 cm²
+Mensuration,Perimeter of triangle with sides 3,4,5 cm?,12 cm,11 cm,10 cm,13 cm,12 cm
+Mensuration,Area of circle with radius 7 cm?,154 cm²,44 cm²,77 cm²,49 cm²,154 cm²
+Mensuration,Circumference of circle with radius 7 cm?,44 cm,22 cm,14 cm,154 cm,44 cm
+Mensuration,Area of parallelogram with base 5 cm and height 6 cm?,30 cm²,11 cm²,20 cm²,10 cm²,30 cm²
+Mensuration,Perimeter of parallelogram with sides 6 cm and 4 cm?,20 cm,10 cm,24 cm,18 cm,20 cm
+Mensuration,Area of trapezium with parallel sides 6 cm and 4 cm and height 5 cm?,25 cm²,20 cm²,30 cm²,15 cm²,25 cm²
+Mensuration,Perimeter of trapezium with sides 5,6,4,5 cm?,20 cm,15 cm,25 cm,18 cm,20 cm
+Mensuration,Area of rhombus with diagonals 8 cm and 6 cm?,24 cm²,20 cm²,28 cm²,30 cm²,24 cm²
+Mensuration,Perimeter of rhombus with side 7 cm?,28 cm,21 cm,14 cm,35 cm,28 cm
+Mensuration,Area of square with side 9 cm?,81 cm²,18 cm²,45 cm²,36 cm²,81 cm²
+Mensuration,Perimeter of square with side 12 cm?,48 cm,36 cm,24 cm,40 cm,48 cm
+Mensuration,Area of rectangle with length 15 cm and breadth 10 cm?,150 cm²,25 cm²,100 cm²,75 cm²,150 cm²
+Mensuration,Perimeter of rectangle with length 8 cm and breadth 12 cm?,40 cm,20 cm,48 cm,30 cm,40 cm
+Mensuration,Area of triangle with base 10 cm and height 6 cm?,30 cm²,60 cm²,16 cm²,20 cm²,30 cm²
+Mensuration,Perimeter of triangle with sides 6,8,10 cm?,24 cm,20 cm,18 cm,22 cm,24 cm
+Mensuration,Area of circle with radius 5 cm?,78.5 cm²,25 cm²,50 cm²,31.4 cm²,78.5 cm²
+Mensuration,Circumference of circle with diameter 14 cm?,44 cm,22 cm,28 cm,88 cm,44 cm
+Mensuration,Area of parallelogram with base 10 cm and height 5 cm?,50 cm²,15 cm²,25 cm²,30 cm²,50 cm²
+Mensuration,Perimeter of parallelogram with sides 8 cm and 5 cm?,26 cm,20 cm,30 cm,16 cm,26 cm
+Mensuration,Area of trapezium with parallel sides 8 cm and 6 cm and height 5 cm?,35 cm²,30 cm²,28 cm²,25 cm²,35 cm²
+Mensuration,Perimeter of trapezium with sides 6,7,8,5 cm?,26 cm,25 cm,24 cm,27 cm,26 cm
+Mensuration,Area of rhombus with diagonals 10 cm and 6 cm?,30 cm²,32 cm²,20 cm²,40 cm²,30 cm²
+Mensuration,Perimeter of rhombus with side 9 cm?,36 cm,27 cm,45 cm,30 cm,36 cm
+Mensuration,Area of triangle with base 12 cm and height 5 cm?,30 cm²,60 cm²,25 cm²,40 cm²,30 cm²
+Mensuration,Perimeter of triangle with sides 7,24,25 cm?,56 cm,50 cm,60 cm,48 cm,56 cm
+Mensuration,Area of circle with radius 10 cm?,314 cm²,100 cm²,200 cm²,157 cm²,314 cm²
+Mensuration,Circumference of circle with radius 10 cm?,62.8 cm,20 cm,31.4 cm,50 cm,62.8 cm
+Mensuration,Area of square with side 15 cm?,225 cm²,150 cm²,200 cm²,175 cm²,225 cm²
+Mensuration,Perimeter of rectangle with length 18 cm and breadth 12 cm?,60 cm,50 cm,45 cm,55 cm,60 cm

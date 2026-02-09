@@ -1,0 +1,132 @@
+{
+  "content_type": "Flashcard Maker",
+  "generated_at": "2026-02-05T14:50:19.894115",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is a supercell?",
+        "correct_answer": "A square that contains the largest number in its corner",
+        "explanation": "A supercell is a square that has the largest number of its neighbors in one of its corners."
+      },
+      {
+        "question": "How many rounds does your year of birth take to reach the Kaprekar constant?",
+        "correct_answer": "Unknown without calculation",
+        "explanation": "The number of rounds it takes for a number to reach the Kaprekar constant is not provided in the content."
+      },
+      {
+        "question": "What is the largest 5-digit number with all odd digits between 35,000 and 75,000?",
+        "correct_answer": "74,999",
+        "explanation": "The largest 5-digit number with all odd digits in this range is 74,999."
+      },
+      {
+        "question": "What is the smallest 5-digit number with all odd digits between 35,000 and 75,000?",
+        "correct_answer": "35,001",
+        "explanation": "The smallest 5-digit number with all odd digits in this range is 35,001."
+      },
+      {
+        "question": "How many holidays does a person get in a year including weekends, festivals, and vacation?",
+        "correct_answer": "Varies depending on individual circumstances",
+        "explanation": "The exact number of holidays a person gets in a year can vary greatly depending on their specific situation."
+      },
+      {
+        "question": "How many liters can an overhead tank hold?",
+        "correct_answer": "Unknown without more information",
+        "explanation": "The content does not provide enough information to determine the capacity of an overhead tank."
+      },
+      {
+        "question": "What is the Kaprekar constant?",
+        "correct_answer": "6174",
+        "explanation": "The Kaprekar constant is a number that results from a specific mathematical operation on another number."
+      },
+      {
+        "question": "How many liters can a bucket hold?",
+        "correct_answer": "Unknown without more information",
+        "explanation": "The content does not provide enough information to determine the capacity of a bucket."
+      },
+      {
+        "question": "What is the pattern of numbers that will sum up to a chosen number between 210 and 390?",
+        "correct_answer": "Varies depending on the chosen number",
+        "explanation": "The specific pattern of numbers that will sum up to a chosen number depends on the value of the chosen number."
+      },
+      {
+        "question": "What is a palindromic time?",
+        "correct_answer": "A time that reads the same forward and backward",
+        "explanation": "A palindromic time is a time that can be read the same way when reversed, such as 10:01."
+      }
+    ],
+    "important_notes": [
+      {
+        "title": "Collatz Conjecture",
+        "content": "The Collatz Conjecture is an unsolved mathematical problem that deals with the behavior of a particular sequence of numbers."
+      },
+      {
+        "title": "Kaprekar's Constant",
+        "content": "Kaprekar's constant is a number that results from a specific mathematical operation on another number."
+      },
+      {
+        "title": "Palindromic Times",
+        "content": "A palindromic time is a time that can be read the same way when reversed, such as 10:01."
+      },
+      {
+        "title": "Mental Math Techniques",
+        "content": "The content provides examples of mental math techniques, including adding and subtracting numbers using different methods."
+      },
+      {
+        "title": "Five-Digit Palindromes",
+        "content": "A five-digit palindrome is a number that reads the same way forward and backward, such as 12321."
+      },
+      {
+        "title": "Collatz Sequences",
+        "content": "The content provides examples of Collatz sequences, which are formed by applying a specific rule to a starting number."
+      },
+      {
+        "title": "Super Cells",
+        "content": "A supercell is a square that contains the largest number in its corner."
+      },
+      {
+        "title": "Number Patterns",
+        "content": "The content provides examples of different number patterns, including those formed by adding or subtracting numbers."
+      },
+      {
+        "title": "Mathematical Operations",
+        "content": "The content covers various mathematical operations, including addition and subtraction."
+      },
+      {
+        "title": "Estimation Techniques",
+        "content": "The content provides examples of estimation techniques, which can be used to estimate the value of a number or quantity."
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The Collatz Conjecture is an unsolved mathematical problem that has been studied for over 80 years."
+      },
+      {
+        "fact": "Kaprekar's constant is 6174, which results from a specific mathematical operation on another number."
+      },
+      {
+        "fact": "A palindromic time is a time that can be read the same way when reversed, such as 10:01."
+      },
+      {
+        "fact": "Mental math techniques can be used to perform calculations quickly and efficiently in one's head."
+      },
+      {
+        "fact": "The Kaprekar constant results from applying a specific rule to a starting number."
+      },
+      {
+        "fact": "Super cells are squares that contain the largest number in their corner."
+      },
+      {
+        "fact": "Number patterns can be used to represent mathematical relationships and operations."
+      },
+      {
+        "fact": "Estimation techniques can be used to estimate the value of a number or quantity, often to an approximate degree."
+      },
+      {
+        "fact": "The Collatz Conjecture has been studied by mathematicians for many years, but it remains unsolved."
+      },
+      {
+        "fact": "Kaprekar's constant is named after the Indian mathematician who discovered it."
+      }
+    ]
+  }
+}

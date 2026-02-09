@@ -1,0 +1,49 @@
+Question,Answer
+Algebra uses letters to represent numbers.,True
+A variable represents an unknown value.,True
+A constant is a fixed number.,True
+x + 5 is an algebraic expression.,True
+2x - 3 is an algebraic expression.,True
+3 + 4 = 7 is an algebraic expression.,False
+An equation has an equal sign.,True
+x + 3 = 7 is an equation.,True
+x + y is a term.,False
+2x is a term.,True
+The coefficient of x in 5x is 5,True
+The coefficient of y in -3y is -3,True
+The coefficient of x in x is 1,True
+Simplifying 2x + 3x gives 5x,True
+Simplifying 5x - 2x gives 3x,True
+x + y + x = 2x + y,True
+2a + 3b - a + b = a + 4b,True
+The additive inverse of x is -x,True
+The sum of a number and its additive inverse is 0,True
+Substituting x = 5 in x + 2 gives 7,True
+Substituting x = 3 in 2x - 4 gives 2,True
+x + 5 = 10 has solution x = 5,True
+3x - 4 = 11 has solution x = 5,True
+2x + 3 = 11 has solution x = 4,True
+5x = 20 has solution x = 5,False
+5x = 20 has solution x = 4,False
+x - 7 = 5 has solution x = 12,True
+2x/3 = 8 has solution x = 12,True
+Solving equations is not part of algebra.,False
+Factorizing 2x + 6 gives 2(x + 3),True
+Factorizing 3a + 12 gives 3(a + 4),True
+Expanding (x + 3) + (x + 5) gives 2x + 8,True
+Expanding (a + 2) + (3a + 4) gives 4a + 6,True
+x + y cannot be simplified.,True
+2x + 3y - x + y = x + 4y,True
+Algebra does not involve numbers.,False
+Algebra helps in solving real-life problems.,True
+All algebraic expressions are equations.,False
+All equations are algebraic expressions.,False
+A mixed expression can have numbers and variables.,True
+2x - 3y + 5 is a mixed expression.,True
+An equation always has one solution.,False
+Equations can have more than one solution.,True
+x² + 5x + 6 = 0 is a quadratic equation.,True
+x² + 5x + 6 = 0 has two solutions.,True
+x² - 4 = 0 has solutions x = 2 or x = -2,True
+x² + 2x + 1 = 0 has a single solution x = -1,True
+2(x + 3) = 10 has solution x = 2,True

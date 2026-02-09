@@ -1,0 +1,94 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "generated_at": "2026-02-05T14:44:31.936241",
+  "notes": [
+    {
+      "concept_name": "Definition of a Point",
+      "summary": "A point is a precise location in space and has no length, breadth or height. It can be represented by a dot marked on paper with a sharp pencil tip. Models for a point include the tip of a pencil, needle, or compass end.",
+      "importance": "Understanding points is crucial in geometry as they are used to define lines, angles, and shapes.",
+      "quick_facts": [
+        "A point has no dimensions.",
+        "It can be represented by a dot or symbol.",
+        "Points are essential for defining lines and angles.",
+        "They have precise locations in space."
+      ]
+    },
+    {
+      "concept_name": "Angles",
+      "summary": "An angle is formed by two rays sharing a common endpoint called the vertex. The arms of an angle are the two rays, and its measure is determined by the number of 1° unit parts it contains inside it.",
+      "importance": "Understanding angles is vital in geometry as they help describe shapes and relationships between lines.",
+      "quick_facts": [
+        "An angle has a vertex and two arms.",
+        "The measure of an angle is determined by its unit parts (1°).",
+        "Angles can be acute, right, obtuse, or straight.",
+        "A full turn contains 360 degrees."
+      ]
+    },
+    {
+      "concept_name": "Types of Angles",
+      "summary": "There are different types of angles including acute, right, obtuse, and straight. An acute angle is less than 90°, a right angle is exactly 90°, an obtuse angle is greater than 90° but less than 180°, and a straight angle is exactly 180°.",
+      "importance": "Identifying angles helps in understanding shapes and relationships between lines.",
+      "quick_facts": [
+        "Acute angle: Less than 90°",
+        "Right angle: Exactly 90°",
+        "Obtuse angle: Greater than 90° but less than 180°",
+        "Straight angle: Exactly 180°"
+      ]
+    },
+    {
+      "concept_name": "Measuring Angles",
+      "summary": "Angles can be measured using a protractor or by counting the number of unit parts (1°) they contain. A full turn contains 360 degrees, and angles can also be measured in other units such as millimeters or centimeters.",
+      "importance": "Accurate measurement of angles is essential for solving problems in geometry.",
+      "quick_facts": [
+        "Angles can be measured using a protractor.",
+        "A full turn contains 360 degrees.",
+        "Angles can also be measured in other units (millimeters, centimeters).",
+        "Accurate measurement is crucial for problem-solving."
+      ]
+    },
+    {
+      "concept_name": "Drawing Angles",
+      "summary": "Angles can be drawn using a protractor by setting the reference arm and adjusting the other arm to form the desired angle. The vertex of an angle is the point where the two arms meet.",
+      "importance": "Being able to draw angles accurately is essential for solving problems in geometry.",
+      "quick_facts": [
+        "Angles can be drawn using a protractor.",
+        "The reference arm is used as the base.",
+        "The other arm is adjusted to form the desired angle.",
+        "The vertex of an angle is where the two arms meet."
+      ]
+    },
+    {
+      "concept_name": "Rotating Arms",
+      "summary": "Rotating arms can be made using paper straws and a paper clip. By adjusting the angle between the arms, different angles can be formed. This activity helps in understanding angles and their measurement.",
+      "importance": "Understanding rotating arms is essential for visualizing angles and their relationships.",
+      "quick_facts": [
+        "Rotating arms are made using paper straws and a paper clip.",
+        "Adjusting the angle between the arms forms different angles.",
+        "This activity helps in understanding angles and their measurement.",
+        "It's used to visualize angles and their relationships."
+      ]
+    },
+    {
+      "concept_name": "Measuring Rotating Arms",
+      "summary": "The measure of a rotating arm can be determined by counting the number of unit parts (1°) it contains. By comparing different rotating arms, students can understand how angles are measured.",
+      "importance": "Accurate measurement of rotating arms is essential for understanding angles and their relationships.",
+      "quick_facts": [
+        "The measure of a rotating arm is determined by counting 1° unit parts.",
+        "Comparing different rotating arms helps in understanding angles.",
+        "It's used to visualize angles and their relationships.",
+        "Accurate measurement is crucial for problem-solving."
+      ]
+    },
+    {
+      "concept_name": "Games with Angles",
+      "summary": "Games such as 'Angle Guessing Game' can be played to practice measuring angles. In this game, students guess the measure of an angle without using a protractor, and the team with the lowest score wins.",
+      "importance": "Playing games with angles helps in practicing measurement skills and understanding relationships between lines.",
+      "quick_facts": [
+        "Games like 'Angle Guessing Game' practice measuring angles.",
+        "Students guess the measure of an angle without using a protractor.",
+        "The team with the lowest score wins.",
+        "It's used to practice measurement skills and understand relationships."
+      ]
+    }
+  ]
+}

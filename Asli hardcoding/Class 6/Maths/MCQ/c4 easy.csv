@@ -1,0 +1,52 @@
+Question,Option A,Option B,Option C,Option D,Correct Answer
+A point has how many dimensions?,0,1,2,3,A
+A line has how many dimensions?,0,1,2,3,B
+A plane has how many dimensions?,0,1,2,3,C
+A line segment has how many endpoints?,1,2,3,0,B
+A ray has how many endpoints?,0,1,2,3,B
+Two lines that meet at a point are called?,Parallel,Intersecting,Perpendicular,Concurrent,B
+Two lines that never meet are called?,Intersecting,Perpendicular,Parallel,Concurrent,C
+A polygon is a?,Closed figure,Open figure,Circle,Line,A
+A triangle has how many sides?,3,4,5,6,A
+A quadrilateral has how many sides?,3,4,5,6,B
+A pentagon has how many sides?,4,5,6,7,B
+A hexagon has how many sides?,5,6,7,8,B
+A circle is a?,Closed curved figure,Polygon,Line segment,Ray,A
+The distance around a circle is called?,Diameter,Radius,Circumference,Area,C
+Half of the diameter of a circle is called?,Tangent,Radius,Chord,Arc,B
+A line drawn from the centre of a circle to the circumference is called?,Radius,Diameter,Tangent,Chord,A
+A line touching a circle at only one point is called?,Chord,Radius,Tangent,Arc,C
+A polygon with all sides and angles equal is called?,Regular polygon,Irregular polygon,Quadrilateral,Triangle,A
+The corner point of a polygon is called?,Diagonal,Vertex,Edge,Angle,B
+The line joining two vertices of a polygon is called?,Side,Diagonal,Edge,Vertex,B
+An angle of 90 degrees is called?,Acute,Right,Obtuse,Straight,B
+An angle less than 90 degrees is called?,Acute,Right,Obtuse,Straight,A
+An angle greater than 90 degrees is called?,Acute,Right,Obtuse,Straight,C
+A straight angle measures?,90°,180°,270°,360°,B
+A full rotation measures?,180°,360°,90°,270°,B
+Two rays with a common endpoint form a?,Angle,Line segment,Triangle,Circle,A
+A triangle with all sides equal is called?,Equilateral,Isosceles,Scalene,Right,A
+A triangle with two sides equal is called?,Equilateral,Isosceles,Scalene,Right,B
+A triangle with no sides equal is called?,Equilateral,Isosceles,Scalene,Right,C
+A triangle with one right angle is called?,Right-angled,Acute,Obtuse,Equilateral,A
+A triangle with all angles less than 90 degrees is called?,Acute,Right,Obtuse,Equilateral,A
+A triangle with one angle greater than 90 degrees is called?,Acute,Right,Obtuse,Equilateral,C
+A quadrilateral with four right angles is called?,Square,Rectangle,Rhombus,Trapezium,B
+A quadrilateral with four right angles and all sides equal is called?,Square,Rectangle,Rhombus,Trapezium,A
+The space enclosed by a polygon is called?,Perimeter,Area,Volume,Edge,B
+The distance around a polygon is called?,Area,Perimeter,Volume,Edge,B
+The number of sides in a hexagon is?,5,6,7,8,B
+The number of sides in a heptagon is?,5,6,7,8,C
+The number of sides in an octagon is?,6,7,8,9,C
+A polygon with unequal sides and angles is called?,Regular,Irregular,Quadrilateral,Triangle,B
+A circle has how many vertices?,0,1,2,3,A
+The diameter of a circle is twice its?,Radius,Chord,Tangent,Arc,A
+A polygon with three sides is called?,Triangle,Quadrilateral,Pentagon,Hexagon,A
+A polygon with four sides is called?,Triangle,Quadrilateral,Pentagon,Hexagon,B
+A polygon with five sides is called?,Triangle,Quadrilateral,Pentagon,Hexagon,C
+A polygon with six sides is called?,Triangle,Quadrilateral,Pentagon,Hexagon,D
+The distance from centre to circumference is called?,Radius,Diameter,Tangent,Chord,A
+A line joining any two vertices of a polygon that are not adjacent is called?,Side,Diagonal,Edge,Vertex,B
+An angle greater than 180 degrees is called?,Acute,Right,Obtuse,Reflex,D
+The sum of all angles around a point is?,180°,360°,90°,270°,B
+Two angles that add up to 180 degrees are called?,Complementary,Supplementary,Adjacent,Vertical,B

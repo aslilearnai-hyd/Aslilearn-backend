@@ -1,0 +1,53 @@
+Question,Option A,Option B,Option C,Option D,Correct Answer
+A point has how many dimensions?,0,1,2,3,A
+A line has how many dimensions?,0,1,2,3,B
+A plane has how many dimensions?,0,1,2,3,C
+A line segment has?,No endpoints,One endpoint,Two endpoints,Three endpoints,C
+A ray has?,No endpoints,One endpoint,Two endpoints,Three endpoints,B
+Two lines that never meet are called?,Intersecting,Parallel,Perpendicular,Skew,B
+Two lines that intersect at 90° are called?,Intersecting,Parallel,Perpendicular,Skew,C
+The shortest distance between two points is called?,Ray,Line segment,Line,Chord,B
+A polygon has?,Curved sides,Closed figure with straight sides,Open figure with straight sides,Open figure with curved sides,B
+A triangle has how many sides?,3,4,5,6,A
+A quadrilateral has how many sides?,3,4,5,6,B
+A pentagon has how many sides?,4,5,6,7,B
+A hexagon has how many sides?,5,6,7,8,B
+A heptagon has how many sides?,6,7,8,9,B
+An octagon has how many sides?,7,8,9,10,B
+The distance from the center of a circle to any point on it is called?,Chord,Radius,Diameter,Tangent,B
+A line passing through the center of a circle and touching both sides is called?,Radius,Chord,Diameter,Tangent,C
+A diameter is how many times the radius?,1,2,3,4,B
+An angle formed by two rays with a common endpoint is called?,Line,Ray,Angle,Vertex,C
+A right angle measures?,45°,60°,90°,120°,C
+An acute angle measures?,<90°,=90°,>90°,180°,A
+An obtuse angle measures?,<90°,=90°,>90°,180°,C
+A straight angle measures?,90°,180°,270°,360°,B
+Two angles that add up to 90° are called?,Complementary,Supplementary,Adjacent,Vertically opposite,A
+Two angles that add up to 180° are called?,Complementary,Supplementary,Adjacent,Vertically opposite,B
+Adjacent angles share a common?,Side,Vertex,Both A and B,None,C
+Two angles opposite each other formed by two intersecting lines are called?,Adjacent,Vertically opposite,Complementary,Supplementary,B
+A triangle with all sides equal is called?,Scalene,Isosceles,Equilateral,Right-angled,C
+A triangle with two sides equal is called?,Scalene,Isosceles,Equilateral,Right-angled,B
+A triangle with all sides different is called?,Scalene,Isosceles,Equilateral,Right-angled,A
+A triangle with one angle 90° is called?,Scalene,Isosceles,Equilateral,Right-angled,D
+The sum of all angles of a triangle is?,90°,180°,360°,270°,B
+The sum of all angles of a quadrilateral is?,90°,180°,270°,360°,D
+A rectangle has?,All sides equal,Opposite sides equal,Opposite sides unequal,No sides equal,B
+All angles of a rectangle are?,45°,60°,90°,120°,C
+All sides of a square are?,Equal,Opposite equal,Unequal,Two equal,A
+All angles of a square are?,90°,45°,60°,120°,A
+A parallelogram has how many pairs of opposite sides parallel?,1,2,3,4,B
+The sum of interior angles of an n-sided polygon is?,n×180,(n-2)×180,2n,360,(n-2)×180,B
+The sum of exterior angles of any polygon is?,90°,180°,360°,540°,C
+A line that intersects two or more lines at distinct points is called?,Transversal,Perpendicular,Parallel,Ray,A
+Two lines that meet at a point are called?,Intersecting,Parallel,Perpendicular,Skew,A
+A shape with curved surface and no edges is called?,Polygon,Circle,Line,Point,B
+A point where two lines meet is called?,Line,Vertex,Ray,Angle,B
+Two parallel lines intersected by a transversal form?,Corresponding angles,Alternate interior angles,Both A and B,None,C
+A line that divides a figure into two mirror images is called?,Ray,Line of symmetry,Chord,Diagonal,B
+A median of a triangle joins?,A vertex to midpoint of opposite side,Two midpoints,Two vertices,Vertex to centroid,A
+The altitude of a triangle is?,Perpendicular from vertex to opposite side,Line joining two vertices,Line joining midpoints,Perpendicular from side to vertex,A
+A sector of a circle is formed by?,Two radii and an arc,Diameter,Chord and an arc,Radius alone,A
+A segment of a circle is formed by?,Chord and corresponding arc,Diameter and radius,Two radii and an arc,Radius alone,A
+A line dividing an angle into two equal angles is called?,Angle bisector,Perpendicular bisector,Median,Altitude,A
+A line perpendicular to a segment passing through its midpoint is called?,Angle bisector,Perpendicular bisector,Median,Altitude,B

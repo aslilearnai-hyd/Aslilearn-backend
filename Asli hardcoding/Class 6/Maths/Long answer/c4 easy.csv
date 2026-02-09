@@ -1,0 +1,50 @@
+Question,Answer
+Define a point.,A point is an exact position in space. It has no length, width, or thickness.
+Define a line.,A line is a straight path of points extending infinitely in both directions. It has one dimension.
+Define a line segment.,A line segment is part of a line with two endpoints.
+Define a ray.,A ray is a part of a line that has one endpoint and extends infinitely in one direction.
+Define a plane.,A plane is a flat surface that extends infinitely in two dimensions.
+Draw a line segment and label its endpoints.,[Draw a straight line with two endpoints labelled, e.g., A and B]
+Draw a ray and label its endpoint.,[Draw a line starting at point O and extending infinitely in one direction]
+Draw intersecting lines.,[Draw two lines that meet at a point, label intersection point as P]
+Draw parallel lines.,[Draw two lines that never meet, label them l and m]
+Define intersecting lines.,Two lines that meet at a point are called intersecting lines.
+Define parallel lines.,Two lines that never meet are called parallel lines.
+Define a polygon.,A polygon is a closed figure formed by three or more line segments.
+Name any five polygons.,Triangle, Quadrilateral, Pentagon, Hexagon, Heptagon
+Define a circle.,A circle is a closed curved figure in which all points are equidistant from the centre.
+Define radius of a circle.,A radius is a line segment drawn from the centre of a circle to any point on its circumference.
+Define diameter of a circle.,A diameter is a line passing through the centre of a circle and touching two points on the circumference. It is twice the radius.
+Define circumference of a circle.,Circumference is the distance around the circle.
+Define centre of a circle.,The centre is the point from which all points on the circle are equidistant.
+Define tangent of a circle.,A tangent is a line that touches the circle at exactly one point.
+Define vertex of a polygon.,A vertex is the corner point of a polygon where two sides meet.
+Define diagonal of a polygon.,A diagonal is a line joining any two non-adjacent vertices of a polygon.
+Define angle.,An angle is formed when two rays meet at a common endpoint.
+Define acute angle.,An acute angle measures less than 90 degrees.
+Define right angle.,A right angle measures exactly 90 degrees.
+Define obtuse angle.,An obtuse angle measures more than 90 degrees but less than 180 degrees.
+Define straight angle.,A straight angle measures exactly 180 degrees.
+Define full rotation.,A full rotation is an angle of 360 degrees.
+Define perimeter.,Perimeter is the total distance around a closed figure.
+Define area.,Area is the space enclosed by a closed figure.
+Define equilateral triangle.,A triangle with all sides equal and all angles equal.
+Define isosceles triangle.,A triangle with two sides equal and two angles equal.
+Define scalene triangle.,A triangle with all sides unequal and all angles unequal.
+Define right-angled triangle.,A triangle with one right angle (90 degrees).
+Define acute triangle.,A triangle in which all angles are less than 90 degrees.
+Define obtuse triangle.,A triangle in which one angle is greater than 90 degrees.
+Define rectangle.,A quadrilateral with four right angles and opposite sides equal.
+Define square.,A quadrilateral with four right angles and all sides equal.
+Define composite figure.,A figure made by combining two or more simple geometric shapes.
+Draw a circle with radius labeled.,[Draw a circle and label the radius from centre to circumference]
+Draw a triangle and label its sides.,[Draw any triangle and label the sides as AB, BC, and CA]
+Draw a quadrilateral and label its vertices.,[Draw a quadrilateral and label vertices as A, B, C, D]
+Draw a right-angled triangle and label the right angle.,[Draw triangle ABC with right angle at B]
+Draw an acute-angled triangle.,[Draw triangle with all angles less than 90 degrees]
+Draw an obtuse-angled triangle.,[Draw triangle with one angle greater than 90 degrees]
+Draw a square and label its sides.,[Draw square ABCD and label sides AB, BC, CD, DA]
+Draw a rectangle and label its sides.,[Draw rectangle ABCD and label sides AB, BC, CD, DA]
+Draw intersecting and parallel lines in the same figure.,[Draw two intersecting lines and two parallel lines in same figure]
+Explain the difference between radius and diameter.,Radius is half the diameter; diameter passes through the centre and is twice the radius.
+Explain the difference between a polygon and a circle.,A polygon has straight sides; a circle has a curved boundary.

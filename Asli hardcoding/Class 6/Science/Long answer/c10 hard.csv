@@ -1,0 +1,50 @@
+Question,Answer
+Explain the concept of motion in daily life.,Motion is the change in position of an object with time relative to a reference point. Examples include a moving car, a falling ball, or the rotation of the Earth.
+Describe the difference between speed and velocity.,Speed is the distance traveled per unit time (scalar), while velocity is speed with direction (vector). Velocity specifies direction and magnitude of motion.
+Explain the difference between uniform and non-uniform motion.,Uniform motion occurs when an object covers equal distances in equal intervals of time; non-uniform motion occurs when distances vary in equal time intervals.
+Describe how to measure the distance traveled by an object.,Distance can be measured using a measuring tape, meter scale, odometer, or counting steps and multiplying by stride length.
+Explain the concept of displacement.,Displacement is the shortest straight-line distance between initial and final positions of an object in a specific direction; it is a vector quantity.
+Describe the SI units of distance, time, and speed.,Distance – meter (m), time – second (s), speed – meter per second (m/s). Consistent units are essential for calculations.
+Explain the difference between scalar and vector quantities.,Scalar quantities have magnitude only (distance, speed, mass); vector quantities have magnitude and direction (displacement, velocity, force).
+Describe how to calculate speed.,Speed = Distance traveled / Time taken. Example: A car traveling 100 m in 20 s has speed 5 m/s.
+Explain how a speed-time graph is interpreted.,Slope of a speed-time graph shows acceleration; area under graph gives distance covered. Constant speed is a horizontal line.
+Describe the difference between distance and displacement with examples.,Distance is the total path covered (e.g., 500 m walked in circle), displacement is the straight line from start to end (0 m in circle), showing the vector nature.
+Explain how motion can be measured using a stopwatch.,A stopwatch measures the time interval taken for an object to move a known distance; combining with distance gives speed or velocity.
+Describe how to measure the speed of a moving vehicle practically.,Mark a distance, use a stopwatch to record time taken, then calculate speed = distance/time.
+Explain the difference between uniform and accelerated motion.,Uniform motion – constant speed, zero acceleration; accelerated motion – speed changes over time, acceleration is non-zero.
+Describe the types of acceleration.,Positive acceleration – increase in speed; negative acceleration (deceleration) – decrease in speed; centripetal acceleration – change in direction of motion.
+Explain the difference between linear and circular motion.,Linear motion occurs along a straight path (train on track), circular motion along a circular path (wheel rotation), differing in direction of velocity.
+Describe the method of using a measuring tape to measure curved distances.,Use a flexible tape along the curve, marking start and end points, then read total length. Alternatively, use string along the path and measure string.
+Explain how relative motion is observed.,Motion is relative to a reference point; an object may appear stationary or moving depending on observer’s position (train example).
+Describe how a car’s speedometer measures motion.,A speedometer measures instantaneous speed of the car using rotation of wheels and gears.
+Explain how a motion sensor works in experiments.,Motion sensors detect movement by emitting and receiving signals; they calculate speed or acceleration by measuring time between signals.
+Describe how displacement is calculated in two-dimensional motion.,Use Pythagoras theorem for straight-line distance between initial and final positions, considering x and y coordinates.
+Explain the importance of reference point in describing motion.,Motion is relative; a reference point defines whether an object is at rest or in motion.
+Describe the difference between average speed and instantaneous speed.,Average speed = total distance / total time; instantaneous speed is speed at a particular instant.
+Explain how acceleration is calculated.,Acceleration = Change in velocity / Time taken. Positive or negative depending on velocity increase or decrease.
+Describe how to graphically represent motion.,Use distance-time graphs (slope = speed), speed-time graphs (slope = acceleration, area = distance), and displacement-time graphs (slope = velocity).
+Explain the difference between uniform circular motion and non-uniform circular motion.,Uniform circular motion – constant speed along circle, acceleration towards center; non-uniform – speed changes along circular path.
+Describe how odometers measure distance.,Odometers measure wheel rotations and multiply by wheel circumference to calculate distance traveled by a vehicle.
+Explain the difference between linear speed and angular speed.,Linear speed – distance per time along path; angular speed – angle rotated per unit time; both related via radius in circular motion.
+Describe how radar guns measure speed of vehicles.,Radar guns emit microwaves reflected by moving vehicles; Doppler shift in frequency determines speed.
+Explain the concept of instantaneous velocity.,Velocity of an object at a specific instant, showing magnitude and direction; different from average velocity.
+Describe the role of vectors in motion.,Vectors represent quantities with magnitude and direction (displacement, velocity, acceleration), essential for precise motion description.
+Explain the difference between motion along straight line and motion along curved path.,Straight-line motion has constant direction; curved path motion has changing direction, often involving centripetal acceleration.
+Describe how to measure speed in laboratory experiments.,Use motion sensors or ticker-tape timers over known distances and record time to calculate speed or acceleration.
+Explain the difference between positive and negative acceleration.,Positive acceleration increases speed, negative (deceleration) reduces speed, affecting velocity.
+Describe how graphs can help in analyzing motion.,Graphs (distance-time, speed-time) show trends, allow calculation of speed, acceleration, and distance covered visually.
+Explain how relative velocity is calculated.,Relative velocity = velocity of object A – velocity of object B, considering direction; used in trains, boats, and moving objects.
+Describe how motion in one dimension differs from two dimensions.,One-dimensional motion occurs along a straight line (road), two-dimensional motion occurs in plane with x and y coordinates (throwing ball).
+Explain the concept of uniform motion with examples.,Motion at constant speed along a straight line, e.g., train traveling at 60 km/h without changing speed.
+Describe how acceleration affects moving objects.,Acceleration changes velocity over time; positive increases speed, negative decreases speed, centripetal changes direction.
+Explain the difference between displacement-time and distance-time graphs.,Displacement-time shows change in position and direction; slope = velocity. Distance-time shows total path length; slope = speed.
+Describe how motion of planets is explained.,Planets move in elliptical orbits due to gravitational force; velocity and acceleration are vector quantities along orbit.
+Explain the difference between linear and rotational motion.,Linear motion – along straight path; rotational motion – around an axis (wheel, Earth’s rotation).
+Describe the importance of accurate measurement in motion studies.,Accurate measurement ensures correct calculation of speed, velocity, and acceleration, crucial for engineering, navigation, and scientific experiments.
+Explain how to use a speedometer.,A speedometer measures the speed of a vehicle by calculating the rotation of the wheels and converting it into speed displayed on the dial.
+Describe how to analyze motion using graphs.,Graphs help visualize motion; distance-time graphs show speed, speed-time graphs show acceleration, allowing interpretation of motion characteristics.
+Explain the concept of projectile motion.,Projectile motion is the curved path an object follows when thrown or launched, influenced by gravity and initial velocity.
+Describe how to calculate the resultant velocity of two moving objects.,Use vector addition to combine velocities, considering both magnitude and direction; use Pythagorean theorem for perpendicular vectors.
+Explain how friction affects motion.,Friction opposes motion between surfaces in contact, slowing down moving objects and converting kinetic energy to heat.
+Describe how to measure acceleration in a moving object.,Measure change in velocity over time using speed-time graphs or motion sensors, then calculate acceleration = change in velocity / time.
+Explain the difference between rest and motion.,Rest is when an object does not change its position relative to a reference point; motion is when the object changes its position with respect to the reference point.

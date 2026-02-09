@@ -1,0 +1,132 @@
+{
+  "content_type": "Flashcard Maker",
+  "generated_at": "2026-02-05T15:08:41.737730",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the perimeter of a polygon?",
+        "correct_answer": "The sum of the lengths of its all sides.",
+        "explanation": ""
+      },
+      {
+        "question": "How to find the perimeter of a rectangle?",
+        "correct_answer": "Twice the sum of its length and width.",
+        "explanation": ""
+      },
+      {
+        "question": "What is the perimeter of a square?",
+        "correct_answer": "Four times the length of any one of its sides.",
+        "explanation": ""
+      },
+      {
+        "question": "How to estimate the area of a region?",
+        "correct_answer": "By breaking up such regions into unit squares, or into more general-shaped rectangles and triangles whose areas can be calculated.",
+        "explanation": ""
+      },
+      {
+        "question": "What is the formula for the perimeter of a rectangle?",
+        "correct_answer": "2(length + width)",
+        "explanation": ""
+      },
+      {
+        "question": "How to find the area of a square?",
+        "correct_answer": "Length of any one of its sides multiplied by itself.",
+        "explanation": ""
+      },
+      {
+        "question": "What is the formula for the perimeter of a square?",
+        "correct_answer": "4(side length)",
+        "explanation": ""
+      },
+      {
+        "question": "How to find the area of a rectangle?",
+        "correct_answer": "Length times its width.",
+        "explanation": ""
+      },
+      {
+        "question": "What is the difference between perimeter and area?",
+        "correct_answer": "Perimeter is the distance around a shape, while area is the amount of space inside it.",
+        "explanation": ""
+      },
+      {
+        "question": "Can two closed figures have the same area with different perimeters?",
+        "correct_answer": "Yes",
+        "explanation": ""
+      }
+    ],
+    "important_notes": [
+      {
+        "title": "Perimeter of a Polygon",
+        "content": "The perimeter is the sum of the lengths of its all sides."
+      },
+      {
+        "title": "Formula for Perimeter of Rectangle",
+        "content": "2(length + width)"
+      },
+      {
+        "title": "Area of a Square",
+        "content": "Length of any one of its sides multiplied by itself."
+      },
+      {
+        "title": "Perimeter of a Square",
+        "content": "Four times the length of any one of its sides."
+      },
+      {
+        "title": "Estimating Area of Region",
+        "content": "By breaking up such regions into unit squares, or into more general-shaped rectangles and triangles whose areas can be calculated."
+      },
+      {
+        "title": "Formula for Perimeter of Square",
+        "content": "4(side length)"
+      },
+      {
+        "title": "Area of a Rectangle",
+        "content": "Length times its width."
+      },
+      {
+        "title": "Difference Between Perimeter and Area",
+        "content": "Perimeter is the distance around a shape, while area is the amount of space inside it."
+      },
+      {
+        "title": "Example: Finding Perimeter of Rectangle",
+        "content": "12 + 8 + 12 + 8 = 40"
+      },
+      {
+        "title": "Example: Finding Area of Square",
+        "content": "side length * side length = area"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The word 'perimeter' comes from the Greek words 'peri' meaning around and 'meter' meaning measure."
+      },
+      {
+        "fact": "The formula for the perimeter of a rectangle is 2(length + width)."
+      },
+      {
+        "fact": "A square has four equal sides, making it a special type of rectangle."
+      },
+      {
+        "fact": "The area of a region can be estimated by breaking it up into smaller shapes like rectangles and triangles."
+      },
+      {
+        "fact": "Perimeter is often used to describe the distance around a shape, while area is used to describe the amount of space inside it."
+      },
+      {
+        "fact": "There are many real-life applications for perimeter and area, such as architecture, engineering, and design."
+      },
+      {
+        "fact": "The concept of perimeter and area dates back thousands of years, with ancient civilizations like the Egyptians and Greeks using them in their mathematics."
+      },
+      {
+        "fact": "Perimeter and area are used in many different fields, including science, technology, engineering, and math (STEM)."
+      },
+      {
+        "fact": "The formula for the perimeter of a square is 4(side length)."
+      },
+      {
+        "fact": "A rectangle's perimeter can be found by adding up all four sides."
+      }
+    ]
+  }
+}

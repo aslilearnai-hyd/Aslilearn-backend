@@ -1,0 +1,50 @@
+Question,Answer
+2 is a prime number.,True
+1 is a prime number.,False
+4 is a composite number.,True
+The number 1 is neither prime nor composite.,True
+The only even prime number is 2.,True
+All even numbers greater than 2 are composite.,True
+3 is a prime number.,True
+9 is a composite number.,True
+The sum of two even numbers is always even.,True
+The sum of two odd numbers is always even.,True
+The sum of an even and an odd number is odd.,True
+The product of two even numbers is even.,True
+The product of two odd numbers is odd.,True
+The product of an even and an odd number is even.,True
+HCF of 12 and 18 is 6.,True
+LCM of 4 and 6 is 12.,True
+The prime factorization of 12 is 2 × 2 × 3.,True
+The prime factorization of 18 is 2 × 3 × 3.,True
+Every composite number can be written as a product of prime numbers.,True
+LCM of two co-prime numbers is their product.,True
+HCF of two co-prime numbers is 1.,True
+2 is a composite number.,False
+All prime numbers are odd.,False
+1 has exactly one factor.,True
+0 has infinitely many factors.,True
+The number 25 is divisible by 5.,True
+The number 25 is divisible by 2.,False
+The number 40 is divisible by 2, 5, and 10.,True
+The number 18 is divisible by 2 and 3.,True
+The number 18 is divisible by 5.,False
+All prime numbers greater than 2 are odd.,True
+The number 15 is divisible by 3 and 5.,True
+The number 14 is divisible by 2.,True
+The number 14 is divisible by 3.,False
+The number 60 can be expressed as a product of prime numbers.,True
+The HCF of 20 and 30 is 10.,True
+The LCM of 5 and 7 is 35.,True
+The HCF of 9 and 12 is 3.,True
+The LCM of 3 and 4 is 12.,True
+The number 50 is divisible by 2, 5, and 10.,True
+The number 50 is divisible by 3.,False
+All even numbers are prime.,False
+All odd numbers are composite.,False
+Co-prime numbers have HCF greater than 1.,False
+The number 11 is a prime number.,True
+The number 1 is divisible by 1 only.,True
+The product of prime numbers is always composite.,False
+The number 2 has exactly two factors.,True
+The number 5 has exactly two factors.,True

@@ -1,0 +1,149 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "generated_at": "2026-02-05T15:00:21.445024",
+  "concepts": [
+    {
+      "concept_name": "Prime Factorization",
+      "difficulty": "hard",
+      "lesson": "Prime factorization is the process of breaking down a composite number into its prime factors. Every number greater than 1 has a unique prime factorization, which cannot be broken down further into smaller prime numbers. To find the prime factorization of a number, we need to identify all the prime numbers that multiply together to give the original number.",
+      "real_example": "",
+      "key_points": [
+        "Every composite number can be broken down into its prime factors",
+        "Prime factorization is unique for each number",
+        "Prime factors cannot be broken down further"
+      ]
+    },
+    {
+      "concept_name": "Co-Prime Numbers",
+      "difficulty": "hard",
+      "lesson": "Two numbers are co-prime if they have no common prime factors. In other words, the greatest common divisor (GCD) of two co-prime numbers is 1. To determine if two numbers are co-prime, we need to find their prime factorizations and compare them.",
+      "real_example": "",
+      "key_points": [
+        "Two numbers have no common prime factors",
+        "Greatest Common Divisor (GCD) of co-prime numbers is 1",
+        "Co-prime numbers cannot be divided by a common divisor"
+      ]
+    },
+    {
+      "concept_name": "Divisibility Tests",
+      "difficulty": "hard",
+      "lesson": "Divisibility tests are used to determine if one number can divide another. A divisibility test checks the remainder when the dividend is divided by the divisor. For example, the divisibility rule for 2 states that a number is divisible by 2 if its last digit is even.",
+      "real_example": "",
+      "key_points": [
+        "Divisibility tests check the remainder of division",
+        "Remainder determines whether one number can divide another",
+        "Different divisibility rules apply to different numbers"
+      ]
+    },
+    {
+      "concept_name": "Greatest Common Divisor (GCD)",
+      "difficulty": "hard",
+      "lesson": "The Greatest Common Divisor (GCD) of two or more numbers is the largest number that divides all of them without leaving a remainder. To find the GCD, we need to identify all common factors and choose the largest one.",
+      "real_example": "",
+      "key_points": [
+        "GCD is the largest number dividing multiple numbers",
+        "Identify all common factors to find the GCD",
+        "GCD cannot be broken down further"
+      ]
+    },
+    {
+      "concept_name": "Prime Numbers",
+      "difficulty": "hard",
+      "lesson": "A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself. Prime numbers play a crucial role in mathematics, particularly in cryptography and coding theory.",
+      "real_example": "",
+      "key_points": [
+        "Prime numbers have only two divisors: 1 and themselves",
+        "Prime numbers are essential in mathematics, especially in cryptography",
+        "Every number greater than 1 can be broken down into prime factors"
+      ]
+    },
+    {
+      "concept_name": "Composite Numbers",
+      "difficulty": "hard",
+      "lesson": "A composite number is a natural number greater than 1 that has at least one positive divisor other than 1 and itself. Composite numbers are the building blocks of arithmetic, as they can be broken down into prime factors.",
+      "real_example": "",
+      "key_points": [
+        "Composite numbers have more than two divisors",
+        "Every composite number can be broken down into prime factors",
+        "Composite numbers are essential in arithmetic"
+      ]
+    },
+    {
+      "concept_name": "Number Theory",
+      "difficulty": "hard",
+      "lesson": "Number theory is the branch of mathematics dealing with properties and behavior of integers, particularly divisibility, primality, and congruences. Number theory has numerous applications in cryptography, coding theory, and computer science.",
+      "real_example": "",
+      "key_points": [
+        "Number theory focuses on integer properties",
+        "Divisibility, primality, and congruences are key concepts in number theory",
+        "Applications of number theory include cryptography and coding theory"
+      ]
+    },
+    {
+      "concept_name": "Congruence Modulo n",
+      "difficulty": "hard",
+      "lesson": "A congruence modulo n is a statement that two numbers have the same remainder when divided by n. Congruences are used to solve equations in number theory and cryptography.",
+      "real_example": "",
+      "key_points": [
+        "Congruence mod n states that two numbers leave the same remainder",
+        "Congruences are essential in solving number theory equations",
+        "Applications of congruences include cryptography"
+      ]
+    },
+    {
+      "concept_name": "Cryptography",
+      "difficulty": "hard",
+      "lesson": "Cryptography is the practice and study of techniques for secure communication, particularly encryption, decryption, and authentication. Cryptography relies heavily on number theory and prime numbers.",
+      "real_example": "",
+      "key_points": [
+        "Cryptography ensures secure communication",
+        "Encryption, decryption, and authentication are key concepts in cryptography",
+        "Number theory is essential in cryptography"
+      ]
+    },
+    {
+      "concept_name": "Modular Arithmetic",
+      "difficulty": "hard",
+      "lesson": "Modular arithmetic is a system of arithmetic that deals with remainders when numbers are divided by n. Modular arithmetic has numerous applications in number theory, algebra, and computer science.",
+      "real_example": "",
+      "key_points": [
+        "Modular arithmetic focuses on remainders of division",
+        "Applications of modular arithmetic include number theory and computer science",
+        "Modular arithmetic relies heavily on congruences"
+      ]
+    },
+    {
+      "concept_name": "Euclidean Algorithm",
+      "difficulty": "hard",
+      "lesson": "The Euclidean algorithm is a method for finding the greatest common divisor (GCD) of two numbers, based on repeated application of the division algorithm. The Euclidean algorithm has numerous applications in number theory and algebra.",
+      "real_example": "",
+      "key_points": [
+        "Euclidean algorithm finds GCD using repeated division",
+        "Applications of the Euclidean algorithm include number theory and algebra",
+        "The Euclidean algorithm relies on modular arithmetic"
+      ]
+    },
+    {
+      "concept_name": "Fermat's Little Theorem",
+      "difficulty": "hard",
+      "lesson": "Fermat's little theorem states that if p is a prime number, then for any integer a not divisible by p, the following congruence holds: a^(p-1) ≡ 1 (mod p). Fermat's little theorem has numerous applications in number theory and cryptography.",
+      "real_example": "",
+      "key_points": [
+        "Fermat's Little Theorem relates prime numbers to congruences",
+        "Applications of Fermat's Little Theorem include number theory and cryptography",
+        "The theorem relies heavily on modular arithmetic"
+      ]
+    },
+    {
+      "concept_name": "Chinese Remainder Theorem",
+      "difficulty": "hard",
+      "lesson": "The Chinese remainder theorem states that if we have a system of simultaneous congruences with pairwise coprime moduli, then there is exactly one solution modulo the product of the moduli. The Chinese remainder theorem has numerous applications in number theory and cryptography.",
+      "real_example": "",
+      "key_points": [
+        "Chinese Remainder Theorem solves systems of congruences",
+        "Applications of the theorem include number theory and cryptography",
+        "The theorem relies heavily on modular arithmetic"
+      ]
+    }
+  ]
+}

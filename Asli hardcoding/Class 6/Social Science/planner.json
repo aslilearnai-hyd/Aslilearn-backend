@@ -1,0 +1,504 @@
+{
+  "class": "VI",
+  "subject": "Social Science",
+  "book": "NCERT Social Science",
+  "academic_year": "2025-26",
+  "lesson_plans": [
+
+    {
+      "subject_area": "History",
+      "lesson_name": "What, Where, How and When",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand meaning of history",
+        "Identify sources of history",
+        "Understand importance of dates"
+      ],
+      "teaching_learning_materials": ["Textbook", "Timeline chart", "Blackboard"],
+      "previous_knowledge": ["Awareness of past events"],
+      "introduction": { "time_minutes": 5, "activities": ["Discuss family history"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Explanation with examples"],
+        "key_vocabulary": ["Manuscript", "Inscription", "Source"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Why history is studied"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Prepare a simple timeline"] },
+      "values_and_moral": ["Respect for heritage"],
+      "homework": ["Write two sources of history"],
+      "evaluation": ["Oral questions"]
+    },
+
+    {
+      "subject_area": "History",
+      "lesson_name": "On the Trail of the Earliest People",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand early human life",
+        "Learn about hunter-gatherers"
+      ],
+      "teaching_learning_materials": ["Textbook", "Pictures of stone tools"],
+      "previous_knowledge": ["Basic idea of early humans"],
+      "introduction": { "time_minutes": 5, "activities": ["Discuss life without houses"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Storytelling"],
+        "key_vocabulary": ["Hunter-gatherer", "Cave", "Tool"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Importance of tools"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Draw stone tools"] },
+      "values_and_moral": ["Adaptability"],
+      "homework": ["Write five lines on early humans"],
+      "evaluation": ["Short questions"]
+    },
+
+    {
+      "subject_area": "History",
+      "lesson_name": "From Gathering to Growing Food",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand beginning of agriculture",
+        "Learn about domestication"
+      ],
+      "teaching_learning_materials": ["Textbook", "Pictures"],
+      "previous_knowledge": ["Basic idea of farming"],
+      "introduction": { "time_minutes": 5, "activities": ["Discuss farming in villages"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Explanation with examples"],
+        "key_vocabulary": ["Domestication", "Neolithic", "Agriculture"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Why farming was important"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["List domesticated animals"] },
+      "values_and_moral": ["Importance of food"],
+      "homework": ["Write advantages of agriculture"],
+      "evaluation": ["Written test"]
+    },
+
+    {
+      "subject_area": "History",
+      "lesson_name": "In the Earliest Cities",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Learn about Harappan civilisation",
+        "Understand town planning"
+      ],
+      "teaching_learning_materials": ["Textbook", "City layout diagram"],
+      "previous_knowledge": ["Idea of cities"],
+      "introduction": { "time_minutes": 5, "activities": ["Compare village and city life"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Diagram explanation"],
+        "key_vocabulary": ["Harappa", "Drainage", "Citadel"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Advanced planning of Harappans"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Label Harappan city"] },
+      "values_and_moral": ["Cleanliness", "Planning"],
+      "homework": ["Write two features of Harappan cities"],
+      "evaluation": ["Diagram test"]
+    },
+
+    {
+      "subject_area": "History",
+      "lesson_name": "What Books and Burials Tell Us",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand early literature",
+        "Learn about social differences"
+      ],
+      "teaching_learning_materials": ["Textbook"],
+      "previous_knowledge": ["Idea of books and rituals"],
+      "introduction": { "time_minutes": 5, "activities": ["Discuss importance of books"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Explanation"],
+        "key_vocabulary": ["Vedas", "Burial", "Sukta"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Social differences"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Read short extract"] },
+      "values_and_moral": ["Respect traditions"],
+      "homework": ["Write two facts about the Vedas"],
+      "evaluation": ["Oral test"]
+    },
+
+    {
+      "subject_area": "History",
+      "lesson_name": "Kingdoms, Kings and an Early Republic",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand janapadas and mahajanapadas",
+        "Learn early republic system"
+      ],
+      "teaching_learning_materials": ["Textbook", "Map of India"],
+      "previous_knowledge": ["Idea of kings"],
+      "introduction": { "time_minutes": 5, "activities": ["Discuss ancient kings"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Map-based explanation"],
+        "key_vocabulary": ["Janapada", "Mahajanapada", "Republic"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Kingdom vs republic"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Locate mahajanapadas"] },
+      "values_and_moral": ["Leadership"],
+      "homework": ["Define janapada"],
+      "evaluation": ["Map work"]
+    },
+
+    {
+      "subject_area": "History",
+      "lesson_name": "New Questions and Ideas",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand teachings of Buddha and Mahavira",
+        "Develop critical thinking"
+      ],
+      "teaching_learning_materials": ["Textbook", "Pictures"],
+      "previous_knowledge": ["Basic idea of religion"],
+      "introduction": { "time_minutes": 5, "activities": ["Discuss truth and peace"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Explanation"],
+        "key_vocabulary": ["Buddhism", "Jainism", "Renunciation"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Why rituals were questioned"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Compare teachings"] },
+      "values_and_moral": ["Peace", "Non-violence"],
+      "homework": ["Write two teachings of Buddha"],
+      "evaluation": ["Short answers"]
+    },
+
+    {
+      "subject_area": "History",
+      "lesson_name": "Ashoka, the Emperor Who Gave Up War",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Learn about Mauryan empire",
+        "Understand Ashoka’s Dhamma"
+      ],
+      "teaching_learning_materials": ["Textbook", "Map"],
+      "previous_knowledge": ["Idea of wars"],
+      "introduction": { "time_minutes": 5, "activities": ["Is war necessary?"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Story-based explanation"],
+        "key_vocabulary": ["Dhamma", "Edicts", "Maurya"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Ashoka’s change of heart"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Read an edict"] },
+      "values_and_moral": ["Peace", "Compassion"],
+      "homework": ["Write principles of Dhamma"],
+      "evaluation": ["Written test"]
+    },
+
+    {
+      "subject_area": "History",
+      "lesson_name": "Vital Villages, Thriving Towns",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand village life",
+        "Learn about trade and crafts"
+      ],
+      "teaching_learning_materials": ["Textbook", "Pictures"],
+      "previous_knowledge": ["Idea of villages"],
+      "introduction": { "time_minutes": 5, "activities": ["Village vs town discussion"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Explanation"],
+        "key_vocabulary": ["Crafts", "Trade", "Market"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Role of traders"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["List occupations"] },
+      "values_and_moral": ["Cooperation"],
+      "homework": ["Write two features of towns"],
+      "evaluation": ["Class discussion"]
+    },
+
+    {
+      "subject_area": "History",
+      "lesson_name": "Traders, Kings and Pilgrims",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand trade routes",
+        "Learn importance of pilgrimage"
+      ],
+      "teaching_learning_materials": ["Textbook", "Map"],
+      "previous_knowledge": ["Idea of travel"],
+      "introduction": { "time_minutes": 5, "activities": ["Discuss pilgrimage places"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Map-based explanation"],
+        "key_vocabulary": ["Trade route", "Pilgrimage", "Port"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Trade and culture"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Locate routes"] },
+      "values_and_moral": ["Cultural exchange"],
+      "homework": ["Name two pilgrimage centres"],
+      "evaluation": ["Map questions"]
+    },
+
+    {
+      "subject_area": "Geography",
+      "lesson_name": "The Earth in the Solar System",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand solar system",
+        "Know Earth’s position"
+      ],
+      "teaching_learning_materials": ["Globe", "Chart"],
+      "previous_knowledge": ["Sun and Moon"],
+      "introduction": { "time_minutes": 5, "activities": ["Name planets"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Chart explanation"],
+        "key_vocabulary": ["Planet", "Orbit", "Satellite"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Why Earth supports life"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Draw solar system"] },
+      "values_and_moral": ["Scientific curiosity"],
+      "homework": ["Write names of planets"],
+      "evaluation": ["Oral test"]
+    },
+
+    {
+      "subject_area": "Geography",
+      "lesson_name": "Globe: Latitudes and Longitudes",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand globe",
+        "Learn latitudes and longitudes"
+      ],
+      "teaching_learning_materials": ["Globe", "Map"],
+      "previous_knowledge": ["Directions"],
+      "introduction": { "time_minutes": 5, "activities": ["Observe globe"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Demonstration"],
+        "key_vocabulary": ["Latitude", "Longitude", "Equator"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Importance of longitudes"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Locate Equator"] },
+      "values_and_moral": ["Accuracy"],
+      "homework": ["Define latitude"],
+      "evaluation": ["Map work"]
+    },
+
+    {
+      "subject_area": "Geography",
+      "lesson_name": "Motions of the Earth",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand rotation and revolution",
+        "Explain day and night"
+      ],
+      "teaching_learning_materials": ["Globe", "Torch"],
+      "previous_knowledge": ["Day and night"],
+      "introduction": { "time_minutes": 5, "activities": ["Why day changes to night"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Demonstration"],
+        "key_vocabulary": ["Rotation", "Revolution"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Seasons"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Label diagram"] },
+      "values_and_moral": ["Scientific thinking"],
+      "homework": ["Write difference"],
+      "evaluation": ["Diagram test"]
+    },
+
+    {
+      "subject_area": "Geography",
+      "lesson_name": "Maps",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand types of maps",
+        "Learn map symbols"
+      ],
+      "teaching_learning_materials": ["Atlas", "Maps"],
+      "previous_knowledge": ["Directions"],
+      "introduction": { "time_minutes": 5, "activities": ["Seen a map?"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Atlas explanation"],
+        "key_vocabulary": ["Scale", "Symbols"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Uses of maps"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Draw classroom map"] },
+      "values_and_moral": ["Observation"],
+      "homework": ["List types of maps"],
+      "evaluation": ["Map exercise"]
+    },
+
+    {
+      "subject_area": "Civics",
+      "lesson_name": "Understanding Diversity",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand diversity",
+        "Promote unity in diversity"
+      ],
+      "teaching_learning_materials": ["Textbook", "Pictures"],
+      "previous_knowledge": ["Festivals and cultures"],
+      "introduction": { "time_minutes": 5, "activities": ["Discuss festivals"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Discussion"],
+        "key_vocabulary": ["Diversity", "Culture"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Why diversity matters"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Group discussion"] },
+      "values_and_moral": ["Respect"],
+      "homework": ["Write two examples"],
+      "evaluation": ["Participation"]
+    },
+
+    {
+      "subject_area": "Civics",
+      "lesson_name": "Diversity and Discrimination",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand discrimination",
+        "Promote equality"
+      ],
+      "teaching_learning_materials": ["Textbook"],
+      "previous_knowledge": ["Understanding diversity"],
+      "introduction": { "time_minutes": 5, "activities": ["Discuss fairness"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Explanation"],
+        "key_vocabulary": ["Discrimination", "Equality"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Effects of discrimination"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Role play"] },
+      "values_and_moral": ["Justice"],
+      "homework": ["Write ways to stop discrimination"],
+      "evaluation": ["Short answers"]
+    },
+
+    {
+      "subject_area": "Civics",
+      "lesson_name": "What is Government?",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand government",
+        "Know functions of government"
+      ],
+      "teaching_learning_materials": ["Textbook"],
+      "previous_knowledge": ["Rules"],
+      "introduction": { "time_minutes": 5, "activities": ["Why rules are needed"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Explanation"],
+        "key_vocabulary": ["Government", "Law"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Need of government"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["List functions"] },
+      "values_and_moral": ["Responsibility"],
+      "homework": ["Write two functions"],
+      "evaluation": ["Oral test"]
+    },
+
+    {
+      "subject_area": "Civics",
+      "lesson_name": "Key Elements of a Democratic Government",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand democracy",
+        "Learn role of people"
+      ],
+      "teaching_learning_materials": ["Textbook"],
+      "previous_knowledge": ["Idea of government"],
+      "introduction": { "time_minutes": 5, "activities": ["Class decision making"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Explanation"],
+        "key_vocabulary": ["Democracy", "Equality"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Why democracy is important"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Voting activity"] },
+      "values_and_moral": ["Freedom"],
+      "homework": ["Write two features"],
+      "evaluation": ["Written test"]
+    },
+
+    {
+      "subject_area": "Civics",
+      "lesson_name": "Panchayati Raj",
+      "duration": { "periods": 2, "minutes_per_period": 40 },
+      "learning_objectives": [
+        "Understand local self-government",
+        "Learn Panchayati Raj system"
+      ],
+      "teaching_learning_materials": ["Textbook", "Chart"],
+      "previous_knowledge": ["Village life"],
+      "introduction": { "time_minutes": 5, "activities": ["Discuss village administration"] },
+      "presentation": {
+        "time_minutes": 15,
+        "methods": ["Chart explanation"],
+        "key_vocabulary": ["Gram Sabha", "Panchayat"]
+      },
+      "explanation_discussion": {
+        "time_minutes": 10,
+        "discussion_points": ["Importance of local government"]
+      },
+      "activities": { "time_minutes": 5, "class_activities": ["Draw structure"] },
+      "values_and_moral": ["Participation"],
+      "homework": ["Name three levels"],
+      "evaluation": ["Diagram test"]
+    }
+
+  ]
+}

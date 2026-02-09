@@ -1,0 +1,132 @@
+{
+  "content_type": "Flashcard Maker",
+  "generated_at": "2026-02-05T11:30:08.057116",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is a timeline?",
+        "correct_answer": "A sequence of dates and events covering any particular period",
+        "explanation": "Helps in understanding the order in which historical events take place"
+      },
+      {
+        "question": "How many years ago was the birth of Buddha?",
+        "correct_answer": "2583 years",
+        "explanation": "Calculated by adding 560 BCE to 2024 CE and subtracting 1"
+      },
+      {
+        "question": "What is a century?",
+        "correct_answer": "Any period of 100 years",
+        "explanation": "In history, specific centuries are counted every 100 years starting from the year 1 CE"
+      },
+      {
+        "question": "Which calendar is commonly used worldwide?",
+        "correct_answer": "Gregorian calendar",
+        "explanation": "Has 12 months adding up to 365 days and a leap year every four years"
+      },
+      {
+        "question": "What is the difference between BCE and CE?",
+        "correct_answer": "BCE means Before Common Era, while CE means Common Era",
+        "explanation": "Used to count dates before and after the conventional date for Jesus' birth"
+      },
+      {
+        "question": "What is a millennium?",
+        "correct_answer": "Any period of 1,000 years",
+        "explanation": "In history, specific centuries are counted every 1,000 years from the year 1 CE"
+      },
+      {
+        "question": "How many years did it take for the ice to melt after the last Ice Age?",
+        "correct_answer": "12,000 years",
+        "explanation": "After the last Ice Age, living conditions improved for humans and they started settling down and cultivating cereals and grains"
+      },
+      {
+        "question": "What is rock art?",
+        "correct_answer": "Examples of auspicious beginnings",
+        "explanation": "First examples of rock art in the world were during the last Ice Age"
+      },
+      {
+        "question": "How many centuries are there between 2000 BCE and 100 CE?",
+        "correct_answer": "41",
+        "explanation": "Counting every 100 years, starting from 1 BCE"
+      },
+      {
+        "question": "What is a pañchānga?",
+        "correct_answer": "A book of tables listing the days of each month along with related astronomical data",
+        "explanation": "Traditionally used in India to predict events like solar and lunar eclipses, times for sunrise and sunset, etc."
+      }
+    ],
+    "important_notes": [
+      {
+        "title": "Timeline",
+        "content": "A convenient tool to mark historical events in sequence"
+      },
+      {
+        "title": "Century",
+        "content": "Any period of 100 years; specific centuries are counted every 100 years starting from the year 1 CE"
+      },
+      {
+        "title": "Millennium",
+        "content": "Any period of 1,000 years; specific centuries are counted every 1,000 years from the year 1 CE"
+      },
+      {
+        "title": "Gregorian Calendar",
+        "content": "Commonly used worldwide; has 12 months adding up to 365 days and a leap year every four years"
+      },
+      {
+        "title": "BCE and CE",
+        "content": "BCE means Before Common Era, while CE means Common Era; used to count dates before and after the conventional date for Jesus' birth"
+      },
+      {
+        "title": "Pañchānga",
+        "content": "Traditionally used in India to predict events like solar and lunar eclipses, times for sunrise and sunset, etc."
+      },
+      {
+        "title": "Rock Art",
+        "content": "Examples of auspicious beginnings; first examples were during the last Ice Age"
+      },
+      {
+        "title": "Timeline Usage",
+        "content": "Helps in understanding the order in which historical events take place"
+      },
+      {
+        "title": "Century Counting",
+        "content": "Counting every 100 years, starting from 1 BCE"
+      },
+      {
+        "title": "Millennium Counting",
+        "content": "Counting every 1,000 years, starting from 1 CE"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The last Ice Age lasted for over 100,000 years and ended around 12,000 years ago."
+      },
+      {
+        "fact": "Humans started settling down and cultivating cereals and grains after the last Ice Age."
+      },
+      {
+        "fact": "The Gregorian calendar is commonly used worldwide and has 12 months adding up to 365 days and a leap year every four years."
+      },
+      {
+        "fact": "The BCE and CE systems are used to count dates before and after the conventional date for Jesus' birth."
+      },
+      {
+        "fact": "Pañchāngas, traditionally used in India, predict events like solar and lunar eclipses, times for sunrise and sunset, etc."
+      },
+      {
+        "fact": "Rock art is an example of auspicious beginnings and first appeared during the last Ice Age."
+      },
+      {
+        "fact": "The 21st century CE runs from 2001 to 2100."
+      },
+      {
+        "fact": "The 3rd millennium CE began in 2001 CE and will go up to 3000 CE."
+      },
+      {
+        "fact": "A pañchānga is a book of tables listing the days of each month along with related astronomical data."
+      },
+      {
+        "fact": "The year 2000 CE was a leap year because it is a multiple of 400."
+      }
+    ]
+  }
+}

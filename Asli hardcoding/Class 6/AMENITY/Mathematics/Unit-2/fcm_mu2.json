@@ -1,0 +1,132 @@
+{
+  "content_type": "Flashcard Maker",
+  "generated_at": "2026-02-05T14:45:19.413589",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the measure of a full turn in degrees?",
+        "correct_answer": "360°",
+        "explanation": "A full turn has been divided into 360°."
+      },
+      {
+        "question": "What is the reason for using 360° to divide a circle?",
+        "correct_answer": "The reason is not fully known.",
+        "explanation": "The division of a circle into 360° was chosen, but the exact reason is unknown."
+      },
+      {
+        "question": "How many degrees are in a straight angle?",
+        "correct_answer": "180°",
+        "explanation": "A straight angle is half of a full turn, so it measures 180°."
+      },
+      {
+        "question": "What is the measure of a right angle in degrees?",
+        "correct_answer": "90°",
+        "explanation": "Two right angles together form a straight angle, which measures 180°. So, one right angle measures 90°."
+      },
+      {
+        "question": "How many degrees are in an acute angle?",
+        "correct_answer": "Less than 90°",
+        "explanation": "An acute angle is less than a right angle, so it is less than 90°."
+      },
+      {
+        "question": "What is the difference between an acute and obtuse angle?",
+        "correct_answer": "Acute angles have smaller openings, while obtuse angles have larger openings.",
+        "explanation": "The terms 'acute' and 'obtuse' refer to the size of the opening in the angle."
+      },
+      {
+        "question": "How many acute angles are there in a triangle?",
+        "correct_answer": "Three",
+        "explanation": "In any triangle, three angles are always acute."
+      },
+      {
+        "question": "What is the measure of an angle that is half of a full turn?",
+        "correct_answer": "180°",
+        "explanation": "A straight angle is half of a full turn, so it measures 180°."
+      },
+      {
+        "question": "How many right angles are in a straight angle?",
+        "correct_answer": "Two",
+        "explanation": "Two right angles together form a straight angle."
+      },
+      {
+        "question": "What is the measure of an obtuse angle?",
+        "correct_answer": "More than 90° but less than 180°",
+        "explanation": "An obtuse angle is greater than a right angle, but less than a straight angle."
+      }
+    ],
+    "important_notes": [
+      {
+        "title": "Key Concept: Angle Measure",
+        "content": "The measure of an angle is the number of 1° unit parts it contains inside it."
+      },
+      {
+        "title": "Important Note: Straight Angle",
+        "content": "A straight angle is half of a full turn and measures 180°."
+      },
+      {
+        "title": "Key Concept: Acute Angle",
+        "content": "An acute angle has a smaller opening than a right angle and is less than 90°."
+      },
+      {
+        "title": "Important Note: Obtuse Angle",
+        "content": "An obtuse angle has a larger opening than a right angle but is less than a straight angle."
+      },
+      {
+        "title": "Key Concept: Right Angle",
+        "content": "A right angle measures 90° and is half of a straight angle."
+      },
+      {
+        "title": "Important Note: Full Turn",
+        "content": "A full turn contains 360° and is used as the reference for measuring other angles."
+      },
+      {
+        "title": "Key Concept: Degrees",
+        "content": "Degrees are used to measure angles, with 1 degree being equal to one unit part of a circle."
+      },
+      {
+        "title": "Important Note: Unit Parts",
+        "content": "The number of 1° unit parts in an angle determines its measure."
+      },
+      {
+        "title": "Key Concept: Angle Comparison",
+        "content": "Angles can be compared by superimposition, where the vertices and arms are aligned."
+      },
+      {
+        "title": "Important Note: Equal Angles",
+        "content": "Two angles are equal if their vertices and arms overlap exactly."
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The division of a circle into 360° is believed to have originated from the Babylonians."
+      },
+      {
+        "fact": "The ancient Greeks used a sexagesimal (base-60) system for measuring angles, which led to the use of 360°."
+      },
+      {
+        "fact": "In some cultures, a full turn is divided into 400° rather than 360°."
+      },
+      {
+        "fact": "The concept of degrees as we know it today was not developed until the 17th century."
+      },
+      {
+        "fact": "In ancient China, angles were measured using a system of rods and strings."
+      },
+      {
+        "fact": "The Babylonians used a sexagesimal (base-60) system for measuring time as well as angles."
+      },
+      {
+        "fact": "The use of 360° to divide a circle is not unique to Western cultures, but has been adopted by many cultures around the world."
+      },
+      {
+        "fact": "In some mathematical systems, angles are measured in radians rather than degrees."
+      },
+      {
+        "fact": "The concept of obtuse angles was not developed until the 16th century."
+      },
+      {
+        "fact": "The ancient Greeks used a system of proportions to measure angles, which led to the development of trigonometry."
+      }
+    ]
+  }
+}

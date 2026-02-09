@@ -1,0 +1,53 @@
+Question,Answer
+Integers include positive numbers, negative numbers, and zero.,True
+Zero is neither positive nor negative.,True
+-5 is a positive integer.,False
+7 is a negative integer.,False
+The sum of two positive integers is always positive.,True
+The sum of two negative integers is always negative.,True
+The sum of a positive and a negative integer can be positive, negative, or zero.,True
+-3 + 3 = 0,True
+-7 + (-2) = -9,True
+5 + (-2) = 3,True
+Subtracting a negative integer is the same as adding its positive.,True
+-6 - (-3) = -3,True
+0 is an integer.,True
+The product of two positive integers is positive.,True
+The product of two negative integers is positive.,True
+The product of a positive and a negative integer is negative.,True
+-4 × 5 = -20,True
+-3 × -7 = 21,True
+7 × 0 = 0,True
+The quotient of two positive integers is positive.,True
+The quotient of two negative integers is positive.,True
+The quotient of a positive and a negative integer is negative.,True
+-12 ÷ -3 = 4,True
+-15 ÷ 5 = -3,True
+0 ÷ 7 = 0,True
+7 ÷ 0 is undefined.,True
+The sum of zero and a positive integer is positive.,True
+The sum of zero and a negative integer is negative.,True
+Zero is the additive identity.,True
+The absolute value of -8 is 8,True
+The absolute value of 0 is 0,True
+-5 < -2,True
+-2 < 0,True
+0 > -1,True
+5 > -3,True
+-7 > -2,False
+-3 × 0 = 0,True
+The product of zero and any integer is zero.,True
+-6 ÷ 2 = -3,True
+-8 ÷ -2 = 4,True
+Integers cannot be fractions.,True
+Integers can be represented on a number line.,True
+The sum of three negative integers is always negative.,True
+Adding zero to an integer changes its value.,False
+Subtracting zero from an integer leaves it unchanged.,True
+The negative of a negative integer is positive.,True
+-10 + 0 = -10,True
+-1 > -5,True
+The sum of a positive integer and zero is always zero.,False
+The difference between a positive and negative integer is always positive.,False
+The product of an integer and 1 is the integer itself.,True
+The quotient of zero divided by a negative integer is zero.,True

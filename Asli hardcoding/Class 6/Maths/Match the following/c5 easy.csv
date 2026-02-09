@@ -1,0 +1,16 @@
+Column A,Column B,Answer
+Line,A straight path extending endlessly,Matching
+Line segment,A part of a line with two endpoints,Matching
+Ray,A part of a line with one endpoint,Matching
+Point,Shows only position,Matching
+Angle,Formed by two rays,Matching
+Right angle,90 degrees angle,Matching
+Acute angle,Less than 90 degrees,Matching
+Obtuse angle,More than 90 but less than 180 degrees,Matching
+Straight angle,180 degrees,Matching
+Triangle,Three-sided polygon,Matching
+Quadrilateral,Four-sided polygon,Matching
+Circle,Closed curve with all points equidistant from centre,Matching
+Radius,Distance from centre to circle,Matching
+Diameter,Twice the radius,Matching
+Polygon,Closed figure made of line segments,Matching

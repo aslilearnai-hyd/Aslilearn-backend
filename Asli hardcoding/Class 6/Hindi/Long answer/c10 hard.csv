@@ -1,0 +1,52 @@
+Question,Answer
+Define mensuration and explain its importance.,Mensuration is the branch of mathematics that deals with measuring length, area, and volume. It is important for real-life applications like construction, furniture, land measurement, and packaging.
+Explain the difference between perimeter and area.,Perimeter is the total distance around a 2D shape. Area is the measure of the space enclosed within the shape.
+Explain how to find the perimeter of a rectangle.,Perimeter = 2 × (length + width)
+Explain how to find the perimeter of a square.,Perimeter = 4 × side
+Explain how to find the perimeter of a triangle.,Perimeter = sum of all three sides
+Explain how to find the perimeter of a circle.,Perimeter (circumference) = 2 × π × radius
+Explain the difference between circumference and area of a circle.,Circumference is the distance around the circle; area is the space enclosed = π × r²
+Explain how to calculate the area of a rectangle.,Area = length × width
+Explain how to calculate the area of a square.,Area = side × side
+Explain how to calculate the area of a triangle.,Area = 1/2 × base × height
+Explain how to calculate the area of a parallelogram.,Area = base × height
+Explain how to calculate the area of a trapezium.,Area = 1/2 × (sum of parallel sides) × height
+Explain how to calculate the area of a circle.,Area = π × radius²
+Explain how to calculate the area of a rhombus.,Area = 1/2 × (product of diagonals)
+Explain the difference between regular and irregular shapes in mensuration.,Regular shapes have known formulas for area/perimeter; irregular shapes may require decomposition or approximation.
+Explain how to calculate the volume of a cube.,Volume = side³
+Explain how to calculate the volume of a cuboid.,Volume = length × width × height
+Explain how to calculate the volume of a cylinder.,Volume = π × radius² × height
+Explain how to calculate the volume of a cone.,Volume = 1/3 × π × radius² × height
+Explain how to calculate the volume of a sphere.,Volume = 4/3 × π × radius³
+Explain how to calculate the surface area of a cube.,Surface area = 6 × side²
+Explain how to calculate the surface area of a cuboid.,Surface area = 2 × (lw + lh + wh)
+Explain how to calculate the surface area of a cylinder.,Surface area = 2πr(h + r)
+Explain how to calculate the surface area of a cone.,Surface area = πr(l + r), where l = slant height
+Explain how to calculate the surface area of a sphere.,Surface area = 4πr²
+Explain step by step how to solve word problems on area of rectangles.,Identify length and width, multiply to find area, check units.
+Explain step by step how to solve word problems on perimeter of polygons.,Add all sides, include units, check if shape regular or irregular.
+Explain how to find area of composite shapes.,Divide into simple shapes, calculate individual areas, sum them up.
+Explain how to find perimeter of composite shapes.,Sum lengths of all outer sides, including curves if any.
+Explain conversion between cm² and m².,1 m² = 10000 cm², divide cm² by 10000 to convert to m².
+Explain conversion between cm³ and m³.,1 m³ = 1000000 cm³, divide cm³ by 1000000 to convert to m³.
+Explain how to measure irregular surfaces.,Use grid approximation, decomposition into known shapes, or tracing methods.
+Explain how to find lateral surface area of a cuboid.,Lateral surface area = 2 × height × (length + width)
+Explain how to find lateral surface area of a cylinder.,Lateral surface area = 2πr × height
+Explain the difference between lateral surface area and total surface area.,Lateral surface area = only sides; total surface area includes top and bottom.
+Explain real-life applications of mensuration.,Used in painting walls, flooring, packing boxes, designing furniture, building construction.
+Explain how to measure the area of a circular garden.,Use area formula πr², measure radius, calculate area.
+Explain how to measure the perimeter of a circular track.,Use circumference formula 2πr.
+Explain how to calculate the cost of flooring a rectangular room.,Area × cost per unit area.
+Explain how to calculate the cost of fencing a garden.,Perimeter × cost per unit length.
+Explain how to find the volume of a tank.,Use volume formula based on shape, multiply by units, check for conversion.
+Explain step by step method to calculate the volume of water needed to fill a cylinder.,Find cylinder volume using πr²h, convert to litres if needed.
+Explain how to calculate area of shaded parts in composite figures.,Find area of whole figure, subtract area of unshaded parts.
+Explain how to calculate surface area of a composite solid.,Divide into simple solids, calculate individual surface areas, sum them.
+Explain how to use approximation in mensuration.,Round measurements to nearest convenient unit before calculation.
+Explain how to calculate curved surface area of a cone.,Curved surface area = π × r × l
+Explain how to calculate slant height of a cone given height and radius.,Use Pythagoras theorem: l = √(r² + h²)
+Explain how to calculate diagonal of a rectangle.,Diagonal = √(length² + width²)
+Explain how to calculate side of a square given area.,Side = √(area)
+Explain why π is important in mensuration.,π is used in all formulas involving circles and curved surfaces.
+Explain step by step method to solve word problems on mensuration.,Identify shape, list measurements, apply correct formula, compute, convert units if needed.

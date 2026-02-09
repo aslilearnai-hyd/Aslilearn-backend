@@ -1,0 +1,52 @@
+Question,Answer
+Define a point.,A point is an exact position in space with no length, width, or thickness.
+Define a line.,A line is a straight path of points that extends infinitely in both directions.
+Define a line segment.,A line segment is a part of a line with two endpoints.
+Define a ray.,A ray is a part of a line with one endpoint that extends infinitely in one direction.
+Define a plane.,A plane is a flat surface that extends infinitely in two dimensions.
+Define a polygon.,A polygon is a closed figure formed by three or more line segments.
+Define a triangle.,A triangle is a polygon with three sides.
+Define a quadrilateral.,A quadrilateral is a polygon with four sides.
+Define a pentagon.,A pentagon is a polygon with five sides.
+Define a hexagon.,A hexagon is a polygon with six sides.
+Define a heptagon.,A heptagon is a polygon with seven sides.
+Define an octagon.,An octagon is a polygon with eight sides.
+Define a circle.,A circle is a closed curved figure where all points are equidistant from the centre.
+Define radius of a circle.,A radius is a line segment from the centre of a circle to any point on the circumference.
+Define diameter of a circle.,A diameter is a line passing through the centre of a circle and touches two points on the circumference.
+Define circumference.,Circumference is the distance around the circle.
+Define tangent.,A tangent is a line that touches the circle at exactly one point.
+Define vertex.,A vertex is the corner point of a polygon where two sides meet.
+Define diagonal.,A diagonal is a line joining any two non-adjacent vertices of a polygon.
+Define angle.,An angle is formed when two rays meet at a common endpoint.
+Define acute angle.,An acute angle measures less than 90 degrees.
+Define right angle.,A right angle measures exactly 90 degrees.
+Define obtuse angle.,An obtuse angle measures more than 90 degrees but less than 180 degrees.
+Define straight angle.,A straight angle measures exactly 180 degrees.
+Define full rotation.,A full rotation is an angle of 360 degrees.
+Define perimeter.,Perimeter is the total distance around a closed figure.
+Define area.,Area is the space enclosed by a closed figure.
+Define equilateral triangle.,A triangle with all sides equal and all angles equal.
+Define isosceles triangle.,A triangle with two sides equal and two angles equal.
+Define scalene triangle.,A triangle with all sides unequal and all angles unequal.
+Define right-angled triangle.,A triangle with one right angle.
+Define acute triangle.,A triangle in which all angles are less than 90 degrees.
+Define obtuse triangle.,A triangle in which one angle is greater than 90 degrees.
+Define rectangle.,A quadrilateral with four right angles and opposite sides equal.
+Define square.,A quadrilateral with four right angles and all sides equal.
+Define composite figure.,A figure made by combining two or more simple geometric shapes.
+Define chord of a circle.,A chord is a line segment joining two points on the circumference of a circle.
+Define arc of a circle.,An arc is a part of the circumference of a circle.
+Define secant of a circle.,A secant is a line that intersects a circle at two points.
+Draw a triangle and label its sides.,[Draw a triangle and label sides as AB, BC, CA]
+Draw a quadrilateral and label its vertices.,[Draw a quadrilateral and label vertices as A, B, C, D]
+Draw a circle and label its radius.,[Draw a circle and label radius from centre to circumference]
+Draw a square and label its sides.,[Draw a square and label sides as AB, BC, CD, DA]
+Draw a rectangle and label its sides.,[Draw a rectangle and label sides as AB, BC, CD, DA]
+Draw a right-angled triangle and label the right angle.,[Draw triangle ABC with right angle at B]
+Draw an acute-angled triangle.,[Draw triangle with all angles less than 90 degrees]
+Draw an obtuse-angled triangle.,[Draw triangle with one angle greater than 90 degrees]
+Explain the difference between radius and diameter.,Radius is half of diameter; diameter passes through the centre and is twice the radius.
+Explain the difference between a polygon and a circle.,A polygon has straight sides; a circle has a curved boundary.
+Define congruent shapes.,Congruent shapes are shapes that are identical in shape and size.
+Define similar shapes.,Similar shapes have the same shape but not necessarily the same size.
