@@ -1,0 +1,178 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 5: Understanding Elementary Shapes",
+  "generated_at": "2026-02-11T00:22:32.900269",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of congruent triangles using a diagram and provide an example of two congruent triangles in a real-life situation.",
+      "answer": "Congruent triangles are identical triangles with the same size and shape. They have the same angles and sides, and can be superimposed on each other without overlapping or leaving gaps. A simple example of congruent triangles is when two mirrors reflect each other perfectly, creating an infinite number of identical images. In a real-life situation, we can see congruent triangles in architecture, where architects use symmetrical designs to create visually appealing buildings. For instance, the Taj Mahal has symmetrical wings that are congruent triangles.",
+      "answer_outline": [
+        "Define what congruent triangles are",
+        "Provide an example of congruent triangles using a diagram",
+        "Explain how congruent triangles can be seen in real-life situations"
+      ],
+      "key_concepts": [
+        "congruent triangles",
+        "identical triangles",
+        "same size and shape",
+        "symmetrical designs"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Understanding Congruent Triangles"
+    },
+    {
+      "question_number": 2,
+      "question": "Describe the properties of a rectangle, including its sides, angles, and diagonals. Use a diagram to illustrate your answer.",
+      "answer": "A rectangle is a quadrilateral with four right angles and opposite sides that are equal in length. The sides of a rectangle can be described as follows: adjacent sides are unequal, opposite sides are equal, opposite angles are equal, and all internal angles are 90 degrees. A diagram illustrating these properties would show a rectangle with two sets of opposite sides that are the same length, two right angles, and two pairs of equal opposite angles. This helps to demonstrate the mathematical principles underlying this geometric shape.",
+      "answer_outline": [
+        "Define what a rectangle is",
+        "Describe the properties of the sides of a rectangle",
+        "Explain the characteristics of the angles in a rectangle"
+      ],
+      "key_concepts": [
+        "rectangle",
+        "quadrilateral",
+        "right angles",
+        "opposite sides"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Understanding Rectangles"
+    },
+    {
+      "question_number": 3,
+      "question": "What are the key differences between a square and a rectangle? Use examples to support your answer.",
+      "answer": "A square is a special type of rectangle where all four sides are equal in length. This means that it has four right angles and opposite sides that are equal in length, but also all its sides are of equal length. An example of a square is a piece of graph paper with equal-sized squares marked on each corner. In contrast, a rectangle can have different side lengths, as long as the adjacent sides remain unequal and the opposite sides equal.",
+      "answer_outline": [
+        "Define what a square is",
+        "Compare the characteristics of a square to those of a rectangle",
+        "Provide an example of a square in real life"
+      ],
+      "key_concepts": [
+        "square",
+        "rectangle",
+        "equal side lengths"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Understanding Squares and Rectangles"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the concept of symmetry using real-life examples. Discuss how it can be observed in nature, architecture, and art.",
+      "answer": "Symmetry is a fundamental concept that describes the way in which objects or shapes are arranged so that one half looks like the other half when reflected across an imaginary line. This can be seen in various natural phenomena such as flowers, trees, and birds' wings, where symmetry plays a vital role in their survival and functioning. In architecture, symmetrical designs are often used to create visually appealing buildings, while art uses symmetry to create balance and harmony. For example, the Eiffel Tower has symmetrical towers that reflect each other perfectly.",
+      "answer_outline": [
+        "Define what symmetry is",
+        "Provide examples of symmetry in nature",
+        "Explain how symmetry is used in architecture"
+      ],
+      "key_concepts": [
+        "symmetry",
+        "reflection",
+        "natural phenomena"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Understanding Symmetry"
+    },
+    {
+      "question_number": 5,
+      "question": "Describe the properties of a circle, including its diameter and circumference. Use mathematical formulas to support your answer.",
+      "answer": "A circle is a geometric shape that consists of all points equidistant from a fixed point called the center. The radius of a circle is the distance between the center and any point on the circle's boundary. The diameter of a circle is twice its radius, while the circumference (C) can be calculated using the formula C = 2πr or C = πd, where r is the radius and d is the diameter.",
+      "answer_outline": [
+        "Define what a circle is",
+        "Describe the properties of a circle's center",
+        "Explain how to calculate the circumference of a circle"
+      ],
+      "key_concepts": [
+        "circle",
+        "radius",
+        "diameter",
+        "circumference"
+      ],
+      "marks": 8,
+      "source_section": "Section 5: Understanding Circles"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the concept of tessellations using a diagram and provide an example of a real-life application.",
+      "answer": "Tessellations are repeating patterns of shapes that fit together without overlapping. They can be created using various geometric shapes such as triangles, squares, and hexagons. A simple example of a tessellation is the arrangement of hexagonal tiles in a mosaic floor. In architecture, tessellations are used to create visually appealing designs on walls and floors.",
+      "answer_outline": [
+        "Define what tessellations are",
+        "Provide an example of a tessellation using a diagram",
+        "Explain how tessellations can be seen in real-life situations"
+      ],
+      "key_concepts": [
+        "tessellations",
+        "repeating patterns"
+      ],
+      "marks": 8,
+      "source_section": "Section 6: Understanding Tessellations"
+    },
+    {
+      "question_number": 7,
+      "question": "Describe the properties of a polygon, including its sides and angles. Use mathematical formulas to support your answer.",
+      "answer": "A polygon is a two-dimensional shape with at least three sides and angles. The sum of the interior angles in any polygon can be calculated using the formula (n - 2) × 180 degrees, where n represents the number of sides. A regular polygon has equal side lengths and all internal angles are congruent, while an irregular polygon has different side lengths and angles.",
+      "answer_outline": [
+        "Define what a polygon is",
+        "Describe the properties of a polygon's sides",
+        "Explain how to calculate the sum of interior angles in a polygon"
+      ],
+      "key_concepts": [
+        "polygon",
+        "regular polygon",
+        "irregular polygon"
+      ],
+      "marks": 8,
+      "source_section": "Section 7: Understanding Polygons"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the concept of similarity using a diagram and provide an example of two similar shapes in real life.",
+      "answer": "Similar shapes are identical copies of each other but not necessarily the same size. They have equal corresponding angles and proportional sides, meaning that if you were to superimpose one shape on top of another, the corresponding parts would be congruent. A simple example of similar shapes is when a child draws two pictures of their favorite animal – although they may be different sizes, all the features like eyes, ears, and legs are identical.",
+      "answer_outline": [
+        "Define what similarity is",
+        "Provide an example of similar shapes using a diagram",
+        "Explain how to identify similarity in real-life situations"
+      ],
+      "key_concepts": [
+        "similarity",
+        "proportional sides"
+      ],
+      "marks": 8,
+      "source_section": "Section 8: Understanding Similarity"
+    },
+    {
+      "question_number": 9,
+      "question": "Describe the properties of a triangle, including its angles and side lengths. Use mathematical formulas to support your answer.",
+      "answer": "A triangle is a polygon with three sides and angles. The sum of all interior angles in any triangle is 180 degrees. In a right-angled triangle, one angle is exactly 90 degrees. The Pythagorean theorem states that for any right-angled triangle, the square of the length of the hypotenuse (c) equals the sum of the squares of the lengths of the other two sides (a and b), which can be expressed as c^2 = a^2 + b^2.",
+      "answer_outline": [
+        "Define what a triangle is",
+        "Describe the properties of a triangle's angles",
+        "Explain how to calculate side lengths using the Pythagorean theorem"
+      ],
+      "key_concepts": [
+        "triangle",
+        "right-angled triangle",
+        "Pythagorean theorem"
+      ],
+      "marks": 8,
+      "source_section": "Section 9: Understanding Triangles"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the concept of congruence in relation to angles and triangles. Provide an example of two congruent triangles.",
+      "answer": "Congruent triangles are identical triangles that have equal corresponding angles and side lengths. This means that if you were to superimpose one triangle on top of another, they would look exactly alike. An example of congruent triangles is when a carpenter builds two identical tables with the same dimensions and materials.",
+      "answer_outline": [
+        "Define what congruence is",
+        "Provide an example of congruent triangles using a diagram",
+        "Explain how to identify congruence in real-life situations"
+      ],
+      "key_concepts": [
+        "congruence",
+        "identical triangles"
+      ],
+      "marks": 8,
+      "source_section": "Section 10: Understanding Congruent Triangles"
+    }
+  ]
+}

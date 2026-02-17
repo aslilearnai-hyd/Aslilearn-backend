@@ -1,0 +1,288 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 4: Basic Geometrical Ideas",
+  "generated_at": "2026-02-11T00:06:26.166942",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the sum of interior angles in a triangle?",
+      "options": {
+        "A": "180o",
+        "B": "270o",
+        "C": "360o",
+        "D": "450o"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 1: 'The sum of interior angles in a triangle is always 180 degrees.'",
+      "difficulty": "easy",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What type of angle is formed by two intersecting lines?",
+      "options": {
+        "A": "acute angle",
+        "B": "obtuse angle",
+        "C": "right angle",
+        "D": "linear pair"
+      },
+      "correct_answer": "D",
+      "explanation": "From Section 2: 'Two intersecting lines form a linear pair of angles.'",
+      "difficulty": "medium",
+      "source_section": "Section 2-3"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the difference between a regular and irregular polygon?",
+      "options": {
+        "A": "Number of sides",
+        "B": "Shape of sides",
+        "C": "Size of sides",
+        "D": "All of the above"
+      },
+      "correct_answer": "D",
+      "explanation": "From Section 4: 'A regular polygon has equal sides and angles, while an irregular polygon has unequal sides and angles.'",
+      "difficulty": "hard",
+      "source_section": "Section 4-5"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the formula for the area of a circle?",
+      "options": {
+        "A": "πr^2",
+        "B": "2πr",
+        "C": "πd",
+        "D": "π^2"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 5: 'The area of a circle is given by the formula A = πr^2.'",
+      "difficulty": "medium",
+      "source_section": "Section 5-6"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the definition of a chord in a circle?",
+      "options": {
+        "A": "A line segment connecting two points on the circumference",
+        "B": "An arc connecting two points on the circumference",
+        "C": "A sector with two radii and an arc",
+        "D": "A diameter that passes through the center"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 6: 'A chord is a line segment connecting two points on the circumference of a circle.'",
+      "difficulty": "easy",
+      "source_section": "Section 6-7"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the formula for the perimeter of a rectangle?",
+      "options": {
+        "A": "2(l + w)",
+        "B": "(l + w)^2",
+        "C": "lw",
+        "D": "πd"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 7: 'The perimeter of a rectangle is given by the formula P = 2(l + w).'",
+      "difficulty": "medium",
+      "source_section": "Section 7-8"
+    },
+    {
+      "question_number": 7,
+      "question": "What type of angle is formed by two lines that intersect at right angles?",
+      "options": {
+        "A": "acute angle",
+        "B": "obtuse angle",
+        "C": "right angle",
+        "D": "linear pair"
+      },
+      "correct_answer": "C",
+      "explanation": "From Section 8: 'Two lines that intersect at right angles form a right angle.'",
+      "difficulty": "easy",
+      "source_section": "Section 8-9"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the definition of a sector in a circle?",
+      "options": {
+        "A": "An arc with two radii and an angle",
+        "B": "A region bounded by two radii and an arc",
+        "C": "A line segment connecting two points on the circumference",
+        "D": "A diameter that passes through the center"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 9: 'A sector is an arc with two radii and an angle.'",
+      "difficulty": "medium",
+      "source_section": "Section 9-10"
+    },
+    {
+      "question_number": 9,
+      "question": "What type of triangle has all sides equal?",
+      "options": {
+        "A": "Isosceles triangle",
+        "B": "Equilateral triangle",
+        "C": "Scalene triangle",
+        "D": "Right-angled triangle"
+      },
+      "correct_answer": "B",
+      "explanation": "From Section 10: 'An equilateral triangle has all sides equal.'",
+      "difficulty": "easy",
+      "source_section": "Section 10-11"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the formula for the volume of a sphere?",
+      "options": {
+        "A": "(4/3)πr^3",
+        "B": "2πr^2",
+        "C": "πd^2",
+        "D": "π^2"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 11: 'The volume of a sphere is given by the formula V = (4/3)πr^3.'",
+      "difficulty": "hard",
+      "source_section": "Section 11-12"
+    },
+    {
+      "question_number": 11,
+      "question": "What type of angle is formed by two lines that intersect at an acute angle?",
+      "options": {
+        "A": "acute angle",
+        "B": "obtuse angle",
+        "C": "right angle",
+        "D": "linear pair"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 12: 'Two lines that intersect at an acute angle form an acute angle.'",
+      "difficulty": "easy",
+      "source_section": "Section 12-13"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the definition of a diameter in a circle?",
+      "options": {
+        "A": "The longest chord that passes through the center",
+        "B": "A line segment connecting two points on the circumference",
+        "C": "An arc connecting two points on the circumference",
+        "D": "A sector with two radii and an arc"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 13: 'The diameter is the longest chord that passes through the center of a circle.'",
+      "difficulty": "medium",
+      "source_section": "Section 13-14"
+    },
+    {
+      "question_number": 13,
+      "question": "What type of triangle has two sides equal?",
+      "options": {
+        "A": "Isosceles triangle",
+        "B": "Equilateral triangle",
+        "C": "Scalene triangle",
+        "D": "Right-angled triangle"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 14: 'An isosceles triangle has two sides equal.'",
+      "difficulty": "easy",
+      "source_section": "Section 14-15"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the formula for the area of a rectangle?",
+      "options": {
+        "A": "l × w",
+        "B": "(l + w)^2",
+        "C": "lw",
+        "D": "πd"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 15: 'The area of a rectangle is given by the formula A = l × w.'",
+      "difficulty": "medium",
+      "source_section": "Section 15-16"
+    },
+    {
+      "question_number": 15,
+      "question": "What type of angle is formed by two lines that intersect at right angles?",
+      "options": {
+        "A": "acute angle",
+        "B": "obtuse angle",
+        "C": "right angle",
+        "D": "linear pair"
+      },
+      "correct_answer": "C",
+      "explanation": "From Section 16: 'Two lines that intersect at right angles form a right angle.'",
+      "difficulty": "easy",
+      "source_section": "Section 16-17"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the definition of an arc in a circle?",
+      "options": {
+        "A": "The part of the circumference between two points",
+        "B": "A line segment connecting two points on the circumference",
+        "C": "An angle formed by two radii and an arc",
+        "D": "A sector with two radii and an angle"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 17: 'An arc is the part of the circumference between two points.'",
+      "difficulty": "medium",
+      "source_section": "Section 17-18"
+    },
+    {
+      "question_number": 17,
+      "question": "What type of triangle has all angles equal?",
+      "options": {
+        "A": "Isosceles triangle",
+        "B": "Equilateral triangle",
+        "C": "Scalene triangle",
+        "D": "Right-angled triangle"
+      },
+      "correct_answer": "B",
+      "explanation": "From Section 18: 'An equilateral triangle has all angles equal.'",
+      "difficulty": "easy",
+      "source_section": "Section 18-19"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the formula for the volume of a cylinder?",
+      "options": {
+        "A": "(πr^2)h",
+        "B": "(4/3)πr^3",
+        "C": "2πr^2",
+        "D": "πd"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 19: 'The volume of a cylinder is given by the formula V = (πr^2)h.'",
+      "difficulty": "hard",
+      "source_section": "Section 19-20"
+    },
+    {
+      "question_number": 19,
+      "question": "What type of angle is formed by two lines that intersect at an obtuse angle?",
+      "options": {
+        "A": "acute angle",
+        "B": "obtuse angle",
+        "C": "right angle",
+        "D": "linear pair"
+      },
+      "correct_answer": "B",
+      "explanation": "From Section 20: 'Two lines that intersect at an obtuse angle form an obtuse angle.'",
+      "difficulty": "easy",
+      "source_section": "Section 20-21"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the definition of a sector in a circle?",
+      "options": {
+        "A": "An arc with two radii and an angle",
+        "B": "A region bounded by two radii and an arc",
+        "C": "A line segment connecting two points on the circumference",
+        "D": "A diameter that passes through the center"
+      },
+      "correct_answer": "A",
+      "explanation": "From Section 21: 'A sector is an arc with two radii and an angle.'",
+      "difficulty": "medium",
+      "source_section": "Section 21-22"
+    }
+  ]
+}

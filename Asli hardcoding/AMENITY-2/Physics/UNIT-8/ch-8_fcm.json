@@ -1,0 +1,43 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 8: Energy and work",
+  "generated_at": "2026-02-11T23:38:04.182822",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the unit of energy?",
+        "correct_answer": "Joule (J)",
+        "explanation": "Energy can be expressed in various units, but Joules are a commonly used and accepted unit.",
+        "source_section": "[Chapter 8: Energy and work]"
+      },
+      {
+        "question": "What is the relationship between energy and work?",
+        "correct_answer": "Energy = Work",
+        "explanation": "Work can be considered as a transfer of energy from one object to another.",
+        "source_section": "[Chapter 8: Energy and work]"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Types of Energy",
+        "content": "There are several types of energy, including kinetic energy (the energy of motion), potential energy (stored energy due to position or configuration), thermal energy (energy associated with temperature), electrical energy, chemical energy, nuclear energy, and radiant energy.",
+        "source_section": "[Chapter 8: Energy and work]"
+      },
+      {
+        "title": "Work-Energy Theorem",
+        "content": "The work-energy theorem states that the net work done on an object is equal to its change in kinetic energy. This theorem helps in understanding how energy is transferred from one form to another.",
+        "source_section": "[Chapter 8: Energy and work]"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The law of conservation of energy states that energy cannot be created or destroyed, only converted from one form to another.",
+        "source_section": "[Chapter 8: Energy and work]"
+      },
+      {
+        "fact": "The concept of potential energy is crucial in understanding various phenomena in the natural world, including the falling objects, springs, and electric charges.",
+        "source_section": "[Chapter 8: Energy and work]"
+      }
+    ]
+  }
+}

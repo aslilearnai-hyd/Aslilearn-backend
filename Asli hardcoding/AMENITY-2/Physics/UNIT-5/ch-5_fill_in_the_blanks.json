@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 5: Motion",
+  "generated_at": "2026-02-11T23:00:10.689390",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The speed of an object is calculated by dividing the ______ by the time taken.",
+      "correct_answer": "distance",
+      "hint": "Formula for speed",
+      "explanation": "According to the formula, speed = distance / time. This concept was discussed in Section 2.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 2,
+      "question": "The unit of length is ______ in the SI system.",
+      "correct_answer": "meter",
+      "hint": "SI unit of length",
+      "explanation": "In Section 3, it was mentioned that the meter is the standard unit of length in the SI system.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 3,
+      "question": "A body moving with uniform speed covers ______ distance in equal intervals of time.",
+      "correct_answer": "equal",
+      "hint": "Uniform motion",
+      "explanation": "This concept was discussed in Section 4, where it was explained that a body moving with uniform speed covers equal distances in equal intervals of time.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 4,
+      "question": "The average speed of an object is calculated by dividing the ______ distance by the total time taken.",
+      "correct_answer": "total",
+      "hint": "Average speed formula",
+      "explanation": "According to the formula, average speed = total distance / total time. This concept was discussed in Section 5.",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 5,
+      "question": "The C.G.S unit of speed is ______ m/s.",
+      "correct_answer": "1",
+      "hint": "C.G.S unit of speed",
+      "explanation": "In Section 6, it was mentioned that the C.G.S unit of speed is 1 m/s.",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 6,
+      "question": "A car moving in a straight line has ______ motion.",
+      "correct_answer": "rectilinear",
+      "hint": "Rectilinear motion",
+      "explanation": "This concept was discussed in Section 7, where it was explained that a car moving in a straight line has rectilinear motion.",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 7,
+      "question": "The formula for speed is ______ = distance / time.",
+      "correct_answer": "speed",
+      "hint": "Formula for speed",
+      "explanation": "According to the formula, speed = distance / time. This concept was discussed in Section 2.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 8,
+      "question": "A body moving with non-uniform speed covers ______ distance in equal intervals of time.",
+      "correct_answer": "unequal",
+      "hint": "Non-uniform motion",
+      "explanation": "This concept was discussed in Section 4, where it was explained that a body moving with non-uniform speed covers unequal distances in equal intervals of time.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 9,
+      "question": "The average speed of an object is calculated by dividing the ______ distance by the total time taken.",
+      "correct_answer": "total",
+      "hint": "Average speed formula",
+      "explanation": "According to the formula, average speed = total distance / total time. This concept was discussed in Section 5.",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 10,
+      "question": "The unit of length is ______ in the C.G.S system.",
+      "correct_answer": "centimeter",
+      "hint": "C.G.S unit of length",
+      "explanation": "In Section 6, it was mentioned that the centimeter is a unit of length in the C.G.S system.",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 11,
+      "question": "A body moving with uniform speed covers ______ distance in equal intervals of time.",
+      "correct_answer": "equal",
+      "hint": "Uniform motion",
+      "explanation": "This concept was discussed in Section 4, where it was explained that a body moving with uniform speed covers equal distances in equal intervals of time.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 12,
+      "question": "The C.G.S unit of speed is ______ m/s.",
+      "correct_answer": "1",
+      "hint": "C.G.S unit of speed",
+      "explanation": "In Section 6, it was mentioned that the C.G.S unit of speed is 1 m/s.",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 13,
+      "question": "The formula for speed is ______ = distance / time.",
+      "correct_answer": "speed",
+      "hint": "Formula for speed",
+      "explanation": "According to the formula, speed = distance / time. This concept was discussed in Section 2.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 14,
+      "question": "A body moving with non-uniform speed covers ______ distance in equal intervals of time.",
+      "correct_answer": "unequal",
+      "hint": "Non-uniform motion",
+      "explanation": "This concept was discussed in Section 4, where it was explained that a body moving with non-uniform speed covers unequal distances in equal intervals of time.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 15,
+      "question": "The average speed of an object is calculated by dividing the ______ distance by the total time taken.",
+      "correct_answer": "total",
+      "hint": "Average speed formula",
+      "explanation": "According to the formula, average speed = total distance / total time. This concept was discussed in Section 5.",
+      "source_section": "Section 5"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 8: Decimals",
+  "generated_at": "2026-02-11T01:01:42.994804",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the value of 0.5 + 0.3?",
+        "correct_answer": "0.8",
+        "explanation": "To add decimals, align the decimal points and add as you would with whole numbers.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the place value of a digit in the tenths place?",
+        "correct_answer": "0.1",
+        "explanation": "The place value of a digit in the tenths place is one tenth.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "How do you round a decimal to the nearest whole number?",
+        "correct_answer": "If the decimal is less than 0.5, round down; if it's greater than or equal to 0.5, round up.",
+        "explanation": "Rounding decimals involves looking at the digit in the tenths place and deciding whether to increase or decrease it by one.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the result of multiplying 2.5 by 3?",
+        "correct_answer": "7.5",
+        "explanation": "When multiplying decimals, multiply as you would with whole numbers and then divide by the product of the decimal parts.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What is the result of dividing 10 by 2?",
+        "correct_answer": "5",
+        "explanation": "When dividing decimals, divide as you would with whole numbers and then multiply by the reciprocal of the divisor.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is a decimal number?",
+        "correct_answer": "A decimal number is a number that has a fractional part represented by digits after a decimal point.",
+        "explanation": "Decimals can be used to represent fractions and are often used in everyday situations, such as measuring distances or amounts of money.",
+        "source_section": "Section 6"
+      },
+      {
+        "question": "How do you compare two decimal numbers?",
+        "correct_answer": "Compare the digits in the same place value, starting from the leftmost digit.",
+        "explanation": "When comparing decimals, look at the digits in the same place value and determine which one is larger or smaller.",
+        "source_section": "Section 7"
+      },
+      {
+        "question": "What is the sum of 0.4 and 0.6?",
+        "correct_answer": "1",
+        "explanation": "To add decimals, align the decimal points and add as you would with whole numbers.",
+        "source_section": "Section 8"
+      },
+      {
+        "question": "What is the product of 2.5 and 0.4?",
+        "correct_answer": "1",
+        "explanation": "When multiplying decimals, multiply as you would with whole numbers and then divide by the product of the decimal parts.",
+        "source_section": "Section 9"
+      },
+      {
+        "question": "What is the result of subtracting 0.7 from 2?",
+        "correct_answer": "1.3",
+        "explanation": "To subtract decimals, align the decimal points and subtract as you would with whole numbers.",
+        "source_section": "Section 10"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Rounding Decimals",
+        "content": "When rounding decimals, look at the digit in the tenths place and decide whether to increase or decrease it by one. If the digit is less than 5, round down; if it's greater than or equal to 5, round up.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Multiplying Decimals",
+        "content": "To multiply decimals, multiply as you would with whole numbers and then divide by the product of the decimal parts.",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Dividing Decimals",
+        "content": "When dividing decimals, divide as you would with whole numbers and then multiply by the reciprocal of the divisor.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Comparing Decimals",
+        "content": "Compare the digits in the same place value, starting from the leftmost digit. If the digits are equal, look at the next digit to the right and so on.",
+        "source_section": "Section 7"
+      },
+      {
+        "title": "Adding Decimals",
+        "content": "To add decimals, align the decimal points and add as you would with whole numbers.",
+        "source_section": "Section 8"
+      },
+      {
+        "title": "Subtracting Decimals",
+        "content": "To subtract decimals, align the decimal points and subtract as you would with whole numbers.",
+        "source_section": "Section 9"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The ancient Greek mathematician Eratosthenes made a remarkable calculation of Earth's circumference over 2,200 years ago.",
+        "source_section": "Section 11"
+      },
+      {
+        "fact": "Archimedes used polygons to estimate the value of Pi and calculated it to be between 3.1408 and 3.1429.",
+        "source_section": "Section 12"
+      },
+      {
+        "fact": "Pi is an irrational number, which means it cannot be expressed as a simple fraction.",
+        "source_section": "Section 13"
+      },
+      {
+        "fact": "The decimal system is based on the concept of place value, where each digit has a specific place or position in the number.",
+        "source_section": "Section 14"
+      },
+      {
+        "fact": "Decimals can be used to represent fractions and are often used in everyday situations, such as measuring distances or amounts of money.",
+        "source_section": "Section 15"
+      },
+      {
+        "fact": "The ancient Babylonians used a sexagesimal (base-60) number system that included decimal fractions.",
+        "source_section": "Section 16"
+      },
+      {
+        "fact": "The Indian mathematician Aryabhata used decimal fractions in the 5th century CE and calculated Pi to be approximately 3.1416.",
+        "source_section": "Section 17"
+      },
+      {
+        "fact": "The decimal system was introduced to Europe by the Italian mathematician Fibonacci in the 13th century CE.",
+        "source_section": "Section 18"
+      },
+      {
+        "fact": "Today, decimals are used widely in science, technology, engineering, and mathematics (STEM) fields for calculations and measurements.",
+        "source_section": "Section 19"
+      }
+    ]
+  }
+}

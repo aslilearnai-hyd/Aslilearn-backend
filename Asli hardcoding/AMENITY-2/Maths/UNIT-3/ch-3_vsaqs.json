@@ -1,0 +1,216 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Mathematics Class 6 IIT/OLYMPIAD Foundation",
+  "generated_at": "2023-09-20T14:30:00.000Z",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the smallest prime number?",
+      "answer": "The smallest prime number is 2.",
+      "key_points": [
+        "prime",
+        "number",
+        "smallest"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the largest whole number less than 100?",
+      "answer": "The largest whole number less than 100 is 99.",
+      "key_points": [
+        "whole",
+        "number",
+        "largest"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the sum of all odd numbers from 1 to 10?",
+      "answer": "The sum of all odd numbers from 1 to 10 is 55.",
+      "key_points": [
+        "odd",
+        "numbers",
+        "sum"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the product of all even numbers from 2 to 8?",
+      "answer": "The product of all even numbers from 2 to 8 is 3360.",
+      "key_points": [
+        "even",
+        "numbers",
+        "product"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the difference between 50 and 25?",
+      "answer": "The difference between 50 and 25 is 25.",
+      "key_points": [
+        "difference",
+        "numbers"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the sum of all numbers from 1 to 5?",
+      "answer": "The sum of all numbers from 1 to 5 is 15.",
+      "key_points": [
+        "numbers",
+        "sum"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the product of all numbers from 2 to 6?",
+      "answer": "The product of all numbers from 2 to 6 is 720.",
+      "key_points": [
+        "numbers",
+        "product"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the largest number that divides both 18 and 24?",
+      "answer": "The largest number that divides both 18 and 24 is 6.",
+      "key_points": [
+        "largest",
+        "number",
+        "divides"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the smallest number that divides both 15 and 20?",
+      "answer": "The smallest number that divides both 15 and 20 is 5.",
+      "key_points": [
+        "smallest",
+        "number",
+        "divides"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the sum of all multiples of 3 from 1 to 12?",
+      "answer": "The sum of all multiples of 3 from 1 to 12 is 54.",
+      "key_points": [
+        "multiples",
+        "sum"
+      ],
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the product of all multiples of 4 from 2 to 10?",
+      "answer": "The product of all multiples of 4 from 2 to 10 is 6720.",
+      "key_points": [
+        "multiples",
+        "product"
+      ],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the difference between 25 and 15?",
+      "answer": "The difference between 25 and 15 is 10.",
+      "key_points": [
+        "difference",
+        "numbers"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the sum of all numbers from 1 to 9?",
+      "answer": "The sum of all numbers from 1 to 9 is 45.",
+      "key_points": [
+        "numbers",
+        "sum"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the product of all numbers from 3 to 7?",
+      "answer": "The product of all numbers from 3 to 7 is 210.",
+      "key_points": [
+        "numbers",
+        "product"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the largest number that divides both 12 and 18?",
+      "answer": "The largest number that divides both 12 and 18 is 6.",
+      "key_points": [
+        "largest",
+        "number",
+        "divides"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the smallest number that divides both 9 and 15?",
+      "answer": "The smallest number that divides both 9 and 15 is 3.",
+      "key_points": [
+        "smallest",
+        "number",
+        "divides"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the sum of all multiples of 5 from 1 to 20?",
+      "answer": "The sum of all multiples of 5 from 1 to 20 is 100.",
+      "key_points": [
+        "multiples",
+        "sum"
+      ],
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the product of all multiples of 6 from 2 to 10?",
+      "answer": "The product of all multiples of 6 from 2 to 10 is 4320.",
+      "key_points": [
+        "multiples",
+        "product"
+      ],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the difference between 20 and 15?",
+      "answer": "The difference between 20 and 15 is 5.",
+      "key_points": [
+        "difference",
+        "numbers"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the sum of all numbers from 2 to 8?",
+      "answer": "The sum of all numbers from 2 to 8 is 36.",
+      "key_points": [
+        "numbers",
+        "sum"
+      ],
+      "source_section": "Section 2"
+    }
+  ]
+}

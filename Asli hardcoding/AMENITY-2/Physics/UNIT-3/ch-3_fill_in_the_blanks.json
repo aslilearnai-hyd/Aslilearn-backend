@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 3: Electricity and circuits",
+  "generated_at": "2026-02-11T22:39:11.299575",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The resistance of a conductor is directly proportional to ______.",
+      "correct_answer": "length and inversely proportional to area of cross-section",
+      "hint": "Basic Electricity and Circuits",
+      "explanation": "Referring to the content in Section 1: Resistance, it's mentioned that 'R ∝ l' (resistance is directly proportional to length) and 'R ∝ 1/A' (resistance is inversely proportional to area of cross-section).",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "The current flowing through a conductor can be calculated using the formula ______.",
+      "correct_answer": "I = V/R",
+      "hint": "Basic Electricity and Circuits",
+      "explanation": "From Section 1: Resistance, it's mentioned that 'I = V/R' (current is equal to voltage divided by resistance).",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "The power dissipated in a resistor can be calculated using the formula ______.",
+      "correct_answer": "P = VI",
+      "hint": "Basic Electricity and Circuits",
+      "explanation": "From Section 2: Power, it's mentioned that 'P = VI' (power is equal to voltage multiplied by current).",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "The internal resistance of a cell can be represented as ______.",
+      "correct_answer": "r",
+      "hint": "Basic Electricity and Circuits",
+      "explanation": "From Section 3: Cells, it's mentioned that 'internal resistance' is represented by the symbol 'r'.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 5,
+      "question": "The Wheatstone Bridge is a circuit used to measure ______.",
+      "correct_answer": "resistance",
+      "hint": "Wheatstone Bridge and Measurement of Resistance",
+      "explanation": "From Section 4: Wheatstone Bridge, it's mentioned that the Wheatstone Bridge is used to measure resistance.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "The combination of cells in series can be represented as ______.",
+      "correct_answer": "E",
+      "hint": "Combination of Cells in Series and Parallel",
+      "explanation": "From Section 5: Combination of Cells, it's mentioned that the combination of cells in series is represented by 'E'.",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 7,
+      "question": "The fuse wire has a very low resistance and is used to ______.",
+      "correct_answer": "limit current",
+      "hint": "Fuse Wire and Safety Features",
+      "explanation": "From Section 6: Fuse Wire, it's mentioned that the fuse wire has a very low resistance and is used to limit current.",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 8,
+      "question": "The ammeter measures the ______ of an electric circuit.",
+      "correct_answer": "current",
+      "hint": "Ammeter and Voltmeter",
+      "explanation": "From Section 7: Ammeter, it's mentioned that the ammeter measures the current of an electric circuit.",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 9,
+      "question": "The superconductors have zero resistance and are used in ______ applications.",
+      "correct_answer": "electrical",
+      "hint": "Superconductors and Applications",
+      "explanation": "From Section 8: Superconductors, it's mentioned that the superconductors have zero resistance and are used in electrical applications.",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 10,
+      "question": "The combination of cells in parallel can be represented as ______.",
+      "correct_answer": "ε",
+      "hint": "Combination of Cells in Series and Parallel",
+      "explanation": "From Section 5: Combination of Cells, it's mentioned that the combination of cells in parallel is represented by 'ε'.",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 11,
+      "question": "The internal resistance of a cell can be measured using the ______ method.",
+      "correct_answer": "polarization",
+      "hint": "Measurement of Internal Resistance",
+      "explanation": "From Section 3: Cells, it's mentioned that the internal resistance of a cell can be measured using the polarization method.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 12,
+      "question": "The Wheatstone Bridge is used to measure ______ with high accuracy.",
+      "correct_answer": "resistance",
+      "hint": "Wheatstone Bridge and Measurement of Resistance",
+      "explanation": "From Section 4: Wheatstone Bridge, it's mentioned that the Wheatstone Bridge is used to measure resistance with high accuracy.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 13,
+      "question": "The combination of cells in series can provide a higher ______ than the individual cells.",
+      "correct_answer": "voltage",
+      "hint": "Combination of Cells in Series and Parallel",
+      "explanation": "From Section 5: Combination of Cells, it's mentioned that the combination of cells in series can provide a higher voltage than the individual cells.",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 14,
+      "question": "The fuse wire has a high resistance and is used to ______.",
+      "correct_answer": "limit current",
+      "hint": "Fuse Wire and Safety Features",
+      "explanation": "From Section 6: Fuse Wire, it's mentioned that the fuse wire has a high resistance and is used to limit current.",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 15,
+      "question": "The ammeter measures the ______ of an electric circuit with low error.",
+      "correct_answer": "current",
+      "hint": "Ammeter and Voltmeter",
+      "explanation": "From Section 7: Ammeter, it's mentioned that the ammeter measures the current of an electric circuit with low error.",
+      "source_section": "Section 7"
+    }
+  ]
+}

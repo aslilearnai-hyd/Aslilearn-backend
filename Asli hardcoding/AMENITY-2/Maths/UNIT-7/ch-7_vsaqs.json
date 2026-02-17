@@ -1,0 +1,209 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Class 6 Mathematics",
+  "generated_at": "2026-02-11T00:47:19.547137",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the definition of fractions?",
+      "answer": "Fractions are numbers that show a part of a whole.",
+      "key_points": [
+        "fractions",
+        "whole"
+      ],
+      "source_section": "Chapter Overview"
+    },
+    {
+      "question_number": 2,
+      "question": "How many types of fractions are there?",
+      "answer": "There are three main types: proper, improper, and mixed.",
+      "key_points": [
+        "types",
+        "fractions"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the value of x in the equation 2x + 5 = 11?",
+      "answer": "The value of x is 3.",
+      "key_points": [
+        "equation",
+        "value"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the definition of equivalent fractions?",
+      "answer": "Equivalent fractions are fractions that have the same value but different numerators and denominators.",
+      "key_points": [
+        "equivalent",
+        "fractions"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "How do you simplify a fraction?",
+      "answer": "To simplify a fraction, find the greatest common divisor (GCD) of the numerator and denominator.",
+      "key_points": [
+        "simplify",
+        "fraction"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the difference between like and unlike fractions?",
+      "answer": "Like fractions have the same denominator, while unlike fractions do not.",
+      "key_points": [
+        "like",
+        "unlike",
+        "fractions"
+      ],
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 7,
+      "question": "How do you convert a mixed number to an improper fraction?",
+      "answer": "To convert, multiply the whole number by the denominator and add the numerator.",
+      "key_points": [
+        "mixed",
+        "improper"
+      ],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the definition of a unit fraction?",
+      "answer": "A unit fraction is a fraction with a denominator of 1.",
+      "key_points": [
+        "unit",
+        "fraction"
+      ],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 9,
+      "question": "How do you add and subtract fractions?",
+      "answer": "To add or subtract, find the least common multiple (LCM) of the denominators.",
+      "key_points": [
+        "add",
+        "subtract"
+      ],
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the definition of a reciprocal?",
+      "answer": "A reciprocal is a fraction that has been flipped, with the numerator and denominator swapped.",
+      "key_points": [
+        "reciprocal",
+        "fraction"
+      ],
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 11,
+      "question": "How do you multiply fractions?",
+      "answer": "To multiply, multiply the numerators together and the denominators together.",
+      "key_points": [
+        "multiply",
+        "fractions"
+      ],
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the definition of a fraction with zero as the numerator?",
+      "answer": "A fraction with zero as the numerator has no value.",
+      "key_points": [
+        "zero",
+        "numerator"
+      ],
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 13,
+      "question": "How do you divide fractions?",
+      "answer": "To divide, multiply by the reciprocal of the divisor.",
+      "key_points": [
+        "divide",
+        "fractions"
+      ],
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the difference between a proper and improper fraction?",
+      "answer": "A proper fraction has a value less than 1, while an improper fraction has a value greater than or equal to 1.",
+      "key_points": [
+        "proper",
+        "improper"
+      ],
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 15,
+      "question": "How do you compare fractions?",
+      "answer": "To compare, find the least common multiple (LCM) of the denominators.",
+      "key_points": [
+        "compare",
+        "fractions"
+      ],
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the definition of a mixed number?",
+      "answer": "A mixed number is a combination of a whole number and a proper fraction.",
+      "key_points": [
+        "mixed",
+        "number"
+      ],
+      "source_section": "Section 15"
+    },
+    {
+      "question_number": 17,
+      "question": "How do you convert an improper fraction to a mixed number?",
+      "answer": "To convert, divide the numerator by the denominator and find the remainder.",
+      "key_points": [
+        "improper",
+        "mixed"
+      ],
+      "source_section": "Section 16"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the difference between a like fraction and an unlike fraction?",
+      "answer": "A like fraction has the same denominator, while an unlike fraction does not.",
+      "key_points": [
+        "like",
+        "unlike"
+      ],
+      "source_section": "Section 17"
+    },
+    {
+      "question_number": 19,
+      "question": "How do you simplify a complex fraction?",
+      "answer": "To simplify, multiply the numerator and denominator by the same value.",
+      "key_points": [
+        "simplify",
+        "complex"
+      ],
+      "source_section": "Section 18"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the definition of a fraction with zero as the denominator?",
+      "answer": "A fraction with zero as the denominator has no value.",
+      "key_points": [
+        "zero",
+        "denominator"
+      ],
+      "source_section": "Section 19"
+    }
+  ]
+}

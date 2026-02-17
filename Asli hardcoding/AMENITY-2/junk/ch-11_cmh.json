@@ -1,0 +1,76 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 11: Ratio and Proportions",
+  "generated_at": "2026-02-11T17:22:18.594509",
+  "concepts": [
+    {
+      "concept_name": "The Sum of Interior Angles in a Triangle is 180 Degrees",
+      "difficulty": "easy",
+      "lesson": "In Euclidean geometry, the sum of the interior angles of any triangle is always exactly 180 degrees. This property holds true for all types of triangles: scalene, isosceles, and equilateral.",
+      "real_example": "",
+      "key_points": [
+        "The sum of interior angles in a triangle is always 180 degrees",
+        "This rule applies to all types of triangles",
+        "The property can be proven by drawing a triangle inside a straight line"
+      ],
+      "source_section": "Section 26"
+    },
+    {
+      "concept_name": "Roman Numerals Do Not Have a Symbol for Zero",
+      "difficulty": "medium",
+      "lesson": "The Roman numeral system was designed primarily for counting and trade, which didn’t require a symbol for zero. Romans used letters like I, V, X, and others to represent values, but no symbol for zero existed.",
+      "real_example": "",
+      "key_points": [
+        "Roman numerals do not have a symbol for zero",
+        "The concept of zero as a number was later developed in India",
+        "The Arabic numeral system spread the innovation"
+      ],
+      "source_section": "Section 27"
+    },
+    {
+      "concept_name": "The Number 9 Has Unique Properties in Multiplication",
+      "difficulty": "hard",
+      "lesson": "The number 9 is known for its unique properties in multiplication — the digits of any multiple of 9 always add up to 9 or a multiple of 9. For example, 9 × 4 = 36, and 3 + 6 = 9.",
+      "real_example": "",
+      "key_points": [
+        "The number 9 has unique properties in multiplication",
+        "Multiples of 9 have digits that add up to a multiple of 9",
+        "This property is used for calculations and memory aids"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "concept_name": "Euclidean Geometry vs. Spherical Surface",
+      "difficulty": "easy",
+      "lesson": "In Euclidean geometry, the sum of the interior angles of any triangle is always exactly 180 degrees. On a spherical surface, however, triangle angles can actually exceed 180 degrees!",
+      "real_example": "",
+      "key_points": [
+        "Euclidean geometry has a specific rule for triangle angles",
+        "Spherical surfaces have different properties than Euclidean geometry"
+      ],
+      "source_section": "Section 26"
+    },
+    {
+      "concept_name": "Roman Numerals and Zero",
+      "difficulty": "medium",
+      "lesson": "The Roman numeral system was designed primarily for counting and trade, which didn’t require a symbol for zero. The concept of zero as a number was later developed in India by mathematicians around the 5th century.",
+      "real_example": "",
+      "key_points": [
+        "Roman numerals do not have a symbol for zero",
+        "The concept of zero was developed in India"
+      ],
+      "source_section": "Section 27"
+    },
+    {
+      "concept_name": "Properties of the Number 9",
+      "difficulty": "hard",
+      "lesson": "The number 9 is known for its unique properties in multiplication — the digits of any multiple of 9 always add up to 9 or a multiple of 9.",
+      "real_example": "",
+      "key_points": [
+        "Multiples of 9 have digits that add up to a multiple of 9",
+        "This property is used for calculations and memory aids"
+      ],
+      "source_section": "Section 28"
+    }
+  ]
+}

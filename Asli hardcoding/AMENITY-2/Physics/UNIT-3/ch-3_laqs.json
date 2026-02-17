@@ -1,0 +1,160 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 3: Electricity and circuits",
+  "generated_at": "2026-02-11T22:42:22.505435",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "A conductor is connected to a power source with an internal resistance of 2 ohms. If the voltage across the conductor is increased by 5 volts, what happens to the current flowing through it?",
+      "answer": "When the voltage across the conductor is increased by 5 volts, the current flowing through it will also increase. This is because the relationship between voltage and current in a conductor is directly proportional. According to Ohm's Law, V = IR, where V is the voltage, I is the current, and R is the resistance. Since the internal resistance of the conductor remains constant at 2 ohms, an increase in voltage will result in an increase in current.",
+      "answer_outline": [
+        "Understand Ohm's Law",
+        "Identify the relationship between voltage and current",
+        "Analyze the effect of increasing voltage on current"
+      ],
+      "key_concepts": [
+        "Ohm's Law",
+        "Voltage-current relationship",
+        "Conductor resistance"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Electric circuits"
+    },
+    {
+      "question_number": 2,
+      "question": "A circuit consists of three resistors connected in series. The total resistance of the circuit is measured to be 10 ohms. If a 5-volt battery is connected across the circuit, what is the current flowing through each resistor?",
+      "answer": "Since the resistors are connected in series, the current flowing through each resistor is the same. To find this current, we can use Ohm's Law: I = V/R. The total resistance of the circuit is 10 ohms, and the voltage across it is 5 volts. Therefore, the current flowing through each resistor is I = 5/10 = 0.5 amps.",
+      "answer_outline": [
+        "Understand series circuits",
+        "Apply Ohm's Law to find current"
+      ],
+      "key_concepts": [
+        "Series circuits",
+        "Ohm's Law"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Electric circuits"
+    },
+    {
+      "question_number": 3,
+      "question": "A conductor has a resistance of 5 ohms. If the voltage across it is increased by 10 volts, what happens to the power dissipated in the conductor?",
+      "answer": "The power dissipated in the conductor can be calculated using the formula P = V^2/R, where P is the power, V is the voltage, and R is the resistance. When the voltage across the conductor is increased by 10 volts, the new voltage becomes 20 volts (initial voltage + increase). Therefore, the new power dissipated in the conductor is P = (20)^2/5 = 80 watts.",
+      "answer_outline": [
+        "Understand power dissipation",
+        "Apply formula to calculate new power"
+      ],
+      "key_concepts": [
+        "Power dissipation",
+        "Conductor resistance"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Electric circuits"
+    },
+    {
+      "question_number": 4,
+      "question": "A circuit consists of three resistors connected in parallel. The individual resistances are 2 ohms, 3 ohms, and 5 ohms. What is the total resistance of the circuit?",
+      "answer": "Since the resistors are connected in parallel, the reciprocal of the total resistance (1/Rt) is equal to the sum of the reciprocals of the individual resistances (1/R1 + 1/R2 + 1/R3). Therefore, we can calculate the total resistance as follows: 1/Rt = 1/2 + 1/3 + 1/5. Solving this equation yields Rt = 0.6 ohms.",
+      "answer_outline": [
+        "Understand parallel circuits",
+        "Apply formula to calculate total resistance"
+      ],
+      "key_concepts": [
+        "Parallel circuits",
+        "Conductor resistance"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Electric circuits"
+    },
+    {
+      "question_number": 5,
+      "question": "A circuit consists of a battery and a resistor connected in series. The internal resistance of the battery is 1 ohm, and the external resistance is 3 ohms. What is the total resistance of the circuit?",
+      "answer": "Since the resistances are connected in series, the total resistance (Rt) is simply the sum of the individual resistances: Rt = Rb + Re = 1 + 3 = 4 ohms.",
+      "answer_outline": [
+        "Understand series circuits",
+        "Apply formula to calculate total resistance"
+      ],
+      "key_concepts": [
+        "Series circuits",
+        "Conductor resistance"
+      ],
+      "marks": 8,
+      "source_section": "Section 5: Electric circuits"
+    },
+    {
+      "question_number": 6,
+      "question": "A circuit consists of a battery and a resistor connected in parallel. The internal resistance of the battery is 2 ohms, and the external resistance is 4 ohms. What is the total resistance of the circuit?",
+      "answer": "Since the resistances are connected in parallel, the reciprocal of the total resistance (1/Rt) is equal to the sum of the reciprocals of the individual resistances (1/Rb + 1/Re). Therefore, we can calculate the total resistance as follows: 1/Rt = 1/2 + 1/4. Solving this equation yields Rt = 0.8 ohms.",
+      "answer_outline": [
+        "Understand parallel circuits",
+        "Apply formula to calculate total resistance"
+      ],
+      "key_concepts": [
+        "Parallel circuits",
+        "Conductor resistance"
+      ],
+      "marks": 8,
+      "source_section": "Section 6: Electric circuits"
+    },
+    {
+      "question_number": 7,
+      "question": "A circuit consists of three resistors connected in series. The individual resistances are 2 ohms, 3 ohms, and 5 ohms. What is the total resistance of the circuit?",
+      "answer": "Since the resistors are connected in series, the total resistance (Rt) is simply the sum of the individual resistances: Rt = R1 + R2 + R3 = 2 + 3 + 5 = 10 ohms.",
+      "answer_outline": [
+        "Understand series circuits",
+        "Apply formula to calculate total resistance"
+      ],
+      "key_concepts": [
+        "Series circuits",
+        "Conductor resistance"
+      ],
+      "marks": 8,
+      "source_section": "Section 7: Electric circuits"
+    },
+    {
+      "question_number": 8,
+      "question": "A circuit consists of three resistors connected in parallel. The individual resistances are 2 ohms, 3 ohms, and 5 ohms. What is the total resistance of the circuit?",
+      "answer": "Since the resistors are connected in parallel, the reciprocal of the total resistance (1/Rt) is equal to the sum of the reciprocals of the individual resistances (1/R1 + 1/R2 + 1/R3). Therefore, we can calculate the total resistance as follows: 1/Rt = 1/2 + 1/3 + 1/5. Solving this equation yields Rt = 0.6 ohms.",
+      "answer_outline": [
+        "Understand parallel circuits",
+        "Apply formula to calculate total resistance"
+      ],
+      "key_concepts": [
+        "Parallel circuits",
+        "Conductor resistance"
+      ],
+      "marks": 8,
+      "source_section": "Section 8: Electric circuits"
+    },
+    {
+      "question_number": 9,
+      "question": "A circuit consists of a battery and a resistor connected in series. The internal resistance of the battery is 1 ohm, and the external resistance is 3 ohms. What is the total resistance of the circuit?",
+      "answer": "Since the resistances are connected in series, the total resistance (Rt) is simply the sum of the individual resistances: Rt = Rb + Re = 1 + 3 = 4 ohms.",
+      "answer_outline": [
+        "Understand series circuits",
+        "Apply formula to calculate total resistance"
+      ],
+      "key_concepts": [
+        "Series circuits",
+        "Conductor resistance"
+      ],
+      "marks": 8,
+      "source_section": "Section 9: Electric circuits"
+    },
+    {
+      "question_number": 10,
+      "question": "A circuit consists of a battery and a resistor connected in parallel. The internal resistance of the battery is 2 ohms, and the external resistance is 4 ohms. What is the total resistance of the circuit?",
+      "answer": "Since the resistances are connected in parallel, the reciprocal of the total resistance (1/Rt) is equal to the sum of the reciprocals of the individual resistances (1/Rb + 1/Re). Therefore, we can calculate the total resistance as follows: 1/Rt = 1/2 + 1/4. Solving this equation yields Rt = 0.8 ohms.",
+      "answer_outline": [
+        "Understand parallel circuits",
+        "Apply formula to calculate total resistance"
+      ],
+      "key_concepts": [
+        "Parallel circuits",
+        "Conductor resistance"
+      ],
+      "marks": 8,
+      "source_section": "Section 10: Electric circuits"
+    }
+  ]
+}

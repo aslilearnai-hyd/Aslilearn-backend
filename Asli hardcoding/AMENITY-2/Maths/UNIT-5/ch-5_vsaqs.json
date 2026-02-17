@@ -1,0 +1,215 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 5: Understanding Elementary Shapes",
+  "generated_at": "2026-02-11T00:20:25.323004",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the sum of all interior angles in a regular polygon with n sides?",
+      "answer": "The sum of all interior angles in a regular polygon with n sides is (n-2) * 180 degrees.",
+      "key_points": [
+        "regular polygon",
+        "interior angle",
+        "sum"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the formula to calculate the area of a circle?",
+      "answer": "The formula to calculate the area of a circle is A = πr^2, where r is the radius.",
+      "key_points": [
+        "circle",
+        "area",
+        "radius"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "What are the properties of an equilateral triangle?",
+      "answer": "An equilateral triangle has all sides equal and all angles equal to 60 degrees.",
+      "key_points": [
+        "equilateral",
+        "triangle",
+        "properties"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the formula to calculate the volume of a cube?",
+      "answer": "The formula to calculate the volume of a cube is V = s^3, where s is the side length.",
+      "key_points": [
+        "cube",
+        "volume",
+        "side length"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "What are the properties of a square?",
+      "answer": "A square has all sides equal and all angles equal to 90 degrees.",
+      "key_points": [
+        "square",
+        "properties"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the formula to calculate the circumference of a circle?",
+      "answer": "The formula to calculate the circumference of a circle is C = 2πr, where r is the radius.",
+      "key_points": [
+        "circle",
+        "circumference",
+        "radius"
+      ],
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 7,
+      "question": "What are the types of angles in a triangle?",
+      "answer": "The types of angles in a triangle are acute, right, and obtuse.",
+      "key_points": [
+        "triangle",
+        "angles"
+      ],
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the formula to calculate the surface area of a cube?",
+      "answer": "The formula to calculate the surface area of a cube is A = 6s^2, where s is the side length.",
+      "key_points": [
+        "cube",
+        "surface area",
+        "side length"
+      ],
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 9,
+      "question": "What are the properties of a rhombus?",
+      "answer": "A rhombus has all sides equal and opposite angles equal.",
+      "key_points": [
+        "rhombus",
+        "properties"
+      ],
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the formula to calculate the volume of a sphere?",
+      "answer": "The formula to calculate the volume of a sphere is V = (4/3)πr^3, where r is the radius.",
+      "key_points": [
+        "sphere",
+        "volume",
+        "radius"
+      ],
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 11,
+      "question": "What are the properties of a regular hexagon?",
+      "answer": "A regular hexagon has six equal sides and interior angles.",
+      "key_points": [
+        "regular hexagon",
+        "properties"
+      ],
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the formula to calculate the area of a trapezoid?",
+      "answer": "The formula to calculate the area of a trapezoid is A = (1/2)(a+b)h, where a and b are the parallel sides and h is the height.",
+      "key_points": [
+        "trapezoid",
+        "area"
+      ],
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 13,
+      "question": "What are the properties of an acute angle?",
+      "answer": "An acute angle is less than 90 degrees.",
+      "key_points": [
+        "acute angle",
+        "properties"
+      ],
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the formula to calculate the volume of a cylinder?",
+      "answer": "The formula to calculate the volume of a cylinder is V = πr^2h, where r is the radius and h is the height.",
+      "key_points": [
+        "cylinder",
+        "volume"
+      ],
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 15,
+      "question": "What are the types of triangles?",
+      "answer": "The types of triangles are equilateral, isosceles, and scalene.",
+      "key_points": [
+        "triangle",
+        "types"
+      ],
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the formula to calculate the area of a circle?",
+      "answer": "The formula to calculate the area of a circle is A = πr^2, where r is the radius.",
+      "key_points": [
+        "circle",
+        "area"
+      ],
+      "source_section": "Section 15"
+    },
+    {
+      "question_number": 17,
+      "question": "What are the properties of an obtuse angle?",
+      "answer": "An obtuse angle is greater than 90 degrees.",
+      "key_points": [
+        "obtuse angle",
+        "properties"
+      ],
+      "source_section": "Section 16"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the formula to calculate the volume of a cone?",
+      "answer": "The formula to calculate the volume of a cone is V = (1/3)πr^2h, where r is the radius and h is the height.",
+      "key_points": [
+        "cone",
+        "volume"
+      ],
+      "source_section": "Section 17"
+    },
+    {
+      "question_number": 19,
+      "question": "What are the types of quadrilaterals?",
+      "answer": "The types of quadrilaterals are rectangle, square, and rhombus.",
+      "key_points": [
+        "quadrilateral",
+        "types"
+      ],
+      "source_section": "Section 18"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the formula to calculate the surface area of a sphere?",
+      "answer": "The formula to calculate the surface area of a sphere is A = 4πr^2, where r is the radius.",
+      "key_points": [
+        "sphere",
+        "surface area"
+      ],
+      "source_section": "Section 19"
+    }
+  ]
+}

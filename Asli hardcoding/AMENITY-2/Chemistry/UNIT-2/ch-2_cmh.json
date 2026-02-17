@@ -1,0 +1,62 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 2: Elements compounds and mixtures",
+  "generated_at": "2026-02-12T00:09:10.024983",
+  "concepts": [
+    {
+      "concept_name": "Elements",
+      "difficulty": "easy",
+      "lesson": "An element is a substance that consists of only one type of atom. It has a fixed number of protons in its atomic nucleus, which determines the element's identity. Elements are the building blocks of matter and can be found naturally or artificially created.",
+      "real_example": "",
+      "key_points": [
+        "Elements have unique properties based on their atomic structure",
+        "Elements can be naturally occurring or synthetically produced"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Compounds",
+      "difficulty": "medium",
+      "lesson": "A compound is a substance formed when two or more elements chemically bond together. Compounds have properties that are different from those of their constituent elements. The ratio of atoms in a compound is fixed and can be expressed by a chemical formula.",
+      "real_example": "Water (H2O)",
+      "key_points": [
+        "Compounds are made up of multiple elements",
+        "Compounds have unique properties based on the arrangement of atoms"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Mixtures",
+      "difficulty": "medium",
+      "lesson": "A mixture is a physical combination of two or more substances where each substance retains its chemical identity. Mixtures can be homogeneous (uniform composition) or heterogeneous (non-uniform composition). The components of a mixture can be separated by physical means.",
+      "real_example": "Air (a mixture of gases)",
+      "key_points": [
+        "Mixtures are combinations of multiple substances",
+        "Components of mixtures retain their chemical identity"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "concept_name": "Atomic Mass",
+      "difficulty": "hard",
+      "lesson": "Atomic mass is the total number of protons and neutrons in an atom's nucleus. It is a measure of an element's atomic weight and is used to distinguish between different isotopes of an element.",
+      "real_example": "",
+      "key_points": [
+        "Atomic mass is a measure of an element's atomic weight",
+        "Different isotopes have the same number of protons but differ in neutron count"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "concept_name": "Atomic Number",
+      "difficulty": "hard",
+      "lesson": "The atomic number is the number of protons present in an atom's nucleus. It determines the element's identity and is unique to each element.",
+      "real_example": "",
+      "key_points": [
+        "Atomic number determines an element's identity",
+        "Elements with different atomic numbers are chemically distinct"
+      ],
+      "source_section": "Section 5"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 7: Water and its components",
+  "generated_at": "2026-02-12T00:56:05.239308",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The specific heat capacity of water is ______ .",
+      "correct_answer": "approximately 4.18 joules per gram per degree Celsius",
+      "hint": "Thermal energy transfer",
+      "explanation": "This value indicates the amount of energy required to raise the temperature of one gram of water by one degree Celsius.",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "The latent heat of vaporization of water is ______ .",
+      "correct_answer": "2250 joules per gram",
+      "hint": "Energy for phase change",
+      "explanation": "This value represents the energy required to transform one gram of water from liquid to gas at its boiling point.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "Water can act as both an acid and a ______ .",
+      "correct_answer": "base",
+      "hint": "Chemical properties",
+      "explanation": "This statement highlights water's unique ability to function as both an acid (donating H⁺) and a base (accepting H⁺).",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 4,
+      "question": "The density of ice is ______ that of liquid water.",
+      "correct_answer": "less",
+      "hint": "Phase change, thermodynamics",
+      "explanation": "When water freezes into ice, its molecules arrange in a crystalline structure, resulting in a lower density compared to the more densely packed molecules in liquid water.",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 5,
+      "question": "The pH of neutral water is ______ .",
+      "correct_answer": "7",
+      "hint": "Chemical properties, acidity",
+      "explanation": "On the pH scale, a value of 7 indicates that the solution is neither acidic nor basic; it's at its most neutral state.",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 6,
+      "question": "The specific heat capacity of water is crucial for regulating ______ .",
+      "correct_answer": "Earth's climate",
+      "hint": "Planetary energy balance, weather patterns",
+      "explanation": "Water's high specific heat capacity allows it to absorb and release large amounts of thermal energy without a significant change in temperature, influencing global climate conditions.",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 7,
+      "question": "Latent heat of fusion is the energy required for water to change from ______ .",
+      "correct_answer": "solid (ice) to liquid",
+      "hint": "Phase transition, thermodynamics",
+      "explanation": "When ice melts into water, it absorbs a specific amount of energy, known as latent heat of fusion, to undergo this phase transformation.",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 8,
+      "question": "Water's high surface tension is due to ______ .",
+      "correct_answer": "cohesion between water molecules",
+      "hint": "Intermolecular forces, molecular structure",
+      "explanation": "The cohesion between water molecules results in a higher surface energy than other liquids of similar size and shape, giving water its characteristic 'beading' on surfaces.",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 9,
+      "question": "Run-of-the-river hydroelectric plants are suitable for locations with ______ .",
+      "correct_answer": "fast-flowing rivers or streams",
+      "hint": "Energy generation, water flow",
+      "explanation": "These types of plants harness the kinetic energy of flowing water to generate electricity without the need for large dams.",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 10,
+      "question": "The boiling point of water is ______ degrees Celsius at standard atmospheric pressure.",
+      "correct_answer": "100",
+      "hint": "Thermodynamic properties, phase transition",
+      "explanation": "At sea level and under normal conditions, water boils at a specific temperature where the vapor pressure equals the surrounding atmospheric pressure.",
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 11,
+      "question": "Water can be classified as a ______ substance due to its unique properties.",
+      "correct_answer": "universal",
+      "hint": "Chemical and physical properties, adaptability",
+      "explanation": "Its versatility in various forms (solid, liquid, gas) and roles (solvent, reactant, product) makes water a universally essential component of life on Earth.",
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 12,
+      "question": "The specific heat capacity of water is approximately ______ joules per gram per degree Celsius.",
+      "correct_answer": "4.18",
+      "hint": "Thermal energy transfer, temperature change",
+      "explanation": "This value reflects the amount of energy required to raise the temperature of one gram of water by one degree Celsius, indicating its high capacity for thermal energy storage and release.",
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 13,
+      "question": "Water is essential for ______ because it facilitates chemical reactions and transports nutrients.",
+      "correct_answer": "metabolism",
+      "hint": "Biological functions, cellular processes",
+      "explanation": "In living organisms, water plays a critical role in metabolic pathways by acting as a solvent, carrier, and reactant, enabling the efficient exchange of substances within cells.",
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 14,
+      "question": "Pumped storage hydroelectric plants store energy during off-peak hours by pumping water to an ______ reservoir.",
+      "correct_answer": "upper",
+      "hint": "Energy generation, power management",
+      "explanation": "By utilizing excess electricity during periods of low demand, these facilities can generate electricity during peak hours when it's needed most.",
+      "source_section": "Section 15"
+    },
+    {
+      "question_number": 15,
+      "question": "The freezing point of water is ______ degrees Celsius at standard atmospheric pressure.",
+      "correct_answer": "0",
+      "hint": "Thermodynamic properties, phase transition",
+      "explanation": "At sea level and under normal conditions, water freezes at a specific temperature where the solid and liquid phases coexist in equilibrium.",
+      "source_section": "Section 16"
+    }
+  ]
+}

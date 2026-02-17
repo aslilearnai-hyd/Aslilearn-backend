@@ -1,0 +1,88 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "section": "Chapter 7: Force",
+  "generated_at": "2026-02-11T23:25:20.046690",
+  "notes": [
+    {
+      "concept_name": "Inertia is the resistance of a body object to a change in its motion.",
+      "summary": "Inertia is a property of matter that describes an object's tendency to resist changes in its motion. The more massive an object, the greater its inertia. Inertia is not affected by speed or temperature, but rather by mass.",
+      "importance": "Understanding inertia is crucial for understanding how objects move and respond to forces.",
+      "quick_facts": [
+        "Inertia is a fundamental property of matter.",
+        "Mass is directly proportional to inertia.",
+        "Inertia is independent of speed and temperature."
+      ],
+      "source_section": "Section 23"
+    },
+    {
+      "concept_name": "Objects with greater mass have greater inertia.",
+      "summary": "The more massive an object, the greater its inertia. This means that objects with greater mass will resist changes in their motion more than lighter objects.",
+      "importance": "This concept is essential for understanding how forces affect different types of objects.",
+      "quick_facts": [
+        "Mass and inertia are directly proportional.",
+        "Inertia is not affected by speed or temperature."
+      ],
+      "source_section": "Section 24"
+    },
+    {
+      "concept_name": "Rate of change of momentum of an object is proportional to the net force applied on an object.",
+      "summary": "The rate at which an object's momentum changes is directly related to the net force acting upon it. This fundamental concept underlies Newton's second law of motion.",
+      "importance": "Understanding this relationship is critical for predicting how objects move and respond to forces.",
+      "quick_facts": [
+        "Rate of change of momentum is proportional to net force.",
+        "Momentum is a measure of an object's mass and velocity."
+      ],
+      "source_section": "Section 21"
+    },
+    {
+      "concept_name": "For every action there exists equal and opposite reaction.",
+      "summary": "Newton's third law states that for every action, there is an equal and opposite reaction. This fundamental principle explains how forces interact between objects.",
+      "importance": "This concept is essential for understanding how forces affect the world around us.",
+      "quick_facts": [
+        "Action and reaction are always equal in magnitude.",
+        "Reaction is always opposite in direction."
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "concept_name": "A ball of mass 2 kg, moving with initial velocity 5 ms hits a bat for 0.1 s, then the balls velocity becomes.",
+      "summary": "Using the concept of momentum and Newton's second law, we can calculate the acceleration of the ball after being hit by the bat.",
+      "importance": "Understanding how forces affect an object's motion is critical for predicting its behavior.",
+      "quick_facts": [
+        "Momentum is conserved in a closed system.",
+        "Force equals mass times acceleration."
+      ],
+      "source_section": "Section 25"
+    },
+    {
+      "concept_name": "Change in momentum of the ball (in kg m/s).",
+      "summary": "We can calculate the change in momentum of the ball by using the concept of momentum and the initial and final velocities.",
+      "importance": "Understanding how forces affect an object's motion is critical for predicting its behavior.",
+      "quick_facts": [
+        "Momentum is a measure of an object's mass and velocity.",
+        "Change in momentum is proportional to net force."
+      ],
+      "source_section": "Section 26"
+    },
+    {
+      "concept_name": "Normal reaction p) Field force",
+      "summary": "In physics, normal reaction refers to the force exerted by a surface on an object in contact with it. A field force, on the other hand, is a force that acts over a distance.",
+      "importance": "Understanding these concepts is essential for understanding how forces interact between objects.",
+      "quick_facts": [
+        "Normal reaction is a contact force.",
+        "Field force is a non-contact force."
+      ],
+      "source_section": "Section 27"
+    },
+    {
+      "concept_name": "Weight q) Impulse",
+      "summary": "In physics, weight refers to the force exerted by gravity on an object. An impulse, on the other hand, is the product of a force and the time over which it acts.",
+      "importance": "Understanding these concepts is essential for understanding how forces affect objects.",
+      "quick_facts": [
+        "Weight is a measure of gravitational force.",
+        "Impulse is a measure of force and time."
+      ],
+      "source_section": "Section 28"
+    }
+  ]
+}

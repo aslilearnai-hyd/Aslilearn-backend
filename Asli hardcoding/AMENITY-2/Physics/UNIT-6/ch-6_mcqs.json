@@ -1,0 +1,288 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 6: Sound",
+  "generated_at": "2026-02-11T23:08:45.928930",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the phenomenon where a magnet creates levitation using magnetic repulsion?",
+      "options": {
+        "A": "Thermal Expansion",
+        "B": "Magnetic Levitation",
+        "C": "Electromagnetic Induction",
+        "D": "Superconductivity"
+      },
+      "correct_answer": "B",
+      "explanation": "This phenomenon is described in the 'Magnets Can Make Things Float!' section.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What causes the Eiffel Tower to grow?",
+      "options": {
+        "A": "Rainfall",
+        "B": "Wind",
+        "C": "Thermal Expansion",
+        "D": "Gravity"
+      },
+      "correct_answer": "C",
+      "explanation": "The 'Eiffel Tower Grows in Summer' section explains this phenomenon.",
+      "difficulty": "easy",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the term for the spreading apart of particles in a metal when it heats up?",
+      "options": {
+        "A": "Thermal Contraction",
+        "B": "Thermal Expansion",
+        "C": "Electromagnetic Induction",
+        "D": "Superconductivity"
+      },
+      "correct_answer": "B",
+      "explanation": "This is mentioned in the 'Eiffel Tower Grows in Summer' section.",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 4,
+      "question": "What is used to join materials that expand and contract with temperature changes?",
+      "options": {
+        "A": "Expansion Joints",
+        "B": "Contraction Joints",
+        "C": "Thermal Expansion Coefficients",
+        "D": "Electromagnetic Induction"
+      },
+      "correct_answer": "A",
+      "explanation": "This is described in the 'Eiffel Tower Grows in Summer' section.",
+      "difficulty": "easy",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "What type of magnetism creates levitation?",
+      "options": {
+        "A": "Permanent Magnetism",
+        "B": "Electromagnetism",
+        "C": "Superconductivity",
+        "D": "Magnetic Levitation"
+      },
+      "correct_answer": "D",
+      "explanation": "This is explained in the 'Magnets Can Make Things Float!' section.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 6,
+      "question": "What phenomenon causes objects to float above a surface?",
+      "options": {
+        "A": "Thermal Contraction",
+        "B": "Electromagnetic Induction",
+        "C": "Magnetic Levitation",
+        "D": "Superconductivity"
+      },
+      "correct_answer": "C",
+      "explanation": "This is described in the 'Magnets Can Make Things Float!' section.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 7,
+      "question": "What type of joint is used to join materials that expand and contract with temperature changes?",
+      "options": {
+        "A": "Expansion Joints",
+        "B": "Contraction Joints",
+        "C": "Thermal Expansion Coefficients",
+        "D": "Electromagnetic Induction"
+      },
+      "correct_answer": "A",
+      "explanation": "This is described in the 'Eiffel Tower Grows in Summer' section.",
+      "difficulty": "easy",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 8,
+      "question": "What phenomenon causes the Eiffel Tower to grow and shrink?",
+      "options": {
+        "A": "Thermal Expansion",
+        "B": "Electromagnetic Induction",
+        "C": "Superconductivity",
+        "D": "Gravity"
+      },
+      "correct_answer": "A",
+      "explanation": "The 'Eiffel Tower Grows in Summer' section explains this phenomenon.",
+      "difficulty": "easy",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 9,
+      "question": "What type of magnetism is involved in levitating objects?",
+      "options": {
+        "A": "Permanent Magnetism",
+        "B": "Electromagnetism",
+        "C": "Superconductivity",
+        "D": "Magnetic Levitation"
+      },
+      "correct_answer": "D",
+      "explanation": "This is explained in the 'Magnets Can Make Things Float!' section.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 10,
+      "question": "What causes objects to levitate above a surface?",
+      "options": {
+        "A": "Thermal Contraction",
+        "B": "Electromagnetic Induction",
+        "C": "Magnetic Levitation",
+        "D": "Superconductivity"
+      },
+      "correct_answer": "C",
+      "explanation": "This is described in the 'Magnets Can Make Things Float!' section.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 11,
+      "question": "What phenomenon causes materials to expand and contract with temperature changes?",
+      "options": {
+        "A": "Thermal Expansion",
+        "B": "Electromagnetic Induction",
+        "C": "Superconductivity",
+        "D": "Gravity"
+      },
+      "correct_answer": "A",
+      "explanation": "This is explained in the 'Eiffel Tower Grows in Summer' section.",
+      "difficulty": "easy",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 12,
+      "question": "What type of joint is used to accommodate thermal expansion?",
+      "options": {
+        "A": "Expansion Joints",
+        "B": "Contraction Joints",
+        "C": "Thermal Expansion Coefficients",
+        "D": "Electromagnetic Induction"
+      },
+      "correct_answer": "A",
+      "explanation": "This is described in the 'Eiffel Tower Grows in Summer' section.",
+      "difficulty": "easy",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 13,
+      "question": "What phenomenon causes objects to levitate using magnetic repulsion?",
+      "options": {
+        "A": "Thermal Contraction",
+        "B": "Electromagnetic Induction",
+        "C": "Magnetic Levitation",
+        "D": "Superconductivity"
+      },
+      "correct_answer": "C",
+      "explanation": "This is explained in the 'Magnets Can Make Things Float!' section.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 14,
+      "question": "What type of magnetism creates levitation using magnetic repulsion?",
+      "options": {
+        "A": "Permanent Magnetism",
+        "B": "Electromagnetism",
+        "C": "Superconductivity",
+        "D": "Magnetic Levitation"
+      },
+      "correct_answer": "D",
+      "explanation": "This is explained in the 'Magnets Can Make Things Float!' section.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 15,
+      "question": "What causes materials to expand and contract with temperature changes?",
+      "options": {
+        "A": "Thermal Expansion",
+        "B": "Electromagnetic Induction",
+        "C": "Superconductivity",
+        "D": "Gravity"
+      },
+      "correct_answer": "A",
+      "explanation": "This is explained in the 'Eiffel Tower Grows in Summer' section.",
+      "difficulty": "easy",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 16,
+      "question": "What type of joint is used to accommodate thermal expansion?",
+      "options": {
+        "A": "Expansion Joints",
+        "B": "Contraction Joints",
+        "C": "Thermal Expansion Coefficients",
+        "D": "Electromagnetic Induction"
+      },
+      "correct_answer": "A",
+      "explanation": "This is described in the 'Eiffel Tower Grows in Summer' section.",
+      "difficulty": "easy",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 17,
+      "question": "What phenomenon causes objects to levitate above a surface?",
+      "options": {
+        "A": "Thermal Contraction",
+        "B": "Electromagnetic Induction",
+        "C": "Magnetic Levitation",
+        "D": "Superconductivity"
+      },
+      "correct_answer": "C",
+      "explanation": "This is described in the 'Magnets Can Make Things Float!' section.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 18,
+      "question": "What type of magnetism is involved in levitating objects?",
+      "options": {
+        "A": "Permanent Magnetism",
+        "B": "Electromagnetism",
+        "C": "Superconductivity",
+        "D": "Magnetic Levitation"
+      },
+      "correct_answer": "D",
+      "explanation": "This is explained in the 'Magnets Can Make Things Float!' section.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 19,
+      "question": "What phenomenon causes materials to expand and contract with temperature changes?",
+      "options": {
+        "A": "Thermal Expansion",
+        "B": "Electromagnetic Induction",
+        "C": "Superconductivity",
+        "D": "Gravity"
+      },
+      "correct_answer": "A",
+      "explanation": "This is explained in the 'Eiffel Tower Grows in Summer' section.",
+      "difficulty": "easy",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 20,
+      "question": "What type of joint is used to accommodate thermal expansion?",
+      "options": {
+        "A": "Expansion Joints",
+        "B": "Contraction Joints",
+        "C": "Thermal Expansion Coefficients",
+        "D": "Electromagnetic Induction"
+      },
+      "correct_answer": "A",
+      "explanation": "This is described in the 'Eiffel Tower Grows in Summer' section.",
+      "difficulty": "easy",
+      "source_section": "Section 2"
+    }
+  ]
+}

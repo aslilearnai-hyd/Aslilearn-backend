@@ -1,0 +1,43 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 2: Light shadows and reflections",
+  "generated_at": "2026-02-11T22:33:20.499330",
+  "concepts": [
+    {
+      "concept_name": "Specular Reflection",
+      "difficulty": "medium",
+      "lesson": "Specular reflection is a type of reflection where light hits a smooth surface, such as a mirror or still water, at a shallow angle. This results in a clear and sharp image being formed behind the reflective surface. In contrast to diffuse reflection, which scatters light in all directions, specular reflection produces a focused image.",
+      "real_example": "A person looking into a mirror sees their own image reflected back.",
+      "key_points": [
+        "Specular reflection occurs when light hits a smooth surface at a shallow angle",
+        "It results in a clear and sharp image being formed behind the reflective surface",
+        "Diffuse reflection scatters light in all directions"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Umbra",
+      "difficulty": "easy",
+      "lesson": "The umbra is the darker inner shadow region that occurs when an object blocks a light source. It is the area where the light is completely blocked by the object, resulting in no direct light reaching the surface.",
+      "real_example": "A lampshade casting a shadow on the wall.",
+      "key_points": [
+        "Umbra is the darker inner shadow region",
+        "It occurs when an object blocks a light source",
+        "The umbra is the area where the light is completely blocked"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Virtual Image",
+      "difficulty": "hard",
+      "lesson": "A virtual image is formed by light rays that appear to diverge from a point behind the mirror or lens. It is not a real image, but rather an apparent one created by the way light behaves when it hits a reflective surface.",
+      "real_example": "When looking into a magnifying glass, you see a virtual image of the object being magnified.",
+      "key_points": [
+        "A virtual image is formed by light rays that appear to diverge from a point behind the mirror or lens",
+        "It is not a real image, but rather an apparent one created by light behavior",
+        "Virtual images can be inverted or upright"
+      ],
+      "source_section": "Section 3"
+    }
+  ]
+}

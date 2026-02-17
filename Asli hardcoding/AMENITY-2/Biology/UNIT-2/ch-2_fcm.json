@@ -1,0 +1,118 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 2: Getting to know plants",
+  "generated_at": "2026-02-11T20:45:34.962634",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the primary function of stomata?",
+        "correct_answer": "Gas exchange",
+        "explanation": "Stomata are small openings on the surface of leaves that help in gas exchange, allowing carbon dioxide to enter and release oxygen.",
+        "source_section": "Section 24"
+      },
+      {
+        "question": "What type of root is adapted for deep water absorption?",
+        "correct_answer": "Taproot",
+        "explanation": "Taproots are thick and tapering roots that grow straight down into the soil, ideal for absorbing water from underground.",
+        "source_section": "Section 25"
+      },
+      {
+        "question": "What is the function of xylem in plants?",
+        "correct_answer": "Transportation of water and minerals",
+        "explanation": "Xylem is a vascular tissue responsible for transporting water and minerals from the roots to the rest of the plant.",
+        "source_section": "Section 23"
+      },
+      {
+        "question": "What type of plant has seeds in cones?",
+        "correct_answer": "Gymnosperms",
+        "explanation": "Gymnosperms are plants that produce seeds in cones, such as pine trees and spruce.",
+        "source_section": "Section 27"
+      },
+      {
+        "question": "What is the primary function of leaves?",
+        "correct_answer": "Photosynthesis",
+        "explanation": "Leaves are responsible for photosynthesis, converting light energy into chemical energy through the process of chlorophyll.",
+        "source_section": "Section 20"
+      },
+      {
+        "question": "What type of plant has seeds enclosed in fruit?",
+        "correct_answer": "Angiosperms",
+        "explanation": "Angiosperms are flowering plants that produce fruits containing seeds, such as apples and tomatoes.",
+        "source_section": "Section 29"
+      },
+      {
+        "question": "What is the function of flowers?",
+        "correct_answer": "Reproduction",
+        "explanation": "Flowers are responsible for reproduction in plants, producing pollen and seeds to propagate new offspring.",
+        "source_section": "Section 30"
+      },
+      {
+        "question": "What type of root is adapted for absorbing water from the soil?",
+        "correct_answer": "Fibrous root",
+        "explanation": "Fibrous roots are thin and branching roots that absorb water and minerals from the surrounding soil.",
+        "source_section": "Section 28"
+      },
+      {
+        "question": "What is the function of stems?",
+        "correct_answer": "Transportation of water, food, and support",
+        "explanation": "Stems are responsible for transporting water, nutrients, and supporting the plant's structure.",
+        "source_section": "Section 30"
+      },
+      {
+        "question": "What type of plant has seeds in cones?",
+        "correct_answer": "Gymnosperms",
+        "explanation": "Gymnosperms are plants that produce seeds in cones, such as pine trees and spruce.",
+        "source_section": "Section 27"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Plant Classification",
+        "content": "Plants can be classified into several categories based on their characteristics, including angiosperms (flowering plants), gymnosperms (coniferous plants), and bryophytes (mosses).",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Photosynthesis Process",
+        "content": "Photosynthesis is the process by which plants convert light energy into chemical energy through chlorophyll, resulting in the production of glucose and oxygen.",
+        "source_section": "Section 20"
+      },
+      {
+        "title": "Plant Adaptations",
+        "content": "Plants have developed various adaptations to survive in different environments, including deep roots for water absorption and thick cuticles for reducing water loss.",
+        "source_section": "Section 25"
+      },
+      {
+        "title": "Xylem Function",
+        "content": "Xylem is responsible for transporting water and minerals from the roots to the rest of the plant through a network of tube-like structures.",
+        "source_section": "Section 23"
+      },
+      {
+        "title": "Growth Patterns",
+        "content": "Plants exhibit different growth patterns, including taproot and fibrous root systems, depending on their environment and requirements.",
+        "source_section": "Section 28"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The first plant cells emerged approximately 1 billion years ago during the Neoproterozoic era.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "Photosynthesis occurs in specialized organelles called chloroplasts, which contain pigments such as chlorophyll and carotenoids.",
+        "source_section": "Section 20"
+      },
+      {
+        "fact": "The largest plant species is the giant sequoia (Sequoiadendron giganteum), with some individuals reaching heights of over 100 meters.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "Gymnosperms are divided into two main categories: conifers and cycads, based on their reproductive structures and seed types.",
+        "source_section": "Section 27"
+      },
+      {
+        "fact": "Bryophytes (mosses) have no vascular tissue or true leaves, making them relatively simple organisms.",
+        "source_section": "Section 1"
+      }
+    ]
+  }
+}

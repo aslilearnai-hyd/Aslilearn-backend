@@ -1,0 +1,228 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 3: Playing with Numbers",
+  "generated_at": "2026-02-10T23:23:34.528874",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the smallest prime number?",
+      "answer": "The smallest prime number is 2.",
+      "key_points": [
+        "Prime",
+        "Number",
+        "Smallest"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 2,
+      "question": "How many factors does the number 20 have?",
+      "answer": "The number 20 has 6 factors.",
+      "key_points": [
+        "Factors",
+        "Number",
+        "Six"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the smallest even composite number?",
+      "answer": "The smallest even composite number is 4.",
+      "key_points": [
+        "Even",
+        "Composite",
+        "Smallest"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 4,
+      "question": "Is 7 a prime number?",
+      "answer": "Yes, 7 is a prime number.",
+      "key_points": [
+        "Prime",
+        "Number",
+        "Seven"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "How many factors does the number 18 have?",
+      "answer": "The number 18 has 6 factors.",
+      "key_points": [
+        "Factors",
+        "Number",
+        "Six"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the greatest common divisor of 12 and 15?",
+      "answer": "The GCD of 12 and 15 is 3.",
+      "key_points": [
+        "GCD",
+        "Divisor",
+        "Three"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "question_number": 7,
+      "question": "Is the number 6 a prime number?",
+      "answer": "No, the number 6 is not a prime number.",
+      "key_points": [
+        "Prime",
+        "Number",
+        "Six"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the sum of the first three prime numbers?",
+      "answer": "The sum of the first three prime numbers is 10.",
+      "key_points": [
+        "Prime",
+        "Numbers",
+        "Sum"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the product of the first two even numbers?",
+      "answer": "The product of the first two even numbers is 4.",
+      "key_points": [
+        "Product",
+        "Even",
+        "Numbers"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 10,
+      "question": "Is the number 9 a composite number?",
+      "answer": "Yes, the number 9 is a composite number.",
+      "key_points": [
+        "Composite",
+        "Number",
+        "Nine"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the smallest odd prime number?",
+      "answer": "The smallest odd prime number is 3.",
+      "key_points": [
+        "Odd",
+        "Prime",
+        "Number"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 12,
+      "question": "How many factors does the number 9 have?",
+      "answer": "The number 9 has 3 factors.",
+      "key_points": [
+        "Factors",
+        "Number",
+        "Three"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the greatest common divisor of 16 and 24?",
+      "answer": "The GCD of 16 and 24 is 8.",
+      "key_points": [
+        "GCD",
+        "Divisor",
+        "Eight"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "question_number": 14,
+      "question": "Is the number 7 a composite number?",
+      "answer": "No, the number 7 is not a composite number.",
+      "key_points": [
+        "Composite",
+        "Number",
+        "Seven"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the sum of the first five prime numbers?",
+      "answer": "The sum of the first five prime numbers is 28.",
+      "key_points": [
+        "Prime",
+        "Numbers",
+        "Sum"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the product of the first three even numbers?",
+      "answer": "The product of the first three even numbers is 24.",
+      "key_points": [
+        "Product",
+        "Even",
+        "Numbers"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 17,
+      "question": "Is the number 10 a prime number?",
+      "answer": "No, the number 10 is not a prime number.",
+      "key_points": [
+        "Prime",
+        "Number",
+        "Ten"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the greatest common divisor of 12 and 18?",
+      "answer": "The GCD of 12 and 18 is 6.",
+      "key_points": [
+        "GCD",
+        "Divisor",
+        "Six"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "question_number": 19,
+      "question": "How many factors does the number 15 have?",
+      "answer": "The number 15 has 4 factors.",
+      "key_points": [
+        "Factors",
+        "Number",
+        "Four"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the sum of the first two composite numbers?",
+      "answer": "The sum of the first two composite numbers is 6.",
+      "key_points": [
+        "Composite",
+        "Numbers",
+        "Sum"
+      ],
+      "source_section": "Section 2"
+    }
+  ]
+}

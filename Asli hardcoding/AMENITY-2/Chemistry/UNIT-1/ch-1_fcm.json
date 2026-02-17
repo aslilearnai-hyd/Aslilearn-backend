@@ -1,0 +1,112 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 1: States of matter",
+  "generated_at": "2026-02-11T23:59:55.853595",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the state of matter of carbon dioxide at room temperature?",
+        "correct_answer": "Carbon dioxide is a gas because its particles have enough energy to move freely and fill any container.",
+        "explanation": "The particles of carbon dioxide have enough energy to overcome the forces between them, making them spread out and fill any container.",
+        "source_section": "Section 25"
+      },
+      {
+        "question": "What is Charles's Law?",
+        "correct_answer": "Charles's Law describes the relationship between the volume and temperature of a gas when the pressure is kept constant.",
+        "explanation": "According to this law, if the temperature of a gas increases, its volume also increases, provided that the pressure remains unchanged.",
+        "source_section": "Section 26"
+      },
+      {
+        "question": "What is the relationship between the volume and number of molecules of a gas?",
+        "correct_answer": "The volume of a gas is directly proportional to the number of molecules.",
+        "explanation": "This is described by Avogadro's Law, which states that equal volumes of gases at the same temperature and pressure contain an equal number of molecules.",
+        "source_section": "Section 28"
+      },
+      {
+        "question": "What is the state of matter of iron at room temperature?",
+        "correct_answer": "Iron is a solid because of the strong forces holding its particles together.",
+        "explanation": "The particles of iron are tightly bound, allowing them to maintain their shape and volume.",
+        "source_section": "Section 25"
+      },
+      {
+        "question": "What is the state of matter of water at room temperature?",
+        "correct_answer": "Water is a liquid because its particles are less tightly bound, allowing them to move more freely.",
+        "explanation": "The particles of water have enough energy to overcome the forces between them, making them spread out and take the shape of their container.",
+        "source_section": "Section 25"
+      },
+      {
+        "question": "What is the difference between a solid and a liquid?",
+        "correct_answer": "A solid has a fixed shape and volume, while a liquid has a fixed volume but takes the shape of its container.",
+        "explanation": "This is because the particles in a solid are tightly bound together, while those in a liquid are free to move past each other.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the state of matter of a gas?",
+        "correct_answer": "A gas has neither fixed shape nor volume and fills the entire space of its container.",
+        "explanation": "The particles of a gas are free to move past each other, making them spread out and fill any container.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is sublimation?",
+        "correct_answer": "Sublimation is the transition of a substance directly from the solid to the gas phase without going through the liquid phase.",
+        "explanation": "This occurs when the particles of the substance gain enough energy to overcome the forces between them, making them spread out and turn into a gas.",
+        "source_section": "Section 29"
+      },
+      {
+        "question": "What is liquefaction?",
+        "correct_answer": "Liquefaction is the transition of a substance from the gas phase to the liquid phase.",
+        "explanation": "This occurs when the particles of the substance lose enough energy to come together and form a liquid.",
+        "source_section": "Section 29"
+      },
+      {
+        "question": "What is condensation?",
+        "correct_answer": "Condensation is the transition of a gas into a liquid, typically occurring when the temperature of the gas decreases.",
+        "explanation": "This occurs when the particles of the gas lose enough energy to come together and form droplets of liquid.",
+        "source_section": "Section 30"
+      },
+      {
+        "question": "What is evaporation?",
+        "correct_answer": "Evaporation is the transition of a liquid into a gas, typically occurring when the temperature of the liquid increases.",
+        "explanation": "This occurs when the particles of the liquid gain enough energy to overcome the forces between them, making them spread out and turn into a gas.",
+        "source_section": "Section 30"
+      }
+    ],
+    "notes": [
+      {
+        "title": "States of Matter",
+        "content": "The three main states of matter are solid, liquid, and gas. Solids have fixed shape and volume, liquids have fixed volume but take the shape of their container, and gases have neither fixed shape nor volume and fill the entire space of their container.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Properties of Gases",
+        "content": "Gases are compressible and expand to occupy any container. The pressure of a gas is determined by the number of particles colliding with its walls.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Boyle's Law",
+        "content": "Boyle's Law states that, at constant temperature, the volume of a gas is inversely proportional to the pressure. This means that as the pressure increases, the volume decreases.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Avogadro's Law",
+        "content": "Avogadro's Law states that equal volumes of gases at the same temperature and pressure contain an equal number of molecules. This means that the volume of a gas is directly proportional to the number of molecules.",
+        "source_section": "Section 28"
+      },
+      {
+        "title": "Charles's Law",
+        "content": "Charles's Law states that, at constant pressure, the volume of a gas is directly proportional to its temperature. This means that as the temperature increases, the volume also increases.",
+        "source_section": "Section 26"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The first recorded use of soap dates back to around 2800 BCE in ancient Babylon.",
+        "source_section": "Did You Know... Tiny Truths"
+      },
+      {
+        "fact": "Mosquitoes identify humans using a combination of scent, body heat, and visual cues.",
+        "source_section": "Did You Know... Tiny Truths"
+      }
+    ]
+  }
+}

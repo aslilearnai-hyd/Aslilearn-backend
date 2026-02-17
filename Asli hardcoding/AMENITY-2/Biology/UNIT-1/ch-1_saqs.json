@@ -1,0 +1,188 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 1: Food and its components",
+  "generated_at": "2026-02-11T19:03:21.461989",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the primary function of carbohydrates in the body?",
+      "answer": "Carbohydrates are the body's primary source of energy, broken down into glucose and used by the body for energy. Simple carbohydrates like glucose provide quick energy, while complex carbohydrates such as starch and fiber provide longer-lasting energy and aid digestion.",
+      "key_concepts": [
+        "carbohydrate",
+        "energy",
+        "glucose"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What are the essential amino acids, and how many are there?",
+      "answer": "Amino acids are the building blocks of proteins. There are 20 different amino acids, with nine being essential, meaning they must be obtained from food.",
+      "key_concepts": [
+        "amino acid",
+        "protein",
+        "essential"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 3,
+      "question": "What type of fat is considered healthier?",
+      "answer": "Unsaturated fats, found in plants and fish, are considered the healthiest. They help lower cholesterol levels and reduce the risk of heart disease.",
+      "key_concepts": [
+        "unsaturated",
+        "fat",
+        "health"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 4,
+      "question": "What is iron essential for in the body?",
+      "answer": "Iron is crucial for the production of hemoglobin, a protein in red blood cells that carries oxygen throughout the body. A deficiency can lead to anemia, fatigue, and shortness of breath.",
+      "key_concepts": [
+        "iron",
+        "hemoglobin",
+        "anemia"
+      ],
+      "marks": 3,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 5,
+      "question": "What is pellagra, and what are its symptoms?",
+      "answer": "Pellagra is a disease caused by a deficiency in vitamin B3 (niacin). Its symptoms include numbness, nerve damage, diarrhea, dermatitis, and dementia.",
+      "key_concepts": [
+        "pellagra",
+        "vitamin B3",
+        "symptoms"
+      ],
+      "marks": 4,
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the role of starch in the body?",
+      "answer": "Starch is a complex carbohydrate that serves as a storage form of glucose. It provides longer-lasting energy and aids digestion.",
+      "key_concepts": [
+        "starch",
+        "carbohydrate",
+        "energy"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the difference between simple and complex carbohydrates?",
+      "answer": "Simple carbohydrates like glucose provide quick energy, while complex carbohydrates such as starch and fiber provide longer-lasting energy and aid digestion.",
+      "key_concepts": [
+        "carbohydrate",
+        "simple",
+        "complex"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the function of fiber in the body?",
+      "answer": "Fiber, a complex carbohydrate, helps regulate bowel movements and aids digestion. It can also help lower cholesterol levels.",
+      "key_concepts": [
+        "fiber",
+        "carbohydrate",
+        "digestion"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 9,
+      "question": "What are the sources of unsaturated fats?",
+      "answer": "Unsaturated fats can be found in plants, fish, and certain nuts. They help lower cholesterol levels and reduce the risk of heart disease.",
+      "key_concepts": [
+        "unsaturated",
+        "fat",
+        "sources"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the role of iron in the body?",
+      "answer": "Iron is crucial for the production of hemoglobin, a protein in red blood cells that carries oxygen throughout the body.",
+      "key_concepts": [
+        "iron",
+        "hemoglobin",
+        "oxygen"
+      ],
+      "marks": 3,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 11,
+      "question": "What is anemia, and what are its symptoms?",
+      "answer": "Anemia occurs when the body does not have enough red blood cells or hemoglobin. Its symptoms include fatigue, pale skin, and shortness of breath.",
+      "key_concepts": [
+        "anemia",
+        "symptoms",
+        "red blood cells"
+      ],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the function of starch in the body?",
+      "answer": "Starch serves as a storage form of glucose, providing longer-lasting energy and aiding digestion.",
+      "key_concepts": [
+        "starch",
+        "carbohydrate",
+        "energy"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the difference between saturated and unsaturated fats?",
+      "answer": "Saturated fats, found in animal products and processed foods, can increase cholesterol levels. Unsaturated fats, found in plants and fish, help lower cholesterol levels.",
+      "key_concepts": [
+        "saturated",
+        "unsaturated",
+        "cholesterol"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the role of fiber in digestion?",
+      "answer": "Fiber helps regulate bowel movements and aids digestion. It can also help lower cholesterol levels.",
+      "key_concepts": [
+        "fiber",
+        "digestion",
+        "cholesterol"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the function of iron in the body?",
+      "answer": "Iron is essential for the production of hemoglobin, a protein in red blood cells that carries oxygen throughout the body.",
+      "key_concepts": [
+        "iron",
+        "hemoglobin",
+        "oxygen"
+      ],
+      "marks": 3,
+      "source_section": "Section 9"
+    }
+  ]
+}

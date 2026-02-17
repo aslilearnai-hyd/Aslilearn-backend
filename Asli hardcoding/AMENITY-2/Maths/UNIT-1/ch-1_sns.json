@@ -1,0 +1,123 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "generated_at": "2026-02-10T22:26:53.275544",
+  "notes": [
+    {
+      "concept_name": "Reading Large Numbers",
+      "summary": "Large numbers in the Indian system are read using periods: Ones, Thousands, Lakhs, and Crores. Each period is separated by commas for easy reading.",
+      "importance": "Understanding how to read large numbers is essential for working with real-world quantities like populations, distances, and money.",
+      "quick_facts": [
+        "Commas separate periods",
+        "First comma after 3 digits from right",
+        "Subsequent commas every 2 digits",
+        "Each period has a specific name",
+        "Reading goes from largest to smallest period"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "concept_name": "Estimation",
+      "summary": "Estimation is the process of approximating quantities or values. It involves rounding numbers to the nearest tens, hundreds, thousands, etc., for quick calculations.",
+      "importance": "Estimation helps in simplifying complex calculations and provides a rough estimate of quantities, making it an essential skill for everyday life.",
+      "quick_facts": [
+        "Rounding numbers to nearest tens/hundreds",
+        "Approximating values for quick calculations",
+        "Using estimation for large quantities",
+        "Reducing mental math effort",
+        "Improved accuracy with practice"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "concept_name": "Conversion of Numbers",
+      "summary": "Converting numbers between different units, such as kilograms to grams or meters to centimeters, is essential for everyday calculations.",
+      "importance": "Understanding conversions helps in accurate calculations and measurements in various real-world applications.",
+      "quick_facts": [
+        "1 kg = 1000 g",
+        "1 m = 100 cm",
+        "Converting units for accuracy",
+        "Using conversion factors for quick calculations",
+        "Improved measurement skills"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Roman Numerals",
+      "summary": "Roman numerals are a way of representing numbers using letters. Each letter has a specific value, and combinations of letters represent larger numbers.",
+      "importance": "Understanding Roman numerals helps in decoding historical documents, monuments, and other cultural artifacts that use this numeral system.",
+      "quick_facts": [
+        "I = 1",
+        "V = 5",
+        "X = 10",
+        "L = 50",
+        "C = 100"
+      ],
+      "source_section": "Section 6"
+    },
+    {
+      "concept_name": "Time and Date",
+      "summary": "Understanding time and date is essential for everyday life, including scheduling appointments, calculating durations, and tracking events.",
+      "importance": "Accurate time and date calculations help in planning, coordination, and decision-making.",
+      "quick_facts": [
+        "12-hour clock",
+        "24-hour clock",
+        "Date formats (DD/MM/YYYY, MM/DD/YYYY)",
+        "Calculating time differences",
+        "Understanding leap years"
+      ],
+      "source_section": "Section 7"
+    },
+    {
+      "concept_name": "Money",
+      "summary": "Understanding money and its various units is essential for everyday transactions, savings, and investments.",
+      "importance": "Accurate calculations with money help in managing finances, making informed decisions, and avoiding financial losses.",
+      "quick_facts": [
+        "Rupee (₹) as the Indian currency",
+        "Paise as the sub-unit of Rupee",
+        "Calculating percentages for discounts",
+        "Understanding interest rates",
+        "Budgeting and saving"
+      ],
+      "source_section": "Section 8"
+    },
+    {
+      "concept_name": "Protractor",
+      "summary": "A protractor is a measuring instrument used to measure and draw angles. It has degree markings from 0° to 180° (or 360° for full-circle protractors).",
+      "importance": "Accurate angle measurements help in geometry, drafting, and construction.",
+      "quick_facts": [
+        "Degree markings on the protractor",
+        "Measuring angles with a protractor",
+        "Drawing angles using a protractor",
+        "Understanding angle types (acute, obtuse, right)",
+        "Using a protractor for precise measurements"
+      ],
+      "source_section": "Section 10"
+    },
+    {
+      "concept_name": "Möbius Strip",
+      "summary": "A Möbius strip is a one-sided surface with only one edge. It is created by giving a strip of paper a half twist and taping the ends together.",
+      "importance": "Understanding the properties of a Möbius strip helps in mathematics, art, and engineering applications.",
+      "quick_facts": [
+        "One-sided surface",
+        "Half-twisted paper strip",
+        "Unique property: one continuous side",
+        "Applications in math, art, and engineering",
+        "Cutting a Möbius strip creates one longer loop"
+      ],
+      "source_section": "Section 11"
+    },
+    {
+      "concept_name": "Pythagorean Theorem",
+      "summary": "The Pythagorean theorem states that in a right-angled triangle with sides a, b, and hypotenuse c, the relationship is: a² + b² = c².",
+      "importance": "Understanding the Pythagorean theorem helps in calculating distances, building structures, and designing ramps.",
+      "quick_facts": [
+        "a² + b² = c²",
+        "Right-angled triangle",
+        "Hypotenuse as the longest side",
+        "Calculating distances using the theorem",
+        "Applications in geometry and real-world problems"
+      ],
+      "source_section": "Section 12"
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter on Light Shadows and Reflections",
+  "generated_at": "2026-02-11T22:34:10.389079",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the term for the darker inner shadow region?",
+        "correct_answer": "Umbra",
+        "explanation": "Umbra is the darkest part of a shadow where no light can pass through.",
+        "source_section": "Section on Shadows"
+      },
+      {
+        "question": "What type of reflection occurs when light hits a mirror at an angle?",
+        "correct_answer": "Specular Reflection",
+        "explanation": "Specular reflection is the reflection of light off a smooth surface like a mirror.",
+        "source_section": "Section on Reflection"
+      },
+      {
+        "question": "What happens to the image formed by a concave mirror when an object is placed between the focal length and infinity?",
+        "correct_answer": "Real, Inverted, and Enlarged",
+        "explanation": "A concave mirror produces real, inverted, and enlarged images when an object is placed between the focal length and infinity.",
+        "source_section": "Section on Concave Mirrors"
+      },
+      {
+        "question": "What is the term for the phenomenon where charged particles in clouds create massive sparks?",
+        "correct_answer": "Lightning",
+        "explanation": "Lightning is a powerful example of static electricity, where charged particles in clouds create massive sparks.",
+        "source_section": "Section on Static Electricity"
+      },
+      {
+        "question": "What happens to an object's image when it is placed at the center of curvature of a concave mirror?",
+        "correct_answer": "Real and Inverted",
+        "explanation": "When an object is placed at the center of curvature of a concave mirror, its image is real and inverted.",
+        "source_section": "Section on Concave Mirrors"
+      },
+      {
+        "question": "What type of image does a convex lens produce when an object is placed between infinity and the focal length?",
+        "correct_answer": "Real and Inverted",
+        "explanation": "A convex lens produces real and inverted images when an object is placed between infinity and the focal length.",
+        "source_section": "Section on Convex Lenses"
+      },
+      {
+        "question": "What happens to the size of an image formed by a concave mirror when an object is placed between the focal length and infinity?",
+        "correct_answer": "Enlarged",
+        "explanation": "The image formed by a concave mirror is enlarged when an object is placed between the focal length and infinity.",
+        "source_section": "Section on Concave Mirrors"
+      },
+      {
+        "question": "What is the term for the lighter outer shadow region?",
+        "correct_answer": "Penumbra",
+        "explanation": "Penumbra is the lighter part of a shadow where some light can pass through.",
+        "source_section": "Section on Shadows"
+      },
+      {
+        "question": "What happens to an object's image when it is placed at the focal length of a convex lens?",
+        "correct_answer": "Real and Inverted",
+        "explanation": "When an object is placed at the focal length of a convex lens, its image is real and inverted.",
+        "source_section": "Section on Convex Lenses"
+      },
+      {
+        "question": "What type of mirror produces virtual images when an object is placed within the focal length?",
+        "correct_answer": "Concave Mirror",
+        "explanation": "A concave mirror produces virtual images when an object is placed within the focal length.",
+        "source_section": "Section on Concave Mirrors"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Properties of Shadows",
+        "content": "Shadows can be divided into two parts: umbra and penumbra. Umbra is the darker inner shadow region, while penumbra is the lighter outer shadow region.",
+        "source_section": "Section on Shadows"
+      },
+      {
+        "title": "Types of Reflections",
+        "content": "There are two types of reflections: specular reflection and diffuse reflection. Specular reflection occurs when light hits a smooth surface like a mirror, while diffuse reflection occurs when light hits a rough surface.",
+        "source_section": "Section on Reflection"
+      },
+      {
+        "title": "Concave Mirrors",
+        "content": "A concave mirror is a type of mirror that has a curved surface. It produces real, inverted, and enlarged images when an object is placed between the focal length and infinity.",
+        "source_section": "Section on Concave Mirrors"
+      },
+      {
+        "title": "Static Electricity",
+        "content": "Static electricity occurs when electrons move from one object to another, creating an imbalance of electric charge. It can cause objects to become charged and attract or repel other objects.",
+        "source_section": "Section on Static Electricity"
+      },
+      {
+        "title": "Convex Lenses",
+        "content": "A convex lens is a type of lens that has a curved surface. It produces real and inverted images when an object is placed between infinity and the focal length.",
+        "source_section": "Section on Convex Lenses"
+      },
+      {
+        "title": "Types of Images",
+        "content": "There are two types of images formed by mirrors: real and virtual. Real images are formed when light converges, while virtual images are formed when light appears to converge.",
+        "source_section": "Section on Mirrors"
+      },
+      {
+        "title": "Properties of Concave Mirrors",
+        "content": "A concave mirror has a focal length that is equal to half the radius of curvature. It produces real, inverted, and enlarged images when an object is placed between the focal length and infinity.",
+        "source_section": "Section on Concave Mirrors"
+      },
+      {
+        "title": "Properties of Convex Lenses",
+        "content": "A convex lens has a focal length that is equal to twice the radius of curvature. It produces real and inverted images when an object is placed between infinity and the focal length.",
+        "source_section": "Section on Convex Lenses"
+      },
+      {
+        "title": "Types of Mirrors",
+        "content": "There are two types of mirrors: concave and convex. Concave mirrors have a curved surface, while convex mirrors have a flat surface.",
+        "source_section": "Section on Mirrors"
+      },
+      {
+        "title": "Properties of Shadows",
+        "content": "Shadows can be divided into two parts: umbra and penumbra. Umbra is the darker inner shadow region, while penumbra is the lighter outer shadow region.",
+        "source_section": "Section on Shadows"
+      },
+      {
+        "title": "Types of Reflections",
+        "content": "There are two types of reflections: specular reflection and diffuse reflection. Specular reflection occurs when light hits a smooth surface like a mirror, while diffuse reflection occurs when light hits a rough surface.",
+        "source_section": "Section on Reflection"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The term 'umbra' refers to the darkest part of a shadow where no light can pass through.",
+        "source_section": "Section on Shadows"
+      },
+      {
+        "fact": "Specular reflection is the type of reflection that occurs when light hits a smooth surface like a mirror.",
+        "source_section": "Section on Reflection"
+      },
+      {
+        "fact": "Lightning is a powerful example of static electricity, where charged particles in clouds create massive sparks.",
+        "source_section": "Section on Static Electricity"
+      },
+      {
+        "fact": "A concave mirror produces real, inverted, and enlarged images when an object is placed between the focal length and infinity.",
+        "source_section": "Section on Concave Mirrors"
+      },
+      {
+        "fact": "The term 'penumbra' refers to the lighter part of a shadow where some light can pass through.",
+        "source_section": "Section on Shadows"
+      },
+      {
+        "fact": "A convex lens produces real and inverted images when an object is placed between infinity and the focal length.",
+        "source_section": "Section on Convex Lenses"
+      },
+      {
+        "fact": "Static electricity occurs when electrons move from one object to another, creating an imbalance of electric charge.",
+        "source_section": "Section on Static Electricity"
+      },
+      {
+        "fact": "The focal length of a concave mirror is equal to half the radius of curvature.",
+        "source_section": "Section on Concave Mirrors"
+      },
+      {
+        "fact": "A convex lens has a focal length that is equal to twice the radius of curvature.",
+        "source_section": "Section on Convex Lenses"
+      },
+      {
+        "fact": "Concave mirrors have a curved surface, while convex mirrors have a flat surface.",
+        "source_section": "Section on Mirrors"
+      }
+    ]
+  }
+}

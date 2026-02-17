@@ -1,0 +1,188 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 1: States of matter",
+  "generated_at": "2026-02-11T23:56:11.757674",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the state of carbon dioxide at room temperature?",
+      "answer": "Carbon dioxide is a gas because its particles have enough energy to move freely and fill any container.",
+      "key_concepts": [
+        "gas",
+        "particles",
+        "energy"
+      ],
+      "marks": 3,
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 2,
+      "question": "What happens to the particles of a substance as it changes from a liquid to a gas?",
+      "answer": "The particles gain energy and spread out.",
+      "key_concepts": [
+        "particles",
+        "energy",
+        "gas"
+      ],
+      "marks": 3,
+      "source_section": "Section 24"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the relationship between the volume and temperature of a gas when the pressure is kept constant?",
+      "answer": "According to Charles's Law, if the temperature of a gas increases, its volume also increases, provided that the pressure remains unchanged.",
+      "key_concepts": [
+        "Charles's Law",
+        "volume",
+        "temperature"
+      ],
+      "marks": 3,
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the process of a substance changing from a solid to a gas?",
+      "answer": "Sublimation is the process of a substance changing from a solid to a gas.",
+      "key_concepts": [
+        "sublimation",
+        "solid",
+        "gas"
+      ],
+      "marks": 3,
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the process of a substance changing from a liquid to a solid?",
+      "answer": "Freezing is the process of a substance changing from a liquid to a solid.",
+      "key_concepts": [
+        "freezing",
+        "liquid",
+        "solid"
+      ],
+      "marks": 3,
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the process of a substance changing from a gas to a liquid?",
+      "answer": "Condensation is the process of a substance changing from a gas to a liquid.",
+      "key_concepts": [
+        "condensation",
+        "gas",
+        "liquid"
+      ],
+      "marks": 3,
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the state of iron at room temperature?",
+      "answer": "Iron is a solid at room temperature because of the strong forces holding its particles together.",
+      "key_concepts": [
+        "iron",
+        "solid",
+        "forces"
+      ],
+      "marks": 3,
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the state of water at room temperature?",
+      "answer": "Water is a liquid because its particles are less tightly bound, allowing them to move more freely.",
+      "key_concepts": [
+        "water",
+        "liquid",
+        "particles"
+      ],
+      "marks": 3,
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the state of carbon dioxide at room temperature?",
+      "answer": "Carbon dioxide is a gas because its particles have enough energy to move freely and fill any container.",
+      "key_concepts": [
+        "carbon dioxide",
+        "gas",
+        "particles"
+      ],
+      "marks": 3,
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 10,
+      "question": "What is Charles's Law?",
+      "answer": "Charles's Law describes the relationship between the volume and temperature of a gas when the pressure is kept constant.",
+      "key_concepts": [
+        "Charles's Law",
+        "volume",
+        "temperature"
+      ],
+      "marks": 3,
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 11,
+      "question": "What happens to the volume of a gas as its temperature increases?",
+      "answer": "According to Charles's Law, if the temperature of a gas increases, its volume also increases, provided that the pressure remains unchanged.",
+      "key_concepts": [
+        "Charles's Law",
+        "volume",
+        "temperature"
+      ],
+      "marks": 3,
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the process of a substance changing from a gas to a liquid?",
+      "answer": "Condensation is the process of a substance changing from a gas to a liquid.",
+      "key_concepts": [
+        "condensation",
+        "gas",
+        "liquid"
+      ],
+      "marks": 3,
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the state of iron at room temperature?",
+      "answer": "Iron is a solid at room temperature because of the strong forces holding its particles together.",
+      "key_concepts": [
+        "iron",
+        "solid",
+        "forces"
+      ],
+      "marks": 3,
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the state of water at room temperature?",
+      "answer": "Water is a liquid because its particles are less tightly bound, allowing them to move more freely.",
+      "key_concepts": [
+        "water",
+        "liquid",
+        "particles"
+      ],
+      "marks": 3,
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the state of carbon dioxide at room temperature?",
+      "answer": "Carbon dioxide is a gas because its particles have enough energy to move freely and fill any container.",
+      "key_concepts": [
+        "carbon dioxide",
+        "gas",
+        "particles"
+      ],
+      "marks": 3,
+      "source_section": "Section 25"
+    }
+  ]
+}

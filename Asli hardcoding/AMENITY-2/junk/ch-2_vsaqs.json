@@ -1,0 +1,219 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 2: Whole Numbers",
+  "generated_at": "2026-02-10T22:44:06.860981",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the additive identity in whole numbers?",
+      "answer": "The additive identity is 0, as any number added to it remains unchanged.",
+      "key_points": [
+        "additive",
+        "identity",
+        "whole numbers"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the smallest even natural number?",
+      "answer": "The smallest even natural number is 2.",
+      "key_points": [
+        "even",
+        "natural",
+        "numbers"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 3,
+      "question": "How many digits are in the whole number 456?",
+      "answer": "There are 3 digits in the whole number 456.",
+      "key_points": [
+        "whole",
+        "number",
+        "digits"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the successor of 5?",
+      "answer": "The successor of 5 is 6.",
+      "key_points": [
+        "successor",
+        "whole",
+        "numbers"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "How many whole numbers are there in the set {1, 2, 3, 4, 5}?",
+      "answer": "There are 5 whole numbers in the given set.",
+      "key_points": [
+        "whole",
+        "numbers",
+        "set"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the largest natural number?",
+      "answer": "The largest natural number is not defined, as it goes on indefinitely.",
+      "key_points": [
+        "largest",
+        "natural",
+        "numbers"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the product of 4 and 5?",
+      "answer": "The product of 4 and 5 is 20.",
+      "key_points": [
+        "product",
+        "multiplication"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the sum of 3 and 7?",
+      "answer": "The sum of 3 and 7 is 10.",
+      "key_points": [
+        "sum",
+        "addition"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the smallest odd natural number?",
+      "answer": "The smallest odd natural number is 1.",
+      "key_points": [
+        "odd",
+        "natural",
+        "numbers"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 10,
+      "question": "How many digits are in the whole number 982?",
+      "answer": "There are 3 digits in the whole number 982.",
+      "key_points": [
+        "whole",
+        "number",
+        "digits"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the difference between 8 and 5?",
+      "answer": "The difference between 8 and 5 is 3.",
+      "key_points": [
+        "difference",
+        "subtraction"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the largest whole number less than 10?",
+      "answer": "The largest whole number less than 10 is 9.",
+      "key_points": [
+        "largest",
+        "whole",
+        "numbers"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the product of -3 and 2?",
+      "answer": "The product of -3 and 2 is -6.",
+      "key_points": [
+        "product",
+        "multiplication"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the sum of -5 and 3?",
+      "answer": "The sum of -5 and 3 is -2.",
+      "key_points": [
+        "sum",
+        "addition"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the largest whole number greater than 10?",
+      "answer": "The largest whole number greater than 10 is not defined, as it goes on indefinitely.",
+      "key_points": [
+        "largest",
+        "whole",
+        "numbers"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the product of 0 and any number?",
+      "answer": "The product of 0 and any number is 0.",
+      "key_points": [
+        "product",
+        "multiplication"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the sum of 0 and any number?",
+      "answer": "The sum of 0 and any number is that number itself.",
+      "key_points": [
+        "sum",
+        "addition"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the largest whole number less than -10?",
+      "answer": "The largest whole number less than -10 is not defined, as it goes on indefinitely.",
+      "key_points": [
+        "largest",
+        "whole",
+        "numbers"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the product of 2 and 5?",
+      "answer": "The product of 2 and 5 is 10.",
+      "key_points": [
+        "product",
+        "multiplication"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the sum of -8 and 3?",
+      "answer": "The sum of -8 and 3 is -5.",
+      "key_points": [
+        "sum",
+        "addition"
+      ],
+      "source_section": "Section 1"
+    }
+  ]
+}

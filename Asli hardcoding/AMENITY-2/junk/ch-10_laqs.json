@@ -1,0 +1,175 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 10: Algebra Including Simple Equations",
+  "generated_at": "2026-02-11T16:21:07.655346",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of palindromic numbers, providing examples and discussing their unique properties.",
+      "answer": "Palindromic numbers are numbers that read the same forward and backward. Examples include 121, 1331, and 12321. These numbers have symmetrical properties, making them fascinating in mathematics. Palindromic numbers can appear in different number bases, not just base 10. Interestingly, some numbers can be turned into palindromes through a process called the Reverse and Add Method, where you reverse the digits, add them to the original number, and repeat the process until a palindrome appears.",
+      "answer_outline": [
+        "Define what palindromic numbers are",
+        "Provide examples of palindromic numbers",
+        "Discuss their unique properties"
+      ],
+      "key_concepts": [
+        "Palindromic Numbers",
+        "Symmetrical Properties",
+        "Reverse and Add Method"
+      ],
+      "marks": 8,
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 2,
+      "question": "Describe the Golden Ratio, its mathematical definition, and its appearance in art, architecture, and nature.",
+      "answer": "The Golden Ratio is approximately 1.618 and can be mathematically defined as a/b = (a+b)/a. It appears in various forms of art and architecture, such as the Parthenon in Greece, and even in natural patterns like sunflower spirals. The unique properties of the Golden Ratio make it a fundamental concept in mathematics.",
+      "answer_outline": [
+        "Define the Golden Ratio",
+        "Mathematically define its appearance",
+        "Discuss its appearance in art, architecture, and nature"
+      ],
+      "key_concepts": [
+        "Golden Ratio",
+        "Symmetry",
+        "Proportion"
+      ],
+      "marks": 9,
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the concept of accelerometers, their importance in mathematics, and how they relate to palindromic numbers.",
+      "answer": "Accelerometers are devices that measure acceleration or deceleration. They have various applications in science, engineering, and technology, including mathematics. Palindromic numbers can be used to create patterns in accelerometer readings, demonstrating the connection between these concepts.",
+      "answer_outline": [
+        "Define what accelerometers are",
+        "Discuss their importance in mathematics",
+        "Relate palindromic numbers to accelerometers"
+      ],
+      "key_concepts": [
+        "Accelerometers",
+        "Acceleration",
+        "Palindromic Numbers"
+      ],
+      "marks": 8,
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 4,
+      "question": "Describe the properties and characteristics of palindromic numbers, including their appearance in different number bases.",
+      "answer": "Palindromic numbers have symmetrical properties that make them unique. They can appear in various number bases, not just base 10. Some numbers can be turned into palindromes through a process called the Reverse and Add Method.",
+      "answer_outline": [
+        "Discuss the symmetry of palindromic numbers",
+        "Describe their appearance in different number bases",
+        "Explain the Reverse and Add Method"
+      ],
+      "key_concepts": [
+        "Symmetry",
+        "Number Bases",
+        "Reverse and Add Method"
+      ],
+      "marks": 8,
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the concept of simple equations, including their definition, properties, and applications in mathematics.",
+      "answer": "Simple equations are mathematical expressions that involve one variable. They have various properties and characteristics, such as linearity, and can be solved using different methods like substitution or elimination. Simple equations are fundamental in mathematics and have numerous applications in science, engineering, and technology.",
+      "answer_outline": [
+        "Define what simple equations are",
+        "Discuss their properties and characteristics",
+        "Describe their applications in mathematics"
+      ],
+      "key_concepts": [
+        "Simple Equations",
+        "Linearity",
+        "Substitution Method"
+      ],
+      "marks": 9,
+      "source_section": "Chapter 10"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the mathematical definition of the Golden Ratio and its appearance in art, architecture, and nature.",
+      "answer": "The Golden Ratio is mathematically defined as a/b = (a+b)/a. It appears in various forms of art and architecture, such as the Parthenon in Greece, and even in natural patterns like sunflower spirals. The unique properties of the Golden Ratio make it a fundamental concept in mathematics.",
+      "answer_outline": [
+        "Mathematically define the Golden Ratio",
+        "Discuss its appearance in art, architecture, and nature"
+      ],
+      "key_concepts": [
+        "Golden Ratio",
+        "Symmetry",
+        "Proportion"
+      ],
+      "marks": 8,
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the concept of accelerometers, their importance in mathematics, and how they relate to simple equations.",
+      "answer": "Accelerometers are devices that measure acceleration or deceleration. They have various applications in science, engineering, and technology, including mathematics. Simple equations can be used to model accelerometer readings, demonstrating the connection between these concepts.",
+      "answer_outline": [
+        "Define what accelerometers are",
+        "Discuss their importance in mathematics",
+        "Relate simple equations to accelerometers"
+      ],
+      "key_concepts": [
+        "Accelerometers",
+        "Acceleration",
+        "Simple Equations"
+      ],
+      "marks": 8,
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe the properties and characteristics of simple equations, including their linearity and solvability.",
+      "answer": "Simple equations have various properties and characteristics, such as linearity. They can be solved using different methods like substitution or elimination. Simple equations are fundamental in mathematics and have numerous applications in science, engineering, and technology.",
+      "answer_outline": [
+        "Discuss the linearity of simple equations",
+        "Describe their solvability"
+      ],
+      "key_concepts": [
+        "Simple Equations",
+        "Linearity",
+        "Solvability"
+      ],
+      "marks": 8,
+      "source_section": "Chapter 10"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the concept of palindromic numbers, their appearance in different number bases, and how they relate to accelerometers.",
+      "answer": "Palindromic numbers have symmetrical properties that make them unique. They can appear in various number bases, not just base 10. Some numbers can be turned into palindromes through a process called the Reverse and Add Method. Palindromic numbers can be used to create patterns in accelerometer readings.",
+      "answer_outline": [
+        "Discuss the symmetry of palindromic numbers",
+        "Describe their appearance in different number bases",
+        "Relate palindromic numbers to accelerometers"
+      ],
+      "key_concepts": [
+        "Palindromic Numbers",
+        "Symmetry",
+        "Accelerometers"
+      ],
+      "marks": 9,
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 10,
+      "question": "Describe the mathematical definition of simple equations and their applications in mathematics.",
+      "answer": "Simple equations are mathematically defined as expressions involving one variable. They have various properties and characteristics, such as linearity, and can be solved using different methods like substitution or elimination. Simple equations are fundamental in mathematics and have numerous applications in science, engineering, and technology.",
+      "answer_outline": [
+        "Mathematically define simple equations",
+        "Discuss their applications in mathematics"
+      ],
+      "key_concepts": [
+        "Simple Equations",
+        "Linearity",
+        "Substitution Method"
+      ],
+      "marks": 9,
+      "source_section": "Chapter 10"
+    }
+  ]
+}

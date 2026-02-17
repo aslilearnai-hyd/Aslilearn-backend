@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 6: Sound",
+  "generated_at": "2026-02-11T23:10:30.211288",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The speed of sound in air (approx.) is ______.",
+      "correct_answer": "(approximately) 343 meters per second",
+      "hint": "Section related to sound waves",
+      "explanation": "This fact can be found in the chapter on Sound, specifically in a section discussing the properties of sound waves.",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 2,
+      "question": "The frequency range of audible sounds is between ______ and ______ Hz.",
+      "correct_answer": "20 Hz to 13000 Hz",
+      "hint": "Section discussing human hearing",
+      "explanation": "This information can be found in a section that discusses the properties of sound waves and how they relate to human hearing.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 3,
+      "question": "The time period (T) of a wave is related to its frequency (f) by the equation ______.",
+      "correct_answer": "T = 1/f",
+      "hint": "Section discussing wave properties",
+      "explanation": "This formula can be found in a section that discusses the properties of waves, including time period and frequency.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 4,
+      "question": "The amplitude (A) of a wave is its ______ from equilibrium.",
+      "correct_answer": "maximum displacement",
+      "hint": "Section discussing wave properties",
+      "explanation": "This definition can be found in a section that discusses the properties of waves, including amplitude and equilibrium.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 5,
+      "question": "The speed of sound in water is ______ than in air.",
+      "correct_answer": "faster",
+      "hint": "Section discussing different mediums",
+      "explanation": "This comparison can be found in a section that discusses how the speed of sound varies in different mediums.",
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 6,
+      "question": "The Eiffel Tower grows by up to ______ cm taller during hot weather due to thermal expansion.",
+      "correct_answer": "15",
+      "hint": "Section discussing the Eiffel Tower's behavior",
+      "explanation": "This fact can be found in a section that discusses the physical properties of the Eiffel Tower and how it responds to changes in temperature.",
+      "source_section": "Section 35"
+    },
+    {
+      "question_number": 7,
+      "question": "Magnetic repulsion is responsible for making objects ______.",
+      "correct_answer": "float",
+      "hint": "Section discussing magnetic levitation",
+      "explanation": "This effect can be found in a section that discusses the principles of magnetic levitation and how it works.",
+      "source_section": "Section 33"
+    },
+    {
+      "question_number": 8,
+      "question": "The length of vocal cords in women is approximately ______ mm long.",
+      "correct_answer": "15",
+      "hint": "Section discussing human anatomy",
+      "explanation": "This measurement can be found in a section that discusses the physical properties and dimensions of the human body, specifically the vocal cords.",
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 9,
+      "question": "The range of human voice is between ______ and ______ Hz.",
+      "correct_answer": "60 Hz to 13000 Hz",
+      "hint": "Section discussing human hearing",
+      "explanation": "This information can be found in a section that discusses the properties of sound waves and how they relate to human hearing.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 10,
+      "question": "The speed of sound in a medium depends on its ______.",
+      "correct_answer": "elasticity",
+      "hint": "Section discussing wave properties",
+      "explanation": "This relationship can be found in a section that discusses the properties of waves and how they interact with different mediums.",
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 11,
+      "question": "Infrasound is a type of sound wave with frequencies below ______ Hz.",
+      "correct_answer": "20 Hz",
+      "hint": "Section discussing sound waves",
+      "explanation": "This definition can be found in a section that discusses the properties and types of sound waves.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 12,
+      "question": "The normal breathing frequency is approximately ______ breaths per minute.",
+      "correct_answer": "15",
+      "hint": "Section discussing human anatomy",
+      "explanation": "This measurement can be found in a section that discusses the physical properties and dimensions of the human body, specifically respiratory rates.",
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 13,
+      "question": "Ultrasound waves have frequencies above ______ Hz.",
+      "correct_answer": "20 kHz",
+      "hint": "Section discussing sound waves",
+      "explanation": "This definition can be found in a section that discusses the properties and types of sound waves.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 14,
+      "question": "The Eiffel Tower's expansion due to thermal expansion is approximately ______ cm per year.",
+      "correct_answer": "15",
+      "hint": "Section discussing the Eiffel Tower's behavior",
+      "explanation": "This measurement can be found in a section that discusses the physical properties of the Eiffel Tower and how it responds to changes in temperature.",
+      "source_section": "Section 35"
+    },
+    {
+      "question_number": 15,
+      "question": "Magnetic levitation is used in futuristic technology, including ______ and hoverboards.",
+      "correct_answer": "floating displays",
+      "hint": "Section discussing magnetic levitation",
+      "explanation": "This application can be found in a section that discusses the principles of magnetic levitation and its uses in various technologies.",
+      "source_section": "Section 33"
+    }
+  ]
+}

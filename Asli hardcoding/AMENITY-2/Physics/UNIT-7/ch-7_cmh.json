@@ -1,0 +1,67 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 7: Force",
+  "generated_at": "2026-02-11T23:24:51.285520",
+  "concepts": [
+    {
+      "concept_name": "Inertia",
+      "difficulty": "medium",
+      "lesson": "Inertia is the resistance of a body to change in its motion. It is a property of matter that depends on the mass of an object. The greater the mass, the more inertia an object has.",
+      "real_example": "",
+      "key_points": [
+        "Inertia is a measure of an object's resistance to change",
+        "The amount of inertia depends on the mass of the object",
+        "More massive objects have greater inertia"
+      ],
+      "source_section": "Section 1-2"
+    },
+    {
+      "concept_name": "Force",
+      "difficulty": "easy",
+      "lesson": "A force is a push or pull that causes an object to change its motion. Forces can be contact forces, such as friction, or non-contact forces, such as gravity.",
+      "real_example": "",
+      "key_points": [
+        "Forces are pushes or pulls that cause motion",
+        "Contact forces require physical contact between objects",
+        "Non-contact forces do not require physical contact"
+      ],
+      "source_section": "Section 3-4"
+    },
+    {
+      "concept_name": "Momentum",
+      "difficulty": "medium",
+      "lesson": "Momentum is the product of an object's mass and velocity. It is a measure of an object's tendency to continue moving in a straight line.",
+      "real_example": "",
+      "key_points": [
+        "Momentum depends on both mass and velocity",
+        "Greater momentum means more resistance to change in motion",
+        "Objects with greater momentum are harder to stop"
+      ],
+      "source_section": "Section 5-6"
+    },
+    {
+      "concept_name": "Friction",
+      "difficulty": "medium",
+      "lesson": "Friction is a force that opposes motion between two surfaces in contact. It depends on the type of surface and the normal force between them.",
+      "real_example": "",
+      "key_points": [
+        "Friction is a force opposing motion",
+        "Type and normal force affect friction's magnitude",
+        "Friction can be static or kinetic"
+      ],
+      "source_section": "Section 7-8"
+    },
+    {
+      "concept_name": "Gravity",
+      "difficulty": "easy",
+      "lesson": "Gravity is a non-contact force that attracts objects with mass towards each other. It depends on the masses of the objects and the distance between them.",
+      "real_example": "",
+      "key_points": [
+        "Gravity is a non-contact force",
+        "It depends on object masses and distance",
+        "Gravity always pulls objects towards each other"
+      ],
+      "source_section": "Section 9-10"
+    }
+  ]
+}

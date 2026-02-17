@@ -1,0 +1,188 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 5: Motion",
+  "generated_at": "2026-02-11T23:03:08.345880",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Describe the concept of uniform circular motion and its applications in real-world scenarios.",
+      "answer": "Uniform circular motion refers to a type of motion where an object moves in a circular path at a constant speed. This can be observed in various natural phenomena, such as the rotation of planets around their axes or the orbits of satellites around their parent bodies. In addition, uniform circular motion is also used in engineering applications, such as the design of roller coasters and merry-go-rounds. The concept is based on the idea that an object moving in a circular path experiences a continuous change in direction, resulting from the application of a centripetal force.",
+      "answer_outline": [
+        "Define uniform circular motion",
+        "Explain its applications in real-world scenarios",
+        "Describe the role of centripetal force"
+      ],
+      "key_concepts": [
+        "Uniform Circular Motion",
+        "Centripetal Force",
+        "Roller Coasters",
+        "Merry-Go-Rounds"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Introduction to Motion"
+    },
+    {
+      "question_number": 2,
+      "question": "Compare and contrast the concepts of uniform acceleration and non-uniform acceleration.",
+      "answer": "Uniform acceleration refers to a change in velocity that occurs at a constant rate over time. This is exemplified by an object moving under the influence of gravity, where its acceleration remains constant throughout its descent. On the other hand, non-uniform acceleration involves a change in velocity that does not occur at a constant rate. An example of this would be an object being thrown upward, where its acceleration decreases as it rises due to the reduction in force applied.",
+      "answer_outline": [
+        "Define uniform and non-uniform acceleration",
+        "Explain their differences",
+        "Provide examples"
+      ],
+      "key_concepts": [
+        "Uniform Acceleration",
+        "Non-Uniform Acceleration",
+        "Gravity",
+        "Force"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Types of Motion"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the concept of instantaneous velocity and its relationship to average velocity.",
+      "answer": "Instantaneous velocity refers to the rate of change of an object's position with respect to time at a specific instant. This is distinct from average velocity, which represents the total displacement divided by the total time taken. The two quantities are related but not identical, as instantaneous velocity takes into account the changing nature of motion.",
+      "answer_outline": [
+        "Define instantaneous velocity",
+        "Explain its relationship to average velocity",
+        "Provide examples"
+      ],
+      "key_concepts": [
+        "Instantaneous Velocity",
+        "Average Velocity",
+        "Displacement",
+        "Time"
+      ],
+      "marks": 8,
+      "source_section": "Section 5: Kinematics"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the concept of relative motion and its applications in various fields.",
+      "answer": "Relative motion refers to the description of an object's motion with respect to another reference frame. This is crucial in understanding how objects move within a given context, such as the motion of a car on a road or the motion of a satellite in orbit around Earth. Relative motion has numerous applications in fields like astronomy, engineering, and physics.",
+      "answer_outline": [
+        "Define relative motion",
+        "Explain its applications",
+        "Provide examples"
+      ],
+      "key_concepts": [
+        "Relative Motion",
+        "Reference Frame",
+        "Astronomy",
+        "Engineering"
+      ],
+      "marks": 8,
+      "source_section": "Section 6: Relative Motion"
+    },
+    {
+      "question_number": 5,
+      "question": "Compare and contrast the concepts of acceleration and velocity.",
+      "answer": "Acceleration refers to a change in velocity over time, while velocity represents the rate of change of an object's position with respect to time. Although both quantities are related, they describe different aspects of motion. Acceleration takes into account changes in direction or magnitude, whereas velocity focuses solely on the rate of change.",
+      "answer_outline": [
+        "Define acceleration and velocity",
+        "Explain their differences",
+        "Provide examples"
+      ],
+      "key_concepts": [
+        "Acceleration",
+        "Velocity",
+        "Direction",
+        "Magnitude"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Basic Concepts"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the concept of projectile motion and its applications in real-world scenarios.",
+      "answer": "Projectile motion refers to a type of motion where an object moves under the influence of gravity, resulting in a curved trajectory. This is commonly observed in everyday life, such as when throwing a ball or shooting a cannonball. Projectile motion has numerous applications in fields like engineering and physics.",
+      "answer_outline": [
+        "Define projectile motion",
+        "Explain its applications",
+        "Provide examples"
+      ],
+      "key_concepts": [
+        "Projectile Motion",
+        "Gravity",
+        "Trajectory",
+        "Engineering"
+      ],
+      "marks": 8,
+      "source_section": "Section 7: Projectile Motion"
+    },
+    {
+      "question_number": 7,
+      "question": "Compare and contrast the concepts of simple harmonic motion and periodic motion.",
+      "answer": "Simple harmonic motion refers to a type of motion where an object oscillates about its equilibrium position, resulting in a sinusoidal displacement-time graph. Periodic motion, on the other hand, involves a repetitive change in velocity or position over time but does not necessarily involve oscillations. The two concepts are related but distinct.",
+      "answer_outline": [
+        "Define simple harmonic motion and periodic motion",
+        "Explain their differences",
+        "Provide examples"
+      ],
+      "key_concepts": [
+        "Simple Harmonic Motion",
+        "Periodic Motion",
+        "Equilibrium Position",
+        "Oscillations"
+      ],
+      "marks": 8,
+      "source_section": "Section 8: Simple Harmonic Motion and Periodic Motion"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe the concept of rotational motion and its applications in real-world scenarios.",
+      "answer": "Rotational motion refers to a type of motion where an object rotates about its axis, resulting in a change in angular displacement. This is commonly observed in everyday life, such as when spinning a top or revolving a wheel. Rotational motion has numerous applications in fields like engineering and physics.",
+      "answer_outline": [
+        "Define rotational motion",
+        "Explain its applications",
+        "Provide examples"
+      ],
+      "key_concepts": [
+        "Rotational Motion",
+        "Angular Displacement",
+        "Axis of Rotation",
+        "Engineering"
+      ],
+      "marks": 8,
+      "source_section": "Section 9: Rotational Motion"
+    },
+    {
+      "question_number": 9,
+      "question": "Compare and contrast the concepts of linear motion and rotational motion.",
+      "answer": "Linear motion refers to a type of motion where an object moves in a straight line, resulting in a change in position. Rotational motion, on the other hand, involves a change in angular displacement about an axis. The two concepts are distinct but related through the application of kinematic equations.",
+      "answer_outline": [
+        "Define linear and rotational motion",
+        "Explain their differences",
+        "Provide examples"
+      ],
+      "key_concepts": [
+        "Linear Motion",
+        "Rotational Motion",
+        "Position",
+        "Angular Displacement"
+      ],
+      "marks": 8,
+      "source_section": "Section 10: Linear and Rotational Motion"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the concept of work and energy in motion.",
+      "answer": "Work refers to the product of force applied to an object and its displacement. Energy, on the other hand, represents the ability to perform work. The two concepts are crucial in understanding various types of motion, including linear and rotational motion. Work and energy have numerous applications in fields like engineering and physics.",
+      "answer_outline": [
+        "Define work and energy",
+        "Explain their relationship",
+        "Provide examples"
+      ],
+      "key_concepts": [
+        "Work",
+        "Energy",
+        "Force",
+        "Displacement"
+      ],
+      "marks": 8,
+      "source_section": "Section 11: Work and Energy in Motion"
+    }
+  ]
+}

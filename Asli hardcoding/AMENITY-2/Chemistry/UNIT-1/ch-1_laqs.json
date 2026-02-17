@@ -1,0 +1,173 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 1: States of matter",
+  "generated_at": "2026-02-11T23:57:07.919359",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Describe the process of sublimation, including its definition and examples. How does it differ from melting and vaporization?",
+      "answer": "Sublimation is a physical change where a substance transforms directly from solid to gas without going through the liquid phase. For instance, dry ice (solid carbon dioxide) turns into carbon dioxide gas at room temperature. This process differs from melting, which involves the transformation of a solid to a liquid, and vaporization, where a liquid turns into a gas.",
+      "answer_outline": [
+        "Definition of sublimation",
+        "Examples of sublimation",
+        "Differences between sublimation, melting, and vaporization"
+      ],
+      "key_concepts": [
+        "sublimation",
+        "melting",
+        "vaporization"
+      ],
+      "marks": 8,
+      "source_section": "[Section 1]"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the concept of phase changes, including condensation, freezing, and melting. Provide examples for each.",
+      "answer": "Phase changes are transformations between different states of matter. Condensation occurs when a gas turns into a liquid (e.g., water vapor turning to dew), freezing happens when a liquid becomes solid (e.g., ice formation), and melting is the process where a solid transforms into a liquid (e.g., ice melting).",
+      "answer_outline": [
+        "Definition of phase changes",
+        "Examples of condensation, freezing, and melting"
+      ],
+      "key_concepts": [
+        "condensation",
+        "freezing",
+        "melting"
+      ],
+      "marks": 8,
+      "source_section": "[Section 1]"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the properties of gases, including their ability to expand and fill containers. How do these properties differ from solids and liquids?",
+      "answer": "Gases are characterized by their ability to expand and fill any container they are placed in. Unlike solids and liquids, which have fixed shapes and volumes, gases can be compressed and expanded freely.",
+      "answer_outline": [
+        "Properties of gases",
+        "Differences between gas properties and those of solids and liquids"
+      ],
+      "key_concepts": [
+        "gases",
+        "solids",
+        "liquids"
+      ],
+      "marks": 8,
+      "source_section": "[Section 2]"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the concept of Charles' Law, including its relationship between volume and temperature. Provide examples to illustrate this principle.",
+      "answer": "Charles' Law states that at constant pressure, the volume of a gas is directly proportional to its absolute temperature. This means that as the temperature increases, the volume of the gas also increases.",
+      "answer_outline": [
+        "Definition of Charles' Law",
+        "Relationship between volume and temperature",
+        "Examples illustrating this principle"
+      ],
+      "key_concepts": [
+        "Charles' Law",
+        "volume",
+        "temperature"
+      ],
+      "marks": 8,
+      "source_section": "[Section 3]"
+    },
+    {
+      "question_number": 5,
+      "question": "Describe the process of liquefaction, including its definition and examples. How does it differ from condensation?",
+      "answer": "Liquefaction is a physical change where a gas transforms directly into a liquid without going through the solid phase. For instance, compressed air can be cooled to create liquid oxygen. This process differs from condensation, which involves the transformation of a gas to a liquid at standard atmospheric pressure.",
+      "answer_outline": [
+        "Definition of liquefaction",
+        "Examples of liquefaction",
+        "Differences between liquefaction and condensation"
+      ],
+      "key_concepts": [
+        "liquefaction",
+        "condensation"
+      ],
+      "marks": 8,
+      "source_section": "[Section 4]"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the concept of plasma, including its definition and characteristics. Provide examples to illustrate this state of matter.",
+      "answer": "Plasma is a high-energy state of matter characterized by ionized gas particles. Examples include stars, lightning, and fluorescent lights.",
+      "answer_outline": [
+        "Definition of plasma",
+        "Characteristics of plasma",
+        "Examples illustrating this state"
+      ],
+      "key_concepts": [
+        "plasma",
+        "ionization"
+      ],
+      "marks": 8,
+      "source_section": "[Section 5]"
+    },
+    {
+      "question_number": 7,
+      "question": "Describe the properties of solids, including their rigidity and fixed shapes. How do these properties differ from liquids and gases?",
+      "answer": "Solids are characterized by their rigidity and fixed shape. Unlike liquids and gases, which can flow and change shape, solids maintain their structure under external pressure.",
+      "answer_outline": [
+        "Properties of solids",
+        "Differences between solid properties and those of liquids and gases"
+      ],
+      "key_concepts": [
+        "solids",
+        "liquids",
+        "gases"
+      ],
+      "marks": 8,
+      "source_section": "[Section 6]"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the concept of Avogadro's Law, including its relationship between volume and number of molecules. Provide examples to illustrate this principle.",
+      "answer": "Avogadro's Law states that at constant temperature and pressure, equal volumes of gases contain an equal number of molecules. This means that as the volume increases, the number of molecules also increases proportionally.",
+      "answer_outline": [
+        "Definition of Avogadro's Law",
+        "Relationship between volume and number of molecules",
+        "Examples illustrating this principle"
+      ],
+      "key_concepts": [
+        "Avogadro's Law",
+        "volume",
+        "number of molecules"
+      ],
+      "marks": 8,
+      "source_section": "[Section 7]"
+    },
+    {
+      "question_number": 9,
+      "question": "Describe the process of sublimation, including its definition and examples. How does it differ from melting and vaporization?",
+      "answer": "Sublimation is a physical change where a substance transforms directly from solid to gas without going through the liquid phase. For instance, dry ice (solid carbon dioxide) turns into carbon dioxide gas at room temperature. This process differs from melting, which involves the transformation of a solid to a liquid, and vaporization, where a liquid turns into a gas.",
+      "answer_outline": [
+        "Definition of sublimation",
+        "Examples of sublimation",
+        "Differences between sublimation, melting, and vaporization"
+      ],
+      "key_concepts": [
+        "sublimation",
+        "melting",
+        "vaporization"
+      ],
+      "marks": 8,
+      "source_section": "[Section 1]"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the concept of Charles' Law, including its relationship between volume and temperature. Provide examples to illustrate this principle.",
+      "answer": "Charles' Law states that at constant pressure, the volume of a gas is directly proportional to its absolute temperature. This means that as the temperature increases, the volume of the gas also increases.",
+      "answer_outline": [
+        "Definition of Charles' Law",
+        "Relationship between volume and temperature",
+        "Examples illustrating this principle"
+      ],
+      "key_concepts": [
+        "Charles' Law",
+        "volume",
+        "temperature"
+      ],
+      "marks": 8,
+      "source_section": "[Section 3]"
+    }
+  ]
+}

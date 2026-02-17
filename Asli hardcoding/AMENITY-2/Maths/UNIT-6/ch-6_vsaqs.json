@@ -1,0 +1,228 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 6: Integers Four Operations",
+  "generated_at": "2026-02-11T00:36:50.523643",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the smallest integer greater than every negative integer?",
+      "answer": "The smallest integer greater than every negative integer is zero.",
+      "key_points": [
+        "smallest",
+        "negative",
+        "integer"
+      ],
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the value of 49 – (–40) – (–3) + 69 –80?",
+      "answer": "The value of 49 – (–40) – (–3) + 69 –80 is 56.",
+      "key_points": [
+        "value",
+        "negative",
+        "integer"
+      ],
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 3,
+      "question": "If the number 7254*98 is divisible by 22, what digit at * is?",
+      "answer": "The digit at * is 0.",
+      "key_points": [
+        "divisible",
+        "number",
+        "digit"
+      ],
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 4,
+      "question": "What must be added to -35 to get 35?",
+      "answer": "-11 must be added to -35 to get 35.",
+      "key_points": [
+        "addition",
+        "negative",
+        "integer"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 5,
+      "question": "The opposite of -7 is?",
+      "answer": "-(-7) is the opposite, which equals 7.",
+      "key_points": [
+        "opposite",
+        "negative",
+        "integer"
+      ],
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 6,
+      "question": "The integer -2 is more than -5?",
+      "answer": "-2 is indeed greater than -5.",
+      "key_points": [
+        "greater",
+        "negative",
+        "integer"
+      ],
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 7,
+      "question": "What must be added to -135 to get -132?",
+      "answer": "-3 must be added to -135 to get -132.",
+      "key_points": [
+        "addition",
+        "negative",
+        "integer"
+      ],
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 8,
+      "question": "The absolute value of -10 is?",
+      "answer": "|-10| equals 10.",
+      "key_points": [
+        "absolute",
+        "value",
+        "negative"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the value of |-6| + |-5|?",
+      "answer": "|-6| + |-5| equals 11.",
+      "key_points": [
+        "absolute",
+        "value",
+        "negative"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 10,
+      "question": "The value of 12 + |-6| is?",
+      "answer": "12 + |-6| equals 18.",
+      "key_points": [
+        "addition",
+        "absolute",
+        "value"
+      ],
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 11,
+      "question": "The greatest negative integer is?",
+      "answer": "-1 is the greatest negative integer.",
+      "key_points": [
+        "greatest",
+        "negative",
+        "integer"
+      ],
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 12,
+      "question": "Value of 3 more than -5 is?",
+      "answer": "2 more than -5 equals -2.",
+      "key_points": [
+        "addition",
+        "negative",
+        "integer"
+      ],
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 13,
+      "question": "The opposite of (-8-7) is?",
+      "answer": "-(-15) is the opposite, which equals -15.",
+      "key_points": [
+        "opposite",
+        "negative",
+        "integer"
+      ],
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 14,
+      "question": "If a wire is cut into several small pieces and each piece is bent into a square of side 2 cm, what is the original length of the wire (in cm) if the total area of small squares is 28 cm^2?",
+      "answer": "The total length can be found by dividing the total area by the area of one square.",
+      "key_points": [
+        "wire",
+        "length",
+        "area"
+      ],
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 15,
+      "question": "A wire is cut into several small pieces. Each piece is bent into a square of side 2 cm. If the total area of small squares is 28 cm^2, what must be done to find the original length of the wire (in cm)?",
+      "answer": "Divide the total area by the area of one square.",
+      "key_points": [
+        "wire",
+        "length",
+        "area"
+      ],
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the definition of an integer?",
+      "answer": "An integer is a whole number, either positive, negative, or zero.",
+      "key_points": [
+        "integer",
+        "definition",
+        "whole"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 17,
+      "question": "What are the four operations?",
+      "answer": "The four basic arithmetic operations are addition, subtraction, multiplication, and division.",
+      "key_points": [
+        "operations",
+        "arithmetic",
+        "basic"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the result of adding two negative integers?",
+      "answer": "The sum of two negative integers is a negative integer.",
+      "key_points": [
+        "addition",
+        "negative",
+        "integer"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the definition of absolute value?",
+      "answer": "The absolute value of an integer is its distance from zero on the number line.",
+      "key_points": [
+        "absolute",
+        "value",
+        "distance"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 20,
+      "question": "What are some examples of integers?",
+      "answer": "Examples include whole numbers like 5, -3, and 0.",
+      "key_points": [
+        "integer",
+        "example",
+        "whole"
+      ],
+      "source_section": "Section 5"
+    }
+  ]
+}

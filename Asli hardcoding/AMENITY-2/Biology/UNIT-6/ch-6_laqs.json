@@ -1,0 +1,172 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 6: Plant growth and development",
+  "generated_at": "2026-02-11T22:01:29.629240",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Describe the role of auxins in plant growth, including their effect on cell elongation and cell division.",
+      "answer": "Auxins are a type of plant hormone that play a crucial role in plant growth. They promote cell elongation by increasing the length of cells, leading to an increase in stem height. Auxins also stimulate cell division in the shoot tip, allowing for increased leaf production. In addition, auxins regulate root growth and development, promoting the formation of new roots.",
+      "answer_outline": [
+        "Auxins promote cell elongation",
+        "Auxins stimulate cell division",
+        "Auxins regulate root growth"
+      ],
+      "key_concepts": [
+        "auxins",
+        "cell elongation",
+        "cell division",
+        "root growth"
+      ],
+      "marks": 8,
+      "source_section": "[Section 1, Plant Growth]"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the process of seed germination and describe the role of gibberellins in this process.",
+      "answer": "Seed germination begins with imbibition, where the dry seed absorbs water and swells. This reactivates metabolism, leading to the activation of enzymes. Gibberellins play a crucial role in breaking seed dormancy by activating hydrolytic enzymes that mobilize stored food reserves during seed germination. They also stimulate cell division in the radicle and plumule.",
+      "answer_outline": [
+        "Seed germination begins with imbibition",
+        "Gibberellins break seed dormancy",
+        "Gibberellins stimulate cell division"
+      ],
+      "key_concepts": [
+        "seed germination",
+        "imbibition",
+        "gibberellins",
+        "cell division"
+      ],
+      "marks": 8,
+      "source_section": "[Section 2, Seed Germination]"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the role of ethylene in plant growth and development, including its effect on fruit ripening and leaf senescence.",
+      "answer": "Ethylene is a gaseous plant hormone that regulates fruit ripening and leaf senescence. It increases the degradation of cell walls, leading to the softening of fruits like bananas and tomatoes. Ethylene also promotes leaf abscission by stimulating the production of ethylene, which leads to the breakdown of cell walls.",
+      "answer_outline": [
+        "Ethylene regulates fruit ripening",
+        "Ethylene stimulates leaf abscission"
+      ],
+      "key_concepts": [
+        "ethylene",
+        "fruit ripening",
+        "leaf senescence"
+      ],
+      "marks": 8,
+      "source_section": "[Section 3, Plant Hormones]"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the process of apical dominance and describe the role of auxins in this process.",
+      "answer": "Apical dominance is a phenomenon where the main stem of the plant grows more dominantly than the lateral branches. Auxins play a crucial role in suppressing the growth of lateral buds by stimulating cell division in the shoot tip. If the apical bud is removed, lateral buds start to grow, leading to bushier plants.",
+      "answer_outline": [
+        "Apical dominance is a phenomenon",
+        "Auxins suppress lateral bud growth"
+      ],
+      "key_concepts": [
+        "apical dominance",
+        "auxins",
+        "lateral bud growth"
+      ],
+      "marks": 8,
+      "source_section": "[Section 4, Plant Growth]"
+    },
+    {
+      "question_number": 5,
+      "question": "Describe the role of cytokinins in plant growth and development, including their effect on cell division and root growth.",
+      "answer": "Cytokinins are a type of plant hormone that promote cell division and stimulate root growth. They also regulate the formation of new roots by stimulating cell division in the shoot tip. Cytokinins play a crucial role in promoting plant growth and development.",
+      "answer_outline": [
+        "Cytokinins promote cell division",
+        "Cytokinins stimulate root growth"
+      ],
+      "key_concepts": [
+        "cytokinins",
+        "cell division",
+        "root growth"
+      ],
+      "marks": 8,
+      "source_section": "[Section 5, Plant Hormones]"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the process of seed dormancy and describe the role of gibberellins in this process.",
+      "answer": "Seed dormancy is a state where seeds are unable to germinate due to internal or external factors. Gibberellins play a crucial role in breaking seed dormancy by activating hydrolytic enzymes that mobilize stored food reserves during seed germination. They also stimulate cell division in the radicle and plumule.",
+      "answer_outline": [
+        "Seed dormancy is a state",
+        "Gibberellins break seed dormancy"
+      ],
+      "key_concepts": [
+        "seed dormancy",
+        "gibberellins",
+        "cell division"
+      ],
+      "marks": 8,
+      "source_section": "[Section 6, Seed Germination]"
+    },
+    {
+      "question_number": 7,
+      "question": "Describe the role of ethylene in plant growth and development, including its effect on fruit ripening and leaf senescence.",
+      "answer": "Ethylene is a gaseous plant hormone that regulates fruit ripening and leaf senescence. It increases the degradation of cell walls, leading to the softening of fruits like bananas and tomatoes. Ethylene also promotes leaf abscission by stimulating the production of ethylene, which leads to the breakdown of cell walls.",
+      "answer_outline": [
+        "Ethylene regulates fruit ripening",
+        "Ethylene stimulates leaf abscission"
+      ],
+      "key_concepts": [
+        "ethylene",
+        "fruit ripening",
+        "leaf senescence"
+      ],
+      "marks": 8,
+      "source_section": "[Section 7, Plant Hormones]"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the process of apical dominance and describe the role of auxins in this process.",
+      "answer": "Apical dominance is a phenomenon where the main stem of the plant grows more dominantly than the lateral branches. Auxins play a crucial role in suppressing the growth of lateral buds by stimulating cell division in the shoot tip. If the apical bud is removed, lateral buds start to grow, leading to bushier plants.",
+      "answer_outline": [
+        "Apical dominance is a phenomenon",
+        "Auxins suppress lateral bud growth"
+      ],
+      "key_concepts": [
+        "apical dominance",
+        "auxins",
+        "lateral bud growth"
+      ],
+      "marks": 8,
+      "source_section": "[Section 8, Plant Growth]"
+    },
+    {
+      "question_number": 9,
+      "question": "Describe the role of cytokinins in plant growth and development, including their effect on cell division and root growth.",
+      "answer": "Cytokinins are a type of plant hormone that promote cell division and stimulate root growth. They also regulate the formation of new roots by stimulating cell division in the shoot tip. Cytokinins play a crucial role in promoting plant growth and development.",
+      "answer_outline": [
+        "Cytokinins promote cell division",
+        "Cytokinins stimulate root growth"
+      ],
+      "key_concepts": [
+        "cytokinins",
+        "cell division",
+        "root growth"
+      ],
+      "marks": 8,
+      "source_section": "[Section 9, Plant Hormones]"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the process of seed germination and describe the role of gibberellins in this process.",
+      "answer": "Seed germination begins with imbibition, where the dry seed absorbs water and swells. This reactivates metabolism, leading to the activation of enzymes. Gibberellins play a crucial role in breaking seed dormancy by activating hydrolytic enzymes that mobilize stored food reserves during seed germination. They also stimulate cell division in the radicle and plumule.",
+      "answer_outline": [
+        "Seed germination begins with imbibition",
+        "Gibberellins break seed dormancy"
+      ],
+      "key_concepts": [
+        "seed germination",
+        "imbibition",
+        "gibberellins"
+      ],
+      "marks": 8,
+      "source_section": "[Section 10, Seed Germination]"
+    }
+  ]
+}

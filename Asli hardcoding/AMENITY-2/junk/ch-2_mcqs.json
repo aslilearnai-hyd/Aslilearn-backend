@@ -1,0 +1,288 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Mathematics",
+  "generated_at": "2026-02-10T22:41:23.772598",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the first metal detector used for?",
+      "options": {
+        "A": "Security screening",
+        "B": "Archaeology, treasure hunting, and construction",
+        "C": "Finding a bullet in President Garfield",
+        "D": "Treasure hunting"
+      },
+      "correct_answer": "C",
+      "explanation": "The first metal detector was invented to find a bullet in President Garfield!",
+      "difficulty": "medium",
+      "source_section": "Section 20"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the purpose of an air conditioner?",
+      "options": {
+        "A": "To heat and humidify indoor air",
+        "B": "To cool and dehumidify indoor air",
+        "C": "To filter out dust and pollutants",
+        "D": "To maintain a warm environment"
+      },
+      "correct_answer": "B",
+      "explanation": "An air conditioner works by using a refrigeration cycle to absorb heat from the indoor air and release it outside.",
+      "difficulty": "medium",
+      "source_section": "Section 20"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the infinity symbol used for?",
+      "options": {
+        "A": "To represent a quantity that continues forever",
+        "B": "To symbolize eternity, balance, and the interconnection of all things",
+        "C": "To represent everlasting love in jewelry",
+        "D": "To denote a true beginning or end"
+      },
+      "correct_answer": "A",
+      "explanation": "The infinity symbol (∞) was introduced to represent a quantity that continues forever.",
+      "difficulty": "medium",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 4,
+      "question": "What does Pascal's Triangle show?",
+      "options": {
+        "A": "Binomial coefficients, Fibonacci numbers, and triangular numbers",
+        "B": "Only binomial coefficients",
+        "C": "Fibonacci sequence and triangular numbers",
+        "D": "Neither of the above"
+      },
+      "correct_answer": "A",
+      "explanation": "Pascal's Triangle has many fascinating properties: its rows represent binomial coefficients, reveal Fibonacci numbers, and display triangular numbers.",
+      "difficulty": "hard",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the diagonal sum of Pascal's Triangle?",
+      "options": {
+        "A": "Fibonacci sequence",
+        "B": "Triangular numbers",
+        "C": "Both A and B",
+        "D": "Neither of the above"
+      },
+      "correct_answer": "C",
+      "explanation": "The diagonal sums of Pascal's Triangle create both the Fibonacci sequence and triangular numbers.",
+      "difficulty": "hard",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the least ever number in Whole Numbers?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "4",
+        "D": "5"
+      },
+      "correct_answer": "C",
+      "explanation": "The least even natural number is 2, and the least odd number in Whole Numbers is 1.",
+      "difficulty": "medium",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the product of the first 10 whole numbers?",
+      "options": {
+        "A": "10!",
+        "B": "9!",
+        "C": "8!",
+        "D": "7!"
+      },
+      "correct_answer": "A",
+      "explanation": "The product of the first n natural numbers is denoted by n!.",
+      "difficulty": "hard",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the additive identity in Whole Numbers?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "-1"
+      },
+      "correct_answer": "A",
+      "explanation": "In Whole Numbers, 0 is the additive identity.",
+      "difficulty": "medium",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the place value of 5 in 52,789?",
+      "options": {
+        "A": "50,000",
+        "B": "5,000",
+        "C": "500",
+        "D": "5"
+      },
+      "correct_answer": "A",
+      "explanation": "The digit 5 is in the ten thousands place, so its place value is 50,000.",
+      "difficulty": "medium",
+      "source_section": "Section 4-5"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the sum of successor and predecessor of 2?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "-1"
+      },
+      "correct_answer": "A",
+      "explanation": "The successor of 2 is 3, and the predecessor of 2 is 1.",
+      "difficulty": "medium",
+      "source_section": "Section 4-5"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the first metal detector used for?",
+      "options": {
+        "A": "Security screening",
+        "B": "Archaeology, treasure hunting, and construction",
+        "C": "Finding a bullet in President Garfield",
+        "D": "Treasure hunting"
+      },
+      "correct_answer": "C",
+      "explanation": "The first metal detector was invented to find a bullet in President Garfield!",
+      "difficulty": "medium",
+      "source_section": "Section 20"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the purpose of an air conditioner?",
+      "options": {
+        "A": "To heat and humidify indoor air",
+        "B": "To cool and dehumidify indoor air",
+        "C": "To filter out dust and pollutants",
+        "D": "To maintain a warm environment"
+      },
+      "correct_answer": "B",
+      "explanation": "An air conditioner works by using a refrigeration cycle to absorb heat from the indoor air and release it outside.",
+      "difficulty": "medium",
+      "source_section": "Section 20"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the infinity symbol used for?",
+      "options": {
+        "A": "To represent a quantity that continues forever",
+        "B": "To symbolize eternity, balance, and the interconnection of all things",
+        "C": "To represent everlasting love in jewelry",
+        "D": "To denote a true beginning or end"
+      },
+      "correct_answer": "A",
+      "explanation": "The infinity symbol (∞) was introduced to represent a quantity that continues forever.",
+      "difficulty": "medium",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 14,
+      "question": "What does Pascal's Triangle show?",
+      "options": {
+        "A": "Binomial coefficients, Fibonacci numbers, and triangular numbers",
+        "B": "Only binomial coefficients",
+        "C": "Fibonacci sequence and triangular numbers",
+        "D": "Neither of the above"
+      },
+      "correct_answer": "A",
+      "explanation": "Pascal's Triangle has many fascinating properties: its rows represent binomial coefficients, reveal Fibonacci numbers, and display triangular numbers.",
+      "difficulty": "hard",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the diagonal sum of Pascal's Triangle?",
+      "options": {
+        "A": "Fibonacci sequence",
+        "B": "Triangular numbers",
+        "C": "Both A and B",
+        "D": "Neither of the above"
+      },
+      "correct_answer": "C",
+      "explanation": "The diagonal sums of Pascal's Triangle create both the Fibonacci sequence and triangular numbers.",
+      "difficulty": "hard",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the least even natural number?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "-1"
+      },
+      "correct_answer": "C",
+      "explanation": "The least even natural number is 2.",
+      "difficulty": "medium",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the product of the first 10 whole numbers?",
+      "options": {
+        "A": "10!",
+        "B": "9!",
+        "C": "8!",
+        "D": "7!"
+      },
+      "correct_answer": "A",
+      "explanation": "The product of the first n natural numbers is denoted by n!.",
+      "difficulty": "hard",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the additive identity in Whole Numbers?",
+      "options": {
+        "A": "0",
+        "B": "1",
+        "C": "2",
+        "D": "-1"
+      },
+      "correct_answer": "A",
+      "explanation": "In Whole Numbers, 0 is the additive identity.",
+      "difficulty": "medium",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the place value of 5 in 52,789?",
+      "options": {
+        "A": "50,000",
+        "B": "5,000",
+        "C": "500",
+        "D": "5"
+      },
+      "correct_answer": "A",
+      "explanation": "The digit 5 is in the ten thousands place, so its place value is 50,000.",
+      "difficulty": "medium",
+      "source_section": "Section 4-5"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the sum of successor and predecessor of 2?",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "-1"
+      },
+      "correct_answer": "A",
+      "explanation": "The successor of 2 is 3, and the predecessor of 2 is 1.",
+      "difficulty": "medium",
+      "source_section": "Section 4-5"
+    }
+  ]
+}

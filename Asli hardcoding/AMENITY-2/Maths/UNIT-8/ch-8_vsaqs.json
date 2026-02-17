@@ -1,0 +1,209 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 8: Decimals",
+  "generated_at": "2026-02-11T00:57:01.733331",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the estimated circumference of Earth by Eratosthenes?",
+      "answer": "Eratosthenes estimated Earth's circumference to be about 40,000 km.",
+      "key_points": [
+        "Eratosthenes",
+        "Earth's Circumference"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 2,
+      "question": "How did Archimedes calculate the value of Pi?",
+      "answer": "Archimedes used polygons to estimate the value of Pi.",
+      "key_points": [
+        "Archimedes",
+        "Pi"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 3,
+      "question": "What was Eratosthenes' method for calculating Earth's circumference?",
+      "answer": "Eratosthenes measured the angle of a shadow cast in Alexandria and used it to estimate Earth's circumference.",
+      "key_points": [
+        "Eratosthenes",
+        "Earth's Circumference"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the true value of Pi?",
+      "answer": "The true value of Pi is approximately 3.14159.",
+      "key_points": [
+        "Pi",
+        "True Value"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the difference between Eratosthenes' and Archimedes' methods for calculating Pi?",
+      "answer": "Eratosthenes used angles, while Archimedes used polygons.",
+      "key_points": [
+        "Eratosthenes",
+        "Archimedes",
+        "Pi"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 6,
+      "question": "How did Eratosthenes measure the angle of a shadow cast in Alexandria?",
+      "answer": "He used it to estimate Earth's circumference.",
+      "key_points": [
+        "Eratosthenes",
+        "Earth's Circumference"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 7,
+      "question": "What was the angle difference Eratosthenes used in his calculation?",
+      "answer": "The angle of a shadow cast in Alexandria and the sun being directly overhead in Syene.",
+      "key_points": [
+        "Eratosthenes",
+        "Earth's Circumference"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 8,
+      "question": "What was Eratosthenes' result for Earth's circumference?",
+      "answer": "He estimated it to be about 40,000 km.",
+      "key_points": [
+        "Eratosthenes",
+        "Earth's Circumference"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the significance of Eratosthenes' calculation?",
+      "answer": "It was remarkably close to modern measurements, only 1% off.",
+      "key_points": [
+        "Eratosthenes",
+        "Earth's Circumference"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 10,
+      "question": "How did Archimedes calculate the value of Pi?",
+      "answer": "He used polygons to estimate the value of Pi.",
+      "key_points": [
+        "Archimedes",
+        "Pi"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 11,
+      "question": "What was Archimedes' polygon method for calculating Pi?",
+      "answer": "He drew 96-sided polygons inside and outside a circle.",
+      "key_points": [
+        "Archimedes",
+        "Pi"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 12,
+      "question": "What was the result of Archimedes' calculation?",
+      "answer": "He calculated Pi's value to be between 3.1408 and 3.1429.",
+      "key_points": [
+        "Archimedes",
+        "Pi"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the significance of Archimedes' calculation?",
+      "answer": "It laid the foundation for future mathematicians to refine Pi's value over centuries.",
+      "key_points": [
+        "Archimedes",
+        "Pi"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 14,
+      "question": "What is Archimedes' polygon method still used for?",
+      "answer": "It is still taught in modern geometry.",
+      "key_points": [
+        "Archimedes",
+        "Geometry"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the value of Pi estimated by Archimedes?",
+      "answer": "Between 3.1408 and 3.1429.",
+      "key_points": [
+        "Archimedes",
+        "Pi"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the closest estimate of Earth's circumference by Eratosthenes?",
+      "answer": "About 40,000 km.",
+      "key_points": [
+        "Eratosthenes",
+        "Earth's Circumference"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the true value of Pi?",
+      "answer": "Approximately 3.14159.",
+      "key_points": [
+        "Pi",
+        "True Value"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 18,
+      "question": "How did Eratosthenes calculate Earth's circumference?",
+      "answer": "Using angles and geometry.",
+      "key_points": [
+        "Eratosthenes",
+        "Earth's Circumference"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 19,
+      "question": "What was the distance between Alexandria and Syene used by Eratosthenes?",
+      "answer": "Not explicitly mentioned.",
+      "key_points": [
+        "Eratosthenes",
+        "Earth's Circumference"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the significance of Eratosthenes' calculation?",
+      "answer": "It was remarkably close to modern measurements, only 1% off.",
+      "key_points": [
+        "Eratosthenes",
+        "Earth's Circumference"
+      ],
+      "source_section": "Section 22"
+    }
+  ]
+}

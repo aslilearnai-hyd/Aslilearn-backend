@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 10: Algebra Including Simple Equations",
+  "generated_at": "2026-02-11T16:18:07.638268",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The solu�on of 5x=20 is ______.",
+      "correct_answer": "3",
+      "hint": "",
+      "explanation": "Solving the equation 5x = 20 for x gives x = 4. So, the solution to this equation is 4.",
+      "source_section": "[Section 30]"
+    },
+    {
+      "question_number": 2,
+      "question": "The value of x+4 at x=-2 is ______.",
+      "correct_answer": "-6",
+      "hint": "",
+      "explanation": "Substituting -2 for x in the expression x + 4 gives (-2) + 4 = 2. So, the value of this expression at x = -2 is 2.",
+      "source_section": "[Section 29]"
+    },
+    {
+      "question_number": 3,
+      "question": "The zero of the polynomial ______.",
+      "correct_answer": "3",
+      "hint": "",
+      "explanation": "Solving the equation x = 3 gives x = 3. So, the zero of this polynomial is 3.",
+      "source_section": "[Section 29]"
+    },
+    {
+      "question_number": 4,
+      "question": "The degree of a term -5x2y is ______.",
+      "correct_answer": "3",
+      "hint": "",
+      "explanation": "Counting the exponents in the term -5x2y gives an exponent sum of 3. So, the degree of this term is 3.",
+      "source_section": "[Section 29]"
+    },
+    {
+      "question_number": 5,
+      "question": "The number 121 is a ______.",
+      "correct_answer": "palindrome",
+      "hint": "",
+      "explanation": "A palindrome reads the same forward and backward. The number 121 reads the same forward and backward, so it's a palindrome.",
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 6,
+      "question": "The Golden Ratio is approximately ______.",
+      "correct_answer": "1.618",
+      "hint": "",
+      "explanation": "The Golden Ratio, denoted by the Greek letter Φ (phi), is an irrational number. It is approximately equal to 1.618.",
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 7,
+      "question": "The Parthenon in Greece follows ______ proportions.",
+      "correct_answer": "Golden Ratio",
+      "hint": "",
+      "explanation": "The Parthenon in Greece is a famous example of architecture that uses the Golden Ratio. It follows these proportions, which are also known as the Golden Mean or the Divine Proportion.",
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 8,
+      "question": "Palindromic Numbers read the same forward and ______.",
+      "correct_answer": "backward",
+      "hint": "",
+      "explanation": "A palindromic number is a number that reads the same when its digits are reversed. In other words, it reads the same forward and backward.",
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 9,
+      "question": "The reverse of 12345678987654321 is ______.",
+      "correct_answer": "12345678987654321",
+      "hint": "",
+      "explanation": "This number is a palindrome because it reads the same forward and backward. The reverse of this number is itself, so the answer is simply the number.",
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 10,
+      "question": "The ratio of two numbers is the same as the ratio of their sum to the larger ______.",
+      "correct_answer": "number",
+      "hint": "",
+      "explanation": "This is a mathematical property that defines the Golden Ratio. The ratio of two numbers a and b is the same as the ratio of (a + b) to the larger number, which we'll call a for now.",
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 11,
+      "question": "The Accelerometer has ______ sections.",
+      "correct_answer": "3",
+      "hint": "",
+      "explanation": "There are three main sections in the content that deal with an Accelerometer. These sections cover different topics related to accelerometers, but they all contribute to a comprehensive understanding of this device.",
+      "source_section": "[Section 24]"
+    },
+    {
+      "question_number": 12,
+      "question": "A palindromic number can appear in different bases, not just ______ base.",
+      "correct_answer": "10",
+      "hint": "",
+      "explanation": "The content mentions that a palindromic number is a number that reads the same forward and backward. It also notes that these numbers can appear in different bases, which includes bases other than 10.",
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 13,
+      "question": "The Golden Ratio appears in the spirals of ______.",
+      "correct_answer": "sunflowers",
+      "hint": "",
+      "explanation": "This mathematical constant, approximately equal to 1.618, is found in various aspects of nature. One notable example is the arrangement of seeds in sunflowers.",
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 14,
+      "question": "The root of 8=x+3 is ______.",
+      "correct_answer": "6",
+      "hint": "",
+      "explanation": "Solving the equation x + 3 = 8 for x gives x = 5. So, the root of this equation is 5.",
+      "source_section": "[Section 30]"
+    },
+    {
+      "question_number": 15,
+      "question": "The solu�on of 8-x=2 is ______.",
+      "correct_answer": "4",
+      "hint": "",
+      "explanation": "Solving the equation -x = 6 for x gives x = -6. So, the solution to this equation is -6.",
+      "source_section": "[Section 30]"
+    }
+  ]
+}

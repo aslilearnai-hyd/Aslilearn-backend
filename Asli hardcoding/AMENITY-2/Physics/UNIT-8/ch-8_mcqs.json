@@ -1,0 +1,288 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 8: Energy and work",
+  "generated_at": "2026-02-11T23:30:33.809078",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the unit of energy in the International System of Units (SI)?",
+      "options": {
+        "A": "Joule",
+        "B": "Newton",
+        "C": "Kilogram",
+        "D": "Meter"
+      },
+      "correct_answer": "A",
+      "explanation": "Section 1, Definition of Energy",
+      "difficulty": "easy",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 2,
+      "question": "Which type of energy is associated with the motion of an object?",
+      "options": {
+        "A": "Potential Energy",
+        "B": "Kinetic Energy",
+        "C": "Thermal Energy",
+        "D": "Electrical Energy"
+      },
+      "correct_answer": "B",
+      "explanation": "Section 3, Types of Energy",
+      "difficulty": "medium",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the formula for calculating the potential energy of an object?",
+      "options": {
+        "A": "PE = m × g × h",
+        "B": "PE = m × v^2",
+        "C": "PE = F × d",
+        "D": "PE = k × q"
+      },
+      "correct_answer": "A",
+      "explanation": "Section 4, Potential Energy Formula",
+      "difficulty": "hard",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following is an example of kinetic energy?",
+      "options": {
+        "A": "A book lying on a table",
+        "B": "A ball rolling down a hill",
+        "C": "A person sitting still in a chair",
+        "D": "A car parked in a garage"
+      },
+      "correct_answer": "B",
+      "explanation": "Section 5, Kinetic Energy Example",
+      "difficulty": "easy",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the relationship between potential energy and kinetic energy?",
+      "options": {
+        "A": "PE = KE",
+        "B": "PE + KE = E",
+        "C": "PE = -KE",
+        "D": "PE ≠ KE"
+      },
+      "correct_answer": "B",
+      "explanation": "Section 6, Energy Conservation",
+      "difficulty": "medium",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the unit of work in the International System of Units (SI)?",
+      "options": {
+        "A": "Joule",
+        "B": "Newton-Meter",
+        "C": "Kilogram-Meter",
+        "D": "Meter-Kilogram"
+      },
+      "correct_answer": "B",
+      "explanation": "Section 7, Definition of Work",
+      "difficulty": "easy",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 7,
+      "question": "Which type of energy is associated with the thermal motion of particles?",
+      "options": {
+        "A": "Potential Energy",
+        "B": "Kinetic Energy",
+        "C": "Thermal Energy",
+        "D": "Electrical Energy"
+      },
+      "correct_answer": "C",
+      "explanation": "Section 8, Thermal Energy",
+      "difficulty": "medium",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the formula for calculating the power of a machine?",
+      "options": {
+        "A": "P = W / t",
+        "B": "P = F × v",
+        "C": "P = E / t",
+        "D": "P = m × g"
+      },
+      "correct_answer": "A",
+      "explanation": "Section 9, Power Formula",
+      "difficulty": "hard",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 9,
+      "question": "Which of the following is an example of energy transfer?",
+      "options": {
+        "A": "A book lying on a table",
+        "B": "A ball rolling down a hill",
+        "C": "A person throwing a stone",
+        "D": "A car parked in a garage"
+      },
+      "correct_answer": "C",
+      "explanation": "Section 10, Energy Transfer Example",
+      "difficulty": "easy",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the relationship between energy and mass?",
+      "options": {
+        "A": "E = mc^2",
+        "B": "E ≠ m",
+        "C": "E + m = 0",
+        "D": "E - m = 0"
+      },
+      "correct_answer": "A",
+      "explanation": "Section 11, Energy-Mass Relationship",
+      "difficulty": "medium",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the unit of energy in the CGS system?",
+      "options": {
+        "A": "Joule",
+        "B": "Erg",
+        "C": "Calorie",
+        "D": "Watt"
+      },
+      "correct_answer": "B",
+      "explanation": "Section 12, Energy Units",
+      "difficulty": "easy",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 12,
+      "question": "Which type of energy is associated with the rotation of an object?",
+      "options": {
+        "A": "Potential Energy",
+        "B": "Kinetic Energy",
+        "C": "Rotational Energy",
+        "D": "Electrical Energy"
+      },
+      "correct_answer": "C",
+      "explanation": "Section 13, Rotational Energy",
+      "difficulty": "medium",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the formula for calculating the energy of a photon?",
+      "options": {
+        "A": "E = hf",
+        "B": "E = mc^2",
+        "C": "E = k × q",
+        "D": "E = F × d"
+      },
+      "correct_answer": "A",
+      "explanation": "Section 14, Photon Energy Formula",
+      "difficulty": "hard",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following is an example of energy conversion?",
+      "options": {
+        "A": "A book lying on a table",
+        "B": "A ball rolling down a hill",
+        "C": "A person converting chemical energy to electrical energy",
+        "D": "A car parked in a garage"
+      },
+      "correct_answer": "C",
+      "explanation": "Section 15, Energy Conversion Example",
+      "difficulty": "easy",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the relationship between energy and momentum?",
+      "options": {
+        "A": "E = p^2 / m",
+        "B": "E ≠ p",
+        "C": "E + p = 0",
+        "D": "E - p = 0"
+      },
+      "correct_answer": "A",
+      "explanation": "Section 16, Energy-Momentum Relationship",
+      "difficulty": "medium",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the unit of power in the International System of Units (SI)?",
+      "options": {
+        "A": "Joule per second",
+        "B": "Newton-Meter per second",
+        "C": "Kilogram-Meter per second",
+        "D": "Meter-Kilogram per second"
+      },
+      "correct_answer": "A",
+      "explanation": "Section 17, Definition of Power",
+      "difficulty": "easy",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 17,
+      "question": "Which type of energy is associated with the electrical motion of charges?",
+      "options": {
+        "A": "Potential Energy",
+        "B": "Kinetic Energy",
+        "C": "Electrical Energy",
+        "D": "Thermal Energy"
+      },
+      "correct_answer": "C",
+      "explanation": "Section 18, Electrical Energy",
+      "difficulty": "medium",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the formula for calculating the energy of an object in a gravitational field?",
+      "options": {
+        "A": "E = m × g × h",
+        "B": "E = F × d",
+        "C": "E = k × q",
+        "D": "E = p^2 / m"
+      },
+      "correct_answer": "A",
+      "explanation": "Section 19, Gravitational Energy Formula",
+      "difficulty": "hard",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 19,
+      "question": "Which of the following is an example of energy transfer?",
+      "options": {
+        "A": "A book lying on a table",
+        "B": "A ball rolling down a hill",
+        "C": "A person throwing a stone",
+        "D": "A car parked in a garage"
+      },
+      "correct_answer": "C",
+      "explanation": "Section 20, Energy Transfer Example",
+      "difficulty": "easy",
+      "source_section": "Chapter 8: Energy and work"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the relationship between energy and time?",
+      "options": {
+        "A": "E = t^2 / m",
+        "B": "E ≠ t",
+        "C": "E + t = 0",
+        "D": "E - t = 0"
+      },
+      "correct_answer": "A",
+      "explanation": "Section 21, Energy-Time Relationship",
+      "difficulty": "medium",
+      "source_section": "Chapter 8: Energy and work"
+    }
+  ]
+}

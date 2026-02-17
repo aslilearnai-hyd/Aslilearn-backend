@@ -1,0 +1,70 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "section": "Chapter 3: Electricity and circuits",
+  "generated_at": "2026-02-11T22:44:18.282416",
+  "notes": [
+    {
+      "concept_name": "Ohmic Material",
+      "summary": "An ohmic material is one that has a linear relationship between voltage and current, meaning its resistance remains constant. This is characterized by a straight line on the V-I graph. Ohmic materials are essential in electronics as they ensure consistent performance.",
+      "importance": "Understanding ohmic materials helps design reliable electronic circuits",
+      "quick_facts": [
+        "Linear v-I characteristics",
+        "Ohmic materials follow Ohm's Law",
+        "Resistance remains constant"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Superconductors",
+      "summary": "Superconductors are materials that exhibit zero resistance at low temperatures, allowing them to conduct electricity with perfect efficiency. They have many applications in electronics and engineering.",
+      "importance": "Superconductors are crucial for developing high-performance electronic devices",
+      "quick_facts": [
+        "Zero resistance at low temperature",
+        "Perfect conductivity",
+        "Applications in electronics"
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Internal Resistance",
+      "summary": "Internal resistance is the opposition to current flow within a cell or battery, causing voltage drop and limiting its performance. It's essential to consider when designing electronic circuits.",
+      "importance": "Understanding internal resistance helps optimize circuit design and performance",
+      "quick_facts": [
+        "Causes voltage drop",
+        "Limits cell performance",
+        "Important for circuit design"
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "concept_name": "Faraday's Law of Electromagnetic Induction",
+      "summary": "Faraday's Law states that an induced electromotive force (e.m.f) is proportional to the rate of change of magnetic flux. This fundamental principle underlies many electrical phenomena.",
+      "importance": "Understanding Faraday's Law is crucial for designing electronic devices and understanding electromagnetic interactions",
+      "quick_facts": [
+        "Induced e.m.f proportional to rate of change of magnetic flux",
+        "Fundamental principle in electromagnetism"
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "concept_name": "Coulomb's Law",
+      "summary": "Coulomb's Law describes the force between two charges as being inversely proportional to the square of the distance between them. This law is essential for understanding electrostatic interactions.",
+      "importance": "Understanding Coulomb's Law helps design electronic devices and understand electrostatic phenomena",
+      "quick_facts": [
+        "Force inversely proportional to square of distance",
+        "Fundamental principle in electromagnetism"
+      ],
+      "source_section": "Section 5"
+    },
+    {
+      "concept_name": "Wheatstone Bridge",
+      "summary": "The Wheatstone Bridge is an electrical circuit used for measuring resistance by balancing two legs with a variable resistor. It's widely used in electronics and engineering.",
+      "importance": "Understanding the Wheatstone Bridge helps measure resistance accurately in electronic circuits",
+      "quick_facts": [
+        "Balances two legs with variable resistor",
+        "Measures resistance accurately"
+      ],
+      "source_section": "Section 6"
+    }
+  ]
+}

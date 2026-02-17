@@ -1,0 +1,117 @@
+{
+  "content_type": "Flashcard Maker",
+  "generated_at": "2026-02-11T00:34:03.111654",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the smallest odd number in Whole Numbers?",
+        "correct_answer": "1",
+        "explanation": "Whole Numbers include all positive integers, starting from 0. The smallest odd number in this set is indeed 1.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What property does the additive identity possess?",
+        "correct_answer": "a + 0 = a",
+        "explanation": "Additive identity is a concept where adding zero to any number leaves that number unchanged.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is the main component of an air conditioner?",
+        "correct_answer": "Refrigerant",
+        "explanation": "The refrigerant absorbs heat from indoor air and releases it outside, making spaces more comfortable.",
+        "source_section": "Section 7"
+      },
+      {
+        "question": "What does Pascal's Triangle represent?",
+        "correct_answer": "Binomial coefficients",
+        "explanation": "Each entry in the triangle is the sum of the two numbers directly above it, representing binomial coefficients.",
+        "source_section": "Section 8"
+      },
+      {
+        "question": "How many sides does a regular polygon have?",
+        "correct_answer": "6",
+        "explanation": "A regular hexagon has six equal sides and angles.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the smallest even number in Whole Numbers?",
+        "correct_answer": "0",
+        "explanation": "Whole Numbers include all positive integers, starting from 0. The smallest even number in this set is indeed 0.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What symbol represents infinity?",
+        "correct_answer": "∞",
+        "explanation": "The lemniscate symbol was introduced to represent a quantity that continues forever.",
+        "source_section": "Section 6"
+      },
+      {
+        "question": "How many rows are in Pascal's Triangle?",
+        "correct_answer": "Infinite",
+        "explanation": "Pascal's Triangle has an infinite number of rows, each representing binomial coefficients.",
+        "source_section": "Section 8"
+      },
+      {
+        "question": "What is the main purpose of a metal detector?",
+        "correct_answer": "To detect hidden metal objects",
+        "explanation": "Metal detectors generate an electromagnetic field to find metal objects underground or inside other materials.",
+        "source_section": "Section 9"
+      },
+      {
+        "question": "Who invented the first modern air conditioner?",
+        "correct_answer": "Willis Carrier",
+        "explanation": "Carrier introduced the concept of cooling and dehumidifying indoor air with his invention in 1902.",
+        "source_section": "Section 7"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Additive Identity Property",
+        "content": "The additive identity is a number that, when added to any other number, leaves the second number unchanged. In Whole Numbers, this property is represented as a + 0 = a.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Properties of Infinity",
+        "content": "Infinity represents values that grow beyond any fixed number and signifies eternity, balance, and the interconnection of all things.",
+        "source_section": "Section 6"
+      },
+      {
+        "title": "Pascal's Triangle Structure",
+        "content": "Each entry in Pascal's Triangle is the sum of the two numbers directly above it, representing binomial coefficients.",
+        "source_section": "Section 8"
+      },
+      {
+        "title": "Whole Numbers Definition",
+        "content": "Whole Numbers include all positive integers, starting from 0.",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Air Conditioner Functioning",
+        "content": "An air conditioner works by using a refrigeration cycle to absorb heat from indoor air and release it outside.",
+        "source_section": "Section 7"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The first metal detector was invented to find a bullet in President Garfield!",
+        "source_section": "Section 9"
+      },
+      {
+        "fact": "Pascal's Triangle has many fascinating properties, including representing binomial coefficients and Fibonacci numbers.",
+        "source_section": "Section 8"
+      },
+      {
+        "fact": "Infinity is often used in jewelry to represent everlasting love!",
+        "source_section": "Section 6"
+      },
+      {
+        "fact": "The first modern air conditioner was invented by Willis Carrier in 1902.",
+        "source_section": "Section 7"
+      },
+      {
+        "fact": "Pascal's Triangle is used in algebra, probability, and combinatorics to find binomial coefficients.",
+        "source_section": "Section 8"
+      }
+    ]
+  }
+}

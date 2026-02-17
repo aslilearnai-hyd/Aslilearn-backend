@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 8: Energy and work",
+  "generated_at": "2026-02-11T23:32:15.326528",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The unit of energy is measured in ______.",
+      "correct_answer": "joules",
+      "hint": "Scientific unit",
+      "explanation": "According to the content, joules are used as a unit of energy.",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "A body at rest has ______ kinetic energy.",
+      "correct_answer": "zero",
+      "hint": "Scientific concept",
+      "explanation": "The content states that a body at rest has zero kinetic energy, as there is no motion.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "The work done by a force on an object can be calculated using the ______.",
+      "correct_answer": "force × distance",
+      "hint": "Scientific formula",
+      "explanation": "According to the content, the work done is given by the product of force and distance.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "When a force is applied in the opposite direction of an object's motion, the work done is ______.",
+      "correct_answer": "negative",
+      "hint": "Scientific concept",
+      "explanation": "The content explains that when a force opposes motion, it does negative work.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "A kilowatt-hour (kWh) is equal to ______ joules.",
+      "correct_answer": "3600",
+      "hint": "Energy conversion factor",
+      "explanation": "The content provides the conversion factor between kWh and joules.",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "The kinetic energy of an object is directly proportional to its ______.",
+      "correct_answer": "squared",
+      "hint": "Scientific concept",
+      "explanation": "According to the content, the kinetic energy of an object depends on the square of its velocity.",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 7,
+      "question": "A car travels ______ kilometers in one hour at a constant speed of 60 km/h.",
+      "correct_answer": "60",
+      "hint": "Scientific calculation",
+      "explanation": "The content uses this example to demonstrate the relationship between distance, time, and velocity.",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 8,
+      "question": "When a force is applied parallel to an object's motion, the work done is ______.",
+      "correct_answer": "positive",
+      "hint": "Scientific concept",
+      "explanation": "The content explains that when a force helps an object move, it does positive work.",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 9,
+      "question": "The potential energy of an object depends on its ______ and height above the ground.",
+      "correct_answer": "mass",
+      "hint": "Scientific concept",
+      "explanation": "According to the content, both mass and height affect the potential energy of an object.",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 10,
+      "question": "A car's kinetic energy is given by ______ × velocity^2.",
+      "correct_answer": "1/2",
+      "hint": "Scientific formula",
+      "explanation": "The content provides the formula for calculating a car's kinetic energy.",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 11,
+      "question": "When an object is lifted to a greater height, its ______ increases.",
+      "correct_answer": "potential",
+      "hint": "Scientific concept",
+      "explanation": "The content explains that potential energy increases with height.",
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 12,
+      "question": "A force of 10 N applied over a distance of 5 m does ______ joules of work.",
+      "correct_answer": "50",
+      "hint": "Scientific calculation",
+      "explanation": "The content uses this example to demonstrate the calculation of work done.",
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 13,
+      "question": "The work-energy theorem states that the net work done on an object is equal to its ______ energy.",
+      "correct_answer": "change in",
+      "hint": "Scientific concept",
+      "explanation": "According to the content, the work-energy theorem relates work and change in kinetic energy.",
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 14,
+      "question": "A body moving with a velocity of 10 m/s has a kinetic energy of ______ joules.",
+      "correct_answer": "50",
+      "hint": "Scientific calculation",
+      "explanation": "The content uses this example to demonstrate the relationship between velocity and kinetic energy.",
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 15,
+      "question": "The unit of power is measured in ______ per second.",
+      "correct_answer": "watts",
+      "hint": "Scientific unit",
+      "explanation": "According to the content, watts are used as a unit of power.",
+      "source_section": "Section 15"
+    }
+  ]
+}

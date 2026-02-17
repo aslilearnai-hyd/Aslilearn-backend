@@ -1,0 +1,96 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "section": "Chapter 1: States of matter",
+  "generated_at": "2026-02-11T23:59:10.381342",
+  "notes": [
+    {
+      "concept_name": "States of Matter",
+      "summary": "There are four main states of matter: solid, liquid, gas, and plasma. Solids have a fixed shape and volume, liquids have a fixed volume but take the shape of their container, gases fill the entire space of their container and have neither fixed shape nor volume, and plasmas are ionized gases with free-moving charged particles.",
+      "importance": "Understanding states of matter is crucial for various scientific and practical applications.",
+      "quick_facts": [
+        "Solids have a fixed shape and volume",
+        "Liquids have a fixed volume but take the shape of their container",
+        "Gases fill the entire space of their container and have neither fixed shape nor volume",
+        "Plasmas are ionized gases with free-moving charged particles"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Charles's Law",
+      "summary": "Charles's Law describes the relationship between the volume and temperature of a gas when the pressure is kept constant. If the temperature of a gas increases, its volume also increases provided that the pressure remains unchanged.",
+      "importance": "Charles's Law has significant implications for various fields such as engineering and physics.",
+      "quick_facts": [
+        "The volume of a gas is directly proportional to its absolute temperature",
+        "If the temperature of a gas increases, its volume also increases",
+        "Pressure must remain constant for Charles's Law to hold true"
+      ],
+      "source_section": "Section 26"
+    },
+    {
+      "concept_name": "Avogadro's Law",
+      "summary": "Avogadro's Law states that equal volumes of gases at the same temperature and pressure contain an equal number of molecules.",
+      "importance": "Avogadro's Law is a fundamental principle in chemistry and has numerous applications.",
+      "quick_facts": [
+        "Equal volumes of gases contain an equal number of molecules",
+        "Temperature and pressure must be constant for Avogadro's Law to hold true",
+        "Avogadro's Law is a key concept in chemistry"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "concept_name": "Boyle's Law",
+      "summary": "Boyle's Law describes the relationship between the pressure and volume of a gas when the temperature is kept constant. If the pressure of a gas increases, its volume decreases provided that the temperature remains unchanged.",
+      "importance": "Boyle's Law has significant implications for various fields such as engineering and physics.",
+      "quick_facts": [
+        "The volume of a gas is inversely proportional to its pressure",
+        "If the pressure of a gas increases, its volume decreases",
+        "Temperature must remain constant for Boyle's Law to hold true"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "concept_name": "Sublimation",
+      "summary": "Sublimation is the transition of a substance from the solid to the gas phase without going through the liquid phase.",
+      "importance": "Sublimation has significant implications for various fields such as chemistry and physics.",
+      "quick_facts": [
+        "Sublimation occurs when a solid directly turns into a gas",
+        "This process can occur at any temperature",
+        "Examples of substances that sublime include dry ice and iodine"
+      ],
+      "source_section": "Section 29"
+    },
+    {
+      "concept_name": "Freezing",
+      "summary": "Freezing is the transition of a substance from the liquid to the solid phase.",
+      "importance": "Freezing has significant implications for various fields such as chemistry and physics.",
+      "quick_facts": [
+        "Freezing occurs when a liquid turns into a solid",
+        "This process can occur at any temperature below the freezing point",
+        "Examples of substances that freeze include water and mercury"
+      ],
+      "source_section": "Section 30"
+    },
+    {
+      "concept_name": "Condensation",
+      "summary": "Condensation is the transition of a substance from the gas to the liquid phase.",
+      "importance": "Condensation has significant implications for various fields such as chemistry and physics.",
+      "quick_facts": [
+        "Condensation occurs when a gas turns into a liquid",
+        "This process can occur at any temperature below the boiling point",
+        "Examples of substances that condense include water vapor and carbon dioxide"
+      ],
+      "source_section": "Section 30"
+    },
+    {
+      "concept_name": "Liquefaction",
+      "summary": "Liquefaction is the transition of a substance from the gas to the liquid phase.",
+      "importance": "Liquefaction has significant implications for various fields such as chemistry and physics.",
+      "quick_facts": [
+        "Liquefaction occurs when a gas turns into a liquid",
+        "This process can occur at any temperature below the boiling point",
+        "Examples of substances that liquefy include oxygen and nitrogen"
+      ],
+      "source_section": "Section 30"
+    }
+  ]
+}

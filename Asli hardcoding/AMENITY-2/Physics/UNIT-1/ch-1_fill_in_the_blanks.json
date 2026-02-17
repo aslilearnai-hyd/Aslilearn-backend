@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 1: Measurement of distances",
+  "generated_at": "2026-02-11T22:19:13.287596",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The unit of length in the International System of Units (SI) is ______.",
+      "correct_answer": "meter",
+      "hint": "",
+      "explanation": "Section 2, 'Measurement and Its Importance' explains the SI system.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 2,
+      "question": "1 kilometer is equal to ______ meters.",
+      "correct_answer": "1000",
+      "hint": "",
+      "explanation": "Section 3, 'Conversion of Units' explains unit conversions.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 3,
+      "question": "The prefix 'kilo-' means ______ times the base unit.",
+      "correct_answer": "1000",
+      "hint": "",
+      "explanation": "Section 4, 'Prefixes and Suffixes' explains prefixes.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 4,
+      "question": "1 centimeter is equal to ______ meters.",
+      "correct_answer": "0.01",
+      "hint": "",
+      "explanation": "Section 5, 'Length and Distance' explains unit conversions.",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 5,
+      "question": "The symbol for the meter is ______.",
+      "correct_answer": "m",
+      "hint": "",
+      "explanation": "Section 6, 'Unit Symbols' explains unit symbols.",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 6,
+      "question": "1 millimeter is equal to ______ meters.",
+      "correct_answer": "0.001",
+      "hint": "",
+      "explanation": "Section 7, 'Unit Conversions' explains unit conversions.",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 7,
+      "question": "The prefix 'milli-' means ______ times the base unit.",
+      "correct_answer": "0.001",
+      "hint": "",
+      "explanation": "Section 8, 'Prefixes and Suffixes' explains prefixes.",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 8,
+      "question": "1 kilometer per hour is equal to ______ meters per second.",
+      "correct_answer": "0.27778",
+      "hint": "",
+      "explanation": "Section 9, 'Conversion of Units' explains unit conversions.",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 9,
+      "question": "The symbol for the kilometer is ______.",
+      "correct_answer": "km",
+      "hint": "",
+      "explanation": "Section 10, 'Unit Symbols' explains unit symbols.",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 10,
+      "question": "1 meter per second is equal to ______ kilometers per hour.",
+      "correct_answer": "3.6",
+      "hint": "",
+      "explanation": "Section 11, 'Unit Conversions' explains unit conversions.",
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 11,
+      "question": "The prefix 'centi-' means ______ times the base unit.",
+      "correct_answer": "0.01",
+      "hint": "",
+      "explanation": "Section 12, 'Prefixes and Suffixes' explains prefixes.",
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 12,
+      "question": "1 centimeter is equal to ______ meters.",
+      "correct_answer": "0.01",
+      "hint": "",
+      "explanation": "Section 13, 'Unit Conversions' explains unit conversions.",
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 13,
+      "question": "The symbol for the centimeter is ______.",
+      "correct_answer": "cm",
+      "hint": "",
+      "explanation": "Section 14, 'Unit Symbols' explains unit symbols.",
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 14,
+      "question": "1 kilometer per hour is equal to ______ meters per second.",
+      "correct_answer": "0.27778",
+      "hint": "",
+      "explanation": "Section 15, 'Conversion of Units' explains unit conversions.",
+      "source_section": "Section 15"
+    },
+    {
+      "question_number": 15,
+      "question": "The prefix 'deci-' means ______ times the base unit.",
+      "correct_answer": "0.1",
+      "hint": "",
+      "explanation": "Section 16, 'Prefixes and Suffixes' explains prefixes.",
+      "source_section": "Section 16"
+    }
+  ]
+}

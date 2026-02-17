@@ -36,8 +36,13 @@ export const createTeacherTool = async (req, res) => {
       });
     }
     
+    // For IIT-6, use IIT subjects (Physics, Chemistry, Maths, Biology)
+    // For other classes, use standard VALID_SUBJECTS
+    const isIIT6 = classNumber === 'IIT-6';
+    const validSubjectsList = isIIT6 ? ['Physics', 'Chemistry', 'Maths', 'Biology'] : VALID_SUBJECTS;
+    
     // Normalize subject name (handle case variations like "english" vs "English")
-    const normalizedSubject = VALID_SUBJECTS.find(s => 
+    const normalizedSubject = validSubjectsList.find(s => 
       s.toLowerCase() === subject.toLowerCase()
     );
     
@@ -45,7 +50,7 @@ export const createTeacherTool = async (req, res) => {
     if (!normalizedSubject) {
       return res.status(400).json({
         success: false,
-        message: `Invalid subject. Valid subjects are: ${VALID_SUBJECTS.join(', ')}`
+        message: `Invalid subject. Valid subjects are: ${validSubjectsList.join(', ')}`
       });
     }
     
@@ -60,11 +65,13 @@ export const createTeacherTool = async (req, res) => {
     // Use normalized subject for processing
     const finalSubject = normalizedSubject;
 
-    const classNum = parseInt(classNumber);
+    // Handle IIT-6 as string, otherwise parse as number
+    const classNum = isIIT6 ? classNumber : parseInt(classNumber);
+    const classDisplay = isIIT6 ? 'IIT-6' : `Class ${classNum}`;
     
     // For lesson-planner, daily-class-plan-maker, activity-project-generator, and story-passage-creator, topic is optional
     const topicInfo = topic || (toolType === 'activity-project-generator' ? 'all projects' : toolType === 'story-passage-creator' ? 'all passages' : 'all lessons');
-    console.log(`🔍 Fetching hardcoded content for ${toolType} - Class ${classNum}, ${finalSubject}, ${topicInfo}`);
+    console.log(`🔍 Fetching hardcoded content for ${toolType} - ${classDisplay}, ${finalSubject}, ${topicInfo}`);
 
     // For lesson-planner, daily-class-plan-maker, activity-project-generator, and story-passage-creator, pass empty string if topic not provided
     // For other tools, topic is required
@@ -73,10 +80,10 @@ export const createTeacherTool = async (req, res) => {
     
     if (!hardcodedData) {
       const topicMsg = topic ? `Topic: ${topic}` : 'all lessons';
-      console.log(`❌ No hardcoded content found for ${toolType} - Class ${classNum}, ${finalSubject}, ${topicMsg}`);
+      console.log(`❌ No hardcoded content found for ${toolType} - ${classDisplay}, ${finalSubject}, ${topicMsg}`);
       return res.status(404).json({
         success: false,
-        message: `No pre-generated content available for ${toolType} with Class ${classNum}, Subject: ${finalSubject}${topic ? `, ${topicMsg}` : ''}. Please check if the content exists in the hardcoded folder.`,
+        message: `No pre-generated content available for ${toolType} with ${classDisplay}, Subject: ${finalSubject}${topic ? `, ${topicMsg}` : ''}. Please check if the content exists in the hardcoded folder.`,
         hint: topic ? 'Make sure the topic/unit name matches the folder structure.' : 'Make sure planner.json exists for this subject.'
       });
     }
@@ -87,7 +94,7 @@ export const createTeacherTool = async (req, res) => {
     const formattedContent = formatHardcodedContent(hardcodedData, toolType, {
       subject: finalSubject,
       topic,
-      classNumber: classNum,
+      classNumber: isIIT6 ? 'IIT-6' : classNum,
       ...params
     });
 
@@ -98,7 +105,7 @@ export const createTeacherTool = async (req, res) => {
         content: formattedContent,
         toolType,
         metadata: {
-          classNumber: classNum,
+          classNumber: isIIT6 ? 'IIT-6' : classNum,
           subject: finalSubject,
           topic,
           ...params,
@@ -165,6 +172,24 @@ export const getSubjects = async (req, res) => {
       });
     }
 
+    // Handle IIT-6 specially (before parsing as integer)
+    if (classNumber === 'IIT-6') {
+      const { getSubjectsForClass } = await import('../services/hardcoded-content-service.js');
+      const subjects = await getSubjectsForClass('IIT-6');
+      
+      // If no subjects found in folder, use IIT default subjects
+      const finalSubjects = subjects.length > 0 ? subjects : ['Physics', 'Chemistry', 'Maths', 'Biology'];
+
+      return res.json({
+        success: true,
+        data: finalSubjects.map(subject => ({
+          name: subject,
+          displayName: subject
+        })),
+        message: `Found ${finalSubjects.length} subjects for IIT-6`
+      });
+    }
+
     const classNum = parseInt(classNumber);
     
     // Support classes 5-10
@@ -172,7 +197,7 @@ export const getSubjects = async (req, res) => {
       return res.json({
         success: true,
         data: [],
-        message: `Only classes 5-10 are currently supported. Class ${classNum} content is not available.`
+        message: `Only classes 5-10 and IIT-6 are currently supported. Class ${classNumber} content is not available.`
       });
     }
 
@@ -217,7 +242,12 @@ export const getTopics = async (req, res) => {
     }
 
     // Normalize subject name (handle case variations like "maths" vs "Maths")
-    const normalizedSubject = subject.charAt(0).toUpperCase() + subject.slice(1).toLowerCase();
+    let normalizedSubject = subject.charAt(0).toUpperCase() + subject.slice(1).toLowerCase();
+    
+    // Map "Mathematics" to "Maths" to match VALID_SUBJECTS
+    if (normalizedSubject === 'Mathematics') {
+      normalizedSubject = 'Maths';
+    }
     
     // Get chapters from planner.json and folder structure
     const chapters = await getChaptersForSubject(classNumber, normalizedSubject);

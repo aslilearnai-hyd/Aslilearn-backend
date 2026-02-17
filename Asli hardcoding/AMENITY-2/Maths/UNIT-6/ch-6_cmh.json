@@ -1,0 +1,76 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 6: Integers Four Operations",
+  "generated_at": "2026-02-11T00:40:05.538440",
+  "concepts": [
+    {
+      "concept_name": "The Smallest Integer Greater Than Every Negative Integer",
+      "difficulty": "medium",
+      "lesson": "In the context of integers, a negative integer is any number less than zero. The smallest integer greater than every negative integer is the first positive integer, which is 0.",
+      "real_example": "",
+      "key_points": [
+        "The smallest integer greater than every negative integer is 0.",
+        "Negative integers are those less than zero.",
+        "Zero is the first positive integer."
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Addition of Integers",
+      "difficulty": "medium",
+      "lesson": "When adding two integers, we consider their signs. If both have the same sign (both positive or both negative), we add their absolute values and keep the common sign. If they have different signs, we subtract the smaller from the larger and take the result's sign.",
+      "real_example": "For example, (-5) + 3 = -2",
+      "key_points": [
+        "Addition of integers depends on their signs.",
+        "Same sign: add absolute values and keep common sign.",
+        "Different signs: subtract smaller from larger and take result's sign."
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "concept_name": "Subtraction of Integers",
+      "difficulty": "medium",
+      "lesson": "When subtracting one integer from another, we change the sign of the subtrahend to make it positive and then proceed as in addition.",
+      "real_example": "",
+      "key_points": [
+        "Subtraction involves changing the sign of the subtrahend.",
+        "Then add as in addition.",
+        "Result's sign depends on the original signs."
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "concept_name": "Multiplication and Division of Integers",
+      "difficulty": "hard",
+      "lesson": "The product or quotient of two integers is determined by the rules: (i) The sign of the product is positive if both factors have the same parity (both even or both odd); it is negative if they have different parities. For division, a non-zero integer divided by another has a positive result if the divisor and dividend are of opposite signs; otherwise, the result is negative.",
+      "real_example": "",
+      "key_points": [
+        "Multiplication: product sign depends on factors' parity.",
+        "Division: result's sign depends on signs of dividend and divisor."
+      ],
+      "source_section": "Section 5"
+    },
+    {
+      "concept_name": "Absolute Value",
+      "difficulty": "easy",
+      "lesson": "The absolute value of an integer is its distance from zero, regardless of direction. For negative integers, it equals the positive counterpart's value.",
+      "real_example": "",
+      "key_points": [
+        "Absolute value represents an integer's magnitude.",
+        "For negatives, equals positive counterpart."
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Opposite of an Integer",
+      "difficulty": "easy",
+      "lesson": "The opposite or negation of a number is its negative counterpart. For example, the opposite of -7 is +7.",
+      "real_example": "",
+      "key_points": [
+        "Opposite is the negative counterpart.",
+        "Example: opposite of -7 is 7."
+      ],
+      "source_section": "Section 2"
+    }
+  ]
+}

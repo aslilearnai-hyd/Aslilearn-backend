@@ -1,0 +1,67 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "section": "Chapter 6: Plant growth and development",
+  "generated_at": "2026-02-11T22:03:24.544642",
+  "notes": [
+    {
+      "concept_name": "Ethylene",
+      "summary": "Ethylene is a gaseous plant hormone that regulates fruit ripening, leaf senescence, and response to stress such as mechanical injury. It increases cell wall degradation leading to softening of fruits like bananas and tomatoes.",
+      "importance": "Understanding ethylene's role in plant growth and development helps in regulating processes like fruit ripening.",
+      "quick_facts": [
+        "Regulates fruit ripening",
+        "Involved in leaf senescence",
+        "Responds to mechanical injury",
+        "Increases cell wall degradation"
+      ],
+      "source_section": "ACCELEROMETER: Ethylene"
+    },
+    {
+      "concept_name": "Seed Germination",
+      "summary": "Seed germination starts with imbibition, where the dry seed absorbs water and swells. This reactivates metabolism, leading to the activation of enzymes, and the radicle emerges first followed by the plumule.",
+      "importance": "Understanding seed germination is crucial for plant growth and development as it marks the beginning of a new plant's life cycle.",
+      "quick_facts": [
+        "Imbibition is the first step",
+        "Seed absorbs water and swells",
+        "Metabolism is reactivated",
+        "Radicle emerges first"
+      ],
+      "source_section": "ACCELEROMETER: Seed Germination"
+    },
+    {
+      "concept_name": "Apical Dominance",
+      "summary": "Apical dominance is a phenomenon where the main stem of the plant grows more dominantly than lateral branches. This is regulated by auxins, which suppress the growth of lateral buds.",
+      "importance": "Understanding apical dominance helps in regulating plant growth and development, allowing for bushier plants if the apical bud is removed.",
+      "quick_facts": [
+        "Regulated by auxins",
+        "Suppresses lateral bud growth",
+        "Main stem grows more dominantly",
+        "Bushy plants result from removal of apical bud"
+      ],
+      "source_section": "ACCELEROMETER: Apical Dominance"
+    },
+    {
+      "concept_name": "Gibberellins",
+      "summary": "Gibberellins are growth-promoting hormones that play a crucial role in stem elongation, breaking seed dormancy, and inducing flowering in some plants. They activate hydrolytic enzymes that mobilize stored food reserves during seed germination.",
+      "importance": "Understanding gibberellin's role in plant growth and development helps in regulating processes like stem elongation and seed germination.",
+      "quick_facts": [
+        "Promotes stem elongation",
+        "Breaks seed dormancy",
+        "Induces flowering in some plants",
+        "Activates hydrolytic enzymes"
+      ],
+      "source_section": "ACCELEROMETER: Gibberellins"
+    },
+    {
+      "concept_name": "Abscisic Acid (ABA)",
+      "summary": "ABA is a plant hormone that regulates stomatal closure, seed dormancy, and fruit ripening. It triggers loss of water from guard cells leading to stomatal closure.",
+      "importance": "Understanding ABA's role in plant growth and development helps in regulating processes like stomatal closure and seed dormancy.",
+      "quick_facts": [
+        "Regulates stomatal closure",
+        "Involved in seed dormancy",
+        "Affects fruit ripening",
+        "Triggers loss of water from guard cells"
+      ],
+      "source_section": "ACCELEROMETER: Abscisic Acid (ABA)"
+    }
+  ]
+}

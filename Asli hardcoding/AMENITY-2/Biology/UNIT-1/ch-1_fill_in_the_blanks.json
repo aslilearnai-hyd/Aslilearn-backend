@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 1: Food and its components",
+  "generated_at": "2026-02-11T19:01:33.325589",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Carbohydrates are the body's primary source of ______.",
+      "correct_answer": "energy",
+      "hint": "",
+      "explanation": "According to the content, carbohydrates provide energy for the body.",
+      "source_section": ""
+    },
+    {
+      "question_number": 2,
+      "question": "Simple carbohydrates, like _______, provide quick energy.",
+      "correct_answer": "glucose",
+      "hint": "",
+      "explanation": "The content mentions that simple carbohydrates, such as glucose, offer quick energy.",
+      "source_section": ""
+    },
+    {
+      "question_number": 3,
+      "question": "Proteins are essential for building and repairing _______ and producing enzymes and hormones.",
+      "correct_answer": "tissues",
+      "hint": "",
+      "explanation": "The content highlights the importance of proteins in building tissues, among other functions.",
+      "source_section": ""
+    },
+    {
+      "question_number": 4,
+      "question": "Amino acids are the _______ blocks of proteins.",
+      "correct_answer": "building",
+      "hint": "",
+      "explanation": "The content explains that amino acids serve as the building blocks of proteins.",
+      "source_section": ""
+    },
+    {
+      "question_number": 5,
+      "question": "There are 20 different _______ in total.",
+      "correct_answer": "amino",
+      "hint": "",
+      "explanation": "The content mentions that there are 20 distinct amino acids.",
+      "source_section": ""
+    },
+    {
+      "question_number": 6,
+      "question": "9 of the amino acids are _______ and must be obtained from food.",
+      "correct_answer": "essential",
+      "hint": "",
+      "explanation": "The content notes that 9 of these essential amino acids must be acquired through dietary means.",
+      "source_section": ""
+    },
+    {
+      "question_number": 7,
+      "question": "Fats are a concentrated source of _______ and are essential for absorbing fat-soluble vitamins (A, D, E, K).",
+      "correct_answer": "energy",
+      "hint": "",
+      "explanation": "The content emphasizes the importance of fats in providing energy and aiding in vitamin absorption.",
+      "source_section": ""
+    },
+    {
+      "question_number": 8,
+      "question": "Unsaturated fats, found in plants and fish, are considered _______ than saturated and trans fats.",
+      "correct_answer": "healthier",
+      "hint": "",
+      "explanation": "The content differentiates between healthier and less healthy types of fats.",
+      "source_section": ""
+    },
+    {
+      "question_number": 9,
+      "question": "Iron is essential for the production of _______ in red blood cells.",
+      "correct_answer": "hemoglobin",
+      "hint": "",
+      "explanation": "The content highlights iron's role in producing hemoglobin within red blood cells.",
+      "source_section": ""
+    },
+    {
+      "question_number": 10,
+      "question": "A deficiency in iron can lead to _______ anemia, characterized by fatigue, pale skin, and shortness of breath.",
+      "correct_answer": "iron",
+      "hint": "",
+      "explanation": "The content describes the potential consequences of insufficient iron intake.",
+      "source_section": ""
+    },
+    {
+      "question_number": 11,
+      "question": "The Biuret Test is used to detect _______ in a sample.",
+      "correct_answer": "proteins",
+      "hint": "",
+      "explanation": "The content mentions the purpose of the Biuret Test.",
+      "source_section": ""
+    },
+    {
+      "question_number": 12,
+      "question": "Pellagra is caused by a deficiency in _______.",
+      "correct_answer": "niacin",
+      "hint": "",
+      "explanation": "The content links pellagra to a specific vitamin deficiency.",
+      "source_section": ""
+    },
+    {
+      "question_number": 13,
+      "question": "Rickets is a disease characterized by soft bones and bone deformities, resulting from a lack of _______.",
+      "correct_answer": "calcium",
+      "hint": "",
+      "explanation": "The content describes the condition associated with calcium deficiency.",
+      "source_section": ""
+    },
+    {
+      "question_number": 14,
+      "question": "Pernicious anemia is a result of a lack of _______ in the diet.",
+      "correct_answer": "vitamin B12",
+      "hint": "",
+      "explanation": "The content identifies the specific vitamin deficiency leading to pernicious anemia.",
+      "source_section": ""
+    },
+    {
+      "question_number": 15,
+      "question": "Hemorrhagic disease results from a lack of _______ in the diet.",
+      "correct_answer": "vitamin K",
+      "hint": "",
+      "explanation": "The content describes another condition linked to vitamin deficiency.",
+      "source_section": ""
+    }
+  ]
+}

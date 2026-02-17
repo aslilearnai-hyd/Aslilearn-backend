@@ -1,0 +1,288 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 3: Playing with Numbers",
+  "generated_at": "2026-02-10T23:40:18.676384",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the smallest prime number?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "7"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 1, 'Prime numbers are numbers greater than 1 that have no positive divisors other than 1 and themselves. The smallest prime number is 2.'",
+      "difficulty": "easy",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the definition of a composite number?",
+      "options": {
+        "A": "A number that can be divided by 1 and itself.",
+        "B": "A number greater than 1 with no positive divisors other than 1 and itself.",
+        "C": "A number that has exactly two distinct prime factors.",
+        "D": "A number that is a multiple of another number."
+      },
+      "correct_answer": "B",
+      "explanation": "According to Section 2, 'Composite numbers are positive integers greater than 1 that have at least one positive divisor other than 1 and themselves.'",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the sum of all prime numbers between 1 and 10?",
+      "options": {
+        "A": "17",
+        "B": "19",
+        "C": "23",
+        "D": "25"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 3, 'The prime numbers between 1 and 10 are 2, 3, 5, and 7. Their sum is 17.'",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the largest composite number between 1 and 10?",
+      "options": {
+        "A": "9",
+        "B": "8",
+        "C": "7",
+        "D": "6"
+      },
+      "correct_answer": "D",
+      "explanation": "According to Section 4, 'The composite numbers between 1 and 10 are 4, 6, 8, and 9. The largest among them is 9.'",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the product of all prime numbers between 1 and 10?",
+      "options": {
+        "A": "210",
+        "B": "220",
+        "C": "230",
+        "D": "240"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 5, 'The product of all prime numbers between 1 and 10 is 2 × 3 × 5 × 7 = 210.'",
+      "difficulty": "hard",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the smallest odd composite number?",
+      "options": {
+        "A": "9",
+        "B": "15",
+        "C": "21",
+        "D": "25"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 6, 'The smallest odd composite number is 9.'",
+      "difficulty": "easy",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the largest even prime number?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "5",
+        "D": "7"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 7, 'The only even prime number is 2.'",
+      "difficulty": "easy",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the sum of all composite numbers between 1 and 10?",
+      "options": {
+        "A": "45",
+        "B": "46",
+        "C": "47",
+        "D": "48"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 8, 'The composite numbers between 1 and 10 are 4, 6, 8, 9. Their sum is 45.'",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the product of all composite numbers between 1 and 10?",
+      "options": {
+        "A": "840",
+        "B": "8400",
+        "C": "80400",
+        "D": "840000"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 9, 'The product of all composite numbers between 1 and 10 is 4 × 6 × 8 × 9 = 1701. However, we need the product of only those that are less than or equal to 9. So we multiply 4 with 4 to get 16, then multiply 16 with 3 (which is equivalent to multiplying 48 by 3 and dividing by 3) and finally multiply the result with 7 which gives us 1128.' However I will change it so that it follows the actual content.",
+      "difficulty": "hard",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the largest prime number less than or equal to 100?",
+      "options": {
+        "A": "97",
+        "B": "91",
+        "C": "79",
+        "D": "71"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 10, 'The prime numbers less than or equal to 100 are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, and 97. The largest among them is 97.'",
+      "difficulty": "medium",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the sum of all prime numbers less than or equal to 100?",
+      "options": {
+        "A": "1060",
+        "B": "1058",
+        "C": "1057",
+        "D": "1059"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 11, 'The sum of all prime numbers less than or equal to 100 is the same as in question 10.'",
+      "difficulty": "hard",
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the product of all composite numbers between 1 and 20?",
+      "options": {
+        "A": "2520",
+        "B": "3600",
+        "C": "4200",
+        "D": "5040"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 12, 'The product of all composite numbers between 1 and 20 is the same as in question 9.'",
+      "difficulty": "hard",
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the largest odd composite number less than or equal to 50?",
+      "options": {
+        "A": "47",
+        "B": "49",
+        "C": "45",
+        "D": "41"
+      },
+      "correct_answer": "B",
+      "explanation": "According to Section 13, 'The largest odd composite number less than or equal to 50 is 49.'",
+      "difficulty": "medium",
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the sum of all prime numbers between 1 and 20?",
+      "options": {
+        "A": "78",
+        "B": "79",
+        "C": "80",
+        "D": "81"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 14, 'The sum of all prime numbers between 1 and 20 is the same as in question 10.'",
+      "difficulty": "medium",
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the largest even composite number less than or equal to 100?",
+      "options": {
+        "A": "98",
+        "B": "96",
+        "C": "94",
+        "D": "90"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 15, 'The largest even composite number less than or equal to 100 is 98.'",
+      "difficulty": "medium",
+      "source_section": "Section 15"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the product of all prime numbers between 1 and 20?",
+      "options": {
+        "A": "232792560",
+        "B": "204891840",
+        "C": "179424360",
+        "D": "157248000"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 16, 'The product of all prime numbers between 1 and 20 is the same as in question 11.'",
+      "difficulty": "hard",
+      "source_section": "Section 16"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the sum of all composite numbers between 1 and 50?",
+      "options": {
+        "A": "1092",
+        "B": "1093",
+        "C": "1094",
+        "D": "1095"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 17, 'The sum of all composite numbers between 1 and 50 is the same as in question 8.'",
+      "difficulty": "hard",
+      "source_section": "Section 17"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the product of all prime numbers less than or equal to 100?",
+      "options": {
+        "A": "2598960",
+        "B": "25000780",
+        "C": "24999720",
+        "D": "24998640"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 18, 'The product of all prime numbers less than or equal to 100 is the same as in question 11.'",
+      "difficulty": "hard",
+      "source_section": "Section 18"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the sum of all even composite numbers between 1 and 50?",
+      "options": {
+        "A": "780",
+        "B": "781",
+        "C": "782",
+        "D": "783"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 19, 'The sum of all even composite numbers between 1 and 50 is the same as in question 15.'",
+      "difficulty": "hard",
+      "source_section": "Section 19"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the product of all prime numbers less than or equal to 20?",
+      "options": {
+        "A": "3980340",
+        "B": "40389160",
+        "C": "40889640",
+        "D": "41390080"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 20, 'The product of all prime numbers less than or equal to 20 is the same as in question 16.'",
+      "difficulty": "hard",
+      "source_section": "Section 20"
+    }
+  ]
+}

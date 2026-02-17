@@ -1,0 +1,107 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 2: Whole Numbers",
+  "generated_at": "2026-02-10T22:47:50.148847",
+  "concepts": [
+    {
+      "concept_name": "Place Value System",
+      "difficulty": "medium",
+      "lesson": "The place value system assigns value to digits based on their position in a number. In the number 5,672, each digit has a different value. The digit 5 is in the thousands place, so its value is 5,000. The digit 6 is in the hundreds place, giving it a value of 600. Understanding place value is essential for reading, writing, and comparing large numbers.",
+      "real_example": "",
+      "key_points": [
+        "Position determines value",
+        "Each place is 10 times the previous",
+        "Essential for number operations"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "concept_name": "Additive Identity",
+      "difficulty": "easy",
+      "lesson": "The additive identity is a number that, when added to another number, does not change the value of that number. In other words, when you add zero to any number, it remains the same. For example, 5 + 0 = 5.",
+      "real_example": "",
+      "key_points": [
+        "Adding zero doesn't change a number",
+        "Essential for addition operations"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "concept_name": "Commutative Property",
+      "difficulty": "easy",
+      "lesson": "The commutative property states that the order of numbers being added or multiplied does not change the result. For example, 2 + 3 = 5 and 3 + 2 = 5.",
+      "real_example": "",
+      "key_points": [
+        "Order doesn't matter in addition and multiplication",
+        "Essential for number operations"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "concept_name": "Associative Property",
+      "difficulty": "medium",
+      "lesson": "The associative property states that when three or more numbers are added or multiplied, the order in which they are grouped does not change the result. For example, (2 + 3) + 4 = 9 and 2 + (3 + 4) = 9.",
+      "real_example": "",
+      "key_points": [
+        "Grouping order doesn't matter in addition and multiplication",
+        "Essential for number operations"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "concept_name": "Closed under Addition",
+      "difficulty": "easy",
+      "lesson": "A set is closed under addition if the result of adding any two numbers from that set is also in the same set. For example, the set of whole numbers is closed under addition because 2 + 3 = 5, and 5 is a whole number.",
+      "real_example": "",
+      "key_points": [
+        "Adding whole numbers results in another whole number",
+        "Essential for understanding number sets"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "concept_name": "Pascal's Triangle",
+      "difficulty": "medium",
+      "lesson": "Pascal's Triangle is a triangular array of numbers where each entry is the sum of the two numbers directly above it. It starts with 1 at the top, and each row expands symmetrically.",
+      "real_example": "",
+      "key_points": [
+        "Symmetrical pattern",
+        "Each number is the sum of the two above it"
+      ],
+      "source_section": "Section 21"
+    },
+    {
+      "concept_name": "Infinity Symbol",
+      "difficulty": "hard",
+      "lesson": "The infinity symbol (∞) represents a quantity that continues forever. Its shape resembles a twisted loop or Möbius strip, symbolizing something endless and limitless.",
+      "real_example": "",
+      "key_points": [
+        "Symbolizes endlessness",
+        "Used in mathematics and philosophy"
+      ],
+      "source_section": "Section 20"
+    },
+    {
+      "concept_name": "Metal Detector",
+      "difficulty": "hard",
+      "lesson": "A metal detector is an electronic device that detects the presence of metal objects underground, in water, or hidden inside other materials. It works by generating an electromagnetic field, which interacts with metal objects, causing a signal to be sent back to the detector.",
+      "real_example": "",
+      "key_points": [
+        "Detects metal objects",
+        "Uses electromagnetic fields"
+      ],
+      "source_section": "Section 20"
+    },
+    {
+      "concept_name": "Air Conditioner",
+      "difficulty": "hard",
+      "lesson": "An air conditioner (AC) is a device that cools and dehumidifies indoor air, making spaces more comfortable. It works by using a refrigeration cycle, where a special fluid called refrigerant absorbs heat from the indoor air and releases it outside.",
+      "real_example": "",
+      "key_points": [
+        "Cools and dehumidifies air",
+        "Uses refrigeration cycle"
+      ],
+      "source_section": "Section 20"
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 5: Metals and non metals",
+  "generated_at": "2026-02-12T00:39:57.376532",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the process of electrolysis, including its applications in daily life.",
+      "answer": "Electrolysis is a chemical process where an electric current is used to drive an otherwise non-spontaneous chemical reaction. It involves the transfer of electrons from one substance to another through an external electrical energy source. The process can be applied to various materials such as water, metals, and salts. For instance, in the production of hydrogen gas, electrolysis is used to split water into hydrogen and oxygen. Similarly, it's employed in electroplating, where a thin layer of metal is deposited onto another material using an electric current.",
+      "answer_outline": [
+        "Describe the process of electrolysis",
+        "Explain its applications in daily life",
+        "Discuss the importance of electrolysis"
+      ],
+      "key_concepts": [
+        "Electrolysis",
+        "Chemical reaction",
+        "Electric current",
+        "Applications in daily life"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Introduction to Metals and Non-Metals"
+    },
+    {
+      "question_number": 2,
+      "question": "Discuss the properties of metals, including their malleability, ductility, and thermal conductivity.",
+      "answer": "Metals are a class of materials that exhibit several unique physical properties. One of these is their ability to be molded into various shapes without undergoing any significant change in their composition. This property is known as malleability. Similarly, metals can be drawn out into thin wires or sheets without breaking, which is referred to as ductility. In addition, many metals possess high thermal conductivity, meaning they can efficiently transfer heat energy from one location to another.",
+      "answer_outline": [
+        "Explain the concept of malleability",
+        "Describe the property of ductility",
+        "Discuss the importance of thermal conductivity"
+      ],
+      "key_concepts": [
+        "Malleability",
+        "Ductility",
+        "Thermal conductivity",
+        "Properties of metals"
+      ],
+      "marks": 9,
+      "source_section": "Section 2: Properties of Metals"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the concept of alloys and provide examples of common alloy systems.",
+      "answer": "An alloy is a mixture of two or more elements, at least one of which is a metal. The resulting material often exhibits properties that are different from those of its individual components. For instance, steel is an alloy composed primarily of iron with small amounts of carbon and other elements. Another common example is brass, which is made by combining copper and zinc.",
+      "answer_outline": [
+        "Define the concept of alloys",
+        "Provide examples of common alloy systems"
+      ],
+      "key_concepts": [
+        "Alloys",
+        "Steel",
+        "Brass",
+        "Properties of alloys"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Alloys and Intermetallic Compounds"
+    },
+    {
+      "question_number": 4,
+      "question": "Describe the process of corrosion, including its causes and prevention methods.",
+      "answer": "Corrosion is a chemical reaction that occurs when a metal comes into contact with an environment containing oxygen or moisture. This can result in the deterioration of the metal's surface, leading to reduced strength and potentially catastrophic failures. Corrosion can be caused by various factors such as exposure to seawater, industrial pollutants, or improper handling. To prevent corrosion, materials scientists often apply protective coatings or use corrosion-resistant alloys.",
+      "answer_outline": [
+        "Explain the concept of corrosion",
+        "Discuss its causes"
+      ],
+      "key_concepts": [
+        "Corrosion",
+        "Chemical reaction",
+        "Environmental factors",
+        "Prevention methods"
+      ],
+      "marks": 9,
+      "source_section": "Section 4: Corrosion and Prevention"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the difference between ferrous and non-ferrous metals, including their uses and applications.",
+      "answer": "Ferrous metals are those that contain iron as a primary component. They include materials such as steel, cast iron, and wrought iron. Non-ferrous metals, on the other hand, do not contain significant amounts of iron. Examples of non-ferrous metals include aluminum, copper, zinc, and gold. Ferrous metals are commonly used in construction and manufacturing due to their high strength-to-weight ratio. Non-ferrous metals are often employed in applications where corrosion resistance is critical.",
+      "answer_outline": [
+        "Define ferrous and non-ferrous metals",
+        "Discuss their uses and applications"
+      ],
+      "key_concepts": [
+        "Ferrous metals",
+        "Non-ferrous metals",
+        "Properties of materials"
+      ],
+      "marks": 8,
+      "source_section": "Section 5: Ferrous and Non-Ferrous Metals"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the process of extraction of metals from their ores, including the various methods employed.",
+      "answer": "The extraction of metals from their ores involves several steps. First, the ore is crushed and ground into a fine powder to increase its surface area. Next, chemicals are added to separate the metal ions from other impurities. The resulting mixture is then heated or treated with an acid to release the pure metal. This process can be performed through various methods such as smelting, refining, or electrolysis.",
+      "answer_outline": [
+        "Explain the concept of extraction",
+        "Describe the various methods employed"
+      ],
+      "key_concepts": [
+        "Extraction",
+        "Ore processing",
+        "Methods of extraction"
+      ],
+      "marks": 9,
+      "source_section": "Section 6: Extraction and Refining"
+    },
+    {
+      "question_number": 7,
+      "question": "Discuss the importance of recycling metals, including its benefits to the environment.",
+      "answer": "Recycling metals is essential for conserving natural resources and reducing waste. The process involves collecting used materials, sorting them by type, and processing them into reusable forms. This helps minimize the need for primary production, which can harm the environment through pollution and resource depletion. Moreover, recycling reduces energy consumption and greenhouse gas emissions associated with mining and refining.",
+      "answer_outline": [
+        "Explain the concept of recycling"
+      ],
+      "key_concepts": [
+        "Recycling",
+        "Conservation",
+        "Environmental benefits"
+      ],
+      "marks": 8,
+      "source_section": "Section 7: Recycling and Conservation"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the concept of alloys and provide examples of common alloy systems.",
+      "answer": "An alloy is a mixture of two or more elements, at least one of which is a metal. The resulting material often exhibits properties that are different from those of its individual components. For instance, steel is an alloy composed primarily of iron with small amounts of carbon and other elements. Another common example is brass, which is made by combining copper and zinc.",
+      "answer_outline": [
+        "Define the concept of alloys",
+        "Provide examples of common alloy systems"
+      ],
+      "key_concepts": [
+        "Alloys",
+        "Steel",
+        "Brass",
+        "Properties of alloys"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Alloys and Intermetallic Compounds"
+    },
+    {
+      "question_number": 9,
+      "question": "Describe the process of corrosion, including its causes and prevention methods.",
+      "answer": "Corrosion is a chemical reaction that occurs when a metal comes into contact with an environment containing oxygen or moisture. This can result in the deterioration of the metal's surface, leading to reduced strength and potentially catastrophic failures. Corrosion can be caused by various factors such as exposure to seawater, industrial pollutants, or improper handling. To prevent corrosion, materials scientists often apply protective coatings or use corrosion-resistant alloys.",
+      "answer_outline": [
+        "Explain the concept of corrosion",
+        "Discuss its causes"
+      ],
+      "key_concepts": [
+        "Corrosion",
+        "Chemical reaction",
+        "Environmental factors",
+        "Prevention methods"
+      ],
+      "marks": 9,
+      "source_section": "Section 4: Corrosion and Prevention"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the difference between ferrous and non-ferrous metals, including their uses and applications.",
+      "answer": "Ferrous metals are those that contain iron as a primary component. They include materials such as steel, cast iron, and wrought iron. Non-ferrous metals, on the other hand, do not contain significant amounts of iron. Examples of non-ferrous metals include aluminum, copper, zinc, and gold. Ferrous metals are commonly used in construction and manufacturing due to their high strength-to-weight ratio. Non-ferrous metals are often employed in applications where corrosion resistance is critical.",
+      "answer_outline": [
+        "Define ferrous and non-ferrous metals",
+        "Discuss their uses and applications"
+      ],
+      "key_concepts": [
+        "Ferrous metals",
+        "Non-ferrous metals",
+        "Properties of materials"
+      ],
+      "marks": 8,
+      "source_section": "Section 5: Ferrous and Non-Ferrous Metals"
+    }
+  ]
+}

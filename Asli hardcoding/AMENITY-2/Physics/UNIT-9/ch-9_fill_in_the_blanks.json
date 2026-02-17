@@ -1,0 +1,113 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 9: Pressure",
+  "generated_at": "2026-02-11T23:44:43.137077",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The SI unit of pressure is ______.",
+      "correct_answer": "pascal",
+      "explanation": "From Chapter 9, Section 2: \"SI Unit of pressure\"",
+      "source_section": "Chapter 9, Section 2"
+    },
+    {
+      "question_number": 2,
+      "question": "1 bar is equal to ______ pascals.",
+      "correct_answer": "100000",
+      "explanation": "From Chapter 9, Section 3: \"Pressure in bars\"",
+      "source_section": "Chapter 9, Section 3"
+    },
+    {
+      "question_number": 3,
+      "question": "The pressure exerted by a fluid is given by the formula ______.",
+      "correct_answer": "P = ρgh",
+      "explanation": "From Chapter 9, Section 4: \"Pressure in Fluids\"",
+      "source_section": "Chapter 9, Section 4"
+    },
+    {
+      "question_number": 4,
+      "question": "The pressure exerted by a gas is given by the formula ______.",
+      "correct_answer": "P = (nRT)/V",
+      "explanation": "From Chapter 9, Section 5: \"Pressure in Gases\"",
+      "source_section": "Chapter 9, Section 5"
+    },
+    {
+      "question_number": 5,
+      "question": "The unit of pressure in the CGS system is ______.",
+      "correct_answer": "dyne/cm^2",
+      "explanation": "From Chapter 9, Section 6: \"Pressure Units\"",
+      "source_section": "Chapter 9, Section 6"
+    },
+    {
+      "question_number": 6,
+      "question": "The pressure exerted by a column of fluid is given by the formula ______.",
+      "correct_answer": "P = ρgh",
+      "explanation": "From Chapter 9, Section 7: \"Pressure in Fluid Columns\"",
+      "source_section": "Chapter 9, Section 7"
+    },
+    {
+      "question_number": 7,
+      "question": "The pressure exerted by a gas is given by the ideal gas law ______.",
+      "correct_answer": "PV = nRT",
+      "explanation": "From Chapter 9, Section 8: \"Ideal Gas Law\"",
+      "source_section": "Chapter 9, Section 8"
+    },
+    {
+      "question_number": 8,
+      "question": "The pressure exerted by a fluid is given by the formula ______.",
+      "correct_answer": "P = ρgh",
+      "explanation": "From Chapter 9, Section 4: \"Pressure in Fluids\"",
+      "source_section": "Chapter 9, Section 4"
+    },
+    {
+      "question_number": 9,
+      "question": "The pressure exerted by a gas is given by the formula ______.",
+      "correct_answer": "P = (nRT)/V",
+      "explanation": "From Chapter 9, Section 5: \"Pressure in Gases\"",
+      "source_section": "Chapter 9, Section 5"
+    },
+    {
+      "question_number": 10,
+      "question": "The unit of pressure in the CGS system is ______.",
+      "correct_answer": "dyne/cm^2",
+      "explanation": "From Chapter 9, Section 6: \"Pressure Units\"",
+      "source_section": "Chapter 9, Section 6"
+    },
+    {
+      "question_number": 11,
+      "question": "The pressure exerted by a column of fluid is given by the formula ______.",
+      "correct_answer": "P = ρgh",
+      "explanation": "From Chapter 9, Section 7: \"Pressure in Fluid Columns\"",
+      "source_section": "Chapter 9, Section 7"
+    },
+    {
+      "question_number": 12,
+      "question": "The pressure exerted by a gas is given by the ideal gas law ______.",
+      "correct_answer": "PV = nRT",
+      "explanation": "From Chapter 9, Section 8: \"Ideal Gas Law\"",
+      "source_section": "Chapter 9, Section 8"
+    },
+    {
+      "question_number": 13,
+      "question": "The pressure exerted by a fluid is given by the formula ______.",
+      "correct_answer": "P = ρgh",
+      "explanation": "From Chapter 9, Section 4: \"Pressure in Fluids\"",
+      "source_section": "Chapter 9, Section 4"
+    },
+    {
+      "question_number": 14,
+      "question": "The pressure exerted by a gas is given by the formula ______.",
+      "correct_answer": "P = (nRT)/V",
+      "explanation": "From Chapter 9, Section 5: \"Pressure in Gases\"",
+      "source_section": "Chapter 9, Section 5"
+    },
+    {
+      "question_number": 15,
+      "question": "The unit of pressure in the CGS system is ______.",
+      "correct_answer": "dyne/cm^2",
+      "explanation": "From Chapter 9, Section 6: \"Pressure Units\"",
+      "source_section": "Chapter 9, Section 6"
+    }
+  ]
+}

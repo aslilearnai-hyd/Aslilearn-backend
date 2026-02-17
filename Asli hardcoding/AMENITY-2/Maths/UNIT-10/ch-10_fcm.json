@@ -1,0 +1,174 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 10: Algebra Including Simple Equations",
+  "generated_at": "2026-02-11T16:55:23.483730",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the formula for a simple equation?",
+        "correct_answer": "ax = b",
+        "explanation": "A simple equation has the form ax = b, where 'a' and 'b' are constants.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the definition of a palindrome?",
+        "correct_answer": "A number that reads the same forward and backward.",
+        "explanation": "Palindromic numbers have symmetrical properties, making them fascinating in mathematics.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is the Golden Ratio?",
+        "correct_answer": "Approximately 1.618",
+        "explanation": "The Golden Ratio appears when the ratio of two numbers is the same as the ratio of their sum to the larger number.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the Parthenon in Greece?",
+        "correct_answer": "A temple that follows Golden Ratio proportions",
+        "explanation": "The Parthenon is a famous ancient Greek building that demonstrates the use of the Golden Ratio.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What are palindromic numbers?",
+        "correct_answer": "Numbers that read the same forward and backward",
+        "explanation": "Examples include 121, 1331, and 12321.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "How do you find the value of x in a simple equation?",
+        "correct_answer": "By isolating the variable x on one side",
+        "explanation": "To solve for x, we need to isolate it by performing operations that remove constants from the same side.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the significance of the Golden Ratio?",
+        "correct_answer": "It appears in art, architecture, and nature",
+        "explanation": "The Golden Ratio has been used by artists like Leonardo da Vinci for balance and beauty.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "Can you give an example of a palindromic number?",
+        "correct_answer": "12321",
+        "explanation": "This number reads the same forward and backward, making it a palindrome.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "How do you use the Reverse and Add Method to create a palindrome?",
+        "correct_answer": "By reversing the digits and adding them to the original number",
+        "explanation": "This process can be repeated until a palindrome appears.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is the definition of a simple equation?",
+        "correct_answer": "An equation with one variable and a constant on each side",
+        "explanation": "Simple equations have the form ax = b, where 'a' and 'b' are constants.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "Can you give an example of a simple equation?",
+        "correct_answer": "2x + 3 = 7",
+        "explanation": "This is a simple equation with one variable (x) and constants on each side.",
+        "source_section": "Section 1"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Palindromic Numbers",
+        "content": "These numbers have symmetrical properties, making them fascinating in mathematics. Examples include 121, 1331, and 12321.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "The Golden Ratio",
+        "content": "Approximately 1.618, the Golden Ratio appears when the ratio of two numbers is the same as the ratio of their sum to the larger number.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Simple Equations",
+        "content": "These are equations with one variable and a constant on each side, in the form ax = b.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Palindromic Properties",
+        "content": "Palindromic numbers can appear in different number bases, not just base 10. They can be created using the Reverse and Add Method.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Art and Architecture",
+        "content": "The Golden Ratio has been used by artists like Leonardo da Vinci for balance and beauty in their works, including the Parthenon in Greece.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Palindrome Creation",
+        "content": "Numbers can be turned into palindromes through a process called the Reverse and Add Method, where you reverse the digits, add them to the original number, and repeat until a palindrome appears.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Simple Equation Solving",
+        "content": "To solve for x in a simple equation, we need to isolate it by performing operations that remove constants from the same side.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Golden Ratio Significance",
+        "content": "The Golden Ratio appears in art, architecture, and nature. It has been used for balance and beauty in various fields.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Palindrome Examples",
+        "content": "Examples of palindromic numbers include 121, 1331, and 12321.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Simple Equation Definition",
+        "content": "A simple equation is an equation with one variable and a constant on each side, in the form ax = b.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Palindrome Properties",
+        "content": "Palindromic numbers have symmetrical properties, making them fascinating in mathematics.",
+        "source_section": "Section 2"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The Parthenon in Greece follows Golden Ratio proportions.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "Palindromic numbers can appear in different number bases, not just base 10.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "The Golden Ratio has been used by artists like Leonardo da Vinci for balance and beauty in their works.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "Numbers can be turned into palindromes through the Reverse and Add Method.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "The Golden Ratio appears in art, architecture, and nature.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "Palindromic numbers have symmetrical properties, making them fascinating in mathematics.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "The Parthenon is a famous ancient Greek building that demonstrates the use of the Golden Ratio.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "Simple equations have one variable and a constant on each side, in the form ax = b.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "The Reverse and Add Method can be used to create palindromic numbers.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "Palindromic numbers read the same forward and backward.",
+        "source_section": "Section 2"
+      }
+    ]
+  }
+}

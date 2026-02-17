@@ -1,0 +1,178 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 8: Decimals",
+  "generated_at": "2026-02-11T00:59:10.540060",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain how Eratosthenes calculated the Earth's circumference using simple geometry and basic math principles.",
+      "answer": "Eratosthenes made a remarkable calculation of Earth's circumference over 2,200 years ago. He used simple geometry to measure the angle of a shadow cast in Alexandria while knowing that, at the same time, the sun was directly overhead in Syene (modern-day Aswan, Egypt). By calculating the angle difference and the distance between the two cities, he estimated Earth's circumference to be about 40,000 km impressively close to modern measurements! This brilliant method relied on observation, angles, and basic math principles, showcasing the power of logical thinking. Tiny Eratosthenes' calculation was only 1% off the true value!",
+      "answer_outline": [
+        "Eratosthenes' calculation of Earth's circumference",
+        "Use of simple geometry to measure angle of shadow cast in Alexandria",
+        "Calculating angle difference and distance between cities"
+      ],
+      "key_concepts": [
+        "Earth's Circumference",
+        "Simple Geometry",
+        "Basic Math Principles"
+      ],
+      "marks": 8,
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 2,
+      "question": "Describe Archimedes' polygon method for calculating Pi. Explain how he used 96-sided polygons to estimate the value of Pi.",
+      "answer": "Archimedes used polygons to estimate the value of Pi around 250 BCE. By drawing 96-sided polygons inside and outside a circle, he calculated Pi's value to be between 3.1408 and 3.1429 remarkably close to the true value of 3.14159.... This clever method relied on geometry rather than direct measurement, showcasing Archimedes' genius.",
+      "answer_outline": [
+        "Archimedes' polygon method for calculating Pi",
+        "Use of 96-sided polygons inside and outside a circle",
+        "Calculating Pi's value between 3.1408 and 3.1429"
+      ],
+      "key_concepts": [
+        "Pi",
+        "Polygon Method",
+        "Geometry"
+      ],
+      "marks": 8,
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain how Eratosthenes' method of calculating Earth's circumference is still relevant today.",
+      "answer": "Eratosthenes' brilliant method relied on observation, angles, and basic math principles. This approach is still used in modern geography and mapping. His calculation was only 1% off the true value! Modern measurements rely heavily on advanced technologies but Eratosthenes' simple yet accurate method paved the way for future mathematicians.",
+      "answer_outline": [
+        "Eratosthenes' method of calculating Earth's circumference",
+        "Relevance to modern geography and mapping",
+        "Comparison with modern measurements"
+      ],
+      "key_concepts": [
+        "Earth's Circumference",
+        "Modern Geography",
+        "Basic Math Principles"
+      ],
+      "marks": 8,
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 4,
+      "question": "Describe the significance of Archimedes' work in calculating Pi. Explain how his polygon method is still used today.",
+      "answer": "Archimedes' polygon method for calculating Pi laid the foundation for future mathematicians to refine Pi's value over centuries. His clever use of geometry rather than direct measurement showcased his genius. This approach is still taught in modern geometry and has significant implications for fields like engineering and architecture.",
+      "answer_outline": [
+        "Significance of Archimedes' work in calculating Pi",
+        "Polygon method used by Archimedes",
+        "Implications for modern fields"
+      ],
+      "key_concepts": [
+        "Pi",
+        "Polygon Method",
+        "Geometry"
+      ],
+      "marks": 8,
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain how Eratosthenes' calculation of Earth's circumference contributed to the development of modern geography and mapping.",
+      "answer": "Eratosthenes' remarkable calculation of Earth's circumference over 2,200 years ago paved the way for future mathematicians. His simple yet accurate method relied on observation, angles, and basic math principles. This approach is still used in modern geography and mapping. Modern measurements rely heavily on advanced technologies but Eratosthenes' contribution laid the foundation.",
+      "answer_outline": [
+        "Eratosthenes' calculation of Earth's circumference",
+        "Contribution to modern geography and mapping",
+        "Comparison with modern measurements"
+      ],
+      "key_concepts": [
+        "Earth's Circumference",
+        "Modern Geography",
+        "Basic Math Principles"
+      ],
+      "marks": 8,
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the key differences between Eratosthenes' and Archimedes' methods for calculating Earth's circumference and Pi.",
+      "answer": "Eratosthenes used observation, angles, and basic math principles to calculate Earth's circumference. In contrast, Archimedes used geometry rather than direct measurement to estimate Pi's value. Their approaches demonstrate the power of logical thinking and showcase the diversity of mathematical methods.",
+      "answer_outline": [
+        "Key differences between Eratosthenes' and Archimedes' methods",
+        "Use of observation in Eratosthenes' method",
+        "Use of geometry in Archimedes' method"
+      ],
+      "key_concepts": [
+        "Earth's Circumference",
+        "Pi",
+        "Geometry"
+      ],
+      "marks": 8,
+      "source_section": "Section 21, Section 22"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain how Archimedes' polygon method for calculating Pi is still used today in modern fields like engineering and architecture.",
+      "answer": "Archimedes' clever use of geometry rather than direct measurement showcased his genius. This approach is still taught in modern geometry and has significant implications for fields like engineering and architecture. His polygon method laid the foundation for future mathematicians to refine Pi's value over centuries.",
+      "answer_outline": [
+        "Significance of Archimedes' polygon method",
+        "Use in modern fields like engineering and architecture",
+        "Implications for refinement of Pi's value"
+      ],
+      "key_concepts": [
+        "Pi",
+        "Polygon Method",
+        "Geometry"
+      ],
+      "marks": 8,
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe the significance of Eratosthenes' calculation of Earth's circumference in modern geography and mapping.",
+      "answer": "Eratosthenes' remarkable calculation of Earth's circumference over 2,200 years ago paved the way for future mathematicians. His simple yet accurate method relied on observation, angles, and basic math principles. This approach is still used in modern geography and mapping. Modern measurements rely heavily on advanced technologies but Eratosthenes' contribution laid the foundation.",
+      "answer_outline": [
+        "Eratosthenes' calculation of Earth's circumference",
+        "Contribution to modern geography and mapping",
+        "Comparison with modern measurements"
+      ],
+      "key_concepts": [
+        "Earth's Circumference",
+        "Modern Geography",
+        "Basic Math Principles"
+      ],
+      "marks": 8,
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how the work of Eratosthenes and Archimedes contributed to the development of modern mathematics.",
+      "answer": "Eratosthenes' and Archimedes' contributions to calculating Earth's circumference and Pi laid the foundation for future mathematicians. Their approaches demonstrated the power of logical thinking and showcased the diversity of mathematical methods. This work paved the way for significant advancements in fields like geometry, trigonometry, and calculus.",
+      "answer_outline": [
+        "Contributions of Eratosthenes and Archimedes to modern mathematics",
+        "Use of observation and geometry in their approaches",
+        "Implications for future mathematicians"
+      ],
+      "key_concepts": [
+        "Earth's Circumference",
+        "Pi",
+        "Geometry"
+      ],
+      "marks": 8,
+      "source_section": "Section 21, Section 22"
+    },
+    {
+      "question_number": 10,
+      "question": "Describe the key similarities between Eratosthenes' and Archimedes' methods for calculating Earth's circumference and Pi.",
+      "answer": "Both Eratosthenes and Archimedes relied on mathematical principles to calculate their values. They used observation, angles, and basic math principles in Eratosthenes' case, while geometry was used by Archimedes. Their approaches demonstrate the power of logical thinking and showcase the diversity of mathematical methods.",
+      "answer_outline": [
+        "Key similarities between Eratosthenes' and Archimedes' methods",
+        "Use of observation and geometry in their approaches",
+        "Comparison with modern measurements"
+      ],
+      "key_concepts": [
+        "Earth's Circumference",
+        "Pi",
+        "Geometry"
+      ],
+      "marks": 8,
+      "source_section": "Section 21, Section 22"
+    }
+  ]
+}

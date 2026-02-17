@@ -1,0 +1,179 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 6: Sound",
+  "generated_at": "2026-02-11T23:12:34.485360",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the range of human voice?",
+      "answer": "The range of human voice typically spans from 60 Hz to 13000 Hz.",
+      "key_concepts": [
+        "Human Voice",
+        "Frequency Range"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the speed of sound in air?",
+      "answer": "The speed of sound in air is approximately 343 meters per second.",
+      "key_concepts": [
+        "Speed of Sound",
+        "Air"
+      ],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the difference between frequency and period?",
+      "answer": "Frequency is the number of oscillations per second, while period is the time taken for one oscillation.",
+      "key_concepts": [
+        "Frequency",
+        "Period"
+      ],
+      "marks": 4,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the formula for calculating the speed of sound?",
+      "answer": "The speed of sound can be calculated using the formula v = √(B/ρ), where B is bulk modulus and ρ is density.",
+      "key_concepts": [
+        "Speed of Sound",
+        "Bulk Modulus",
+        "Density"
+      ],
+      "marks": 5,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "What are the types of sound waves?",
+      "answer": "Sound waves can be classified into longitudinal and transverse waves.",
+      "key_concepts": [
+        "Longitudinal Waves",
+        "Transverse Waves"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the effect of temperature on sound speed?",
+      "answer": "The speed of sound increases with an increase in temperature.",
+      "key_concepts": [
+        "Temperature",
+        "Speed of Sound"
+      ],
+      "marks": 3,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the relationship between frequency and wavelength?",
+      "answer": "Frequency and wavelength are inversely proportional to each other.",
+      "key_concepts": [
+        "Frequency",
+        "Wavelength"
+      ],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the formula for calculating the frequency of a sound wave?",
+      "answer": "The frequency of a sound wave can be calculated using the formula f = v/λ, where v is speed and λ is wavelength.",
+      "key_concepts": [
+        "Frequency",
+        "Speed",
+        "Wavelength"
+      ],
+      "marks": 5,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 9,
+      "question": "What are the characteristics of a sound wave?",
+      "answer": "A sound wave has frequency, wavelength, speed, and amplitude.",
+      "key_concepts": [
+        "Frequency",
+        "Wavelength",
+        "Speed",
+        "Amplitude"
+      ],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the difference between sound wave and light wave?",
+      "answer": "Sound waves require a medium to propagate, while light waves can travel through vacuum.",
+      "key_concepts": [
+        "Sound Wave",
+        "Light Wave"
+      ],
+      "marks": 4,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the effect of air pressure on sound speed?",
+      "answer": "The speed of sound decreases with an increase in air pressure.",
+      "key_concepts": [
+        "Air Pressure",
+        "Speed of Sound"
+      ],
+      "marks": 3,
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the relationship between speed and frequency?",
+      "answer": "The speed of sound is directly proportional to its frequency.",
+      "key_concepts": [
+        "Speed",
+        "Frequency"
+      ],
+      "marks": 4,
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the formula for calculating the wavelength of a sound wave?",
+      "answer": "The wavelength of a sound wave can be calculated using the formula λ = v/f, where v is speed and f is frequency.",
+      "key_concepts": [
+        "Wavelength",
+        "Speed",
+        "Frequency"
+      ],
+      "marks": 5,
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 14,
+      "question": "What are the types of sound wave propagation?",
+      "answer": "Sound waves can propagate through solid, liquid, and gas mediums.",
+      "key_concepts": [
+        "Solid Medium",
+        "Liquid Medium",
+        "Gas Medium"
+      ],
+      "marks": 4,
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the effect of humidity on sound speed?",
+      "answer": "The speed of sound decreases with an increase in humidity.",
+      "key_concepts": [
+        "Humidity",
+        "Speed of Sound"
+      ],
+      "marks": 3,
+      "source_section": "Section 15"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 3: Electricity and circuits",
+  "generated_at": "2026-02-11T22:43:47.794138",
+  "concepts": [
+    {
+      "concept_name": "Electric Current",
+      "difficulty": "medium",
+      "lesson": "Electric current is the flow of electric charge, typically measured in amperes (A). It's a fundamental concept in electricity and is essential for understanding how circuits work. The direction of electric current is defined as the direction of positive charge flow.",
+      "real_example": "",
+      "key_points": [
+        "Electric current is measured in amperes",
+        "Direction of electric current is defined as positive charge flow"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Resistance",
+      "difficulty": "hard",
+      "lesson": "Resistance is a measure of the opposition to the flow of electric current, typically measured in ohms (Ω). It's an essential concept in understanding how circuits work and how energy is dissipated. Resistance depends on various factors, including material properties and temperature.",
+      "real_example": "",
+      "key_points": [
+        "Resistance opposes electric current flow",
+        "Measuring unit for resistance is ohms"
+      ],
+      "source_section": "Section 2-3"
+    },
+    {
+      "concept_name": "Voltage",
+      "difficulty": "medium",
+      "lesson": "Voltage, also known as electric potential difference, is the driving force behind electric current. It's measured in volts (V) and represents the energy required to move a unit of charge between two points. Voltage can be thought of as the 'pressure' that drives electric current through a circuit.",
+      "real_example": "",
+      "key_points": [
+        "Voltage drives electric current",
+        "Measuring unit for voltage is volts"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "concept_name": "Circuit",
+      "difficulty": "hard",
+      "lesson": "A circuit is a closed loop of conductors that allows electric current to flow. It's an essential concept in understanding how electricity works and how devices are connected. Circuits can be series, parallel, or combination circuits.",
+      "real_example": "",
+      "key_points": [
+        "Circuit is a closed loop of conductors",
+        "Series, parallel, and combination circuits"
+      ],
+      "source_section": "Section 6-7"
+    },
+    {
+      "concept_name": "Ohm's Law",
+      "difficulty": "hard",
+      "lesson": "Ohm's law states that electric current (I) is equal to the voltage (V) divided by resistance (R). Mathematically, it can be expressed as I = V/R. This fundamental principle helps understand how electricity works and is essential for designing circuits.",
+      "real_example": "",
+      "key_points": [
+        "Ohm's law: I = V/R",
+        "Understanding electricity with Ohm's law"
+      ],
+      "source_section": "Section 8-9"
+    }
+  ]
+}

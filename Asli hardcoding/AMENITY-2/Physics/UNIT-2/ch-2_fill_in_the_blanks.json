@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "ACCELEROMETER",
+  "generated_at": "2026-02-11T22:28:57.590641",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "A mirror reflects light without ______.",
+      "correct_answer": "scattering",
+      "hint": "Normal incidence",
+      "explanation": "From Column-I Column – II, Match column I and column II, choose the correct matching given in the options.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 2,
+      "question": "When object is located within the focal length, a concave mirror produces a ______ image.",
+      "correct_answer": "virtual",
+      "hint": "Condition for virtual image formation",
+      "explanation": "From Column-I Column – II, Match column I and column II, choose the correct matching given in the options.",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 3,
+      "question": "The size of a shadow depends on the ______ between the object and light source.",
+      "correct_answer": "distance",
+      "hint": "Angle of incidence effect",
+      "explanation": "From Assertion (A) The size of a shadow depends on the distance between the object and light source Reason (R): The angle of incidence effects shadow size Comprehension Type Comprehension – I",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 4,
+      "question": "Two plane mirrors at 90° produce ______ images.",
+      "correct_answer": "2",
+      "hint": "Number of images formed",
+      "explanation": "From Column-I Column – II, Match column I and column II, choose the correct matching given in the options.",
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 5,
+      "question": "A concave mirror produces a real, inverted, and enlarged image when the object is located between ______ and infinity.",
+      "correct_answer": "centre of curvature",
+      "hint": "Region for real, inverted, and enlarged images",
+      "explanation": "From Comprehension Type Comprehension – I The pictures show four ray diagrams of Images formed by concave mirrors. A A B A’ B’ B C F P C F P A’ B’ Diagram – 1 Diagram – 2 A’ A B’ C B F P C F P B ’ A’ Diagram – 3 Diagram – 4",
+      "source_section": "Section 23"
+    },
+    {
+      "question_number": 6,
+      "question": "A mirror magnifier produces an image of an object by minus ______ times.",
+      "correct_answer": "1.5",
+      "hint": "Magnification value",
+      "explanation": "From Assertion (A) A mirror magnifier the image of an object by minus 1.5 times. Which of the following is true about the Image produced by the mirror.",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 7,
+      "question": "Static electricity occurs when ______ move from one object to another, creating an imbalance of electric charge.",
+      "correct_answer": "electrons",
+      "hint": "Entity responsible for static electricity",
+      "explanation": "From Tiny Black holes’ gravity is so strong that even light is Truth trapped! Static electricity occurs when electrons move from one object to another, creating an imbalance of electric charge.",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 8,
+      "question": "A concave mirror produces a highly magnified image when the object is located at ______.",
+      "correct_answer": "focal length",
+      "hint": "Region for highly magnified images",
+      "explanation": "From Column-I Column – II, Match column I and column II, choose the correct matching given in the options.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 9,
+      "question": "The image formed by a concave mirror is real and inverted when the object is located between ______ and infinity.",
+      "correct_answer": "centre of curvature",
+      "hint": "Region for real, inverted images",
+      "explanation": "From Comprehension Type Comprehension – I The pictures show four ray diagrams of Images formed by concave mirrors. A A B A’ B’ B C F P C F P A’ B’ Diagram – 1 Diagram – 2 A’ A B’ C B F P C F P B ’ A’ Diagram – 3 Diagram – 4",
+      "source_section": "Section 23"
+    },
+    {
+      "question_number": 10,
+      "question": "A mirror magnifier produces an image of an object by minus ______ times.",
+      "correct_answer": "1.5",
+      "hint": "Magnification value",
+      "explanation": "From Assertion (A) A mirror magnifier the image of an object by minus 1.5 times. Which of the following is true about the Image produced by the mirror.",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 11,
+      "question": "Two concave mirrors facing each other produce ______ images.",
+      "correct_answer": "5",
+      "hint": "Number of images formed",
+      "explanation": "From Column-I Column – II, Match column I and column II, choose the correct matching given in the options.",
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 12,
+      "question": "A concave mirror produces a highly magnified image when the object is located at ______.",
+      "correct_answer": "focal length",
+      "hint": "Region for highly magnified images",
+      "explanation": "From Column-I Column – II, Match column I and column II, choose the correct matching given in the options.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 13,
+      "question": "The image formed by a concave mirror is real and inverted when the object is located between ______ and infinity.",
+      "correct_answer": "centre of curvature",
+      "hint": "Region for real, inverted images",
+      "explanation": "From Comprehension Type Comprehension – I The pictures show four ray diagrams of Images formed by concave mirrors. A A B A’ B’ B C F P C F P A’ B’ Diagram – 1 Diagram – 2 A’ A B’ C B F P C F P B ’ A’ Diagram – 3 Diagram – 4",
+      "source_section": "Section 23"
+    },
+    {
+      "question_number": 14,
+      "question": "A mirror magnifier produces an image of an object by minus ______ times.",
+      "correct_answer": "1.5",
+      "hint": "Magnification value",
+      "explanation": "From Assertion (A) A mirror magnifier the image of an object by minus 1.5 times. Which of the following is true about the Image produced by the mirror.",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 15,
+      "question": "Two plane mirrors at 90° produce ______ images.",
+      "correct_answer": "2",
+      "hint": "Number of images formed",
+      "explanation": "From Column-I Column – II, Match column I and column II, choose the correct matching given in the options.",
+      "source_section": "Section 30"
+    }
+  ]
+}

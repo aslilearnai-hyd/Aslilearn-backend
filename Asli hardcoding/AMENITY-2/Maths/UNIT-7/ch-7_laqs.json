@@ -1,0 +1,170 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 7: Fractions",
+  "generated_at": "2026-02-11T00:49:23.332339",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of equivalent fractions with examples.",
+      "answer": "Equivalent fractions are fractions that have the same value but different numerators and denominators. For example, \frac{1}{2} is equivalent to \frac{2}{4}, \frac{3}{6}, and so on. To find equivalent fractions, we can multiply both the numerator and denominator by the same number. For instance, if we want to find an equivalent fraction for \frac{1}{2}, we can multiply it by 2, resulting in \frac{2}{4}. Similarly, multiplying \frac{3}{6} by 2 gives us \frac{6}{12}, which is also equivalent to \frac{1}{2}. This concept helps us understand that fractions with different numerators and denominators can have the same value.",
+      "answer_outline": [
+        "Definition of equivalent fractions",
+        "Examples of equivalent fractions",
+        "Method for finding equivalent fractions"
+      ],
+      "key_concepts": [
+        "Equivalent Fractions",
+        "Numerators",
+        "Denominators"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Equivalent Fractions"
+    },
+    {
+      "question_number": 2,
+      "question": "Describe the concept of unlike fractions and provide examples.",
+      "answer": "Unlike fractions are fractions that have different numerators and denominators. For example, \frac{1}{2} is an unlike fraction compared to \frac{3}{4}. Unlike fractions cannot be simplified or reduced to a common fraction because they have different values. When comparing unlike fractions, we need to look for the greatest common divisor (GCD) of their denominators and multiply each fraction by that number. For instance, if we want to compare \frac{1}{2} and \frac{3}{4}, we can find the GCD of 2 and 4, which is 2. Multiplying both fractions by 2 gives us \frac{2}{4} and \frac{6}{8}. Since these two fractions have the same denominator (4), we can now compare them.",
+      "answer_outline": [
+        "Definition of unlike fractions",
+        "Examples of unlike fractions",
+        "Method for comparing unlike fractions"
+      ],
+      "key_concepts": [
+        "Unlike Fractions",
+        "Greatest Common Divisor"
+      ],
+      "marks": 9,
+      "source_section": "Section 3: Unlike Fractions"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain how to add fractions with the same denominator.",
+      "answer": "When adding fractions, we need to have the same denominator. To do this, we can find the least common multiple (LCM) of their denominators or multiply each fraction by a number that makes their denominators equal. For example, if we want to add \frac{1}{2} and \frac{2}{4}, we can multiply both fractions by 2 to get \frac{2}{4} + \frac{4}{4}. Now that the denominators are the same (4), we can simply add the numerators: 2 + 4 = 6. Therefore, \frac{1}{2} + \frac{2}{4} = \frac{6}{4}, which can be simplified to \frac{3}{2}. This concept is essential for understanding how to add fractions with different denominators.",
+      "answer_outline": [
+        "Finding the same denominator",
+        "Multiplying fractions by a number",
+        "Adding numerators"
+      ],
+      "key_concepts": [
+        "Same Denominator",
+        "Least Common Multiple"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Adding Fractions"
+    },
+    {
+      "question_number": 4,
+      "question": "Describe the concept of subtracting fractions with the same denominator.",
+      "answer": "Subtracting fractions is similar to adding them, but we need to change the subtraction sign to an addition sign and follow the same steps. When subtracting fractions, we must have the same denominator. To do this, we can find the least common multiple (LCM) of their denominators or multiply each fraction by a number that makes their denominators equal. For example, if we want to subtract \frac{1}{2} from \frac{3}{4}, we need to make their denominators the same by multiplying both fractions by 2. This gives us \frac{2}{4} - \frac{6}{4}. Now that the denominators are the same (4), we can simply subtract the numerators: 6 - 2 = 4. Therefore, \frac{3}{4} - \frac{1}{2} = \frac{4}{4}, which simplifies to \frac{1}{1}. This concept is crucial for understanding how to subtract fractions with different denominators.",
+      "answer_outline": [
+        "Changing the subtraction sign",
+        "Finding the same denominator",
+        "Subtracting numerators"
+      ],
+      "key_concepts": [
+        "Same Denominator",
+        "Least Common Multiple"
+      ],
+      "marks": 9,
+      "source_section": "Section 5: Subtracting Fractions"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the concept of multiplying fractions and provide examples.",
+      "answer": "Multiplying fractions is a straightforward process. To multiply two or more fractions, we simply multiply their numerators together to get the new numerator and multiply their denominators together to get the new denominator. For example, if we want to multiply \frac{1}{2} by \frac{3}{4}, we can multiply the numerators (1 * 3 = 3) and the denominators (2 * 4 = 8). Therefore, \frac{1}{2} * \frac{3}{4} = \frac{3}{8}. This concept is essential for understanding how to multiply fractions with different denominators.",
+      "answer_outline": [
+        "Multiplying numerators",
+        "Multiplying denominators",
+        "Example of multiplying fractions"
+      ],
+      "key_concepts": [
+        "Multiplying Fractions",
+        "Numerators",
+        "Denominators"
+      ],
+      "marks": 8,
+      "source_section": "Section 6: Multiplying Fractions"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the concept of dividing fractions and provide examples.",
+      "answer": "Dividing fractions is similar to multiplying them, but we need to change the division sign to a multiplication sign. When dividing fractions, we must invert (flip) the second fraction by swapping its numerator with its denominator. For example, if we want to divide \frac{1}{2} by \frac{3}{4}, we can change the division sign to a multiplication sign and invert the second fraction: \frac{1}{2} * \frac{4}{3}. Now that it's in multiplication form, we can multiply the numerators (1 * 4 = 4) and the denominators (2 * 3 = 6). Therefore, \frac{1}{2} ÷ \frac{3}{4} = \frac{4}{6}, which simplifies to \frac{2}{3}. This concept is crucial for understanding how to divide fractions with different denominators.",
+      "answer_outline": [
+        "Changing the division sign",
+        "Inverting the second fraction",
+        "Example of dividing fractions"
+      ],
+      "key_concepts": [
+        "Dividing Fractions",
+        "Inverting Second Fraction"
+      ],
+      "marks": 9,
+      "source_section": "Section 7: Dividing Fractions"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the concept of simplifying fractions and provide examples.",
+      "answer": "Simplifying fractions involves finding the greatest common divisor (GCD) of their numerator and denominator to reduce them. For example, if we have a fraction like \frac{4}{8}, we can find its GCD by listing factors for 4 and 8: 4 = 1 * 2 * 2, 8 = 1 * 2 * 2 * 2. Their greatest common factor is 4. To simplify the fraction, we divide both the numerator (4) and denominator (8) by this GCD (4): \frac{4 ÷ 4}{8 ÷ 4} = \frac{1}{2}. Therefore, \frac{4}{8} simplifies to \frac{1}{2}. This concept is essential for reducing fractions with the same or different denominators.",
+      "answer_outline": [
+        "Finding the GCD",
+        "Listing factors for numerator and denominator",
+        "Example of simplifying a fraction"
+      ],
+      "key_concepts": [
+        "Greatest Common Divisor",
+        "Simplifying Fractions"
+      ],
+      "marks": 8,
+      "source_section": "Section 8: Simplifying Fractions"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe the concept of adding mixed numbers and provide examples.",
+      "answer": "Adding mixed numbers involves converting them to improper fractions first. To do this, we multiply the whole number part by the denominator and then add the numerator. For example, if we have a mixed number like 3\frac{1}{2}, we can convert it to an improper fraction: (3 * 2) + 1 = 7. Therefore, 3\frac{1}{2} is equal to \frac{7}{2}. To add two or more mixed numbers, we need to have the same denominator. We can find this by finding the least common multiple (LCM) of their denominators or multiplying each fraction by a number that makes their denominators equal. For instance, if we want to add 3\frac{1}{2} and 2\frac{1}{4}, we need to make their denominators the same by multiplying both fractions by 4: (3 * 2) + 1 = \frac{7}{2}, (2 * 4) + 1 = \frac{9}{4}. Now that the denominators are the same, we can add the numerators and keep the common denominator.",
+      "answer_outline": [
+        "Converting mixed numbers to improper fractions",
+        "Finding a common denominator",
+        "Adding mixed numbers"
+      ],
+      "key_concepts": [
+        "Mixed Numbers",
+        "Improper Fractions"
+      ],
+      "marks": 9,
+      "source_section": "Section 9: Adding Mixed Numbers"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the concept of subtracting mixed numbers and provide examples.",
+      "answer": "Subtracting mixed numbers is similar to adding them, but we need to change the addition sign to a subtraction sign. When subtracting mixed numbers, we must have the same denominator. We can find this by finding the least common multiple (LCM) of their denominators or multiplying each fraction by a number that makes their denominators equal. For instance, if we want to subtract 3\frac{1}{2} from 2\frac{1}{4}, we need to make their denominators the same by multiplying both fractions by 4: (3 * 2) + 1 = \frac{7}{2}, (2 * 4) + 1 = \frac{9}{4}. Now that the denominators are the same, we can subtract the numerators and keep the common denominator.",
+      "answer_outline": [
+        "Changing the addition sign",
+        "Finding a common denominator",
+        "Subtracting mixed numbers"
+      ],
+      "key_concepts": [
+        "Mixed Numbers",
+        "Improper Fractions"
+      ],
+      "marks": 9,
+      "source_section": "Section 10: Subtracting Mixed Numbers"
+    },
+    {
+      "question_number": 10,
+      "question": "Describe the concept of dividing mixed numbers and provide examples.",
+      "answer": "Dividing mixed numbers is similar to multiplying them, but we need to change the division sign to a multiplication sign. When dividing mixed numbers, we must invert (flip) the second fraction by swapping its numerator with its denominator. For instance, if we want to divide 3\frac{1}{2} by 2\frac{1}{4}, we can change the division sign to a multiplication sign and invert the second fraction: 3\frac{1}{2} * \frac{4}{9}. Now that it's in multiplication form, we can multiply the numerators (7 * 4 = 28) and the denominators (6 * 9 = 54). Therefore, 3\frac{1}{2} ÷ 2\frac{1}{4} = \frac{28}{54}, which simplifies to \frac{14}{27}. This concept is crucial for understanding how to divide mixed numbers with different denominators.",
+      "answer_outline": [
+        "Changing the division sign",
+        "Inverting the second fraction",
+        "Example of dividing mixed numbers"
+      ],
+      "key_concepts": [
+        "Dividing Mixed Numbers",
+        "Inverting Second Fraction"
+      ],
+      "marks": 9,
+      "source_section": "Section 11: Dividing Mixed Numbers"
+    }
+  ]
+}

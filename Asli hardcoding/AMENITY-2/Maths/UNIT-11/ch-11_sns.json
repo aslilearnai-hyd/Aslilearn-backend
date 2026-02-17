@@ -1,0 +1,55 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "section": "Chapter 11: Ratio and Proportions",
+  "generated_at": "2026-02-11T18:29:27.504302",
+  "notes": [
+    {
+      "concept_name": "Ratio",
+      "summary": "A ratio is a comparison of two numbers or quantities, often expressed as a fraction (e.g., 3:4). It can be used to describe proportions between different parts of an object or system. Ratios are used in various fields such as science, engineering, and finance.",
+      "importance": "Understanding ratios is crucial for solving problems involving proportions and scaling.",
+      "quick_facts": [
+        "A ratio is a comparison of two numbers or quantities.",
+        "Ratios can be expressed as fractions (e.g., 3:4).",
+        "Ratios are used in various fields such as science, engineering, and finance.",
+        "Understanding ratios is crucial for solving problems involving proportions and scaling."
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Proportion",
+      "summary": "A proportion is a statement that two ratios are equal (e.g., 3:4 = x:y). It can be used to solve problems involving similar figures or scaling. Proportions are used in various fields such as architecture, engineering, and art.",
+      "importance": "Understanding proportions is essential for solving problems involving similarity and scaling.",
+      "quick_facts": [
+        "A proportion is a statement that two ratios are equal (e.g., 3:4 = x:y).",
+        "Proportions can be used to solve problems involving similar figures or scaling.",
+        "Proportions are used in various fields such as architecture, engineering, and art.",
+        "Understanding proportions is essential for solving problems involving similarity and scaling."
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Similar Figures",
+      "summary": "Similar figures have the same shape but not necessarily the same size. They can be used to solve problems involving proportions and scaling. Similar figures are used in various fields such as architecture, engineering, and art.",
+      "importance": "Understanding similar figures is crucial for solving problems involving proportions and scaling.",
+      "quick_facts": [
+        "Similar figures have the same shape but not necessarily the same size.",
+        "Similar figures can be used to solve problems involving proportions and scaling.",
+        "Similar figures are used in various fields such as architecture, engineering, and art.",
+        "Understanding similar figures is crucial for solving problems involving proportions and scaling."
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "concept_name": "Scaling",
+      "summary": "Scaling involves changing the size of a figure or object while maintaining its shape. It can be used to solve problems involving proportions and similar figures. Scaling is used in various fields such as architecture, engineering, and art.",
+      "importance": "Understanding scaling is essential for solving problems involving proportions and similar figures.",
+      "quick_facts": [
+        "Scaling involves changing the size of a figure or object while maintaining its shape.",
+        "Scaling can be used to solve problems involving proportions and similar figures.",
+        "Scaling is used in various fields such as architecture, engineering, and art.",
+        "Understanding scaling is essential for solving problems involving proportions and similar figures."
+      ],
+      "source_section": "Section 4"
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 2: Whole Numbers",
+  "generated_at": "2026-02-10T22:45:06.637282",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the difference between face value and place value with an example from the content.",
+      "answer": "Face value is the actual digit itself, while place value is the value based on the digit's position. For example, in 5,672, the face value of 6 is 6, but its place value is 600 because it's in the hundreds place. This is calculated as 6 × 100 = 600.",
+      "key_concepts": [
+        "face value",
+        "place value",
+        "position",
+        "multiplication"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the definition of an odd number, and provide an example from the content.",
+      "answer": "An odd number is a whole number that cannot be divided evenly by 2. For example, in the content, it was mentioned that 3 is an odd number because it can't be divided by 2 without leaving a remainder.",
+      "key_concepts": [
+        "odd numbers",
+        "whole numbers",
+        "division"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain how to read and write whole numbers up to three digits, using an example from the content.",
+      "answer": "To read a whole number with three digits, we start from the leftmost digit. For example, in the content, it was mentioned that the number 456 is read as 'four hundred fifty-six'. To write a whole number with three digits, we simply arrange the digits in the correct order.",
+      "key_concepts": [
+        "whole numbers",
+        "reading and writing"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the concept of place value, and how does it relate to the position of digits in a whole number?",
+      "answer": "Place value refers to the value based on the digit's position in a whole number. For example, in the content, it was mentioned that the place value of 6 in 5,672 is 600 because it's in the hundreds place.",
+      "key_concepts": [
+        "place value",
+        "position",
+        "multiplication"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain how to add whole numbers using an example from the content.",
+      "answer": "To add whole numbers, we simply arrange them in a column and add the digits in each place value. For example, in the content, it was mentioned that 456 + 278 = 734.",
+      "key_concepts": [
+        "whole numbers",
+        "addition"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the concept of even numbers, and provide an example from the content?",
+      "answer": "An even number is a whole number that can be divided evenly by 2. For example, in the content, it was mentioned that 4 is an even number because it can be divided by 2 without leaving a remainder.",
+      "key_concepts": [
+        "even numbers",
+        "whole numbers",
+        "division"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain how to subtract whole numbers using an example from the content.",
+      "answer": "To subtract whole numbers, we simply arrange them in a column and subtract the digits in each place value. For example, in the content, it was mentioned that 734 - 278 = 456.",
+      "key_concepts": [
+        "whole numbers",
+        "subtraction"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the concept of place value chart, and how does it relate to the position of digits in a whole number?",
+      "answer": "A place value chart is a table that shows the place value of each digit in a whole number. For example, in the content, it was mentioned that the place value chart for 456 is: Hundreds Tens Units 4 50 6.",
+      "key_concepts": [
+        "place value chart",
+        "position",
+        "multiplication"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain how to multiply whole numbers using an example from the content.",
+      "answer": "To multiply whole numbers, we simply arrange them in a column and multiply the digits in each place value. For example, in the content, it was mentioned that 456 × 278 = 126,768.",
+      "key_concepts": [
+        "whole numbers",
+        "multiplication"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the concept of divisibility rules, and provide an example from the content?",
+      "answer": "Divisibility rules are shortcuts to determine if a number is divisible by another number. For example, in the content, it was mentioned that a number is divisible by 2 if its last digit is even.",
+      "key_concepts": [
+        "divisibility rules",
+        "whole numbers"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 11,
+      "question": "Explain how to divide whole numbers using an example from the content.",
+      "answer": "To divide whole numbers, we simply arrange them in a column and divide the digits in each place value. For example, in the content, it was mentioned that 456 ÷ 278 = 1 with a remainder of 180.",
+      "key_concepts": [
+        "whole numbers",
+        "division"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the concept of prime and composite numbers, and provide an example from the content?",
+      "answer": "Prime numbers are whole numbers that can only be divided by 1 and themselves. Composite numbers are whole numbers that can be divided by other numbers besides 1 and themselves. For example, in the content, it was mentioned that 5 is a prime number because it can only be divided by 1 and itself.",
+      "key_concepts": [
+        "prime numbers",
+        "composite numbers",
+        "whole numbers"
+      ],
+      "marks": 3,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain how to find the greatest common divisor (GCD) of two whole numbers using an example from the content.",
+      "answer": "To find the GCD, we list the multiples of each number and find the smallest multiple they have in common. For example, in the content, it was mentioned that the GCD of 12 and 15 is 3 because 12 = 2 × 6 and 15 = 3 × 5.",
+      "key_concepts": [
+        "greatest common divisor",
+        "whole numbers",
+        "multiples"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the concept of factorization, and provide an example from the content?",
+      "answer": "Factorization is the process of finding the prime factors of a number. For example, in the content, it was mentioned that 12 can be factored as 2 × 2 × 3.",
+      "key_concepts": [
+        "factorization",
+        "prime factors"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "Explain how to use the distributive property of multiplication over addition using an example from the content.",
+      "answer": "The distributive property states that a × (b + c) = a × b + a × c. For example, in the content, it was mentioned that 2 × (3 + 5) = 2 × 3 + 2 × 5.",
+      "key_concepts": [
+        "distributive property",
+        "multiplication over addition"
+      ],
+      "marks": 3,
+      "source_section": "Section 8"
+    }
+  ]
+}

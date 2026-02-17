@@ -1,0 +1,115 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 1: States of matter",
+  "generated_at": "2026-02-11T23:58:16.586995",
+  "concepts": [
+    {
+      "concept_name": "States of Matter",
+      "difficulty": "medium",
+      "lesson": "There are four main states of matter: solid, liquid, gas, and plasma. Solids have a fixed shape and volume, while liquids have a fixed volume but take the shape of their container. Gases fill their containers completely and have neither a fixed shape nor volume.",
+      "real_example": "",
+      "key_points": [
+        "Solids have a fixed shape and volume",
+        "Liquids have a fixed volume but take the shape of their container",
+        "Gases fill their containers completely and have no fixed shape or volume"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Charles' Law",
+      "difficulty": "hard",
+      "lesson": "Charles' Law states that the volume of a gas is directly proportional to its absolute temperature, provided that the pressure remains constant. This means that if the temperature of a gas increases, its volume will also increase.",
+      "real_example": "",
+      "key_points": [
+        "The volume of a gas is directly proportional to its absolute temperature",
+        "Pressure must remain constant for Charles' Law to apply",
+        "Temperature increase leads to an increase in volume"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "concept_name": "Boyle's Law",
+      "difficulty": "hard",
+      "lesson": "Boyle's Law states that the pressure of a gas is inversely proportional to its volume, provided that the temperature remains constant. This means that if the volume of a gas decreases, its pressure will increase.",
+      "real_example": "",
+      "key_points": [
+        "Pressure is inversely proportional to volume",
+        "Temperature must remain constant for Boyle's Law to apply",
+        "Volume decrease leads to an increase in pressure"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "concept_name": "Avogadro's Law",
+      "difficulty": "hard",
+      "lesson": "Avogadro's Law states that equal volumes of gases at the same temperature and pressure contain an equal number of molecules. This means that if two gases have the same volume, temperature, and pressure, they will also have the same number of molecules.",
+      "real_example": "",
+      "key_points": [
+        "Equal volumes of gases contain an equal number of molecules",
+        "Temperature and pressure must be constant for Avogadro's Law to apply",
+        "Number of molecules is directly proportional to volume"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "concept_name": "Sublimation",
+      "difficulty": "easy",
+      "lesson": "Sublimation is the process by which a solid changes directly into a gas without going through the liquid phase. This occurs when the molecules of a substance have enough energy to overcome the forces holding them together in their solid state.",
+      "real_example": "",
+      "key_points": [
+        "Sublimation involves direct transition from solid to gas",
+        "Molecules must have enough energy to overcome intermolecular forces",
+        "Process occurs without liquid phase"
+      ],
+      "source_section": "Section 6-7"
+    },
+    {
+      "concept_name": "Freezing",
+      "difficulty": "easy",
+      "lesson": "Freezing is the process by which a liquid changes into a solid. This occurs when the molecules of a substance slow down and come together in a regular, crystalline structure.",
+      "real_example": "",
+      "key_points": [
+        "Freezing involves transition from liquid to solid",
+        "Molecules must slow down for freezing to occur",
+        "Crystalline structure forms during freezing"
+      ],
+      "source_section": "Section 6-7"
+    },
+    {
+      "concept_name": "Melting",
+      "difficulty": "easy",
+      "lesson": "Melting is the process by which a solid changes into a liquid. This occurs when the molecules of a substance gain enough energy to overcome the forces holding them together in their solid state.",
+      "real_example": "",
+      "key_points": [
+        "Melting involves transition from solid to liquid",
+        "Molecules must gain energy for melting to occur",
+        "Forces between molecules are overcome during melting"
+      ],
+      "source_section": "Section 6-7"
+    },
+    {
+      "concept_name": "Condensation",
+      "difficulty": "easy",
+      "lesson": "Condensation is the process by which a gas changes into a liquid. This occurs when the molecules of a substance slow down and come together in a regular, crystalline structure.",
+      "real_example": "",
+      "key_points": [
+        "Condensation involves transition from gas to liquid",
+        "Molecules must slow down for condensation to occur",
+        "Crystalline structure forms during condensation"
+      ],
+      "source_section": "Section 6-7"
+    },
+    {
+      "concept_name": "Liquefaction",
+      "difficulty": "easy",
+      "lesson": "Liquefaction is the process by which a gas changes into a liquid. This occurs when the molecules of a substance slow down and come together in a regular, crystalline structure.",
+      "real_example": "",
+      "key_points": [
+        "Liquefaction involves transition from gas to liquid",
+        "Molecules must slow down for liquefaction to occur",
+        "Crystalline structure forms during liquefaction"
+      ],
+      "source_section": "Section 6-7"
+    }
+  ]
+}

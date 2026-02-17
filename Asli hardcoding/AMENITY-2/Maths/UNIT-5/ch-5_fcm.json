@@ -1,0 +1,143 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 5: Understanding Elementary Shapes",
+  "generated_at": "2026-02-11T00:25:09.867625",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the number of sides in a hexagon?",
+        "correct_answer": "6",
+        "explanation": "A hexagon has six sides.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the name of the polygon with 10 sides?",
+        "correct_answer": "Decagon",
+        "explanation": "A decagon has ten sides.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "How many vertices does a sphere have?",
+        "correct_answer": "1",
+        "explanation": "A sphere is a three-dimensional shape with one vertex.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the formula for the sum of interior angles in a polygon?",
+        "correct_answer": "(n-2)*180",
+        "explanation": "The sum of interior angles in a polygon can be calculated using the formula (n-2)*180, where n is the number of sides.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What is the name of the solid with a circular base?",
+        "correct_answer": "Cylinder",
+        "explanation": "A cylinder has a circular base and straight lateral surface.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "How many sides does an octagon have?",
+        "correct_answer": "8",
+        "explanation": "An octagon has eight sides.",
+        "source_section": "Section 6"
+      },
+      {
+        "question": "What is the name of the polygon with five sides?",
+        "correct_answer": "Pentagon",
+        "explanation": "A pentagon has five sides.",
+        "source_section": "Section 7"
+      },
+      {
+        "question": "How many faces does a cube have?",
+        "correct_answer": "6",
+        "explanation": "A cube has six faces, each of which is a square.",
+        "source_section": "Section 8"
+      },
+      {
+        "question": "What is the name of the three-dimensional shape with four right angles and four sides of equal length?",
+        "correct_answer": "Square Pyramid",
+        "explanation": "A square pyramid has four right angles and four sides of equal length.",
+        "source_section": "Section 9"
+      },
+      {
+        "question": "What is the name of the three-dimensional shape with curved lateral surface?",
+        "correct_answer": "Cone",
+        "explanation": "A cone has a circular base and curved lateral surface.",
+        "source_section": "Section 10"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Properties of Regular Polygons",
+        "content": "Regular polygons have equal sides and equal angles. The sum of interior angles in a polygon can be calculated using the formula (n-2)*180, where n is the number of sides.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Types of Three-Dimensional Shapes",
+        "content": "Three-dimensional shapes include cubes, cones, cylinders, and spheres. Each type has its own unique properties and characteristics.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Sum of Interior Angles in a Polygon",
+        "content": "The sum of interior angles in a polygon can be calculated using the formula (n-2)*180, where n is the number of sides.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Properties of Circumference and Diameter",
+        "content": "The circumference of a circle is given by the formula C = 2πr, and the diameter is twice the radius. The area of a circle can be calculated using the formula A = πr^2.",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Types of Polygons",
+        "content": "Polygons are classified into regular polygons and irregular polygons. Regular polygons have equal sides and equal angles, while irregular polygons do not.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Properties of Prisms and Pyramids",
+        "content": "Prisms and pyramids are three-dimensional shapes with two bases and lateral surfaces. The sum of interior angles in a prism or pyramid can be calculated using the formula (n-2)*180, where n is the number of sides.",
+        "source_section": "Section 6"
+      },
+      {
+        "title": "Properties of Cylinders",
+        "content": "Cylinders have a circular base and straight lateral surface. The sum of interior angles in a cylinder can be calculated using the formula (n-2)*180, where n is the number of sides.",
+        "source_section": "Section 7"
+      },
+      {
+        "title": "Properties of Spheres",
+        "content": "Spheres are three-dimensional shapes with one vertex. The surface area and volume of a sphere can be calculated using specific formulas.",
+        "source_section": "Section 8"
+      },
+      {
+        "title": "Properties of Cones",
+        "content": "Cones have a circular base and curved lateral surface. The sum of interior angles in a cone can be calculated using the formula (n-2)*180, where n is the number of sides.",
+        "source_section": "Section 9"
+      },
+      {
+        "title": "Properties of Right-Angled Triangles",
+        "content": "Right-angled triangles have one right angle. The Pythagorean theorem can be used to calculate the length of the hypotenuse.",
+        "source_section": "Section 10"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "A hexagon has six sides and six angles.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "The sum of interior angles in a polygon can be calculated using the formula (n-2)*180, where n is the number of sides.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "A sphere has one vertex and a curved surface.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "The circumference of a circle is given by the formula C = 2πr, where r is the radius.",
+        "source_section": "Section 4"
+      },
+      {
+        "fact": "A cylinder has two parallel and circular bases with straight lateral surface.",
+        "source_section": "Section 5"
+      }
+    ]
+  }
+}

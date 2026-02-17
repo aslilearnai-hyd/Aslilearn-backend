@@ -1,0 +1,181 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 2: Whole Numbers",
+  "generated_at": "2026-02-10T23:10:42.144581",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of whole numbers and provide examples to illustrate their properties.",
+      "answer": "Whole numbers are a set of numbers that include all positive integers, starting from 0. They are used to count objects or measure quantities. The main property of whole numbers is that they can be added, subtracted, multiplied, and divided without resulting in fractions. For example, the sum of two whole numbers, 5 + 3 = 8, is also a whole number. Similarly, when we multiply two whole numbers, 4 × 6 = 24, the result is also a whole number.",
+      "answer_outline": [
+        "Define what whole numbers are and their properties",
+        "Provide examples of operations with whole numbers (addition, subtraction, multiplication, division)",
+        "Explain why results from these operations are still whole numbers"
+      ],
+      "key_concepts": [
+        "Whole Numbers",
+        "Properties of Whole Numbers",
+        "Addition",
+        "Subtraction",
+        "Multiplication",
+        "Division"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Introduction to Whole Numbers"
+    },
+    {
+      "question_number": 2,
+      "question": "Describe the concept of place value and explain how it is used in whole number arithmetic.",
+      "answer": "Place value refers to the position or value assigned to each digit in a whole number. It helps us understand the magnitude of numbers by grouping digits based on their place (ones, tens, hundreds). For instance, in the number 456, the digit '4' is in the hundreds place, '5' is in the tens place, and '6' is in the ones place. This concept is essential for performing arithmetic operations like addition, subtraction, multiplication, and division with whole numbers.",
+      "answer_outline": [
+        "Explain what place value means",
+        "Provide examples of how to identify digits by their place value",
+        "Illustrate how understanding place value aids in whole number arithmetic"
+      ],
+      "key_concepts": [
+        "Place Value",
+        "Whole Number Arithmetic",
+        "Addition",
+        "Subtraction",
+        "Multiplication",
+        "Division"
+      ],
+      "marks": 9,
+      "source_section": "Section 2: Place Value"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the process of multiplying whole numbers and provide examples to demonstrate the concept.",
+      "answer": "When we multiply two or more whole numbers, we are essentially adding a number a certain number of times. For example, 4 × 6 can be thought of as 4 + 4 + 4 + 4 + 4 + 4 = 24. The process involves multiplying the multiplicand (the number being multiplied) by each digit in the multiplier (the number doing the multiplying), and then adding up all these partial products.",
+      "answer_outline": [
+        "Explain what multiplication is",
+        "Provide examples of how to multiply whole numbers using the distributive property",
+        "Illustrate the concept with visual aids or real-life scenarios"
+      ],
+      "key_concepts": [
+        "Multiplication",
+        "Whole Numbers",
+        "Distributive Property"
+      ],
+      "marks": 10,
+      "source_section": "Section 3: Multiplication of Whole Numbers"
+    },
+    {
+      "question_number": 4,
+      "question": "Describe the concept of division with whole numbers and provide examples to illustrate its application.",
+      "answer": "Division is the inverse operation of multiplication. When we divide a number by another, we are essentially asking how many times the divisor (the number doing the dividing) fits into the dividend (the number being divided). For example, 24 ÷ 6 can be thought of as 'how many groups of 6 fit into 24?' The answer is 4. Division helps us find parts or portions of a quantity.",
+      "answer_outline": [
+        "Explain what division is",
+        "Provide examples of how to divide whole numbers using visual aids or real-life scenarios",
+        "Illustrate the concept with word problems"
+      ],
+      "key_concepts": [
+        "Division",
+        "Whole Numbers",
+        "Inverse Operations"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Division of Whole Numbers"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the concept of prime and composite numbers, and provide examples to demonstrate their properties.",
+      "answer": "Prime numbers are whole numbers greater than 1 that have exactly two factors: 1 and themselves. For example, 5 is a prime number because its only factors are 1 and 5. Composite numbers, on the other hand, are whole numbers with more than two factors. For instance, 6 is a composite number since it has factors of 1, 2, 3, and 6.",
+      "answer_outline": [
+        "Explain what prime and composite numbers are",
+        "Provide examples to illustrate their properties (factors)",
+        "Discuss the importance of these concepts in mathematics"
+      ],
+      "key_concepts": [
+        "Prime Numbers",
+        "Composite Numbers",
+        "Factors"
+      ],
+      "marks": 9,
+      "source_section": "Section 5: Prime and Composite Numbers"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the concept of greatest common divisor (GCD) and explain its application in whole number arithmetic.",
+      "answer": "The GCD of two or more numbers is the largest number that divides each of them without leaving a remainder. For example, the GCD of 12 and 18 is 6 since it's the largest number dividing both 12 and 18 evenly. The concept of GCD is crucial in simplifying fractions and solving equations involving whole numbers.",
+      "answer_outline": [
+        "Explain what GCD means",
+        "Provide examples to illustrate its application (simplifying fractions)",
+        "Discuss its importance in whole number arithmetic"
+      ],
+      "key_concepts": [
+        "Greatest Common Divisor",
+        "Whole Number Arithmetic",
+        "Simplifying Fractions"
+      ],
+      "marks": 10,
+      "source_section": "Section 6: Greatest Common Divisor"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the concept of least common multiple (LCM) and provide examples to demonstrate its application.",
+      "answer": "The LCM of two or more numbers is the smallest number that each of them can divide into evenly. For example, the LCM of 12 and 18 is 36 since it's the smallest number both 12 and 18 can divide into without leaving a remainder. The concept of LCM is essential in solving equations involving fractions and mixed numbers.",
+      "answer_outline": [
+        "Explain what LCM means",
+        "Provide examples to illustrate its application (solving equations)",
+        "Discuss its importance in mathematics"
+      ],
+      "key_concepts": [
+        "Least Common Multiple",
+        "Solving Equations",
+        "Fractions"
+      ],
+      "marks": 8,
+      "source_section": "Section 7: Least Common Multiple"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe the concept of ordering whole numbers and explain how it is used in comparison.",
+      "answer": "Whole numbers can be ordered from smallest to largest or vice versa. This helps us compare numbers easily. For instance, we know that 4 < 6 because 4 comes before 6 when arranged in order. Ordering whole numbers is crucial for various mathematical operations and comparisons.",
+      "answer_outline": [
+        "Explain what ordering means",
+        "Provide examples to illustrate how it's used (comparisons)",
+        "Discuss its importance in mathematics"
+      ],
+      "key_concepts": [
+        "Ordering Whole Numbers",
+        "Comparison"
+      ],
+      "marks": 9,
+      "source_section": "Section 8: Ordering Whole Numbers"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the concept of patterns with whole numbers and provide examples to demonstrate their properties.",
+      "answer": "Patterns in whole numbers refer to repeating or predictable sequences. For example, the pattern '2, 4, 6, 8' shows a sequence where each term increases by 2. Recognizing and creating patterns is essential for problem-solving and mathematical reasoning.",
+      "answer_outline": [
+        "Explain what patterns mean",
+        "Provide examples to illustrate their properties (repeating sequences)",
+        "Discuss the importance of recognizing and creating patterns"
+      ],
+      "key_concepts": [
+        "Patterns with Whole Numbers",
+        "Sequences"
+      ],
+      "marks": 10,
+      "source_section": "Section 9: Patterns with Whole Numbers"
+    },
+    {
+      "question_number": 10,
+      "question": "Describe the concept of place value in decimal numbers and explain how it is used in calculations.",
+      "answer": "Place value in decimal numbers refers to the position or value assigned to each digit. It helps us understand the magnitude of decimals by grouping digits based on their place (tenths, hundredths). For instance, in the number 456.27, the digit '4' is in the hundreds place, '5' is in the tens place, '6' is in the ones place, '2' is in the tenths place, and '7' is in the hundredths place. This concept is essential for performing arithmetic operations like addition, subtraction, multiplication, and division with decimals.",
+      "answer_outline": [
+        "Explain what place value means in decimal numbers",
+        "Provide examples to illustrate how it's used (calculations)",
+        "Discuss its importance in mathematics"
+      ],
+      "key_concepts": [
+        "Place Value in Decimal Numbers",
+        "Arithmetic Operations"
+      ],
+      "marks": 8,
+      "source_section": "Section 10: Place Value in Decimal Numbers"
+    }
+  ]
+}

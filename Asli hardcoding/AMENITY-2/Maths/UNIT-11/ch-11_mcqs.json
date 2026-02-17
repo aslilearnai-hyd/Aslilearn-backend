@@ -1,0 +1,288 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 11: Ratio and Proportions",
+  "generated_at": "2026-02-11T18:02:52.315561",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "A car travels from city A to city B at an average speed of 60 km/h. What is the time taken for this journey?",
+      "options": {
+        "A": "2 hours",
+        "B": "3 hours",
+        "C": "4 hours",
+        "D": "5 hours"
+      },
+      "correct_answer": "B",
+      "explanation": "According to the formula Distance = Speed × Time, we can find the time taken for this journey.",
+      "difficulty": "medium",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 2,
+      "question": "If two numbers are in the ratio of 3:4, what is their least common multiple?",
+      "options": {
+        "A": "6",
+        "B": "12",
+        "C": "18",
+        "D": "24"
+      },
+      "correct_answer": "B",
+      "explanation": "The least common multiple (LCM) of two numbers in a ratio is the product of their greatest common divisor (GCD). In this case, the GCD of 3 and 4 is 1.",
+      "difficulty": "hard",
+      "source_section": "Section 6-8"
+    },
+    {
+      "question_number": 3,
+      "question": "A baker sells a total of 250 loaves of bread per day. What percentage of the total number of loaves sold is the number of whole wheat loaves?",
+      "options": {
+        "A": "10%",
+        "B": "20%",
+        "C": "30%",
+        "D": "40%"
+      },
+      "correct_answer": "B",
+      "explanation": "To find the percentage of whole wheat loaves, we need to divide the number of whole wheat loaves by the total number of loaves and multiply by 100.",
+      "difficulty": "medium",
+      "source_section": "Section 9-11"
+    },
+    {
+      "question_number": 4,
+      "question": "If a rectangle has a length of 8 cm and a width of 5 cm, what is its area?",
+      "options": {
+        "A": "40 cm²",
+        "B": "50 cm²",
+        "C": "60 cm²",
+        "D": "70 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "The area of a rectangle is found by multiplying its length and width.",
+      "difficulty": "easy",
+      "source_section": "Section 12-14"
+    },
+    {
+      "question_number": 5,
+      "question": "A group of friends want to share some candy equally. If they have 240 pieces of candy and there are 8 friends, how many pieces will each friend get?",
+      "options": {
+        "A": "20",
+        "B": "25",
+        "C": "30",
+        "D": "35"
+      },
+      "correct_answer": "C",
+      "explanation": "To find out how many pieces each friend will get, we need to divide the total number of candies by the number of friends.",
+      "difficulty": "medium",
+      "source_section": "Section 15-17"
+    },
+    {
+      "question_number": 6,
+      "question": "A car travels from city A to city B at an average speed of 80 km/h. If it takes 3 hours, how far is the distance between the two cities?",
+      "options": {
+        "A": "240 km",
+        "B": "250 km",
+        "C": "260 km",
+        "D": "270 km"
+      },
+      "correct_answer": "A",
+      "explanation": "According to the formula Distance = Speed × Time, we can find the distance between the two cities.",
+      "difficulty": "medium",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 7,
+      "question": "If a circle has a diameter of 14 cm, what is its circumference?",
+      "options": {
+        "A": "40 cm",
+        "B": "50 cm",
+        "C": "60 cm",
+        "D": "70 cm"
+      },
+      "correct_answer": "B",
+      "explanation": "The circumference of a circle is found by multiplying its diameter by π.",
+      "difficulty": "hard",
+      "source_section": "Section 6-8"
+    },
+    {
+      "question_number": 8,
+      "question": "A bakery sells a total of 300 loaves of bread per day. What percentage of the total number of loaves sold is the number of whole wheat loaves?",
+      "options": {
+        "A": "10%",
+        "B": "20%",
+        "C": "30%",
+        "D": "40%"
+      },
+      "correct_answer": "C",
+      "explanation": "To find the percentage of whole wheat loaves, we need to divide the number of whole wheat loaves by the total number of loaves and multiply by 100.",
+      "difficulty": "medium",
+      "source_section": "Section 9-11"
+    },
+    {
+      "question_number": 9,
+      "question": "If a rectangle has a length of 10 cm and a width of 6 cm, what is its area?",
+      "options": {
+        "A": "50 cm²",
+        "B": "60 cm²",
+        "C": "70 cm²",
+        "D": "80 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "The area of a rectangle is found by multiplying its length and width.",
+      "difficulty": "easy",
+      "source_section": "Section 12-14"
+    },
+    {
+      "question_number": 10,
+      "question": "A group of friends want to share some candy equally. If they have 360 pieces of candy and there are 9 friends, how many pieces will each friend get?",
+      "options": {
+        "A": "20",
+        "B": "25",
+        "C": "30",
+        "D": "35"
+      },
+      "correct_answer": "C",
+      "explanation": "To find out how many pieces each friend will get, we need to divide the total number of candies by the number of friends.",
+      "difficulty": "medium",
+      "source_section": "Section 15-17"
+    },
+    {
+      "question_number": 11,
+      "question": "A car travels from city A to city B at an average speed of 90 km/h. If it takes 4 hours, how far is the distance between the two cities?",
+      "options": {
+        "A": "360 km",
+        "B": "370 km",
+        "C": "380 km",
+        "D": "390 km"
+      },
+      "correct_answer": "A",
+      "explanation": "According to the formula Distance = Speed × Time, we can find the distance between the two cities.",
+      "difficulty": "medium",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 12,
+      "question": "If a circle has a diameter of 16 cm, what is its circumference?",
+      "options": {
+        "A": "50 cm",
+        "B": "60 cm",
+        "C": "70 cm",
+        "D": "80 cm"
+      },
+      "correct_answer": "B",
+      "explanation": "The circumference of a circle is found by multiplying its diameter by π.",
+      "difficulty": "hard",
+      "source_section": "Section 6-8"
+    },
+    {
+      "question_number": 13,
+      "question": "A bakery sells a total of 350 loaves of bread per day. What percentage of the total number of loaves sold is the number of whole wheat loaves?",
+      "options": {
+        "A": "10%",
+        "B": "20%",
+        "C": "30%",
+        "D": "40%"
+      },
+      "correct_answer": "C",
+      "explanation": "To find the percentage of whole wheat loaves, we need to divide the number of whole wheat loaves by the total number of loaves and multiply by 100.",
+      "difficulty": "medium",
+      "source_section": "Section 9-11"
+    },
+    {
+      "question_number": 14,
+      "question": "If a rectangle has a length of 12 cm and a width of 8 cm, what is its area?",
+      "options": {
+        "A": "80 cm²",
+        "B": "90 cm²",
+        "C": "100 cm²",
+        "D": "110 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "The area of a rectangle is found by multiplying its length and width.",
+      "difficulty": "easy",
+      "source_section": "Section 12-14"
+    },
+    {
+      "question_number": 15,
+      "question": "A group of friends want to share some candy equally. If they have 420 pieces of candy and there are 10 friends, how many pieces will each friend get?",
+      "options": {
+        "A": "20",
+        "B": "25",
+        "C": "30",
+        "D": "35"
+      },
+      "correct_answer": "C",
+      "explanation": "To find out how many pieces each friend will get, we need to divide the total number of candies by the number of friends.",
+      "difficulty": "medium",
+      "source_section": "Section 15-17"
+    },
+    {
+      "question_number": 16,
+      "question": "A car travels from city A to city B at an average speed of 100 km/h. If it takes 5 hours, how far is the distance between the two cities?",
+      "options": {
+        "A": "500 km",
+        "B": "510 km",
+        "C": "520 km",
+        "D": "530 km"
+      },
+      "correct_answer": "A",
+      "explanation": "According to the formula Distance = Speed × Time, we can find the distance between the two cities.",
+      "difficulty": "medium",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 17,
+      "question": "If a circle has a diameter of 18 cm, what is its circumference?",
+      "options": {
+        "A": "60 cm",
+        "B": "70 cm",
+        "C": "80 cm",
+        "D": "90 cm"
+      },
+      "correct_answer": "B",
+      "explanation": "The circumference of a circle is found by multiplying its diameter by π.",
+      "difficulty": "hard",
+      "source_section": "Section 6-8"
+    },
+    {
+      "question_number": 18,
+      "question": "A bakery sells a total of 400 loaves of bread per day. What percentage of the total number of loaves sold is the number of whole wheat loaves?",
+      "options": {
+        "A": "10%",
+        "B": "20%",
+        "C": "30%",
+        "D": "40%"
+      },
+      "correct_answer": "C",
+      "explanation": "To find the percentage of whole wheat loaves, we need to divide the number of whole wheat loaves by the total number of loaves and multiply by 100.",
+      "difficulty": "medium",
+      "source_section": "Section 9-11"
+    },
+    {
+      "question_number": 19,
+      "question": "If a rectangle has a length of 14 cm and a width of 10 cm, what is its area?",
+      "options": {
+        "A": "100 cm²",
+        "B": "110 cm²",
+        "C": "120 cm²",
+        "D": "130 cm²"
+      },
+      "correct_answer": "A",
+      "explanation": "The area of a rectangle is found by multiplying its length and width.",
+      "difficulty": "easy",
+      "source_section": "Section 12-14"
+    },
+    {
+      "question_number": 20,
+      "question": "A group of friends want to share some candy equally. If they have 480 pieces of candy and there are 11 friends, how many pieces will each friend get?",
+      "options": {
+        "A": "20",
+        "B": "25",
+        "C": "30",
+        "D": "35"
+      },
+      "correct_answer": "C",
+      "explanation": "To find out how many pieces each friend will get, we need to divide the total number of candies by the number of friends.",
+      "difficulty": "medium",
+      "source_section": "Section 15-17"
+    }
+  ]
+}

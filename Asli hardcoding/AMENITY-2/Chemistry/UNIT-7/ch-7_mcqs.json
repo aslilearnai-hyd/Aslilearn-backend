@@ -1,0 +1,284 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Water and its components",
+  "generated_at": "2026-02-12T00:54:07.877496",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the main reason for the decrease in water level in the sunlight container?",
+      "options": {
+        "A": "Condensation",
+        "B": "Evaporation",
+        "C": "Freezing",
+        "D": "Ionization"
+      },
+      "correct_answer": "B",
+      "explanation": "This experiment illustrates evaporation, as water molecules in the sunlight container gain energy and turn into vapor, increasing the pressure inside the container and causing the water level to decrease.",
+      "difficulty": "medium",
+      "source_section": "Section 23"
+    },
+    {
+      "question_number": 2,
+      "question": "What type of bond or interaction is represented in the given diagram?",
+      "options": {
+        "A": "Covalent bond between hydrogen and oxygen of one molecule",
+        "B": "Ionic bond between hydrogen and oxygen of different molecules",
+        "C": "Van der Waals interaction between water molecules",
+        "D": "Hydrogen bond between hydrogen and oxygen of different molecules"
+      },
+      "correct_answer": "D",
+      "explanation": "The diagram represents a hydrogen bond between hydrogen and oxygen of different molecules, which is a weak electrostatic attraction.",
+      "difficulty": "hard",
+      "source_section": "Section 24"
+    },
+    {
+      "question_number": 3,
+      "question": "Which type of hydroelectric power plant would be most suitable for the village located near a fast-flowing river?",
+      "options": {
+        "A": "Conventional hydroelectric plant",
+        "B": "Pumped storage hydroelectric plant",
+        "C": "Run-of-the-river hydroelectric plant",
+        "D": "Tidal energy plant"
+      },
+      "correct_answer": "C",
+      "explanation": "Since the village is located near a fast-flowing river, the Run-of-the-river hydroelectric plant would be most suitable as it harnesses the kinetic energy of the river without building a large dam.",
+      "difficulty": "medium",
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 4,
+      "question": "Which property of water allows the small insect to remain on the surface?",
+      "options": {
+        "A": "Low density of water",
+        "B": "High surface tension",
+        "C": "Cohesion of water molecules",
+        "D": "Hydrogen bonding"
+      },
+      "correct_answer": "B",
+      "explanation": "The high surface tension of water allows the small insect to remain on its surface, as it creates a 'skin' that is strong enough to support the weight of the insect.",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 5,
+      "question": "What does the Specific Heat Capacity of water represent?",
+      "options": {
+        "A": "Requires energy to change from liquid to gas",
+        "B": "Needs energy to change from solid to liquid",
+        "C": "Absorbs heat without much temperature change"
+      },
+      "correct_answer": "C",
+      "explanation": "The Specific Heat Capacity of water represents the amount of energy required to raise its temperature by a given amount.",
+      "difficulty": "medium",
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 6,
+      "question": "What are the main uses of water?",
+      "options": {
+        "A": "Used for drinking, cooking, and cleaning",
+        "B": "Essential for metabolism",
+        "C": "Used in irrigation and livestock care",
+        "D": "Facilitates manufacturing and power generation"
+      },
+      "correct_answer": "A",
+      "explanation": "Water is used for various biological functions including drinking, cooking, and cleaning.",
+      "difficulty": "easy",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 7,
+      "question": "In what state of matter is water typically found in oceans, rivers, and lakes?",
+      "options": {
+        "A": "Liquid",
+        "B": "Solid",
+        "C": "Gaseous",
+        "D": "Igneous"
+      },
+      "correct_answer": "A",
+      "explanation": "Water is typically found in the liquid state in oceans, rivers, and lakes.",
+      "difficulty": "easy",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the Latent Heat of Vaporization?",
+      "options": {
+        "A": "Requires energy to change from liquid to gas",
+        "B": "Needs energy to change from solid to liquid",
+        "C": "Absorbs heat without much temperature change"
+      },
+      "correct_answer": "A",
+      "explanation": "The Latent Heat of Vaporization is the amount of energy required for a substance to change from a liquid to a gas state.",
+      "difficulty": "medium",
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 9,
+      "question": "What are the main functions of water in biological systems?",
+      "options": {
+        "A": "Used for drinking, cooking, and cleaning",
+        "B": "Essential for metabolism",
+        "C": "Used in irrigation and livestock care",
+        "D": "Facilitates manufacturing and power generation"
+      },
+      "correct_answer": "B",
+      "explanation": "Water is essential for various biological functions including metabolism.",
+      "difficulty": "medium",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the main reason for the decrease in water level in the sunlight container?",
+      "options": {
+        "A": "Condensation",
+        "B": "Evaporation",
+        "C": "Freezing",
+        "D": "Ionization"
+      },
+      "correct_answer": "B",
+      "explanation": "This experiment illustrates evaporation, as water molecules in the sunlight container gain energy and turn into vapor, increasing the pressure inside the container and causing the water level to decrease.",
+      "difficulty": "medium",
+      "source_section": "Section 23"
+    },
+    {
+      "question_number": 11,
+      "question": "What type of bond or interaction is represented in the given diagram?",
+      "options": {
+        "A": "Covalent bond between hydrogen and oxygen of one molecule",
+        "B": "Ionic bond between hydrogen and oxygen of different molecules",
+        "C": "Van der Waals interaction between water molecules",
+        "D": "Hydrogen bond between hydrogen and oxygen of different molecules"
+      },
+      "correct_answer": "D",
+      "explanation": "The diagram represents a hydrogen bond between hydrogen and oxygen of different molecules, which is a weak electrostatic attraction.",
+      "difficulty": "hard",
+      "source_section": "Section 24"
+    },
+    {
+      "question_number": 12,
+      "question": "Which type of hydroelectric power plant would be most suitable for the village located near a fast-flowing river?",
+      "options": {
+        "A": "Conventional hydroelectric plant",
+        "B": "Pumped storage hydroelectric plant",
+        "C": "Run-of-the-river hydroelectric plant",
+        "D": "Tidal energy plant"
+      },
+      "correct_answer": "C",
+      "explanation": "Since the village is located near a fast-flowing river, the Run-of-the-river hydroelectric plant would be most suitable as it harnesses the kinetic energy of the river without building a large dam.",
+      "difficulty": "medium",
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 13,
+      "question": "Which property of water allows the small insect to remain on the surface?",
+      "options": {
+        "A": "Low density of water",
+        "B": "High surface tension",
+        "C": "Cohesion of water molecules",
+        "D": "Hydrogen bonding"
+      },
+      "correct_answer": "B",
+      "explanation": "The high surface tension of water allows the small insect to remain on its surface, as it creates a 'skin' that is strong enough to support the weight of the insect.",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 14,
+      "question": "What does the Specific Heat Capacity of water represent?",
+      "options": {
+        "A": "Requires energy to change from liquid to gas",
+        "B": "Needs energy to change from solid to liquid",
+        "C": "Absorbs heat without much temperature change"
+      },
+      "correct_answer": "C",
+      "explanation": "The Specific Heat Capacity of water represents the amount of energy required to raise its temperature by a given amount.",
+      "difficulty": "medium",
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 15,
+      "question": "What are the main uses of water?",
+      "options": {
+        "A": "Used for drinking, cooking, and cleaning",
+        "B": "Essential for metabolism",
+        "C": "Used in irrigation and livestock care",
+        "D": "Facilitates manufacturing and power generation"
+      },
+      "correct_answer": "A",
+      "explanation": "Water is used for various biological functions including drinking, cooking, and cleaning.",
+      "difficulty": "easy",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 16,
+      "question": "In what state of matter is water typically found in oceans, rivers, and lakes?",
+      "options": {
+        "A": "Liquid",
+        "B": "Solid",
+        "C": "Gaseous",
+        "D": "Igneous"
+      },
+      "correct_answer": "A",
+      "explanation": "Water is typically found in the liquid state in oceans, rivers, and lakes.",
+      "difficulty": "easy",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the Latent Heat of Vaporization?",
+      "options": {
+        "A": "Requires energy to change from liquid to gas",
+        "B": "Needs energy to change from solid to liquid",
+        "C": "Absorbs heat without much temperature change"
+      },
+      "correct_answer": "A",
+      "explanation": "The Latent Heat of Vaporization is the amount of energy required for a substance to change from a liquid to a gas state.",
+      "difficulty": "medium",
+      "source_section": "Section 27"
+    },
+    {
+      "question_number": 18,
+      "question": "What are the main functions of water in biological systems?",
+      "options": {
+        "A": "Used for drinking, cooking, and cleaning",
+        "B": "Essential for metabolism",
+        "C": "Used in irrigation and livestock care",
+        "D": "Facilitates manufacturing and power generation"
+      },
+      "correct_answer": "B",
+      "explanation": "Water is essential for various biological functions including metabolism.",
+      "difficulty": "medium",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 19,
+      "question": "What type of bond or interaction is represented in the given diagram?",
+      "options": {
+        "A": "Covalent bond between hydrogen and oxygen of one molecule",
+        "B": "Ionic bond between hydrogen and oxygen of different molecules",
+        "C": "Van der Waals interaction between water molecules",
+        "D": "Hydrogen bond between hydrogen and oxygen of different molecules"
+      },
+      "correct_answer": "D",
+      "explanation": "The diagram represents a hydrogen bond between hydrogen and oxygen of different molecules, which is a weak electrostatic attraction.",
+      "difficulty": "hard",
+      "source_section": "Section 24"
+    },
+    {
+      "question_number": 20,
+      "question": "Which type of hydroelectric power plant would be most suitable for the village located near a fast-flowing river?",
+      "options": {
+        "A": "Conventional hydroelectric plant",
+        "B": "Pumped storage hydroelectric plant",
+        "C": "Run-of-the-river hydroelectric plant",
+        "D": "Tidal energy plant"
+      },
+      "correct_answer": "C",
+      "explanation": "Since the village is located near a fast-flowing river, the Run-of-the-river hydroelectric plant would be most suitable as it harnesses the kinetic energy of the river without building a large dam.",
+      "difficulty": "medium",
+      "source_section": "Section 25"
+    }
+  ]
+}

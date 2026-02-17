@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 2: Elements compounds and mixtures",
+  "generated_at": "2026-02-12T00:05:02.931622",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "An atom consists of ______, neutrons, and electrons.",
+      "correct_answer": "protons",
+      "hint": "Basic atomic structure",
+      "explanation": "From the content: 'An atom consists of protons, neurons and electrons.'",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "Protons are ______ charged particles in the nucleus.",
+      "correct_answer": "positive",
+      "hint": "Atomic charge",
+      "explanation": "From the content: 'Protons are positive charged particles in the nucleus.'",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "Neutrons are ______ particles in the nucleus.",
+      "correct_answer": "neutral",
+      "hint": "Atomic charge",
+      "explanation": "From the content: 'Neutrons are Neutral particles in the nucleus.'",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 4,
+      "question": "Electrons are ______ charged particles orbiting the nucleus.",
+      "correct_answer": "negative",
+      "hint": "Atomic charge",
+      "explanation": "From the content: 'Electrons are Negative charged particles orbiting the nucleus.'",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 5,
+      "question": "Sodium chloride will have different properties from both sodium and chlorine.",
+      "correct_answer": "True",
+      "hint": "Compound formation",
+      "explanation": "From the content: 'Which of the following is true about the resulting compound? (d) Sodium chloride will have different properties from both sodium and chlorine.'",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 6,
+      "question": "Sai heats a substance and observes that it is malleable, conducts heat well, and has a high melting point. Based on these properties, the substance is most likely: ______.",
+      "correct_answer": "b. A metal",
+      "hint": "Physical properties of metals",
+      "explanation": "From the content: 'Sai heats a substance and observes that it is malleable, conducts heat well, and has a high melting point.'",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 7,
+      "question": "The compound formed by combining hydrogen and oxygen gases is ______.",
+      "correct_answer": "water",
+      "hint": "Compound formation",
+      "explanation": "From the content: 'The hydrogen and oxygen gases combine to form __1__ molecules.'",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 8,
+      "question": "Water is a ______ of essential components.",
+      "correct_answer": "compound",
+      "hint": "Compound formation",
+      "explanation": "From the content: 'Which is a example of____2___ and Essential for life, acts as a__3___, and is involved in many chemical reactions.'",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 9,
+      "question": "The compound formed by combining carbon, hydrogen, and oxygen elements is ______.",
+      "correct_answer": "glucose",
+      "hint": "Compound formation",
+      "explanation": "From the content: 'Given the elements Carbon (C), Hydrogen (H), and Oxygen (O), determine the compound formed by these elements.'",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 10,
+      "question": "An element is a substance made up of only one type of ______.",
+      "correct_answer": "atom",
+      "hint": "Element definition",
+      "explanation": "From the content: 'A mixture where the components are evenly distributed' matches with option (d) A substance made up of only one type of atom in Column B",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 11,
+      "question": "The atomic mass is the sum of ______ and neutrons.",
+      "correct_answer": "protons",
+      "hint": "Atomic structure",
+      "explanation": "From the content: 'Atomic Mass C. Sum of Protons and Neutrons' in Column B matches with option 3. Atomic Structure C. Sum of Protons and Neutrons (c) 1C 2A 3B",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 12,
+      "question": "Iron is used to make ______.",
+      "correct_answer": "fertilizer",
+      "hint": "Element application",
+      "explanation": "From the content: '1. Iron (Fe) A. Used in making fertilizer' in Column I matches with option 1. Iron (Fe) A. Used in making fertilizer in Column B",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 13,
+      "question": "Nitrogen is essential for ______.",
+      "correct_answer": "respiration",
+      "hint": "Element application",
+      "explanation": "From the content: '2. Carbon (C) B. Essential for respiration' in Column I matches with option 1. Iron (Fe) A. Used in making fertilizer in Column B",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 14,
+      "question": "Oxygen is good at conducting heat and ______.",
+      "correct_answer": "electricity",
+      "hint": "Element properties",
+      "explanation": "From the content: '3. Nitrogen (N) C. Good conductor of heat and electricity' in Column I matches with option 1. Iron (Fe) A. Used in making fertilizer in Column B",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 15,
+      "question": "M.S. Swaminathan is known as the Father of ______.",
+      "correct_answer": "Green Revolution",
+      "hint": "Scientific contributions",
+      "explanation": "From the content: 'Prof. M. S. Swaminathan Father of Green Revolution in India' in Column A matches with option 4. Oxygen (O) D. Forms the backbone of organic Chemistry in Column B",
+      "source_section": "Section 6"
+    }
+  ]
+}

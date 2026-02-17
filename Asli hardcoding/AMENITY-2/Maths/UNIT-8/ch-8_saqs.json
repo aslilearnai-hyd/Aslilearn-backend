@@ -1,0 +1,163 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 8: Decimals",
+  "generated_at": "2026-02-11T00:58:05.459544",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the difference between a decimal and a fraction?",
+      "answer": "A decimal represents a value as a numerical digit with a point separating the whole number part from the fractional part. For example, 0.5 is a decimal. A fraction, on the other hand, represents a value as a ratio of two integers. For instance, 1/2 is a fraction.",
+      "key_concepts": [
+        "Decimals",
+        "Fractions"
+      ],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 2,
+      "question": "How do you round off decimals to the nearest whole number?",
+      "answer": "To round off a decimal to the nearest whole number, look at the digit immediately after the decimal point. If it is less than or equal to 5, round down; if it is greater than 5, round up.",
+      "key_concepts": [
+        "Rounding Decimals"
+      ],
+      "marks": 3,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 3,
+      "question": "What are the rules for comparing decimals?",
+      "answer": "To compare two decimals, look at the digits immediately after the decimal point. Compare these digits first; if they are equal, move to the next digit to the right and continue the comparison.",
+      "key_concepts": [
+        "Comparing Decimals"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 4,
+      "question": "How do you add decimals with different numbers of decimal places?",
+      "answer": "To add decimals with different numbers of decimal places, line up the digits in the same place value and then perform the addition. If necessary, adjust the number of decimal places by adding zeros to the end of the shorter decimal.",
+      "key_concepts": [
+        "Adding Decimals"
+      ],
+      "marks": 4,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 5,
+      "question": "What are the rules for subtracting decimals?",
+      "answer": "To subtract decimals, line up the digits in the same place value and then perform the subtraction. If necessary, adjust the number of decimal places by adding zeros to the end of the shorter decimal.",
+      "key_concepts": [
+        "Subtracting Decimals"
+      ],
+      "marks": 4,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 6,
+      "question": "How do you multiply decimals?",
+      "answer": "To multiply decimals, multiply the numbers as if they were whole numbers and then count the total number of decimal places in the factors. Place the decimal point in the product so that it has the same number of decimal places.",
+      "key_concepts": [
+        "Multiplying Decimals"
+      ],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 7,
+      "question": "What are the rules for dividing decimals?",
+      "answer": "To divide decimals, divide as if the numbers were whole numbers and then adjust the decimal point in the quotient accordingly. When dividing by a decimal less than 1, move the decimal point in the divisor to the right until it becomes a whole number.",
+      "key_concepts": [
+        "Dividing Decimals"
+      ],
+      "marks": 4,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 8,
+      "question": "How do you express repeating decimals as fractions?",
+      "answer": "To express a repeating decimal as a fraction, let the repeating decimal be x and multiply both sides of the equation by an appropriate power of 10 to eliminate the repeating part. Then solve for x.",
+      "key_concepts": [
+        "Repeating Decimals",
+        "Fractions"
+      ],
+      "marks": 5,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 9,
+      "question": "What are some real-life applications of decimals?",
+      "answer": "Decimals have numerous practical applications in everyday life, including measuring lengths, weights, and temperatures. They are also used in finance to express money amounts and in science to represent physical quantities.",
+      "key_concepts": [
+        "Real-Life Applications"
+      ],
+      "marks": 3,
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 10,
+      "question": "How do you convert a fraction to a decimal?",
+      "answer": "To convert a fraction to a decimal, divide the numerator by the denominator. For example, 1/2 = 0.5.",
+      "key_concepts": [
+        "Fractions",
+        "Decimals"
+      ],
+      "marks": 3,
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the difference between a terminating decimal and a non-terminating decimal?",
+      "answer": "A terminating decimal is one that has a finite number of digits after the decimal point, whereas a non-terminating decimal has an infinite number of digits.",
+      "key_concepts": [
+        "Terminating Decimals",
+        "Non-Terminating Decimals"
+      ],
+      "marks": 3,
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 12,
+      "question": "How do you convert a decimal to a percentage?",
+      "answer": "To convert a decimal to a percentage, multiply the decimal by 100. For example, 0.25 = 25%.",
+      "key_concepts": [
+        "Decimals",
+        "Percentages"
+      ],
+      "marks": 3,
+      "source_section": "Section 15"
+    },
+    {
+      "question_number": 13,
+      "question": "What are some common errors to avoid when working with decimals?",
+      "answer": "Some common errors to avoid include misplacing the decimal point, failing to account for trailing zeros, and neglecting to adjust the number of decimal places during operations.",
+      "key_concepts": [
+        "Common Errors"
+      ],
+      "marks": 3,
+      "source_section": "Section 16"
+    },
+    {
+      "question_number": 14,
+      "question": "How do you check your answers when working with decimals?",
+      "answer": "To check your answer, reperform the operation and verify that it matches the original result. You can also use a calculator to double-check your work.",
+      "key_concepts": [
+        "Checking Answers"
+      ],
+      "marks": 3,
+      "source_section": "Section 17"
+    },
+    {
+      "question_number": 15,
+      "question": "What are some tips for mastering decimals?",
+      "answer": "Some tips for mastering decimals include practicing regularly, paying close attention to the placement of the decimal point, and using visual aids to help understand complex concepts.",
+      "key_concepts": [
+        "Mastering Decimals"
+      ],
+      "marks": 3,
+      "source_section": "Section 18"
+    }
+  ]
+}

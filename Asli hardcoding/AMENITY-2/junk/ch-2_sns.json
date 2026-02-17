@@ -1,0 +1,63 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "section": "Chapter 2: Whole Numbers",
+  "generated_at": "2026-02-10T22:48:38.456335",
+  "notes": [
+    {
+      "concept_name": "Understanding Infinity",
+      "summary": "The infinity symbol (∞) represents a quantity that continues forever, introduced by mathematician John Wallis in 1655.",
+      "importance": "Infinity is essential for understanding concepts like time and space, and its continuous flow reflects the idea of eternity and balance.",
+      "quick_facts": [
+        "Introduced by John Wallis in 1655",
+        "Represents a quantity that continues forever",
+        "Symbol resembles a twisted loop or Möbius strip",
+        "Signifies eternity, balance, and interconnection of all things"
+      ],
+      "source_section": "Section 21"
+    },
+    {
+      "concept_name": "Pascal's Triangle",
+      "summary": "Pascal's Triangle is a triangular array of numbers where each entry is the sum of the two numbers directly above it, starting with 1 at the top.",
+      "importance": "Pascal's Triangle has many fascinating properties and is widely used in algebra, probability, and combinatorics.",
+      "quick_facts": [
+        "Each entry is the sum of the two numbers above",
+        "Starts with 1 at the top",
+        "Rows represent binomial coefficients, Fibonacci numbers, and triangular numbers"
+      ],
+      "source_section": "Section 22"
+    },
+    {
+      "concept_name": "Air Conditioner Basics",
+      "summary": "An air conditioner (AC) is a device that cools and dehumidifies indoor air using a refrigeration cycle.",
+      "importance": "Understanding how ACs work is essential for maintaining comfortable spaces, especially in hot weather.",
+      "quick_facts": [
+        "Uses a refrigeration cycle",
+        "Cools and dehumidifies indoor air",
+        "Main components: compressor, evaporator, and condenser"
+      ],
+      "source_section": "Section 21"
+    },
+    {
+      "concept_name": "Metal Detector Function",
+      "summary": "A metal detector generates an electromagnetic field that interacts with metal objects, causing a signal to be sent back to the detector.",
+      "importance": "Understanding how metal detectors work is essential for locating hidden metal objects, coins, or weapons in various fields like security screening and archaeology.",
+      "quick_facts": [
+        "Generates an electromagnetic field",
+        "Interacts with metal objects",
+        "Causes a signal to be sent back to the detector"
+      ],
+      "source_section": "Section 21"
+    },
+    {
+      "concept_name": "Additive Identity in Whole Numbers",
+      "summary": "In whole numbers, the additive identity is zero (0), since adding it to any number does not change its value.",
+      "importance": "Understanding the concept of additive identity is essential for working with whole numbers and performing arithmetic operations.",
+      "quick_facts": [
+        "Additive identity is 0",
+        "Adding 0 does not change a number's value",
+        "Essential for whole number arithmetic"
+      ],
+      "source_section": "Section 29"
+    }
+  ]
+}

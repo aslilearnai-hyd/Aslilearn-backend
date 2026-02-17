@@ -1,0 +1,288 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 10: Algebra Including Simple Equations",
+  "generated_at": "2026-02-11T16:16:09.399986",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the term for a number that reads the same forward and backward?",
+      "options": {
+        "A": "Palindrome",
+        "B": "Prime Number",
+        "C": "Composite Number",
+        "D": "Even Number"
+      },
+      "correct_answer": "A",
+      "explanation": "Palindromic Numbers are numbers that read the same forward and backward. (Section 26)",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the approximate value of the Golden Ratio?",
+      "options": {
+        "A": "1.5",
+        "B": "1.618",
+        "C": "2",
+        "D": "3"
+      },
+      "correct_answer": "B",
+      "explanation": "The Golden Ratio, often represented by the Greek letter Φ (phi), is approximately 1.618. (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the term for a number that has symmetrical properties?",
+      "options": {
+        "A": "Palindromic Number",
+        "B": "Prime Number",
+        "C": "Composite Number",
+        "D": "Even Number"
+      },
+      "correct_answer": "A",
+      "explanation": "Examples of palindromic numbers include 121, 1331, and 12321. These numbers have symmetrical properties. (Section 26)",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the Reverse and Add Method used for?",
+      "options": {
+        "A": "To find the sum of two numbers",
+        "B": "To turn a number into a palindrome",
+        "C": "To find the product of two numbers",
+        "D": "To find the difference between two numbers"
+      },
+      "correct_answer": "B",
+      "explanation": "The Reverse and Add Method is used to turn a number into a palindrome. (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the Golden Ratio found in?",
+      "options": {
+        "A": "Art and architecture only",
+        "B": "Nature, art, and architecture",
+        "C": "Mathematics and science only",
+        "D": "History and literature"
+      },
+      "correct_answer": "B",
+      "explanation": "The Golden Ratio is found in art, architecture, and nature. (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the name of the Greek letter representing the Golden Ratio?",
+      "options": {
+        "A": "Phi (Φ)",
+        "B": "Omega (Ω)",
+        "C": "Alpha (Α)",
+        "D": "Beta (Β)"
+      },
+      "correct_answer": "A",
+      "explanation": "The Golden Ratio, often represented by the Greek letter Φ (phi), is approximately 1.618. (Section 26)",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 7,
+      "question": "What is an example of a palindromic number?",
+      "options": {
+        "A": "12345678987654321",
+        "B": "121",
+        "C": "1331",
+        "D": "12321"
+      },
+      "correct_answer": "D",
+      "explanation": "Examples of palindromic numbers include 121, 1331, and 12321. (Section 26)",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the Parthenon in Greece an example of?",
+      "options": {
+        "A": "An example of a prime number",
+        "B": "An example of a composite number",
+        "C": "An example of a palindromic number",
+        "D": "Following Golden Ratio proportions"
+      },
+      "correct_answer": "D",
+      "explanation": "The Parthenon in Greece follows Tiny Golden Ratio proportions! Truth (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the term for a number that has symmetrical properties and reads the same forward and backward?",
+      "options": {
+        "A": "Palindrome",
+        "B": "Prime Number",
+        "C": "Composite Number",
+        "D": "Even Number"
+      },
+      "correct_answer": "A",
+      "explanation": "Palindromic Numbers are numbers that read the same forward and backward. (Section 26)",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the Golden Ratio used for in art?",
+      "options": {
+        "A": "To create symmetrical designs",
+        "B": "For balance and beauty in their works",
+        "C": "To create geometric shapes",
+        "D": "To calculate area and perimeter"
+      },
+      "correct_answer": "B",
+      "explanation": "Artists like Leonardo da Vinci used it for balance and beauty in their works. (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the Reverse and Add Method?",
+      "options": {
+        "A": "A process to turn a number into a palindrome",
+        "B": "A method to find the sum of two numbers",
+        "C": "A technique to create geometric shapes",
+        "D": "An algorithm to calculate area and perimeter"
+      },
+      "correct_answer": "A",
+      "explanation": "The Reverse and Add Method is used to turn a number into a palindrome. (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the Golden Ratio found in nature?",
+      "options": {
+        "A": "In the patterns of pinecones and DNA structures only",
+        "B": "In the spirals of sunflowers, the patterns of pinecones, and even in DNA structures",
+        "C": "Only in the colors of flowers and butterflies",
+        "D": "Only in the shapes of mountains and rivers"
+      },
+      "correct_answer": "B",
+      "explanation": "The Golden Ratio is found in art, architecture, and nature. (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the name of the mathematician who used the Golden Ratio?",
+      "options": {
+        "A": "Leonardo da Vinci",
+        "B": "Pythagoras",
+        "C": "Euclid",
+        "D": "Archimedes"
+      },
+      "correct_answer": "A",
+      "explanation": "Artists like Leonardo da Vinci used it for balance and beauty in their works. (Section 26)",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the Parthenon an example of?",
+      "options": {
+        "A": "An example of a prime number",
+        "B": "An example of a composite number",
+        "C": "An example of a palindromic number",
+        "D": "Following Golden Ratio proportions"
+      },
+      "correct_answer": "D",
+      "explanation": "The Parthenon in Greece follows Tiny Golden Ratio proportions! Truth (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the term for a number that reads the same forward and backward?",
+      "options": {
+        "A": "Palindrome",
+        "B": "Prime Number",
+        "C": "Composite Number",
+        "D": "Even Number"
+      },
+      "correct_answer": "A",
+      "explanation": "Palindromic Numbers are numbers that read the same forward and backward. (Section 26)",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 16,
+      "question": "What is an example of a palindromic number?",
+      "options": {
+        "A": "12345678987654321",
+        "B": "121",
+        "C": "1331",
+        "D": "12321"
+      },
+      "correct_answer": "D",
+      "explanation": "Examples of palindromic numbers include 121, 1331, and 12321. These numbers have symmetrical properties. (Section 26)",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the Reverse and Add Method used for?",
+      "options": {
+        "A": "To find the sum of two numbers",
+        "B": "To turn a number into a palindrome",
+        "C": "To find the product of two numbers",
+        "D": "To find the difference between two numbers"
+      },
+      "correct_answer": "B",
+      "explanation": "The Reverse and Add Method is used to turn a number into a palindrome. (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the Golden Ratio used for in art?",
+      "options": {
+        "A": "To create symmetrical designs",
+        "B": "For balance and beauty in their works",
+        "C": "To create geometric shapes",
+        "D": "To calculate area and perimeter"
+      },
+      "correct_answer": "B",
+      "explanation": "Artists like Leonardo da Vinci used it for balance and beauty in their works. (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the Parthenon an example of?",
+      "options": {
+        "A": "An example of a prime number",
+        "B": "An example of a composite number",
+        "C": "An example of a palindromic number",
+        "D": "Following Golden Ratio proportions"
+      },
+      "correct_answer": "D",
+      "explanation": "The Parthenon in Greece follows Tiny Golden Ratio proportions! Truth (Section 26)",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the term for a number that has symmetrical properties and reads the same forward and backward?",
+      "options": {
+        "A": "Palindrome",
+        "B": "Prime Number",
+        "C": "Composite Number",
+        "D": "Even Number"
+      },
+      "correct_answer": "A",
+      "explanation": "Palindromic Numbers are numbers that read the same forward and backward. (Section 26)",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    }
+  ]
+}

@@ -1,0 +1,208 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 10: Algebra Including Simple Equations",
+  "generated_at": "2026-02-11T16:19:07.484663",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the name of the number that reads the same forward and backward?",
+      "answer": "Palindromic Numbers are numbers that read the same forward and backward.",
+      "key_points": [
+        "palindromic",
+        "numbers"
+      ],
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the value of the Golden Ratio?",
+      "answer": "The Golden Ratio, often represented by the Greek letter Φ (phi), is approximately 1.618.",
+      "key_points": [
+        "Golden",
+        "Ratio"
+      ],
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the definition of a simple equation?",
+      "answer": "A simple equation is an algebraic expression that can be solved to find the value of one or more variables.",
+      "key_points": [
+        "simple",
+        "equation"
+      ],
+      "source_section": "[Section 1]"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the name of the method used to create palindromes from numbers?",
+      "answer": "The Reverse and Add Method, where you reverse the digits, add them to the original number, and repeat the process until a palindrome appears.",
+      "key_points": [
+        "palindrome",
+        "method"
+      ],
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the result of the Golden Ratio?",
+      "answer": "Mathematically, if a/b = (a+b)/a, the result is the Golden Ratio.",
+      "key_points": [
+        "Golden",
+        "Ratio"
+      ],
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 6,
+      "question": "What is an example of a palindromic number?",
+      "answer": "Examples include 121, 1331, and 12321.",
+      "key_points": [
+        "palindromic",
+        "numbers"
+      ],
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the name of the building that follows Golden Ratio proportions?",
+      "answer": "The Parthenon in Greece.",
+      "key_points": [
+        "Parthenon",
+        "Golden"
+      ],
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the value of x+4 at x=-2?",
+      "answer": "The value of x+4 at x=-2 is -6.",
+      "key_points": [
+        "x",
+        "+4"
+      ],
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 9,
+      "question": "What are the possible roots of a simple equation?",
+      "answer": "The number of roots of a simple equation is either 0 or 1.",
+      "key_points": [
+        "simple",
+        "equation"
+      ],
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the definition of an accelerator?",
+      "answer": "An accelerator is a device that increases the speed or energy of particles.",
+      "key_points": [
+        "accelerator",
+        "device"
+      ],
+      "source_section": "[Section 27]"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the value of x in the equation 5x = 20?",
+      "answer": "The solution to 5x = 20 is x = 4.",
+      "key_points": [
+        "x",
+        "equation"
+      ],
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 12,
+      "question": "What are the possible solutions of an equation?",
+      "answer": "The solution of an equation can be a single value or multiple values.",
+      "key_points": [
+        "solution",
+        "equation"
+      ],
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the definition of the Golden Ratio?",
+      "answer": "The Golden Ratio, often represented by the Greek letter Φ (phi), is approximately 1.618.",
+      "key_points": [
+        "Golden",
+        "Ratio"
+      ],
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 14,
+      "question": "What are some examples of palindromic numbers?",
+      "answer": "Examples include 121, 1331, and 12321.",
+      "key_points": [
+        "palindromic",
+        "numbers"
+      ],
+      "source_section": "[Section 26]"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the value of x+4 at x=-2?",
+      "answer": "The value of x+4 at x=-2 is -6.",
+      "key_points": [
+        "x",
+        "+4"
+      ],
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 16,
+      "question": "What are the possible roots of a simple equation?",
+      "answer": "The number of roots of a simple equation is either 0 or 1.",
+      "key_points": [
+        "simple",
+        "equation"
+      ],
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the definition of an accelerator?",
+      "answer": "An accelerator is a device that increases the speed or energy of particles.",
+      "key_points": [
+        "accelerator",
+        "device"
+      ],
+      "source_section": "[Section 27]"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the value of x in the equation 5x = 20?",
+      "answer": "The solution to 5x = 20 is x = 4.",
+      "key_points": [
+        "x",
+        "equation"
+      ],
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 19,
+      "question": "What are the possible solutions of an equation?",
+      "answer": "The solution of an equation can be a single value or multiple values.",
+      "key_points": [
+        "solution",
+        "equation"
+      ],
+      "source_section": "[Section 25]"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the definition of the Golden Ratio?",
+      "answer": "The Golden Ratio, often represented by the Greek letter Φ (phi), is approximately 1.618.",
+      "key_points": [
+        "Golden",
+        "Ratio"
+      ],
+      "source_section": "[Section 26]"
+    }
+  ]
+}

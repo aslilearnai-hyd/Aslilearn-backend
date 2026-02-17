@@ -1,0 +1,36 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 8: Decimals",
+  "generated_at": "2026-02-11T00:55:53.510095",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the correct way to express 16kg 5g in kilograms?",
+      "options": {
+        "A": "17kg",
+        "B": "15kg",
+        "C": "19kg",
+        "D": "18kg"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 1, converting grams to kilograms is done by dividing the number of grams by 1000. So, 5g ÷ 1000 = 0.005kg, and when added to 16kg, it becomes 16.005kg.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the value of Pi calculated by Archimedes?",
+      "options": {
+        "A": "3.1415",
+        "B": "3.1429",
+        "C": "3.1408",
+        "D": "3.1431"
+      },
+      "correct_answer": "C",
+      "explanation": "According to Section 23, Archimedes calculated Pi's value between 3.1408 and 3.1429.",
+      "difficulty": "hard",
+      "source_section": "Section 23"
+    }
+  ]
+}

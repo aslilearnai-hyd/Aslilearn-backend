@@ -1,0 +1,66 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 3: Language of Chemistry",
+  "generated_at": "2026-02-12T00:19:33.960129",
+  "concepts": [
+    {
+      "concept_name": "Atomic Number and Symbol",
+      "difficulty": "medium",
+      "lesson": "The atomic number is the number of protons in an atom's nucleus, while the symbol represents the element. For example, Carbon has an atomic number of 6 and its symbol is C. The periodic table organizes elements by their atomic numbers.",
+      "real_example": "",
+      "key_points": [
+        "Atomic number identifies the element",
+        "Symbol represents the element",
+        "Periodic table arranges elements by atomic number"
+      ],
+      "source_section": "Section 1-2"
+    },
+    {
+      "concept_name": "Cations and Anions",
+      "difficulty": "medium",
+      "lesson": "Cations are positively charged ions formed when an atom loses electrons, while anions are negatively charged ions formed when an atom gains electrons. For example, Sodium becomes a cation (Na⁺) when it loses an electron.",
+      "real_example": "",
+      "key_points": [
+        "Cations are positive ions",
+        "Anions are negative ions",
+        "Ions form through electron gain or loss"
+      ],
+      "source_section": "Section 3-4"
+    },
+    {
+      "concept_name": "Chemical Equations and Reactions",
+      "difficulty": "hard",
+      "lesson": "Chemical equations represent chemical reactions, showing the reactants and products. For example, a chemical equation might be: H₂ + O₂ → H₂O. This reaction involves hydrogen (H₂) combining with oxygen (O₂) to form water (H₂O).",
+      "real_example": "",
+      "key_points": [
+        "Chemical equations represent reactions",
+        "Reactants and products are shown in the equation",
+        "Reactions involve chemical bonds breaking or forming"
+      ],
+      "source_section": "Section 5-6"
+    },
+    {
+      "concept_name": "Molecules and Compounds",
+      "difficulty": "medium",
+      "lesson": "Molecules are groups of atoms bonded together, while compounds are molecules made up of different elements. For example, water (H₂O) is a compound consisting of hydrogen and oxygen atoms.",
+      "real_example": "",
+      "key_points": [
+        "Molecules consist of bonded atoms",
+        "Compounds are molecules of different elements"
+      ],
+      "source_section": "Section 7-8"
+    },
+    {
+      "concept_name": "Acidic and Basic Substances",
+      "difficulty": "hard",
+      "lesson": "Substances can be acidic or basic, depending on their pH level. Acids have a high concentration of hydrogen ions (H⁺), while bases have a high concentration of hydroxide ions (OH⁻). For example, vinegar is an acid with a pH level below 7.",
+      "real_example": "",
+      "key_points": [
+        "Substances can be acidic or basic",
+        "Acids have high H⁺ concentrations",
+        "Bases have high OH⁻ concentrations"
+      ],
+      "source_section": "Section 9-10"
+    }
+  ]
+}

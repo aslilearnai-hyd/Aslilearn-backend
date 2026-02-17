@@ -1,0 +1,78 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 6: Air around us",
+  "generated_at": "2026-02-12T00:45:34.600439",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the primary function of air in supporting life?",
+      "options": {
+        "A": "To carry sound waves",
+        "B": "To facilitate weather and causes wind, rain, and storms",
+        "C": "Helps animals and plants breathe",
+        "D": "Needed for burning fire"
+      },
+      "correct_answer": "C",
+      "explanation": "The primary function of air in supporting life is to help animals and plants breathe. This is explicitly mentioned in Section 2: 'Air around us'.",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 2,
+      "question": "What process occurs when water turns into vapor and rises?",
+      "options": {
+        "A": "Evaporation",
+        "B": "Transpiration",
+        "C": "Condensation",
+        "D": "Precipitation"
+      },
+      "correct_answer": "B",
+      "explanation": "This process is described in Section 5: 'Water cycle' as 'Water turns into vapour and rises'.",
+      "difficulty": "easy",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the movement of phosphorus through the Earth's ecosystems?",
+      "options": {
+        "A": "The carbon cycle",
+        "B": "The oxygen cycle",
+        "C": "The nitrogen cycle",
+        "D": "The phosphorus cycle"
+      },
+      "correct_answer": "D",
+      "explanation": "This is explicitly mentioned in Section 7: 'Phosphorus cycle' as the movement of phosphorus through the Earth's ecosystems.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 4,
+      "question": "What process involves plants taking phosphorus from soil?",
+      "options": {
+        "A": "Weathering",
+        "B": "Absorption",
+        "C": "Decomposition",
+        "D": "Runoff"
+      },
+      "correct_answer": "B",
+      "explanation": "This process is described in Section 7: 'Phosphorus cycle' as 'Plants take phosphorus from soil'.",
+      "difficulty": "easy",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 5,
+      "question": "What distance does the Troposphere extend up to?",
+      "options": {
+        "A": "extends up to 600 km",
+        "B": "extends up to 85 km",
+        "C": "extends up to 8-15 km",
+        "D": "extends up to 50 km"
+      },
+      "correct_answer": "B",
+      "explanation": "This distance is explicitly mentioned in Section 27: 'Match the layers of the atmosphere with their distances' as extending up to 85 km.",
+      "difficulty": "easy",
+      "source_section": "Section 27"
+    }
+  ]
+}

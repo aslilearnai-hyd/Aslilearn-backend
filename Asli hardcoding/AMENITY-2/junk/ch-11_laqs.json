@@ -1,0 +1,167 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 11: Ratio and Proportions",
+  "generated_at": "2026-02-11T17:55:16.560217",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of ratios and proportions, providing examples from real-life scenarios.",
+      "answer": "Ratios and proportions are fundamental concepts in mathematics that help us understand relationships between quantities. A ratio is a comparison of two or more numbers, expressed as a fraction. For instance, if we have 5 apples and 3 bananas, the ratio of apples to bananas is 5:3. Proportions refer to the equality of ratios. If we have two similar shapes, their corresponding sides are in proportion. For example, if a rectangle's length is twice its width, then the ratio of its length to its width is 2:1, and this ratio remains constant for any similar rectangle.",
+      "answer_outline": [
+        "Define what ratios and proportions are",
+        "Provide examples of real-life scenarios using ratios and proportions",
+        "Explain how proportions can be used to solve problems"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Similar Shapes",
+        "Corresponding Sides"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Ratios and Proportions"
+    },
+    {
+      "question_number": 2,
+      "question": "Determine the ratio of the areas of two similar triangles, given their side lengths are in a ratio of 3:5.",
+      "answer": "When we have two similar figures, their corresponding sides are in proportion. If the side lengths of two similar triangles are in a ratio of 3:5, then the ratio of their areas will be the square of this ratio, which is (3/5)^2 = 9/25. This means that if one triangle has an area of 18 square units, the other triangle will have an area of 81/25 = 3.24 square units.",
+      "answer_outline": [
+        "Identify the given side lengths ratio",
+        "Calculate the ratio of areas using the proportion formula",
+        "Apply this ratio to find the unknown area"
+      ],
+      "key_concepts": [
+        "Similar Triangles",
+        "Proportion Formula",
+        "Area Ratio"
+      ],
+      "marks": 9,
+      "source_section": "Section 2: Ratios and Proportions in Geometry"
+    },
+    {
+      "question_number": 3,
+      "question": "A rectangular garden measures 15 meters by 20 meters. If a path of uniform width is to be built around it, what should be the dimensions of the path if its width is 2 meters?",
+      "answer": "To find the new dimensions of the garden with the path, we first need to calculate the length and breadth of the total area including the path. The length will be (15 + 2 * 2) = 19 meters and the breadth will be (20 + 2 * 2) = 24 meters. The path's width is 2 meters on each side, so it adds 4 meters to both dimensions.",
+      "answer_outline": [
+        "Calculate the total length and breadth of the garden including the path",
+        "Determine the new dimensions of the path"
+      ],
+      "key_concepts": [
+        "Rectangular Garden",
+        "Path Dimensions",
+        "Uniform Width"
+      ],
+      "marks": 7,
+      "source_section": "Section 3: Real-Life Applications of Ratios and Proportions"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the concept of scale factors in proportions, providing examples from real-world scenarios.",
+      "answer": "Scale factors are used to compare the sizes of similar figures. If two similar shapes have corresponding sides in a ratio of 3:5, then their areas will be in the square of this ratio, which is (3/5)^2 = 9/25. Scale factors are essential in real-world scenarios such as designing buildings or machines where proportions must be maintained.",
+      "answer_outline": [
+        "Define what scale factors are",
+        "Provide examples from real-world scenarios"
+      ],
+      "key_concepts": [
+        "Scale Factors",
+        "Similar Figures",
+        "Real-World Applications"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Scale Factors and Proportions"
+    },
+    {
+      "question_number": 5,
+      "question": "Determine the area of a rectangle with length 10 meters and breadth 6 meters, using proportions.",
+      "answer": "To find the area of this rectangle, we can use the proportion formula A = lb, where l is the length and b is the breadth. Substituting the given values, we get A = (10 * 6) = 60 square meters.",
+      "answer_outline": [
+        "Apply the proportion formula for finding area",
+        "Substitute given values to find the area"
+      ],
+      "key_concepts": [
+        "Rectangle Area",
+        "Proportion Formula"
+      ],
+      "marks": 8,
+      "source_section": "Section 5: Proportions in Geometry"
+    },
+    {
+      "question_number": 6,
+      "question": "A cylindrical tank with height 10 meters and radius 4 meters is filled with water. If the water level rises by 2 meters, what will be the new volume of water in the tank?",
+      "answer": "The initial volume of water can be calculated using the formula V = πr^2h. Substituting r = 4 m and h = 10 m, we get V1 = π * (4)^2 * 10 = 160π cubic meters. When the water level rises by 2 meters, the new height will be 12 meters. The volume of water in this case is given by V2 = π * (4)^2 * 12 = 192π cubic meters.",
+      "answer_outline": [
+        "Calculate the initial and final volumes using the formula",
+        "Substitute values to find the new volume"
+      ],
+      "key_concepts": [
+        "Cylindrical Tank",
+        "Water Level Rise",
+        "Volume Change"
+      ],
+      "marks": 9,
+      "source_section": "Section 6: Proportions in Real-Life Applications"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the relationship between ratios and proportions, providing examples from real-life scenarios.",
+      "answer": "Ratios are comparisons of two or more numbers, while proportions refer to the equality of ratios. In many real-world applications, such as designing machines or buildings, we need to ensure that proportions are maintained. For instance, if a car's wheel is 1 meter in diameter and its axle is 0.8 meters long, then the ratio of wheel diameter to axle length is 1:0.8.",
+      "answer_outline": [
+        "Define what ratios and proportions are",
+        "Provide examples from real-life scenarios"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Real-World Applications"
+      ],
+      "marks": 9,
+      "source_section": "Section 7: Ratios, Proportions, and Real-Life Applications"
+    },
+    {
+      "question_number": 8,
+      "question": "Determine the cost of constructing a wall with dimensions 15 meters by 20 meters if the cost per square meter is Rs. 5.",
+      "answer": "To find the total cost of constructing this wall, we need to calculate its area first. The length and breadth are given as 15 m and 20 m respectively, so the area A = l * b = (15 * 20) = 300 square meters. Since the cost per square meter is Rs. 5, the total cost will be 300 * 5 = Rs. 1500.",
+      "answer_outline": [
+        "Calculate the area of the wall",
+        "Substitute values to find the total cost"
+      ],
+      "key_concepts": [
+        "Wall Dimensions",
+        "Cost per Square Meter"
+      ],
+      "marks": 8,
+      "source_section": "Section 8: Real-Life Applications of Ratios and Proportions"
+    },
+    {
+      "question_number": 9,
+      "question": "A rectangular garden measures 10 meters by 15 meters. If a path of uniform width is to be built around it, what should be the dimensions of the path if its width is 2 meters?",
+      "answer": "To find the new dimensions of the garden with the path, we first need to calculate the length and breadth of the total area including the path. The length will be (10 + 2 * 2) = 14 meters and the breadth will be (15 + 2 * 2) = 19 meters.",
+      "answer_outline": [
+        "Calculate the total length and breadth of the garden including the path"
+      ],
+      "key_concepts": [
+        "Rectangular Garden",
+        "Path Dimensions",
+        "Uniform Width"
+      ],
+      "marks": 7,
+      "source_section": "Section 9: Real-Life Applications of Ratios and Proportions"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the concept of similarity in proportions, providing examples from real-world scenarios.",
+      "answer": "Similarity refers to the equality of ratios. If two shapes have corresponding sides in a ratio of 3:5, then their areas will be in the square of this ratio, which is (3/5)^2 = 9/25. Similarity is essential in many real-world applications such as designing buildings or machines where proportions must be maintained.",
+      "answer_outline": [
+        "Define what similarity is",
+        "Provide examples from real-world scenarios"
+      ],
+      "key_concepts": [
+        "Similarity",
+        "Real-World Applications"
+      ],
+      "marks": 9,
+      "source_section": "Section 10: Similarity and Proportions in Real-Life Applications"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 1: States of matter",
+  "generated_at": "2026-02-11T23:53:32.587742",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the state of carbon dioxide at room temperature?",
+      "options": {
+        "A": "Solid because its particles are tightly bound together.",
+        "B": "Liquid because it has a definite volume but no definite shape.",
+        "C": "Gas because its particles have enough energy to move freely and fill any container.",
+        "D": "Gas because its particles are packed closely together and vibrate in place."
+      },
+      "correct_answer": "C",
+      "explanation": "According to the content, carbon dioxide is a gas at room temperature because its particles have enough energy to overcome the forces between them, making them spread out and fill any container.",
+      "difficulty": "medium",
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 2,
+      "question": "What is Charles's Law?",
+      "options": {
+        "A": "The relationship between volume and temperature of a gas when the pressure remains unchanged.",
+        "B": "The relationship between volume and number of molecules in a gas.",
+        "C": "The relationship between pressure and volume of a gas.",
+        "D": "The relationship between volume and absolute temperature of a gas."
+      },
+      "correct_answer": "A",
+      "explanation": "According to the content, Charles's Law describes the relationship between the volume and temperature of a gas when the pressure is kept constant.",
+      "difficulty": "easy",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 3,
+      "question": "What happens when a balloon is heated?",
+      "options": {
+        "A": "It shrinks as it cools down.",
+        "B": "It expands as the air inside it gets warmer.",
+        "C": "It deflates as the temperature drops.",
+        "D": "It condenses into a liquid."
+      },
+      "correct_answer": "B",
+      "explanation": "According to Charles's Law, if you were to heat a balloon filled with air, the balloon would expand as the air inside it gets warmer.",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the state of iron at room temperature?",
+      "options": {
+        "A": "Solid because its particles are tightly bound together.",
+        "B": "Liquid because it has a definite volume but no definite shape.",
+        "C": "Gas because its particles have enough energy to move freely and fill any container.",
+        "D": "Gas because its particles are packed closely together and vibrate in place."
+      },
+      "correct_answer": "A",
+      "explanation": "According to the content, iron is a solid at room temperature because of the strong forces holding its particles together.",
+      "difficulty": "easy",
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the process called when a substance changes directly from a solid to a gas?",
+      "options": {
+        "A": "Sublimation.",
+        "B": "Freezing.",
+        "C": "Melting.",
+        "D": "Liquefaction."
+      },
+      "correct_answer": "A",
+      "explanation": "According to the content, sublimation is the process when a substance changes directly from a solid to a gas.",
+      "difficulty": "medium",
+      "source_section": "Section 29"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 3: Electricity and circuits",
+  "generated_at": "2026-02-11T22:41:08.856983",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the main difference between a conductor and an insulator in terms of electricity?",
+      "answer": "A conductor allows the free flow of electrons, while an insulator prevents the flow of electrons. Conductors have low resistance to electricity, whereas insulators have high resistance.",
+      "key_concepts": [
+        "Conductor",
+        "Insulator",
+        "Electricity"
+      ],
+      "marks": 3,
+      "source_section": "Section 1: Introduction to Electricity"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain how a series circuit works in terms of electricity.",
+      "answer": "In a series circuit, components are connected one after the other. If one component fails or is removed, the entire circuit breaks down. The current flows through each component sequentially.",
+      "key_concepts": [
+        "Series Circuit",
+        "Electricity"
+      ],
+      "marks": 3,
+      "source_section": "Section 2: Basic Concepts of Electricity"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the purpose of a fuse in an electrical circuit?",
+      "answer": "A fuse is used to protect a circuit from excessive current flow. When the current exceeds a certain limit, the fuse melts and breaks the circuit, preventing damage or fire.",
+      "key_concepts": [
+        "Fuse",
+        "Electric Circuit"
+      ],
+      "marks": 3,
+      "source_section": "Section 4: Electrical Safety"
+    },
+    {
+      "question_number": 4,
+      "question": "Describe how a Wheatstone bridge works in terms of electricity and resistance.",
+      "answer": "A Wheatstone bridge is an electrical circuit used to measure the unknown resistance of a component. It consists of four resistors connected in a diamond shape, with the unknown resistor at one end. By adjusting the known resistances, the bridge can be balanced, allowing for accurate measurement of the unknown resistor.",
+      "key_concepts": [
+        "Wheatstone Bridge",
+        "Resistance",
+        "Electricity"
+      ],
+      "marks": 4,
+      "source_section": "Section 5: Electrical Measurements"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the main advantage of using a parallel circuit in terms of electricity?",
+      "answer": "A parallel circuit allows multiple components to operate independently, making it useful for applications where high current or voltage is required. If one component fails, the others continue to function.",
+      "key_concepts": [
+        "Parallel Circuit",
+        "Electricity"
+      ],
+      "marks": 3,
+      "source_section": "Section 2: Basic Concepts of Electricity"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain how a battery works in terms of electricity and chemical reactions.",
+      "answer": "A battery is an electrochemical device that converts chemical energy into electrical energy. It consists of two electrodes (anode and cathode) separated by an electrolyte. When the battery is connected to a circuit, chemical reactions occur at the electrodes, releasing electrons and creating an electric current.",
+      "key_concepts": [
+        "Battery",
+        "Electricity",
+        "Chemical Reactions"
+      ],
+      "marks": 4,
+      "source_section": "Section 3: Sources of Electricity"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the purpose of an ammeter in an electrical circuit?",
+      "answer": "An ammeter is used to measure the current flowing through a circuit. It is typically connected in series with the component being measured, allowing for accurate measurement of the current.",
+      "key_concepts": [
+        "Ammeter",
+        "Electric Circuit"
+      ],
+      "marks": 3,
+      "source_section": "Section 4: Electrical Safety"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe how a voltmeter works in terms of electricity and measurement.",
+      "answer": "A voltmeter is an electrical instrument used to measure the voltage across a component. It consists of a sensitive galvanometer connected in parallel with the component being measured. By adjusting the resistance, the voltmeter can be calibrated to accurately measure the voltage.",
+      "key_concepts": [
+        "Voltmeter",
+        "Electricity",
+        "Measurement"
+      ],
+      "marks": 4,
+      "source_section": "Section 5: Electrical Measurements"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the main difference between a conductor and an insulator in terms of heat transfer?",
+      "answer": "A conductor allows heat to flow freely, while an insulator prevents heat from flowing. Conductors have low resistance to heat, whereas insulators have high resistance.",
+      "key_concepts": [
+        "Conductor",
+        "Insulator",
+        "Heat Transfer"
+      ],
+      "marks": 3,
+      "source_section": "Section 1: Introduction to Electricity"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain how a series-parallel circuit works in terms of electricity.",
+      "answer": "A series-parallel circuit is a combination of series and parallel circuits. The components are connected in series, but some components may be connected in parallel. This configuration allows for high current flow while maintaining voltage stability.",
+      "key_concepts": [
+        "Series-Parallel Circuit",
+        "Electricity"
+      ],
+      "marks": 4,
+      "source_section": "Section 2: Basic Concepts of Electricity"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the purpose of a resistor in an electrical circuit?",
+      "answer": "A resistor is used to reduce the current flowing through a circuit. It opposes the flow of electrons, allowing for control over the voltage and current.",
+      "key_concepts": [
+        "Resistor",
+        "Electric Circuit"
+      ],
+      "marks": 3,
+      "source_section": "Section 4: Electrical Safety"
+    },
+    {
+      "question_number": 12,
+      "question": "Describe how a Wheatstone bridge works in terms of electricity and resistance.",
+      "answer": "A Wheatstone bridge is an electrical circuit used to measure the unknown resistance of a component. It consists of four resistors connected in a diamond shape, with the unknown resistor at one end. By adjusting the known resistances, the bridge can be balanced, allowing for accurate measurement of the unknown resistor.",
+      "key_concepts": [
+        "Wheatstone Bridge",
+        "Resistance",
+        "Electricity"
+      ],
+      "marks": 4,
+      "source_section": "Section 5: Electrical Measurements"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the main advantage of using a parallel circuit in terms of electricity?",
+      "answer": "A parallel circuit allows multiple components to operate independently, making it useful for applications where high current or voltage is required. If one component fails, the others continue to function.",
+      "key_concepts": [
+        "Parallel Circuit",
+        "Electricity"
+      ],
+      "marks": 3,
+      "source_section": "Section 2: Basic Concepts of Electricity"
+    },
+    {
+      "question_number": 14,
+      "question": "Explain how a battery works in terms of electricity and chemical reactions.",
+      "answer": "A battery is an electrochemical device that converts chemical energy into electrical energy. It consists of two electrodes (anode and cathode) separated by an electrolyte. When the battery is connected to a circuit, chemical reactions occur at the electrodes, releasing electrons and creating an electric current.",
+      "key_concepts": [
+        "Battery",
+        "Electricity",
+        "Chemical Reactions"
+      ],
+      "marks": 4,
+      "source_section": "Section 3: Sources of Electricity"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the purpose of an ammeter in an electrical circuit?",
+      "answer": "An ammeter is used to measure the current flowing through a circuit. It is typically connected in series with the component being measured, allowing for accurate measurement of the current.",
+      "key_concepts": [
+        "Ammeter",
+        "Electric Circuit"
+      ],
+      "marks": 3,
+      "source_section": "Section 4: Electrical Safety"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 9: Mensuration Including Area of Paths",
+  "generated_at": "2026-02-11T01:09:42.726499",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the formula for finding the area of a square?",
+      "answer": "The formula to find the area of a square is A = s^2, where 's' is the length of one side. For example, if we have a square with each side measuring 5 cm, then its area would be (5)^2 = 25 sq. cm.",
+      "key_concepts": [
+        "Area of Square",
+        "Formula for Area"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the difference between a rectangle and a square?",
+      "answer": "A square has all sides equal, whereas a rectangle does not have equal sides. For example, if we have a shape with two pairs of equal sides, it is either a rectangle or a square.",
+      "key_concepts": [
+        "Rectangle",
+        "Square"
+      ],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "How do you find the perimeter of a triangle?",
+      "answer": "To find the perimeter of a triangle, we add up the lengths of all three sides. For example, if we have a triangle with two sides measuring 5 cm and 6 cm, and the third side is 8 cm, then its perimeter would be 5 + 6 + 8 = 19 cm.",
+      "key_concepts": [
+        "Perimeter",
+        "Triangle"
+      ],
+      "marks": 3,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the formula for finding the area of a rectangle?",
+      "answer": "The formula to find the area of a rectangle is A = l * b, where 'l' is the length and 'b' is the breadth. For example, if we have a rectangle with length 5 cm and breadth 6 cm, then its area would be (5) * (6) = 30 sq. cm.",
+      "key_concepts": [
+        "Area of Rectangle",
+        "Formula for Area"
+      ],
+      "marks": 3,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the difference between a trapezium and a parallelogram?",
+      "answer": "A parallelogram has equal opposite sides, whereas a trapezium does not. For example, if we have a shape with two pairs of parallel sides, it is either a parallelogram or a trapezium.",
+      "key_concepts": [
+        "Trapezium",
+        "Parallelogram"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "How do you find the area of a circle?",
+      "answer": "To find the area of a circle, we use the formula A = π * r^2, where 'r' is the radius. For example, if we have a circle with radius 4 cm, then its area would be π * (4)^2.",
+      "key_concepts": [
+        "Area of Circle",
+        "Formula for Area"
+      ],
+      "marks": 3,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the formula for finding the area of a sector?",
+      "answer": "The formula to find the area of a sector is A = (θ / 360) * π * r^2, where 'θ' is the angle in degrees and 'r' is the radius. For example, if we have a sector with an angle of 60° and a radius of 5 cm, then its area would be (60/360) * π * (5)^2.",
+      "key_concepts": [
+        "Area of Sector",
+        "Formula for Area"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 8,
+      "question": "How do you find the circumference of a circle?",
+      "answer": "To find the circumference of a circle, we use the formula C = 2 * π * r, where 'r' is the radius. For example, if we have a circle with radius 4 cm, then its circumference would be 2 * π * (4).",
+      "key_concepts": [
+        "Circumference",
+        "Circle"
+      ],
+      "marks": 3,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the difference between a chord and an arc?",
+      "answer": "A chord is a line connecting two points on a circle, whereas an arc is a part of the circumference. For example, if we draw a line from one point to another on a circle, it would be a chord, but if we connect that line with some other points around the circle, that would form an arc.",
+      "key_concepts": [
+        "Chord",
+        "Arc"
+      ],
+      "marks": 3,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 10,
+      "question": "How do you find the area of a triangle with given sides?",
+      "answer": "To find the area of a triangle, we use Heron's formula: A = √(s * (s - a) * (s - b) * (s - c)), where 'a', 'b', and 'c' are the sides and 's' is the semi-perimeter.",
+      "key_concepts": [
+        "Area of Triangle",
+        "Heron's Formula"
+      ],
+      "marks": 3,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the formula for finding the area of a sector with given angle and radius?",
+      "answer": "The formula to find the area of a sector is A = (θ / 360) * π * r^2, where 'θ' is the angle in degrees and 'r' is the radius.",
+      "key_concepts": [
+        "Area of Sector",
+        "Formula for Area"
+      ],
+      "marks": 3,
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 12,
+      "question": "How do you find the circumference of a circle with given diameter?",
+      "answer": "To find the circumference, we use the formula C = π * d, where 'd' is the diameter.",
+      "key_concepts": [
+        "Circumference",
+        "Circle"
+      ],
+      "marks": 3,
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the difference between a tangent and a chord?",
+      "answer": "A tangent is a line touching a circle at one point, whereas a chord is any line connecting two points on the circle.",
+      "key_concepts": [
+        "Tangent",
+        "Chord"
+      ],
+      "marks": 3,
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 14,
+      "question": "How do you find the area of a triangle using its base and height?",
+      "answer": "To find the area, we use the formula A = (1/2) * b * h, where 'b' is the base and 'h' is the height.",
+      "key_concepts": [
+        "Area of Triangle",
+        "Formula for Area"
+      ],
+      "marks": 3,
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the formula for finding the area of a rhombus with given diagonals?",
+      "answer": "The formula to find the area of a rhombus is A = (d1 * d2) / 2, where 'd1' and 'd2' are the lengths of the diagonals.",
+      "key_concepts": [
+        "Area of Rhombus",
+        "Formula for Area"
+      ],
+      "marks": 3,
+      "source_section": "Section 15"
+    }
+  ]
+}

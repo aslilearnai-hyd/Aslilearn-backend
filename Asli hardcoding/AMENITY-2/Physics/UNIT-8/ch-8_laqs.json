@@ -1,0 +1,169 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 8: Energy and work",
+  "generated_at": "2026-02-11T23:35:08.421800",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of work done by a force on an object, including its relationship to energy and efficiency.",
+      "answer": "The work done by a force on an object is defined as the product of the force applied and the displacement of the object in the direction of the force. Mathematically, it can be represented as W = F × s × cos(θ), where θ is the angle between the force and the displacement. Work done is a measure of the energy transferred to or from an object. When work is done on an object, its potential energy increases, while when work is done by an object, its kinetic energy decreases. Efficiency is the ratio of useful work done to the total work input. An ideal machine would have 100% efficiency.",
+      "answer_outline": [
+        "Work done = Force × Displacement",
+        "Relationship between work and energy",
+        "Efficiency as a measure"
+      ],
+      "key_concepts": [
+        "work",
+        "energy",
+        "efficiency",
+        "potential energy",
+        "kinetic energy"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Work and Energy"
+    },
+    {
+      "question_number": 2,
+      "question": "Compare and contrast the concepts of kinetic energy and potential energy, including their relationships to motion and position.",
+      "answer": "Kinetic energy is the energy an object possesses due to its motion. It depends on the mass and velocity of the object. Potential energy, on the other hand, is the stored energy an object has due to its position or configuration. There are several types of potential energy, including gravitational, elastic, and electrical. When an object moves from one position to another, its potential energy changes, while its kinetic energy remains constant if no external forces act upon it. The total mechanical energy of a system is conserved.",
+      "answer_outline": [
+        "Kinetic Energy",
+        "Potential Energy",
+        "Relationship between KE and PE"
+      ],
+      "key_concepts": [
+        "kinetic energy",
+        "potential energy",
+        "mechanical energy"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Types of Energy"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain the concept of efficiency, including its relationship to work and energy. Provide examples of efficient and inefficient machines.",
+      "answer": "Efficiency is a measure of how much useful work an object or machine can do compared to the total energy input. An ideal machine would have 100% efficiency, meaning it could convert all the input energy into useful work. However, real-world machines are less efficient due to friction and other losses. Examples of efficient machines include windmills and waterwheels, while inefficient machines include car engines and bicycles.",
+      "answer_outline": [
+        "Efficiency as a ratio",
+        "Ideal vs Real Machines",
+        "Examples of Efficient & Inefficient Machines"
+      ],
+      "key_concepts": [
+        "efficiency",
+        "ideal machine",
+        "real-world losses"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Efficiency and Energy Transfer"
+    },
+    {
+      "question_number": 4,
+      "question": "Describe the relationship between work, energy, and momentum. Use examples to illustrate your points.",
+      "answer": "Work done on an object changes its momentum. The more force applied and the greater the displacement, the larger the change in momentum. This is because work is a measure of the impulse applied to the object. When a force acts on an object for a certain time, it imparts a certain amount of momentum. Momentum is conserved if no external forces act upon the system.",
+      "answer_outline": [
+        "Work and Momentum Relationship",
+        "Impulse and Momentum"
+      ],
+      "key_concepts": [
+        "work",
+        "momentum",
+        "impulse"
+      ],
+      "marks": 8,
+      "source_section": "Section 5: Energy, Work, and Momentum"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the concept of potential energy, including its different types. Provide examples to illustrate your points.",
+      "answer": "Potential energy is stored energy due to an object's position or configuration. There are several types of potential energy, including gravitational, elastic, and electrical. Gravitational potential energy depends on an object's height above the ground, while elastic potential energy depends on the compression or stretching of a spring. Electrical potential energy depends on the voltage applied across two points.",
+      "answer_outline": [
+        "Types of Potential Energy",
+        "Gravitational PE"
+      ],
+      "key_concepts": [
+        "potential energy",
+        "gravitational PE",
+        "elastic PE"
+      ],
+      "marks": 8,
+      "source_section": "Section 6: Types of Energy and Momentum"
+    },
+    {
+      "question_number": 6,
+      "question": "Compare and contrast the concepts of kinetic energy and potential energy. Use examples to illustrate your points.",
+      "answer": "Kinetic energy is the energy an object possesses due to its motion, while potential energy is stored energy due to an object's position or configuration. Kinetic energy depends on the mass and velocity of an object, whereas potential energy depends on the height or compression of a spring. When an object moves from one position to another, its potential energy changes, while its kinetic energy remains constant if no external forces act upon it.",
+      "answer_outline": [
+        "Kinetic Energy vs Potential Energy",
+        "Examples"
+      ],
+      "key_concepts": [
+        "kinetic energy",
+        "potential energy"
+      ],
+      "marks": 8,
+      "source_section": "Section 7: Kinetic and Potential Energy"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the concept of efficiency, including its relationship to work and energy. Provide examples of efficient machines.",
+      "answer": "Efficiency is a measure of how much useful work an object or machine can do compared to the total energy input. An ideal machine would have 100% efficiency, meaning it could convert all the input energy into useful work. Examples of efficient machines include windmills and waterwheels.",
+      "answer_outline": [
+        "Efficiency as a Ratio",
+        "Examples of Efficient Machines"
+      ],
+      "key_concepts": [
+        "efficiency",
+        "ideal machine"
+      ],
+      "marks": 8,
+      "source_section": "Section 8: Efficiency and Energy Transfer"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe the relationship between work, energy, and momentum. Use examples to illustrate your points.",
+      "answer": "Work done on an object changes its momentum. The more force applied and the greater the displacement, the larger the change in momentum. This is because work is a measure of the impulse applied to the object. Momentum is conserved if no external forces act upon the system.",
+      "answer_outline": [
+        "Work and Momentum Relationship",
+        "Impulse and Momentum"
+      ],
+      "key_concepts": [
+        "work",
+        "momentum",
+        "impulse"
+      ],
+      "marks": 8,
+      "source_section": "Section 9: Energy, Work, and Momentum"
+    },
+    {
+      "question_number": 9,
+      "question": "Explain the concept of potential energy, including its different types. Provide examples to illustrate your points.",
+      "answer": "Potential energy is stored energy due to an object's position or configuration. There are several types of potential energy, including gravitational, elastic, and electrical. Gravitational potential energy depends on an object's height above the ground, while elastic potential energy depends on the compression or stretching of a spring.",
+      "answer_outline": [
+        "Types of Potential Energy",
+        "Gravitational PE"
+      ],
+      "key_concepts": [
+        "potential energy",
+        "gravitational PE"
+      ],
+      "marks": 8,
+      "source_section": "Section 10: Types of Energy and Momentum"
+    },
+    {
+      "question_number": 10,
+      "question": "Compare and contrast the concepts of kinetic energy and potential energy. Use examples to illustrate your points.",
+      "answer": "Kinetic energy is the energy an object possesses due to its motion, while potential energy is stored energy due to an object's position or configuration. When an object moves from one position to another, its potential energy changes, while its kinetic energy remains constant if no external forces act upon it.",
+      "answer_outline": [
+        "Kinetic Energy vs Potential Energy",
+        "Examples"
+      ],
+      "key_concepts": [
+        "kinetic energy",
+        "potential energy"
+      ],
+      "marks": 8,
+      "source_section": "Section 11: Kinetic and Potential Energy"
+    }
+  ]
+}

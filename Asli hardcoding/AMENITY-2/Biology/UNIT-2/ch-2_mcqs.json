@@ -1,0 +1,288 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 2: Getting to know plants",
+  "generated_at": "2026-02-11T20:38:24.123591",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the primary function of stomata?",
+      "options": {
+        "A": "Absorbing nutrients",
+        "B": "Transporting water",
+        "C": "Gas exchange",
+        "D": "Providing mechanical support"
+      },
+      "correct_answer": "C",
+      "explanation": "Stomata are small openings on the surface of leaves that help in gas exchange. During photosynthesis, they allow carbon dioxide to enter and release oxygen.",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 2,
+      "question": "Which type of root system is characterized by a single main root?",
+      "options": {
+        "A": "Taproot",
+        "B": "Fibrous root",
+        "C": "Adventitious root",
+        "D": "Tuberous root"
+      },
+      "correct_answer": "A",
+      "explanation": "Taproots have a single main root that grows straight down into the soil, while fibrous roots have many smaller roots.",
+      "difficulty": "easy",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the process by which plants make their own food from sunlight?",
+      "options": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Transpiration",
+        "D": "Osmosis"
+      },
+      "correct_answer": "B",
+      "explanation": "Photosynthesis is the process by which plants, algae, and some bacteria convert light energy from the sun into chemical energy in the form of glucose.",
+      "difficulty": "medium",
+      "source_section": "Section 3-5"
+    },
+    {
+      "question_number": 4,
+      "question": "Which part of a plant is responsible for absorbing water and minerals from the soil?",
+      "options": {
+        "A": "Roots",
+        "B": "Stem",
+        "C": "Leaves",
+        "D": "Flowers"
+      },
+      "correct_answer": "A",
+      "explanation": "Roots are responsible for absorbing water and minerals from the soil, while stems transport these nutrients to the rest of the plant.",
+      "difficulty": "easy",
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the term for the movement of water from the roots to the leaves through the xylem?",
+      "options": {
+        "A": "Transpiration",
+        "B": "Osmosis",
+        "C": "Diffusion",
+        "D": "Translocation"
+      },
+      "correct_answer": "A",
+      "explanation": "Transpiration is the movement of water from the roots to the leaves through the xylem, while osmosis and diffusion refer to the movement of molecules across cell membranes.",
+      "difficulty": "medium",
+      "source_section": "Section 24"
+    },
+    {
+      "question_number": 6,
+      "question": "Which type of plant is characterized by its ability to grow in water?",
+      "options": {
+        "A": "Terrestrial plant",
+        "B": "Aquatic plant",
+        "C": "Hydrophyte",
+        "D": "Xerophyte"
+      },
+      "correct_answer": "C",
+      "explanation": "Hydrophytes are plants that grow in water, such as algae and aquatic plants.",
+      "difficulty": "easy",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the term for the process by which plants release excess water through their leaves?",
+      "options": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Transpiration",
+        "D": "Osmosis"
+      },
+      "correct_answer": "C",
+      "explanation": "Transpiration is the process by which plants release excess water through their leaves, while respiration and photosynthesis refer to other processes.",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 8,
+      "question": "Which part of a plant is responsible for storing food and nutrients?",
+      "options": {
+        "A": "Roots",
+        "B": "Stem",
+        "C": "Leaves",
+        "D": "Flowers"
+      },
+      "correct_answer": "B",
+      "explanation": "The stem is responsible for storing food and nutrients, while roots absorb water and minerals from the soil.",
+      "difficulty": "easy",
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the term for the movement of molecules from an area of high concentration to an area of low concentration?",
+      "options": {
+        "A": "Diffusion",
+        "B": "Osmosis",
+        "C": "Active transport",
+        "D": "Passive transport"
+      },
+      "correct_answer": "A",
+      "explanation": "Diffusion is the movement of molecules from an area of high concentration to an area of low concentration, while osmosis and active/passive transport refer to other processes.",
+      "difficulty": "medium",
+      "source_section": "Section 24"
+    },
+    {
+      "question_number": 10,
+      "question": "Which type of plant is characterized by its ability to grow in dry environments?",
+      "options": {
+        "A": "Terrestrial plant",
+        "B": "Aquatic plant",
+        "C": "Hydrophyte",
+        "D": "Xerophyte"
+      },
+      "correct_answer": "D",
+      "explanation": "Xerophytes are plants that grow in dry environments, such as cacti and succulents.",
+      "difficulty": "easy",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the term for the process by which plants release excess carbon dioxide through their leaves?",
+      "options": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Transpiration",
+        "D": "Osmosis"
+      },
+      "correct_answer": "C",
+      "explanation": "Transpiration is the process by which plants release excess carbon dioxide through their leaves, while respiration and photosynthesis refer to other processes.",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 12,
+      "question": "Which part of a plant is responsible for transporting water and nutrients from the roots to the rest of the plant?",
+      "options": {
+        "A": "Roots",
+        "B": "Stem",
+        "C": "Leaves",
+        "D": "Flowers"
+      },
+      "correct_answer": "B",
+      "explanation": "The stem is responsible for transporting water and nutrients from the roots to the rest of the plant, while roots absorb these substances from the soil.",
+      "difficulty": "easy",
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the term for the process by which plants release excess heat through their leaves?",
+      "options": {
+        "A": "Transpiration",
+        "B": "Respiration",
+        "C": "Photosynthesis",
+        "D": "Osmosis"
+      },
+      "correct_answer": "B",
+      "explanation": "Respiration is the process by which plants release excess heat through their leaves, while transpiration and photosynthesis refer to other processes.",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 14,
+      "question": "Which type of plant is characterized by its ability to grow in shade?",
+      "options": {
+        "A": "Terrestrial plant",
+        "B": "Aquatic plant",
+        "C": "Hydrophyte",
+        "D": "Xerophyte"
+      },
+      "correct_answer": "A",
+      "explanation": "Terrestrial plants are those that grow in shade, such as ferns and mosses.",
+      "difficulty": "easy",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the term for the process by which plants release excess water through their roots?",
+      "options": {
+        "A": "Transpiration",
+        "B": "Respiration",
+        "C": "Photosynthesis",
+        "D": "Osmosis"
+      },
+      "correct_answer": "A",
+      "explanation": "Transpiration is the process by which plants release excess water through their roots, while respiration and photosynthesis refer to other processes.",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 16,
+      "question": "Which part of a plant is responsible for storing seeds?",
+      "options": {
+        "A": "Roots",
+        "B": "Stem",
+        "C": "Leaves",
+        "D": "Flowers"
+      },
+      "correct_answer": "D",
+      "explanation": "The flowers are responsible for storing seeds, while roots absorb water and minerals from the soil.",
+      "difficulty": "easy",
+      "source_section": "Section 30"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the term for the movement of molecules across cell membranes?",
+      "options": {
+        "A": "Diffusion",
+        "B": "Osmosis",
+        "C": "Active transport",
+        "D": "Passive transport"
+      },
+      "correct_answer": "B",
+      "explanation": "Osmosis is the movement of molecules across cell membranes, while diffusion and active/passive transport refer to other processes.",
+      "difficulty": "medium",
+      "source_section": "Section 24"
+    },
+    {
+      "question_number": 18,
+      "question": "Which type of plant is characterized by its ability to grow in waterlogged environments?",
+      "options": {
+        "A": "Terrestrial plant",
+        "B": "Aquatic plant",
+        "C": "Hydrophyte",
+        "D": "Xerophyte"
+      },
+      "correct_answer": "B",
+      "explanation": "Aquatic plants are those that grow in waterlogged environments, such as cattails and water lilies.",
+      "difficulty": "easy",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the term for the process by which plants release excess carbon dioxide through their roots?",
+      "options": {
+        "A": "Respiration",
+        "B": "Photosynthesis",
+        "C": "Transpiration",
+        "D": "Osmosis"
+      },
+      "correct_answer": "C",
+      "explanation": "Transpiration is the process by which plants release excess carbon dioxide through their roots, while respiration and photosynthesis refer to other processes.",
+      "difficulty": "medium",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 20,
+      "question": "Which part of a plant is responsible for transporting water and nutrients from the stem to the rest of the plant?",
+      "options": {
+        "A": "Roots",
+        "B": "Stem",
+        "C": "Leaves",
+        "D": "Flowers"
+      },
+      "correct_answer": "C",
+      "explanation": "The leaves are responsible for transporting water and nutrients from the stem to the rest of the plant, while roots absorb these substances from the soil.",
+      "difficulty": "easy",
+      "source_section": "Section 30"
+    }
+  ]
+}

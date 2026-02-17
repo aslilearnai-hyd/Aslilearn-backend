@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 9: Mensuration Including Area of Paths",
+  "generated_at": "2026-02-11T01:07:33.345772",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The area of a square is ______ times its side.",
+      "correct_answer": "4a^2",
+      "hint": "",
+      "explanation": "From Section 4, it's mentioned that the area of a square is given by 4a^2.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 2,
+      "question": "If the side of a square is ______, then its diagonal is ______ times its side.",
+      "correct_answer": "5 cm, √2",
+      "hint": "",
+      "explanation": "From Section 3, it's mentioned that if the side of a square is 5 cm, then its diagonal is √2 times its side.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 3,
+      "question": "The perimeter of a rectangle with length ______ and breadth ______ is ______.",
+      "correct_answer": "10 cm, 6 cm, 32 cm",
+      "hint": "",
+      "explanation": "From Section 7, it's mentioned that the perimeter of a rectangle with length 10 cm and breadth 6 cm is 32 cm.",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 4,
+      "question": "The area of a triangle with base ______ and height ______ is ______ square units.",
+      "correct_answer": "5 cm, 12 cm, 30 sq. cm",
+      "hint": "",
+      "explanation": "From Section 2, it's mentioned that the area of a triangle with base 5 cm and height 12 cm is 30 sq. cm.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "The area of a rectangle with length ______ and breadth ______ is ______ square units.",
+      "correct_answer": "10 cm, 8 cm, 80 sq. cm",
+      "hint": "",
+      "explanation": "From Section 2, it's mentioned that the area of a rectangle with length 10 cm and breadth 8 cm is 80 sq. cm.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 6,
+      "question": "The perimeter of a square with side ______ is ______ units.",
+      "correct_answer": "5 cm, 20 cm",
+      "hint": "",
+      "explanation": "From Section 1, it's mentioned that the perimeter of a square with side 5 cm is 20 cm.",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 7,
+      "question": "The area of a circle with radius ______ is ______ square units.",
+      "correct_answer": "6 cm, 113.04 sq. cm",
+      "hint": "",
+      "explanation": "From Section 8, it's mentioned that the area of a circle with radius 6 cm is 113.04 sq. cm.",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 8,
+      "question": "The perimeter of a triangle with sides ______ and ______ is ______ units.",
+      "correct_answer": "5 cm, 12 cm, 32 cm",
+      "hint": "",
+      "explanation": "From Section 2, it's mentioned that the perimeter of a triangle with sides 5 cm, 12 cm is 32 cm.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 9,
+      "question": "The area of a rhombus with diagonals ______ and ______ is ______ square units.",
+      "correct_answer": "8 cm, 15 cm, 60 sq. cm",
+      "hint": "",
+      "explanation": "From Section 6, it's mentioned that the area of a rhombus with diagonals 8 cm, 15 cm is 60 sq. cm.",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 10,
+      "question": "The area of a parallelogram with base ______ and height ______ is ______ square units.",
+      "correct_answer": "5 cm, 12 cm, 30 sq. cm",
+      "hint": "",
+      "explanation": "From Section 2, it's mentioned that the area of a parallelogram with base 5 cm and height 12 cm is 30 sq. cm.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 11,
+      "question": "The perimeter of a rectangle with length ______ and breadth ______ is ______ units.",
+      "correct_answer": "8 cm, 6 cm, 26 cm",
+      "hint": "",
+      "explanation": "From Section 7, it's mentioned that the perimeter of a rectangle with length 8 cm and breadth 6 cm is 26 cm.",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 12,
+      "question": "The area of a square with side ______ is ______ square units.",
+      "correct_answer": "5 cm, 25 sq. cm",
+      "hint": "",
+      "explanation": "From Section 4, it's mentioned that the area of a square with side 5 cm is 25 sq. cm.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 13,
+      "question": "The perimeter of a triangle with sides ______ and ______ is ______ units.",
+      "correct_answer": "6 cm, 8 cm, 22 cm",
+      "hint": "",
+      "explanation": "From Section 2, it's mentioned that the perimeter of a triangle with sides 6 cm, 8 cm is 22 cm.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 14,
+      "question": "The area of a rectangle with length ______ and breadth ______ is ______ square units.",
+      "correct_answer": "10 cm, 5 cm, 25 sq. cm",
+      "hint": "",
+      "explanation": "From Section 2, it's mentioned that the area of a rectangle with length 10 cm and breadth 5 cm is 25 sq. cm.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 15,
+      "question": "The perimeter of a square with side ______ is ______ units.",
+      "correct_answer": "6 cm, 24 cm",
+      "hint": "",
+      "explanation": "From Section 1, it's mentioned that the perimeter of a square with side 6 cm is 24 cm.",
+      "source_section": "Section 1"
+    }
+  ]
+}

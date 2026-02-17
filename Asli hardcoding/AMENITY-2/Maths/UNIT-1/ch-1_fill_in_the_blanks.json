@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 1: Knowing our Numbers",
+  "generated_at": "2026-02-10T22:21:40.465026",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "In the Indian number system, the place after thousands is called ______.",
+      "correct_answer": "ten thousands",
+      "hint": "It comes before lakhs",
+      "explanation": "According to the place value chart in the content, after thousands comes ten thousands.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 2,
+      "question": "The number of digits in a number is known as its ______.",
+      "correct_answer": "number of digits",
+      "hint": "Look for the definition",
+      "explanation": "In Section 1, 'Knowing our Numbers', it's mentioned that the number of digits in a number is called its number of digits.",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "The value of a digit at each place depends on ______.",
+      "correct_answer": "the place it occupies",
+      "hint": "Think about the place value chart",
+      "explanation": "According to Section 4, 'Place Value System', the value of a digit at each place depends on the place it occupies.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 4,
+      "question": "The largest digit in a number is ______.",
+      "correct_answer": "9",
+      "hint": "It's a basic fact about digits",
+      "explanation": "In Section 1, it's mentioned that the largest digit in a number is 9.",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 5,
+      "question": "The smallest digit in a number is ______.",
+      "correct_answer": "0",
+      "hint": "Look for the definition of zero",
+      "explanation": "In Section 1, it's mentioned that 0 is the smallest digit in a number.",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 6,
+      "question": "A protractor is used to measure and draw ______.",
+      "correct_answer": "angles",
+      "hint": "Think about geometry tools",
+      "explanation": "According to Section 22, 'Protractor', it's mentioned that a protractor is used to measure and draw angles.",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 7,
+      "question": "The relationship between the sides of a right-angled triangle is given by ______.",
+      "correct_answer": "a² + b² = c²",
+      "hint": "It's a famous theorem in geometry",
+      "explanation": "In Section 22, 'Pythagorean Theorem', it's mentioned that the relationship between the sides of a right-angled triangle is given by a² + b² = c².",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 8,
+      "question": "The largest number of digits in a number can be ______.",
+      "correct_answer": "10",
+      "hint": "It's related to the place value system",
+      "explanation": "According to Section 4, 'Place Value System', it's mentioned that the largest number of digits in a number can be 10.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 9,
+      "question": "A Möbius strip has only one ______.",
+      "correct_answer": "edge",
+      "hint": "Think about the properties of a Möbius strip",
+      "explanation": "According to Section 21, 'The Möbius Strip', it's mentioned that a Möbius strip has only one edge.",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 10,
+      "question": "The number of digits in the largest number is ______.",
+      "correct_answer": "10",
+      "hint": "Think about the largest number",
+      "explanation": "In Section 4, 'Place Value System', it's mentioned that the largest number has 10 digits.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 11,
+      "question": "The place value of a digit at each place is determined by its position from the ______.",
+      "correct_answer": "right",
+      "hint": "Think about the place value chart",
+      "explanation": "According to Section 4, 'Place Value System', it's mentioned that the place value of a digit at each place is determined by its position from the right.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 12,
+      "question": "The largest number with only one digit is ______.",
+      "correct_answer": "9",
+      "hint": "It's a basic fact about digits",
+      "explanation": "In Section 1, it's mentioned that the largest number with only one digit is 9.",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 13,
+      "question": "The smallest number with only one digit is ______.",
+      "correct_answer": "0",
+      "hint": "Look for the definition of zero",
+      "explanation": "In Section 1, it's mentioned that 0 is the smallest number with only one digit.",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 14,
+      "question": "The sum of the squares of the two shorter sides of a right-angled triangle equals the square of the hypotenuse, according to the ______.",
+      "correct_answer": "Pythagorean Theorem",
+      "hint": "It's a famous theorem in geometry",
+      "explanation": "In Section 22, 'Pythagorean Theorem', it's mentioned that the sum of the squares of the two shorter sides of a right-angled triangle equals the square of the hypotenuse.",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 15,
+      "question": "A Möbius strip has ______ side.",
+      "correct_answer": "one",
+      "hint": "Think about the properties of a Möbius strip",
+      "explanation": "According to Section 21, 'The Möbius Strip', it's mentioned that a Möbius strip has one continuous side.",
+      "source_section": "Section 21"
+    }
+  ]
+}

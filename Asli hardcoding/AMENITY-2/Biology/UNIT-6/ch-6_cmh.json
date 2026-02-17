@@ -1,0 +1,91 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 6: Plant growth and development",
+  "generated_at": "2024-02-11T22:02:46.532511",
+  "concepts": [
+    {
+      "concept_name": "Ethylene's role in fruit ripening",
+      "difficulty": "medium",
+      "lesson": "Ethylene is a gaseous plant hormone that regulates fruit ripening and leaf senescence. It increases the degradation of cell walls, leading to the softening of fruits like bananas and tomatoes.",
+      "real_example": "bananas and tomatoes",
+      "key_points": [
+        "Ethylene promotes fruit ripening",
+        "It increases cell wall degradation",
+        "Resulting in softer fruits"
+      ],
+      "source_section": "Section 23"
+    },
+    {
+      "concept_name": "Seed germination process",
+      "difficulty": "easy",
+      "lesson": "The process of seed germination starts with imbibition, where the dry seed absorbs water and swells. This reactivates metabolism, leading to the activation of enzymes.",
+      "real_example": "",
+      "key_points": [
+        "Seed absorbs water",
+        "Metabolism is reactivated",
+        "Enzymes are activated"
+      ],
+      "source_section": "Section 24"
+    },
+    {
+      "concept_name": "Apical dominance regulation",
+      "difficulty": "hard",
+      "lesson": "Apical dominance is a phenomenon in which the main stem of the plant grows more dominantly than the lateral branches. This is regulated by auxins, which suppress the growth of lateral buds.",
+      "real_example": "",
+      "key_points": [
+        "Apical dominance is a phenomenon",
+        "Auxins regulate it",
+        "Lateral bud growth is suppressed"
+      ],
+      "source_section": "Section 25"
+    },
+    {
+      "concept_name": "Gibberellin's primary function",
+      "difficulty": "medium",
+      "lesson": "Gibberellins are growth-promoting hormones that play a crucial role in stem elongation, breaking seed dormancy, and inducing flowering in some plants. They activate hydrolytic enzymes that mobilize stored food reserves during seed germination.",
+      "real_example": "",
+      "key_points": [
+        "Gibberellins promote growth",
+        "Break seed dormancy",
+        "Induce flowering"
+      ],
+      "source_section": "Section 26"
+    },
+    {
+      "concept_name": "Types of seed dormancy",
+      "difficulty": "medium",
+      "lesson": "There are three types of seed dormancy: physiological, physical, and morphological. Physiological dormancy is caused by internal factors, while physical dormancy is due to a hard seed coat.",
+      "real_example": "",
+      "key_points": [
+        "Physiological dormancy",
+        "Physical dormancy",
+        "Morphological dormancy"
+      ],
+      "source_section": "Section 28"
+    },
+    {
+      "concept_name": "Meristematic tissue types",
+      "difficulty": "hard",
+      "lesson": "There are three types of meristematic tissues: apical, lateral, and intercalary. Apical meristem is located at the tips of shoots and roots, while lateral meristem is responsible for secondary growth.",
+      "real_example": "",
+      "key_points": [
+        "Apical meristem",
+        "Lateral meristem",
+        "Intercalary meristem"
+      ],
+      "source_section": "Section 29"
+    },
+    {
+      "concept_name": "Plant processes regulated by hormones",
+      "difficulty": "medium",
+      "lesson": "Hormones regulate various plant processes such as growth, development, and responses to environmental stimuli. Auxins promote cell elongation, while gibberellins stimulate stem elongation.",
+      "real_example": "",
+      "key_points": [
+        "Auxins regulate cell elongation",
+        "Gibberellins stimulate stem elongation",
+        "Hormones regulate plant processes"
+      ],
+      "source_section": "Section 30"
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 2: Elements compounds and mixtures",
+  "generated_at": "2026-02-12T00:07:01.505222",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the smallest unit of an element that retains its properties?",
+      "answer": "The smallest unit of an element that retains its properties is called an atom.",
+      "key_concepts": [
+        "atom",
+        "element",
+        "properties"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What are the three main types of matter?",
+      "answer": "The three main types of matter are elements, compounds, and mixtures.",
+      "key_concepts": [
+        "matter",
+        "elements",
+        "compounds",
+        "mixtures"
+      ],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the difference between a compound and a mixture?",
+      "answer": "A compound is a substance formed by the chemical bonding of two or more elements, while a mixture is a physical combination of two or more substances.",
+      "key_concepts": [
+        "compounds",
+        "mixtures",
+        "chemical bonding"
+      ],
+      "marks": 3,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "What are the properties of metals?",
+      "answer": "Metals are typically hard, shiny, and good conductors of electricity.",
+      "key_concepts": [
+        "metals",
+        "properties",
+        "conductivity"
+      ],
+      "marks": 3,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the difference between a metalloid and a non-metal?",
+      "answer": "A metalloid is an element that exhibits some properties of metals, while a non-metal is an element that does not exhibit any significant metallic properties.",
+      "key_concepts": [
+        "metalloids",
+        "non-metals",
+        "properties"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the formula for water?",
+      "answer": "The formula for water is H2O.",
+      "key_concepts": [
+        "water",
+        "formula"
+      ],
+      "marks": 3,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the difference between a homogeneous and heterogeneous mixture?",
+      "answer": "A homogeneous mixture has a uniform composition throughout, while a heterogeneous mixture does not have a uniform composition.",
+      "key_concepts": [
+        "homogeneous",
+        "heterogeneous",
+        "mixture"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the formula for sodium chloride?",
+      "answer": "The formula for sodium chloride is NaCl.",
+      "key_concepts": [
+        "sodium chloride",
+        "formula"
+      ],
+      "marks": 3,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 9,
+      "question": "What are the three main types of chemical reactions?",
+      "answer": "The three main types of chemical reactions are synthesis, decomposition, and replacement.",
+      "key_concepts": [
+        "chemical reactions",
+        "synthesis",
+        "decomposition",
+        "replacement"
+      ],
+      "marks": 3,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the difference between a catalyst and an inhibitor?",
+      "answer": "A catalyst speeds up a chemical reaction, while an inhibitor slows down or prevents a chemical reaction.",
+      "key_concepts": [
+        "catalysts",
+        "inhibitors",
+        "chemical reactions"
+      ],
+      "marks": 3,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the definition of an element?",
+      "answer": "An element is a substance that consists of only one type of atom.",
+      "key_concepts": [
+        "elements",
+        "definition"
+      ],
+      "marks": 3,
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 12,
+      "question": "What are the properties of acids?",
+      "answer": "Acids typically have a sour taste, are corrosive to skin and tissues, and can react with bases.",
+      "key_concepts": [
+        "acids",
+        "properties"
+      ],
+      "marks": 3,
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the difference between a strong acid and a weak acid?",
+      "answer": "A strong acid completely dissociates in water, while a weak acid only partially dissociates.",
+      "key_concepts": [
+        "acids",
+        "strong acids",
+        "weak acids"
+      ],
+      "marks": 3,
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the formula for glucose?",
+      "answer": "The formula for glucose is C6H12O6.",
+      "key_concepts": [
+        "glucose",
+        "formula"
+      ],
+      "marks": 3,
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 15,
+      "question": "What are the three main types of chemical bonds?",
+      "answer": "The three main types of chemical bonds are covalent, ionic, and hydrogen bonds.",
+      "key_concepts": [
+        "chemical bonds",
+        "covalent",
+        "ionic",
+        "hydrogen"
+      ],
+      "marks": 3,
+      "source_section": "Section 15"
+    }
+  ]
+}

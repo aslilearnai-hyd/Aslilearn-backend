@@ -1,0 +1,73 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 11: Ratio and Proportions",
+  "generated_at": "2026-02-11T18:28:56.043489",
+  "concepts": [
+    {
+      "concept_name": "What is a ratio?",
+      "difficulty": "easy",
+      "lesson": "A ratio is a way to compare two or more numbers by using division. For example, if we want to find the ratio of boys to girls in a class, we can divide the number of boys by the number of girls.",
+      "real_example": "",
+      "key_points": [
+        "Ratios are used for comparison",
+        "Divide one number by another"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Proportional relationships",
+      "difficulty": "medium",
+      "lesson": "When two ratios are equal, we say that they have a proportional relationship. For example, if the ratio of boys to girls is 3:5 and the ratio of boys to girls in another class is also 3:5, then these classes have a proportional relationship.",
+      "real_example": "",
+      "key_points": [
+        "Equality between ratios",
+        "Proportional relationships"
+      ],
+      "source_section": "Section 2-3"
+    },
+    {
+      "concept_name": "Types of proportions",
+      "difficulty": "hard",
+      "lesson": "There are three types of proportions: equal, direct, and inverse. An equal proportion is when two ratios are equal, a direct proportion is when the ratio between two quantities increases or decreases at the same rate, and an inverse proportion is when one quantity increases as the other decreases.",
+      "real_example": "",
+      "key_points": [
+        "Types of proportions",
+        "Equal, direct, and inverse proportions"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "concept_name": "Using ratio tables",
+      "difficulty": "medium",
+      "lesson": "A ratio table is a table that shows the relationships between two or more ratios. It can be used to find missing values in proportions and to solve problems involving equivalent ratios.",
+      "real_example": "",
+      "key_points": [
+        "Ratio tables",
+        "Finding missing values"
+      ],
+      "source_section": "Section 6"
+    },
+    {
+      "concept_name": "Equivalent ratios",
+      "difficulty": "easy",
+      "lesson": "Two ratios are equivalent if they have the same value when simplified. For example, the ratios 2:3 and 4:6 are equivalent because both simplify to 2:3.",
+      "real_example": "",
+      "key_points": [
+        "Equivalent ratios",
+        "Simplifying ratios"
+      ],
+      "source_section": "Section 7"
+    },
+    {
+      "concept_name": "Writing proportions",
+      "difficulty": "medium",
+      "lesson": "A proportion is a statement that two ratios are equal. It can be written in the form a:b = c:d or a/b = c/d.",
+      "real_example": "",
+      "key_points": [
+        "Writing proportions",
+        "Ratio equality"
+      ],
+      "source_section": "Section 8"
+    }
+  ]
+}

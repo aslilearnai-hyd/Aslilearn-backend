@@ -1,0 +1,168 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 3: Playing with Numbers",
+  "generated_at": "2026-02-10T23:48:11.767050",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the smallest prime number?",
+        "correct_answer": "2",
+        "explanation": "A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is the sum of the interior angles of a triangle?",
+        "correct_answer": "180",
+        "explanation": "The sum of the interior angles of a triangle is always equal to 180 degrees.",
+        "source_section": "Section 7"
+      },
+      {
+        "question": "What is the formula for the area of a circle?",
+        "correct_answer": "πr^2",
+        "explanation": "The area of a circle can be calculated using the formula πr^2, where r is the radius.",
+        "source_section": "Section 9"
+      },
+      {
+        "question": "What is the largest even number less than 100?",
+        "correct_answer": "98",
+        "explanation": "An even number is any integer that can be divided by 2 without leaving a remainder.",
+        "source_section": "Section 11"
+      },
+      {
+        "question": "What is the sum of all interior angles of a rectangle?",
+        "correct_answer": "360",
+        "explanation": "The sum of all interior angles of a rectangle is always equal to 360 degrees.",
+        "source_section": "Section 13"
+      },
+      {
+        "question": "What is the formula for the volume of a sphere?",
+        "correct_answer": "(4/3)πr^3",
+        "explanation": "The volume of a sphere can be calculated using the formula (4/3)πr^3, where r is the radius.",
+        "source_section": "Section 15"
+      },
+      {
+        "question": "What is the smallest odd number greater than 10?",
+        "correct_answer": "11",
+        "explanation": "An odd number is any integer that cannot be divided by 2 without leaving a remainder.",
+        "source_section": "Section 17"
+      },
+      {
+        "question": "What is the sum of all interior angles of an octagon?",
+        "correct_answer": "1080",
+        "explanation": "The sum of all interior angles of any polygon can be calculated using the formula (n-2) × 180, where n is the number of sides.",
+        "source_section": "Section 19"
+      },
+      {
+        "question": "What is the largest odd number less than 50?",
+        "correct_answer": "49",
+        "explanation": "An odd number is any integer that cannot be divided by 2 without leaving a remainder.",
+        "source_section": "Section 21"
+      },
+      {
+        "question": "What is the sum of all interior angles of a hexagon?",
+        "correct_answer": "720",
+        "explanation": "The sum of all interior angles of any polygon can be calculated using the formula (n-2) × 180, where n is the number of sides.",
+        "source_section": "Section 23"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Prime Numbers",
+        "content": "A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Area of Shapes",
+        "content": "The area of various shapes can be calculated using different formulas, such as the formula for the area of a circle (πr^2) or the formula for the area of a rectangle (l × w).",
+        "source_section": "Section 9"
+      },
+      {
+        "title": "Volume of Shapes",
+        "content": "The volume of various shapes can be calculated using different formulas, such as the formula for the volume of a sphere ((4/3)πr^3) or the formula for the volume of a cylinder (πr^2h).",
+        "source_section": "Section 15"
+      },
+      {
+        "title": "Interior Angles of Polygons",
+        "content": "The sum of all interior angles of any polygon can be calculated using the formula (n-2) × 180, where n is the number of sides.",
+        "source_section": "Section 19"
+      },
+      {
+        "title": "Even and Odd Numbers",
+        "content": "An even number is any integer that can be divided by 2 without leaving a remainder, while an odd number is any integer that cannot be divided by 2 without leaving a remainder.",
+        "source_section": "Section 11"
+      },
+      {
+        "title": "Types of Triangles",
+        "content": "There are various types of triangles, including equilateral triangles (all sides equal), isosceles triangles (two sides equal), and scalene triangles (no sides equal).",
+        "source_section": "Section 7"
+      },
+      {
+        "title": "Properties of Circles",
+        "content": "A circle is a set of points that are all equidistant from a central point called the center. The radius of a circle is the distance from the center to any point on the circumference.",
+        "source_section": "Section 9"
+      },
+      {
+        "title": "Properties of Rectangles",
+        "content": "A rectangle is a four-sided shape with opposite sides that are equal in length and all angles are right angles. The area of a rectangle can be calculated using the formula l × w.",
+        "source_section": "Section 13"
+      },
+      {
+        "title": "Properties of Spheres",
+        "content": "A sphere is a three-dimensional shape that is perfectly round, like a globe. The volume of a sphere can be calculated using the formula (4/3)πr^3.",
+        "source_section": "Section 15"
+      },
+      {
+        "title": "Types of Polygons",
+        "content": "There are various types of polygons, including triangles (three sides), quadrilaterals (four sides), pentagons (five sides), and hexagons (six sides).",
+        "source_section": "Section 19"
+      },
+      {
+        "title": "Properties of Octagons",
+        "content": "An octagon is an eight-sided polygon. The sum of all interior angles of an octagon can be calculated using the formula (n-2) × 180, where n is the number of sides.",
+        "source_section": "Section 21"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The smallest prime number is 2.",
+        "source_section": "Section 5"
+      },
+      {
+        "fact": "The sum of all interior angles of a triangle is always equal to 180 degrees.",
+        "source_section": "Section 7"
+      },
+      {
+        "fact": "The area of a circle can be calculated using the formula πr^2, where r is the radius.",
+        "source_section": "Section 9"
+      },
+      {
+        "fact": "An even number is any integer that can be divided by 2 without leaving a remainder.",
+        "source_section": "Section 11"
+      },
+      {
+        "fact": "The sum of all interior angles of a rectangle is always equal to 360 degrees.",
+        "source_section": "Section 13"
+      },
+      {
+        "fact": "The volume of a sphere can be calculated using the formula (4/3)πr^3, where r is the radius.",
+        "source_section": "Section 15"
+      },
+      {
+        "fact": "An odd number is any integer that cannot be divided by 2 without leaving a remainder.",
+        "source_section": "Section 17"
+      },
+      {
+        "fact": "The sum of all interior angles of an octagon is always equal to 1080 degrees.",
+        "source_section": "Section 19"
+      },
+      {
+        "fact": "The largest even number less than 100 is 98.",
+        "source_section": "Section 21"
+      },
+      {
+        "fact": "The sum of all interior angles of a hexagon is always equal to 720 degrees.",
+        "source_section": "Section 23"
+      }
+    ]
+  }
+}

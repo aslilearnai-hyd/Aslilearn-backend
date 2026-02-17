@@ -2175,10 +2175,10 @@ router.get('/session-time', async (req, res) => {
   }
 });
 
-// Student AI Tools Route
+// Student AI Tools Route - Uses hardcoded content (same as teacher tools)
 router.post('/ai/tool', async (req, res) => {
   try {
-    const { toolType, ...params } = req.body;
+    const { toolType, gradeLevel, subject, topic, ...params } = req.body;
     const userId = req.userId;
 
     if (!toolType) {
@@ -2188,25 +2188,160 @@ router.post('/ai/tool', async (req, res) => {
       });
     }
 
-    const content = await generateStudentTool(toolType, params);
+    // Convert gradeLevel to classNumber format
+    let classNumber;
+    if (gradeLevel === 'IIT-6' || gradeLevel === 'Class-6-IIT') {
+      classNumber = 'IIT-6';
+    } else {
+      const classNum = parseInt(gradeLevel?.replace('Class ', '').trim());
+      if (!isNaN(classNum)) {
+        classNumber = classNum;
+      } else {
+        return res.status(400).json({
+          success: false,
+          message: 'Invalid class. Please select a valid class.'
+        });
+      }
+    }
 
-    res.json({
+    // Validate required fields
+    if (!classNumber || !subject) {
+      return res.status(400).json({
+        success: false,
+        message: 'Class and subject are required.'
+      });
+    }
+    
+    // For tools that require topic, validate it
+    const toolsRequiringTopic = [
+      'smart-study-guide-generator',
+      'concept-breakdown-explainer',
+      'smart-qa-practice-generator',
+      'chapter-summary-creator',
+      'key-points-formula-extractor',
+      'quick-assignment-builder'
+    ];
+    
+    if (toolsRequiringTopic.includes(toolType) && !topic) {
+      return res.status(400).json({
+        success: false,
+        message: 'Topic is required for this tool type.'
+      });
+    }
+
+    // Import hardcoded content service
+    const { getHardcodedContent, VALID_SUBJECTS } = await import('../services/hardcoded-content-service.js');
+    const { formatHardcodedContent } = await import('../utils/hardcoded-formatter.js');
+
+    // For IIT-6, use IIT subjects (Physics, Chemistry, Maths, Biology)
+    // For other classes, use standard VALID_SUBJECTS
+    const isIIT6 = classNumber === 'IIT-6';
+    const validSubjectsList = isIIT6 ? ['Physics', 'Chemistry', 'Maths', 'Biology'] : VALID_SUBJECTS;
+    
+    // Normalize subject name (handle case variations like "english" vs "English")
+    const normalizedSubject = validSubjectsList.find(s => 
+      s.toLowerCase() === subject.toLowerCase()
+    );
+    
+    // Validate subject - only allow valid subjects
+    if (!normalizedSubject) {
+      return res.status(400).json({
+        success: false,
+        message: `Invalid subject. Valid subjects are: ${validSubjectsList.join(', ')}`
+      });
+    }
+    
+    // Use normalized subject for processing
+    const finalSubject = normalizedSubject;
+    const classNum = isIIT6 ? classNumber : parseInt(classNumber);
+    const classDisplay = isIIT6 ? 'IIT-6' : `Class ${classNum}`;
+    
+    // For tools where topic is optional, pass empty string if not provided
+    const topicForFetch = (toolType === 'personalized-revision-planner' || toolType === 'chapter-summary-creator') ? (topic || '') : topic;
+    
+    console.log(`🔍 Fetching hardcoded content for student tool ${toolType} - ${classDisplay}, ${finalSubject}, ${topicForFetch || 'N/A'}`);
+
+    const hardcodedData = await getHardcodedContent(classNumber, finalSubject, topicForFetch, toolType, params);
+    
+    if (!hardcodedData) {
+      const topicMsg = topic ? `Topic: ${topic}` : 'all content';
+      console.log(`❌ No hardcoded content found for ${toolType} - ${classDisplay}, ${finalSubject}, ${topicMsg}`);
+      return res.status(404).json({
+        success: false,
+        message: `No pre-generated content available for ${toolType} with ${classDisplay}, Subject: ${finalSubject}${topic ? `, ${topicMsg}` : ''}. Please check if the content exists in the hardcoded folder.`,
+        hint: topic ? 'Make sure the topic/unit name matches the folder structure.' : 'Make sure the required files exist for this subject.'
+      });
+    }
+
+    console.log(`✅ Found hardcoded content for student tool ${toolType}`);
+    
+    // Format hardcoded content to Markdown
+    const formattedContent = formatHardcodedContent(hardcodedData, toolType, {
+      subject: finalSubject,
+      topic,
+      classNumber: isIIT6 ? 'IIT-6' : classNum,
+      ...params
+    });
+
+    // Prepare response data
+    const responseData = {
       success: true,
       data: {
-        content,
+        content: formattedContent,
+        toolType,
         metadata: {
-          toolType,
-          params,
+          classNumber: isIIT6 ? 'IIT-6' : classNum,
+          subject: finalSubject,
+          topic,
+          ...params,
           generatedAt: new Date(),
-          userId
+          userId,
+          source: 'hardcoded',
+          sourceLabel: 'Pre-generated Content'
         }
       }
-    });
+    };
+    
+    // Add raw data for special viewers
+    if (toolType === 'short-notes-summaries-maker' && hardcodedData && hardcodedData.notes) {
+      responseData.data.rawData = {
+        notes: hardcodedData.notes
+      };
+    }
+    
+    if (toolType === 'concept-mastery-helper' && hardcodedData && hardcodedData.concepts) {
+      responseData.data.rawData = {
+        concepts: hardcodedData.concepts
+      };
+    }
+    
+    if (toolType === 'flashcard-generator' && hardcodedData && hardcodedData.flashcards) {
+      responseData.data.rawData = {
+        flashcards: hardcodedData.flashcards
+      };
+    }
+    
+    if (toolType === 'lesson-planner' && hardcodedData) {
+      responseData.data.rawData = {
+        lessons: hardcodedData.lessons || hardcodedData.lesson_plans || [],
+        book: hardcodedData.book || '',
+        class: hardcodedData.class || classNum.toString()
+      };
+    }
+    
+    if (toolType === 'exam-question-paper-generator' && hardcodedData && (hardcodedData.questions || hardcodedData.sections)) {
+      responseData.data.rawData = {
+        questions: hardcodedData.questions,
+        sections: hardcodedData.sections
+      };
+    }
+    
+    return res.json(responseData);
   } catch (error) {
     console.error(`Create student tool (${req.body.toolType}) error:`, error);
     res.status(500).json({
       success: false,
-      message: error.message || `Failed to generate content for ${req.body.toolType}`,
+      message: error.message || `Failed to fetch content for ${req.body.toolType || 'tool'}`,
       error: process.env.NODE_ENV === 'development' ? error.message : undefined
     });
   }

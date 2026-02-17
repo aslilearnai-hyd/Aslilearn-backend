@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 4: Fun with magnets",
+  "generated_at": "2026-02-11T22:49:54.922514",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "A bar magnet has two ______ (poles) at its ends.",
+      "correct_answer": "poles",
+      "hint": "",
+      "explanation": "A bar magnet is a type of permanent magnet that has two magnetic poles, one at each end. These poles are responsible for the magnet's ability to attract and repel other magnets or ferromagnetic materials.",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "The Earth's ______ (magnetic field) is strongest near the equator.",
+      "correct_answer": "magnetic",
+      "hint": "",
+      "explanation": "The Earth's magnetic field is a complex and dynamic phenomenon that varies in strength and direction around the globe. The magnetic field is weakest at the poles and strongest near the equator.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "A magnet's ability to attract certain metals is due to its ______ (polarity).",
+      "correct_answer": "polarity",
+      "hint": "",
+      "explanation": "Magnets have two poles, a north pole and a south pole. The polarity of a magnet determines its ability to attract or repel other magnets or ferromagnetic materials.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "The ______ (magnetic field lines) emerge from the north pole and enter into the south pole.",
+      "correct_answer": "magnetic",
+      "hint": "",
+      "explanation": "Magnetic field lines are a way to visualize the magnetic field around a magnet. They emerge from the north pole and enter into the south pole, forming a continuous loop.",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "A compass needle aligns itself with the Earth's ______ (magnetic field).",
+      "correct_answer": "magnetic",
+      "hint": "",
+      "explanation": "A compass is a magnetized pointer that aligns itself with the Earth's magnetic field. The compass needle points towards the north pole of the Earth.",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "The ______ (magnetic declination) is the angle between the geographical north and the magnetic north.",
+      "correct_answer": "magnetic",
+      "hint": "",
+      "explanation": "Magnetic declination is the angle between the geographical north and the magnetic north. It varies depending on the location and can be used to determine the direction of a magnetized object.",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 7,
+      "question": "A bar magnet's poles are ______ (poles) at its ends.",
+      "correct_answer": "north",
+      "hint": "",
+      "explanation": "A bar magnet has two magnetic poles, one at each end. The north pole is the opposite of the south pole and is responsible for attracting other magnets or ferromagnetic materials.",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 8,
+      "question": "The ______ (Earth's magnetic field) is strongest near the equator.",
+      "correct_answer": "Earth",
+      "hint": "",
+      "explanation": "The Earth's magnetic field varies in strength and direction around the globe. The magnetic field is weakest at the poles and strongest near the equator.",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 9,
+      "question": "A magnet's polarity determines its ability to attract or ______ (repel) other magnets.",
+      "correct_answer": "repel",
+      "hint": "",
+      "explanation": "Magnets have two poles, a north pole and a south pole. The polarity of a magnet determines its ability to attract or repel other magnets or ferromagnetic materials.",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 10,
+      "question": "The ______ (magnetic field lines) form a continuous loop around a magnet.",
+      "correct_answer": "magnetic",
+      "hint": "",
+      "explanation": "Magnetic field lines are a way to visualize the magnetic field around a magnet. They emerge from the north pole and enter into the south pole, forming a continuous loop.",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 11,
+      "question": "A compass needle aligns itself with the Earth's ______ (magnetic field) to indicate direction.",
+      "correct_answer": "magnetic",
+      "hint": "",
+      "explanation": "A compass is a magnetized pointer that aligns itself with the Earth's magnetic field. The compass needle points towards the north pole of the Earth, indicating direction.",
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 12,
+      "question": "The ______ (magnetic declination) is used to determine the direction of a magnetized object.",
+      "correct_answer": "magnetic",
+      "hint": "",
+      "explanation": "Magnetic declination is the angle between the geographical north and the magnetic north. It varies depending on the location and can be used to determine the direction of a magnetized object.",
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 13,
+      "question": "A bar magnet has two ______ (poles) at its ends, one positive and one negative.",
+      "correct_answer": "poles",
+      "hint": "",
+      "explanation": "A bar magnet has two magnetic poles, one at each end. The north pole is the opposite of the south pole and is responsible for attracting other magnets or ferromagnetic materials.",
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 14,
+      "question": "The ______ (Earth's magnetic field) is a complex phenomenon that varies in strength and direction around the globe.",
+      "correct_answer": "Earth",
+      "hint": "",
+      "explanation": "The Earth's magnetic field varies in strength and direction around the globe. The magnetic field is weakest at the poles and strongest near the equator.",
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 15,
+      "question": "A magnet's ability to attract certain metals depends on its ______ (polarity).",
+      "correct_answer": "polarity",
+      "hint": "",
+      "explanation": "Magnets have two poles, a north pole and a south pole. The polarity of a magnet determines its ability to attract or repel other magnets or ferromagnetic materials.",
+      "source_section": "Section 15"
+    }
+  ]
+}

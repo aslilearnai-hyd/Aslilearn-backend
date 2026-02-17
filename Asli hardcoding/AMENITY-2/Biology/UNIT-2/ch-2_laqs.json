@@ -1,0 +1,193 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 2: Getting to know plants",
+  "generated_at": "2026-02-11T20:43:19.607889",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Describe the structure and function of xylem in plants.",
+      "answer": "Xylem is a vascular tissue responsible for transporting water and minerals from the roots to the rest of the plant. It consists of tube-like structures called tracheids and vessels that allow water to move upwards due to capillary action and transpiration pull. Xylem also transports nutrients and sugars produced by photosynthesis from the leaves to other parts of the plant.",
+      "answer_outline": [
+        "Xylem is a vascular tissue",
+        "It consists of tube-like structures called tracheids and vessels",
+        "Water moves upwards due to capillary action and transpiration pull"
+      ],
+      "key_concepts": [
+        "xylem",
+        "vascular tissue",
+        "transport of water and minerals",
+        "capillary action",
+        "transpiration pull"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Xylem"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain how stomata regulate gas exchange in plants.",
+      "answer": "Stomata are small openings on the surface of leaves that help in gas exchange. During photosynthesis, they allow carbon dioxide to enter and release oxygen. They also regulate transpiration by controlling water loss from the plant. Stomata open during the day for photosynthesis and close at night to prevent water loss.",
+      "answer_outline": [
+        "Stomata are small openings on the surface of leaves",
+        "They help in gas exchange during photosynthesis",
+        "They regulate transpiration by controlling water loss"
+      ],
+      "key_concepts": [
+        "stomata",
+        "gas exchange",
+        "photosynthesis",
+        "transpiration",
+        "water loss"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Stomata"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the characteristics of monocots and dicots.",
+      "answer": "Monocots have one cotyledon (seed leaf) in their seeds, while dicots have two cotyledons. Monocots also have leaves with parallel veins, whereas dicots have leaves with net-veined patterns. Monocots are typically herbaceous plants, whereas dicots can be either herbaceous or woody.",
+      "answer_outline": [
+        "Monocots have one cotyledon in their seeds",
+        "Dicots have two cotyledons in their seeds",
+        "Monocots have leaves with parallel veins"
+      ],
+      "key_concepts": [
+        "monocots",
+        "dicots",
+        "cotyledon",
+        "parallel veins",
+        "net-veined patterns"
+      ],
+      "marks": 8,
+      "source_section": "Section 5: Monocots and Dicots"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the process of photosynthesis in plants.",
+      "answer": "Photosynthesis is a complex process that occurs in plants, where they convert light energy from the sun into chemical energy. It involves the conversion of carbon dioxide and water into glucose and oxygen. The overall equation for photosynthesis is: 6CO2 + 6H2O → C6H12O6 (glucose) + 6O2.",
+      "answer_outline": [
+        "Photosynthesis occurs in plants",
+        "It involves the conversion of light energy from the sun into chemical energy",
+        "The overall equation for photosynthesis is: 6CO2 + 6H2O → C6H12O6 (glucose) + 6O2"
+      ],
+      "key_concepts": [
+        "photosynthesis",
+        "light energy",
+        "chemical energy",
+        "carbon dioxide and water",
+        "glucose and oxygen"
+      ],
+      "marks": 8,
+      "source_section": "Section 7: Photosynthesis"
+    },
+    {
+      "question_number": 5,
+      "question": "Describe the structure of a root system in plants.",
+      "answer": "A root system consists of primary roots, secondary roots, and tertiary roots. Primary roots are the main roots that grow downwards from the plant's stem, while secondary roots branch off from the primary roots. Tertiary roots are smaller roots that branch off from the secondary roots.",
+      "answer_outline": [
+        "A root system consists of primary roots, secondary roots, and tertiary roots",
+        "Primary roots are the main roots that grow downwards from the plant's stem",
+        "Secondary roots branch off from the primary roots"
+      ],
+      "key_concepts": [
+        "root system",
+        "primary roots",
+        "secondary roots",
+        "tertiary roots"
+      ],
+      "marks": 8,
+      "source_section": "Section 9: Root System"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the process of transpiration in plants.",
+      "answer": "Transpiration is the process by which water is transported from the roots to the leaves of a plant through the xylem. It involves the movement of water up the stem and into the leaves, where it evaporates through small openings called stomata. The rate of transpiration depends on factors such as temperature, humidity, and wind speed.",
+      "answer_outline": [
+        "Transpiration is the process by which water is transported from the roots to the leaves",
+        "It involves the movement of water up the stem and into the leaves",
+        "The rate of transpiration depends on factors such as temperature, humidity, and wind speed"
+      ],
+      "key_concepts": [
+        "transpiration",
+        "xylem",
+        "water transport",
+        "stomata",
+        "temperature",
+        "humidity",
+        "wind speed"
+      ],
+      "marks": 8,
+      "source_section": "Section 11: Transpiration"
+    },
+    {
+      "question_number": 7,
+      "question": "Describe the characteristics of gymnosperms.",
+      "answer": "Gymnosperms are a group of plants that have seeds but no flowers. They typically have needle-like leaves and produce cones for reproduction. Gymnosperms include trees such as pine, spruce, and fir.",
+      "answer_outline": [
+        "Gymnosperms are a group of plants",
+        "They have seeds but no flowers",
+        "They typically have needle-like leaves"
+      ],
+      "key_concepts": [
+        "gymnosperms",
+        "seeds",
+        "no flowers",
+        "needle-like leaves"
+      ],
+      "marks": 8,
+      "source_section": "Section 13: Gymnosperms"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the process of seed germination in plants.",
+      "answer": "Seed germination is the process by which a seed begins to grow into a plant. It involves the activation of enzymes that break down stored food in the seed, allowing water and nutrients to enter the seed. The seed then begins to sprout, producing roots and leaves.",
+      "answer_outline": [
+        "Seed germination is the process by which a seed begins to grow",
+        "It involves the activation of enzymes that break down stored food",
+        "The seed then begins to sprout"
+      ],
+      "key_concepts": [
+        "seed germination",
+        "activation of enzymes",
+        "stored food",
+        "water and nutrients"
+      ],
+      "marks": 8,
+      "source_section": "Section 15: Seed Germination"
+    },
+    {
+      "question_number": 9,
+      "question": "Describe the structure of a stem in plants.",
+      "answer": "A stem is a long, thin structure that supports the leaves and flowers of a plant. It consists of three main parts: epidermis (outer layer), cortex (middle layer), and pith (inner layer). The epidermis protects the stem from damage, while the cortex provides support and transport of water and nutrients.",
+      "answer_outline": [
+        "A stem is a long, thin structure that supports the leaves and flowers",
+        "It consists of three main parts: epidermis, cortex, and pith"
+      ],
+      "key_concepts": [
+        "stem",
+        "epidermis",
+        "cortex",
+        "pith"
+      ],
+      "marks": 8,
+      "source_section": "Section 17: Stem Structure"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the process of photosynthesis in aquatic plants.",
+      "answer": "Photosynthesis in aquatic plants is similar to that in terrestrial plants, but with some modifications. Aquatic plants have adapted to live in water and require oxygen from the surrounding water for respiration. They also use light energy from the sun to produce glucose and oxygen through photosynthesis.",
+      "answer_outline": [
+        "Photosynthesis in aquatic plants is similar to that in terrestrial plants",
+        "Aquatic plants require oxygen from the surrounding water for respiration"
+      ],
+      "key_concepts": [
+        "photosynthesis",
+        "aquatic plants",
+        "oxygen from surrounding water",
+        "light energy"
+      ],
+      "marks": 8,
+      "source_section": "Section 19: Aquatic Plants and Photosynthesis"
+    }
+  ]
+}

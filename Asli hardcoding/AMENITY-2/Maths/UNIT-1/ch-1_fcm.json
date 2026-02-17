@@ -1,0 +1,114 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 1: Knowing our Numbers",
+  "generated_at": "2026-02-10T22:27:43.470330",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the value of a digit in the thousands place?",
+        "correct_answer": "The digit multiplied by 1000",
+        "explanation": "Place value is determined by multiplying the digit by the value of its position.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "How many periods are there in the Indian number system?",
+        "correct_answer": "Four",
+        "explanation": "The periods include ones, thousands, lakhs, and crores.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "Where is the first comma placed in the Indian number system?",
+        "correct_answer": "After three digits from the right",
+        "explanation": "Commas are used to separate groups of two or more digits.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What is the value of a digit in the ones place?",
+        "correct_answer": "The digit itself",
+        "explanation": "Place value is determined by multiplying the digit by the value of its position.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "How many lakhs are there in one crore?",
+        "correct_answer": "Ten",
+        "explanation": "Lakhs and crores are used to represent large numbers.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What is the value of a digit in the tens place?",
+        "correct_answer": "The digit multiplied by 10",
+        "explanation": "Place value is determined by multiplying the digit by the value of its position.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What is the difference between a lakh and a crores?",
+        "correct_answer": "A crore has ten lakhs",
+        "explanation": "Lakhs and crores are used to represent large numbers.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "How many periods are there in the decimal system?",
+        "correct_answer": "One (the ones place)",
+        "explanation": "The decimal system has only one period, the ones place.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is the value of a digit in the hundreds place?",
+        "correct_answer": "The digit multiplied by 100",
+        "explanation": "Place value is determined by multiplying the digit by the value of its position.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What is the difference between a thousand and a lakh?",
+        "correct_answer": "A lakh has one hundred thousand, not a thousand",
+        "explanation": "Lakhs and thousands are used to represent large numbers.",
+        "source_section": "Section 4"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Indian Number System Periods",
+        "content": "The Indian number system has four periods: Ones (up to hundreds), Thousands (thousands and ten thousands), Lakhs (lakhs and ten lakhs), and Crores (crores and ten crores).",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Place Value",
+        "content": "Place value is determined by multiplying the digit by the value of its position.",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Commas in Indian Number System",
+        "content": "Commas are used to separate groups of two or more digits, except for the first comma which comes after three digits.",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Lakhs and Crores",
+        "content": "A crores has ten lakhs.",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Decimal System Periods",
+        "content": "The decimal system has only one period, the ones place.",
+        "source_section": "Section 5"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "In the Indian system, commas are placed after every two digits from the right, except the first comma which comes after three digits.",
+        "source_section": "Section 4"
+      },
+      {
+        "fact": "The Indian number system has been used for thousands of years and is still widely used today.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "Commas are an important part of the Indian number system, as they help to separate groups of two or more digits.",
+        "source_section": "Section 4"
+      },
+      {
+        "fact": "A lakh has one hundred thousand, not a thousand.",
+        "source_section": "Section 4"
+      }
+    ]
+  }
+}

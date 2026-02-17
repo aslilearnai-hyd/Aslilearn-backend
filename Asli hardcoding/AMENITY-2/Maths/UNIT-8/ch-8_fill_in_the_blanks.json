@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 8: Decimals",
+  "generated_at": "2026-02-11T00:56:12.247593",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Eratosthenes made a remarkable calculation of Earth's circumference over ______ years ago.",
+      "correct_answer": "2,200",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 2,
+      "question": "Eratosthenes estimated Earth's circumference to be about ______ km.",
+      "correct_answer": "40,000",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 3,
+      "question": "Archimedes used ______ to estimate the value of Pi.",
+      "correct_answer": "polygons",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 4,
+      "question": "Archimedes calculated Pi's value to be between ______ and ______.",
+      "correct_answer": "3.1408, 3.1429",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 5,
+      "question": "Eratosthenes used the angle of a shadow cast in ______.",
+      "correct_answer": "Alexandria",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 6,
+      "question": "The sun was directly overhead in ______.",
+      "correct_answer": "Syene",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 7,
+      "question": "Eratosthenes measured the angle difference and the distance between ______ and ______.",
+      "correct_answer": "Alexandria, Syene",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 8,
+      "question": "Archimedes calculated the value of Pi to be between ______ and ______.",
+      "correct_answer": "3.1408, 3.1429",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 9,
+      "question": "Eratosthenes estimated Earth's circumference to be ______% off the true value.",
+      "correct_answer": "1%",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 10,
+      "question": "Archimedes used ______-sided polygons to estimate the value of Pi.",
+      "correct_answer": "96",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 11,
+      "question": "Eratosthenes calculated the angle difference to be ______.",
+      "correct_answer": "not mentioned",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 12,
+      "question": "The true value of Pi is ______.",
+      "correct_answer": "3.14159...",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 13,
+      "question": "Archimedes' polygon method is still ______ in modern geometry.",
+      "correct_answer": "taught",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 14,
+      "question": "Eratosthenes' calculation was only ______% off the true value.",
+      "correct_answer": "1%",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 15,
+      "question": "The ancient Greek mathematician ______ made a remarkable calculation of Earth's circumference.",
+      "correct_answer": "Eratosthenes",
+      "hint": "Ancient Greek mathematician",
+      "explanation": "Context: Section 21",
+      "source_section": "Section 21"
+    }
+  ]
+}

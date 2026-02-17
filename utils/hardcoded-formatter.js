@@ -573,6 +573,50 @@ function getToolTitle(toolType) {
  */
 export function formatHardcodedContent(data, toolType, metadata = {}) {
   try {
+    // Special handling for exam-question-paper-generator
+    if (toolType === 'exam-question-paper-generator' && (data.content_type === 'Exam Paper' || (data.sections && Array.isArray(data.sections)))) {
+      return formatExamPaper(data, toolType, metadata);
+    }
+    
+    // Special handling for worksheet-mcq-generator
+    if (toolType === 'worksheet-mcq-generator' && (data.content_type === 'Worksheet' || (data.sections && Array.isArray(data.sections)))) {
+      return formatWorksheet(data, toolType, metadata);
+    }
+    
+    // Special handling for homework-creator
+    if (toolType === 'homework-creator' && (data.content_type === 'Homework' || (data.sections && Array.isArray(data.sections)))) {
+      return formatHomework(data, toolType, metadata);
+    }
+    
+    // Student tools that use CSV format - format as study guides or practice questions
+    const studentCSVTools = [
+      'smart-study-guide-generator',
+      'concept-breakdown-explainer',
+      'smart-qa-practice-generator',
+      'key-points-formula-extractor',
+      'quick-assignment-builder'
+    ];
+    
+    if (studentCSVTools.includes(toolType) && data.headers && data.data) {
+      return formatStudentCSVContent(data, toolType, metadata);
+    }
+    
+    // Student tools that use planner.json
+    if (toolType === 'personalized-revision-planner' && (data.class || data.lessons || data.lesson_plans)) {
+      return formatRevisionPlanner(data, metadata);
+    }
+    
+    // Chapter summary creator can use AMENITY short notes or planner.json
+    if (toolType === 'chapter-summary-creator') {
+      if (data.content_type === 'Short Notes & Summaries') {
+        // Use short notes formatter for AMENITY content
+        return formatShortNotesSummaries(data);
+      } else if (data.class || data.lessons || data.lesson_plans) {
+        // Use planner.json format
+        return formatChapterSummary(data, metadata);
+      }
+    }
+    
     // Check if data is JSON (object) or CSV (has headers/data structure)
     if (data.content_type) {
       // JSON format
@@ -583,6 +627,12 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
           return formatFlashcardGenerator(data);
         case 'Short Notes & Summaries':
           return formatShortNotesSummaries(data);
+        case 'Exam Paper':
+          return formatExamPaper(data, toolType, metadata);
+        case 'Worksheet':
+          return formatWorksheet(data, toolType, metadata);
+        case 'Homework':
+          return formatHomework(data, toolType, metadata);
         default:
           return formatGenericJSON(data, toolType, metadata);
       }
@@ -616,9 +666,742 @@ export function formatHardcodedContent(data, toolType, metadata = {}) {
 }
 
 /**
+ * Format exam question paper (all question types with professional formatting)
+ */
+function formatExamPaper(data, toolType, metadata) {
+  let markdown = `# 📋 Examination Question Paper\n\n`;
+  
+  // Professional exam header
+  markdown += `<div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); border-radius: 12px; padding: 28px; margin-bottom: 32px; color: white; box-shadow: 0 10px 20px rgba(30, 58, 138, 0.3); text-align: center;">\n`;
+  markdown += `<h1 style="color: white; margin: 0 0 20px 0; font-size: 2rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.2);">EXAMINATION QUESTION PAPER</h1>\n`;
+  markdown += `<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px; font-size: 1.1rem;">\n`;
+  
+  if (metadata.classNumber) {
+    markdown += `<div><strong>Class:</strong> ${metadata.classNumber}</div>\n`;
+  }
+  if (metadata.subject) {
+    markdown += `<div><strong>Subject:</strong> ${metadata.subject}</div>\n`;
+  }
+  if (metadata.topic) {
+    markdown += `<div><strong>Topic:</strong> ${metadata.topic}</div>\n`;
+  }
+  if (data.total_marks) {
+    markdown += `<div><strong>Total Marks:</strong> ${data.total_marks}</div>\n`;
+  }
+  if (data.estimated_time) {
+    markdown += `<div><strong>Duration:</strong> ${data.estimated_time} minutes</div>\n`;
+  }
+  if (metadata.duration) {
+    markdown += `<div><strong>Allotted Time:</strong> ${metadata.duration} minutes</div>\n`;
+  }
+  if (metadata.questionCount) {
+    markdown += `<div><strong>Total Questions:</strong> ${metadata.questionCount}</div>\n`;
+  }
+  
+  markdown += `</div>\n`;
+  markdown += `</div>\n\n`;
+
+  // Instructions section
+  markdown += `<div style="background: #fef3c7; border-left: 5px solid #f59e0b; border-radius: 8px; padding: 20px; margin: 24px 0;">\n`;
+  markdown += `<h3 style="color: #d97706; margin: 0 0 12px 0; font-size: 1.2rem; display: flex; align-items: center; gap: 8px;"><span>📌</span> General Instructions</h3>\n`;
+  markdown += `<ul style="margin: 0; padding-left: 24px; color: #92400e; line-height: 1.8;">\n`;
+  markdown += `<li>All questions are compulsory.</li>\n`;
+  markdown += `<li>Read each question carefully before answering.</li>\n`;
+  markdown += `<li>Marks are indicated against each question.</li>\n`;
+  markdown += `<li>Write your answers clearly and legibly.</li>\n`;
+  markdown += `</ul>\n`;
+  markdown += `</div>\n\n`;
+
+  if (!data.sections || data.sections.length === 0) {
+    return markdown + `<div style="text-align: center; padding: 40px; color: #6b7280;">No questions available.</div>\n`;
+  }
+
+  // Format each section with professional exam styling
+  data.sections.forEach((section, sectionIndex) => {
+    // Section header with marks and time
+    const sectionColors = [
+      { bg: 'linear-gradient(135deg, #1e40af 0%, #3b82f6 100%)', border: '#1e3a8a', icon: '🔘' },
+      { bg: 'linear-gradient(135deg, #7c3aed 0%, #a855f7 100%)', border: '#6d28d9', icon: '✏️' },
+      { bg: 'linear-gradient(135deg, #059669 0%, #10b981 100%)', border: '#047857', icon: '📝' },
+      { bg: 'linear-gradient(135deg, #dc2626 0%, #ef4444 100%)', border: '#b91c1c', icon: '📄' },
+      { bg: 'linear-gradient(135deg, #ea580c 0%, #f97316 100%)', border: '#c2410c', icon: '📚' }
+    ];
+    
+    const colors = sectionColors[sectionIndex % sectionColors.length];
+    
+    markdown += `<div style="background: ${colors.bg}; border-radius: 12px; padding: 24px; margin: 28px 0; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border-left: 6px solid ${colors.border};">\n`;
+    markdown += `<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">\n`;
+    markdown += `<h2 style="color: white; margin: 0; font-size: 1.6rem; font-weight: 700; display: flex; align-items: center; gap: 12px;">\n`;
+    markdown += `<span style="font-size: 2rem;">${colors.icon}</span>\n`;
+    markdown += `<span>Section ${String.fromCharCode(65 + sectionIndex)}: ${section.type}</span>\n`;
+    markdown += `</h2>\n`;
+    markdown += `<div style="display: flex; gap: 20px; color: white; font-weight: 600;">\n`;
+    markdown += `<div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 8px;">Questions: ${section.count}</div>\n`;
+    markdown += `<div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 8px;">Marks: ${section.total_marks}</div>\n`;
+    markdown += `<div style="background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 8px;">Time: ${section.estimated_time} min</div>\n`;
+    markdown += `</div>\n`;
+    markdown += `</div>\n`;
+    
+    if (section.questions && Array.isArray(section.questions)) {
+      section.questions.forEach((q, qIndex) => {
+        const qNum = q.question_number || (qIndex + 1);
+        
+        // Question card with marks badge
+        markdown += `<div style="background: #ffffff; border-radius: 10px; padding: 24px; margin: 20px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-left: 5px solid ${colors.border};">\n`;
+        
+        // Question header with number and marks
+        markdown += `<div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">\n`;
+        markdown += `<div style="display: flex; align-items: center; gap: 12px;">\n`;
+        markdown += `<div style="background: ${colors.border}; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0;">${qNum}</div>\n`;
+        markdown += `<div style="font-size: 1.1rem; font-weight: 700; color: #1f2937; flex: 1;">${q.question || ''}</div>\n`;
+        markdown += `</div>\n`;
+        markdown += `<div style="background: #fef3c7; color: #d97706; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem; white-space: nowrap;">[${q.marks || 1} Marks]</div>\n`;
+        markdown += `</div>\n`;
+        
+        // Format question based on type
+        if (section.type === 'Multiple Choice Questions') {
+          // Options with nice styling
+          if (q.options) {
+            markdown += `<div style="margin-left: 52px; margin-top: 16px;">\n`;
+            const optionColors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'];
+            const optionLabels = ['A', 'B', 'C', 'D'];
+            let optionIndex = 0;
+            
+            if (q.options.A) {
+              markdown += `<div style="display: flex; align-items: center; gap: 12px; padding: 12px; margin: 10px 0; background: #f9fafb; border-radius: 10px; border-left: 4px solid ${optionColors[optionIndex % 4]}; transition: all 0.2s;">\n`;
+              markdown += `<span style="background: ${optionColors[optionIndex % 4]}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; font-size: 1rem;">${optionLabels[optionIndex]}</span>\n`;
+              markdown += `<span style="flex: 1; color: #374151; font-size: 1.05rem;">${q.options.A}</span>\n`;
+              markdown += `</div>\n`;
+              optionIndex++;
+            }
+            if (q.options.B) {
+              markdown += `<div style="display: flex; align-items: center; gap: 12px; padding: 12px; margin: 10px 0; background: #f9fafb; border-radius: 10px; border-left: 4px solid ${optionColors[optionIndex % 4]};">\n`;
+              markdown += `<span style="background: ${optionColors[optionIndex % 4]}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; font-size: 1rem;">${optionLabels[optionIndex]}</span>\n`;
+              markdown += `<span style="flex: 1; color: #374151; font-size: 1.05rem;">${q.options.B}</span>\n`;
+              markdown += `</div>\n`;
+              optionIndex++;
+            }
+            if (q.options.C) {
+              markdown += `<div style="display: flex; align-items: center; gap: 12px; padding: 12px; margin: 10px 0; background: #f9fafb; border-radius: 10px; border-left: 4px solid ${optionColors[optionIndex % 4]};">\n`;
+              markdown += `<span style="background: ${optionColors[optionIndex % 4]}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; font-size: 1rem;">${optionLabels[optionIndex]}</span>\n`;
+              markdown += `<span style="flex: 1; color: #374151; font-size: 1.05rem;">${q.options.C}</span>\n`;
+              markdown += `</div>\n`;
+              optionIndex++;
+            }
+            if (q.options.D) {
+              markdown += `<div style="display: flex; align-items: center; gap: 12px; padding: 12px; margin: 10px 0; background: #f9fafb; border-radius: 10px; border-left: 4px solid ${optionColors[optionIndex % 4]};">\n`;
+              markdown += `<span style="background: ${optionColors[optionIndex % 4]}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; font-size: 1rem;">${optionLabels[optionIndex]}</span>\n`;
+              markdown += `<span style="flex: 1; color: #374151; font-size: 1.05rem;">${q.options.D}</span>\n`;
+              markdown += `</div>\n`;
+            }
+            markdown += `</div>\n`;
+          }
+        } else {
+          // For Fill in the Blanks, VSAQs, SAQs, LAQs - show answer space
+          markdown += `<div style="margin-left: 52px; margin-top: 16px; padding: 16px; background: #f9fafb; border-radius: 8px; border: 2px dashed #d1d5db; min-height: 60px;">\n`;
+          markdown += `<div style="color: #6b7280; font-style: italic;">Answer space for ${q.marks || 1} marks</div>\n`;
+          markdown += `</div>\n`;
+        }
+        
+        markdown += `</div>\n\n`;
+      });
+    }
+    
+    markdown += `</div>\n\n`;
+  });
+
+  // Footer with total marks and time
+  markdown += `<div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); border-radius: 12px; padding: 24px; margin-top: 32px; color: white; text-align: center; box-shadow: 0 8px 16px rgba(30, 58, 138, 0.3);">\n`;
+  markdown += `<div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; font-size: 1.2rem; font-weight: 700;">\n`;
+  markdown += `<div>Total Questions: <span style="font-size: 1.5rem;">${data.total_questions}</span></div>\n`;
+  markdown += `<div>Total Marks: <span style="font-size: 1.5rem;">${data.total_marks}</span></div>\n`;
+  if (data.estimated_time) {
+    markdown += `<div>Estimated Time: <span style="font-size: 1.5rem;">${data.estimated_time} min</span></div>\n`;
+  }
+  markdown += `</div>\n`;
+  markdown += `</div>\n`;
+
+  return markdown;
+}
+
+/**
+ * Format worksheet content (MCQs and Fill in the Blanks with beautiful formatting)
+ */
+function formatWorksheet(data, toolType, metadata) {
+  let markdown = `# 📝 Worksheet & MCQ Generator\n\n`;
+  
+  // Header section with metadata
+  markdown += `<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; padding: 24px; margin-bottom: 24px; color: white; box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);">\n`;
+  markdown += `<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">\n`;
+  
+  if (metadata.classNumber) {
+    markdown += `<div style="display: flex; align-items: center; gap: 8px;"><span style="font-size: 1.2rem;">📚</span><strong>Class:</strong> ${metadata.classNumber}</div>\n`;
+  }
+  if (metadata.subject) {
+    markdown += `<div style="display: flex; align-items: center; gap: 8px;"><span style="font-size: 1.2rem;">📖</span><strong>Subject:</strong> ${metadata.subject}</div>\n`;
+  }
+  if (metadata.topic) {
+    markdown += `<div style="display: flex; align-items: center; gap: 8px;"><span style="font-size: 1.2rem;">📑</span><strong>Topic:</strong> ${metadata.topic}</div>\n`;
+  }
+  if (data.total_questions) {
+    markdown += `<div style="display: flex; align-items: center; gap: 8px;"><span style="font-size: 1.2rem;">❓</span><strong>Total Questions:</strong> ${data.total_questions}</div>\n`;
+  }
+  
+  markdown += `</div>\n`;
+  markdown += `</div>\n\n`;
+
+  if (!data.sections || data.sections.length === 0) {
+    return markdown + `<div style="text-align: center; padding: 40px; color: #6b7280;">No questions available.</div>\n`;
+  }
+
+  // Format each section with beautiful styling
+  data.sections.forEach((section, sectionIndex) => {
+    // Section header with gradient - different colors for different question types
+    const sectionColors = [
+      { bg: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: '#5a67d8', icon: '🔘' },
+      { bg: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', border: '#e53e3e', icon: '✏️' },
+      { bg: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', border: '#047857', icon: '🔗' }
+    ];
+    
+    const colors = sectionColors[sectionIndex % sectionColors.length];
+    
+    markdown += `<div style="background: ${colors.bg}; border-radius: 12px; padding: 20px; margin: 24px 0; box-shadow: 0 6px 12px rgba(0,0,0,0.15); border-left: 5px solid ${colors.border};">\n`;
+    markdown += `<h2 style="color: white; margin: 0 0 16px 0; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px;">\n`;
+    markdown += `<span style="font-size: 1.8rem;">${colors.icon}</span>\n`;
+    markdown += `<span>${section.type} (${section.count} questions)</span>\n`;
+    markdown += `</h2>\n`;
+    markdown += `</div>\n\n`;
+    
+    if (section.questions && Array.isArray(section.questions)) {
+      section.questions.forEach((q, qIndex) => {
+        const qNum = q.question_number || (qIndex + 1);
+        
+        // Question card with nice styling
+        const borderColor = sectionIndex === 0 ? '#667eea' : (sectionIndex === 1 ? '#f5576c' : '#10b981');
+        markdown += `<div style="background: #ffffff; border-radius: 10px; padding: 20px; margin: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 4px solid ${borderColor};">\n`;
+        
+        // Format question based on type
+        if (section.type === 'Multiple Choice Questions') {
+          markdown += `<div style="margin-bottom: 16px;">\n`;
+          markdown += `<div style="display: flex; align-items: start; gap: 12px; margin-bottom: 12px;">\n`;
+          markdown += `<div style="background: ${sectionIndex === 0 ? '#667eea' : '#f5576c'}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${qNum}</div>\n`;
+          markdown += `<div style="flex: 1; font-size: 1.05rem; font-weight: 600; color: #1f2937; line-height: 1.6;">${q.question || ''}</div>\n`;
+          markdown += `</div>\n`;
+          
+          // Options with nice styling
+          if (q.options) {
+            markdown += `<div style="margin-left: 44px; margin-top: 12px;">\n`;
+            const optionColors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'];
+            const optionLabels = ['A', 'B', 'C', 'D'];
+            let optionIndex = 0;
+            
+            if (q.options.A) {
+              markdown += `<div style="display: flex; align-items: center; gap: 10px; padding: 10px; margin: 8px 0; background: #f9fafb; border-radius: 8px; border-left: 3px solid ${optionColors[optionIndex % 4]};">\n`;
+              markdown += `<span style="background: ${optionColors[optionIndex % 4]}; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${optionLabels[optionIndex]}</span>\n`;
+              markdown += `<span style="flex: 1; color: #374151;">${q.options.A}</span>\n`;
+              markdown += `</div>\n`;
+              optionIndex++;
+            }
+            if (q.options.B) {
+              markdown += `<div style="display: flex; align-items: center; gap: 10px; padding: 10px; margin: 8px 0; background: #f9fafb; border-radius: 8px; border-left: 3px solid ${optionColors[optionIndex % 4]};">\n`;
+              markdown += `<span style="background: ${optionColors[optionIndex % 4]}; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${optionLabels[optionIndex]}</span>\n`;
+              markdown += `<span style="flex: 1; color: #374151;">${q.options.B}</span>\n`;
+              markdown += `</div>\n`;
+              optionIndex++;
+            }
+            if (q.options.C) {
+              markdown += `<div style="display: flex; align-items: center; gap: 10px; padding: 10px; margin: 8px 0; background: #f9fafb; border-radius: 8px; border-left: 3px solid ${optionColors[optionIndex % 4]};">\n`;
+              markdown += `<span style="background: ${optionColors[optionIndex % 4]}; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${optionLabels[optionIndex]}</span>\n`;
+              markdown += `<span style="flex: 1; color: #374151;">${q.options.C}</span>\n`;
+              markdown += `</div>\n`;
+              optionIndex++;
+            }
+            if (q.options.D) {
+              markdown += `<div style="display: flex; align-items: center; gap: 10px; padding: 10px; margin: 8px 0; background: #f9fafb; border-radius: 8px; border-left: 3px solid ${optionColors[optionIndex % 4]};">\n`;
+              markdown += `<span style="background: ${optionColors[optionIndex % 4]}; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${optionLabels[optionIndex]}</span>\n`;
+              markdown += `<span style="flex: 1; color: #374151;">${q.options.D}</span>\n`;
+              markdown += `</div>\n`;
+            }
+            markdown += `</div>\n`;
+          }
+          
+          // Answer (hidden or shown based on preference)
+          if (q.correct_answer) {
+            markdown += `<div style="margin-left: 44px; margin-top: 12px; padding: 12px; background: #ecfdf5; border-radius: 8px; border-left: 4px solid #10b981;">\n`;
+            markdown += `<strong style="color: #059669;">✓ Correct Answer:</strong> <span style="color: #047857; font-weight: 600;">${q.correct_answer}</span>\n`;
+            markdown += `</div>\n`;
+          }
+          
+          markdown += `</div>\n`;
+        } else if (section.type === 'Fill in the Blanks') {
+          markdown += `<div style="margin-bottom: 16px;">\n`;
+          markdown += `<div style="display: flex; align-items: start; gap: 12px; margin-bottom: 12px;">\n`;
+          markdown += `<div style="background: ${borderColor}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${qNum}</div>\n`;
+          markdown += `<div style="flex: 1; font-size: 1.05rem; font-weight: 600; color: #1f2937; line-height: 1.6;">${q.question || ''}</div>\n`;
+          markdown += `</div>\n`;
+          
+          // Answer
+          if (q.correct_answer) {
+            markdown += `<div style="margin-left: 44px; margin-top: 12px; padding: 12px; background: #ecfdf5; border-radius: 8px; border-left: 4px solid #10b981;">\n`;
+            markdown += `<strong style="color: #059669;">✓ Answer:</strong> <span style="color: #047857; font-weight: 600;">${q.correct_answer}</span>\n`;
+            markdown += `</div>\n`;
+          }
+          
+          markdown += `</div>\n`;
+        } else if (section.type === 'Match the Following') {
+          // Format Match the Following questions
+          markdown += `<div style="margin-bottom: 16px;">\n`;
+          markdown += `<div style="display: flex; align-items: start; gap: 12px; margin-bottom: 16px;">\n`;
+          markdown += `<div style="background: ${borderColor}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">${qNum}</div>\n`;
+          markdown += `<div style="flex: 1;">\n`;
+          markdown += `<div style="font-size: 1.05rem; font-weight: 600; color: #1f2937; margin-bottom: 12px;">${q.question || 'Match the following:'}</div>\n`;
+          
+          // Match item display - side by side
+          markdown += `<div style="display: flex; align-items: center; gap: 16px; margin-top: 12px; padding: 12px; background: #f9fafb; border-radius: 8px; border: 2px solid #e5e7eb;">\n`;
+          
+          // Column A item
+          markdown += `<div style="flex: 1; padding: 12px; background: white; border-radius: 6px; border-left: 4px solid #667eea;">\n`;
+          markdown += `<div style="font-weight: 600; color: #667eea; font-size: 0.85rem; margin-bottom: 4px;">Column A</div>\n`;
+          if (q.column_a) {
+            markdown += `<div style="color: #374151; font-size: 1rem; line-height: 1.5;">${q.column_a}</div>\n`;
+          }
+          markdown += `</div>\n`;
+          
+          // Arrow
+          markdown += `<div style="font-size: 1.5rem; color: #9ca3af; font-weight: bold;">→</div>\n`;
+          
+          // Column B item
+          markdown += `<div style="flex: 1; padding: 12px; background: white; border-radius: 6px; border-left: 4px solid #f5576c;">\n`;
+          markdown += `<div style="font-weight: 600; color: #f5576c; font-size: 0.85rem; margin-bottom: 4px;">Column B</div>\n`;
+          if (q.column_b) {
+            markdown += `<div style="color: #374151; font-size: 1rem; line-height: 1.5;">${q.column_b}</div>\n`;
+          }
+          markdown += `</div>\n`;
+          
+          markdown += `</div>\n`; // End match item container
+          markdown += `</div>\n`; // End flex container
+          markdown += `</div>\n`; // End question container
+          
+          // Answer
+          if (q.correct_match) {
+            markdown += `<div style="margin-left: 44px; margin-top: 12px; padding: 12px; background: #ecfdf5; border-radius: 8px; border-left: 4px solid #10b981;">\n`;
+            markdown += `<strong style="color: #059669;">✓ Correct Match:</strong> <span style="color: #047857; font-weight: 600;">${q.column_a || ''} → ${q.correct_match}</span>\n`;
+            markdown += `</div>\n`;
+          }
+          
+          markdown += `</div>\n`;
+        }
+        
+        // Explanation if available
+        if (q.explanation) {
+          markdown += `<div style="margin-top: 12px; padding: 12px; background: #fef3c7; border-radius: 8px; border-left: 4px solid #f59e0b; margin-left: 44px;">\n`;
+          markdown += `<strong style="color: #d97706;">💡 Explanation:</strong> <span style="color: #92400e;">${q.explanation}</span>\n`;
+          markdown += `</div>\n`;
+        }
+        
+        markdown += `</div>\n\n`;
+      });
+    }
+  });
+
+  return markdown;
+}
+
+/**
+ * Format homework content (combined from multiple question types)
+ */
+function formatHomework(data, toolType, metadata) {
+  let markdown = `# 📝 Homework Assignment\n\n`;
+  
+  if (metadata.classNumber) {
+    markdown += `**Class:** ${metadata.classNumber}\n`;
+  }
+  if (metadata.subject) {
+    markdown += `**Subject:** ${metadata.subject}\n`;
+  }
+  if (metadata.topic) {
+    markdown += `**Topic:** ${metadata.topic}\n`;
+  }
+  if (data.total_questions) {
+    markdown += `**Total Questions:** ${data.total_questions}\n`;
+  }
+  markdown += `\n---\n\n`;
+
+  if (!data.sections || data.sections.length === 0) {
+    return markdown + `No questions available.\n`;
+  }
+
+  // Format each section
+  data.sections.forEach((section, sectionIndex) => {
+    markdown += `## ${section.type} (${section.count} questions)\n\n`;
+    
+    if (section.questions && Array.isArray(section.questions)) {
+      section.questions.forEach((q, qIndex) => {
+        const qNum = q.question_number || (qIndex + 1);
+        
+        // Format question based on type
+        if (section.type === 'MCQs') {
+          markdown += `**Question ${qNum}:** ${q.question || ''}\n\n`;
+          if (q.options) {
+            if (q.options.A) markdown += `A. ${q.options.A}\n`;
+            if (q.options.B) markdown += `B. ${q.options.B}\n`;
+            if (q.options.C) markdown += `C. ${q.options.C}\n`;
+            if (q.options.D) markdown += `D. ${q.options.D}\n`;
+          }
+          if (q.correct_answer) {
+            markdown += `\n**Answer:** ${q.correct_answer}\n`;
+          }
+        } else if (section.type === 'Fill in the Blanks') {
+          markdown += `**Question ${qNum}:** ${q.question || ''}\n\n`;
+          if (q.correct_answer) {
+            markdown += `**Answer:** ${q.correct_answer}\n`;
+          }
+        } else {
+          // Short Answer, Long Answer, Very Short Answer
+          markdown += `**Question ${qNum}:** ${q.question || ''}\n\n`;
+          if (q.answer) {
+            markdown += `**Answer:** ${q.answer}\n`;
+          }
+        }
+        
+        if (q.explanation) {
+          markdown += `\n*Explanation: ${q.explanation}*\n`;
+        }
+        
+        markdown += `\n---\n\n`;
+      });
+    }
+  });
+
+  return markdown;
+}
+
+/**
+ * Format student CSV content (for study guides, practice questions, etc.)
+ */
+function formatStudentCSVContent(data, toolType, metadata) {
+  const toolTitles = {
+    'smart-study-guide-generator': '📚 Smart Study Guide',
+    'concept-breakdown-explainer': '🧠 Concept Breakdown Explainer',
+    'smart-qa-practice-generator': '❓ Smart Q&A Practice',
+    'key-points-formula-extractor': '🔑 Key Points Extractor',
+    'quick-assignment-builder': '📝 Quick Assignment Builder'
+  };
+  
+  const toolColors = {
+    'smart-study-guide-generator': { bg: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)', border: '#1e40af', icon: '📚' },
+    'concept-breakdown-explainer': { bg: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)', border: '#6d28d9', icon: '🧠' },
+    'smart-qa-practice-generator': { bg: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', border: '#047857', icon: '❓' },
+    'key-points-formula-extractor': { bg: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', border: '#b45309', icon: '🔑' },
+    'quick-assignment-builder': { bg: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)', border: '#b91c1c', icon: '📝' }
+  };
+  
+  const colors = toolColors[toolType] || { bg: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)', border: '#1e40af', icon: '📚' };
+  
+  let markdown = `<div style="background: ${colors.bg}; border-radius: 12px; padding: 28px; margin-bottom: 32px; color: white; box-shadow: 0 10px 20px rgba(0,0,0,0.2); text-align: center;">\n`;
+  markdown += `<h1 style="color: white; margin: 0 0 20px 0; font-size: 2rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; gap: 12px;">\n`;
+  markdown += `<span style="font-size: 2.5rem;">${colors.icon}</span>\n`;
+  markdown += `<span>${toolTitles[toolType] || 'Study Content'}</span>\n`;
+  markdown += `</h1>\n`;
+  markdown += `<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px; font-size: 1.1rem;">\n`;
+  
+  if (metadata.classNumber) {
+    markdown += `<div><strong>Class:</strong> ${metadata.classNumber}</div>\n`;
+  }
+  if (metadata.subject) {
+    markdown += `<div><strong>Subject:</strong> ${metadata.subject}</div>\n`;
+  }
+  if (metadata.topic) {
+    markdown += `<div><strong>Topic:</strong> ${metadata.topic}</div>\n`;
+  }
+  markdown += `</div>\n`;
+  markdown += `</div>\n\n`;
+  
+  if (!data.data || data.data.length === 0) {
+    return markdown + `<div style="text-align: center; padding: 40px; color: #6b7280; background: #f9fafb; border-radius: 12px;">No content available for this topic.</div>\n`;
+  }
+  
+  // For quick-assignment-builder: select 10 random questions and show answers at the end
+  let questionsData = data.data;
+  if (toolType === 'quick-assignment-builder') {
+    // Shuffle and take 10 questions
+    const shuffled = [...questionsData].sort(() => Math.random() - 0.5);
+    questionsData = shuffled.slice(0, 10);
+  }
+  
+  // Store answers for quick-assignment-builder
+  const answers = [];
+  
+  // Format questions/items from CSV with beautiful styling
+  questionsData.forEach((row, index) => {
+    const question = row.question || row.Question || row['Question'] || '';
+    const answer = row.answer || row.Answer || row['Answer'] || row.correct_answer || row['Correct Answer'] || '';
+    const options = row.options || row.Options || row['Options'] || '';
+    const optionA = row.option_a || row['Option A'] || row.optionA || '';
+    const optionB = row.option_b || row['Option B'] || row.optionB || '';
+    const optionC = row.option_c || row['Option C'] || row.optionC || '';
+    const optionD = row.option_d || row['Option D'] || row.optionD || '';
+    
+    // Store answer for quick-assignment-builder
+    if (toolType === 'quick-assignment-builder' && answer) {
+      answers.push({ number: index + 1, question, answer });
+    }
+    
+    // Question card
+    markdown += `<div style="background: #ffffff; border-radius: 12px; padding: 24px; margin: 24px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-left: 5px solid ${colors.border};">\n`;
+    
+    // Question header
+    markdown += `<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">\n`;
+    markdown += `<div style="background: ${colors.border}; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0;">${index + 1}</div>\n`;
+    markdown += `<div style="font-size: 1.15rem; font-weight: 700; color: #1f2937; flex: 1; line-height: 1.6;">${question}</div>\n`;
+    markdown += `</div>\n`;
+    
+    // Options (if available)
+    if (options || optionA || optionB || optionC || optionD) {
+      markdown += `<div style="margin-left: 52px; margin-top: 16px;">\n`;
+      const optionColors = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444'];
+      const optionLabels = ['A', 'B', 'C', 'D'];
+      let optionIndex = 0;
+      
+      // Handle comma-separated options or individual options
+      if (options) {
+        const optionList = options.split(',').map(opt => opt.trim()).filter(opt => opt);
+        optionList.forEach((opt, i) => {
+          if (opt) {
+            markdown += `<div style="display: flex; align-items: center; gap: 12px; padding: 12px; margin: 10px 0; background: #f9fafb; border-radius: 10px; border-left: 4px solid ${optionColors[optionIndex % 4]};">\n`;
+            markdown += `<span style="background: ${optionColors[optionIndex % 4]}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; font-size: 1rem;">${optionLabels[optionIndex]}</span>\n`;
+            markdown += `<span style="flex: 1; color: #374151; font-size: 1.05rem; line-height: 1.6;">${opt}</span>\n`;
+            markdown += `</div>\n`;
+            optionIndex++;
+          }
+        });
+      } else {
+        // Individual options
+        [optionA, optionB, optionC, optionD].forEach((opt, i) => {
+          if (opt) {
+            markdown += `<div style="display: flex; align-items: center; gap: 12px; padding: 12px; margin: 10px 0; background: #f9fafb; border-radius: 10px; border-left: 4px solid ${optionColors[i % 4]};">\n`;
+            markdown += `<span style="background: ${optionColors[i % 4]}; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; font-size: 1rem;">${optionLabels[i]}</span>\n`;
+            markdown += `<span style="flex: 1; color: #374151; font-size: 1.05rem; line-height: 1.6;">${opt}</span>\n`;
+            markdown += `</div>\n`;
+          }
+        });
+      }
+      markdown += `</div>\n`;
+    }
+    
+    // Answer (if available) - only show for non-assignment-builder tools
+    if (answer && toolType !== 'quick-assignment-builder') {
+      markdown += `<div style="margin-left: 52px; margin-top: 20px; padding: 16px; background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border-radius: 10px; border-left: 4px solid #10b981;">\n`;
+      markdown += `<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">\n`;
+      markdown += `<span style="font-size: 1.2rem;">✅</span>\n`;
+      markdown += `<strong style="color: #047857; font-size: 1rem;">Answer:</strong>\n`;
+      markdown += `</div>\n`;
+      markdown += `<div style="color: #065f46; font-size: 1.05rem; line-height: 1.7; padding-left: 28px;">${answer}</div>\n`;
+      markdown += `</div>\n`;
+    }
+    
+    markdown += `</div>\n\n`;
+  });
+  
+  // For quick-assignment-builder, show answers section at the end
+  if (toolType === 'quick-assignment-builder' && answers.length > 0) {
+    markdown += `<div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px; padding: 28px; margin: 32px 0; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);">\n`;
+    markdown += `<h2 style="color: white; margin: 0 0 24px 0; font-size: 1.75rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; gap: 12px;">\n`;
+    markdown += `<span style="font-size: 2rem;">✅</span>\n`;
+    markdown += `<span>Answer Key</span>\n`;
+    markdown += `</h2>\n`;
+    
+    answers.forEach((item) => {
+      markdown += `<div style="background: white; border-radius: 10px; padding: 20px; margin: 16px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">\n`;
+      markdown += `<div style="display: flex; align-items: flex-start; gap: 12px;">\n`;
+      markdown += `<div style="background: #10b981; color: white; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1rem; flex-shrink: 0;">${item.number}</div>\n`;
+      markdown += `<div style="flex: 1;">\n`;
+      markdown += `<div style="color: #1f2937; font-size: 1.05rem; font-weight: 600; margin-bottom: 8px;">${item.question}</div>\n`;
+      markdown += `<div style="color: #047857; font-size: 1rem; font-weight: 600;">Answer: <span style="font-weight: 700;">${item.answer}</span></div>\n`;
+      markdown += `</div>\n`;
+      markdown += `</div>\n`;
+      markdown += `</div>\n`;
+    });
+    
+    markdown += `</div>\n`;
+  }
+  
+  // Footer
+  markdown += `<div style="background: ${colors.bg}; border-radius: 12px; padding: 20px; margin-top: 32px; color: white; text-align: center; box-shadow: 0 8px 16px rgba(0,0,0,0.2);">\n`;
+  markdown += `<div style="font-size: 1.1rem; font-weight: 600;">Total Questions: <span style="font-size: 1.5rem; font-weight: 800;">${questionsData.length}</span></div>\n`;
+  markdown += `</div>\n`;
+  
+  return markdown;
+}
+
+/**
+ * Format revision planner from planner.json
+ */
+function formatRevisionPlanner(data, metadata) {
+  let markdown = `<div style="background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%); border-radius: 12px; padding: 28px; margin-bottom: 32px; color: white; box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3); text-align: center;">\n`;
+  markdown += `<h1 style="color: white; margin: 0 0 20px 0; font-size: 2rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; gap: 12px;">\n`;
+  markdown += `<span style="font-size: 2.5rem;">📅</span>\n`;
+  markdown += `<span>Personalized Revision Planner</span>\n`;
+  markdown += `</h1>\n`;
+  markdown += `<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px; font-size: 1.1rem;">\n`;
+  
+  if (metadata.classNumber) {
+    markdown += `<div><strong>Class:</strong> ${metadata.classNumber}</div>\n`;
+  }
+  if (metadata.subject) {
+    markdown += `<div><strong>Subject:</strong> ${metadata.subject}</div>\n`;
+  }
+  markdown += `</div>\n`;
+  markdown += `</div>\n\n`;
+  
+  const lessons = data.lessons || data.lesson_plans || [];
+  
+  if (lessons.length === 0) {
+    return markdown + `<div style="text-align: center; padding: 40px; color: #6b7280; background: #f9fafb; border-radius: 12px;">No revision plan available.</div>\n`;
+  }
+  
+  markdown += `<div style="margin-bottom: 24px;">\n`;
+  markdown += `<h2 style="color: #1f2937; font-size: 1.75rem; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 12px;">\n`;
+  markdown += `<span style="font-size: 2rem;">📋</span>\n`;
+  markdown += `<span>Revision Schedule</span>\n`;
+  markdown += `</h2>\n`;
+  markdown += `</div>\n\n`;
+  
+  const weekColors = [
+    { bg: 'linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)', border: '#1e40af' },
+    { bg: 'linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)', border: '#6d28d9' },
+    { bg: 'linear-gradient(135deg, #10b981 0%, #059669 100%)', border: '#047857' },
+    { bg: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', border: '#b45309' },
+    { bg: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)', border: '#b91c1c' }
+  ];
+  
+  lessons.forEach((lesson, index) => {
+    const colors = weekColors[index % weekColors.length];
+    
+    markdown += `<div style="background: ${colors.bg}; border-radius: 12px; padding: 24px; margin: 24px 0; box-shadow: 0 8px 16px rgba(0,0,0,0.2); border-left: 6px solid ${colors.border};">\n`;
+    markdown += `<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">\n`;
+    markdown += `<div style="background: rgba(255,255,255,0.2); color: white; width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; flex-shrink: 0;">${index + 1}</div>\n`;
+    markdown += `<h3 style="color: white; margin: 0; font-size: 1.5rem; font-weight: 700;">Week ${index + 1}: ${lesson.title || lesson.name || `Lesson ${index + 1}`}</h3>\n`;
+    markdown += `</div>\n`;
+    
+    markdown += `<div style="background: white; border-radius: 10px; padding: 20px; margin-top: 16px;">\n`;
+    markdown += `<div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">\n`;
+    markdown += `<span style="font-size: 1.2rem;">📚</span>\n`;
+    markdown += `<strong style="color: #1f2937; font-size: 1.1rem;">Topics to Revise:</strong>\n`;
+    markdown += `</div>\n`;
+    
+    if (lesson.topics && Array.isArray(lesson.topics)) {
+      markdown += `<ul style="margin: 0; padding-left: 0; list-style: none;">\n`;
+      lesson.topics.forEach((topic, topicIndex) => {
+        markdown += `<li style="margin: 10px 0; padding: 12px; background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%); border-radius: 8px; border-left: 3px solid ${colors.border}; display: flex; align-items: flex-start;">\n`;
+        markdown += `<span style="background: ${colors.border}; color: white; width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 600; margin-right: 12px; flex-shrink: 0; margin-top: 2px;">${topicIndex + 1}</span>\n`;
+        markdown += `<span style="line-height: 1.7; color: #374151; font-size: 1rem; flex: 1;">${topic}</span>\n`;
+        markdown += `</li>\n`;
+      });
+      markdown += `</ul>\n`;
+    }
+    markdown += `</div>\n`;
+    markdown += `</div>\n\n`;
+  });
+  
+  return markdown;
+}
+
+/**
+ * Format chapter summary from planner.json
+ */
+function formatChapterSummary(data, metadata) {
+  let markdown = `<div style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); border-radius: 12px; padding: 28px; margin-bottom: 32px; color: white; box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3); text-align: center;">\n`;
+  markdown += `<h1 style="color: white; margin: 0 0 20px 0; font-size: 2rem; font-weight: 800; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; gap: 12px;">\n`;
+  markdown += `<span style="font-size: 2.5rem;">📖</span>\n`;
+  markdown += `<span>Chapter Summary</span>\n`;
+  markdown += `</h1>\n`;
+  markdown += `<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 20px; font-size: 1.1rem;">\n`;
+  
+  if (metadata.classNumber) {
+    markdown += `<div><strong>Class:</strong> ${metadata.classNumber}</div>\n`;
+  }
+  if (metadata.subject) {
+    markdown += `<div><strong>Subject:</strong> ${metadata.subject}</div>\n`;
+  }
+  if (metadata.topic) {
+    markdown += `<div><strong>Chapter:</strong> ${metadata.topic}</div>\n`;
+  }
+  markdown += `</div>\n`;
+  markdown += `</div>\n\n`;
+  
+  const lessons = data.lessons || data.lesson_plans || [];
+  
+  // Find the lesson matching the topic
+  const matchingLesson = lessons.find(lesson => 
+    lesson.title?.toLowerCase().includes(metadata.topic?.toLowerCase() || '') ||
+    lesson.name?.toLowerCase().includes(metadata.topic?.toLowerCase() || '')
+  );
+  
+  if (matchingLesson) {
+    markdown += `<div style="background: #ffffff; border-radius: 12px; padding: 28px; margin: 24px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-left: 5px solid #10b981;">\n`;
+    markdown += `<h2 style="color: #1f2937; font-size: 1.75rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 12px;">\n`;
+    markdown += `<span style="font-size: 2rem;">📚</span>\n`;
+    markdown += `<span>${matchingLesson.title || matchingLesson.name}</span>\n`;
+    markdown += `</h2>\n`;
+    
+    if (matchingLesson.summary) {
+      markdown += `<div style="background: #f9fafb; border-radius: 10px; padding: 20px; margin: 20px 0; border-left: 4px solid #10b981;">\n`;
+      markdown += `<div style="color: #374151; font-size: 1.05rem; line-height: 1.8; white-space: pre-wrap;">${matchingLesson.summary}</div>\n`;
+      markdown += `</div>\n`;
+    }
+    
+    if (matchingLesson.key_points && Array.isArray(matchingLesson.key_points)) {
+      markdown += `<div style="margin-top: 24px;">\n`;
+      markdown += `<h3 style="color: #1f2937; font-size: 1.3rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">\n`;
+      markdown += `<span style="font-size: 1.5rem;">🔑</span>\n`;
+      markdown += `<span>Key Points:</span>\n`;
+      markdown += `</h3>\n`;
+      markdown += `<ul style="margin: 0; padding-left: 0; list-style: none;">\n`;
+      matchingLesson.key_points.forEach((point, i) => {
+        markdown += `<li style="margin: 12px 0; padding: 16px; background: linear-gradient(90deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-radius: 8px; border-left: 3px solid #10b981; display: flex; align-items: flex-start;">\n`;
+        markdown += `<span style="background: #10b981; color: white; width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.875rem; font-weight: 600; margin-right: 12px; flex-shrink: 0; margin-top: 2px;">${i + 1}</span>\n`;
+        markdown += `<span style="line-height: 1.7; color: #374151; font-size: 1.05rem; flex: 1;">${point}</span>\n`;
+        markdown += `</li>\n`;
+      });
+      markdown += `</ul>\n`;
+      markdown += `</div>\n`;
+    }
+    markdown += `</div>\n`;
+  } else {
+    // If no matching lesson, show all lessons
+    lessons.forEach((lesson, index) => {
+      markdown += `<div style="background: #ffffff; border-radius: 12px; padding: 24px; margin: 24px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-left: 5px solid #10b981;">\n`;
+      markdown += `<h2 style="color: #1f2937; font-size: 1.5rem; font-weight: 700; margin-bottom: 16px;">${lesson.title || lesson.name || `Chapter ${index + 1}`}</h2>\n`;
+      if (lesson.summary) {
+        markdown += `<div style="color: #374151; font-size: 1.05rem; line-height: 1.8; white-space: pre-wrap;">${lesson.summary}</div>\n`;
+      }
+      markdown += `</div>\n`;
+    });
+  }
+  
+  return markdown;
+}
+
+/**
  * Format generic JSON content
  */
 function formatGenericJSON(data, toolType, metadata) {
+  // Check if it's exam paper format
+  if (data.content_type === 'Exam Paper' || (toolType === 'exam-question-paper-generator' && data.sections && Array.isArray(data.sections))) {
+    return formatExamPaper(data, toolType, metadata);
+  }
+  
+  // Check if it's worksheet format
+  if (data.content_type === 'Worksheet' || (toolType === 'worksheet-mcq-generator' && data.sections && Array.isArray(data.sections))) {
+    return formatWorksheet(data, toolType, metadata);
+  }
+  
+  // Check if it's homework format
+  if (data.content_type === 'Homework' || (data.sections && Array.isArray(data.sections))) {
+    return formatHomework(data, toolType, metadata);
+  }
+  
   let markdown = `## ${getToolTitle(toolType)}\n\n`;
   markdown += `**Class:** ${metadata.classNumber || 'N/A'}\n`;
   markdown += `**Subject:** ${metadata.subject || 'N/A'}\n`;

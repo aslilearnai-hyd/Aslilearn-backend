@@ -1,0 +1,174 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 6: Plant growth and development",
+  "generated_at": "2026-02-11T22:03:58.053465",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the primary function of gibberellins?",
+        "correct_answer": "Break seed dormancy",
+        "explanation": "Gibberellins play a crucial role in stem elongation, breaking seed dormancy, and inducing flowering in some plants.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "Which plant hormone is primarily responsible for apical dominance?",
+        "correct_answer": "Auxins",
+        "explanation": "Auxins regulate the growth of lateral buds by suppressing their development.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is the process called when a seed absorbs water and swells?",
+        "correct_answer": "Imbibition",
+        "explanation": "The radicle emerges first, followed by the plumule, during germination.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the role of cytokinins in plant growth?",
+        "correct_answer": "Promote cell division in shoot meristems",
+        "explanation": "Cytokinins delay senescence by promoting cell division.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What is the primary function of ethylene in plants?",
+        "correct_answer": "Regulate fruit ripening and leaf senescence",
+        "explanation": "Ethylene increases the degradation of cell walls, leading to the softening of fruits.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is the role of abscisic acid in plant growth?",
+        "correct_answer": "Regulate stomatal closure",
+        "explanation": "ABA triggers loss of water from guard cells, leading to stomatal closure.",
+        "source_section": "Section 6"
+      },
+      {
+        "question": "What is the primary function of apical dominance?",
+        "correct_answer": "Suppress lateral bud growth",
+        "explanation": "Auxins regulate the growth of lateral buds by suppressing their development.",
+        "source_section": "Section 7"
+      },
+      {
+        "question": "What is the role of gibberellins in seed germination?",
+        "correct_answer": "Break seed dormancy",
+        "explanation": "Gibberellins activate hydrolytic enzymes that mobilize stored food reserves.",
+        "source_section": "Section 8"
+      },
+      {
+        "question": "What is the primary function of cytokinins in plant growth?",
+        "correct_answer": "Promote cell division in shoot meristems",
+        "explanation": "Cytokinins delay senescence by promoting cell division.",
+        "source_section": "Section 9"
+      },
+      {
+        "question": "What is the role of ethylene in plant growth?",
+        "correct_answer": "Regulate fruit ripening and leaf senescence",
+        "explanation": "Ethylene increases the degradation of cell walls, leading to the softening of fruits.",
+        "source_section": "Section 10"
+      },
+      {
+        "question": "What is the primary function of abscisic acid in plant growth?",
+        "correct_answer": "Regulate stomatal closure",
+        "explanation": "ABA triggers loss of water from guard cells, leading to stomatal closure.",
+        "source_section": "Section 11"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Gibberellin Function",
+        "content": "Gibberellins play a crucial role in stem elongation, breaking seed dormancy, and inducing flowering in some plants.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Apical Dominance Regulation",
+        "content": "Auxins regulate the growth of lateral buds by suppressing their development.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Seed Germination Process",
+        "content": "The radicle emerges first, followed by the plumule, during germination.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Cytokinin Role in Plant Growth",
+        "content": "Cytokinins delay senescence by promoting cell division.",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Ethylene Function in Plants",
+        "content": "Ethylene increases the degradation of cell walls, leading to the softening of fruits.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Abscisic Acid Regulation",
+        "content": "ABA triggers loss of water from guard cells, leading to stomatal closure.",
+        "source_section": "Section 6"
+      },
+      {
+        "title": "Apical Dominance Explanation",
+        "content": "Auxins regulate the growth of lateral buds by suppressing their development.",
+        "source_section": "Section 7"
+      },
+      {
+        "title": "Gibberellin Role in Seed Germination",
+        "content": "Gibberellins activate hydrolytic enzymes that mobilize stored food reserves.",
+        "source_section": "Section 8"
+      },
+      {
+        "title": "Cytokinin Function in Plant Growth",
+        "content": "Cytokinins delay senescence by promoting cell division.",
+        "source_section": "Section 9"
+      },
+      {
+        "title": "Ethylene Role in Plant Growth",
+        "content": "Ethylene increases the degradation of cell walls, leading to the softening of fruits.",
+        "source_section": "Section 10"
+      },
+      {
+        "title": "Abscisic Acid Function in Plant Growth",
+        "content": "ABA triggers loss of water from guard cells, leading to stomatal closure.",
+        "source_section": "Section 11"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Gibberellins play a crucial role in stem elongation and breaking seed dormancy.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "Auxins regulate the growth of lateral buds by suppressing their development.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "The radicle emerges first, followed by the plumule, during germination.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "Cytokinins delay senescence by promoting cell division.",
+        "source_section": "Section 4"
+      },
+      {
+        "fact": "Ethylene increases the degradation of cell walls, leading to the softening of fruits.",
+        "source_section": "Section 5"
+      },
+      {
+        "fact": "ABA triggers loss of water from guard cells, leading to stomatal closure.",
+        "source_section": "Section 6"
+      },
+      {
+        "fact": "Gibberellins activate hydrolytic enzymes that mobilize stored food reserves during seed germination.",
+        "source_section": "Section 8"
+      },
+      {
+        "fact": "Cytokinins promote cell division in shoot meristems, delaying senescence.",
+        "source_section": "Section 9"
+      },
+      {
+        "fact": "Ethylene regulates fruit ripening and leaf senescence by increasing the degradation of cell walls.",
+        "source_section": "Section 10"
+      },
+      {
+        "fact": "ABA regulates stomatal closure by triggering loss of water from guard cells.",
+        "source_section": "Section 11"
+      }
+    ]
+  }
+}

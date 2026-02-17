@@ -1,0 +1,168 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 11: Ratio and Proportions",
+  "generated_at": "2026-02-11T18:27:38.018565",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "If a rectangular garden measures 15 meters in length and 8 meters in width, what is the ratio of its length to its width?",
+      "answer": "To find the ratio of the length to the width of the rectangular garden, we need to divide the length by the width. The length is 15 meters, and the width is 8 meters. Therefore, the ratio is 15/8 or 1.875.",
+      "answer_outline": [
+        "Identify the dimensions of the garden",
+        "Divide the length by the width to find the ratio"
+      ],
+      "key_concepts": [
+        "Ratio",
+        "Proportions",
+        "Dimensions"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Ratios and Proportions"
+    },
+    {
+      "question_number": 2,
+      "question": "A recipe for making cookies requires a ratio of 3 cups of flour to 2 cups of sugar. If we want to make half the amount, what is the new ratio?",
+      "answer": "To find the new ratio, we need to multiply both parts of the original ratio by 1/2. The original ratio is 3:2, and multiplying by 1/2 gives us a new ratio of (3*1/2):(2*1/2) or 1.5:1.",
+      "answer_outline": [
+        "Identify the original ratio",
+        "Multiply both parts of the ratio by 1/2"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Scaling"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Ratios and Proportions in Real-World Applications"
+    },
+    {
+      "question_number": 3,
+      "question": "If the ratio of boys to girls in a class is 5:3, what is the ratio of girls to boys?",
+      "answer": "To find the inverse ratio, we need to flip the original ratio. The original ratio is 5:3, so the inverse ratio is 3:5.",
+      "answer_outline": [
+        "Identify the original ratio",
+        "Flip the original ratio"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Inverse Ratios"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Ratios and Proportions in Everyday Life"
+    },
+    {
+      "question_number": 4,
+      "question": "A recipe for making a cake requires a ratio of 2 cups of butter to 3 cups of sugar. If we want to make half the amount, what is the new ratio?",
+      "answer": "To find the new ratio, we need to multiply both parts of the original ratio by 1/2. The original ratio is 2:3, and multiplying by 1/2 gives us a new ratio of (2*1/2):(3*1/2) or 1:1.5.",
+      "answer_outline": [
+        "Identify the original ratio",
+        "Multiply both parts of the ratio by 1/2"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Scaling"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Ratios and Proportions in Real-World Applications"
+    },
+    {
+      "question_number": 5,
+      "question": "If the ratio of men to women in a city is 3:2, what is the total number of people?",
+      "answer": "To find the total number of people, we need to add the two parts of the original ratio. The original ratio is 3:2, so the sum is 3+2=5.",
+      "answer_outline": [
+        "Identify the original ratio",
+        "Add the two parts of the ratio"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Total Number"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Ratios and Proportions in Everyday Life"
+    },
+    {
+      "question_number": 6,
+      "question": "A recipe for making a soup requires a ratio of 4 cups of vegetables to 3 cups of broth. If we want to make twice the amount, what is the new ratio?",
+      "answer": "To find the new ratio, we need to multiply both parts of the original ratio by 2. The original ratio is 4:3, and multiplying by 2 gives us a new ratio of (4*2):(3*2) or 8:6.",
+      "answer_outline": [
+        "Identify the original ratio",
+        "Multiply both parts of the ratio by 2"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Scaling"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Ratios and Proportions in Real-World Applications"
+    },
+    {
+      "question_number": 7,
+      "question": "If the ratio of boys to girls in a school is 5:3, what is the ratio of girls to boys if there are 15 boys?",
+      "answer": "To find the new ratio, we need to multiply both parts of the original ratio by 15/5. The original ratio is 5:3, so multiplying by 15/5 gives us a new ratio of (5*15/5):(3*15/5) or 15:9.",
+      "answer_outline": [
+        "Identify the original ratio",
+        "Multiply both parts of the ratio by 15/5"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Scaling"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Ratios and Proportions in Everyday Life"
+    },
+    {
+      "question_number": 8,
+      "question": "A recipe for making a cake requires a ratio of 3 cups of butter to 2 cups of sugar. If we want to make half the amount, what is the new ratio?",
+      "answer": "To find the new ratio, we need to multiply both parts of the original ratio by 1/2. The original ratio is 3:2, and multiplying by 1/2 gives us a new ratio of (3*1/2):(2*1/2) or 1.5:1.",
+      "answer_outline": [
+        "Identify the original ratio",
+        "Multiply both parts of the ratio by 1/2"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Scaling"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Ratios and Proportions in Real-World Applications"
+    },
+    {
+      "question_number": 9,
+      "question": "If the ratio of men to women in a city is 3:2, what is the number of women?",
+      "answer": "To find the number of women, we need to multiply the second part of the original ratio by the total sum. The original ratio is 3:2, so multiplying the second part by 5 gives us a number of women as (2*5)=10.",
+      "answer_outline": [
+        "Identify the original ratio",
+        "Multiply the second part of the ratio by the total sum"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Total Number"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Ratios and Proportions in Everyday Life"
+    },
+    {
+      "question_number": 10,
+      "question": "A recipe for making a soup requires a ratio of 4 cups of vegetables to 3 cups of broth. If we want to make twice the amount, what is the new ratio?",
+      "answer": "To find the new ratio, we need to multiply both parts of the original ratio by 2. The original ratio is 4:3, and multiplying by 2 gives us a new ratio of (4*2):(3*2) or 8:6.",
+      "answer_outline": [
+        "Identify the original ratio",
+        "Multiply both parts of the ratio by 2"
+      ],
+      "key_concepts": [
+        "Ratios",
+        "Proportions",
+        "Scaling"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Ratios and Proportions in Real-World Applications"
+    }
+  ]
+}

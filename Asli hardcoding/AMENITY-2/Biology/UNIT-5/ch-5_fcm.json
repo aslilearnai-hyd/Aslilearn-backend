@@ -1,0 +1,118 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 5: Morphology of flowering plants",
+  "generated_at": "2026-02-11T21:53:32.393262",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the function of a node in a plant?",
+        "correct_answer": "It is a swollen area on a stem where leaves, branches, or roots are attached.",
+        "explanation": "A node is a joint or a swelling on a stem that supports the attachment of leaves, branches, or roots.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the purpose of an internode in a plant?",
+        "correct_answer": "It is the part of a stem between two nodes.",
+        "explanation": "An internode is the section of a stem between two nodes, providing support for the plant's growth.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the function of an apical bud in a plant?",
+        "correct_answer": "It is responsible for the production of new leaves and flowers.",
+        "explanation": "An apical bud is located at the tip of a stem and produces new leaves and flowers.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the difference between a simple leaf and a compound leaf?",
+        "correct_answer": "A simple leaf has a single blade, while a compound leaf has multiple blades.",
+        "explanation": "Simple leaves have a single blade, whereas compound leaves are made up of multiple blades.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is the structure of a flower?",
+        "correct_answer": "It consists of sepals, petals, stamens, and pistils.",
+        "explanation": "A flower has four main parts: sepals (protection), petals (attract pollinators), stamens (male reproductive organs), and pistils (female reproductive organs).",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the purpose of a petal in a flower?",
+        "correct_answer": "It attracts pollinators.",
+        "explanation": "Petals are colorful structures that attract pollinators, such as bees and butterflies.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the function of a stamen in a flower?",
+        "correct_answer": "It produces pollen for fertilization.",
+        "explanation": "A stamen is responsible for producing pollen, which is essential for fertilization and seed production.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the structure of a fruit?",
+        "correct_answer": "It consists of seeds, pericarp, and mesocarp.",
+        "explanation": "A fruit has three main parts: seeds (encapsulate new plant growth), pericarp (outer layer), and mesocarp (middle layer).",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What is the purpose of a seed?",
+        "correct_answer": "It provides nourishment for germination.",
+        "explanation": "A seed contains embryonic plant tissue, nutrients, and water, allowing it to develop into a new plant.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is the function of a root in a plant?",
+        "correct_answer": "It absorbs water and nutrients from the soil.",
+        "explanation": "A root anchors the plant, absorbs water, and takes up minerals from the surrounding soil.",
+        "source_section": "Section 6"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Types of Leaves",
+        "content": "There are three main types of leaves: simple, compound, and modified.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Flower Structure",
+        "content": "A flower consists of sepals, petals, stamens, and pistils.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Fruit Structure",
+        "content": "A fruit has three main parts: seeds, pericarp, and mesocarp.",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Seed Development",
+        "content": "Seeds develop from ovules within the ovary of a flower.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Root Function",
+        "content": "A root absorbs water, nutrients, and minerals from the soil.",
+        "source_section": "Section 6"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "Plants can photosynthesize using light energy to produce glucose.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "The largest flower in the world is the Rafflesia arnoldii.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "Apples are a type of fruit that belongs to the rose family.",
+        "source_section": "Section 4"
+      },
+      {
+        "fact": "Seeds can remain dormant for years before germinating.",
+        "source_section": "Section 5"
+      },
+      {
+        "fact": "The tallest tree in the world is a coast redwood (Sequoia sempervirens).",
+        "source_section": "Section 6"
+      }
+    ]
+  }
+}

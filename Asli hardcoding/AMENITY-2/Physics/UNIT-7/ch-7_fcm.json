@@ -1,0 +1,180 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 7: Force",
+  "generated_at": "2026-02-11T23:26:02.897317",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the property of an object to resist changes in its motion?",
+        "correct_answer": "Inertia",
+        "explanation": "The tendency of a body to continue in its state of rest or uniform motion unless acted upon by an external force.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the unit of measurement for force?",
+        "correct_answer": "Newton",
+        "explanation": "The newton (N) is the SI unit of force, defined as the force that accelerates a 1-kilogram mass by 1 meter per second squared.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is the relationship between force and acceleration?",
+        "correct_answer": "F=ma",
+        "explanation": "The force (F) applied to an object is equal to its mass (m) times its acceleration (a).",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the effect of a magnet on copper?",
+        "correct_answer": "Eddy currents",
+        "explanation": "When a magnet moves near copper, it generates tiny electric currents called eddy currents, which create their own magnetic field.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is the property of an object to resist changes in its motion?",
+        "correct_answer": "Inertia",
+        "explanation": "The tendency of a body to continue in its state of rest or uniform motion unless acted upon by an external force.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the unit of measurement for force?",
+        "correct_answer": "Newton",
+        "explanation": "The newton (N) is the SI unit of force, defined as the force that accelerates a 1-kilogram mass by 1 meter per second squared.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is the relationship between force and acceleration?",
+        "correct_answer": "F=ma",
+        "explanation": "The force (F) applied to an object is equal to its mass (m) times its acceleration (a).",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the effect of a magnet on copper?",
+        "correct_answer": "Eddy currents",
+        "explanation": "When a magnet moves near copper, it generates tiny electric currents called eddy currents, which create their own magnetic field.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is the property of an object to resist changes in its motion?",
+        "correct_answer": "Inertia",
+        "explanation": "The tendency of a body to continue in its state of rest or uniform motion unless acted upon by an external force.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the unit of measurement for force?",
+        "correct_answer": "Newton",
+        "explanation": "The newton (N) is the SI unit of force, defined as the force that accelerates a 1-kilogram mass by 1 meter per second squared.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is the relationship between force and acceleration?",
+        "correct_answer": "F=ma",
+        "explanation": "The force (F) applied to an object is equal to its mass (m) times its acceleration (a).",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the effect of a magnet on copper?",
+        "correct_answer": "Eddy currents",
+        "explanation": "When a magnet moves near copper, it generates tiny electric currents called eddy currents, which create their own magnetic field.",
+        "source_section": "Section 5"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Inertia and Mass Relationship",
+        "content": "The greater the mass of an object, the greater its inertia. Inertia is directly proportional to mass.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Force and Acceleration Formula",
+        "content": "F=ma (force equals mass times acceleration). This formula describes the relationship between force and acceleration.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Eddy Currents in Copper",
+        "content": "When a magnet moves near copper, it generates tiny electric currents called eddy currents. These currents create their own magnetic field, which opposes the magnet's motion.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Unit of Measurement for Force",
+        "content": "The newton (N) is the SI unit of force, defined as the force that accelerates a 1-kilogram mass by 1 meter per second squared.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Inertia and Motion Relationship",
+        "content": "The tendency of a body to continue in its state of rest or uniform motion unless acted upon by an external force is called inertia.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Force and Acceleration Relationship",
+        "content": "The force (F) applied to an object is equal to its mass (m) times its acceleration (a).",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Eddy Currents in Copper",
+        "content": "When a magnet moves near copper, it generates tiny electric currents called eddy currents. These currents create their own magnetic field, which opposes the magnet's motion.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Unit of Measurement for Force",
+        "content": "The newton (N) is the SI unit of force, defined as the force that accelerates a 1-kilogram mass by 1 meter per second squared.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Inertia and Mass Relationship",
+        "content": "The greater the mass of an object, the greater its inertia. Inertia is directly proportional to mass.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Force and Acceleration Formula",
+        "content": "F=ma (force equals mass times acceleration). This formula describes the relationship between force and acceleration.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Eddy Currents in Copper",
+        "content": "When a magnet moves near copper, it generates tiny electric currents called eddy currents. These currents create their own magnetic field, which opposes the magnet's motion.",
+        "source_section": "Section 5"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The newton (N) is the SI unit of force.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "Inertia is directly proportional to mass.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "Eddy currents are generated when a magnet moves near copper, creating their own magnetic field.",
+        "source_section": "Section 5"
+      },
+      {
+        "fact": "The force (F) applied to an object is equal to its mass (m) times its acceleration (a).",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "Inertia is the tendency of a body to continue in its state of rest or uniform motion unless acted upon by an external force.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "Eddy currents create their own magnetic field, which opposes the magnet's motion.",
+        "source_section": "Section 5"
+      },
+      {
+        "fact": "The newton (N) is defined as the force that accelerates a 1-kilogram mass by 1 meter per second squared.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "Inertia is directly proportional to mass, so objects with greater mass have greater inertia.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "Force equals mass times acceleration (F=ma).",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "When a magnet moves near copper, it generates tiny electric currents called eddy currents.",
+        "source_section": "Section 5"
+      }
+    ]
+  }
+}

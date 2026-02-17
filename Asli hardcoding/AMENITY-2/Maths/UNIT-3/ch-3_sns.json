@@ -1,0 +1,53 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "section": "Chapter 3: Playing with Numbers",
+  "generated_at": "2026-02-10T23:47:43.883143",
+  "notes": [
+    {
+      "concept_name": "Pacemaker",
+      "summary": "A pacemaker is a small electronic device implanted in the chest to regulate heartbeats, sending electrical impulses to maintain a normal rhythm.",
+      "importance": "Helps people with arrhythmias lead normal lives by preventing slow heartbeats (bradycardia).",
+      "quick_facts": [
+        "First pacemaker was implanted in 1958",
+        "It lasted 40 years",
+        "Modern pacemakers can adjust heart rate based on activity level",
+        "Can be monitored remotely"
+      ],
+      "source_section": "Section 31: Pacemaker"
+    },
+    {
+      "concept_name": "Microchip",
+      "summary": "A microchip is a tiny semiconductor device containing millions of transistors, resistors, and capacitors that serves as the brain of modern electronic devices.",
+      "importance": "Revolutionized technology by making devices smaller, faster, and more efficient, enabling advanced computing, communication, and automation.",
+      "quick_facts": [
+        "First microchip was invented in 1958",
+        "It is made primarily of silicon",
+        "Microchips process and store information",
+        "Power everything from AI systems to space exploration technology"
+      ],
+      "source_section": "Section 31: Microchip"
+    },
+    {
+      "concept_name": "Rubik's Cube",
+      "summary": "The Rubik's Cube was invented by Ernő Rubik as a teaching tool for understanding 3D geometry, with over 43 quintillion possible combinations and only one solution.",
+      "importance": "Helps develop spatial reasoning, algorithms, and patterns, used in speedcubing competitions.",
+      "quick_facts": [
+        "The world record for solving it is under 4 seconds",
+        "Speedcubers use advanced techniques like CFOP (Cross, F2L, OLL, PLL)",
+        "Over 350 million Rubik's Cubes sold worldwide"
+      ],
+      "source_section": "Section 31: Rubik’s Cube"
+    },
+    {
+      "concept_name": "Fibonacci Retracement Levels",
+      "summary": "Fibonacci Retracement Levels are key points based on the Golden Ratio (1.618) that help traders predict possible support and resistance levels in stock prices.",
+      "importance": "Helps traders predict price pullbacks near 38.2%, 50%, or 61.8% retracement points, reflecting natural patterns seen in nature, art, and DNA structures.",
+      "quick_facts": [
+        "The Golden Ratio is roughly 1.618",
+        "Price pullbacks often occur near Fibonacci Retracement Levels",
+        "These ratios are derived from Fibonacci numbers"
+      ],
+      "source_section": "Section 31: Stock Market Secret"
+    }
+  ]
+}

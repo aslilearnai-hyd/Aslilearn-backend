@@ -1,0 +1,66 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "generated_at": "2026-02-10T23:12:09.736355",
+  "concepts": [
+    {
+      "concept_name": "Infinity Symbol",
+      "difficulty": "hard",
+      "lesson": "The infinity symbol (∞), also known as the lemniscate, was introduced in 1655 by mathematician John Wallis to represent a quantity that continues forever. Its shape resembles a twisted loop or Möbius strip, symbolizing something endless and limitless. In mathematics, infinity represents values that grow beyond any fixed number.",
+      "real_example": "The infinity symbol is often used in jewelry to represent everlasting love.",
+      "key_points": [
+        "Represents a quantity that continues forever",
+        "Introduced by mathematician John Wallis in 1655",
+        "Symbolizes something endless and limitless"
+      ],
+      "source_section": "[Section 22]"
+    },
+    {
+      "concept_name": "Pascal's Triangle",
+      "difficulty": "medium",
+      "lesson": "Pascal’s Triangle is a triangular array of numbers where each entry is the sum of the two numbers directly above it. It starts with 1 at the top, and each row expands symmetrically Pascal’s Triangle has many fascinating properties: its rows represent binomial coefficients, reveal Fibonacci numbers, and display triangular numbers.",
+      "real_example": "The diagonal sums of Pascal’s Triangle create the Fibonacci sequence!",
+      "key_points": [
+        "A triangular array of numbers where each entry is the sum of two numbers above",
+        "Each row expands symmetrically",
+        "Rows represent binomial coefficients, Fibonacci numbers, and triangular numbers"
+      ],
+      "source_section": "[Section 22]"
+    },
+    {
+      "concept_name": "Metal Detector",
+      "difficulty": "medium",
+      "lesson": "A metal detector is an electronic device that detects the presence of metal objects underground, in water, or hidden inside other materials. It works by generating an electromagnetic field, which interacts with metal objects, causing a signal to be sent back to the detector.",
+      "real_example": "Metal detectors are widely used in security screening, archaeology, treasure hunting, and construction to locate hidden metal objects, coins, or weapons.",
+      "key_points": [
+        "Detects presence of metal objects",
+        "Works by generating an electromagnetic field",
+        "Used in various fields like security, archaeology, and construction"
+      ],
+      "source_section": "[Section 21]"
+    },
+    {
+      "concept_name": "Air Conditioner",
+      "difficulty": "medium",
+      "lesson": "An air conditioner (AC) is a device that cools and dehumidifies indoor air, making spaces more comfortable. It works by using a refrigeration cycle, where a special fluid called refrigerant absorbs heat from the indoor air and releases it outside.",
+      "real_example": "Modern air conditioners also improve air quality by filtering out dust and pollutants.",
+      "key_points": [
+        "Cools and dehumidifies indoor air",
+        "Uses a refrigeration cycle with refrigerant",
+        "Improves air quality by filtering out dust and pollutants"
+      ],
+      "source_section": "[Section 21]"
+    },
+    {
+      "concept_name": "Additive Identity",
+      "difficulty": "easy",
+      "lesson": "a+0=a=0+a Additive identity is a property where the sum of any number and zero is equal to that number.",
+      "real_example": "",
+      "key_points": [
+        "The sum of any number and zero is equal to that number",
+        "Property: a+0=a=0+a",
+        "Used in mathematical operations"
+      ],
+      "source_section": "[Section 28]"
+    }
+  ]
+}

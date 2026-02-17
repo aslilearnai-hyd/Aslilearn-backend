@@ -1,0 +1,67 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 9: Mensuration Including Area of Paths",
+  "generated_at": "2026-02-11T01:12:07.172694",
+  "concepts": [
+    {
+      "concept_name": "Area of Square",
+      "difficulty": "medium",
+      "lesson": "To find the area of a square, we need to know its side length. The formula for the area of a square is side^2. For example, if the side length of a square is 10 cm, then its area would be 10^2 = 100 sq.cm.",
+      "real_example": "If the side length of a square is 10 cm, then its area is 100 sq.cm.",
+      "key_points": [
+        "Area of square = side^2",
+        "Side length must be in same units as area",
+        "Formula applies to all squares"
+      ],
+      "source_section": "Section 1: Mensuration Including Area of Paths"
+    },
+    {
+      "concept_name": "Perimeter of Square",
+      "difficulty": "easy",
+      "lesson": "The perimeter of a square is the sum of its four sides. Since all sides of a square are equal, we can find the perimeter by multiplying the side length by 4.",
+      "real_example": "If the side length of a square is 10 cm, then its perimeter would be 10 * 4 = 40 cm",
+      "key_points": [
+        "Perimeter of square = 4 * side",
+        "All sides of a square are equal",
+        "Formula applies to all squares"
+      ],
+      "source_section": "Section 1: Mensuration Including Area of Paths"
+    },
+    {
+      "concept_name": "Area of Rectangle",
+      "difficulty": "medium",
+      "lesson": "To find the area of a rectangle, we need to know its length and breadth. The formula for the area of a rectangle is length * breadth.",
+      "real_example": "If the length of a rectangle is 10 cm and its breadth is 5 cm, then its area would be 10 * 5 = 50 sq.cm.",
+      "key_points": [
+        "Area of rectangle = length * breadth",
+        "Length and breadth must be in same units as area",
+        "Formula applies to all rectangles"
+      ],
+      "source_section": "Section 2: Mensuration Including Area of Paths"
+    },
+    {
+      "concept_name": "Perimeter of Rectangle",
+      "difficulty": "easy",
+      "lesson": "The perimeter of a rectangle is the sum of its four sides. Since opposite sides of a rectangle are equal, we can find the perimeter by adding the lengths of all four sides.",
+      "real_example": "If the length and breadth of a rectangle are 10 cm and 5 cm respectively, then its perimeter would be 2 * (10 + 5) = 30 cm",
+      "key_points": [
+        "Perimeter of rectangle = 2 * (length + breadth)",
+        "Opposite sides of a rectangle are equal",
+        "Formula applies to all rectangles"
+      ],
+      "source_section": "Section 2: Mensuration Including Area of Paths"
+    },
+    {
+      "concept_name": "Area of Triangle",
+      "difficulty": "hard",
+      "lesson": "To find the area of a triangle, we need to know its base and height. The formula for the area of a triangle is (base * height) / 2.",
+      "real_example": "If the base of a triangle is 10 cm and its height is 5 cm, then its area would be (10 * 5) / 2 = 25 sq.cm.",
+      "key_points": [
+        "Area of triangle = (base * height) / 2",
+        "Base and height must be in same units as area",
+        "Formula applies to all triangles"
+      ],
+      "source_section": "Section 3: Mensuration Including Area of Paths"
+    }
+  ]
+}

@@ -1,0 +1,288 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 1: Knowing our Numbers",
+  "generated_at": "2026-02-10T22:20:02.046345",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the value of x in the equation 2x = 12?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "5",
+        "D": "6"
+      },
+      "correct_answer": "A",
+      "explanation": "To solve for x, divide both sides of the equation by 2.",
+      "difficulty": "easy",
+      "source_section": "Section 1-2"
+    },
+    {
+      "question_number": 2,
+      "question": "Which of the following numbers is not a multiple of 5?",
+      "options": {
+        "A": "15",
+        "B": "20",
+        "C": "25",
+        "D": "30"
+      },
+      "correct_answer": "A",
+      "explanation": "Multiples of 5 include 10, 15, 20, and so on.",
+      "difficulty": "medium",
+      "source_section": "Section 3-4"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the sum of 45 and -25?",
+      "options": {
+        "A": "10",
+        "B": "20",
+        "C": "30",
+        "D": "40"
+      },
+      "correct_answer": "A",
+      "explanation": "To find the sum, add the two numbers together.",
+      "difficulty": "easy",
+      "source_section": "Section 5-6"
+    },
+    {
+      "question_number": 4,
+      "question": "Which of the following is a factor of 24?",
+      "options": {
+        "A": "3",
+        "B": "4",
+        "C": "6",
+        "D": "8"
+      },
+      "correct_answer": "C",
+      "explanation": "Factors are numbers that divide another number exactly.",
+      "difficulty": "medium",
+      "source_section": "Section 7-9"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the product of 4 and 6?",
+      "options": {
+        "A": "20",
+        "B": "24",
+        "C": "30",
+        "D": "40"
+      },
+      "correct_answer": "B",
+      "explanation": "To find the product, multiply the two numbers together.",
+      "difficulty": "easy",
+      "source_section": "Section 10-12"
+    },
+    {
+      "question_number": 6,
+      "question": "Which of the following is a multiple of 9?",
+      "options": {
+        "A": "15",
+        "B": "18",
+        "C": "21",
+        "D": "24"
+      },
+      "correct_answer": "B",
+      "explanation": "Multiples of 9 include 9, 18, and so on.",
+      "difficulty": "medium",
+      "source_section": "Section 13-15"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the difference between 45 and -25?",
+      "options": {
+        "A": "-10",
+        "B": "-20",
+        "C": "10",
+        "D": "20"
+      },
+      "correct_answer": "B",
+      "explanation": "To find the difference, subtract one number from another.",
+      "difficulty": "easy",
+      "source_section": "Section 16-18"
+    },
+    {
+      "question_number": 8,
+      "question": "Which of the following is a factor of 15?",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "7",
+        "D": "9"
+      },
+      "correct_answer": "A",
+      "explanation": "Factors are numbers that divide another number exactly.",
+      "difficulty": "medium",
+      "source_section": "Section 19-21"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the product of 3 and 8?",
+      "options": {
+        "A": "20",
+        "B": "24",
+        "C": "30",
+        "D": "40"
+      },
+      "correct_answer": "C",
+      "explanation": "To find the product, multiply the two numbers together.",
+      "difficulty": "easy",
+      "source_section": "Section 22-24"
+    },
+    {
+      "question_number": 10,
+      "question": "Which of the following is a multiple of 7?",
+      "options": {
+        "A": "14",
+        "B": "18",
+        "C": "21",
+        "D": "28"
+      },
+      "correct_answer": "C",
+      "explanation": "Multiples of 7 include 7, 14, and so on.",
+      "difficulty": "medium",
+      "source_section": "Section 25-27"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the sum of -3 and 8?",
+      "options": {
+        "A": "-5",
+        "B": "0",
+        "C": "10",
+        "D": "15"
+      },
+      "correct_answer": "C",
+      "explanation": "To find the sum, add the two numbers together.",
+      "difficulty": "easy",
+      "source_section": "Section 28-30"
+    },
+    {
+      "question_number": 12,
+      "question": "Which of the following is a factor of 22?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5"
+      },
+      "correct_answer": "A",
+      "explanation": "Factors are numbers that divide another number exactly.",
+      "difficulty": "medium",
+      "source_section": "Section 31-33"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the product of 6 and 9?",
+      "options": {
+        "A": "40",
+        "B": "45",
+        "C": "50",
+        "D": "60"
+      },
+      "correct_answer": "B",
+      "explanation": "To find the product, multiply the two numbers together.",
+      "difficulty": "easy",
+      "source_section": "Section 34-36"
+    },
+    {
+      "question_number": 14,
+      "question": "Which of the following is a multiple of 11?",
+      "options": {
+        "A": "15",
+        "B": "22",
+        "C": "33",
+        "D": "44"
+      },
+      "correct_answer": "B",
+      "explanation": "Multiples of 11 include 11, 22, and so on.",
+      "difficulty": "medium",
+      "source_section": "Section 37-39"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the difference between -5 and 10?",
+      "options": {
+        "A": "-15",
+        "B": "-20",
+        "C": "15",
+        "D": "20"
+      },
+      "correct_answer": "A",
+      "explanation": "To find the difference, subtract one number from another.",
+      "difficulty": "easy",
+      "source_section": "Section 40-42"
+    },
+    {
+      "question_number": 16,
+      "question": "Which of the following is a factor of 27?",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "7",
+        "D": "9"
+      },
+      "correct_answer": "D",
+      "explanation": "Factors are numbers that divide another number exactly.",
+      "difficulty": "medium",
+      "source_section": "Section 43-45"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the product of 4 and -6?",
+      "options": {
+        "A": "-20",
+        "B": "-24",
+        "C": "30",
+        "D": "40"
+      },
+      "correct_answer": "B",
+      "explanation": "To find the product, multiply the two numbers together.",
+      "difficulty": "easy",
+      "source_section": "Section 46-48"
+    },
+    {
+      "question_number": 18,
+      "question": "Which of the following is a multiple of 13?",
+      "options": {
+        "A": "15",
+        "B": "26",
+        "C": "39",
+        "D": "52"
+      },
+      "correct_answer": "B",
+      "explanation": "Multiples of 13 include 13, 26, and so on.",
+      "difficulty": "medium",
+      "source_section": "Section 49-51"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the sum of -8 and 12?",
+      "options": {
+        "A": "-4",
+        "B": "0",
+        "C": "16",
+        "D": "20"
+      },
+      "correct_answer": "C",
+      "explanation": "To find the sum, add the two numbers together.",
+      "difficulty": "easy",
+      "source_section": "Section 52-54"
+    },
+    {
+      "question_number": 20,
+      "question": "Which of the following is a factor of 30?",
+      "options": {
+        "A": "2",
+        "B": "3",
+        "C": "4",
+        "D": "5"
+      },
+      "correct_answer": "B",
+      "explanation": "Factors are numbers that divide another number exactly.",
+      "difficulty": "medium",
+      "source_section": "Section 55-57"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 8: Energy and work",
+  "generated_at": "2026-02-11T23:36:23.207407",
+  "concepts": [
+    {
+      "concept_name": "Kinetic Energy",
+      "difficulty": "medium",
+      "lesson": "Kinetic energy is the energy an object possesses due to its motion. It can be calculated using the formula: Kinetic Energy (KE) = 0.5 × m × v^2, where m is the mass of the object and v is its velocity. For example, if a car with a mass of 1500 kg is traveling at a speed of 25 m/s, its kinetic energy can be calculated as: KE = 0.5 × 1500 kg × (25 m/s)^2.",
+      "real_example": "",
+      "key_points": [
+        "Kinetic energy is a form of energy related to motion",
+        "The formula for calculating kinetic energy is KE = 0.5 × m × v^2",
+        "Mass and velocity are essential factors in determining kinetic energy"
+      ],
+      "source_section": "Section 1-3"
+    },
+    {
+      "concept_name": "Potential Energy",
+      "difficulty": "medium",
+      "lesson": "Potential energy is the energy an object possesses due to its position or configuration. It can be calculated using the formula: Potential Energy (PE) = m × g × h, where m is the mass of the object, g is the acceleration due to gravity, and h is the height above a reference point. For example, if a ball with a mass of 2 kg is lifted to a height of 10 meters, its potential energy can be calculated as: PE = 2 kg × 9.8 m/s^2 × 10 m.",
+      "real_example": "",
+      "key_points": [
+        "Potential energy is a form of energy related to position or configuration",
+        "The formula for calculating potential energy is PE = m × g × h",
+        "Mass, gravity, and height are essential factors in determining potential energy"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "concept_name": "Work-Energy Theorem",
+      "difficulty": "hard",
+      "lesson": "The work-energy theorem states that the net work done on an object is equal to its change in kinetic energy. Mathematically, this can be expressed as: W = ΔKE, where W is the net work and ΔKE is the change in kinetic energy. For example, if a car accelerates from 10 m/s to 25 m/s over a distance of 50 meters, the net work done on it can be calculated using the formula: W = KE_f - KE_i.",
+      "real_example": "",
+      "key_points": [
+        "The work-energy theorem relates net work and change in kinetic energy",
+        "Mathematically, this is expressed as W = ΔKE",
+        "The formula for calculating net work involves initial and final kinetic energies"
+      ],
+      "source_section": "Section 6-7"
+    },
+    {
+      "concept_name": "Conservation of Energy",
+      "difficulty": "hard",
+      "lesson": "The law of conservation of energy states that the total energy of an isolated system remains constant over time. This means that energy cannot be created or destroyed, only converted from one form to another. For example, if a car accelerates using gasoline as fuel, the chemical energy stored in the gas is converted into kinetic energy.",
+      "real_example": "",
+      "key_points": [
+        "The law of conservation of energy states that total energy remains constant over time",
+        "Energy cannot be created or destroyed, only converted from one form to another",
+        "Examples include conversion of chemical energy to kinetic energy"
+      ],
+      "source_section": "Section 8-9"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 2: Light shadows and reflections",
+  "generated_at": "2026-02-11T22:28:28.318024",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What type of mirror reflects light without scattering?",
+      "options": {
+        "A": "Specular reflection",
+        "B": "Normal incidence",
+        "C": "Oblique incidence",
+        "D": "Virtual image"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 1, Specular reflection is the type of mirror that reflects light without scattering.",
+      "difficulty": "medium",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the effect on a hair strand when it becomes positively charged?",
+      "options": {
+        "A": "It stands up due to electrostatic force",
+        "B": "It falls down due to gravity",
+        "C": "It remains still due to balance of forces",
+        "D": "It vibrates due to electromagnetic induction"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 6, when a hair strand becomes positively charged, it stands up due to electrostatic force.",
+      "difficulty": "easy",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 3,
+      "question": "What happens when two plane mirrors are placed at an angle of 90 degrees?",
+      "options": {
+        "A": "Only one image is formed",
+        "B": "Two images are formed, one behind the other",
+        "C": "Infinite images are formed",
+        "D": "No image is formed"
+      },
+      "correct_answer": "C",
+      "explanation": "According to Section 4, when two plane mirrors are placed at an angle of 90 degrees, infinite images are formed.",
+      "difficulty": "hard",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the formula for calculating the focal length of a convex mirror?",
+      "options": {
+        "A": "f = -d/2",
+        "B": "f = d/2",
+        "C": "f = -1/d",
+        "D": "f = 1/d"
+      },
+      "correct_answer": "A",
+      "explanation": "According to Section 3, the formula for calculating the focal length of a convex mirror is f = -d/2.",
+      "difficulty": "medium",
+      "source_section": "Section 3"
+    }
+  ]
+}

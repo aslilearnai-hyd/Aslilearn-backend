@@ -1,0 +1,288 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 9: Pressure",
+  "generated_at": "2026-02-11T23:42:29.831629",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the SI unit of pressure?",
+      "options": {
+        "A": "dyne/cm2",
+        "B": "bar",
+        "C": "millibar",
+        "D": "atmosphere"
+      },
+      "correct_answer": "A",
+      "explanation": "The SI unit of pressure is defined as the force per unit area, which is measured in pascals (Pa). The pascal is equivalent to 1 newton per square meter.",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the formula for calculating pressure?",
+      "options": {
+        "A": "P = F/A",
+        "B": "P = A/F",
+        "C": "P = F^2/A",
+        "D": "P = A^2/F"
+      },
+      "correct_answer": "A",
+      "explanation": "Pressure (P) is calculated by dividing the force (F) by the area (A). This formula is derived from the definition of pressure as force per unit area.",
+      "difficulty": "easy",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the difference between absolute and gauge pressure?",
+      "options": {
+        "A": "Absolute pressure is measured relative to a vacuum, while gauge pressure is measured relative to atmospheric pressure.",
+        "B": "Gauge pressure is measured relative to a vacuum, while absolute pressure is measured relative to atmospheric pressure.",
+        "C": "Absolute pressure is measured in millibars, while gauge pressure is measured in bars.",
+        "D": "Gauge pressure is measured in millibars, while absolute pressure is measured in bars."
+      },
+      "correct_answer": "A",
+      "explanation": "Absolute pressure is measured relative to a vacuum, while gauge pressure is measured relative to atmospheric pressure. This distinction is important when working with pressure measurements.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the relationship between pressure and density?",
+      "options": {
+        "A": "Pressure is directly proportional to density.",
+        "B": "Pressure is inversely proportional to density.",
+        "C": "There is no relationship between pressure and density.",
+        "D": "Pressure is independent of density."
+      },
+      "correct_answer": "A",
+      "explanation": "The pressure of a fluid is directly proportional to its density, as described by the equation P = ρgh. This means that an increase in density will result in an increase in pressure.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the purpose of a barometer?",
+      "options": {
+        "A": "To measure atmospheric pressure.",
+        "B": "To measure temperature.",
+        "C": "To measure humidity.",
+        "D": "To measure wind speed."
+      },
+      "correct_answer": "A",
+      "explanation": "A barometer is an instrument used to measure atmospheric pressure. It can be used to determine the weather forecast and predict changes in atmospheric conditions.",
+      "difficulty": "easy",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the difference between a manometer and a barometer?",
+      "options": {
+        "A": "A manometer measures pressure relative to atmospheric pressure, while a barometer measures absolute pressure.",
+        "B": "A manometer measures absolute pressure, while a barometer measures pressure relative to atmospheric pressure.",
+        "C": "A manometer is used to measure temperature, while a barometer is used to measure humidity.",
+        "D": "A manometer is used to measure wind speed, while a barometer is used to measure atmospheric pressure."
+      },
+      "correct_answer": "A",
+      "explanation": "A manometer measures pressure relative to atmospheric pressure, while a barometer measures absolute pressure. This distinction is important when working with pressure measurements.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the formula for calculating buoyant force?",
+      "options": {
+        "A": "Fb = ρVg",
+        "B": "Fb = (ρ - σ)Vg",
+        "C": "Fb = ρV^2g",
+        "D": "Fb = (ρ + σ)Vg"
+      },
+      "correct_answer": "B",
+      "explanation": "The buoyant force (Fb) is calculated by multiplying the density difference between the fluid and the object (ρ - σ) by the volume of the object (V) and the acceleration due to gravity (g).",
+      "difficulty": "medium",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 8,
+      "question": "What is Archimedes' Principle?",
+      "options": {
+        "A": "The buoyant force on an object is equal to the weight of the fluid displaced.",
+        "B": "The buoyant force on an object is proportional to its volume.",
+        "C": "The buoyant force on an object is inversely proportional to its density.",
+        "D": "The buoyant force on an object is independent of its shape."
+      },
+      "correct_answer": "A",
+      "explanation": "Archimedes' Principle states that the buoyant force on an object is equal to the weight of the fluid displaced. This principle is used to calculate the buoyant force on objects submerged in fluids.",
+      "difficulty": "easy",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the relationship between pressure and depth?",
+      "options": {
+        "A": "Pressure increases with depth.",
+        "B": "Pressure decreases with depth.",
+        "C": "There is no relationship between pressure and depth.",
+        "D": "Pressure is independent of depth."
+      },
+      "correct_answer": "A",
+      "explanation": "The pressure of a fluid increases with depth due to the weight of the fluid above. This means that as you go deeper, the pressure increases.",
+      "difficulty": "medium",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 10,
+      "question": "What is Pascal's Law?",
+      "options": {
+        "A": "The pressure of a fluid is proportional to its density.",
+        "B": "The pressure of a fluid is inversely proportional to its volume.",
+        "C": "The pressure of a fluid is directly proportional to the area of its container.",
+        "D": "The pressure of a fluid is independent of its shape."
+      },
+      "correct_answer": "A",
+      "explanation": "Pascal's Law states that the pressure of a fluid is proportional to its density. This means that an increase in density will result in an increase in pressure.",
+      "difficulty": "medium",
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the difference between absolute and gauge pressure?",
+      "options": {
+        "A": "Absolute pressure is measured relative to a vacuum, while gauge pressure is measured relative to atmospheric pressure.",
+        "B": "Gauge pressure is measured relative to a vacuum, while absolute pressure is measured relative to atmospheric pressure.",
+        "C": "Absolute pressure is measured in millibars, while gauge pressure is measured in bars.",
+        "D": "Gauge pressure is measured in millibars, while absolute pressure is measured in bars."
+      },
+      "correct_answer": "A",
+      "explanation": "Absolute pressure is measured relative to a vacuum, while gauge pressure is measured relative to atmospheric pressure. This distinction is important when working with pressure measurements.",
+      "difficulty": "medium",
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the formula for calculating buoyant force?",
+      "options": {
+        "A": "Fb = ρVg",
+        "B": "Fb = (ρ - σ)Vg",
+        "C": "Fb = ρV^2g",
+        "D": "Fb = (ρ + σ)Vg"
+      },
+      "correct_answer": "B",
+      "explanation": "The buoyant force (Fb) is calculated by multiplying the density difference between the fluid and the object (ρ - σ) by the volume of the object (V) and the acceleration due to gravity (g).",
+      "difficulty": "medium",
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 13,
+      "question": "What is Archimedes' Principle?",
+      "options": {
+        "A": "The buoyant force on an object is equal to the weight of the fluid displaced.",
+        "B": "The buoyant force on an object is proportional to its volume.",
+        "C": "The buoyant force on an object is inversely proportional to its density.",
+        "D": "The buoyant force on an object is independent of its shape."
+      },
+      "correct_answer": "A",
+      "explanation": "Archimedes' Principle states that the buoyant force on an object is equal to the weight of the fluid displaced. This principle is used to calculate the buoyant force on objects submerged in fluids.",
+      "difficulty": "easy",
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the relationship between pressure and depth?",
+      "options": {
+        "A": "Pressure increases with depth.",
+        "B": "Pressure decreases with depth.",
+        "C": "There is no relationship between pressure and depth.",
+        "D": "Pressure is independent of depth."
+      },
+      "correct_answer": "A",
+      "explanation": "The pressure of a fluid increases with depth due to the weight of the fluid above. This means that as you go deeper, the pressure increases.",
+      "difficulty": "medium",
+      "source_section": "Section 15"
+    },
+    {
+      "question_number": 15,
+      "question": "What is Pascal's Law?",
+      "options": {
+        "A": "The pressure of a fluid is proportional to its density.",
+        "B": "The pressure of a fluid is inversely proportional to its volume.",
+        "C": "The pressure of a fluid is directly proportional to the area of its container.",
+        "D": "The pressure of a fluid is independent of its shape."
+      },
+      "correct_answer": "A",
+      "explanation": "Pascal's Law states that the pressure of a fluid is proportional to its density. This means that an increase in density will result in an increase in pressure.",
+      "difficulty": "medium",
+      "source_section": "Section 16"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the difference between absolute and gauge pressure?",
+      "options": {
+        "A": "Absolute pressure is measured relative to a vacuum, while gauge pressure is measured relative to atmospheric pressure.",
+        "B": "Gauge pressure is measured relative to a vacuum, while absolute pressure is measured relative to atmospheric pressure.",
+        "C": "Absolute pressure is measured in millibars, while gauge pressure is measured in bars.",
+        "D": "Gauge pressure is measured in millibars, while absolute pressure is measured in bars."
+      },
+      "correct_answer": "A",
+      "explanation": "Absolute pressure is measured relative to a vacuum, while gauge pressure is measured relative to atmospheric pressure. This distinction is important when working with pressure measurements.",
+      "difficulty": "medium",
+      "source_section": "Section 17"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the formula for calculating buoyant force?",
+      "options": {
+        "A": "Fb = ρVg",
+        "B": "Fb = (ρ - σ)Vg",
+        "C": "Fb = ρV^2g",
+        "D": "Fb = (ρ + σ)Vg"
+      },
+      "correct_answer": "B",
+      "explanation": "The buoyant force (Fb) is calculated by multiplying the density difference between the fluid and the object (ρ - σ) by the volume of the object (V) and the acceleration due to gravity (g).",
+      "difficulty": "medium",
+      "source_section": "Section 18"
+    },
+    {
+      "question_number": 18,
+      "question": "What is Archimedes' Principle?",
+      "options": {
+        "A": "The buoyant force on an object is equal to the weight of the fluid displaced.",
+        "B": "The buoyant force on an object is proportional to its volume.",
+        "C": "The buoyant force on an object is inversely proportional to its density.",
+        "D": "The buoyant force on an object is independent of its shape."
+      },
+      "correct_answer": "A",
+      "explanation": "Archimedes' Principle states that the buoyant force on an object is equal to the weight of the fluid displaced. This principle is used to calculate the buoyant force on objects submerged in fluids.",
+      "difficulty": "easy",
+      "source_section": "Section 19"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the relationship between pressure and depth?",
+      "options": {
+        "A": "Pressure increases with depth.",
+        "B": "Pressure decreases with depth.",
+        "C": "There is no relationship between pressure and depth.",
+        "D": "Pressure is independent of depth."
+      },
+      "correct_answer": "A",
+      "explanation": "The pressure of a fluid increases with depth due to the weight of the fluid above. This means that as you go deeper, the pressure increases.",
+      "difficulty": "medium",
+      "source_section": "Section 20"
+    },
+    {
+      "question_number": 20,
+      "question": "What is Pascal's Law?",
+      "options": {
+        "A": "The pressure of a fluid is proportional to its density.",
+        "B": "The pressure of a fluid is inversely proportional to its volume.",
+        "C": "The pressure of a fluid is directly proportional to the area of its container.",
+        "D": "The pressure of a fluid is independent of its shape."
+      },
+      "correct_answer": "A",
+      "explanation": "Pascal's Law states that the pressure of a fluid is proportional to its density. This means that an increase in density will result in an increase in pressure.",
+      "difficulty": "medium",
+      "source_section": "Section 21"
+    }
+  ]
+}

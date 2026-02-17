@@ -1,0 +1,250 @@
+{
+  "content_type": "MCQs",
+  "chapter": "Chapter 7: Fractions",
+  "generated_at": "2026-02-11T00:44:37.547383",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the definition of a fraction?",
+      "options": {
+        "A": "A number that represents a part of a whole.",
+        "B": "A type of algebraic expression.",
+        "C": "A geometric shape used in calculations.",
+        "D": "A unit of measurement."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 1: Fractions are numbers that represent parts of a whole or a group of like objects. They have two main components: the numerator and the denominator.",
+      "difficulty": "easy",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the relationship between equivalent fractions?",
+      "options": {
+        "A": "They have different numerators but the same denominators.",
+        "B": "They have the same numerators and denominators.",
+        "C": "They have the same value, but their numerators and denominators may differ.",
+        "D": "They are always greater than 1."
+      },
+      "correct_answer": "C",
+      "explanation": "Section 2: Equivalent fractions are those that represent the same value, but with different numerators and denominators.",
+      "difficulty": "medium",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "How do you simplify a fraction?",
+      "options": {
+        "A": "By multiplying the numerator and denominator by the same number.",
+        "B": "By dividing both numbers by their greatest common divisor (GCD).",
+        "C": "By adding or subtracting numbers to make it simpler.",
+        "D": "By using a calculator."
+      },
+      "correct_answer": "B",
+      "explanation": "Section 3: To simplify a fraction, divide both the numerator and denominator by their greatest common divisor (GCD).",
+      "difficulty": "easy",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the difference between like and unlike fractions?",
+      "options": {
+        "A": "Like fractions have different numerators, while unlike fractions have different denominators.",
+        "B": "Like fractions have the same numerator and denominator, while unlike fractions have different numerators or denominators.",
+        "C": "Like fractions are always greater than 1, while unlike fractions are less than 1.",
+        "D": "Like fractions can be added together, but unlike fractions cannot."
+      },
+      "correct_answer": "B",
+      "explanation": "Section 4: Like fractions have the same numerator and denominator, whereas unlike fractions have different numerators or denominators.",
+      "difficulty": "medium",
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "How do you compare two fractions?",
+      "options": {
+        "A": "By comparing their numerators and denominators separately.",
+        "B": "By converting both fractions to decimals or percents.",
+        "C": "By using a comparison chart or table.",
+        "D": "By using a calculator."
+      },
+      "correct_answer": "B",
+      "explanation": "Section 5: To compare two fractions, convert them to equivalent decimals or percentages.",
+      "difficulty": "medium",
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the concept of a mixed number?",
+      "options": {
+        "A": "A whole number and a fraction combined.",
+        "B": "A decimal number between two integers.",
+        "C": "A percentage value between 0% and 100%."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 6: A mixed number consists of a whole number part and a fractional part, representing a quantity that is part whole and part fraction.",
+      "difficulty": "easy",
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 7,
+      "question": "How do you add two fractions with different denominators?",
+      "options": {
+        "A": "By finding the least common multiple (LCM) of their denominators.",
+        "B": "By converting both fractions to equivalent decimals or percentages.",
+        "C": "By using a calculator."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 7: To add two fractions with different denominators, find the least common multiple (LCM) of their denominators and convert each fraction accordingly.",
+      "difficulty": "medium",
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the concept of an improper fraction?",
+      "options": {
+        "A": "A fraction whose numerator is greater than its denominator.",
+        "B": "A mixed number that has a whole number part and a fractional part."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 8: An improper fraction has a numerator greater than its denominator, which means it represents more than one whole unit.",
+      "difficulty": "easy",
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 9,
+      "question": "How do you convert an improper fraction to a mixed number?",
+      "options": {
+        "A": "By dividing the numerator by the denominator and writing the remainder as the new numerator.",
+        "B": "By multiplying the numerator and denominator by the same number."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 9: To convert an improper fraction to a mixed number, divide the numerator by the denominator and write the remainder as the new numerator.",
+      "difficulty": "medium",
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the relationship between equivalent decimals?",
+      "options": {
+        "A": "They have different values, but their decimal places may differ.",
+        "B": "They represent the same value, but in a different decimal form."
+      },
+      "correct_answer": "B",
+      "explanation": "Section 10: Equivalent decimals are those that represent the same value, but with differences in the number of decimal places or the position of the decimal point.",
+      "difficulty": "medium",
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 11,
+      "question": "How do you compare two decimals?",
+      "options": {
+        "A": "By comparing their numerators and denominators separately."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 11: To compare two decimals, compare their numerators and denominators separately.",
+      "difficulty": "easy",
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the concept of a percentage?",
+      "options": {
+        "A": "A number expressed as a fraction of 100."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 12: A percentage represents a value as a fraction of 100, often used to express proportions or rates.",
+      "difficulty": "easy",
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 13,
+      "question": "How do you convert a fraction to a percent?",
+      "options": {
+        "A": "By dividing the numerator by the denominator and multiplying by 100."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 13: To convert a fraction to a percentage, divide the numerator by the denominator and multiply by 100.",
+      "difficulty": "medium",
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the relationship between fractions, decimals, and percents?",
+      "options": {
+        "A": "They are interchangeable forms of the same quantity."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 14: Fractions, decimals, and percentages are equivalent forms that represent the same value.",
+      "difficulty": "medium",
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 15,
+      "question": "How do you convert a decimal to a fraction?",
+      "options": {
+        "A": "By expressing it as an equivalent fraction."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 15: To convert a decimal to a fraction, express it as an equivalent fraction by writing the decimal part as the numerator and the denominator as 1.",
+      "difficulty": "medium",
+      "source_section": "Section 15"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the concept of a proportion?",
+      "options": {
+        "A": "A statement that two ratios are equal."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 16: A proportion states that two or more ratios are equal, often used to solve problems involving equivalent ratios.",
+      "difficulty": "easy",
+      "source_section": "Section 16"
+    },
+    {
+      "question_number": 17,
+      "question": "How do you set up a proportion?",
+      "options": {
+        "A": "By writing the two ratios as equal statements."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 17: To set up a proportion, write the two ratios as equal statements using words or symbols.",
+      "difficulty": "medium",
+      "source_section": "Section 17"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the concept of an equivalent ratio?",
+      "options": {
+        "A": "A ratio that represents the same value as another ratio."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 18: An equivalent ratio has the same value as another ratio, but with different numbers or forms.",
+      "difficulty": "easy",
+      "source_section": "Section 18"
+    },
+    {
+      "question_number": 19,
+      "question": "How do you solve a proportion?",
+      "options": {
+        "A": "By setting up the proportion and cross-multiplying."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 19: To solve a proportion, set it up using equivalent ratios and then cross-multiply to find the solution.",
+      "difficulty": "medium",
+      "source_section": "Section 19"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the relationship between proportions and equivalent ratios?",
+      "options": {
+        "A": "Proportions are used to solve problems involving equivalent ratios."
+      },
+      "correct_answer": "A",
+      "explanation": "Section 20: Proportions are used to represent equivalent ratios in a mathematical statement, often used to solve problems involving proportions.",
+      "difficulty": "medium",
+      "source_section": "Section 20"
+    }
+  ]
+}

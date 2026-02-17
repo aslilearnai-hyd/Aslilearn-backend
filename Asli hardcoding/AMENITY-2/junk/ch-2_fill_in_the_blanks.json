@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Chapter 2: Whole Numbers",
+  "generated_at": "2026-02-10T22:43:13.649376",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The smallest whole number is ______.",
+      "correct_answer": "0",
+      "hint": "",
+      "explanation": "According to the content, the smallest whole number is 0.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 2,
+      "question": "The number 4 is a ______ number.",
+      "correct_answer": "even",
+      "hint": "",
+      "explanation": "According to the content, numbers ending in 0, 2, 4, 6, or 8 are even.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 3,
+      "question": "The sum of the digits of a number is called its ______.",
+      "correct_answer": "digital root",
+      "hint": "",
+      "explanation": "According to the content, the digital root of a number is the sum of its digits.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "The largest whole number is ______.",
+      "correct_answer": "not defined",
+      "hint": "",
+      "explanation": "According to the content, there is no largest whole number, as new numbers can always be added.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 5,
+      "question": "The place value of a digit in a whole number is determined by its position from the ______.",
+      "correct_answer": "right",
+      "hint": "",
+      "explanation": "According to the content, each digit's place value is determined by its position from right to left.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 6,
+      "question": "The number system that uses numerals 0-9 is called the ______.",
+      "correct_answer": "decimal",
+      "hint": "",
+      "explanation": "According to the content, this number system is commonly used in everyday life.",
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 7,
+      "question": "The sum of a whole number and its additive inverse is always ______.",
+      "correct_answer": "0",
+      "hint": "",
+      "explanation": "According to the content, adding a whole number and its negative results in zero.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 8,
+      "question": "The product of two numbers is always non-negative if one number is positive and the other is ______.",
+      "correct_answer": "non-positive",
+      "hint": "",
+      "explanation": "According to the content, when multiplying a positive by any number, the result is non-negative.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 9,
+      "question": "The greatest common divisor (GCD) of two numbers is ______ that divides both numbers without leaving a remainder.",
+      "correct_answer": "common",
+      "hint": "",
+      "explanation": "According to the content, GCD is found by identifying common divisors of two numbers.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 10,
+      "question": "The least common multiple (LCM) of two numbers is ______ that is divisible by both numbers without leaving a remainder.",
+      "correct_answer": "least",
+      "hint": "",
+      "explanation": "According to the content, LCM is found by identifying the smallest number that satisfies this condition.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 11,
+      "question": "The sum of two numbers is ______ if one number is positive and the other is non-positive.",
+      "correct_answer": "non-negative",
+      "hint": "",
+      "explanation": "According to the content, when adding a positive by any number, the result is non-negative.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 12,
+      "question": "The product of two numbers is ______ if one number is negative and the other is negative.",
+      "correct_answer": "positive",
+      "hint": "",
+      "explanation": "According to the content, when multiplying two negatives together, the result is positive.",
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 13,
+      "question": "The greatest common divisor (GCD) of two numbers can be found using ______ method.",
+      "correct_answer": "Euclidean",
+      "hint": "",
+      "explanation": "According to the content, Euclidean algorithm is used to find GCD.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 14,
+      "question": "The least common multiple (LCM) of two numbers can be found using ______ method.",
+      "correct_answer": "Euclidean",
+      "hint": "",
+      "explanation": "According to the content, LCM is related to GCD and both are calculated using Euclidean algorithm.",
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 15,
+      "question": "The sum of a whole number and its additive inverse is always ______.",
+      "correct_answer": "0",
+      "hint": "",
+      "explanation": "According to the content, adding a whole number and its negative results in zero.",
+      "source_section": "Section 2"
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 1: Knowing our Numbers",
+  "generated_at": "2026-02-10T22:23:35.026339",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the difference between face value and place value with an example from the content.",
+      "answer": "Face value is the actual digit itself, while place value is the value based on the digit's position. For example, in 5,672, the face value of 6 is 6, but its place value is 600 because it's in the hundreds place. This is calculated as 6 × 100 = 600.",
+      "key_concepts": [
+        "face value",
+        "place value",
+        "position",
+        "multiplication",
+        "place value chart"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 2,
+      "question": "A student wrote a number in the form of 9,008. Which digit is in the thousands place?",
+      "answer": "The digit 8 is in the thousands place because it's the third digit from the right and represents the value of 8 × 1000 = 8000.",
+      "key_concepts": [
+        "place value",
+        "thousands place",
+        "multiplication"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 3,
+      "question": "A friend gave you a number: 45,623. Can you tell the face value and place value of digit 2 in this number?",
+      "answer": "The face value of the digit 2 is 2. Its place value can be calculated as 2 × 1000 = 2000 because it's in the thousands place.",
+      "key_concepts": [
+        "face value",
+        "place value",
+        "multiplication"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the difference between a round number and a rectangular number?",
+      "answer": "A round number ends in zero or five, while a rectangular number has all digits different. For example, 50 is a round number because it ends in zero, whereas 123 is a rectangular number since its digits are all distinct.",
+      "key_concepts": [
+        "round numbers",
+        "rectangular numbers"
+      ],
+      "marks": 3,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "A student read a number as 'Twenty lakh ten thousand eight'. What would be the correct way to write it?",
+      "answer": "The correct representation is twenty lakhs (20,00,000) + ten thousands (10,000) + eight (8). So, the correct writing is 2,01,008.",
+      "key_concepts": [
+        "place value",
+        "lakhs",
+        "thousands"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 6,
+      "question": "Can you find the missing digit to complete this pattern: 99, 999, 9999, ...?",
+      "answer": "Following the pattern of adding another zero and increasing the number by one more than the last digit in the previous number, we get 99999.",
+      "key_concepts": [
+        "patterns",
+        "number sequences"
+      ],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 7,
+      "question": "If you have ₹ 100000 in your bank account, how can you write it using digits?",
+      "answer": "You can represent the amount as one lakh (1,00,000).",
+      "key_concepts": [
+        "place value",
+        "lakhs"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain what a protractor is and how it's used in geometry.",
+      "answer": "A protractor is a measuring instrument that helps measure and draw angles. It has degree markings from 0° to 180° (or 360° for full-circle protractors). To use it, you align its center point with the vertex of the angle and read the degree measurement where the other line crosses the scale.",
+      "key_concepts": [
+        "protractor",
+        "angles",
+        "measuring instrument"
+      ],
+      "marks": 3,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 9,
+      "question": "A house has dimensions: length = 20 m, breadth = 15 m. What is the area of this room?",
+      "answer": "The area can be calculated by multiplying the length and breadth: Area = Length × Breadth = 20 m × 15 m = 300 square meters.",
+      "key_concepts": [
+        "area",
+        "length",
+        "breadth"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the value of x in the equation 2x = 24?",
+      "answer": "To find the value of x, we divide both sides by 2: x = 24 ÷ 2 = 12.",
+      "key_concepts": [
+        "equations",
+        "division"
+      ],
+      "marks": 3,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 11,
+      "question": "A rectangular box measures 5 cm by 4 cm by 2 cm. What is its volume?",
+      "answer": "The volume can be calculated as the product of length, breadth, and height: Volume = Length × Breadth × Height = 5 cm × 4 cm × 2 cm = 40 cubic centimeters.",
+      "key_concepts": [
+        "volume",
+        "length",
+        "breadth",
+        "height"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the sum of the interior angles of a triangle?",
+      "answer": "The sum of the interior angles of any triangle is always 180°.",
+      "key_concepts": [
+        "interior angles",
+        "triangles"
+      ],
+      "marks": 3,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 13,
+      "question": "Explain what a Möbius strip is and its unique property.",
+      "answer": "A Möbius strip is a one-sided surface created by giving a strip of paper a half twist. Its unique property is having only one continuous edge; if you try to trace along its surface, you'll end up covering the entire strip without lifting your pen.",
+      "key_concepts": [
+        "Möbius strip",
+        "one-sided surface"
+      ],
+      "marks": 3,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the formula for calculating the perimeter of a rectangle?",
+      "answer": "The perimeter can be calculated as twice the sum of length and breadth: Perimeter = 2 × (Length + Breadth).",
+      "key_concepts": [
+        "perimeter",
+        "length",
+        "breadth"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 15,
+      "question": "How many degrees are there in a full circle?",
+      "answer": "There are 360° in a full circle.",
+      "key_concepts": [
+        "full circle",
+        "degrees"
+      ],
+      "marks": 3,
+      "source_section": "Section 9"
+    }
+  ]
+}

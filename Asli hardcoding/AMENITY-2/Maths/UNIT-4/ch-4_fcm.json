@@ -1,0 +1,163 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 4: Basic Geometrical Ideas",
+  "generated_at": "2026-02-11T00:13:59.621561",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the sum of interior angles in a triangle?",
+        "correct_answer": "180 degrees",
+        "explanation": "When two straight lines intersect, four angles are formed. The sum of these four angles is always 360 degrees.",
+        "source_section": "Section 1"
+      },
+      {
+        "question": "What is the definition of a right angle?",
+        "correct_answer": "90 degrees",
+        "explanation": "A right angle is an angle whose measure is 90 degrees. It is formed by two perpendicular lines or rays.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is the term for a line that never intersects another line?",
+        "correct_answer": "Parallel",
+        "explanation": "Two lines are parallel if they lie in the same plane and do not intersect each other, no matter how far extended.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the term for a line that intersects two or more points on another line?",
+        "correct_answer": "Transversal",
+        "explanation": "A transversal is a line that intersects two or more lines at different points.",
+        "source_section": "Section 4"
+      },
+      {
+        "question": "What is the definition of an equilateral triangle?",
+        "correct_answer": "All sides are equal",
+        "explanation": "An equilateral triangle has all three sides equal in length. Each angle is also 60 degrees.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is the definition of a regular polygon?",
+        "correct_answer": "All sides and angles are equal",
+        "explanation": "A regular polygon has all its sides and angles equal in measure. The sum of interior angles of a polygon is (n-2) × 180 degrees.",
+        "source_section": "Section 6"
+      },
+      {
+        "question": "What is the term for a shape with four right angles?",
+        "correct_answer": "Rectangle",
+        "explanation": "A rectangle has all four sides of equal length, and each internal angle is a right angle (90 degrees).",
+        "source_section": "Section 7"
+      },
+      {
+        "question": "What is the term for a shape with opposite sides that are parallel?",
+        "correct_answer": "Parallelogram",
+        "explanation": "A parallelogram has opposite sides of equal length and parallel to each other. Each internal angle is a right angle (90 degrees).",
+        "source_section": "Section 8"
+      },
+      {
+        "question": "What is the definition of an obtuse angle?",
+        "correct_answer": "Greater than 90 degrees but less than 180 degrees",
+        "explanation": "An obtuse angle has a measure greater than 90 degrees but less than 180 degrees. An acute angle has a measure between 0 and 90 degrees.",
+        "source_section": "Section 9"
+      },
+      {
+        "question": "What is the term for a shape with all internal angles equal?",
+        "correct_answer": "Regular Polygon",
+        "explanation": "A regular polygon has all its interior angles of equal measure. The sum of interior angles of a polygon is (n-2) × 180 degrees.",
+        "source_section": "Section 10"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Properties of Triangles",
+        "content": "The sum of the measures of the interior angles of any triangle is always 180 degrees. The exterior angle of a triangle equals the sum of its two remote interior angles.",
+        "source_section": "Section 1"
+      },
+      {
+        "title": "Angles and Line Segments",
+        "content": "An angle is formed by two line segments that meet at a point called the vertex. A ray is a straight line extending infinitely from a fixed point.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Properties of Angles",
+        "content": "Complementary angles add up to 90 degrees, while supplementary angles add up to 180 degrees. An angle can be acute (less than 90 degrees), right (exactly 90 degrees), obtuse (greater than 90 but less than 180), or straight (exactly 180 degrees).",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Properties of Parallel Lines",
+        "content": "Parallel lines have the same slope and never intersect. They can be either horizontal, vertical, or slanted.",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Properties of Transversals",
+        "content": "A transversal intersects two or more lines at different points. It creates pairs of corresponding angles and pairs of alternate interior angles.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Equilateral Triangles",
+        "content": "An equilateral triangle has all three sides equal in length, making it a regular polygon. Each angle is also 60 degrees.",
+        "source_section": "Section 6"
+      },
+      {
+        "title": "Regular Polygons",
+        "content": "A regular polygon has all its interior angles of equal measure and all its sides equal in length. The sum of interior angles of a polygon is (n-2) × 180 degrees.",
+        "source_section": "Section 7"
+      },
+      {
+        "title": "Properties of Rectangles",
+        "content": "A rectangle has four right angles, making it a parallelogram with opposite sides parallel. Each internal angle is a right angle (90 degrees).",
+        "source_section": "Section 8"
+      },
+      {
+        "title": "Parallelograms",
+        "content": "A parallelogram has opposite sides of equal length and parallel to each other, making it a rectangle with two pairs of parallel sides.",
+        "source_section": "Section 9"
+      },
+      {
+        "title": "Properties of Obtuse Angles",
+        "content": "An obtuse angle is greater than 90 degrees but less than 180 degrees. An acute angle has a measure between 0 and 90 degrees.",
+        "source_section": "Section 10"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "The sum of the interior angles of any polygon can be found using the formula (n-2) × 180 degrees, where n is the number of sides.",
+        "source_section": "Section 1"
+      },
+      {
+        "fact": "An equilateral triangle has three equal sides and three equal angles, each measuring 60 degrees.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "A regular polygon has all its interior angles of equal measure and all its sides equal in length. The sum of interior angles of a polygon is (n-2) × 180 degrees.",
+        "source_section": "Section 3"
+      },
+      {
+        "fact": "The exterior angle of a triangle equals the sum of its two remote interior angles.",
+        "source_section": "Section 4"
+      },
+      {
+        "fact": "Complementary angles add up to 90 degrees, while supplementary angles add up to 180 degrees.",
+        "source_section": "Section 5"
+      },
+      {
+        "fact": "An obtuse angle is greater than 90 degrees but less than 180 degrees. An acute angle has a measure between 0 and 90 degrees.",
+        "source_section": "Section 6"
+      },
+      {
+        "fact": "A rectangle has four right angles, making it a parallelogram with opposite sides parallel.",
+        "source_section": "Section 7"
+      },
+      {
+        "fact": "A transversal intersects two or more lines at different points, creating pairs of corresponding angles and pairs of alternate interior angles.",
+        "source_section": "Section 8"
+      },
+      {
+        "fact": "The sum of the measures of the exterior angles of a polygon is always 360 degrees.",
+        "source_section": "Section 9"
+      },
+      {
+        "fact": "A regular polygon can be classified as either convex or concave, depending on whether it has any interior angles greater than 180 degrees.",
+        "source_section": "Section 10"
+      }
+    ]
+  }
+}

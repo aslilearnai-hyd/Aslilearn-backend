@@ -1,0 +1,113 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Mathematics I Class 6",
+  "generated_at": "2023-09-12T10:34:02.343453",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "The first metal detector was invented to find a ______ in President Garfield!",
+      "correct_answer": "bullet",
+      "explanation": "From the content section about Metal Detector.",
+      "source_section": "Section 20"
+    },
+    {
+      "question_number": 2,
+      "question": "An air conditioner (AC) works by using a ______ cycle, where a special fluid called refrigerant absorbs heat from the indoor air and releases it outside.",
+      "correct_answer": "refrigeration",
+      "explanation": "From the content section about Air Conditioner.",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 3,
+      "question": "The symbol for infinity was introduced in ______ by mathematician John Wallis to represent a quantity that continues forever.",
+      "correct_answer": "1655",
+      "explanation": "From the content section about Infinity.",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 4,
+      "question": "Pascal’s Triangle is a triangular array of numbers where each entry is the sum of the two numbers directly ______ it.",
+      "correct_answer": "above",
+      "explanation": "From the content section about Pascal’s Triangle.",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 5,
+      "question": "The first modern AC was invented in ______ by Willis Carrier!",
+      "correct_answer": "1902",
+      "explanation": "From the content section about Air Conditioner.",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 6,
+      "question": "The compressor, evaporator, and condenser are the main components that help regulate ______ and humidity in an air conditioner.",
+      "correct_answer": "temperature",
+      "explanation": "From the content section about Air Conditioner.",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 7,
+      "question": "Pascal’s Triangle has many fascinating properties: its rows represent ______ coefficients, reveal Fibonacci numbers, and display triangular numbers.",
+      "correct_answer": "binomial",
+      "explanation": "From the content section about Pascal’s Triangle.",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 8,
+      "question": "The diagonal sums of Pascal’s Triangle create the ______ sequence!",
+      "correct_answer": "Fibonacci",
+      "explanation": "From the content section about Pascal’s Triangle.",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 9,
+      "question": "In mathematics, infinity represents values that grow beyond any fixed ______ number.",
+      "correct_answer": "fixed",
+      "explanation": "From the content section about Infinity.",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 10,
+      "question": "The symbol ∞ is often used in jewelry to represent everlasting ______ love.",
+      "correct_answer": "everlasting",
+      "explanation": "From the content section about Infinity.",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 11,
+      "question": "In philosophy and spirituality, infinity signifies ______, balance, and the interconnection of all things.",
+      "correct_answer": "eternity",
+      "explanation": "From the content section about Infinity.",
+      "source_section": "Section 22"
+    },
+    {
+      "question_number": 12,
+      "question": "A metal detector is an electronic device that detects the presence of ______ objects underground, in water, or hidden inside other materials.",
+      "correct_answer": "metal",
+      "explanation": "From the content section about Metal Detector.",
+      "source_section": "Section 20"
+    },
+    {
+      "question_number": 13,
+      "question": "The first metal detector was invented to find a bullet in President ______ Garfield!",
+      "correct_answer": "Garfield",
+      "explanation": "From the content section about Metal Detector.",
+      "source_section": "Section 20"
+    },
+    {
+      "question_number": 14,
+      "question": "An air conditioner (AC) is a device that cools and dehumidifies ______ indoor air, making spaces more comfortable.",
+      "correct_answer": "indoor",
+      "explanation": "From the content section about Air Conditioner.",
+      "source_section": "Section 21"
+    },
+    {
+      "question_number": 15,
+      "question": "The compressor, evaporator, and condenser are the main components that help regulate temperature and ______ in an air conditioner.",
+      "correct_answer": "humidity",
+      "explanation": "From the content section about Air Conditioner.",
+      "source_section": "Section 21"
+    }
+  ]
+}

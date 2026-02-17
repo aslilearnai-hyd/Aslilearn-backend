@@ -1,0 +1,173 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 7: Water and its components",
+  "generated_at": "2026-02-12T00:58:18.087440",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the specific heat capacity of water?",
+      "answer": "The specific heat capacity of water is approximately 4.184 joules per gram per degree Celsius. This means that it takes a significant amount of energy to change the temperature of water.",
+      "key_concepts": [
+        "Specific Heat Capacity",
+        "Water Properties"
+      ],
+      "marks": 3,
+      "source_section": "Section 1: Water and its Components"
+    },
+    {
+      "question_number": 2,
+      "question": "What is latent heat of vaporization?",
+      "answer": "Latent heat of vaporization is the amount of energy required to change a substance from liquid to gas state without changing its temperature. For water, this value is approximately 2250 joules per gram.",
+      "key_concepts": [
+        "Latent Heat of Vaporization",
+        "Water Properties"
+      ],
+      "marks": 3,
+      "source_section": "Section 2: States of Matter"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the difference between latent heat of fusion and latent heat of vaporization?",
+      "answer": "Latent heat of fusion is the energy required to change a substance from solid to liquid state, while latent heat of vaporization is the energy required to change a substance from liquid to gas state. Both values are specific to each substance.",
+      "key_concepts": [
+        "Latent Heat of Fusion",
+        "Latent Heat of Vaporization"
+      ],
+      "marks": 4,
+      "source_section": "Section 3: Phase Changes"
+    },
+    {
+      "question_number": 4,
+      "question": "What is cohesion in water?",
+      "answer": "Cohesion refers to the attractive forces between molecules of the same substance, causing them to stick together. In the case of water, cohesion leads to surface tension.",
+      "key_concepts": [
+        "Cohesion",
+        "Surface Tension"
+      ],
+      "marks": 3,
+      "source_section": "Section 4: Water Properties"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the use of pumped storage hydroelectric plants?",
+      "answer": "Pumped storage hydroelectric plants store water in an upper reservoir during off-peak hours and release it to generate electricity during peak hours. This helps stabilize the grid and meet energy demands.",
+      "key_concepts": [
+        "Pumped Storage Hydroelectric Plants",
+        "Renewable Energy"
+      ],
+      "marks": 4,
+      "source_section": "Section 5: Hydroelectric Power"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the difference between conventional and pumped storage hydroelectric plants?",
+      "answer": "Conventional hydroelectric plants generate electricity by harnessing the energy of flowing water, while pumped storage hydroelectric plants store water in an upper reservoir during off-peak hours to generate electricity later.",
+      "key_concepts": [
+        "Conventional Hydroelectric Plants",
+        "Pumped Storage Hydroelectric Plants"
+      ],
+      "marks": 4,
+      "source_section": "Section 5: Hydroelectric Power"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the role of water in agriculture?",
+      "answer": "Water plays a crucial role in agriculture, as it is used for irrigation, crop growth, and livestock care. It helps maintain soil health, supports plant growth, and ensures food security.",
+      "key_concepts": [
+        "Agriculture",
+        "Water Use"
+      ],
+      "marks": 3,
+      "source_section": "Section 6: Water in Agriculture"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the difference between surface water and groundwater?",
+      "answer": "Surface water refers to water that flows on the Earth's surface, such as rivers, lakes, and oceans. Groundwater, on the other hand, is water stored beneath the Earth's surface in aquifers.",
+      "key_concepts": [
+        "Surface Water",
+        "Groundwater"
+      ],
+      "marks": 4,
+      "source_section": "Section 7: Water Sources"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the importance of water conservation?",
+      "answer": "Water conservation is essential for maintaining ecosystem balance, supporting human consumption, and ensuring food security. It also helps mitigate the impacts of climate change and maintain water quality.",
+      "key_concepts": [
+        "Water Conservation",
+        "Ecosystem Balance"
+      ],
+      "marks": 4,
+      "source_section": "Section 8: Water Management"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the difference between desalination and purification?",
+      "answer": "Desalination involves removing salt and other minerals from seawater or brackish water to make it potable. Purification, on the other hand, refers to removing contaminants and pollutants from water to make it safe for consumption.",
+      "key_concepts": [
+        "Desalination",
+        "Water Purification"
+      ],
+      "marks": 4,
+      "source_section": "Section 9: Water Treatment"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the role of water in the Earth's climate system?",
+      "answer": "Water plays a crucial role in regulating Earth's climate, as it helps moderate temperatures, influences weather patterns, and affects the global energy balance.",
+      "key_concepts": [
+        "Climate System",
+        "Water Cycle"
+      ],
+      "marks": 4,
+      "source_section": "Section 10: Water and Climate"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the difference between freshwater and saltwater?",
+      "answer": "Freshwater has a low concentration of dissolved salts, typically less than 1%, whereas saltwater contains a high concentration of dissolved salts, usually above 3.5%.",
+      "key_concepts": [
+        "Freshwater",
+        "Saltwater"
+      ],
+      "marks": 4,
+      "source_section": "Section 11: Water Classification"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the importance of water in human health?",
+      "answer": "Water is essential for maintaining human health, as it helps regulate body temperature, transports nutrients and oxygen to cells, and removes waste products.",
+      "key_concepts": [
+        "Human Health",
+        "Water Use"
+      ],
+      "marks": 4,
+      "source_section": "Section 12: Water and Human Health"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the role of water in industry?",
+      "answer": "Water plays a crucial role in various industrial processes, such as manufacturing, mining, and energy production. It helps cool equipment, transport raw materials, and facilitate chemical reactions.",
+      "key_concepts": [
+        "Industry",
+        "Water Use"
+      ],
+      "marks": 4,
+      "source_section": "Section 13: Water in Industry"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the difference between surface water and groundwater recharge?",
+      "answer": "Surface water recharge refers to the process of adding water to a surface water body, such as a river or lake. Groundwater recharge, on the other hand, involves replenishing aquifers with water from various sources.",
+      "key_concepts": [
+        "Surface Water Recharge",
+        "Groundwater Recharge"
+      ],
+      "marks": 4,
+      "source_section": "Section 14: Water Management"
+    }
+  ]
+}

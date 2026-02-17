@@ -96,6 +96,28 @@ router.get('/test', testTeacherData);
 
 // Apply authentication middleware to all routes
 router.use(verifyToken);
+
+// AI Tools Routes - Allow both teachers and students (before verifyTeacher)
+// Allow both teachers and students to access these endpoints
+const allowTeacherOrStudent = (req, res, next) => {
+  if (req.user.role === 'teacher' || req.user.role === 'student') {
+    if (req.user.role === 'student') {
+      req.teacherId = req.userId;
+    } else if (req.user.role === 'teacher') {
+      req.teacherId = req.userId;
+    }
+    next();
+  } else {
+    return res.status(403).json({ success: false, message: 'Access denied. Teacher or Student privileges required.' });
+  }
+};
+
+router.get('/ai/subjects', allowTeacherOrStudent, getSubjects); // Returns valid subjects for Class 6
+router.get('/ai/topics', allowTeacherOrStudent, getTopics); // Returns chapters from planner.json
+router.get('/ai/available-content', allowTeacherOrStudent, getAvailableContent); // Returns all available content types for a chapter
+router.post('/ai/tool', allowTeacherOrStudent, createTeacherTool); // Uses hardcoded content only
+
+// Apply teacher-only middleware for other routes
 router.use(verifyTeacher);
 router.use(extractTeacherId);
 
@@ -379,16 +401,11 @@ router.get('/classes/:classNumber/subjects', async (req, res) => {
   }
 });
 
-// AI Tools Routes
-// AI Tools Routes - All use hardcoded content only
-router.get('/ai/subjects', getSubjects); // Returns valid subjects for Class 6
-router.get('/ai/topics', getTopics); // Returns chapters from planner.json
-router.get('/ai/available-content', getAvailableContent); // Returns all available content types for a chapter
+// Other AI Tools Routes (teacher-only)
 router.post('/ai/lesson-plan', createLessonPlan);
 router.post('/ai/test-questions', createTestQuestions);
 router.post('/ai/classwork', createClasswork);
 router.post('/ai/schedule', createSchedule);
-router.post('/ai/tool', createTeacherTool); // Uses hardcoded content only
 
 // Grading endpoint
 router.post('/grade-work', upload.single('file'), async (req, res) => {

@@ -1,0 +1,76 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 3: Body movements musculo skeletal system",
+  "generated_at": "2026-02-11T21:21:24.307636",
+  "concepts": [
+    {
+      "concept_name": "Types of Muscle Fibers",
+      "difficulty": "medium",
+      "lesson": "Muscle fibers are classified into two main types: red muscle fibers and white muscle fibers. Red muscle fibers contain more myoglobin, which gives them a reddish color and allows them to store more oxygen. They primarily use aerobic respiration to generate energy, making them highly efficient for endurance activities like long-distance running.",
+      "real_example": "",
+      "key_points": [
+        "Red muscle fibers have more myoglobin than white muscle fibers",
+        "Red muscle fibers are well-suited for endurance activities due to their ability to store oxygen",
+        "White muscle fibers generate energy anaerobically and fatigue faster"
+      ],
+      "source_section": "Section 1: Main Chapter Concepts"
+    },
+    {
+      "concept_name": "Skeletal System Functions",
+      "difficulty": "hard",
+      "lesson": "The skeletal system provides support, protection, and movement to the body. It consists of bones, cartilage, and ligaments that work together to maintain posture, facilitate movement, and provide a framework for muscles to attach.",
+      "real_example": "",
+      "key_points": [
+        "The skeletal system provides support and protection to the body",
+        "It facilitates movement by allowing muscles to attach to bones",
+        "It maintains posture and provides a framework for muscles"
+      ],
+      "source_section": "Section 2: Skeletal System Functions"
+    },
+    {
+      "concept_name": "Types of Movement",
+      "difficulty": "medium",
+      "lesson": "There are three main types of movement: flexion, extension, and rotation. Flexion is the movement towards the midline of the body, while extension is the movement away from it. Rotation is the movement around a fixed axis.",
+      "real_example": "",
+      "key_points": [
+        "Flexion is the movement towards the midline of the body",
+        "Extension is the movement away from the midline of the body",
+        "Rotation is the movement around a fixed axis"
+      ],
+      "source_section": "Section 3: Types of Movement"
+    },
+    {
+      "concept_name": "Muscle Attachments",
+      "difficulty": "easy",
+      "lesson": "Muscles attach to bones at specific points called tendons. These attachments allow muscles to contract and move the body.",
+      "real_example": "",
+      "key_points": [
+        "Muscles attach to bones at tendons",
+        "Tendons are made of dense connective tissue"
+      ],
+      "source_section": "Section 4: Muscle Attachments"
+    },
+    {
+      "concept_name": "Bone Classification",
+      "difficulty": "hard",
+      "lesson": "Bones can be classified into several types based on their shape and function. Long bones, for example, have a shaft (diaphysis) and two ends (epiphyses). Short bones are cube-shaped and have equal dimensions in all directions.",
+      "real_example": "",
+      "key_points": [
+        "Long bones have a shaft and two ends",
+        "Short bones are cube-shaped with equal dimensions"
+      ],
+      "source_section": "Section 5: Bone Classification"
+    },
+    {
+      "concept_name": "Types of Joints",
+      "difficulty": "medium",
+      "lesson": "There are three main types of joints: ball-and-socket, hinge, and pivot. Ball-and-socket joints allow for movement in all directions, while hinge joints allow for flexion and extension only.",
+      "real_example": "",
+      "key_points": [
+        "Ball-and-socket joints allow for movement in all directions",
+        "Hinge joints allow for flexion and extension only"
+      ],
+      "source_section": "Section 6: Types of Joints"
+    }
+  ]
+}

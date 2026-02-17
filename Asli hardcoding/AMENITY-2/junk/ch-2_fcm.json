@@ -1,0 +1,118 @@
+{
+  "content_type": "Flashcard Maker",
+  "section": "Chapter 1: Numbers and their Place Value",
+  "generated_at": "2026-02-10T22:49:07.746585",
+  "flashcards": {
+    "questions": [
+      {
+        "question": "What is the value of a digit in the ones place?",
+        "correct_answer": "The digit multiplied by 1",
+        "explanation": "Place value is determined by multiplying the digit by the value of its position.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What is the smallest natural number?",
+        "correct_answer": "1",
+        "explanation": "Natural numbers start from 1 and continue infinitely.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the largest digit in a decimal number?",
+        "correct_answer": "9",
+        "explanation": "The maximum value of any digit is 9.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What are the first three prime numbers?",
+        "correct_answer": "2, 3, 5",
+        "explanation": "Prime numbers are natural numbers greater than 1 that have no divisors other than 1 and themselves.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is the value of a digit in the tens place?",
+        "correct_answer": "The digit multiplied by 10",
+        "explanation": "Place value is determined by multiplying the digit by the value of its position.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What are the first five even numbers?",
+        "correct_answer": "2, 4, 6, 8, 10",
+        "explanation": "Even numbers are natural numbers divisible by 2.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the largest prime number less than 100?",
+        "correct_answer": "97",
+        "explanation": "Prime numbers are natural numbers greater than 1 that have no divisors other than 1 and themselves.",
+        "source_section": "Section 5"
+      },
+      {
+        "question": "What is the value of a digit in the thousands place?",
+        "correct_answer": "The digit multiplied by 1000",
+        "explanation": "Place value is determined by multiplying the digit by the value of its position.",
+        "source_section": "Section 2"
+      },
+      {
+        "question": "What are the first three odd numbers?",
+        "correct_answer": "1, 3, 5",
+        "explanation": "Odd numbers are natural numbers not divisible by 2.",
+        "source_section": "Section 3"
+      },
+      {
+        "question": "What is the smallest even number greater than 10?",
+        "correct_answer": "12",
+        "explanation": "Even numbers are natural numbers divisible by 2.",
+        "source_section": "Section 3"
+      }
+    ],
+    "notes": [
+      {
+        "title": "Indian Number System Periods",
+        "content": "The Indian number system has four periods: Ones (up to hundreds), Thousands (thousands and ten thousands), Lakhs (lakhs and ten lakhs), and Crores (crores and ten crores).",
+        "source_section": "Section 4"
+      },
+      {
+        "title": "Place Value Explanation",
+        "content": "Place value is determined by multiplying the digit by the value of its position.",
+        "source_section": "Section 2"
+      },
+      {
+        "title": "Even and Odd Numbers Definition",
+        "content": "Even numbers are natural numbers divisible by 2, while odd numbers are not divisible by 2.",
+        "source_section": "Section 3"
+      },
+      {
+        "title": "Prime Numbers Definition",
+        "content": "Prime numbers are natural numbers greater than 1 that have no divisors other than 1 and themselves.",
+        "source_section": "Section 5"
+      },
+      {
+        "title": "Place Value in Decimal Numbers",
+        "content": "Decimal numbers use a point to separate the whole number part from the fractional part, with each digit's place value determined by its position after the point.",
+        "source_section": "Section 2"
+      }
+    ],
+    "facts": [
+      {
+        "fact": "In the Indian system, commas are placed after every two digits from the right, except the first comma which comes after three digits.",
+        "source_section": "Section 4"
+      },
+      {
+        "fact": "The number 0 is a digit and also a placeholder in numbers.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "In decimal numbers, the place value of each digit decreases by one as you move to the right of the point.",
+        "source_section": "Section 2"
+      },
+      {
+        "fact": "Prime numbers are used extensively in cryptography and coding theory.",
+        "source_section": "Section 5"
+      },
+      {
+        "fact": "The number system has evolved over time, with various civilizations contributing to its development.",
+        "source_section": "Section 1"
+      }
+    ]
+  }
+}

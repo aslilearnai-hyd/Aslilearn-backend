@@ -1,0 +1,171 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 3: Playing with Numbers",
+  "generated_at": "2026-02-10T23:45:43.972274",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Explain the concept of prime numbers and give examples from the content.",
+      "answer": "Prime numbers are natural numbers greater than 1 that have no positive divisors other than 1 and themselves. For instance, 2 is a prime number because it can only be divided evenly by 1 and itself, whereas 4 is not prime since it can also be divided by 2. The content mentions the first few prime numbers: 2, 3, 5, 7, 11, 13, etc.",
+      "answer_outline": [
+        "Definition of Prime Numbers",
+        "Examples of Prime Numbers from Content"
+      ],
+      "key_concepts": [
+        "Prime Numbers",
+        "Natural Numbers",
+        "Divisors",
+        "Even Divisibility"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Integers"
+    },
+    {
+      "question_number": 2,
+      "question": "Describe the process of finding the greatest common divisor (GCD) using the Euclidean algorithm.",
+      "answer": "The Euclidean algorithm for finding GCD involves repeatedly applying division to find the remainder until it is zero. Starting with two numbers, we divide the larger number by the smaller one and take the remainder. We then replace the larger number with the smaller one and the smaller number with the remainder. This process continues until the remainder becomes zero; the last non-zero remainder is the GCD.",
+      "answer_outline": [
+        "Step 1: Divide Larger Number by Smaller One",
+        "Step 2: Take Remainder and Replace Numbers"
+      ],
+      "key_concepts": [
+        "Greatest Common Divisor (GCD)",
+        "Euclidean Algorithm",
+        "Division",
+        "Remainder"
+      ],
+      "marks": 9,
+      "source_section": "Section 3: Fractions"
+    },
+    {
+      "question_number": 3,
+      "question": "Explain how to simplify fractions using the concept of equivalent ratios.",
+      "answer": "To simplify a fraction, we need to find an equivalent ratio where both the numerator and denominator have no common factors other than 1. This can be done by dividing both numbers by their greatest common divisor (GCD). For example, if we want to simplify 6/8, we find that they share a GCD of 2. Dividing both by 2 gives us 3/4.",
+      "answer_outline": [
+        "Step 1: Find Greatest Common Divisor (GCD)",
+        "Step 2: Divide Both Numbers by GCD"
+      ],
+      "key_concepts": [
+        "Equivalent Ratios",
+        "Simplifying Fractions",
+        "Common Factors"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Fractions"
+    },
+    {
+      "question_number": 4,
+      "question": "Discuss the concept of prime factorization and its importance in mathematics.",
+      "answer": "Prime factorization is the process of expressing a number as a product of its prime factors. This is crucial because it helps us understand the properties of numbers, facilitates calculations, and has numerous applications in various fields. By breaking down a number into its prime factors, we can easily determine if it's composite or prime.",
+      "answer_outline": [
+        "Importance of Prime Factorization",
+        "Applications in Various Fields"
+      ],
+      "key_concepts": [
+        "Prime Factorization",
+        "Composite Numbers",
+        "Prime Numbers"
+      ],
+      "marks": 9,
+      "source_section": "Section 2: Integers and Fractions"
+    },
+    {
+      "question_number": 5,
+      "question": "Explain the concept of even numbers and give examples from the content.",
+      "answer": "Even numbers are whole numbers that can be divided by 2 without leaving a remainder. Examples include 0, 4, 6, 8, etc., as seen in the content. These numbers have unique properties and play significant roles in various mathematical operations.",
+      "answer_outline": [
+        "Definition of Even Numbers",
+        "Examples from Content"
+      ],
+      "key_concepts": [
+        "Even Numbers",
+        "Whole Numbers",
+        "Division",
+        "Remainder"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Integers"
+    },
+    {
+      "question_number": 6,
+      "question": "Describe the process of finding the least common multiple (LCM) using prime factorization.",
+      "answer": "To find LCM, we first express both numbers in terms of their prime factors. We then identify the highest power of each prime factor and multiply them together to get the LCM. This ensures that the product is divisible by both original numbers without leaving a remainder.",
+      "answer_outline": [
+        "Step 1: Express Numbers in Terms of Prime Factors",
+        "Step 2: Identify Highest Power of Each Prime Factor"
+      ],
+      "key_concepts": [
+        "Least Common Multiple (LCM)",
+        "Prime Factorization",
+        "Division"
+      ],
+      "marks": 9,
+      "source_section": "Section 3: Fractions"
+    },
+    {
+      "question_number": 7,
+      "question": "Explain the concept of prime numbers in relation to divisibility.",
+      "answer": "Prime numbers are divisible only by 1 and themselves. This is because any other factor would imply that the number has a divisor other than 1 or itself, making it composite. For example, the prime number 5 can only be divided evenly by 1 and 5 itself.",
+      "answer_outline": [
+        "Definition of Prime Numbers",
+        "Divisibility by 1 and Themselves"
+      ],
+      "key_concepts": [
+        "Prime Numbers",
+        "Divisors",
+        "Composite Numbers"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Integers and Fractions"
+    },
+    {
+      "question_number": 8,
+      "question": "Describe the process of simplifying fractions using equivalent ratios.",
+      "answer": "To simplify a fraction, we need to find an equivalent ratio where both the numerator and denominator have no common factors other than 1. This can be done by dividing both numbers by their greatest common divisor (GCD). For example, if we want to simplify 6/8, we find that they share a GCD of 2. Dividing both by 2 gives us 3/4.",
+      "answer_outline": [
+        "Step 1: Find Greatest Common Divisor (GCD)",
+        "Step 2: Divide Both Numbers by GCD"
+      ],
+      "key_concepts": [
+        "Equivalent Ratios",
+        "Simplifying Fractions"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Fractions"
+    },
+    {
+      "question_number": 9,
+      "question": "Discuss the importance of prime numbers in cryptography and coding.",
+      "answer": "Prime numbers play a crucial role in cryptography and coding due to their unique properties. They are used to create secure keys for encryption and decryption, ensuring that sensitive information remains confidential. Prime numbers also facilitate the development of algorithms for secure data transmission.",
+      "answer_outline": [
+        "Importance in Cryptography",
+        "Role in Secure Data Transmission"
+      ],
+      "key_concepts": [
+        "Prime Numbers",
+        "Cryptography",
+        "Coding"
+      ],
+      "marks": 9,
+      "source_section": "Section 2: Integers and Fractions"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the concept of odd numbers and give examples from the content.",
+      "answer": "Odd numbers are whole numbers that cannot be divided by 2 without leaving a remainder. Examples include 1, 3, 5, 7, etc., as seen in the content. These numbers have unique properties and play significant roles in various mathematical operations.",
+      "answer_outline": [
+        "Definition of Odd Numbers",
+        "Examples from Content"
+      ],
+      "key_concepts": [
+        "Odd Numbers",
+        "Whole Numbers",
+        "Division",
+        "Remainder"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Integers"
+    }
+  ]
+}

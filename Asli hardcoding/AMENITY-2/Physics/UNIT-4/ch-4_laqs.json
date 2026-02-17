@@ -1,0 +1,179 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 4: Fun with magnets",
+  "generated_at": "2026-02-11T22:52:53.047987",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Describe the process of magnetization in ferromagnetic materials, including the role of magnetic domains and the alignment of atomic moments.",
+      "answer": "Magnetization is a complex process that involves the alignment of atomic moments within ferromagnetic materials. The primary mechanism behind this phenomenon is the interaction between adjacent atoms. Each atom has a tiny north-south axis, known as its magnetic moment, which can be oriented either parallel or antiparallel to neighboring atoms. In unmagnetized materials, these moments are randomly aligned, resulting in no net magnetic field. However, when an external magnetic field is applied, it causes the atomic moments to align, creating a preferred orientation. This alignment of atomic moments leads to the creation of domains within the material. Domains are regions where the atomic moments are all aligned in a particular direction. The number and size of these domains determine the overall magnetization of the material.",
+      "answer_outline": [
+        "Explanation of magnetic domains",
+        "Alignment of atomic moments",
+        "Interaction between adjacent atoms"
+      ],
+      "key_concepts": [
+        "Magnetic domains",
+        "Ferromagnetic materials",
+        "Atomic alignment",
+        "External magnetic field"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Introduction to Magnetism"
+    },
+    {
+      "question_number": 2,
+      "question": "Explain the concept of magnetic shielding and its applications in real-life scenarios.",
+      "answer": "Magnetic shielding is a process where a material or object is used to protect another from external magnetic fields. This can be achieved through various methods, including using non-magnetic materials or creating a magnetic field that cancels out the external one. Magnetic shielding has numerous practical applications, such as protecting sensitive electronic devices from magnetic interference and reducing the effects of magnetism on navigation systems.",
+      "answer_outline": [
+        "Explanation of magnetic shielding",
+        "Applications in real-life scenarios",
+        "Methods for achieving magnetic shielding"
+      ],
+      "key_concepts": [
+        "Magnetic shielding",
+        "Non-magnetic materials",
+        "Magnetic field cancellation"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Magnetic Fields and Shielding"
+    },
+    {
+      "question_number": 3,
+      "question": "Describe the difference between permanent magnets and temporary magnets, including their characteristics and applications.",
+      "answer": "Permanent magnets are materials that retain their magnetic field even after the external source is removed. They have a permanent alignment of atomic moments, which creates a stable magnetic field. Temporary magnets, on the other hand, lose their magnetism once the external source is removed. This occurs when the material is heated or exposed to strong magnetic fields. Permanent magnets are commonly used in applications such as motors and generators, while temporary magnets find use in situations where a temporary magnetic field is required.",
+      "answer_outline": [
+        "Explanation of permanent magnets",
+        "Characteristics of temporary magnets",
+        "Applications of each type"
+      ],
+      "key_concepts": [
+        "Permanent magnets",
+        "Temporary magnets",
+        "Atomic alignment"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Permanent and Temporary Magnets"
+    },
+    {
+      "question_number": 4,
+      "question": "Explain the concept of magnetization and its relationship to atomic alignment.",
+      "answer": "Magnetization is a result of the alignment of atomic moments within a material. When an external magnetic field is applied, it causes the atomic moments to align, leading to the creation of domains. The number and size of these domains determine the overall magnetization of the material. In ferromagnetic materials, magnetization occurs due to the interaction between adjacent atoms.",
+      "answer_outline": [
+        "Explanation of magnetization",
+        "Atomic alignment",
+        "Interaction between adjacent atoms"
+      ],
+      "key_concepts": [
+        "Magnetization",
+        "Atomic alignment",
+        "Ferromagnetic materials"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Introduction to Magnetism"
+    },
+    {
+      "question_number": 5,
+      "question": "Describe the process of demagnetization in ferromagnetic materials, including the effects of heat and magnetic fields.",
+      "answer": "Demagnetization occurs when a ferromagnetic material loses its magnetism due to external factors such as heat or strong magnetic fields. When heated above a certain temperature, the atomic moments within the material become randomly aligned, resulting in a loss of magnetism. Similarly, exposure to strong magnetic fields can cause the material to lose its magnetism by realigning the atomic moments.",
+      "answer_outline": [
+        "Explanation of demagnetization",
+        "Effects of heat on magnetism",
+        "Effects of magnetic fields on magnetism"
+      ],
+      "key_concepts": [
+        "Demagnetization",
+        "Heat and magnetism",
+        "Magnetic field effects"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Permanent and Temporary Magnets"
+    },
+    {
+      "question_number": 6,
+      "question": "Explain the concept of magnetic induction, including its applications in real-life scenarios.",
+      "answer": "Magnetic induction is a process where an external magnetic field induces magnetism within a material. This occurs when a coil of wire is placed within a changing magnetic field, causing an electric current to flow through the coil. Magnetic induction has numerous practical applications, such as generating electricity and powering electronic devices.",
+      "answer_outline": [
+        "Explanation of magnetic induction",
+        "Applications in real-life scenarios",
+        "Principle behind magnetic induction"
+      ],
+      "key_concepts": [
+        "Magnetic induction",
+        "External magnetic field",
+        "Electric current generation"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Magnetic Fields and Shielding"
+    },
+    {
+      "question_number": 7,
+      "question": "Describe the concept of magnetomotive force (MMF) and its relationship to magnetic fields.",
+      "answer": "Magnetomotive force (MMF) is a measure of the strength of an external magnetic field. It is defined as the product of the current flowing through a coil and the number of turns in the coil. The MMF determines the degree of magnetization within a material, with higher values resulting in stronger magnetic fields.",
+      "answer_outline": [
+        "Explanation of magnetomotive force",
+        "Relationship to magnetic fields",
+        "Principle behind MMF"
+      ],
+      "key_concepts": [
+        "Magnetomotive force",
+        "External magnetic field",
+        "Material magnetization"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Introduction to Magnetism"
+    },
+    {
+      "question_number": 8,
+      "question": "Explain the concept of magnetic shielding and its applications in real-life scenarios.",
+      "answer": "Magnetic shielding is a process where a material or object is used to protect another from external magnetic fields. This can be achieved through various methods, including using non-magnetic materials or creating a magnetic field that cancels out the external one. Magnetic shielding has numerous practical applications, such as protecting sensitive electronic devices from magnetic interference and reducing the effects of magnetism on navigation systems.",
+      "answer_outline": [
+        "Explanation of magnetic shielding",
+        "Applications in real-life scenarios",
+        "Methods for achieving magnetic shielding"
+      ],
+      "key_concepts": [
+        "Magnetic shielding",
+        "Non-magnetic materials",
+        "Magnetic field cancellation"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Magnetic Fields and Shielding"
+    },
+    {
+      "question_number": 9,
+      "question": "Describe the process of magnetization in ferromagnetic materials, including the role of magnetic domains and the alignment of atomic moments.",
+      "answer": "Magnetization is a complex process that involves the alignment of atomic moments within ferromagnetic materials. The primary mechanism behind this phenomenon is the interaction between adjacent atoms. Each atom has a tiny north-south axis, known as its magnetic moment, which can be oriented either parallel or antiparallel to neighboring atoms.",
+      "answer_outline": [
+        "Explanation of magnetic domains",
+        "Alignment of atomic moments",
+        "Interaction between adjacent atoms"
+      ],
+      "key_concepts": [
+        "Magnetic domains",
+        "Ferromagnetic materials",
+        "Atomic alignment"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Introduction to Magnetism"
+    },
+    {
+      "question_number": 10,
+      "question": "Explain the concept of magnetic induction, including its applications in real-life scenarios.",
+      "answer": "Magnetic induction is a process where an external magnetic field induces magnetism within a material. This occurs when a coil of wire is placed within a changing magnetic field, causing an electric current to flow through the coil. Magnetic induction has numerous practical applications, such as generating electricity and powering electronic devices.",
+      "answer_outline": [
+        "Explanation of magnetic induction",
+        "Applications in real-life scenarios",
+        "Principle behind magnetic induction"
+      ],
+      "key_concepts": [
+        "Magnetic induction",
+        "External magnetic field",
+        "Electric current generation"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Magnetic Fields and Shielding"
+    }
+  ]
+}

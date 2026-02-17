@@ -1,0 +1,68 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "section": "Chapter 7: Fractions",
+  "generated_at": "2026-02-11T00:51:58.975373",
+  "notes": [
+    {
+      "concept_name": "Fraction Basics",
+      "summary": "Fractions are a way to show part of a whole. They have a numerator and denominator. The numerator is the top number, and the denominator is the bottom number.",
+      "importance": "Understanding fractions is crucial for math operations and problem-solving.",
+      "quick_facts": [
+        "A fraction has two parts: the numerator and the denominator.",
+        "The numerator represents the part of the whole.",
+        "The denominator shows how many equal parts the whole is divided into."
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "concept_name": "Like and Unlike Fractions",
+      "summary": "Like fractions have the same denominator, while unlike fractions have different denominators. To compare like fractions, we add or subtract their numerators.",
+      "importance": "Identifying whether fractions are like or unlike is essential for addition, subtraction, multiplication, and division operations.",
+      "quick_facts": [
+        "Unlike fractions cannot be compared directly.",
+        "To compare unlike fractions, find the least common multiple (LCM) of their denominators."
+      ],
+      "source_section": "Section 2"
+    },
+    {
+      "concept_name": "Equivalent Fractions",
+      "summary": "Equivalent fractions have the same value but different numerators and denominators. We can simplify fractions by dividing both numbers by their greatest common divisor (GCD).",
+      "importance": "Understanding equivalent fractions helps with simplification, comparison, and conversion between fractions.",
+      "quick_facts": [
+        "To simplify a fraction, divide both numbers by their GCD.",
+        "Equivalent fractions have the same value but different numerators and denominators."
+      ],
+      "source_section": "Section 3"
+    },
+    {
+      "concept_name": "Adding and Subtracting Fractions",
+      "summary": "When adding or subtracting fractions with unlike denominators, we find the least common multiple (LCM) of their denominators. The result is a new fraction with the LCM as its denominator.",
+      "importance": "Accurate addition and subtraction of fractions are essential for solving real-world problems and mathematical operations.",
+      "quick_facts": [
+        "To add or subtract unlike fractions, find the LCM of their denominators.",
+        "The result has the LCM as its new denominator."
+      ],
+      "source_section": "Section 4"
+    },
+    {
+      "concept_name": "Multiplying and Dividing Fractions",
+      "summary": "When multiplying fractions, we multiply both numerators and denominators. When dividing fractions, we invert the second fraction and then multiply.",
+      "importance": "Correct multiplication and division of fractions are vital for solving problems in various fields like science, engineering, and finance.",
+      "quick_facts": [
+        "To multiply fractions, multiply both numbers.",
+        "To divide fractions, invert the second fraction and multiply."
+      ],
+      "source_section": "Section 5"
+    },
+    {
+      "concept_name": "Order of Operations with Fractions",
+      "summary": "When working with fractions in expressions, we follow the order of operations (PEMDAS/BODMAS): Parentheses, Exponents, Multiplication and Division, Addition and Subtraction.",
+      "importance": "Understanding the correct order of operations ensures accurate calculations and prevents errors in mathematical expressions.",
+      "quick_facts": [
+        "Follow PEMDAS/BODMAS when working with fractions in expressions.",
+        "Parentheses come first, followed by exponents."
+      ],
+      "source_section": "Section 6"
+    }
+  ]
+}

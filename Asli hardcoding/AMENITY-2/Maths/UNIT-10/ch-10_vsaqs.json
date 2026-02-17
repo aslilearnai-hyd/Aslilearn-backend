@@ -1,0 +1,206 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 10: Algebra Including Simple Equations",
+  "generated_at": "2026-02-11T16:51:12.948334",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is a palindromic number?",
+      "answer": "A palindromic number reads the same forward and backward.",
+      "key_points": [
+        "palindrome",
+        "number"
+      ],
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the definition of the Golden Ratio?",
+      "answer": "The ratio of two numbers that is the same as the ratio of their sum to the larger number.",
+      "key_points": [
+        "Golden Ratio",
+        "phi"
+      ],
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 3,
+      "question": "What is an example of a palindromic number?",
+      "answer": "The number 121 is an example of a palindromic number.",
+      "key_points": [
+        "palindrome",
+        "number"
+      ],
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the Golden Ratio used for in art?",
+      "answer": "The Golden Ratio is used by artists like Leonardo da Vinci to create balance and beauty.",
+      "key_points": [
+        "Golden Ratio",
+        "art"
+      ],
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 5,
+      "question": "What is a simple equation?",
+      "answer": "A simple equation is an equation with one variable and no fractions or decimals.",
+      "key_points": [
+        "simple equation",
+        "variable"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 6,
+      "question": "How many solutions does a linear equation have?",
+      "answer": "A linear equation has one solution.",
+      "key_points": [
+        "linear equation",
+        "solution"
+      ],
+      "source_section": "Section 3-4"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the difference between a linear and quadratic equation?",
+      "answer": "A linear equation has no squared variable, while a quadratic equation has a squared variable.",
+      "key_points": [
+        "linear equation",
+        "quadratic equation"
+      ],
+      "source_section": "Section 3-4"
+    },
+    {
+      "question_number": 8,
+      "question": "How do you solve a simple linear equation?",
+      "answer": "To solve a simple linear equation, add or subtract the same value to both sides of the equation.",
+      "key_points": [
+        "simple linear equation",
+        "solution"
+      ],
+      "source_section": "Section 3-4"
+    },
+    {
+      "question_number": 9,
+      "question": "What is an example of a quadratic equation?",
+      "answer": "The equation x^2 + 4x + 4 = 0 is an example of a quadratic equation.",
+      "key_points": [
+        "quadratic equation"
+      ],
+      "source_section": "Section 5-6"
+    },
+    {
+      "question_number": 10,
+      "question": "How do you solve a quadratic equation?",
+      "answer": "To solve a quadratic equation, use the quadratic formula or factorization.",
+      "key_points": [
+        "quadratic equation",
+        "solution"
+      ],
+      "source_section": "Section 5-6"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the difference between an equation and an inequality?",
+      "answer": "An equation has equal signs, while an inequality does not.",
+      "key_points": [
+        "equation",
+        "inequality"
+      ],
+      "source_section": "Section 7-8"
+    },
+    {
+      "question_number": 12,
+      "question": "How do you solve a simple linear inequality?",
+      "answer": "To solve a simple linear inequality, add or subtract the same value to both sides of the inequality.",
+      "key_points": [
+        "simple linear inequality",
+        "solution"
+      ],
+      "source_section": "Section 7-8"
+    },
+    {
+      "question_number": 13,
+      "question": "What is an example of a system of equations?",
+      "answer": "The equations x + y = 2 and x - y = 1 are an example of a system of equations.",
+      "key_points": [
+        "system of equations"
+      ],
+      "source_section": "Section 9-10"
+    },
+    {
+      "question_number": 14,
+      "question": "How do you solve a system of linear equations?",
+      "answer": "To solve a system of linear equations, use the substitution or elimination method.",
+      "key_points": [
+        "system of linear equations",
+        "solution"
+      ],
+      "source_section": "Section 9-10"
+    },
+    {
+      "question_number": 15,
+      "question": "What is an example of a simple equation with variables?",
+      "answer": "The equation x + y = 2 is an example of a simple equation with variables.",
+      "key_points": [
+        "simple equation",
+        "variable"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 16,
+      "question": "How do you solve an equation with variables?",
+      "answer": "To solve an equation with variables, isolate the variable on one side of the equation.",
+      "key_points": [
+        "equation",
+        "variable"
+      ],
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the definition of a linear equation?",
+      "answer": "A linear equation is an equation with one variable and no squared terms.",
+      "key_points": [
+        "linear equation",
+        "variable"
+      ],
+      "source_section": "Section 3-4"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the difference between a simple equation and a quadratic equation?",
+      "answer": "A simple equation has no squared variable, while a quadratic equation has a squared variable.",
+      "key_points": [
+        "simple equation",
+        "quadratic equation"
+      ],
+      "source_section": "Section 3-4"
+    },
+    {
+      "question_number": 19,
+      "question": "How do you solve an equation with fractions?",
+      "answer": "To solve an equation with fractions, multiply both sides of the equation by a common denominator.",
+      "key_points": [
+        "equation",
+        "fraction"
+      ],
+      "source_section": "Section 11-12"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the definition of an inequality?",
+      "answer": "An inequality is an expression with a variable and a comparison operator.",
+      "key_points": [
+        "inequality",
+        "variable"
+      ],
+      "source_section": "Section 13-14"
+    }
+  ]
+}

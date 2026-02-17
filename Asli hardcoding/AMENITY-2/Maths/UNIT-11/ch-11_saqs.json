@@ -1,0 +1,173 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 11: Ratio and Proportions",
+  "generated_at": "2026-02-11T18:06:59.441342",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the ratio of 2 to 3?",
+      "answer": "The ratio of 2 to 3 is a comparison between two numbers, where 2 is the first number and 3 is the second number. This can be represented as 2:3 or 2/3.",
+      "key_concepts": [
+        "ratio",
+        "comparison"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "If the ratio of two numbers is 4:5, what is their sum?",
+      "answer": "To find the sum of the numbers with a given ratio, we can first assign values to each part of the ratio. For example, let's say 4x and 5x represent the two numbers. The sum would be 4x + 5x = 9x.",
+      "key_concepts": [
+        "ratio",
+        "sum"
+      ],
+      "marks": 3,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the proportion of a whole to its part?",
+      "answer": "A proportion is a comparison between two ratios, where the relationship between them remains constant. In this case, we are comparing the ratio of the whole (e.g., a circle) to one of its parts (e.g., an arc).",
+      "key_concepts": [
+        "proportion",
+        "comparison"
+      ],
+      "marks": 3,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "If the ratio of two quantities is 2:3, and one quantity increases by 20%, what happens to the other?",
+      "answer": "To solve this problem, we need to first find the original value of each part. Let's say 2x and 3x represent the two parts. If one part increases by 20%, its new value would be 1.2 times larger than the original. The ratio remains proportional.",
+      "key_concepts": [
+        "ratio",
+        "increase"
+      ],
+      "marks": 4,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the difference between a ratio and a proportion?",
+      "answer": "A ratio compares two numbers by division, while a proportion compares two ratios by equality. Ratios are used to describe relationships between parts of a whole, whereas proportions compare these relationships in different contexts.",
+      "key_concepts": [
+        "ratio",
+        "proportion"
+      ],
+      "marks": 4,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 6,
+      "question": "If the ratio of two numbers is 5:7, and one number increases by 30%, what happens to the other?",
+      "answer": "To find this out, we need to calculate the new value of each part after the increase. Let's assume 5x and 7x represent the original parts. After increasing by 30%, their new values would be 1.3 times larger than before.",
+      "key_concepts": [
+        "ratio",
+        "increase"
+      ],
+      "marks": 4,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 7,
+      "question": "Can you give an example of a proportion in real life?",
+      "answer": "One common example is the proportion between a whole object and its part. For instance, if we're comparing the ratio of a rectangle's length to its width, it represents a proportion.",
+      "key_concepts": [
+        "proportion",
+        "real-life"
+      ],
+      "marks": 3,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 8,
+      "question": "How do you solve for an unknown ratio in a proportion?",
+      "answer": "To find the unknown ratio, we set up an equation using the given proportions. We can then cross-multiply to isolate and solve for the unknown part of the ratio.",
+      "key_concepts": [
+        "proportion",
+        "solving"
+      ],
+      "marks": 4,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 9,
+      "question": "What is a key characteristic of proportional relationships?",
+      "answer": "The most important aspect of proportional relationships is that the ratios between corresponding parts remain constant across different contexts. This allows us to use proportions for various calculations.",
+      "key_concepts": [
+        "proportion",
+        "characteristic"
+      ],
+      "marks": 3,
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 10,
+      "question": "If two ratios are equivalent, what does that mean?",
+      "answer": "When we say that two ratios are equivalent, it means they represent the same relationship between their respective parts. They can be different in terms of scale but maintain the same ratio.",
+      "key_concepts": [
+        "ratio",
+        "equivalent"
+      ],
+      "marks": 3,
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 11,
+      "question": "Can you give an example of a real-world application of proportions?",
+      "answer": "One common example is architecture, where architects use proportions to design buildings that are aesthetically pleasing and structurally sound. They balance different elements like height, width, and spacing.",
+      "key_concepts": [
+        "proportion",
+        "real-life"
+      ],
+      "marks": 4,
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 12,
+      "question": "How do you find the missing value in a proportion?",
+      "answer": "To solve for the unknown part of a proportion, we set up an equation based on the given ratios. We then cross-multiply to isolate and solve for the unknown value.",
+      "key_concepts": [
+        "proportion",
+        "solving"
+      ],
+      "marks": 4,
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 13,
+      "question": "What is a proportion in mathematics?",
+      "answer": "A proportion is an equation where two ratios are set equal to each other. This allows us to solve for unknown values or relationships between different parts.",
+      "key_concepts": [
+        "proportion",
+        "math"
+      ],
+      "marks": 3,
+      "source_section": "Section 15"
+    },
+    {
+      "question_number": 14,
+      "question": "Can you explain the concept of equivalent ratios?",
+      "answer": "Equivalent ratios are those that represent the same relationship between their respective parts. Even though they may differ in scale, they maintain the same ratio.",
+      "key_concepts": [
+        "ratio",
+        "equivalent"
+      ],
+      "marks": 4,
+      "source_section": "Section 16"
+    },
+    {
+      "question_number": 15,
+      "question": "How do proportions help us solve problems?",
+      "answer": "Proportions enable us to find unknown values, compare relationships between different parts, and make predictions based on given ratios. This is especially useful in real-world applications where proportions can be used for design, construction, or scientific calculations.",
+      "key_concepts": [
+        "proportion",
+        "problem-solving"
+      ],
+      "marks": 5,
+      "source_section": "Section 17"
+    }
+  ]
+}

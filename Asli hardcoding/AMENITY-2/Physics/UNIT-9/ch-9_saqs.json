@@ -1,0 +1,174 @@
+{
+  "content_type": "Short Questions",
+  "chapter": "Chapter 9: Pressure",
+  "generated_at": "2026-02-11T23:46:35.297689",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the SI unit of pressure?",
+      "answer": "The SI unit of pressure is the Pascal (Pa). It is defined as the force exerted per unit area. In terms of units, it can be expressed as N/m^2.",
+      "key_concepts": [
+        "SI unit",
+        "pressure",
+        "Pascal"
+      ],
+      "marks": 3,
+      "source_section": "Section 1"
+    },
+    {
+      "question_number": 2,
+      "question": "What is the difference between atmospheric pressure and gauge pressure?",
+      "answer": "Atmospheric pressure refers to the total pressure exerted by the atmosphere on a surface, while gauge pressure is the pressure measured relative to atmospheric pressure. Gauge pressure is essentially the excess pressure over atmospheric pressure.",
+      "key_concepts": [
+        "atmospheric pressure",
+        "gauge pressure"
+      ],
+      "marks": 4,
+      "source_section": "Section 2"
+    },
+    {
+      "question_number": 3,
+      "question": "What is a manometer, and how is it used to measure pressure?",
+      "answer": "A manometer is a device used to measure the difference in pressure between two points. It typically consists of a U-shaped tube filled with a liquid, such as mercury or water. The difference in pressure is proportional to the height of the liquid column.",
+      "key_concepts": [
+        "manometer",
+        "pressure measurement"
+      ],
+      "marks": 3,
+      "source_section": "Section 3"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the relationship between pressure and force?",
+      "answer": "Pressure is defined as the force exerted per unit area. Mathematically, it can be expressed as P = F/A, where P is pressure, F is force, and A is area.",
+      "key_concepts": [
+        "pressure",
+        "force"
+      ],
+      "marks": 3,
+      "source_section": "Section 4"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the effect of temperature on pressure?",
+      "answer": "An increase in temperature results in an increase in pressure, assuming the volume remains constant. This is due to the expansion of gases with increased temperature.",
+      "key_concepts": [
+        "temperature",
+        "pressure"
+      ],
+      "marks": 3,
+      "source_section": "Section 5"
+    },
+    {
+      "question_number": 6,
+      "question": "What is gauge pressure, and how is it measured?",
+      "answer": "Gauge pressure is the excess pressure over atmospheric pressure. It can be measured using a manometer or a pressure gauge.",
+      "key_concepts": [
+        "gauge pressure",
+        "pressure measurement"
+      ],
+      "marks": 3,
+      "source_section": "Section 6"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the relationship between pressure and density?",
+      "answer": "Pressure is directly proportional to density, assuming the volume remains constant. Mathematically, it can be expressed as P = ρgh.",
+      "key_concepts": [
+        "pressure",
+        "density"
+      ],
+      "marks": 3,
+      "source_section": "Section 7"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the difference between absolute pressure and gauge pressure?",
+      "answer": "Absolute pressure refers to the total pressure exerted by a system, while gauge pressure is the excess pressure over atmospheric pressure.",
+      "key_concepts": [
+        "absolute pressure",
+        "gauge pressure"
+      ],
+      "marks": 3,
+      "source_section": "Section 8"
+    },
+    {
+      "question_number": 9,
+      "question": "What is a barometer, and how does it measure pressure?",
+      "answer": "A barometer is a device used to measure atmospheric pressure. It typically consists of a mercury column or an electronic sensor.",
+      "key_concepts": [
+        "barometer",
+        "pressure measurement"
+      ],
+      "marks": 3,
+      "source_section": "Section 9"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the effect of altitude on pressure?",
+      "answer": "An increase in altitude results in a decrease in pressure, assuming temperature remains constant. This is due to the decrease in atmospheric density with increased altitude.",
+      "key_concepts": [
+        "altitude",
+        "pressure"
+      ],
+      "marks": 3,
+      "source_section": "Section 10"
+    },
+    {
+      "question_number": 11,
+      "question": "What is gauge pressure, and how is it used in industry?",
+      "answer": "Gauge pressure is the excess pressure over atmospheric pressure. It is commonly used to measure pressure in industrial applications, such as hydraulic systems and pneumatic systems.",
+      "key_concepts": [
+        "gauge pressure",
+        "industry"
+      ],
+      "marks": 3,
+      "source_section": "Section 11"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the relationship between pressure and volume?",
+      "answer": "Pressure is inversely proportional to volume, assuming temperature remains constant. Mathematically, it can be expressed as P = ρgh.",
+      "key_concepts": [
+        "pressure",
+        "volume"
+      ],
+      "marks": 3,
+      "source_section": "Section 12"
+    },
+    {
+      "question_number": 13,
+      "question": "What is a pressure gauge, and how does it measure pressure?",
+      "answer": "A pressure gauge is a device used to measure pressure. It typically consists of a dial or digital display that shows the measured pressure.",
+      "key_concepts": [
+        "pressure gauge",
+        "pressure measurement"
+      ],
+      "marks": 3,
+      "source_section": "Section 13"
+    },
+    {
+      "question_number": 14,
+      "question": "What is absolute pressure, and how is it used in science?",
+      "answer": "Absolute pressure refers to the total pressure exerted by a system. It is commonly used to measure pressure in scientific applications, such as aerodynamics and thermodynamics.",
+      "key_concepts": [
+        "absolute pressure",
+        "science"
+      ],
+      "marks": 3,
+      "source_section": "Section 14"
+    },
+    {
+      "question_number": 15,
+      "question": "What is gauge pressure, and how is it used in engineering?",
+      "answer": "Gauge pressure is the excess pressure over atmospheric pressure. It is commonly used to measure pressure in engineering applications, such as hydraulic systems and pneumatic systems.",
+      "key_concepts": [
+        "gauge pressure",
+        "engineering"
+      ],
+      "marks": 3,
+      "source_section": "Section 15"
+    }
+  ]
+}

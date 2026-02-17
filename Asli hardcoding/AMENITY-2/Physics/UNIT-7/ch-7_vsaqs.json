@@ -1,0 +1,211 @@
+{
+  "content_type": "Very Short Questions",
+  "chapter": "Chapter 7: Force",
+  "generated_at": "2026-02-11T23:21:27.166686",
+  "total_questions": 20,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "What is the property of inertia due to?",
+      "answer": "The mass of a body.",
+      "key_points": [
+        "inertia",
+        "mass"
+      ],
+      "source_section": "[Section 23]"
+    },
+    {
+      "question_number": 2,
+      "question": "What type of force opposes motion when a magnet is near copper?",
+      "answer": "Electromagnetic damping, or eddy currents.",
+      "key_points": [
+        "electromagnetic",
+        "damping"
+      ],
+      "source_section": "[Section Not Magnetic, But It Can Create Magnetic Effects]"
+    },
+    {
+      "question_number": 3,
+      "question": "What is the SI unit of force?",
+      "answer": "Newton (N).",
+      "key_points": [
+        "SI",
+        "unit",
+        "force"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 4,
+      "question": "What is the measure of an object's resistance to changes in its motion?",
+      "answer": "Inertia.",
+      "key_points": [
+        "inertia",
+        "resistance"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 5,
+      "question": "What is the term for the force that attracts objects with mass towards each other?",
+      "answer": "Gravity.",
+      "key_points": [
+        "gravity",
+        "attract"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 6,
+      "question": "What is the SI unit of mass?",
+      "answer": "Kilogram (kg).",
+      "key_points": [
+        "SI",
+        "unit",
+        "mass"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 7,
+      "question": "What is the property that objects with greater mass have?",
+      "answer": "Greater inertia.",
+      "key_points": [
+        "inertia",
+        "mass"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 8,
+      "question": "What is the term for the change in momentum of an object?",
+      "answer": "Impulse.",
+      "key_points": [
+        "impulse",
+        "momentum"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 9,
+      "question": "What is the force that a magnet exerts on another object?",
+      "answer": "Magnetic force.",
+      "key_points": [
+        "magnetic",
+        "force"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 10,
+      "question": "What is the term for the property of an object to resist changes in its motion?",
+      "answer": "Inertia.",
+      "key_points": [
+        "inertia",
+        "resistance"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 11,
+      "question": "What is the term for the force that acts between two objects due to their mass?",
+      "answer": "Gravitational force.",
+      "key_points": [
+        "gravitational",
+        "force"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 12,
+      "question": "What is the SI unit of work?",
+      "answer": "Joule (J).",
+      "key_points": [
+        "SI",
+        "unit",
+        "work"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 13,
+      "question": "What is the term for the force that causes an object to change its motion?",
+      "answer": "Net force.",
+      "key_points": [
+        "net",
+        "force"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 14,
+      "question": "What is the term for the measure of an object's tendency to resist changes in its motion?",
+      "answer": "Mass.",
+      "key_points": [
+        "mass",
+        "tendency"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 15,
+      "question": "What is the term for the force that acts between two objects due to their electric charge?",
+      "answer": "Electric force.",
+      "key_points": [
+        "electric",
+        "force"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 16,
+      "question": "What is the term for the property of an object to resist changes in its motion?",
+      "answer": "Inertia.",
+      "key_points": [
+        "inertia",
+        "resistance"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 17,
+      "question": "What is the term for the force that acts between two objects due to their gravitational attraction?",
+      "answer": "Gravitational force.",
+      "key_points": [
+        "gravitational",
+        "force"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 18,
+      "question": "What is the term for the measure of an object's resistance to changes in its motion?",
+      "answer": "Inertia.",
+      "key_points": [
+        "inertia",
+        "resistance"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 19,
+      "question": "What is the term for the force that acts between two objects due to their magnetic properties?",
+      "answer": "Magnetic force.",
+      "key_points": [
+        "magnetic",
+        "force"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    },
+    {
+      "question_number": 20,
+      "question": "What is the term for the change in momentum of an object?",
+      "answer": "Impulse.",
+      "key_points": [
+        "impulse",
+        "momentum"
+      ],
+      "source_section": "[Section Not Mentioned Directly, But Implied]"
+    }
+  ]
+}

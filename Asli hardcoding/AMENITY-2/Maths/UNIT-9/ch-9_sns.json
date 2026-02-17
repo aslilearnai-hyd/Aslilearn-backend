@@ -1,0 +1,74 @@
+{
+  "content_type": "Short Notes & Summaries",
+  "section": "Chapter 9: Mensuration Including Area of Paths",
+  "generated_at": "2026-02-11T01:12:46.147531",
+  "notes": [
+    {
+      "concept_name": "Area of Square",
+      "summary": "The area of a square is calculated by squaring its side length (A = s^2). The formula for the perimeter of a square is P = 4s, where s is the length of one side. The diagonal of a square can be found using the Pythagorean theorem.",
+      "importance": "Understanding the area and perimeter of squares is crucial in mensuration to calculate areas of different shapes.",
+      "quick_facts": [
+        "A = s^2",
+        "P = 4s",
+        "Diagonal = √(2) * s",
+        "The formula for the area of a square is A = side^2"
+      ],
+      "source_section": "Section 1: Mensuration Including Area of Paths"
+    },
+    {
+      "concept_name": "Area of Rectangle",
+      "summary": "The area of a rectangle is calculated by multiplying its length and width (A = l * w). The formula for the perimeter of a rectangle is P = 2(l + w), where l is the length and w is the width.",
+      "importance": "Calculating the area and perimeter of rectangles is essential in mensuration to determine areas of various shapes.",
+      "quick_facts": [
+        "A = l * w",
+        "P = 2(l + w)",
+        "The formula for the area of a rectangle is A = length * width"
+      ],
+      "source_section": "Section 4: Area of Different Shapes"
+    },
+    {
+      "concept_name": "Area of Triangle",
+      "summary": "The area of a triangle can be calculated using Heron's formula (A = √(s(s-a)(s-b)(s-c))), where s is the semi-perimeter and a, b, c are the side lengths. The perimeter of a triangle is P = a + b + c.",
+      "importance": "Understanding the area and perimeter of triangles is vital in mensuration to calculate areas of complex shapes.",
+      "quick_facts": [
+        "A = √(s(s-a)(s-b)(s-c))",
+        "P = a + b + c",
+        "The formula for the area of a triangle is A = (base * height) / 2"
+      ],
+      "source_section": "Section 5: Area of Different Shapes"
+    },
+    {
+      "concept_name": "Area of Circle",
+      "summary": "The area of a circle is calculated using the formula A = πr^2, where r is the radius. The circumference of a circle is C = 2πr.",
+      "importance": "Calculating the area and circumference of circles is fundamental in mensuration to determine areas of circular shapes.",
+      "quick_facts": [
+        "A = πr^2",
+        "C = 2πr",
+        "The formula for the area of a circle is A = π * radius^2"
+      ],
+      "source_section": "Section 6: Area of Different Shapes"
+    },
+    {
+      "concept_name": "Area of Rhombus",
+      "summary": "The area of a rhombus can be calculated using the formula A = (d1 * d2) / 2, where d1 and d2 are the diagonals. The perimeter of a rhombus is P = 4s, where s is the side length.",
+      "importance": "Understanding the area and perimeter of rhombuses is essential in mensuration to calculate areas of complex shapes.",
+      "quick_facts": [
+        "A = (d1 * d2) / 2",
+        "P = 4s",
+        "The formula for the area of a rhombus is A = (diagonal1 * diagonal2) / 2"
+      ],
+      "source_section": "Section 7: Area of Different Shapes"
+    },
+    {
+      "concept_name": "Area of Parallelogram",
+      "summary": "The area of a parallelogram can be calculated using the formula A = bh, where b is the base and h is the height. The perimeter of a parallelogram is P = 2(b + h).",
+      "importance": "Calculating the area and perimeter of parallelograms is crucial in mensuration to determine areas of complex shapes.",
+      "quick_facts": [
+        "A = bh",
+        "P = 2(b + h)",
+        "The formula for the area of a parallelogram is A = base * height"
+      ],
+      "source_section": "Section 8: Area of Different Shapes"
+    }
+  ]
+}

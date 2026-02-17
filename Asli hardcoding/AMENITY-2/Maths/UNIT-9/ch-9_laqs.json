@@ -1,0 +1,157 @@
+{
+  "content_type": "Long Questions",
+  "chapter": "Chapter 9: Mensuration Including Area of Paths",
+  "generated_at": "2026-02-11T01:10:58.106912",
+  "total_questions": 10,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "A square plot has a side length of 5 meters. What is the area and perimeter of this square?",
+      "answer": "To find the area and perimeter, we use the formulas for a square: Area = side^2 and Perimeter = 4 * side. Given that the side length is 5 meters, we can calculate the area as 5^2 = 25 square meters. Similarly, we find the perimeter as 4 * 5 = 20 meters.",
+      "answer_outline": [
+        "Calculate the area using the formula Area = side^2",
+        "Find the perimeter using the formula Perimeter = 4 * side"
+      ],
+      "key_concepts": [
+        "Area of a square",
+        "Perimeter of a square",
+        "side length"
+      ],
+      "marks": 8,
+      "source_section": "Section 1: Introduction to Mensuration"
+    },
+    {
+      "question_number": 2,
+      "question": "A rectangle has a length of 6 meters and a breadth of 4 meters. What is its area?",
+      "answer": "To find the area, we use the formula Area = length * breadth. Given that the length is 6 meters and the breadth is 4 meters, we can calculate the area as 6 * 4 = 24 square meters.",
+      "answer_outline": [
+        "Identify the length and breadth of the rectangle"
+      ],
+      "key_concepts": [
+        "Area of a rectangle",
+        "length",
+        "breadth"
+      ],
+      "marks": 8,
+      "source_section": "Section 2: Introduction to Mensuration"
+    },
+    {
+      "question_number": 3,
+      "question": "A triangle has two sides measuring 5 meters and 6 meters. What is its perimeter?",
+      "answer": "To find the perimeter, we need the lengths of all three sides. Since one side is not given, we cannot calculate the exact perimeter.",
+      "answer_outline": [
+        "Identify the given sides"
+      ],
+      "key_concepts": [
+        "Perimeter of a triangle",
+        "side length"
+      ],
+      "marks": 8,
+      "source_section": "Section 3: Introduction to Mensuration"
+    },
+    {
+      "question_number": 4,
+      "question": "A circle has a radius of 2 meters. What is its circumference?",
+      "answer": "To find the circumference, we use the formula Circumference = 2 * π * radius. Given that the radius is 2 meters, we can calculate the circumference as 2 * 3.14 * 2 = 12.56 meters.",
+      "answer_outline": [
+        "Calculate the circumference using the formula Circumference = 2 * π * radius"
+      ],
+      "key_concepts": [
+        "Circumference of a circle",
+        "radius"
+      ],
+      "marks": 8,
+      "source_section": "Section 4: Introduction to Mensuration"
+    },
+    {
+      "question_number": 5,
+      "question": "A square plot has a side length of 7 meters. What is the area and perimeter of this square?",
+      "answer": "To find the area and perimeter, we use the formulas for a square: Area = side^2 and Perimeter = 4 * side. Given that the side length is 7 meters, we can calculate the area as 7^2 = 49 square meters. Similarly, we find the perimeter as 4 * 7 = 28 meters.",
+      "answer_outline": [
+        "Calculate the area using the formula Area = side^2",
+        "Find the perimeter using the formula Perimeter = 4 * side"
+      ],
+      "key_concepts": [
+        "Area of a square",
+        "Perimeter of a square",
+        "side length"
+      ],
+      "marks": 8,
+      "source_section": "Section 5: Introduction to Mensuration"
+    },
+    {
+      "question_number": 6,
+      "question": "A rectangle has a length of 4 meters and a breadth of 3 meters. What is its area?",
+      "answer": "To find the area, we use the formula Area = length * breadth. Given that the length is 4 meters and the breadth is 3 meters, we can calculate the area as 4 * 3 = 12 square meters.",
+      "answer_outline": [
+        "Identify the length and breadth of the rectangle"
+      ],
+      "key_concepts": [
+        "Area of a rectangle",
+        "length",
+        "breadth"
+      ],
+      "marks": 8,
+      "source_section": "Section 6: Introduction to Mensuration"
+    },
+    {
+      "question_number": 7,
+      "question": "A triangle has two sides measuring 3 meters and 4 meters. What is its perimeter?",
+      "answer": "To find the perimeter, we need the lengths of all three sides. Since one side is not given, we cannot calculate the exact perimeter.",
+      "answer_outline": [
+        "Identify the given sides"
+      ],
+      "key_concepts": [
+        "Perimeter of a triangle",
+        "side length"
+      ],
+      "marks": 8,
+      "source_section": "Section 7: Introduction to Mensuration"
+    },
+    {
+      "question_number": 8,
+      "question": "A circle has a radius of 3 meters. What is its circumference?",
+      "answer": "To find the circumference, we use the formula Circumference = 2 * π * radius. Given that the radius is 3 meters, we can calculate the circumference as 2 * 3.14 * 3 = 18.84 meters.",
+      "answer_outline": [
+        "Calculate the circumference using the formula Circumference = 2 * π * radius"
+      ],
+      "key_concepts": [
+        "Circumference of a circle",
+        "radius"
+      ],
+      "marks": 8,
+      "source_section": "Section 8: Introduction to Mensuration"
+    },
+    {
+      "question_number": 9,
+      "question": "A square plot has a side length of 4 meters. What is the area and perimeter of this square?",
+      "answer": "To find the area and perimeter, we use the formulas for a square: Area = side^2 and Perimeter = 4 * side. Given that the side length is 4 meters, we can calculate the area as 4^2 = 16 square meters. Similarly, we find the perimeter as 4 * 4 = 16 meters.",
+      "answer_outline": [
+        "Calculate the area using the formula Area = side^2",
+        "Find the perimeter using the formula Perimeter = 4 * side"
+      ],
+      "key_concepts": [
+        "Area of a square",
+        "Perimeter of a square",
+        "side length"
+      ],
+      "marks": 8,
+      "source_section": "Section 9: Introduction to Mensuration"
+    },
+    {
+      "question_number": 10,
+      "question": "A rectangle has a length of 2 meters and a breadth of 1 meter. What is its area?",
+      "answer": "To find the area, we use the formula Area = length * breadth. Given that the length is 2 meters and the breadth is 1 meter, we can calculate the area as 2 * 1 = 2 square meters.",
+      "answer_outline": [
+        "Identify the length and breadth of the rectangle"
+      ],
+      "key_concepts": [
+        "Area of a rectangle",
+        "length",
+        "breadth"
+      ],
+      "marks": 8,
+      "source_section": "Section 10: Introduction to Mensuration"
+    }
+  ]
+}

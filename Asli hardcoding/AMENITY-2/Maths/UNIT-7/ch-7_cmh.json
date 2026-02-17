@@ -1,0 +1,78 @@
+{
+  "content_type": "Concept Mastery Helper",
+  "section": "Chapter 7: Fractions",
+  "generated_at": "2026-02-11T00:51:20.433284",
+  "concepts": [
+    {
+      "concept_name": "Equivalent Fractions",
+      "difficulty": "medium",
+      "lesson": "Equivalent fractions are those that have the same value but different numerators and denominators. For example, 2/3 and 4/6 are equivalent fractions because they both represent the same part of a whole. To check if two fractions are equivalent, we can divide their numerator by their denominator.",
+      "real_example": "",
+      "key_points": [
+        "Equivalent fractions have the same value but different numerators and denominators",
+        "To find equivalent fractions, we can multiply or divide both the numerator and denominator by the same number",
+        "Dividing the numerator by the denominator gives us the value of a fraction"
+      ],
+      "source_section": "Section 4-5"
+    },
+    {
+      "concept_name": "Mixed Numbers",
+      "difficulty": "easy",
+      "lesson": "A mixed number is a combination of a whole number and a proper fraction. For example, 3 1/2 is a mixed number because it consists of the whole number 3 and the proper fraction 1/2.",
+      "real_example": "",
+      "key_points": [
+        "Mixed numbers consist of a whole number and a proper fraction",
+        "We can convert mixed numbers to improper fractions by multiplying the whole number by the denominator and adding the numerator",
+        "Improper fractions are equal to or greater than 1"
+      ],
+      "source_section": "Section 2-3"
+    },
+    {
+      "concept_name": "Adding Fractions",
+      "difficulty": "medium",
+      "lesson": "To add fractions, we need to have the same denominator. If the denominators are different, we can find the least common multiple (LCM) of the two numbers and use it as the new denominator.",
+      "real_example": "",
+      "key_points": [
+        "To add fractions, we need to have a common denominator",
+        "We can find the LCM of two numbers by listing multiples of each number until they match",
+        "Adding fractions with different denominators requires finding the LCM"
+      ],
+      "source_section": "Section 6-7"
+    },
+    {
+      "concept_name": "Subtracting Fractions",
+      "difficulty": "medium",
+      "lesson": "To subtract fractions, we need to have the same denominator. If the denominators are different, we can find the LCM of the two numbers and use it as the new denominator.",
+      "real_example": "",
+      "key_points": [
+        "To subtract fractions, we need to have a common denominator",
+        "We can find the LCM of two numbers by listing multiples of each number until they match",
+        "Subtracting fractions with different denominators requires finding the LCM"
+      ],
+      "source_section": "Section 6-7"
+    },
+    {
+      "concept_name": "Multiplying Fractions",
+      "difficulty": "easy",
+      "lesson": "To multiply fractions, we simply multiply the numerators and multiply the denominators.",
+      "real_example": "",
+      "key_points": [
+        "Multiplying fractions involves multiplying the numerators and denominators separately",
+        "The product of two fractions is a fraction with the product of the numerators as the new numerator and the product of the denominators as the new denominator"
+      ],
+      "source_section": "Section 5"
+    },
+    {
+      "concept_name": "Dividing Fractions",
+      "difficulty": "medium",
+      "lesson": "To divide fractions, we can invert the second fraction (i.e., flip the numerator and denominator) and then multiply.",
+      "real_example": "",
+      "key_points": [
+        "Dividing fractions involves inverting the second fraction and multiplying",
+        "Inverting a fraction means flipping the numerator and denominator",
+        "Multiplying the first fraction by the inverted second fraction gives us the result of the division"
+      ],
+      "source_section": "Section 5"
+    }
+  ]
+}

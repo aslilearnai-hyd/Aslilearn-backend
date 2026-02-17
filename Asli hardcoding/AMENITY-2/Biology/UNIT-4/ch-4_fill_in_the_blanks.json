@@ -1,0 +1,128 @@
+{
+  "content_type": "Fill in the Blanks",
+  "chapter": "Biology Chapter",
+  "generated_at": "2026-02-11T21:35:00.977325",
+  "total_questions": 15,
+  "questions": [
+    {
+      "question_number": 1,
+      "question": "Cheetahs are the fastest land animals, with long, muscular legs and a ______ to help them reach incredible speeds.",
+      "correct_answer": "streamlined body",
+      "hint": "Body shape helps speed",
+      "explanation": "From Section 24: Cheetahs are the fastest land animals, with long, muscular legs and a streamlined body to help them reach incredible speeds while hunting.",
+      "source_section": "Section 24"
+    },
+    {
+      "question_number": 2,
+      "question": "Mangroves have specialized ______ in their roots to deal with high levels of salt in the soil or water.",
+      "correct_answer": "salt-excreting glands",
+      "hint": "Adaptation for salty environment",
+      "explanation": "From Section 25: Mangroves have specialized salt-excreting glands or filtering systems in their roots to deal with high levels of salt in the soil or water.",
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 3,
+      "question": "Camels can tolerate high body temperatures, which helps them ______ sweating in the heat.",
+      "correct_answer": "avoid",
+      "hint": "Temperature adaptation",
+      "explanation": "From Section 26: Additionally, camels can tolerate high body temperatures, which helps them avoid sweating in the heat.",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 4,
+      "question": "A lion's mane is a powerful symbol of ______, dominance, and maturity.",
+      "correct_answer": "strength",
+      "hint": "Lion characteristics",
+      "explanation": "From Section 28: A lion’s mane is a powerful symbol of strength, dominance, and maturity.",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 5,
+      "question": "A grey wolf's ______ echoes across 25 square kilometers, signaling the presence of an alpha.",
+      "correct_answer": "howl",
+      "hint": "Wolf communication",
+      "explanation": "From Section 29: A grey wolf’s howl echoes across 25 square kilometers, signaling the presence of an alpha.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 6,
+      "question": "A lion's mane can grow up to ______ centimeters long.",
+      "correct_answer": "16",
+      "hint": "Lion physical trait",
+      "explanation": "From Section 28: A lion’s mane can grow up to 16 centimetres (6.2 inches) long Truth",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 7,
+      "question": "The term “alpha” comes from studies of ______ wolf packs in the past.",
+      "correct_answer": "captive",
+      "hint": "Wolf pack classification",
+      "explanation": "From Section 29: The term “alpha” comes from studies of captive wolf packs in the past.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 8,
+      "question": "Both the male and female parents can be considered “______ wolves”, as they are responsible for guiding the pack.",
+      "correct_answer": "alpha",
+      "hint": "Wolf family dynamics",
+      "explanation": "From Section 29: In this context, both the male and female parents can be considered “alpha” wolves, as they are responsible for guiding the pack.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 9,
+      "question": "Lions age, their mane typically becomes fuller and ______.",
+      "correct_answer": "darker",
+      "hint": "Lion physical trait",
+      "explanation": "From Section 28: As lions age, their mane typically becomes fuller and darker, serving as a visual marker of their experience and vitality.",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 10,
+      "question": "Mangroves have adapted to survive in ______ environments.",
+      "correct_answer": "high-salinity",
+      "hint": "Mangrove adaptation",
+      "explanation": "From Section 25: Mangroves have specialized salt-excreting glands or filtering systems in their roots to deal with high levels of salt in the soil or water.",
+      "source_section": "Section 25"
+    },
+    {
+      "question_number": 11,
+      "question": "Camels have ______ humps that allow them to survive long periods without water.",
+      "correct_answer": "water-storing",
+      "hint": "Camel adaptation",
+      "explanation": "From Section 26: Additionally, camels can tolerate high body temperatures, which helps them avoid sweating in the heat.",
+      "source_section": "Section 26"
+    },
+    {
+      "question_number": 12,
+      "question": "Cheetahs are well-adapted to their ______ environment.",
+      "correct_answer": "savanna",
+      "hint": "Cheetah habitat",
+      "explanation": "From Section 24: Cheetahs are the fastest land animals, with long, muscular legs and a streamlined body to help them reach incredible speeds while hunting. Their spotted coat provides camouflage in the tall grasses of the savanna.",
+      "source_section": "Section 24"
+    },
+    {
+      "question_number": 13,
+      "question": "Lions live in ______ prides, with males playing a crucial role in protecting their territory and mating.",
+      "correct_answer": "social",
+      "hint": "Lion social structure",
+      "explanation": "From Section 28: In addition, the mane provides protection during fights with other males, safeguarding the lion’s neck from injury.",
+      "source_section": "Section 28"
+    },
+    {
+      "question_number": 14,
+      "question": "Grey wolves are highly ______ animals that live in packs and communicate through vocalizations like howling.",
+      "correct_answer": "social",
+      "hint": "Wolf behavior",
+      "explanation": "From Section 29: A grey wolf’s howl echoes across 25 square kilometers, signaling the presence of an alpha.",
+      "source_section": "Section 29"
+    },
+    {
+      "question_number": 15,
+      "question": "Mangrove roots have ______ that help them breathe in oxygen-poor environments.",
+      "correct_answer": "aerenchyma tissue",
+      "hint": "Mangrove adaptation",
+      "explanation": "From Section 25: This adaptation helps them survive in coastal or marine environments.",
+      "source_section": "Section 25"
+    }
+  ]
+}
