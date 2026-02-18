@@ -673,6 +673,216 @@ async function getIIT6ExamCombined(topicPath) {
 }
 
 /**
+ * Combine all question types for exam-question-paper-generator (normal classes)
+ * Includes: MCQs, Fill in the Blanks, Short answer, Long answer, Match the Following, True or False
+ */
+async function getNormalClassExamCombined(classNumber, subject, topic, difficulty = 'medium') {
+  try {
+    const classBasePath = getClassBasePath(classNumber);
+    const subjectFolder = SUBJECT_MAPPINGS[subject] || subject;
+    const topicCode = await normalizeTopic(classNumber, topic, subject);
+    
+    const combinedData = {
+      content_type: 'Exam Paper',
+      sections: [],
+      total_questions: 0,
+      total_marks: 0,
+      estimated_time: 0
+    };
+
+    let questionCounter = 1;
+
+    // Question types to combine for exam papers (all types)
+    const questionTypes = [
+      { 
+        folder: 'MCQ', 
+        type: 'Multiple Choice Questions', 
+        priority: 1,
+        defaultMarks: 1,
+        defaultTime: 1
+      },
+      { 
+        folder: 'Fill in the Blanks', 
+        type: 'Fill in the Blanks', 
+        priority: 2,
+        defaultMarks: 1,
+        defaultTime: 1
+      },
+      { 
+        folder: 'Short answer', 
+        type: 'Short Answer Questions', 
+        priority: 3,
+        defaultMarks: 3,
+        defaultTime: 5
+      },
+      { 
+        folder: 'Long answer', 
+        type: 'Long Answer Questions', 
+        priority: 4,
+        defaultMarks: 5,
+        defaultTime: 10
+      },
+      { 
+        folder: 'Match the following', 
+        type: 'Match the Following', 
+        priority: 5,
+        defaultMarks: 2,
+        defaultTime: 3
+      },
+      { 
+        folder: 'True or False', 
+        type: 'True or False', 
+        priority: 6,
+        defaultMarks: 1,
+        defaultTime: 1
+      },
+    ];
+
+    // Process each question type in priority order
+    for (const { folder, type, priority, defaultMarks, defaultTime } of questionTypes.sort((a, b) => a.priority - b.priority)) {
+      // Build file path
+      const difficultyLower = difficulty.toLowerCase();
+      const difficultyMap = {
+        'easy': 'easy',
+        'medium': 'medium',
+        'hard': 'hard'
+      };
+      const difficultyFormatted = difficultyMap[difficultyLower] || 'medium';
+      
+      // Try to find the actual folder name (case-insensitive)
+      let folderName = folder;
+      try {
+        const subjectPath = path.join(classBasePath, subjectFolder);
+        const folders = await fs.readdir(subjectPath, { withFileTypes: true });
+        const matchingFolder = folders.find(f => 
+          f.isDirectory() && f.name.toLowerCase() === folderName.toLowerCase()
+        );
+        if (matchingFolder) {
+          folderName = matchingFolder.name;
+        }
+      } catch (err) {
+        // If can't read, use original folder name
+      }
+      
+      const fileName = `${topicCode.toLowerCase()} ${difficultyFormatted}.csv`;
+      const filePath = path.join(classBasePath, subjectFolder, folderName, fileName);
+      
+      try {
+        await fs.access(filePath);
+        const csvData = await readCSVFile(filePath);
+        
+        if (csvData && csvData.data && Array.isArray(csvData.data)) {
+          let sectionQuestions = [];
+          
+          if (type === 'Match the Following') {
+            // Process match the following CSV format
+            const questions = csvData.data.filter(row => row.Type === 'Question');
+            const answers = csvData.data.filter(row => row.Type === 'Answer');
+            
+            const answerMap = new Map();
+            answers.forEach(ans => {
+              if (ans['Column A'] && ans['Column B / Correct Match']) {
+                answerMap.set(ans['Column A'], ans['Column B / Correct Match']);
+              }
+            });
+            
+            questions.forEach((row, index) => {
+              if (row['Column A'] && row['Column B / Correct Match']) {
+                const columnA = row['Column A'];
+                const columnB = row['Column B / Correct Match'];
+                const correctMatch = answerMap.get(columnA) || columnB;
+                
+                sectionQuestions.push({
+                  question_number: questionCounter++,
+                  question: `Match the following:`,
+                  column_a: columnA,
+                  column_b: columnB,
+                  correct_match: correctMatch,
+                  question_type: type,
+                  marks: defaultMarks,
+                  estimated_time: defaultTime
+                });
+              }
+            });
+          } else {
+            // Process other question types (standard CSV format)
+            sectionQuestions = csvData.data.map((row, index) => {
+              const question = {
+                question_number: questionCounter++,
+                question_type: type,
+                marks: defaultMarks,
+                estimated_time: defaultTime
+              };
+              
+              if (row.Question) {
+                question.question = row.Question;
+              }
+              
+              // For MCQs and True/False, extract options
+              if (row['Option A'] || row['Option B'] || row['Option C'] || row['Option D']) {
+                question.options = {};
+                if (row['Option A']) question.options.A = row['Option A'];
+                if (row['Option B']) question.options.B = row['Option B'];
+                if (row['Option C']) question.options.C = row['Option C'];
+                if (row['Option D']) question.options.D = row['Option D'];
+              }
+              
+              if (row['Correct Answer']) {
+                question.correct_answer = row['Correct Answer'];
+              } else if (row.Answer) {
+                question.correct_answer = row.Answer;
+              }
+              
+              if (row.Explanation) {
+                question.explanation = row.Explanation;
+              }
+              
+              return question;
+            });
+          }
+          
+          if (sectionQuestions.length > 0) {
+            const sectionMarks = sectionQuestions.reduce((sum, q) => sum + (q.marks || defaultMarks), 0);
+            const sectionTime = sectionQuestions.length * defaultTime;
+
+            combinedData.sections.push({
+              type: type,
+              questions: sectionQuestions,
+              count: sectionQuestions.length,
+              total_marks: sectionMarks,
+              estimated_time: sectionTime
+            });
+            
+            combinedData.total_questions += sectionQuestions.length;
+            combinedData.total_marks += sectionMarks;
+            combinedData.estimated_time += sectionTime;
+          }
+        }
+      } catch (err) {
+        // File doesn't exist or error reading - continue with other types
+        console.log(`File not found or error reading ${filePath}:`, err.message);
+        continue;
+      }
+    }
+
+    // If no questions found, return null
+    if (combinedData.total_questions === 0) {
+      console.log(`No question files found for exam paper: Class ${classNumber}, ${subject}, ${topic}`);
+      return null;
+    }
+
+    // Return as a special marker object that getHardcodedContent will recognize
+    return {
+      __isCombinedExam: true,
+      data: combinedData
+    };
+  } catch (err) {
+    console.log(`Error combining exam files:`, err.message);
+    return null;
+  }
+}
+
+/**
  * Combine MCQs, Fill in the Blanks, and Match the Following for worksheet-mcq-generator (normal classes)
  */
 async function getNormalClassWorksheetCombined(classNumber, subject, topic, difficulty = 'medium') {
@@ -1184,6 +1394,16 @@ export async function getHardcodedContent(classNumber, subject, topic, toolType,
     if (toolType === 'worksheet-mcq-generator') {
       const difficulty = params.difficulty || params.questionDifficulty || 'medium';
       const combinedData = await getNormalClassWorksheetCombined(classNum, subject, topic, difficulty);
+      if (combinedData) {
+        return combinedData.data;
+      }
+      // If combined data not available, fall through to single file handling
+    }
+    
+    // Special handling for exam-question-paper-generator: combine all question types for regular classes
+    if (toolType === 'exam-question-paper-generator' && classNumber !== IIT_CLASS_NAME) {
+      const difficulty = params.difficulty || params.questionDifficulty || 'medium';
+      const combinedData = await getNormalClassExamCombined(classNum, subject, topic, difficulty);
       if (combinedData) {
         return combinedData.data;
       }
