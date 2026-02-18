@@ -208,8 +208,51 @@ const UNIT_MAPPINGS = {
 };
 
 /**
+ * Normalize string for better matching (handles Unicode, removes diacritics, etc.)
+ */
+function normalizeForMatching(str) {
+  if (!str) return '';
+  // Remove extra spaces and trim
+  let normalized = str.trim().replace(/\s+/g, ' ');
+  // For Unicode/Hindi characters, we keep them as-is but normalize spaces
+  // Don't use toLowerCase() for Hindi as it might break Unicode matching
+  return normalized;
+}
+
+/**
+ * Check if two strings match (handles Unicode, partial matches, etc.)
+ */
+function stringsMatch(str1, str2) {
+  if (!str1 || !str2) return false;
+  
+  const s1 = normalizeForMatching(str1);
+  const s2 = normalizeForMatching(str2);
+  
+  // Exact match
+  if (s1 === s2) return true;
+  
+  // Case-insensitive match (only for ASCII characters)
+  if (/^[\x00-\x7F]*$/.test(s1) && /^[\x00-\x7F]*$/.test(s2)) {
+    if (s1.toLowerCase() === s2.toLowerCase()) return true;
+  }
+  
+  // Contains match (either direction)
+  if (s1.includes(s2) || s2.includes(s1)) return true;
+  
+  // For Hindi/Unicode: try removing spaces and special chars for matching
+  const s1Clean = s1.replace(/[^\w\u0900-\u097F]/g, '');
+  const s2Clean = s2.replace(/[^\w\u0900-\u097F]/g, '');
+  if (s1Clean && s2Clean && (s1Clean.includes(s2Clean) || s2Clean.includes(s1Clean))) {
+    return true;
+  }
+  
+  return false;
+}
+
+/**
  * Get lesson number from topic name by reading planner.json
  * Handles both "lessons" and "lesson_plans" array structures
+ * Improved matching for Hindi/Unicode characters
  */
 async function getLessonNumberFromTopic(classNumber, subject, topic) {
   try {
@@ -217,15 +260,19 @@ async function getLessonNumberFromTopic(classNumber, subject, topic) {
     const subjectFolder = SUBJECT_MAPPINGS[subject] || subject;
     const plannerPath = path.join(classBasePath, subjectFolder, 'planner.json');
     
+    console.log(`🔍 Looking up topic "${topic}" in planner.json for Class ${classNumber}, Subject: ${subjectFolder}`);
+    
     // Check if planner.json exists
     try {
       await fs.access(plannerPath);
     } catch {
+      console.log(`❌ Planner.json not found at: ${plannerPath}`);
       return null; // Planner doesn't exist for this subject
     }
     
     const plannerData = await readJSONFile(plannerPath);
     if (!plannerData) {
+      console.log(`❌ Failed to read planner.json from: ${plannerPath}`);
       return null;
     }
     
@@ -236,25 +283,33 @@ async function getLessonNumberFromTopic(classNumber, subject, topic) {
     } else if (plannerData.lesson_plans && Array.isArray(plannerData.lesson_plans)) {
       lessonsArray = plannerData.lesson_plans;
     } else {
+      console.log(`❌ No lessons array found in planner.json`);
       return null;
     }
     
-    // Search for matching lesson name (case-insensitive, partial match)
-    const topicLower = topic.toLowerCase().trim();
+    console.log(`📚 Found ${lessonsArray.length} lessons in planner.json`);
+    
+    // Search for matching lesson name (improved Unicode matching)
     for (let i = 0; i < lessonsArray.length; i++) {
       const lesson = lessonsArray[i];
       if (lesson.lesson_name) {
-        const lessonNameLower = lesson.lesson_name.toLowerCase().trim();
-        // Exact match or contains match
-        if (lessonNameLower === topicLower || lessonNameLower.includes(topicLower) || topicLower.includes(lessonNameLower)) {
+        const lessonName = lesson.lesson_name;
+        // Use improved matching function
+        if (stringsMatch(topic, lessonName)) {
+          console.log(`✅ Matched topic "${topic}" to lesson ${i + 1}: "${lessonName}" (C${i + 1})`);
           return i + 1; // Return 1-based lesson number
         }
       }
     }
     
+    // Log all available lessons for debugging
+    const availableLessons = lessonsArray.map((l, idx) => `${idx + 1}. "${l.lesson_name || 'N/A'}"`).join(', ');
+    console.log(`❌ No match found for topic "${topic}". Available lessons: ${availableLessons}`);
+    
     return null; // No match found
   } catch (error) {
-    console.error(`Error getting lesson number for ${subject}/${topic}:`, error.message);
+    console.error(`❌ Error getting lesson number for ${subject}/${topic}:`, error.message);
+    console.error(error.stack);
     return null;
   }
 }
@@ -263,26 +318,39 @@ async function getLessonNumberFromTopic(classNumber, subject, topic) {
  * Normalize topic/unit name to match folder structure
  */
 async function normalizeTopic(classNumber, topic, subject) {
+  if (!topic) {
+    console.log(`⚠️ Empty topic provided for Class ${classNumber}, Subject: ${subject}`);
+    return null;
+  }
+  
   // Remove extra spaces and convert to proper case
   let normalized = topic.trim();
+  
+  console.log(`🔄 Normalizing topic: "${normalized}" for Class ${classNumber}, Subject: ${subject}`);
   
   // Check if it's already in C/P format (C1, P1, etc.)
   const existingMatch = normalized.match(/^([CP])(\d+)$/i);
   if (existingMatch) {
-    return `${existingMatch[1].toUpperCase()}${existingMatch[2]}`;
+    const result = `${existingMatch[1].toUpperCase()}${existingMatch[2]}`;
+    console.log(`✅ Topic already in format: ${result}`);
+    return result;
   }
   
   // Check if it's a unit format (Unit-1, Unit 1, etc.)
   const unitMatch = normalized.match(/unit[\s-]?(\d+)/i);
   if (unitMatch) {
     const unitNum = unitMatch[1];
-    return `C${unitNum}`;
+    const result = `C${unitNum}`;
+    console.log(`✅ Matched unit format: ${result}`);
+    return result;
   }
   
-  // Try to get lesson number from planner.json (for English and other subjects with planner)
+  // Try to get lesson number from planner.json (for all subjects with planner)
   const lessonNum = await getLessonNumberFromTopic(classNumber, subject, normalized);
   if (lessonNum) {
-    return `C${lessonNum}`;
+    const result = `C${lessonNum}`;
+    console.log(`✅ Matched to lesson from planner.json: ${result}`);
+    return result;
   }
   
   // Apply subject-specific mappings for AMENITY folder (only for Hindi Unit-1 typo)
@@ -293,13 +361,17 @@ async function normalizeTopic(classNumber, topic, subject) {
       const unitNum = hindiUnitMatch[1];
       const unitKey = `Unit-${unitNum}`;
       if (UNIT_MAPPINGS['Hindi'] && UNIT_MAPPINGS['Hindi'][unitKey]) {
-        return UNIT_MAPPINGS['Hindi'][unitKey]; // Returns 'Uniit-1' for Unit-1
+        const result = UNIT_MAPPINGS['Hindi'][unitKey]; // Returns 'Uniit-1' for Unit-1
+        console.log(`✅ Matched Hindi unit mapping: ${result}`);
+        return result;
       }
       // If not in mapping, return as Unit-X format
+      console.log(`⚠️ Using unit format: ${unitKey}`);
       return unitKey;
     }
   }
   
+  console.log(`⚠️ Could not normalize topic "${normalized}", returning as-is`);
   return normalized;
 }
 
@@ -1244,6 +1316,13 @@ async function getOtherToolFilePath(classNumber, subject, topic, toolType, diffi
   // Normalize topic to get lesson code (C1, C2, P1, P2, etc.)
   const topicCode = await normalizeTopic(classNumber, topic, subject);
   
+  if (!topicCode) {
+    console.log(`❌ Failed to normalize topic "${topic}" for Class ${classNumber}, Subject: ${subject}`);
+    return null;
+  }
+  
+  console.log(`📝 Normalized topic "${topic}" to code: ${topicCode}`);
+  
   // Normalize difficulty
   const difficultyLower = difficulty.toLowerCase();
   const difficultyMap = {
@@ -1266,8 +1345,13 @@ async function getOtherToolFilePath(classNumber, subject, topic, toolType, diffi
     );
     if (matchingFolder) {
       folderName = matchingFolder.name;
+      console.log(`📁 Found folder: ${folderName}`);
+    } else {
+      console.log(`⚠️ Folder "${folderName}" not found in ${subjectPath}. Available folders:`, folders.filter(f => f.isDirectory()).map(f => f.name).join(', '));
     }
   } catch (err) {
+    const subjectPath = path.join(classBasePath, subjectFolder);
+    console.log(`❌ Error reading subject folder ${subjectPath}:`, err.message);
     // If can't read, use original folder name
   }
   
@@ -1280,6 +1364,8 @@ async function getOtherToolFilePath(classNumber, subject, topic, toolType, diffi
     folderName,
     fileName
   );
+  
+  console.log(`🔍 Looking for file: ${filePath}`);
   
   return filePath;
 }

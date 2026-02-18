@@ -597,7 +597,7 @@ app.post('/api/auth/login', async (req, res) => {
     
     // Check for Super Admin credentials first
     const superAdminCredentials = [
-      { email: 'amenityforge@gmail.com', password: 'Amenity', fullName: 'Super Admin' }
+      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' }
     ];
     
     const validCredential = superAdminCredentials.find(
@@ -4805,7 +4805,7 @@ app.post('/api/super-admin/login', async (req, res) => {
     
     // Super admin credentials
     const superAdminCredentials = [
-      { email: 'amenityforge@gmail.com', password: 'Amenity', fullName: 'Super Admin' }
+      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' }
     ];
     
     // Check super admin credentials

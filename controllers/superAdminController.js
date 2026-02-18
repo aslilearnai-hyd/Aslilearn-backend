@@ -18,7 +18,7 @@ export const superAdminLogin = async (req, res) => {
     
     // Super admin credentials
     const superAdminCredentials = [
-      { email: 'amenityforge@gmail.com', password: 'Amenity', fullName: 'Super Admin' }
+      { email: 'sealucknow2017@gmail.com', password: 'Asli123', fullName: 'Super Admin' }
     ];
     
     // Check super admin credentials

@@ -1,8 +1,8 @@
 // Super Admin Constants
 
 export const SUPER_ADMIN_CREDENTIALS = {
-  email: 'amenityforge@gmail.com',
-  password: 'Amenity'
+  email: 'sealucknow2017@gmail.com',
+  password: 'Asli123'
 };
 
 export const USER_ROLES = {

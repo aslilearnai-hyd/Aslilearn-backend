@@ -103,7 +103,7 @@ export const validateRequest = (schema) => {
 
 // Custom validation functions
 export const validateSuperAdminCredentials = (email, password) => {
-  return email === 'amenityforge@gmail.com' && password === 'Amenity';
+  return email === 'sealucknow2017@gmail.com' && password === 'Asli123';
 };
 
 export const validatePermissions = (permissions) => {
