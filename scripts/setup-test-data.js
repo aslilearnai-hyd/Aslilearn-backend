@@ -11,7 +11,13 @@ import ExamResult from '../models/ExamResult.js';
 
 dotenv.config();
 
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://akhileshsamayamanthula:rxvIPIT4Bzobk9Ne@cluster0.4ej8ne2.mongodb.net/Asli?retryWrites=true&w=majority&appName=Cluster0';
+const MONGO_URI = process.env.MONGO_URI;
+
+if (!MONGO_URI) {
+  console.error('❌ MONGO_URI is not set in environment variables!');
+  console.error('Please set MONGO_URI in your .env file or environment variables.');
+  process.exit(1);
+}
 
 async function setupTestData() {
   try {
