@@ -259,19 +259,22 @@ app.get('/api/proxy/content', async (req, res) => {
 
     console.log('Proxying content from:', targetUrl);
 
-    // Fetch the content
+    // Determine if this is a PDF
+    const isPDF = targetUrl.toLowerCase().endsWith('.pdf') || targetUrl.includes('.pdf');
+    
+    // Fetch the content - use arraybuffer for PDFs, text for HTML
     const response = await axios.get(targetUrl, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept': isPDF ? 'application/pdf,*/*' : 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.9',
-        'Accept-Encoding': 'gzip, deflate, br',
+        'Accept-Encoding': isPDF ? 'identity' : 'gzip, deflate, br', // Don't compress PDFs
         'Referer': targetUrl,
         'Cache-Control': 'no-cache'
       },
       maxRedirects: 10,
       timeout: 60000,
-      responseType: 'text',
+      responseType: isPDF ? 'arraybuffer' : 'text', // Use arraybuffer for PDFs
       validateStatus: (status) => status < 500 // Accept 4xx but not 5xx
     });
 
@@ -291,6 +294,15 @@ app.get('/api/proxy/content', async (req, res) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('X-Frame-Options', 'ALLOWALL');
     res.setHeader('Content-Security-Policy', "frame-ancestors *");
+    
+    // Handle PDF files - serve directly as binary
+    if (contentType.includes('application/pdf') || contentType.includes('pdf') || isPDF) {
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `inline; filename="${path.basename(urlObj.pathname)}"`);
+      // Send PDF binary data (response.data is already arraybuffer for PDFs)
+      res.send(Buffer.from(response.data));
+      return;
+    }
     
     // Modify HTML to fix relative URLs and remove frame-blocking
     if (contentType.includes('text/html')) {
