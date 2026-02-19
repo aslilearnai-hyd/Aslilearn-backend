@@ -276,7 +276,13 @@ app.get('/api/proxy/content', async (req, res) => {
     });
 
     // Get content type
-    const contentType = response.headers['content-type'] || 'text/html';
+    let contentType = response.headers['content-type'] || 'text/html';
+    
+    // If URL ends with .pdf, ensure content type is set correctly
+    if (targetUrl.toLowerCase().endsWith('.pdf') || contentType.includes('pdf')) {
+      contentType = 'application/pdf';
+    }
+    
     console.log('Content type:', contentType);
 
     // Set CORS and frame headers
