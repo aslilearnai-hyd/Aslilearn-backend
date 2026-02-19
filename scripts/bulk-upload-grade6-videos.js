@@ -32,6 +32,15 @@ const videosData = {
     classNumber: '6',
     chapters: [
       {
+        chapter: 'Chapter-1 Introduction to Chemistry',
+        topic: 'Introduction to Chemistry',
+        urls: [
+          { url: 'https://www.youtube.com/watch?v=jYKZT8tAKNK', name: 'Introduction to chemistry - Module 1' },
+          { url: 'https://www.youtube.com/watch?v=vi7CITUHNwM', name: 'Introduction to chemistry - Module 2' },
+          { url: 'https://www.youtube.com/watch?v=LXOELCcxLQk', name: 'Introduction to chemistry - Module 3' }
+        ]
+      },
+      {
         chapter: 'Chapter-1 STATES OF MATTER',
         topic: 'STATES OF MATTER',
         urls: [
@@ -264,12 +273,22 @@ async function uploadVideos() {
 
         // Create a separate content entry for each video URL
         for (let i = 0; i < chapterData.urls.length; i++) {
-          const videoUrl = chapterData.urls[i];
+          // Support both string URLs and object URLs with custom names
+          const urlEntry = chapterData.urls[i];
+          const videoUrl = typeof urlEntry === 'string' ? urlEntry : urlEntry.url;
+          const videoName = typeof urlEntry === 'string' ? null : urlEntry.name;
           const videoNumber = i + 1;
           
+          // Use custom name if provided, otherwise generate default title
+          const title = videoName 
+            ? videoName
+            : `Grade-6 ${subjectData.subjectName} - ${chapterData.chapter} - Video ${videoNumber}`;
+          
           const contentData = {
-            title: `Grade-6 ${subjectData.subjectName} - ${chapterData.chapter} - Video ${videoNumber}`,
-            description: `${chapterData.topic} - Grade 6 ${subjectData.subjectName} - Part ${videoNumber}`,
+            title: title,
+            description: videoName 
+              ? `${videoName} - ${chapterData.topic} - Grade 6 ${subjectData.subjectName}`
+              : `${chapterData.topic} - Grade 6 ${subjectData.subjectName} - Part ${videoNumber}`,
             type: 'Video',
             board: board,
             subject: subject._id,

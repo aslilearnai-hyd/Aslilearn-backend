@@ -11,6 +11,7 @@ import multer from 'multer';
 import { fileURLToPath } from 'url';
 import { dirname, join, extname } from 'path';
 import fs from 'fs';
+import axios from 'axios';
 
 // Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -221,6 +222,79 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Expose-Headers', 'Set-Cookie');
   next();
+});
+
+// Proxy endpoint for external content (flipbooks, PDFs, etc.)
+app.get('/api/proxy/content', async (req, res) => {
+  try {
+    const { url } = req.query;
+    
+    if (!url) {
+      return res.status(400).json({ error: 'URL parameter is required' });
+    }
+
+    // Validate URL
+    let targetUrl;
+    try {
+      targetUrl = decodeURIComponent(url);
+      new URL(targetUrl); // Validate URL format
+    } catch (error) {
+      return res.status(400).json({ error: 'Invalid URL format' });
+    }
+
+    // Only allow specific domains for security
+    const allowedDomains = ['epathshala.nic.in', 'ncert.nic.in', 'diksha.gov.in'];
+    const urlObj = new URL(targetUrl);
+    if (!allowedDomains.some(domain => urlObj.hostname.includes(domain))) {
+      return res.status(403).json({ error: 'Domain not allowed' });
+    }
+
+    // Fetch the content
+    const response = await axios.get(targetUrl, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'Accept-Language': 'en-US,en;q=0.9',
+        'Referer': targetUrl
+      },
+      maxRedirects: 5,
+      timeout: 30000,
+      responseType: 'text'
+    });
+
+    // Get content type
+    const contentType = response.headers['content-type'] || 'text/html';
+
+    // Remove X-Frame-Options and other blocking headers by setting our own
+    res.setHeader('Content-Type', contentType);
+    res.setHeader('X-Frame-Options', 'ALLOWALL');
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    // Modify HTML to fix relative URLs and remove frame-blocking scripts
+    if (contentType.includes('text/html')) {
+      let html = response.data;
+      
+      // Fix relative URLs to be absolute
+      html = html.replace(/href="\//g, `href="${urlObj.protocol}//${urlObj.host}/`);
+      html = html.replace(/src="\//g, `src="${urlObj.protocol}//${urlObj.host}/`);
+      html = html.replace(/url\(['"]?\//g, `url('${urlObj.protocol}//${urlObj.host}/`);
+      
+      // Remove X-Frame-Options meta tags
+      html = html.replace(/<meta[^>]*http-equiv=["']X-Frame-Options["'][^>]*>/gi, '');
+      
+      res.send(html);
+    } else {
+      res.send(response.data);
+    }
+  } catch (error) {
+    console.error('Proxy error:', error.message);
+    res.status(500).json({ 
+      error: 'Failed to fetch content',
+      message: error.message 
+    });
+  }
 });
 
 // Health endpoint with CORS headers (handle both GET and OPTIONS)
