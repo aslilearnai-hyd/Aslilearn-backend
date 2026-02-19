@@ -225,6 +225,14 @@ app.use((req, res, next) => {
 });
 
 // Proxy endpoint for external content (flipbooks, PDFs, etc.)
+// Handle OPTIONS preflight
+app.options('/api/proxy/content', (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.sendStatus(200);
+});
+
 app.get('/api/proxy/content', async (req, res) => {
   try {
     const { url } = req.query;
@@ -249,50 +257,75 @@ app.get('/api/proxy/content', async (req, res) => {
       return res.status(403).json({ error: 'Domain not allowed' });
     }
 
+    console.log('Proxying content from:', targetUrl);
+
     // Fetch the content
     const response = await axios.get(targetUrl, {
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.9',
-        'Referer': targetUrl
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Referer': targetUrl,
+        'Cache-Control': 'no-cache'
       },
-      maxRedirects: 5,
-      timeout: 30000,
-      responseType: 'text'
+      maxRedirects: 10,
+      timeout: 60000,
+      responseType: 'text',
+      validateStatus: (status) => status < 500 // Accept 4xx but not 5xx
     });
 
     // Get content type
     const contentType = response.headers['content-type'] || 'text/html';
+    console.log('Content type:', contentType);
 
-    // Remove X-Frame-Options and other blocking headers by setting our own
-    res.setHeader('Content-Type', contentType);
-    res.setHeader('X-Frame-Options', 'ALLOWALL');
+    // Set CORS and frame headers
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
-    // Modify HTML to fix relative URLs and remove frame-blocking scripts
+    res.setHeader('X-Frame-Options', 'ALLOWALL');
+    res.setHeader('Content-Security-Policy', "frame-ancestors *");
+    
+    // Modify HTML to fix relative URLs and remove frame-blocking
     if (contentType.includes('text/html')) {
       let html = response.data;
+      const baseUrl = `${urlObj.protocol}//${urlObj.host}`;
+      const basePath = urlObj.pathname.substring(0, urlObj.pathname.lastIndexOf('/') + 1);
+      const fullBaseUrl = baseUrl + basePath;
       
-      // Fix relative URLs to be absolute
-      html = html.replace(/href="\//g, `href="${urlObj.protocol}//${urlObj.host}/`);
-      html = html.replace(/src="\//g, `src="${urlObj.protocol}//${urlObj.host}/`);
-      html = html.replace(/url\(['"]?\//g, `url('${urlObj.protocol}//${urlObj.host}/`);
+      // Add base tag to help with relative URLs
+      if (!html.includes('<base')) {
+        html = html.replace(/<head([^>]*)>/i, `<head$1><base href="${fullBaseUrl}">`);
+      }
       
-      // Remove X-Frame-Options meta tags
+      // Fix relative URLs to be absolute (more comprehensive)
+      html = html.replace(/href=["'](\/[^"']+)["']/g, `href="${baseUrl}$1"`);
+      html = html.replace(/src=["'](\/[^"']+)["']/g, `src="${baseUrl}$1"`);
+      html = html.replace(/url\(["']?(\/[^"')]+)["']?\)/g, `url("${baseUrl}$1")`);
+      html = html.replace(/action=["'](\/[^"']+)["']/g, `action="${baseUrl}$1"`);
+      
+      // Remove X-Frame-Options meta tags and CSP that block framing
       html = html.replace(/<meta[^>]*http-equiv=["']X-Frame-Options["'][^>]*>/gi, '');
+      html = html.replace(/<meta[^>]*http-equiv=["']Content-Security-Policy["'][^>]*>/gi, '');
+      html = html.replace(/X-Frame-Options[^;]*;?/gi, '');
       
+      // Remove scripts that check for framing
+      html = html.replace(/if\s*\([^)]*top\s*!==\s*self[^)]*\)[^}]*}/gi, '');
+      html = html.replace(/if\s*\([^)]*window\.top[^)]*\)[^}]*}/gi, '');
+      
+      res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.send(html);
     } else {
+      res.setHeader('Content-Type', contentType);
       res.send(response.data);
     }
   } catch (error) {
     console.error('Proxy error:', error.message);
+    console.error('Error stack:', error.stack);
     res.status(500).json({ 
       error: 'Failed to fetch content',
-      message: error.message 
+      message: error.message,
+      details: error.response?.status ? `HTTP ${error.response.status}` : 'Network error'
     });
   }
 });
