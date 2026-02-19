@@ -304,6 +304,20 @@ app.get('/api/proxy/content', async (req, res) => {
       html = html.replace(/url\(["']?(\/[^"')]+)["']?\)/g, `url("${baseUrl}$1")`);
       html = html.replace(/action=["'](\/[^"']+)["']/g, `action="${baseUrl}$1"`);
       
+      // For flipbooks, also fix relative paths that don't start with /
+      html = html.replace(/href=["']([^"']+\.(css|js|png|jpg|gif|svg))["']/g, (match, path) => {
+        if (!path.startsWith('http') && !path.startsWith('/')) {
+          return `href="${fullBaseUrl}${path}"`;
+        }
+        return match;
+      });
+      html = html.replace(/src=["']([^"']+\.(css|js|png|jpg|gif|svg))["']/g, (match, path) => {
+        if (!path.startsWith('http') && !path.startsWith('/')) {
+          return `src="${fullBaseUrl}${path}"`;
+        }
+        return match;
+      });
+      
       // Remove X-Frame-Options meta tags and CSP that block framing
       html = html.replace(/<meta[^>]*http-equiv=["']X-Frame-Options["'][^>]*>/gi, '');
       html = html.replace(/<meta[^>]*http-equiv=["']Content-Security-Policy["'][^>]*>/gi, '');
@@ -312,6 +326,23 @@ app.get('/api/proxy/content', async (req, res) => {
       // Remove scripts that check for framing
       html = html.replace(/if\s*\([^)]*top\s*!==\s*self[^)]*\)[^}]*}/gi, '');
       html = html.replace(/if\s*\([^)]*window\.top[^)]*\)[^}]*}/gi, '');
+      html = html.replace(/window\.top\s*!==\s*window\.self/gi, 'true');
+      html = html.replace(/self\s*!==\s*top/gi, 'false');
+      
+      // Add script to allow iframe embedding
+      const allowFrameScript = `
+        <script>
+          try {
+            if (window.parent !== window) {
+              // We're in an iframe, allow it
+              window.frameElement = window.frameElement || {};
+            }
+          } catch(e) {
+            // Cross-origin, that's fine
+          }
+        </script>
+      `;
+      html = html.replace(/<head([^>]*)>/i, `<head$1>${allowFrameScript}`);
       
       res.setHeader('Content-Type', 'text/html; charset=utf-8');
       res.send(html);

@@ -617,6 +617,54 @@ export const deleteContent = async (req, res) => {
   }
 };
 
+// Update Content (Super Admin only)
+export const updateContent = async (req, res) => {
+  try {
+    const { contentId } = req.params;
+    const { title, description, fileUrl, fileUrls, topic, date, classNumber } = req.body;
+
+    if (!contentId || !mongoose.Types.ObjectId.isValid(contentId)) {
+      return res.status(400).json({ success: false, message: 'Invalid content ID' });
+    }
+
+    const content = await Content.findById(contentId);
+    if (!content) {
+      return res.status(404).json({ success: false, message: 'Content not found' });
+    }
+
+    // Update fields if provided
+    if (title !== undefined) content.title = title.trim();
+    if (description !== undefined) content.description = description?.trim() || undefined;
+    if (topic !== undefined) content.topic = topic?.trim() || undefined;
+    if (date !== undefined) content.date = new Date(date);
+    if (classNumber !== undefined) content.classNumber = classNumber?.trim() || undefined;
+
+    // Update file URLs
+    if (fileUrls !== undefined && Array.isArray(fileUrls) && fileUrls.length > 0) {
+      content.fileUrls = fileUrls;
+      content.fileUrl = fileUrls[0]; // Keep first URL for backward compatibility
+    } else if (fileUrl !== undefined) {
+      content.fileUrl = fileUrl;
+      content.fileUrls = [fileUrl];
+    }
+
+    await content.save();
+
+    res.json({ 
+      success: true, 
+      message: 'Content updated successfully',
+      data: content 
+    });
+  } catch (error) {
+    console.error('Update content error:', error);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Failed to update content', 
+      error: error.message 
+    });
+  }
+};
+
 // Delete All Content (Bulk delete - Super Admin only)
 export const deleteAllContent = async (req, res) => {
   try {

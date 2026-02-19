@@ -42,6 +42,7 @@ import {
   deleteSubject,
   uploadContent,
   getContentByBoard,
+  updateContent,
   deleteContent,
   deleteAllContent,
   getBoardAnalytics,
@@ -377,6 +378,7 @@ router.post('/content/upload-thumbnail', (req, res, next) => {
 
 router.post('/content', uploadContent);
 router.get('/boards/:board/content', getContentByBoard);
+router.put('/content/:contentId', updateContent);
 router.delete('/content/:contentId', deleteContent);
 router.delete('/content', deleteAllContent); // Bulk delete all content
 
